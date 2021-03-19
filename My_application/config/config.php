@@ -29,12 +29,12 @@ if(ENVIRONMENT=="development")
 }
 elseif(ENVIRONMENT=="testing"){
     $protocol = ($_SERVER['SERVER_PORT'] == 3306) ? 'https://' : 'http://';
-    $config['base_url']	= $protocol.str_replace("http://", "", $_SERVER['HTTP_HOST']);
+    $config['base_url']	= $protocol.str_replace("https://", "", $_SERVER['HTTP_HOST']);
     $config['base_url']	.= "/cloud";
 }
 elseif(ENVIRONMENT=="production"){
     $protocol = ($_SERVER['SERVER_PORT'] == 3306) ? 'https://' : 'http://';
-    $config['base_url']	= $protocol.str_replace("http://", "", $_SERVER['HTTP_HOST']);
+    $config['base_url']	= $protocol.str_replace("https://", "", $_SERVER['HTTP_HOST']);
 }
 
 else
