@@ -111,7 +111,7 @@ class Cms_page extends MY_Controller {
 		$name =  str_replace(" ","_", $name) ;
 		move_uploaded_file($tmp_name, "$uploads_dir/$name");
 	    $Nname = explode(".", $name);
-	    $allowEd = array('jpg','png','.JPG','jpeg');
+	    $allowEd = array('jpg','png','.JPG','jpeg','svg','SVG');
 	   
 
 	    if(in_array($Nname[2],$allowEd)){

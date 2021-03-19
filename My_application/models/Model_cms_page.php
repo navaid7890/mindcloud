@@ -54,6 +54,14 @@ class Model_cms_page extends MY_Model
             $this->cms_url = "hidden";
         }
 
+        $segment_video = array(10,44,45, 47, 11);
+        if (in_array($this->uri->segment(4), $segment_video)) {
+            $this->cms_video = "videoupload";
+        }else
+        {
+            $this->cms_video = "hidden";
+        }
+
         parent::__construct();
     }
 
@@ -154,6 +162,26 @@ class Model_cms_page extends MY_Model
                    'js_rules' => '',
                 'rules' => 'trim|htmlentities'
               );
+
+
+        $fields['tutorial_video'] = array(
+                'table' => $this->_table,
+                'name' => 'tutorial_video',
+                'label' => 'Video',
+                'name_path' => 'tutorial_video_path',
+                'upload_config' => 'site_upload_cms_page',
+                'type' => $this->cms_video,
+                'type_dt' => 'video',
+                'randomize' => true,
+                'preview' => 'true',
+                'attributes'   => array(
+                    'allow_ext'=>'mkv|avi|mp4',
+                ),
+                'dt_attributes' => array("width" => "10%"),
+                'rules' => 'trim|htmlentities',
+                // 'js_rules'=>$is_required_image
+              );
+ 
 
         $fields['cms_page_content'] = array(
                    'table'   => $this->_table,
