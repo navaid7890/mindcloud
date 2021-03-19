@@ -2,13 +2,13 @@ Options -Indexes
 
 RewriteEngine on
 
-RewriteCond %{HTTP_HOST} ^mindcloud.([a-z]*)$
-RewriteRule ^(.*)$ https://mindcloud.%1/$1 [L,R=301]
+#RewriteCond %{HTTP_HOST} ^stringphotography.([a-z]*)$
+#RewriteRule ^(.*)$ http://www.stringphotography.%1/$1 [L,R=301]
 
 
 #HTTPS Rewrite after SSL
-#RewriteCond %{HTTP} off
-#RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]
+RewriteCond %{HTTP} off
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]
 
 #RewriteCond %{HTTPS} off
 #RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
