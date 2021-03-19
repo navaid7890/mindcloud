@@ -2,8 +2,8 @@ Options -Indexes
 
 RewriteEngine on
 
-#RewriteCond %{HTTP_HOST} ^stringphotography.([a-z]*)$
-#RewriteRule ^(.*)$ http://www.stringphotography.%1/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^stringphotography.([a-z]*)$
+RewriteRule ^(.*)$ http://www.stringphotography.%1/$1 [L,R=301]
 
 
 #HTTPS Rewrite after SSL
