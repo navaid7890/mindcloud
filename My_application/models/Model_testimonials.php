@@ -102,15 +102,25 @@ class Model_testimonials extends MY_Model {
               // ),
            
     
-              'testimonials_other' => array(
+              'testimonials_position' => array(
                      'table'   => $this->_table,
-                     'name'   => 'testimonials_other',
-                     'label'   => 'Other Detail',
+                     'name'   => 'testimonials_position',
+                     'label'   => 'Position',
                      'type'   => 'text',
                      'attributes'   => array(),
-                     // 'js_rules'   => 'required',
-                     'rules'   => 'trim|htmlentities'
+                     'js_rules'   => 'required',
+                     'rules'   => 'required|trim|htmlentities'
                   ),
+
+            'testimonials_heading' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'testimonials_heading',
+                    'label'   => 'Heading',
+                    'type'   => 'text',
+                    'attributes'   => array(),
+                    'js_rules'   => 'required',
+                    'rules'   => 'required|trim|htmlentities'
+                 ),
 
            'testimonials_desc' => array(
                              'table'   => $this->_table,

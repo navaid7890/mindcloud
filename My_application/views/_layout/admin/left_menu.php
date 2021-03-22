@@ -42,11 +42,11 @@ $menu_links = array(
     //     ),
     // ),
 
-    // array("title"=>"Testimonials Management", "icon"=>" feather icon-image" ,"action" => array("estimonials") ,
-    //     "additionals"=>array(
-    //          array("link"=>"testimonials","title"=>"Manage Testimonials", "icon"=>" fa fa-angle-right"),
-    //     ),
-    // ),
+    array("title"=>"Testimonials Management", "icon"=>" feather icon-image" ,"action" => array("estimonials") ,
+        "additionals"=>array(
+             array("link"=>"testimonials","title"=>"Manage Testimonials", "icon"=>" fa fa-angle-right"),
+        ),
+    ),
 
     // array("title"=>"Videos Management", "icon"=>" feather icon-image" ,"action" => array("video") ,
     //     "additionals"=>array(
@@ -106,7 +106,11 @@ $menu_links = array(
         ),
     ),
     
-    
+    array("title"=>"Learning Management", "icon"=>" fa fa-book" ,"action" => array("learning") ,
+        "additionals"=>array(
+            array("link"=>"learning","title"=>"Manage Learning", "icon"=>" fa fa-angle-right")            
+        ),
+    ),
     
 
    // array("title"=>"Stock Management", "icon"=>" fa fa-angle-right" ,"action" => array("category","product") ,
