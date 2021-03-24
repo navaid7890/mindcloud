@@ -145,27 +145,15 @@ class MY_Controller extends MY_Controller_Admin
                 "google-site-verification" => "",
             );
 
-            $this->layout_data['css_files'] = array(
-                "bootstrap.min.css", 
-                "bootstrap3.3.7.css", 
-                "cdnbootstrap.css", 
-                "fontgoogleapis.css", 
-                "slick.css", 
-                "slick-theme.css", 
-                "fontawesomekit.css", 
-                "custom.css",  
-                "fancybox.css",
+            $this->layout_data['css_files'] = array( 
+                "layout.css",  
+                "style.css",
             );
             $this->layout_data['js_files_init'] = array(
-                // "jquery.js",
-                "jquery-3.5.js",
+                "jquery.js", 
             );
-            $this->layout_data['js_files'] = array(
-                    "bootstrap.min.js",
-                    "popper.js",
-                    "slick.min.js",
-                    "customize.js",
-                    "fancybox.js",
+            $this->layout_data['js_files'] = array( 
+                    "custom.js",
             );
             //get featured stock
             $this->register_plugins(array("bootstrap-toastr","common_files","my_cart"));

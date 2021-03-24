@@ -26,6 +26,15 @@ class Model_inner_banner extends MY_Model {
         ,inner_banner_status";
 
 
+        $segment_d = array();
+        if (in_array($this->uri->segment(4), $segment_d)) {
+            $this->layer = "editor";
+        }else
+        {
+            $this->layer = "hidden";
+        }
+
+
         // $seg_type = array(1,3);
         // if (in_array($this->uri->segment(4), $seg_type)) {
         //     $this->title_type = "editor";
@@ -107,7 +116,7 @@ class Model_inner_banner extends MY_Model {
                     'table'   => $this->_table,
                     'name'   => 'inner_banner_content1',
                     'label'   => 'Layer 2',
-                    'type'   => 'editor',
+                    'type'   => $this->layer,
                     'attributes'   => array(),
                     'js_rules'   => '',
                     'rules'   => 'trim|htmlentities'

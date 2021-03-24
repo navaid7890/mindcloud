@@ -1,65 +1,38 @@
-<div class="Navbar p-5">
-    <div class="Navbar__Link Navbar__Link-brand">
-        <a class="" href="#"><img src="<?=i('')?>headerlogo.png"></a>
-      </div>
-      <div class="Navbar__Link Navbar__Link-toggle mt-3">
-        <i class="fas fa-bars"></i>
-      </div>
-    <nav class="Navbar__Items p-3 ml-5 nav-item-center">
-      <div class="Navbar__Link">
-        <a class="nav-link" href="#">Experts Tutorials <span class="sr-only">(current)</span></a>
-      </div>
-      <div class="Navbar__Link">
-        <a class="nav-link" href="#">Learning Journey</a>
-      </div>
-      <div class="Navbar__Link">
-        <a class="nav-link" href="#">Consult With Experts</a>
-      </div>
-      <div class="Navbar__Link">
-        <a class="nav-link" href="#">About Us</a>
-      </div>
-      <div class="Navbar__Link">
-        <a class="nav-link" href="#">Enterprise Partners</a>
-      </div>
-    </nav>
-    
+<header>
+	<div class="main-header">
+		<div class="container-fluid">
+			<div class="menu-Bar">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-md-2 text-left">
+					<a href="./" class="logo">
+					<img src="<?=i('')?>logo.png" alt="">
+					</a>
+				</div>
+				<div class="col-md-7">
+					<div class="menuWrap">
+					<ul class="menu">
+						<li><a class="active" href="./">Experts Tutorials</a></li>
+						<li><a href="#">Learning Journey</a></li>
+						<li><a href="#">Consult with Experts</a></li>
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Enterprise Partners</a></li>
+						<li><a href="#">Sign In</a></li>
+						<li><a href="#">Register</a></li>
+					</ul>
+					</div>
+				</div>
 
-    <?php if(isset($this->session->userdata['logged_in_front']) AND array_filled($this->session->userdata['logged_in_front'])) : ?>
-
-      <nav class="Navbar__Items Navbar__Items--right p-3">
-        <div class="Navbar__Link mr-3 d-flex">
-            <a src="#" class="user-name-header"><img src="<?=i('')?>dp.png" width="50px" class="mr-2">Andrew Johnson</a> 
-            <div class="dropdown">
-                <a href="#"><img  onclick="myFunction()" class="dropbtn" src="<?=i('')?>arrow-down.png"></a> 
-                <div id="myDropdown" class="dropdown-content mt-3">
-                  <a href="<?=l('signout')?>">Logout</a> 
-                </div>
-              </div>
-        </div>
-
-        <div class="Navbar__Link mt-2">
-            <a href=""><img src="<?=i('')?>email-box.png" class="mr-3 ml-3"></a>
-            <a href=""><img src="<?=i('')?>notif.png"  class="mr-3 ml-3"></a>
-        </div>
-
-      </nav>
-
-      <? else :?>
-
-
-        <nav class="Navbar__Items Navbar__Items--right pt-2">
-          <div class="Navbar__Link mr-3 d-flex">
-              <a href="javascript:void(0)"><img src="<?=i('')?>CART.png"  class="mr-3 ml-3 mt-3"></a>
-              <a href="<?=l('login')?>" class="mr-5 ml-5 mt-4 h5" style="color: #2B97DB !important;">Sign In</a>
-          </div>
-          <div class="Navbar__Link">
-              <a href="<?=l('signup')?>" class="btn transparent register-navbar-btn">Register</a>
-          </div>
-        </nav> 
-
-      <? endif;?>
-
-
-      
-    
-</div> 
+				<div class="col-md-3 text-right">
+					<ul class="login-btn">
+						<li><a href="#"><i class="fas fa-shopping-cart"></i> Sign In</a></li>
+						<li><a href="#" class="btn-hover">Register <span></span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

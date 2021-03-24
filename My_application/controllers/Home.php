@@ -47,26 +47,37 @@ class Home extends MY_Controller {
         
         $cont = $this->model_cms_page->get_page(2);
         // debug($cont);
-        // $data['serv'] = $cont['child'][0];
-        // $data['serv1'] = $cont['child'][1];
-        // $data['serv2'] = $cont['child'][2];
-        // $data['serv3'] = $cont['child'][3];
-        $data['s21'] = $cont['child'][4];
-        $data['s22'] = $cont['child'][5];
-        $data['s23'] = $cont['child'][6];
-        $data['s24'] = $cont['child'][7];
+        $data['cont1'] = $cont['child'][0];
+        $data['cont2'] = $cont['child'][1];
+        $data['cont3'] = $cont['child'][2];
+        $data['cont4'] = $cont['child'][3];
+        $data['cont5'] = $cont['child'][4];
+        $data['cont6'] = $cont['child'][5];
+        $data['cont7'] = $cont['child'][6];
+        $data['cont8'] = $cont['child'][7];
+        $data['cont9'] = $cont['child'][8];
+        $data['cont10'] = $cont['child'][9];
+        $data['cont11'] = $cont['child'][10];
+        $data['cont12'] = $cont['child'][11];
+        $data['cont13'] = $cont['child'][12];
+        $data['cont14'] = $cont['child'][13];
+        $data['cont15'] = $cont['child'][14];
 
-        $data['s3'] = $cont['child'][8];
+
+        $data['learning'] = $this->model_learning->find_all_active();
+        $data['testimonial'] = $this->model_testimonials->find_all_active();
         
-        $data['s51'] = $cont['child'][9];
-        $data['s52'] = $cont['child'][10];
-        $data['s53'] = $cont['child'][11];
-        $data['s54'] = $cont['child'][12];
+        $ar=array(1,2);
 
+        foreach($ar as $key => $value)
+        { 
+          $all[]=$value;
+        }
+        $param=array();
+        $param['where_in']['client_type']=$all;
+        $data['client'] = $this->model_client->find_all_active($param);
+        debug($data['client']);
 
-        $data['s61'] = $cont['child'][13];
-        $data['s62'] = $cont['child'][14];
-        $data['s63'] = $cont['child'][15];
 
 
 
