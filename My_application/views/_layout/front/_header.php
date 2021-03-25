@@ -16,10 +16,10 @@
 				<div class="col-md-7">
 					<div class="menuWrap">
 					<ul class="menu">
-						<li><a class="active" href="./">Experts Tutorials</a></li>
-						<li><a href="#">Learning Journey</a></li>
+						<li><a class="active" href="<?=l('expert-tutorial')?>">Experts Tutorials</a></li>
+						<li><a href="<?=l('learning-journey')?>">Learning Journey</a></li>
 						<li><a href="#">Consult with Experts</a></li>
-						<li><a href="#">About us</a></li>
+						<!-- <li><a href="<?=l('about-us')?>">About us</a></li> -->
 						<li><a href="#">Enterprise Partners</a></li>
 						<!-- <li><a href="#">Sign In</a></li> -->
 						<li><a href="<?=l('signout')?>">Logout</a></li>
@@ -37,8 +37,8 @@
 					<div class="col-md-7">
 					<div class="menuWrap">
 					<ul class="menu">
-						<li><a class="active" href="./">Experts Tutorials</a></li>
-						<li><a href="#">Learning Journey</a></li>
+					<li><a class="active" href="<?=l('expert-tutorial')?>">Experts Tutorials</a></li>
+						<li><a href="<?=l('learning-journey')?>">Learning Journey</a></li>
 						<li><a href="#">Consult with Experts</a></li>
 						<li><a href="#">About us</a></li>
 						<li><a href="#">Enterprise Partners</a></li>

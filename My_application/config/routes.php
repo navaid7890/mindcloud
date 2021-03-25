@@ -84,6 +84,10 @@ $route['terms-and-conditions'] = "about_us/terms";
 $route['privacy-policy'] = "about_us/policy";
 $route['cookie-policy'] = "about_us/cookie";
 
+$route['learning-journey'] = "about_us/learning";
+$route['expert-tutorial'] = "about_us/expert";
+$route['about-us'] = "about_us/index";
+
 	
 //PACKAGE
 // $route['package-payment-step-1'] = "package/order_view";
