@@ -27,6 +27,24 @@ $(document).ready(function() {
     });
 
 
+    $('.consult-left-slide').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        responsive: [{
+                breakpoint: 824,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+
+        ]
+    });
+
 
     $('.testi-slider').slick({
         dots: false,

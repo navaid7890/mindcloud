@@ -159,6 +159,55 @@ class About_us extends MY_Controller {
     //     $this->load_view("showcase",$data);
     // }
 
+    
+    public function learning()
+    {
+        $data = array();
+        global $config;
+
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+
+        //INNER BANNER
+        //  $b = $this->get_ibanner(7);
+        //  $data['ititle'] = $b['ititle'];
+        //  $data['ibanner_img'] = $b['ibanner_img'];
+        //     //BANNER
+        //  // $b = $this->get_banner(10);
+        //  // $data['bcontent'] = $b['bcontent'];
+        //  // $data['bimage'] = $b['bimage'];
+
+        //  $cont = $this->model_cms_page->get_page(34);
+         
+        // $data['content'] = $cont;         
+
+        $this->load_view("learning",$data);
+    }
+
+    public function expert()
+    {
+        $data = array();
+        global $config;
+
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+
+        //INNER BANNER
+        //  $b = $this->get_ibanner(7);
+        //  $data['ititle'] = $b['ititle'];
+        //  $data['ibanner_img'] = $b['ibanner_img'];
+        //     //BANNER
+        //  // $b = $this->get_banner(10);
+        //  // $data['bcontent'] = $b['bcontent'];
+        //  // $data['bimage'] = $b['bimage'];
+
+        //  $cont = $this->model_cms_page->get_page(34);
+         
+        // $data['content'] = $cont;         
+
+        $this->load_view("expert",$data);
+    }
+
 
 
 }
