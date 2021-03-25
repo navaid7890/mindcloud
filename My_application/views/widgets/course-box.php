@@ -37,7 +37,7 @@
                 
                 <small>0/3</small></a>
                     <ul class="dropdown-box">
-                        <li><a href="business-model-canvas.php"><i class="fad fa-video"></i>Intro<span><i class="far fa-check"></i></span></a></li>
+                        <!-- <li><a href="business-model-canvas.php"><i class="fad fa-video"></i>Intro<span><i class="far fa-check"></i></span></a></li> -->
                         <li><a href="video-transcript.php"><i class="fad fa-video"></i>  Video & Transcript <span><i class="far fa-check"></i></span></a></li>
                         <li><a href="tool-and-tool-builder.php"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
                         <li><a href="my-startup.php"><i class="fad fa-video"></i> Your Work<span><i class="far fa-check"></i></span></a></li>
