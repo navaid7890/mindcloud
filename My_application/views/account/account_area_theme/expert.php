@@ -1,12 +1,10 @@
-<section class="dashboard">
+<div class="index-page">
+    <section class="dashboard">
          <ul class="dashboard-layout">
               <li> 
                 <? $this->load->view("widgets/dashboard-menu-box");?>
-            </li>
-
-            <li> 
-                <? $this->load->view("widgets/course-box");?>
-            </li>
+              </li>
+ 
             <li>
                <div class="index-page-wrap">
                     <div class="index-page-content hding-2">
@@ -510,3 +508,4 @@
             </li>
          </ul>
       </section>
+</div>
