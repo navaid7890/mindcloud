@@ -28946,7 +28946,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 .mCSB_scrollTools .mCSB_buttonLeft,
 .mCSB_scrollTools .mCSB_buttonRight,
 .mCSB_scrollTools .mCSB_buttonUp {
-    background-image: url(../images/mCSB_buttons.png);
+    background-image: url(../../images/mCSB_buttons.png);
     background-repeat: no-repeat;
     opacity: .4;
     filter: "alpha(opacity=40)";

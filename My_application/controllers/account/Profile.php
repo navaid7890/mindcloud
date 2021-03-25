@@ -505,6 +505,105 @@ class Profile extends MY_Controller_Account {
 	
 
 	*/
+
+
+	public function expert()
+	{
+		global $config;
+		$user_id = $this->userid;
+
+		$data['title'] = 'My Profile';
+		
+		$data['user_data'] = $this->layout_data['user_data'];
+
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+
+		$this->load_view('expert' , $data);
+	}
+
+	public function learning()
+	{
+		global $config;
+		$user_id = $this->userid;
+
+		$data['title'] = 'My Profile';
+		
+		$data['user_data'] = $this->layout_data['user_data'];
+
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+
+		$this->load_view('learning' , $data);
+	}
+
+	public function startup()
+	{
+		global $config;
+		$user_id = $this->userid;
+
+		$data['title'] = 'My Profile';
+		
+		$data['user_data'] = $this->layout_data['user_data'];
+
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+
+		$this->load_view('startup' , $data);
+	}
+
+
+	public function tools()
+	{
+		global $config;
+		$user_id = $this->userid;
+
+		$data['title'] = 'My Profile';
+		
+		$data['user_data'] = $this->layout_data['user_data'];
+
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+
+		$this->load_view('tools' , $data);
+	}
+
+	public function video()
+	{
+		global $config;
+		$user_id = $this->userid;
+
+		$data['title'] = 'My Profile';
+		
+		$data['user_data'] = $this->layout_data['user_data'];
+
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+
+		$this->load_view('video' , $data);
+	}
+
+	public function business()
+	{
+		global $config;
+		$user_id = $this->userid;
+
+		$data['title'] = 'My Profile';
+		
+		$data['user_data'] = $this->layout_data['user_data'];
+
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+
+		$this->load_view('business' , $data);
+	}
+
+
+
+
+	
+
+
+
+
+
+
+
+	
 }
 
 /* End of file welcome.php */
