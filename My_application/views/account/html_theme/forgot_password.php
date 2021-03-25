@@ -1,26 +1,45 @@
 
-    <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6">
-              <form class="signinform" id="forms-forgot_password">
+    <div class="login-banner">
+        <div class="container-fluid pad-zero para w-100">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="login-wrap">
+                        <div  class="w-100">
+                        <div class="login-content">
+                            <h4>Forgot password?</h4>
+                            <div class="space"><br></div>
+                            <p>Please enter valid email to reset your password</p>
+                        </div>
+                        <div class="space"><br><br></div>
 
-                <div class="container">
-                    <div style="color:#2790E3;font-size:24px;"> <?=$title?> </div>
-                    <div class="pb-5" style="color: #858585; font-size:14px;">Please enter valid email to reset your password</div>
-                    <label for="uname"><b class="texts">Email Address</b></label><br>
-                    <input class="signinfield " type="text" placeholder="Enter Email Address" name="forgot_password[user_email]" id="defaultForm-email" required><br>
+                        <div class="login-form">
+                            <div>
+                                <form id="forms-signin">
+                                    <?php 
+                                        $redirect_url = isset($_GET['url']) ? $_GET['url'] :  $this->agent->referrer(); 
+                                    ?> 
+                                    <input type="hidden" name="url" value='<?=$redirect_url?>'>
+                                    <div class="fld-login"> 
+                                        <input type="text" placeholder="someexample@gmail.com" name="forgot_password[user_email]" id="defaultForm-email" required>
+                                    </div>
+                                    <div class="fld-btn">
+                                        <input type="submit" id='forgot_password-btn' value="Reset">
+                                    </div>
+                                </form>
 
-                    <button class="formbutton" id='forgot_password-btn' type="submit" style="color:white;">SUBMIT</button>
-
-
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-            </form>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-            <div class="behind" >
-                <a href=""> <img class="newmind" style="width: 200px;"  src="<?i('')?>footerlogo.png"></a>
+                <div class="col-lg-6 col-md-12">
+                    <div class="login-mdl">
+                        <span><img src="<?=i('')?>login.png" alt=""></span>
+                        <a href="./" class="white-logo"><img src="<?=i('')?>footer-logo.png" alt=""></a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
+     </div>   
+     </div>
  

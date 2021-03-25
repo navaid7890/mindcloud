@@ -1,40 +1,66 @@
 
 
+ <div class="login-banner">
+    <div class="container-fluid pad-zero para w-100">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="login-wrap">
+                    <div  class="w-100">
+                    <div class="login-content">
+                        <h4>Log in</h4>
+                        <div class="space"><br></div>
+                        <p>Log in with your data that your entered during your registration</p>
+                    </div>
+                    <div class="space"><br><br></div>
 
+                    <div class="login-form">
+                        <div>
+                            <form class="signinform" id="forms-signin">
+                            <?php 
+                              $redirect_url = isset($_GET['url']) ? $_GET['url'] :  $this->agent->referrer(); 
+                            ?> 
+                            <input type="hidden" name="url" value='<?=$redirect_url?>'>
+                                <div class="fld-login">
+                                    <label>Email Address</label>
+                                    <input type="text" placeholder="someexample@gmail.com" name="user[user_email]" id="defaultForm-email" required>
+                                </div>
 
-  <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <form class="signinform" id="forms-signin">
-            <?php 
-                $redirect_url = isset($_GET['url']) ? $_GET['url'] :  $this->agent->referrer(); 
-                ?> 
-            <input type="hidden" name="url" value='<?=$redirect_url?>'>
-            <div class="container">
-                <div style="color:#2790E3;font-size:24px;"> Log In</div>
-                <div class="pb-5" style="color: #858585; font-size:14px;">Log in with your data that your entered during <br>your registration</div>
-                <label for="uname"><b class="texts">Email Address</b></label><br>
-                <input class="signinfield" type="text" placeholder="Enter Email Address" name="user[user_email]" id="defaultForm-email" required><br>
+                                <div class="fld-login">
+                                    <label>Password</label>
+                                    <input type="password" name="user[user_password]" id="defaultForm-pass" required>
+                                </div>
 
-                <label for="psw"><b class="texts">Password</b></label><br>
-                <input class="signinfield" type="password" placeholder="Enter Password" name="user[user_password]" id="defaultForm-pass" required><br>
-                <label class="texts pt-3 pb-2">
-                    <input type="checkbox" checked="checked" name="remember"> Keep me logged in
-                <span class="forgotpassword" > <a href="<?=l('forgot-password')?>"> Forgot password?</a></span></label> 
-                <br>
-                <button class="formbutton" type="submit" style="color:white;">SignIn</button>
-                <div class="already-account-text" style="width: 40%; text-align: center;">
-                  <div class="mt-3" style="color:#858585; ">Don't have an account? <a href="<?=l('signup')?>">Register</a></div>
+                                <div class="fld-html row">
+                                    <div class="col-md-6">
+                                        <label for="checkbox"><input type="checkbox" checked="checked" id="checkbox"> Keep me logged in</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <a href="<?=l('forgot-password')?>"><input type="button" value="Forgot password?"></a>
+                                    </div>
+                                </div>
+
+                                <div class="fld-btn">
+                                    <input type="submit" value="Sign In">
+                                </div>
+                            </form>
+
+                            <div class="for-register">
+                                <p>Don't have an account? <a href="<?=l('signup')?>">Register</a></p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                 </div>
-
-
             </div>
-
-          </form>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="behind" >
-              <a href=""> <img class="newmind" style="width: 200px;" src="<?=i('')?>footerlogo.png"></a>
-          </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="login-mdl">
+                    <span><img src="<?=i('')?>login.png" alt=""></span>
+                    <a href="./" class="white-logo"><img src="<?=i('')?>footer-logo.png" alt=""></a>
+                </div>
+            </div>
         </div>
     </div>
+  </div>   
+
+  
  
