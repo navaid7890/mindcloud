@@ -2825,6 +2825,9 @@ ul.user-links>li>a:hover {
     .vid-box {
         min-height: auto;
     }
+    .index-page-wrap {
+        height: 550px;
+    }
     a.cate-tag {
         top: 38%;
     }
