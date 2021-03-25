@@ -66,18 +66,7 @@ class Home extends MY_Controller {
 
         $data['learning'] = $this->model_learning->find_all_active();
         $data['testimonial'] = $this->model_testimonials->find_all_active();
-        
-        $ar=array(1,2);
-
-        foreach($ar as $key => $value)
-        { 
-          $all[]=$value;
-        }
-        $param=array();
-        $param['where_in']['client_type']=$all;
-        $data['client'] = $this->model_client->find_all_active($param);
-        debug($data['client']);
-
+        $data['client'] = $this->model_client->find_all_active();
 
 
 

@@ -1,6 +1,6 @@
 <?global $config;
 
-$this->layout_data['additional_tools'];
+// $this->layout_data['additional_tools'];
 
 
 
@@ -439,20 +439,23 @@ $this->layout_data['additional_tools'];
 
               "css" => array(
 
-                  "blueimp-gallery/blueimp-gallery.min.css",
+                  // "blueimp-gallery/blueimp-gallery.min.css",
 
-                  "css/jquery.fileupload.css",
+                  // "css/jquery.fileupload.css",
 
-                  "bootstrap.min.css", 
-                  "bootstrap3.3.7.css", 
-                  "cdnbootstrap.css", 
-                  "fontgoogleapis.css", 
-                  "slick.css", 
-                  "slick-theme.css", 
-                  "fontawesomekit.css", 
-                  "custom.css",  
+                  // "bootstrap.min.css", 
+                  // "bootstrap3.3.7.css", 
+                  // "cdnbootstrap.css", 
+                  // "fontgoogleapis.css", 
+                  // "slick.css", 
+                  // "slick-theme.css", 
+                  // "fontawesomekit.css", 
+                  // "custom.css",  
 
                   //"css/jquery.fileupload-ui.css",
+
+                  // "layout.css",
+                  // "style.css",
 
                 ),
 
@@ -528,6 +531,13 @@ $this->layout_data['additional_tools'];
 
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
 
+
+<link rel="stylesheet" href="<?=$config['base_url']?>assets/front_assets/css/account/layout.css" type="text/css" />
+
+<link rel="stylesheet" href="<?=$config['base_url']?>assets/front_assets/css/account/style.css" type="text/css" />
+
+<script src="<?=$config['base_url']?>assets/front_assets/js/account/jquery.js"></script>
+
 <?
 
 //Put Meta Data
@@ -544,27 +554,11 @@ echo '<meta name="' . $meta_name . '" content="' . $meta_val . '">';
 
 
 
-<?foreach($css_files AS $file){?>
-
-  <link rel="stylesheet" href="<?=$config['css_root'] . $file; ?>" type="text/css" />
-
-<?}?>
-
 
 
 <?
 
-if(array_filled($js_files_init)) {
 
-  foreach ($js_files_init as $js) {?>
-
-    <script src="<?=g('js_root').$js?>"></script> 
-
-  <?
-
-  }
-
-}
 
 ?>
 
@@ -630,7 +624,7 @@ if(is_array($additional_tools) && count($additional_tools))
 
 <!-- BEGIN BODY -->
 
-<body class="customeAccountList">
+<body class="customeAccountList" id="top">
 
 
 
@@ -692,7 +686,7 @@ if(is_array($additional_tools) && count($additional_tools))
 
 
 
-      <div class="col-md-12 col-xs-12 col-sm-12 no-margin">
+      <div class="col-md-12 col-xs-12 col-sm-12 no-margin" style="padding:0;">
 
         <div class="dashboardabout-div" >
 
@@ -728,98 +722,139 @@ if(is_array($additional_tools) && count($additional_tools))
 
 
 <footer>
-    <div class="footer-bg ">
-        <div class="container ">
-            <div class="row ">
-                <div class="w-100 back-to-top-mble">
-                    <div class="col-md-11">
-                        <a class="navbar-brand mb-3 mt-3 text-white " href="index.html "><img src="<?=i('')?>footerlogo.png "></a>
-                    </div>
-                    <div class="col-md-1 arrow-scroll-icon">
-                        <a id="back-to-top" href="#" class="back-to-top p-3 rounded-circle" role="button"><img src="<?=i('')?>arrow_upward-24px.png" width="20px"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-5  ">
-                <div class="col-md-3 col-xs-12 mb-3 ">
-                    <h4 class="white mb-3">OFFERINGS</h4>
-                    <ul class="footer-ul-items ">
-                        <li class="footer-item "> <a href="# "> Experts Tutorials </a> </li>
-                        <li class="footer-item "> <a href="# "> Consult with Experts </a> </li>
-                        <li class="footer-item "> <a href="# "> Join our Tribe Experts </a> </li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-xs-12 ">
-                    <h4 class="white mb-3 ">NAVIGATION</h4>
-                    <ul class="footer-ul-items ">
-                        <li class="footer-item "> <a href="# "> Mind Cloud Tribe for Business </a> </li>
-                        <li class="footer-item "> <a href="# "> About Us </a> </li>
-                        <li class="footer-item "> <a href="# "> Community </a> </li>
-                        <li class="footer-item "> <a href="# "> FAQs </a> </li>
-                        <li class="footer-item "> <a href="# "> Contact Us </a> </li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-xs-12 ">
-                    <h4 class="white mb-3 ">TOP EXPERT TUTORIALS</h4>
-                    <ul class="footer-ul-items ">
-                        <li class="footer-item "> <a href="# "> Building the Right Team </a> </li>
-                        <li class="footer-item "> <a href="# "> Business Valuation Fundamentals </a> </li>
-                        <li class="footer-item "> <a href="# "> Digital Marketing and Sales for Start-Ups </a> </li>
-                        <li class="footer-item "> <a href="# "> Overview of S.E.O </a> </li>
-                        <li class="footer-item "> <a href="# "> Human Resources 101 for Start-Ups </a> </li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-xs-12 ">
-                    <h4 class="white mb-3 ">TOP EXPERT TUTORIALS</h4>
-                    <ul class="footer-ul-items ">
-                        <li class="footer-item "> <a href="# "> + 971 50 650 8595 </a> </li>
-                        <li class="footer-item "> <a href="# "> info@mindcloudtribe.com </a> </li>
-                        <li class="footer-item "> <a href="# "> Area 2071, Emirates Tower </a> </li>
-                        <li class="footer-item "> <a href="# "> P.O. Box 555509 </a> </li>
-                        <li class="footer-item "> <a href="# "> United Arab Emirates </a> </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row bg-white ">
-            <div class="container ">
-                <div class="row pb-0">
-                    <div class="col-md-7 mt-1">
-                        <p class="text-dark  p-0 footer-white-text">Mind Cloud Tribe is part of Mind Cloud Academy with Knowledge and Human Development Authority ( KHDA ) Permit # : 628780</p>
-                    </div>
-                    <!-- <div class="col-md-12 pt-3 mb-3 "> -->
-                        <div class="col-md-5 mb-0 mt-1">
-                            
-                    <span class="d-flex footer-white-settng">
-                        <div>
-                            Follow us: 
-                    <a href="#0 " class="social-media-icon "> <i class="fab fa-facebook-f "></i> </a>
-                    <a href="#0 " class="social-media-icon "> <i class="fab fa-instagram "></i> </a>
-                    <a href="#0 " class="social-media-icon "> <i class="fab fa-linkedin-in "></i> </a>
-                    <a href="#0 " class="social-media-icon "> <i class="fab fa-youtube "></i> </a>
-                        </div>
-                    <div>
-                        
-                    Payment  
-                    <a href="#0 " class="social-media-icon "> <img src="<?=i('')?>mastercard.png " width="30px "> </a>
-                    <a href="#0 " class="social-media-icon "> <i class="fab fa-cc-visa "></i> </a>
-                </div>                      
-                </span>
-                        </div>
-                        
-                </div>
-            </div>
-        </div>
-        <div class="container ">
-            <div class="row ">
-                <div class="ml-4">
-                    <a href="# " class="white footer-copyright ">Copyright © 2020 MindCloud Tribe &nbsp;<b>|</b>&nbsp;</a>
-                    <a href="# " class="white footer-privacy-pol ">Privacy Policy &nbsp;<b>|</b>&nbsp;</a>
-                    <a href="# " class="white footer-refund ">Terms of use and Refund </a>
-                </div>
-            </div>
-        </div>
+   <div class="container">
+
+   <a href="#top" class="b-top"><i class="fas fa-arrow-circle-up"></i></a>
+
+	<a href="./" class="footer-logo"><img src="<?=i('')?>footer-logo.png" alt=""></a>
+	<div class="space"><br><br><br></div>
+
+   	<div class="row">
+   		<div class="col-lg-3 col-md-6">
+   			<div class="widget">
+   				<h4>OFFERINGS</h4>
+				<ul class="quick-links">
+					<li><a href="#">Experts Tutorials</a></li>
+					<li><a href="#">Learning Journey</a></li>
+					<li><a href="#">Consult with Experts</a></li>
+					<li><a href="#">Advisory</a></li>
+					<li><a href="#">Join our Tribe Experts</a></li> 
+				</ul>
+   			</div>
+   		</div>
+   		<div class="col-lg-3 col-md-6">
+   			<div class="widget">
+			   <h4>navigation</h4>
+				<ul class="quick-links">
+					<li><a href="#">Mind Cloud Tribe for Enterprise</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Community</a></li>
+					<li><a href="#">FAQs</a></li>
+					<li><a href="#">Contact Us</a></li> 
+				</ul>
+   			</div>
+   		</div>
+   		<div class="col-lg-3 col-md-6">
+   			<div class="widget">
+			   <h4>top experts tutorials</h4>
+				<ul class="quick-links">
+					<li><a href="#">Building the Right Team</a></li>
+					<li><a href="#">Business Valuation Fundamentals</a></li>
+					<li><a href="#">Digital Marketing and Sales for Start-Ups</a></li>
+					<li><a href="#">Overview of S.E.O</a></li>
+					<li><a href="#">Human Resources 101 for Start-Ups</a></li> 
+				</ul>
+   			</div>
+   		</div>
+
+		<div class="col-lg-3 col-md-6 flex-center">
+   			<div class="widget">
+			   <h4>get in touch</h4>
+				<ul class="quick-links">
+					<li><a href="tel:+ 971 50 650 8595">+ 971 50 650 8595</a></li>
+					<li><a href="mailto:info@mindcloudtribe.com">info@mindcloudtribe.com</a></li>
+					<li><p>Area 2071, Emirates Tower<br>P.O. Box 555509<br>United Arab Emirates</p></li>
+				</ul>
+   			</div>
+   		</div>
+   	</div>
+     
+   </div>
 </footer>
+
+<div class="copyright-top">
+ 	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-8 col-md-12">
+				<p>Mind Cloud Tribe is part of Mind Cloud Academy with Knowledge and Human Development Authority ( KHDA ) Permit # : 628780</p>
+			</div>
+
+			<div class="col-lg-4 col-md-12">
+				<div class="ftr-pay">
+					<ul class="social-links">
+						<li>Follow us:</li>
+						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+						<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+						<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+					</ul>
+
+					<ul class="social-links">
+						<li>Payment</li>
+						<li><a href="#"><i class="fab fa-cc-mastercard"></i></a></li>
+						<li><a href="#"><i class="fab fa-cc-visa"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="copyright">
+	<div class="container">
+		<ul>
+			<li>Copyright © 2020 Mind Cloud Tribe</li>
+			<li><a href="#">Privacy Policy</a></li>
+			<li><a href="#">Terms of use and Refund</a></li>
+		</ul>
+	</div>
+</div>
+
+
+
+<div class="popup-main" style="display:none;" id="popup-down">
+	<div class="popup-head text-center">
+		<h5>Congratulations!</h5>
+		<div class="space"><br></div>
+		<p>We are very happy that you have successfully completed your Tutorial. Please receive this Certificate as acknowledgment for your effort. Wishing you a lot of success from Mind Cloud Tribe family!</p>
+	</div>
+	<div class="space"><br><br></div>
+	<div class="popup-content text-center">
+		<div class="certificate-modal">
+			<img src="<?=i('')?>dashboard/certificate.png" alt="">
+		</div>
+	</div>
+	<div class="space"><br></div>
+	<div class="popup-footer">
+		<div class="row align-items-center">
+			<div class="col-md-6">
+				<ul class="social-links">
+					<li><p> Share on:</p></li>
+					<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<div class="popup-col">
+					<p>Download Certificate:</p>
+					<a href="#"><img src="<?=i('')?>dashboard/home/icons/4.svg" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 </body>
@@ -834,6 +869,17 @@ if(is_array($additional_tools) && count($additional_tools))
 
 <script src="https://gromo.github.io/jquery.scrollbar/jquery.scrollbar.js "></script>
 
+
+<script src="<?=$config['base_url']?>assets/front_assets/js/account/custom.js"></script>
+
+
+<script>
+$("ul.course-scroll, .tutorial-scroll-content, .video-caption, .index-page-wrap ").mCustomScrollbar({
+    scrollButtons: { enable: true },
+    theme: "dark"
+});
+</script>
+ 
 <?foreach($js_files AS $file){
 
 ?>

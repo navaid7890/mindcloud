@@ -1,5 +1,5 @@
 <?global $config;
-$this->layout_data['additional_tools'];
+// $this->layout_data['additional_tools'];
 
   $my_tools = array(
             "datatables-front" => array(

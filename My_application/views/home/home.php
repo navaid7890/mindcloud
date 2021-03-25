@@ -485,7 +485,9 @@
             <div class="space"><br><br></div>
             <ul class="client-logo">
                 <?php foreach ($client as $key => $value): ?>
-                    <li><a href="#"><img src="<?=get_image($value['client_image'],$value['client_image_path'])?>" alt=""></a></li> 
+                    <?php if ($value['client_type'] == '1'): ?> 
+                        <li><a href="#"><img src="<?=get_image($value['client_image'],$value['client_image_path'])?>" alt=""></a></li> 
+                    <?php endif ?>
                 <?php endforeach ?> 
             </ul>
         </div>
@@ -495,9 +497,12 @@
                 <h2>Our <strong>Strategic Partners</strong></h2>
             </div>
             <div class="space"><br><br></div>
-            <ul class="client-logo">
-                <li><a href="#"><img src="<?=i('')?>client/3.png" alt=""></a></li>
-                <li><a href="#"><img src="<?=i('')?>client/4.png" alt=""></a></li>
+            <ul class="client-logo"> 
+                <?php foreach ($client as $key => $value): ?>
+                    <?php if ($value['client_type'] == '2'): ?> 
+                        <li><a href="#"><img src="<?=get_image($value['client_image'],$value['client_image_path'])?>" alt=""></a></li> 
+                    <?php endif ?>
+                <?php endforeach ?> 
             </ul>
         </div>
         </div>
