@@ -192,18 +192,70 @@ class About_us extends MY_Controller {
         $method_title = ucwords($this->uri->segment(1));
         $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
 
-        //INNER BANNER
-        //  $b = $this->get_ibanner(7);
-        //  $data['ititle'] = $b['ititle'];
-        //  $data['ibanner_img'] = $b['ibanner_img'];
-        //     //BANNER
-        //  // $b = $this->get_banner(10);
-        //  // $data['bcontent'] = $b['bcontent'];
-        //  // $data['bimage'] = $b['bimage'];
+        $cont = $this->model_cms_page->get_page(2);
+        $data['cont1'] = $cont['child'][4];
+        $data['cont2'] = $cont['child'][5];
 
-        //  $cont = $this->model_cms_page->get_page(34);
-         
-        // $data['content'] = $cont;         
+        $conts = $this->model_cms_page->get_page(20);
+        $data['con1'] = $conts['child'][0];
+
+        $contss = $this->model_cms_page->get_page(20);
+  
+        $data['con2'] = $contss['child'][1];
+        $data['con3'] = $contss['child'][2];
+        $data['con4'] = $contss['child'][3];
+        $data['con5'] = $contss['child'][4];
+
+   
+           
+     
+
+        $par=array();
+        $par['order']="category_id ASC";
+        $data['main_categories'] = $this->model_category->find_all_active($par);
+
+        $par2=array();
+        $par2['order']="expert_id ASC";
+        $data['ex'] = $this->model_expert->find_all_active($par2);
+        //debug($data['main_categories']);
+
+          $param = array();
+          if(isset($_GET['expert']) AND intval($_GET['expert']) > 0){
+          $param['where']['course_expert_id'] = intval($this->input->get('expert'));
+          }
+
+   
+          if(isset($_GET['cat']) AND intval($_GET['cat']) > 0){
+          $param['where']['course_category_id'] = intval($this->input->get('cat'));
+      }
+
+ 
+
+  
+
+
+      $param['order']="course_id ASC";
+
+      $data['art'] = $this->model_course->get_details($param);
+
+      
+      $pop=array();
+      $pop['where']['category_featured']=1;
+      $data['popular'] = $this->model_category->find_all_active($pop);
+     // debug($data['art']);
+
+           
+     $fa=array();
+     $fa['where']['faq_category']=1;
+     $fa['order']="faq_id ASC";
+     $data['faq'] = $this->model_faq->find_all_active($fa);
+      
+     $exp1 = $this->model_cms_page->get_page(26);
+  
+     $data['check'] = $exp1['child'][0];
+   
+
+
 
         $this->load_view("expert",$data);
     }
