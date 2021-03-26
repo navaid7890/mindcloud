@@ -5,15 +5,9 @@
     <div class="space"><br><br></div>
     
     <ul class="cate-list">
-        <li><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Business Model (4)</p></li>
-        <li><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Digital marketing (12)</p></li>
-        <li><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Finance and Valuation (6)</p></li>
-        <li><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Leadership (9)</p></li>
-        <li><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Human resources (14)</p></li>
-        <li><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Customer Acquisition (12)</p></li>
-        <li><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Marketing & Sales (10)</p></li>
-        <li><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Branding (4)</p></li>
-        <li><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Business Model (4)</p></li>
+        <? foreach ( $category as $value ) : ?>
+            <li><p><span><img src="<?=get_image($value['category_image'],$value['category_image_path'])?>"></span> <?= $value['category_name'] ?> (4)</p></li>
+        <? endforeach ?>
     </ul>
     
     <a href="#" class="btn-theme btn-hover">View all Tutorials <span></span></a>

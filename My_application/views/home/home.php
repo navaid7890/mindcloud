@@ -2,20 +2,19 @@
 .joinSec {
     background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(<?=get_image($cont15['cms_page_image'],$cont15['cms_page_image_path'])?>);
 }
+.home-banner{
+    background-image:url('<?=get_image($banner['inner_banner_image'],$banner['inner_banner_image_path'])?>');
+}
 </style>
-<div class="mainBanner home-banner hding-1 hding-2" style="background-image:url('<?=i('')?>banner/2.png');">
+<div class="mainBanner home-banner hding-1 hding-2">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8 col-md-12">
                 <div>
-                    <h1>Step into your Vision</h1>
+                    <h1><?= $banner['inner_banner_title'] ?></h1>
                     <div class="space"><br><br></div>
 
-                    <ul>
-                    <li>Advance your Business Skills</li>
-                    <li>Build your Investment Deck</li>
-                    <li>Consult with Experts</li>
-                    </ul>
+                    <?= html_entity_decode($banner['inner_banner_content']) ?> 
                     <div class="space"><br><br></div>
 
                     <a href="#" class="btn-links" data-fancybox="media"><i class="fas fa-play-circle"></i> watch how it works</a>
@@ -27,9 +26,9 @@
                     <div>
                     <h2>Get <strong>Started</strong></h2>
                     <div class="space"><br></div>
-                    <form action="">
+                    <form id="forms-newsletter">
                         <div class="fld-input">
-                            <input type="email" placeholder="Enter email address" required="">
+                            <input type="email" name="newsletter[newsletter_email]" placeholder="Enter email address" required="">
                         </div>
                         <div class="space"><br><br></div>
                         <div class="fld-html">
@@ -37,7 +36,7 @@
                         </div>
                         <div class="space"><br></div>
                         <div class="fld-btn">
-                            <input type="submit" value="Proceed to Free Trial">
+                            <input type="submit" id="forms-newsletter-btn" value="Proceed to Free Trial">
                         </div>
                     </form>
                     </div>   
@@ -161,39 +160,9 @@
     <? $this->load->view('widgets/_join_mind_cloud_tribe_today'); ?>
 
     <? $this->load->view('widgets/_testimonials'); ?>
+ 
+    <? $this->load->view('widgets/_clients'); ?>
 
-
-    <section class="clientSec hding-2 pad-sec">
-        <div class="container">
-        <div class="c1">
-            <div class="clientHead">
-                <h2>Our <strong>Corporate Clients</strong></h2>
-            </div>
-            <div class="space"><br><br></div>
-            <ul class="client-logo">
-                <?php foreach ($client as $key => $value): ?>
-                    <?php if ($value['client_type'] == '1'): ?> 
-                        <li><a href="#"><img src="<?=get_image($value['client_image'],$value['client_image_path'])?>" alt=""></a></li> 
-                    <?php endif ?>
-                <?php endforeach ?> 
-            </ul>
-        </div>
-
-        <div class="c2">
-            <div class="clientHead">
-                <h2>Our <strong>Strategic Partners</strong></h2>
-            </div>
-            <div class="space"><br><br></div>
-            <ul class="client-logo"> 
-                <?php foreach ($client as $key => $value): ?>
-                    <?php if ($value['client_type'] == '2'): ?> 
-                        <li><a href="#"><img src="<?=get_image($value['client_image'],$value['client_image_path'])?>" alt=""></a></li> 
-                    <?php endif ?>
-                <?php endforeach ?> 
-            </ul>
-        </div>
-        </div>
-    </section>
 
     <section class="doxSec hding-3 para pad-sec bg-white">
         <div class="container">

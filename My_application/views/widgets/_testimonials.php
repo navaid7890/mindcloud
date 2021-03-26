@@ -18,8 +18,7 @@
 
                         <div class="col-md-8">
                             <div class="t-content">
-                                <h2><?=$value['testimonials_heading']?></h2>
-                                <div class="space"><br><br><br></div>
+                                <h2><?=$value['testimonials_heading']?></h2> 
                                 <div class="space"><br><br></div>
 
                                 <?=html_entity_decode($value['testimonials_desc'])?>

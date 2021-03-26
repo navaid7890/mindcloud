@@ -63,10 +63,26 @@ class Home extends MY_Controller {
         $data['cont14'] = $cont['child'][13];
         $data['cont15'] = $cont['child'][14];
 
+        $data['banner'] = $this->model_inner_banner->find_by_pk(1); 
 
         $data['learning'] = $this->model_learning->find_all_active();
         $data['testimonial'] = $this->model_testimonials->find_all_active();
         $data['client'] = $this->model_client->find_all_active();
+
+        $param = array();
+        $param['where']['category_featured'] = 1;
+        $data['category'] = $this->model_category->find_all_active($param); 
+
+//         foreach($abc as $key=> $value)
+//         {
+//           $dt[]=$value['category_id'];
+
+//         }
+      //  debug($dt);
+      //   $par=array();
+      //   $par['where']['course_category_id'] = $dt;
+      //   $data['category'] = $this->model_course->find_count_in($dt);
+      //   debug($data['category']);
 
 
 

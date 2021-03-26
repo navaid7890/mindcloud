@@ -1596,16 +1596,17 @@ ul.cate-list {
 }
 
 .t-content p {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 300;
     line-height: 44px;
 }
 
 .t-image {
-    width: 354px;
-    height: 354px;
+    width: 254px;
+    height: 254px;
     border-radius: 100%;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .t-image img {
