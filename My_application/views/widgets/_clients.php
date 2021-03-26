@@ -1,3 +1,7 @@
+<?
+
+     $client= $this->model_client->find_all_active();
+?>
 <section class="clientSec hding-2 pad-sec">
     <div class="container">
     <div class="c1">

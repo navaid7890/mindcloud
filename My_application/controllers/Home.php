@@ -24,18 +24,11 @@ class Home extends MY_Controller {
         $this->cms_page_id = 2;
         
         $this->layout_data['title'] = g('db.admin.site_title');
-        // $method_title = ucwords($this->uri->segment(2));
-        // $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
-
-        // SEO Module
-        //$this->plugin_seo();
-        // $this->register_plugins(array("slick"));
+     
 
         //BANNER
         $data['banner'] = $this->model_banner->get_banners();
-         // $b = $this->get_banner(1);
-         // $data['bcontent'] = $b['bcontent'];
-         // $data['bimage'] = $b['bimage'];
+       
 
         $data['professions'] = $this->model_profession->find_all_active();            
         $data['states'] = $this->model_states->find_all_active();            
@@ -67,44 +60,15 @@ class Home extends MY_Controller {
 
         $data['learning'] = $this->model_learning->find_all_active();
         $data['testimonial'] = $this->model_testimonials->find_all_active();
-        $data['client'] = $this->model_client->find_all_active();
-
+   
         $param = array();
         $param['where']['category_featured'] = 1;
         $data['category'] = $this->model_category->find_all_active($param); 
 
-//         foreach($abc as $key=> $value)
-//         {
-//           $dt[]=$value['category_id'];
 
-//         }
-      //  debug($dt);
-      //   $par=array();
-      //   $par['where']['course_category_id'] = $dt;
-      //   $data['category'] = $this->model_course->find_count_in($dt);
-      //   debug($data['category']);
-
-
-
-      // $data['category'] = $this->model_category->find_all_active();        
-      // FEATURED CATEGORY PRODUCTS
-      // $data['featured_category_pro'] = $this->model_product->get_featured_category_products();
-
-      // FEATURED PRODUCTS
-      // $param = array();
-      // $param['where']['product_is_featured'] = 1;
-      // $data['featured_pro'] = $this->model_product->all_products($param);
-
-      //TESTIMONIALS
       $data['testi'] = $this->model_testimonials->find_all_active();
-
-      //GALLERY
-      // $pg = array();
-      // $pg['order'] = "RAND()"; 
-      // $pg['limit'] = 7; 
-      // $data['gallery'] = $this->model_gallery->find_all_active($pg);
-     $firststate = $this->model_states->find_one_active();            
-     $data['firststate'] =$firststate['states_id'];
+      $firststate = $this->model_states->find_one_active();            
+      $data['firststate'] =$firststate['states_id'];
 
         // Load View
         $this->load_view("home",$data);

@@ -168,18 +168,58 @@ class About_us extends MY_Controller {
         $method_title = ucwords($this->uri->segment(1));
         $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
 
-        //INNER BANNER
-        //  $b = $this->get_ibanner(7);
-        //  $data['ititle'] = $b['ititle'];
-        //  $data['ibanner_img'] = $b['ibanner_img'];
-        //     //BANNER
-        //  // $b = $this->get_banner(10);
-        //  // $data['bcontent'] = $b['bcontent'];
-        //  // $data['bimage'] = $b['bimage'];
 
-        //  $cont = $this->model_cms_page->get_page(34);
-         
-        // $data['content'] = $cont;         
+        $data['professions'] = $this->model_profession->find_all_active();            
+        $data['states'] = $this->model_states->find_all_active();            
+        
+        $param = array();
+        $param['where']['course_featured'] = 1;
+        $data['course'] = $this->model_course->find_all_active($param);
+
+        
+        $cont = $this->model_cms_page->get_page(2);
+        // debug($cont);
+        $data['cont1'] = $cont['child'][0];
+        $data['cont2'] = $cont['child'][1];
+        $data['cont3'] = $cont['child'][2];
+        $data['cont4'] = $cont['child'][3];
+        $data['cont5'] = $cont['child'][4];
+        $data['cont6'] = $cont['child'][5];
+        $data['cont7'] = $cont['child'][6];
+        $data['cont8'] = $cont['child'][7];
+        $data['cont9'] = $cont['child'][8];
+        $data['cont10'] = $cont['child'][9];
+        $data['cont11'] = $cont['child'][10];
+        $data['cont12'] = $cont['child'][11];
+        $data['cont13'] = $cont['child'][12];
+        $data['cont14'] = $cont['child'][13];
+        $data['cont15'] = $cont['child'][14];
+
+        $data['banner'] = $this->model_inner_banner->find_by_pk(1); 
+
+        $data['learning'] = $this->model_learning->find_all_active();
+        $data['testimonial'] = $this->model_testimonials->find_all_active();
+   
+        $param = array();
+        $param['where']['category_featured'] = 1;
+        $data['category'] = $this->model_category->find_all_active($param); 
+
+
+      $data['testi'] = $this->model_testimonials->find_all_active();
+      $firststate = $this->model_states->find_one_active();            
+      $data['firststate'] =$firststate['states_id'];
+
+      $exp1 = $this->model_cms_page->get_page(26);
+  
+      $data['check'] = $exp1['child'][0];
+
+               
+     $fa=array();
+     $fa['where']['faq_category']=2;
+     $fa['order']="faq_id ASC";
+     $data['faq'] = $this->model_faq->find_all_active($fa);
+
+          
 
         $this->load_view("learning",$data);
     }

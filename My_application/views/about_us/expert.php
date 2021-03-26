@@ -98,7 +98,7 @@
                      <?php foreach ($art as $key => $value): ?>
                      <li>
                         <div class="vid-box">
-                           <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
+                           <a href="<?=get_image($value['course_video'],$value['course_video_path'])?>" data-fancybox="media">
                               <div class="video-box">
                                  <img src="<?=get_image($value['course_image'],$value['course_image_path'])?>">
                                  <span><i class="fas fa-play"></i> </span>
@@ -248,6 +248,8 @@
       </ul>
    </div>
 </section>
+ 
+<? $this->load->view('widgets/_clients'); ?>
 <script type="text/javascript">
    $("body").on('change','#forum_category',function(){
        var id = $(this).val();
