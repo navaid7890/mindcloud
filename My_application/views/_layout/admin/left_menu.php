@@ -42,9 +42,16 @@ $menu_links = array(
     //     ),
     // ),
 
-    array("title"=>"Testimonials Management", "icon"=>" feather icon-image" ,"action" => array("estimonials") ,
+    array("title"=>"Testimonials Management", "icon"=>" feather icon-image" ,"action" => array("testimonials") ,
         "additionals"=>array(
              array("link"=>"testimonials","title"=>"Manage Testimonials", "icon"=>" fa fa-angle-right"),
+        ),
+    ),
+
+
+    array("title"=>"Expert Management", "icon"=>" feather icon-image" ,"action" => array("expert") ,
+        "additionals"=>array(
+             array("link"=>"expert","title"=>"Manage Experts", "icon"=>" fa fa-angle-right"),
         ),
     ),
 
