@@ -154,11 +154,11 @@ class Model_course extends MY_Model {
     public function get_details($params = array())
     {
         $params['fields'] = 'course_id,course_expert_id,course_slug,
-        course_name,course_level,course_price,course_video,course_video_path,course_status,course_createdon,course_image,course_image_path,expert_id,expert_name,course_featured,course_rating,course_keywords,language_id,language_name';
+        course_name,course_level,course_price,course_video,course_video_path,course_status,course_createdon,course_image,course_image_path,expert_id,expert_name,course_featured,course_rating,course_keywords,language_id,language_name,course_language_id';
 
   
         $params['joins'][] = $this->join_expert();
-    
+        $params['joins'][] = $this->join_language();
         $course = $this->find_all_active($params);
         
         return $course;

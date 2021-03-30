@@ -329,7 +329,10 @@ class About_us extends MY_Controller {
         $fa['order']="faq_id ASC";
         $data['faq'] = $this->model_faq->find_all_active($fa);
 
-        $course = $this->model_course->course_by_slug($slug);
+
+        $ck=array();
+        $ck['where']['course_slug']=$slug;
+        $course = $this->model_course->get_details($ck);
     
         if (count($course) < 1) {
          redirect("?msgtype=error&msg=invalid url");   
