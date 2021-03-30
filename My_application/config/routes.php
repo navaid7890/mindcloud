@@ -69,7 +69,8 @@ $route['not-found'] = "home/notfound";
 
 
 $route['course-catalog'] = "course/index";
-$route['course-detail/(:any)'] = "course/detail/$1";
+$route['course-detail/(:any)'] = "about_us/course_detail/$1";
+//$route['course-detail/(:any)'] = "course/detail/$1";
 $route['course-packages/(:any)'] = "course/course_package/$1";
 
 

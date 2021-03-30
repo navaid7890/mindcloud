@@ -51,6 +51,12 @@ class Model_course extends MY_Model {
         return $this->prep_join("expert" , $joint, $type );
     }
 
+    public function join_language($type="" , $append_joint ="" , $prepend_joint = "")
+    {
+        $joint = $prepend_joint . "course_language_id = language_id" . $append_joint ; 
+        return $this->prep_join("language" , $joint, $type );
+    }
+
     function course_by_slug($slug='',$params= array())
     {
         
@@ -58,10 +64,10 @@ class Model_course extends MY_Model {
         //     "table"=>"brand" ,
         //     "joint"=>"brand.brand_id = product.product_brand_id",
         // );
-            $params['joins'][] = array(
-            "table"=>"states" , 
-            "joint"=>"states.states_id = course.course_state_id"
-            );
+            // $params['joins'][] = array(
+            // "table"=>"states" , 
+            // "joint"=>"states.states_id = course.course_state_id"
+            // );
           $params['where']['course_slug'] = $slug; 
           return $this->model_course->find_one_active($params);
     }
@@ -147,8 +153,8 @@ class Model_course extends MY_Model {
 
     public function get_details($params = array())
     {
-        $params['fields'] = 'course_id,course_expert_id,
-        course_name,course_level,course_price,course_video,course_video_path,course_status,course_createdon,course_image,course_image_path,expert_id,expert_name,course_featured,course_rating,course_keywords';
+        $params['fields'] = 'course_id,course_expert_id,course_slug,
+        course_name,course_level,course_price,course_video,course_video_path,course_status,course_createdon,course_image,course_image_path,expert_id,expert_name,course_featured,course_rating,course_keywords,language_id,language_name';
 
   
         $params['joins'][] = $this->join_expert();
@@ -217,6 +223,18 @@ class Model_course extends MY_Model {
                      'js_rules'   => 'required',
                      'rules'   => 'required|trim|htmlentities'
                 ),  
+
+                'course_language_id' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'course_language_id',
+                    'label'   => 'Language',
+                    'type'   => 'dropdown',
+                    'type_dt'   => 'text',
+                    'attributes'   => array(),
+                    'dt_attributes'   => array("width"=>"5%"),
+                    'js_rules'   => 'required',
+                    'rules'   => 'required|trim|htmlentities'
+               ),  
             
         
         
@@ -350,15 +368,15 @@ class Model_course extends MY_Model {
                      'rules'   => 'required|trim|htmlentities'
                   ),
 
-    // 'course_desc3' => array(
-    //                  'table'   => $this->_table,
-    //                  'name'   => 'course_desc3',
-    //                  'label'   => 'Curriculum',
-    //                  'type'   => 'editor',
-    //                  'attributes'   => array(),
-    //                  'js_rules'   => '',
-    //                  'rules'   => 'trim|htmlentities'
-    //               ),
+    'course_desc3' => array(
+                     'table'   => $this->_table,
+                     'name'   => 'course_desc3',
+                     'label'   => 'Curriculum',
+                     'type'   => 'editor',
+                     'attributes'   => array(),
+                     'js_rules'   => '',
+                     'rules'   => 'trim|htmlentities'
+                  ),
 
     'course_keywords' => array(
                      'table'   => $this->_table,

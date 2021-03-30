@@ -106,7 +106,7 @@
                            </a>
                            <a href="javascript:;" class="cate-tag"><?=$value['course_level']?></a>
                            <div class="vid-content">
-                              <h4><?=$value['course_name']?></h4>
+                              <h4><a href="<?=l('course-detail').'/'.$value['course_slug']?>" style="color:#33415C;"><?=$value['course_name']?></a></h4>
                               <h4><?=$value['expert_name']?></h4>
                               <div class="row align-items-center pt-70">
                                  <div class="col-md-8">

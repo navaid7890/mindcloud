@@ -46,7 +46,7 @@ class Model_cms_page extends MY_Model
         }
 
         
-      $segment_url = array(44,45, 47);
+      $segment_url = array(44,45, 47,29);
         if (in_array($this->uri->segment(4), $segment_url)) {
             $this->cms_url = "text";
         }else

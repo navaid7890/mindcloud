@@ -1,3 +1,28 @@
+
+<style>
+
+.mainBanner {
+    background: transparent linear-gradient(
+180deg
+, #FFFFFF00 0%, #F3F7FB 100%) 0% 0% no-repeat padding-box;
+    height: 586px;
+    align-items: center;
+    display: flex;
+}
+
+.lrnjSec .mainBanner {
+    height: inherit;
+    background: #f3f7fb;
+}
+.lrnjSec {
+    padding: 0px 0;
+    background: #fff;
+}
+
+
+
+</style>
+
 <div class="mainBanner hding-1 para">
          <div class="container">
             <div class="row align-items-center">
@@ -22,17 +47,16 @@
                <div class="row">
                   <div class="col-md-6 flex-center">
                      <div class="abtContent">
-                        <h3><span>ABOUT THE <strong>EXPERT</strong></span> Genny Ghanimeh</h3>
-                        <h4>Founder-CEO at Mind Cloud Tribe</h4>
-                        <p>Following her passions for Micro-finance and online industries, Genny founded Pi-Slice in March 2013 and negotiated a partnership agreement with MicroWorld from the group Planet Finance to build and administer the first crowd-lending platform for Micro Finance in the Middle East and North Africa (MENA).</p>
+                        <h3><span><?=$contd['cms_page_title']?></span> </h3>
+                        <?=html_entity_decode($contd['cms_page_content'])?>
                         <div class="space"><br></div>
                    
                      </div>
                   </div>
                   <div class="col-md-6 text-right">
-                     <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
+                     <a href="<?=$contd['cms_page_url']?>" data-fancybox="media">
                         <div class="video-box">
-                           <img src="<?=i('')?>abt/1.png">
+                        <img src="<?=get_image($contd['cms_page_image'],$contd['cms_page_image_path'])?>">
                            <span><i class="fas fa-play"></i></span>
                         </div>
                      </a>   
@@ -58,222 +82,47 @@
                </ul>
             </div>
 
+
+   
+      <? if(isset($learn_cat) AND array_filled($learn_cat)) :?>
+      <? foreach($learn_cat as $key=>$value):?>
+      
             <div class="jrnyFaq">
-               <h5><i><img src="<?=i('')?>icons/learn/1.svg" alt=""></i> Intro to Learning Journey</h5>
+               <h5><i><img src="<?=i('')?>icons/learn/1.svg" alt=""></i> 
+                      <?=$value['learning_journey_category_name']?></h5>
+                      <?
+                      $al=array();
+                      $al['where']['learning_journey_cat_id']=$value['learning_journey_category_id'];
+
+                      $ck=$this->model_learning_journey_content->find_all_active($al);
+                    //  debug($ck);
+                      ?>
                
                <ul class="colasebar">
+               <? if(isset($ck) AND array_filled($ck)) :?>
+               <? foreach($ck as $key=>$value):?>
                   <li>
                      <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Introduction to Learning Journey <i class="fal fa-plus"></i></span>
+                        <span><i class="fas fa-lock"></i> <?=$value['learning_journey_content_name']?> <i class="fal fa-plus"></i></span>
                         <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
+                        <?=html_entity_decode($value['learning_journey_content_desc'])?>
                         </div>
                      </div>
                   </li>
-               </ul>
-            </div>
-            <div class="space"><br><br><br><br></div>
-
-            <div class="jrnyFaq">
-               <h5><i><img src="<?=i('')?>icons/learn/1.svg" alt=""></i> Business Model Canvas</h5>
-               
-               <ul class="colasebar">
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Introduction to Business model canvas<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Business Model Canvas<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Value Proposition Canvas<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-               </ul>
-            </div>
-            <div class="space"><br><br><br><br></div>
+            <? endforeach;?>
+           <? endif;?>
 
 
-            <div class="jrnyFaq">
-               <h5><i><img src="<?=i('')?>icons/learn/1.svg" alt=""></i> Business Model Canvas</h5>
-               
-               <ul class="colasebar">
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> SWOT Analysis Template<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Positioning and Marketing Mix Template<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Strategic Marketing Plan<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Customer Journey Template<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li> 
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Marketing Campaign Canvas<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li> 
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Online Sales Funnel Template<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li> 
-               </ul>
-            </div>
-            <div class="space"><br><br><br><br></div>
 
-            <div class="jrnyFaq">
-               <h5><i><img src="<?=i('')?>icons/learn/1.svg" alt=""></i> Legal Structure</h5>
-               
-               <ul class="colasebar">
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Legal Term Sheet<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
                </ul>
             </div>
 
             <div class="space"><br><br><br><br></div>
+            <? endforeach;?>
+           <? endif;?>
 
-            <div class="jrnyFaq">
-               <h5><i><img src="<?=i('')?>icons/learn/1.svg" alt=""></i> Financial management</h5>
-               
-               <ul class="colasebar">
-               <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Introduction to Financial Management<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
 
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Income Statement<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Balance Sheet Statement<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i>Cashflow Statement<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Break Even Point Sheet<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Discount Cashflow Valuation Method Sheet<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-               </ul>
-            </div>
-
-            <div class="space"><br><br><br><br></div>
-
-            <div class="jrnyFaq">
-               <h5><i><img src="<?=i('')?>icons/learn/1.svg" alt=""></i> Legal Structure</h5>
-               
-               <ul class="colasebar">
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Legal Term Sheet<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-               </ul>
-            </div>
-
-            <div class="space"><br><br><br><br></div>
-
-            <div class="jrnyFaq">
-               <h5><i><img src="<?=i('')?>icons/learn/1.svg" alt=""></i> Investment Deck</h5>
-               
-               <ul class="colasebar">
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Investment / Pitch Deck<i class="fal fa-plus"></i></span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-               </ul>
-            </div>
-
+    
 
          </div>
       </section>

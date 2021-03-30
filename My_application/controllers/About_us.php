@@ -219,6 +219,15 @@ class About_us extends MY_Controller {
      $fa['order']="faq_id ASC";
      $data['faq'] = $this->model_faq->find_all_active($fa);
 
+     $contdata = $this->model_cms_page->get_page(28);
+     // debug($cont);
+     $data['contd'] = $contdata['child'][0];
+
+
+     $data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+       
+   //  debug($data['learn_cat']);
+      
           
 
         $this->load_view("learning",$data);
@@ -298,6 +307,45 @@ class About_us extends MY_Controller {
 
 
         $this->load_view("expert",$data);
+    }
+
+    public function course_detail($slug ='')
+    {
+        global $config;
+        $data = array();
+
+         //TAB TITLE
+        // $method_title = ucwords($this->uri->segment(1));
+        // $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+
+        $contss = $this->model_cms_page->get_page(30);
+        $data['con1'] = $contss['child'][0];
+        $data['con2'] = $contss['child'][1];
+        $data['con3'] = $contss['child'][2];
+
+    
+        $fa=array();
+        $fa['where']['faq_category']=2;
+        $fa['order']="faq_id ASC";
+        $data['faq'] = $this->model_faq->find_all_active($fa);
+
+        $course = $this->model_course->course_by_slug($slug);
+    
+        if (count($course) < 1) {
+         redirect("?msgtype=error&msg=invalid url");   
+        }
+       $data['course'] = $course;
+       debug($data['course']);
+
+
+       $pop=array();
+       $pop['where']['course_slug !=']=$slug;
+       $pop['limit']=3;
+       $data['popular'] = $this->model_course->find_all_active($pop);
+        
+     //  debug($data['popular']);
+
+        $this->load_view("course_detail",$data);
     }
 
 
