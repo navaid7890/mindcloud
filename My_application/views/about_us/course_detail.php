@@ -25,6 +25,21 @@
 }
 
 
+.video-content div>span {
+    padding: 9px 32px;
+    background: #1D90D9;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #71C2FD;
+    right: 0;
+    position: absolute;
+    top: 0;
+    margin: 20px;
+}
+
+
+
+
 </style>
 <div class="abt-tut-page"> 
 <div class="mainBanner hding-1 para">
@@ -32,22 +47,24 @@
             <div class="row">
                <div class="col-lg-7 col-md-12">
                   <div>
+                  <?
+                  $a=$course[0]['course_category_id'];
+                  $dt=$this->model_category->find_by_pk($a);
+                //  debug($dt);
+                  ?>
                      <ul class="bnr-cate">
                         <li>Category</li>
-                        <li><a href="#">Marketing</a></li>
+                        <li><a href="javascript:void(0)"><?=$dt['category_name']?></a></li>
                      </ul>
-                     <h1>Basics of Customer Experience</h1>
-                     <div class="space"><br></div>
-
-                     <p>Understand what Customer Experience is, and why it is essential for growing your sales and leading your customers to your brand’s advocacy.</p>
-                     <div class="space"><br></div>
+                 <?=html_entity_decode($course[0]['course_desc2'])?><br>
 
                      <ul class="usr-rating">
-                        <li><a href="javascript:;"><i class="fas fa-star"></i></a></li>
-                        <li><a href="javascript:;"><i class="fas fa-star"></i></a></li>
-                        <li><a href="javascript:;"><i class="fas fa-star"></i></a></li>
-                        <li><a href="javascript:;"><i class="fas fa-star"></i></a></li>
-                        <li><a href="javascript:;"><i class="fas fa-star"></i></a></li>
+                      <?php
+                                          for ($x = 1; $x <= $course[0]['course_rating']; $x++) {?>
+                                       
+                                       <li><img src="<?=i('')?>icons/rat-l.svg"></li>
+                                       
+                      <?}?>
                      </ul>
 
                   </div>
@@ -59,7 +76,7 @@
                               <i class="fas fa-user"></i>
                            </span>
 
-                           <h6><span>Created by</span>Kenneth Wong</h6>
+                           <h6><span>Created by</span><?=$course[0]['expert_name']?></h6>
                         </div>
                      </div>
 
@@ -69,7 +86,7 @@
                               <i class="fas fa-comment"></i>
                            </span>
 
-                           <h6><span>Course Language</span>English</h6>
+                           <h6><span>Course Language</span><?=$course[0]['language_name']?></h6>
                         </div>
                      </div>
 
@@ -79,7 +96,7 @@
                               <i class="fas fa-calendar-plus"></i>
                            </span>
 
-                           <h6><span>Last updated</span>March, 2020</h6>
+                           <h6><span>Last updated</span><?=$course[0]['course_createdon']?></h6>
                         </div>
                      </div>
                   </div>
@@ -87,20 +104,27 @@
 
                <div class="col-lg-5 col-md-12">
                   <div class="video-card">
-                     <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
+                     <a href="<?=get_image($course[0]['course_video'],$course[0]['course_video_path'])?>" data-fancybox="media">
                         <div class="video-box">
-                           <img src="<?=i('')?>models/1.png" />
+                           <img src="<?=get_image($course[0]['course_image'],$course[0]['course_image_path'])?>" />
                            <span><i class="fas fa-play"></i></span>
                         </div>
                      </a>   
                      <div class="video-content">
                         <div>
-                           <span>2h 6min</span>
+                           <span><?=html_entity_decode($course[0]['course_desc3'])?></span>
                            <ul class="tut-info">
                               <li><i><img src="<?=i('')?>icons/1.png"></i> Professional Certification </li>
-                              <li><i><img src="<?=i('')?>icons/2.png"></i> 16 Video Tutorials </li>
-                              <li><a href="#">1-Year Access <span>$20/ month</span></a></li>
-                              <li><a href="#">Take this Tutorial <span>$15</span></a></li>
+                              <li><a href="javascript:void(0)">1-Year Access <span>$20/ month</span></a></li>
+ <form>
+       <input type="hidden" name="product_qty" class="qtystyle" value="1" min="1" max="1">
+        <input type="hidden" name="product_image"  value="<?=get_image($course[0]['course_image'],$course[0]['course_image_path'])?>" class="productimage" value="">
+        <input type="hidden" name="product_price" value="<?=$course[0]['course_price']?>" class="productprice">
+        <input type="hidden" name="product_id" value="<?=$course[0]['course_id']?>" class="productid">
+        <input type="hidden" name="product_name" value="<?=$course[0]['course_name']?>" class="productname">
+
+                              <li><a href="javascript:void(0)" class="add_cart">Take this Tutorial <span><?=price($course[0]['course_price'])?></span></a></li>
+                              </form> 
                            </ul>
                         </div>
                      </div>
@@ -117,14 +141,7 @@
          <div class="jr-top">
             <div class="jrnyHead">
                <h2>About this <strong>Tutorial</strong></h2>
-               <div class="sapace"><br><br></div>
-               <p>You will learn about Customer Experience (CX) and what is the measure of success.</p>
-               <div class="sapace"><br></div>
-
-               <p>How to weave CX and PURR into your business through the four<br> pillars; Brand, Segmentation, Insights and journeys</p>
-               <div class="sapace"><br></div>
-
-               <p> What is Voice of Customer (VOC) and what are its tools?</p>
+   <p><?=html_entity_decode($course[0]['course_desc'])?></p>
             </div>
             <div class="space"><br><br><br></div>
 
@@ -133,31 +150,22 @@
                <h2>Tutorial Content</h2>
                <div class="sapace"><br><br></div> 
 
-               <ul class="colasebar">
+      <ul class="colasebar">
+       <? if(isset($lc) AND array_filled($lc)) :?>
+         <? foreach($lc as $key=>$value):?>
+         
+         
                   <li>
                      <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Tutorial - 1 minute Intro</span>
+                        <span><i class="fas fa-lock"></i><?=$value['lecture_name']?></span>
                         <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
+                          <?=html_entity_decode($value['lecture_desc'])?>
                         </div>
                      </div>
                   </li>
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Tutorial Description</span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="faqBox">
-                        <span><i class="fas fa-lock"></i> Tutorial - Video and Transcript</span>
-                        <div class="expandable">
-                           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                        </div>
-                     </div>
-                  </li>
+       <? endforeach;?>
+         <? endif;?>
+
                </ul>
             </div>
          </div>

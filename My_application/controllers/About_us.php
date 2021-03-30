@@ -314,9 +314,7 @@ class About_us extends MY_Controller {
         global $config;
         $data = array();
 
-         //TAB TITLE
-        // $method_title = ucwords($this->uri->segment(1));
-        // $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+      
 
         $contss = $this->model_cms_page->get_page(30);
         $data['con1'] = $contss['child'][0];
@@ -332,22 +330,47 @@ class About_us extends MY_Controller {
 
         $ck=array();
         $ck['where']['course_slug']=$slug;
+    
         $course = $this->model_course->get_details($ck);
+       // debug($course[0]['course_id']);
+
+
+     
+        
+
     
         if (count($course) < 1) {
          redirect("?msgtype=error&msg=invalid url");   
         }
+
+  
+
        $data['course'] = $course;
-       debug($data['course']);
+       
 
 
        $pop=array();
        $pop['where']['course_slug !=']=$slug;
        $pop['limit']=3;
        $data['popular'] = $this->model_course->find_all_active($pop);
-        
-     //  debug($data['popular']);
 
+       $tut=array();
+       $tut['where']['cp_course_id']=$course[0]['course_id'];
+       $tutorail = $this->model_course_lecture->find_all_active($tut);
+
+       foreach($tutorail as $key => $value)
+       {
+        $all[]=$value['cp_lecture_id'];
+       }
+
+
+       $lec=array();
+       $lec['where_in']['lecture_id']=$all;
+       $data['lc'] = $this->model_lecture->find_all_active($lec);
+    //   debug($lc);
+
+
+   
         $this->load_view("course_detail",$data);
     }
 
