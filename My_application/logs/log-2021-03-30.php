@@ -216,3 +216,15 @@ ERROR - 2021-03-30 14:22:57 --> Severity: Warning --> include(includes/testimoni
 ERROR - 2021-03-30 14:22:57 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 237
 ERROR - 2021-03-30 14:22:57 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240
 ERROR - 2021-03-30 14:22:57 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240
+ERROR - 2021-03-30 14:29:11 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/checkout.php 367
+ERROR - 2021-03-30 14:29:11 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/checkout.php 367
+ERROR - 2021-03-30 14:29:11 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/checkout.php 370
+ERROR - 2021-03-30 14:29:11 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/checkout.php 370
+ERROR - 2021-03-30 14:29:11 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/checkout.php 373
+ERROR - 2021-03-30 14:29:11 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/checkout.php 373
+ERROR - 2021-03-30 14:29:11 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/checkout.php 376
+ERROR - 2021-03-30 14:29:11 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/checkout.php 376
+ERROR - 2021-03-30 11:29:11 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 11:29:11 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 11:29:11 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 11:29:11 --> 404 Page Not Found: About_us/assets

@@ -75,6 +75,11 @@ class About_us extends MY_Controller {
         $this->load_view("cart-one",$data);
     }
 
+    public function checkout()
+    {
+        $this->load_view("checkout",$data);
+    }
+
 
 
     public function policy()
