@@ -146,3 +146,73 @@ ERROR - 2021-03-30 09:13:48 --> 404 Page Not Found: admin/Course/profile
 ERROR - 2021-03-30 09:57:46 --> 404 Page Not Found: Checkout/index
 ERROR - 2021-03-30 09:57:53 --> 404 Page Not Found: Check_out/index
 ERROR - 2021-03-30 09:57:58 --> 404 Page Not Found: Checkout/index
+ERROR - 2021-03-30 11:11:51 --> 404 Page Not Found: Cart_onephp/index
+ERROR - 2021-03-30 11:13:03 --> 404 Page Not Found: Cart/step_one
+ERROR - 2021-03-30 11:13:09 --> 404 Page Not Found: Cart/cart_one
+ERROR - 2021-03-30 11:14:40 --> 404 Page Not Found: Cart/cart_one
+ERROR - 2021-03-30 11:14:48 --> 404 Page Not Found: Cart/cart
+ERROR - 2021-03-30 11:15:01 --> 404 Page Not Found: Cart/cart
+ERROR - 2021-03-30 11:15:15 --> 404 Page Not Found: Cart/cart
+ERROR - 2021-03-30 11:15:25 --> 404 Page Not Found: Cart/policy
+ERROR - 2021-03-30 11:15:28 --> 404 Page Not Found: Policy/index
+ERROR - 2021-03-30 14:17:44 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 231
+ERROR - 2021-03-30 14:17:44 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 231
+ERROR - 2021-03-30 14:17:44 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 234
+ERROR - 2021-03-30 14:17:44 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 234
+ERROR - 2021-03-30 14:17:44 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 237
+ERROR - 2021-03-30 14:17:44 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 237
+ERROR - 2021-03-30 14:17:44 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240
+ERROR - 2021-03-30 14:17:44 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240
+ERROR - 2021-03-30 11:17:45 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 11:17:45 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 11:17:45 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 11:17:45 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 11:17:45 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 11:17:45 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 11:17:45 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 11:17:45 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 11:17:45 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 11:17:45 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 11:17:45 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 14:19:35 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 231
+ERROR - 2021-03-30 14:19:35 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 231
+ERROR - 2021-03-30 14:19:35 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 234
+ERROR - 2021-03-30 14:19:35 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 234
+ERROR - 2021-03-30 14:19:35 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 237
+ERROR - 2021-03-30 14:19:35 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 237
+ERROR - 2021-03-30 14:19:35 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240
+ERROR - 2021-03-30 14:19:35 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240
+ERROR - 2021-03-30 11:19:36 --> 404 Page Not Found: About_us/assets
+ERROR - 2021-03-30 14:20:08 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 231
+ERROR - 2021-03-30 14:20:08 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 231
+ERROR - 2021-03-30 14:20:08 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 234
+ERROR - 2021-03-30 14:20:08 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 234
+ERROR - 2021-03-30 14:20:08 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 237
+ERROR - 2021-03-30 14:20:08 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 237
+ERROR - 2021-03-30 14:20:08 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240
+ERROR - 2021-03-30 14:20:08 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240
+ERROR - 2021-03-30 11:20:09 --> 404 Page Not Found: About_us/car_p.png
+ERROR - 2021-03-30 14:20:43 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 231
+ERROR - 2021-03-30 14:20:43 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 231
+ERROR - 2021-03-30 14:20:43 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 234
+ERROR - 2021-03-30 14:20:43 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 234
+ERROR - 2021-03-30 14:20:43 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 237
+ERROR - 2021-03-30 14:20:43 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 237
+ERROR - 2021-03-30 14:20:43 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240
+ERROR - 2021-03-30 14:20:43 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240
+ERROR - 2021-03-30 14:20:47 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 231
+ERROR - 2021-03-30 14:20:47 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 231
+ERROR - 2021-03-30 14:20:47 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 234
+ERROR - 2021-03-30 14:20:47 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 234
+ERROR - 2021-03-30 14:20:47 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 237
+ERROR - 2021-03-30 14:20:47 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 237
+ERROR - 2021-03-30 14:20:47 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240
+ERROR - 2021-03-30 14:20:47 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240
+ERROR - 2021-03-30 14:22:57 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 231
+ERROR - 2021-03-30 14:22:57 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 231
+ERROR - 2021-03-30 14:22:57 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 234
+ERROR - 2021-03-30 14:22:57 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 234
+ERROR - 2021-03-30 14:22:57 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 237
+ERROR - 2021-03-30 14:22:57 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 237
+ERROR - 2021-03-30 14:22:57 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240
+ERROR - 2021-03-30 14:22:57 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/about_us/cart-one.php 240

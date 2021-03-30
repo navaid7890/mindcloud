@@ -70,6 +70,13 @@ class About_us extends MY_Controller {
 
 
 
+    public function cart()
+    {
+        $this->load_view("cart-one",$data);
+    }
+
+
+
     public function policy()
     {
         $data = array();
