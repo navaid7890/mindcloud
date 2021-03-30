@@ -153,8 +153,8 @@ class Model_course extends MY_Model {
 
     public function get_details($params = array())
     {
-        $params['fields'] = 'course_id,course_expert_id,course_slug,
-        course_name,course_level,course_price,course_video,course_video_path,course_status,course_createdon,course_image,course_image_path,expert_id,expert_name,course_featured,course_rating,course_keywords,language_id,language_name,course_language_id';
+        $params['fields'] = 'course_id,course_expert_id,course_category_id,course_slug,
+        course_name,course_level,course_price,course_video,course_video_path,course_status,course_createdon,course_image,course_image_path,expert_id,expert_name,course_featured,course_rating,course_keywords,language_id,language_name,course_language_id, course_desc,course_desc2,course_desc3';
 
   
         $params['joins'][] = $this->join_expert();
@@ -352,7 +352,7 @@ class Model_course extends MY_Model {
                      'table'   => $this->_table,
                      'name'   => 'course_desc',
                      'label'   => '1 liner description',
-                     'type'   => 'textarea',
+                     'type'   => 'editor',
                      'attributes'   => array(),
                      'js_rules'   => '',
                      'rules'   => 'required|trim|htmlentities'
