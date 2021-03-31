@@ -99,6 +99,7 @@ class Cart extends MY_Controller {
 							   'qty'     => intval($_POST['product_qty']),
 							   'price'   => $_POST['product_price'],
 							   'name'    => htmlentities($_POST['product_name']),
+							   'product_img' => $_POST['product_img'],
 							   'options' => array(
 							   					'product_img' => $_POST['product_img'],
 							   					'size' => $_POST['size_type'],
@@ -273,6 +274,47 @@ class Cart extends MY_Controller {
 
 		$this->load_view('stepone-theme',$data);
 	}
+
+	
+
+    public function cart()
+    {
+		$data['title'] = "Cart";
+
+		$data['data'] = $this->cart_content;
+		$data['total_items'] = $this->total_item;
+		$data['total_amount'] = $this->total_amount;
+		$data['shipping_amount'] = $this->shipping_charges;	
+		$data['discount_amount'] = $this->discount;	
+		$data['total_order_amount'] = $this->total_order_amount;	
+
+		$discount = $this->session->userdata('discount');
+		$data['coupon'] = isset($discount['coupon']) ? $discount['coupon'] : array();	
+
+		// SHIPPING START
+		if(isset($this->session->userdata['shipping_charges']['dest_zip']))
+			$data['shipping_zip'] = $this->session->userdata['shipping_charges']['dest_zip'];
+		else
+			$data['shipping_zip'] = isset($this->layout_data['user_data']['ui_zip']) ? $this->layout_data['user_data']['ui_zip'] : '';
+
+		if(isset($this->session->userdata['shipping_charges']['service']))
+			$data['shipping_service'] = $this->session->userdata['shipping_charges']['service'];
+		else
+			$data['shipping_service'] = 0;
+		// SHIPPING END
+
+
+        //TAB TITLE
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+
+        //INNER BANNER
+         $b = $this->get_ibanner(7);
+         $data['ititle'] = $b['ititle'];
+         $data['ibanner_img'] = $b['ibanner_img'];
+        $this->load_view("cart-one",$data);
+    }
+
 
 	// Cart Step Two (Checkout page)
 	public function step_two()

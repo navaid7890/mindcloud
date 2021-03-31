@@ -3084,6 +3084,7 @@ button.cart-trim:hover {
 
 .cartSec {
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .doxSec .col-md-6 {
@@ -3675,6 +3676,22 @@ ul.post-and-comment>li {
     border-bottom: 0;
 }
 
+.row-box .col-lg-9 {
+    margin-bottom: 34px;
+}
+a.update.update_this_item {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    height: 20px;
+    line-height: 20px;
+    background: #1d90d9;
+    border-radius: 100px;
+    padding: 0 15px;
+    font-size: 11px;
+    color: #fff;
+}
 @media (max-width: 1200px) {
     img {
         max-width: 100%;
