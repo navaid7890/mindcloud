@@ -70,6 +70,18 @@ class About_us extends MY_Controller {
 
 
 
+    public function cart()
+    {
+        $this->load_view("cart-one",$data);
+    }
+
+    public function checkout()
+    {
+        $this->load_view("checkout",$data);
+    }
+
+
+
     public function policy()
     {
         $data = array();
@@ -168,18 +180,67 @@ class About_us extends MY_Controller {
         $method_title = ucwords($this->uri->segment(1));
         $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
 
-        //INNER BANNER
-        //  $b = $this->get_ibanner(7);
-        //  $data['ititle'] = $b['ititle'];
-        //  $data['ibanner_img'] = $b['ibanner_img'];
-        //     //BANNER
-        //  // $b = $this->get_banner(10);
-        //  // $data['bcontent'] = $b['bcontent'];
-        //  // $data['bimage'] = $b['bimage'];
 
-        //  $cont = $this->model_cms_page->get_page(34);
-         
-        // $data['content'] = $cont;         
+        $data['professions'] = $this->model_profession->find_all_active();            
+        $data['states'] = $this->model_states->find_all_active();            
+        
+        $param = array();
+        $param['where']['course_featured'] = 1;
+        $data['course'] = $this->model_course->find_all_active($param);
+
+        
+        $cont = $this->model_cms_page->get_page(2);
+        // debug($cont);
+        $data['cont1'] = $cont['child'][0];
+        $data['cont2'] = $cont['child'][1];
+        $data['cont3'] = $cont['child'][2];
+        $data['cont4'] = $cont['child'][3];
+        $data['cont5'] = $cont['child'][4];
+        $data['cont6'] = $cont['child'][5];
+        $data['cont7'] = $cont['child'][6];
+        $data['cont8'] = $cont['child'][7];
+        $data['cont9'] = $cont['child'][8];
+        $data['cont10'] = $cont['child'][9];
+        $data['cont11'] = $cont['child'][10];
+        $data['cont12'] = $cont['child'][11];
+        $data['cont13'] = $cont['child'][12];
+        $data['cont14'] = $cont['child'][13];
+        $data['cont15'] = $cont['child'][14];
+
+        $data['banner'] = $this->model_inner_banner->find_by_pk(1); 
+
+        $data['learning'] = $this->model_learning->find_all_active();
+        $data['testimonial'] = $this->model_testimonials->find_all_active();
+   
+        $param = array();
+        $param['where']['category_featured'] = 1;
+        $data['category'] = $this->model_category->find_all_active($param); 
+
+
+      $data['testi'] = $this->model_testimonials->find_all_active();
+      $firststate = $this->model_states->find_one_active();            
+      $data['firststate'] =$firststate['states_id'];
+
+      $exp1 = $this->model_cms_page->get_page(26);
+  
+      $data['check'] = $exp1['child'][0];
+
+               
+     $fa=array();
+     $fa['where']['faq_category']=2;
+     $fa['order']="faq_id ASC";
+     $data['faq'] = $this->model_faq->find_all_active($fa);
+
+     $contdata = $this->model_cms_page->get_page(28);
+     // debug($cont);
+     $data['contd'] = $contdata['child'][0];
+
+
+     $data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+       
+   //  debug($data['learn_cat']);
+      
+          
 
         $this->load_view("learning",$data);
     }
@@ -192,20 +253,137 @@ class About_us extends MY_Controller {
         $method_title = ucwords($this->uri->segment(1));
         $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
 
-        //INNER BANNER
-        //  $b = $this->get_ibanner(7);
-        //  $data['ititle'] = $b['ititle'];
-        //  $data['ibanner_img'] = $b['ibanner_img'];
-        //     //BANNER
-        //  // $b = $this->get_banner(10);
-        //  // $data['bcontent'] = $b['bcontent'];
-        //  // $data['bimage'] = $b['bimage'];
+        $cont = $this->model_cms_page->get_page(2);
+        $data['cont1'] = $cont['child'][4];
+        $data['cont2'] = $cont['child'][5];
 
-        //  $cont = $this->model_cms_page->get_page(34);
-         
-        // $data['content'] = $cont;         
+        $conts = $this->model_cms_page->get_page(20);
+        $data['con1'] = $conts['child'][0];
+
+        $contss = $this->model_cms_page->get_page(20);
+  
+        $data['con2'] = $contss['child'][1];
+        $data['con3'] = $contss['child'][2];
+        $data['con4'] = $contss['child'][3];
+        $data['con5'] = $contss['child'][4];
+
+   
+           
+     
+
+        $par=array();
+        $par['order']="category_id ASC";
+        $data['main_categories'] = $this->model_category->find_all_active($par);
+
+        $par2=array();
+        $par2['order']="expert_id ASC";
+        $data['ex'] = $this->model_expert->find_all_active($par2);
+        //debug($data['main_categories']);
+
+          $param = array();
+          if(isset($_GET['expert']) AND intval($_GET['expert']) > 0){
+          $param['where']['course_expert_id'] = intval($this->input->get('expert'));
+          }
+
+   
+          if(isset($_GET['cat']) AND intval($_GET['cat']) > 0){
+          $param['where']['course_category_id'] = intval($this->input->get('cat'));
+      }
+
+ 
+
+  
+
+
+      $param['order']="course_id ASC";
+
+      $data['art'] = $this->model_course->get_details($param);
+
+      
+      $pop=array();
+      $pop['where']['category_featured']=1;
+      $data['popular'] = $this->model_category->find_all_active($pop);
+     // debug($data['art']);
+
+           
+     $fa=array();
+     $fa['where']['faq_category']=1;
+     $fa['order']="faq_id ASC";
+     $data['faq'] = $this->model_faq->find_all_active($fa);
+      
+     $exp1 = $this->model_cms_page->get_page(26);
+  
+     $data['check'] = $exp1['child'][0];
+   
+
+
 
         $this->load_view("expert",$data);
+    }
+
+    public function course_detail($slug ='')
+    {
+        global $config;
+        $data = array();
+
+      
+
+        $contss = $this->model_cms_page->get_page(30);
+        $data['con1'] = $contss['child'][0];
+        $data['con2'] = $contss['child'][1];
+        $data['con3'] = $contss['child'][2];
+
+    
+        $fa=array();
+        $fa['where']['faq_category']=2;
+        $fa['order']="faq_id ASC";
+        $data['faq'] = $this->model_faq->find_all_active($fa);
+
+
+        $ck=array();
+        $ck['where']['course_slug']=$slug;
+    
+        $course = $this->model_course->get_details($ck);
+       // debug($course[0]['course_id']);
+
+
+     
+        
+
+    
+        if (count($course) < 1) {
+         redirect("?msgtype=error&msg=invalid url");   
+        }
+
+  
+
+       $data['course'] = $course;
+       
+
+
+       $pop=array();
+       $pop['where']['course_slug !=']=$slug;
+       $pop['limit']=3;
+       $data['popular'] = $this->model_course->find_all_active($pop);
+
+       $tut=array();
+       $tut['where']['cp_course_id']=$course[0]['course_id'];
+       $tutorail = $this->model_course_lecture->find_all_active($tut);
+
+       foreach($tutorail as $key => $value)
+       {
+        $all[]=$value['cp_lecture_id'];
+       }
+
+
+       $lec=array();
+       $lec['where_in']['lecture_id']=$all;
+       $data['lc'] = $this->model_lecture->find_all_active($lec);
+    //   debug($lc);
+
+
+   
+        $this->load_view("course_detail",$data);
     }
 
 

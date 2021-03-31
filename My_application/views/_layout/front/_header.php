@@ -8,7 +8,7 @@
 			</div>
 			<div class="row align-items-center">
 				<div class="col-md-2 text-left">
-					<a href="./" class="logo">
+					<a href="<?=l('')?>" class="logo">
 					<img src="<?=i('')?>logo.png" alt="">
 					</a>
 				</div>

@@ -61,6 +61,14 @@ class Course extends MY_Controller {
        
         $this->_list_data['course_category'] = $this->model_category->find_all_list_active(
                     array(''),"category_name");
+
+                    
+        $this->_list_data['course_expert_id'] = $this->model_expert->find_all_list_active(
+            array(''),"expert_name");
+
+        $this->_list_data['course_language_id'] = $this->model_language->find_all_list_active(
+                array(''),"language_name");
+            
         
 
         $_POST = $this->input->post(NULL, true);
