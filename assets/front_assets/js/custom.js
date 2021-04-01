@@ -41,7 +41,11 @@ $(document).ready(function() {
         $('.' + target).fadeIn();
     });
 
-
+    $("ul.login-btn .dropdown-toggle > a").click(function(e) {
+        $(this).toggleClass('open');
+        $(".dropdown-box").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
+            e.stopPropagation()
+    })
 
     $('.consult-left-slide').slick({
         infinite: true,
@@ -115,6 +119,7 @@ $(window).scroll(function() {
         $(".fixed").removeClass("sticky");
     }
 });
+
 
 (function($) {
     $(window).on("load", function() {

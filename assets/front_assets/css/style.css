@@ -314,8 +314,9 @@ ul.login-btn {
 
 ul.login-btn>li {
     display: inline-block;
-    margin-right: 32px;
+    margin-right: 21px;
     vertical-align: middle;
+    position: relative;
 }
 
 ul.login-btn>li>a {
@@ -482,6 +483,10 @@ a.btn-theme>span {
 
 
 /* Menu Css */
+
+.cart-icon > i{
+    color: #1d90d9;
+}
 
 .menu {
     font-size: 0px;
@@ -715,7 +720,7 @@ ul.dropdown li.last {
     padding: 20px 0 44px 44px;
     align-items: flex-end;
     display: flex;
-    min-height: 220px;
+    min-height: 255px;
 }
 
 .video-content h5 {
@@ -876,7 +881,7 @@ ul.learn-process {
 
 ul.who-list {
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -1130,6 +1135,7 @@ ul.who-list {
 footer {
     background: #1D90D9;
     padding: 68px 0 30px;
+    margin-top: 20px;
 }
 
 .widget h4 {
@@ -1507,7 +1513,7 @@ ul.rating>li p {
 }
 
 ul.tut-list h6 {
-    font-size: 19px;
+    font-size: 26px;
     color: #33415C;
     font-weight: 700;
 }
@@ -1688,12 +1694,12 @@ ul.cate-list {
 }
 
 .testi-slider button.slick-arrow {
-    left: -68px;
+    left: -54px;
     right: inherit;
 }
 
 .testi-slider button.slick-next.slick-arrow {
-    right: -34px;
+    right: -4px;
     left: inherit;
 }
 
@@ -1922,6 +1928,7 @@ ul.cate-list {
 .consult-content {
     padding: 100px 62px;
     background: #F7F8F9;
+    height: 700px;
 }
 
 .border-box {
@@ -1942,6 +1949,9 @@ ul.cate-list {
 
 .consult-content ul.cate-list {
     margin-bottom: 0;
+    height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .experts-page ul.cate-list {
@@ -1992,6 +2002,7 @@ ul.cate-list {
     align-items: center;
     display: flex;
     justify-content: center;
+    height: 900px;
 }
 
 .login-content h4 {
@@ -2021,7 +2032,7 @@ ul.cate-list {
 }
 
 .login-page .login-banner {
-    height: 100vh;
+    height: 900px;
     background: #fff;
     overflow: hidden;
 }
@@ -2090,10 +2101,17 @@ ul.cate-list {
     bottom: 0;
     left: 0;
     right: 0;
+    height: 100%;
 }
 
 .login-mdl {
-    position: relative;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    height: 900px;
 }
 
 a.white-logo {
@@ -2107,6 +2125,7 @@ a.white-logo {
     align-items: center;
     display: flex;
     z-index: 1;
+    height: 100%;
 }
 
 .signup-form .fld-html label {
@@ -2377,6 +2396,7 @@ ul.tut-info>li:nth-child(3) a {
 
 .trial-page .home-banner h2 {
     color: #fff;
+    text-align: center;
 }
 
 .trial-page .home-banner {
@@ -3675,6 +3695,62 @@ ul.post-and-comment>li {
     border-bottom: 0;
 }
 
+.xpert-content ul.who-list {
+    justify-content: inherit;
+}
+
+.dropdown-box {
+    display: none;
+}
+
+ul.user-links>li>a {
+    font-size: 13px;
+    text-align: left;
+    display: block;
+    padding: 18px 15px;
+    font-weight: 600;
+    color: #33415c;
+}
+
+ul.user-links>li>a:hover {
+    background-color: #208dd8;
+    color: #fff;
+}
+
+ul.login-btn>li.dropdown-toggle>a {
+    color: #000;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+ul.login-btn>li.dropdown-toggle>a>span {
+    width: 38px;
+    border-radius: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 10px;
+    height: 32px;
+    overflow: hidden;
+}
+
+ul.login-btn .dropdown-box {
+    background: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-radius: 8px;
+    top: 47px;
+    overflow: hidden;
+    z-index: 999;
+}
+
+@media (min-width: 768px) {
+    .copyright-top .col-md-9 {
+        flex: 0 0 92%!important;
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 1200px) {
     img {
         max-width: 100%;
@@ -3751,8 +3827,10 @@ ul.post-and-comment>li {
 }
 
 @media (max-width: 1440px) {
-    .login-page .login-banner {
-        padding-top: 112px;
+    .login-mdl span img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
     }
     header,
     .login-page header {
@@ -3764,6 +3842,13 @@ ul.post-and-comment>li {
 }
 
 @media (max-width: 824px) {
+    .xpert-content .video-box {
+        width: 100%;
+    }
+    .fld-html input[type="button"] {
+        text-align: left;
+        padding-top: 15px;
+    }
     .faq-tab-head ul>li {
         padding-right: 15px;
         margin-right: 15px;
@@ -4190,8 +4275,8 @@ ul.post-and-comment>li {
     }
     .copyright-top p {
         text-align: center;
-        padding-bottom: 20px;
         line-height: normal;
+        padding: 9px 15px;
     }
     .copyright ul>li {
         display: block;
@@ -4261,6 +4346,9 @@ ul.post-and-comment>li {
     ul.cate-list {
         margin-bottom: 32px;
     }
+    .consult-content ul.cate-list {
+        height: 600px
+    }
     ul.who-list {
         padding-bottom: 50px;
     }
@@ -4297,6 +4385,8 @@ ul.post-and-comment>li {
         width: 100%;
         padding: 0 20px;
         margin-bottom: 30px;
+        height: 780px;
+        padding: 15% 15px;
     }
     .login-mdl {
         display: block;

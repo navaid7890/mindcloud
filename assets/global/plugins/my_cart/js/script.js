@@ -127,6 +127,7 @@ var Cart = function () {
                 $('#cart_item_'+rowid).remove();
 
                 Toastr.success(response.msg.desc ,response.msg.title, 'toast-bottom-left');
+                location.reload();
                 // similar behavior as clicking on a link
                 //location.reload();
             }
