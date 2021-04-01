@@ -15,7 +15,7 @@
 				<div class="col-md-6 text-center">
 					<div class="menuWrap">
 					<ul class="menu">
-						<li><a class="active" href="./">Experts Tutorials</a></li>
+						<li><a class="active" href="#">Experts Tutorials</a></li>
 						<li><a href="#">Learning Journey</a></li>
 						<li><a href="#">Consult with Experts</a></li>
 						<li><a href="#">Community</a></li>

@@ -54,3 +54,5 @@ ERROR - 2021-04-01 11:24:13 --> Severity: Warning --> include(): Failed opening 
 ERROR - 2021-04-01 11:24:13 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/cart/cart-one.php 247
 ERROR - 2021-04-01 11:24:13 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/cart/cart-one.php 247
 ERROR - 2021-04-01 08:41:06 --> 404 Page Not Found: Profile/profile.png
+ERROR - 2021-04-01 08:56:42 --> 404 Page Not Found: Profile/profile.png
+ERROR - 2021-04-01 09:10:49 --> Severity: Parsing Error --> syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION) /home/talha/www/cloud/My_application/controllers/About_us.php 73
