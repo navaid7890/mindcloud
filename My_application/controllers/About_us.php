@@ -70,6 +70,7 @@ class About_us extends MY_Controller {
 
 
 
+<<<<<<< HEAD
     public function cart()
     {
         $this->load_view("cart-one",$data);
@@ -81,6 +82,8 @@ class About_us extends MY_Controller {
     }
 
 
+=======
+>>>>>>> dev/madiha
 
     public function policy()
     {

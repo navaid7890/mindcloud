@@ -24,7 +24,7 @@
                     </a>   
                     <div class="video-content">
                         <div>
-                            <!-- <span>2h 6min</span>  -->
+                            <span><?= $cont8['cms_page_duration'] ?></span> 
                             <?=html_entity_decode($cont8['cms_page_content'])?> 
                         </div>
                     </div>

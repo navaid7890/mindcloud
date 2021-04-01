@@ -248,7 +248,6 @@
       </ul>
    </div>
 </section>
- 
 <? $this->load->view('widgets/_clients'); ?>
 <script type="text/javascript">
    $("body").on('change','#forum_category',function(){
