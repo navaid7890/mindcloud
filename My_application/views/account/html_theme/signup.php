@@ -2,7 +2,7 @@
 
   <div class="login-banner">
       <div class="container-fluid pad-zero para w-100">
-          <div class="row align-items-center">
+          <div class="row">
               <div class="col-lg-6 col-md-12">
                   <div class="login-wrap">
                       <div class="w-100">

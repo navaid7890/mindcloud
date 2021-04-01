@@ -53,3 +53,4 @@ ERROR - 2021-04-01 11:24:13 --> Severity: Warning --> include(includes/testimoni
 ERROR - 2021-04-01 11:24:13 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/cart/cart-one.php 244
 ERROR - 2021-04-01 11:24:13 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory /home/talha/www/cloud/My_application/views/cart/cart-one.php 247
 ERROR - 2021-04-01 11:24:13 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='.:/opt/lampp/lib/php') /home/talha/www/cloud/My_application/views/cart/cart-one.php 247
+ERROR - 2021-04-01 08:41:06 --> 404 Page Not Found: Profile/profile.png
