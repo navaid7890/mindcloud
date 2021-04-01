@@ -59,9 +59,9 @@
                                  <a href="#" data-fancybox="media">
                                     <div class="tutorial-list-box">
                                        <div class="tutorial-box-content">
-                                          <span><img src="<?=i('')?>dashboard/home/icons/1.svg"></span>
+                                          <span><img src="<?=i('')?>dashboard/home/icons/5.svg"></span>
                                           <div class="space"><br></div>
-                                          <h3>New</h3>
+                                          <h3>Corporate</h3>
                                           <p>Entrepreneur</p>
                                        </div>
                                     </div>
@@ -72,9 +72,9 @@
                                  <a href="#" data-fancybox="media">
                                     <div class="tutorial-list-box">
                                        <div class="tutorial-box-content">
-                                          <span><img src="<?=i('')?>dashboard/home/icons/1.svg"></span>
+                                          <span><img src="<?=i('')?>dashboard/home/icons/6.png"></span>
                                           <div class="space"><br></div>
-                                          <h3>New</h3>
+                                          <h3>Growth</h3>
                                           <p>Entrepreneur</p>
                                        </div>
                                     </div>

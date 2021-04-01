@@ -24,8 +24,8 @@
             </div>
             <div class="course-list">
                 <ul class="course-scroll">
-                <h5>Business Model Canvas</h5>
-                <li><a href="./" class="active">Introduction <span><i class="far fa-check"></i></span> </a>
+            <li><a href="javascript:void(0)" class="active">Introduction <span><i class="far fa-check"></i></span> </a></li>
+                <h5>Business Model</h5> 
                 <li class="dropdown-toggle b-child"><a href="#">Business Model Canvas 
                     
                 <div id="activeBorder" class="active-border">
@@ -108,6 +108,25 @@
                 </div>
                 
                 <small>0/3</small></a>
+                    <ul class="dropdown-box">
+                        <li><a href="#"><i class="fad fa-video"></i>  Video & Transcript <span><i class="far fa-check"></i></span></a></li>
+                        <li><a href="#"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
+                        <li><a href="#"><i class="fad fa-video"></i> My Work<span><i class="far fa-check"></i></span></a></li>
+                    </ul>
+                
+                </li>
+
+
+                <li class="dropdown-toggle"><a href="#">Customer Journey Template
+                
+                    <div id="activeBorder" class="active-border">
+                        <div id="circle" class="circle">
+                                <span class="prec">66</span>
+                                <span id="startDeg" class="90"></span>
+                        </div>
+                    </div>
+                    
+                    <small>0/3</small></a>
                     <ul class="dropdown-box">
                         <li><a href="#"><i class="fad fa-video"></i>  Video & Transcript <span><i class="far fa-check"></i></span></a></li>
                         <li><a href="#"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
