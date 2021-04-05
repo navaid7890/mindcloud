@@ -34,7 +34,15 @@
 				<div class="col-md-3 text-right">
 					<ul class="login-btn">
 						<?php if(isset($this->session->userdata['logged_in_front']) AND array_filled($this->session->userdata['logged_in_front'])) : ?>
-							<li><a href="<?=l('cart')?>" class="cart-icon"><i class="fas fa-shopping-cart"><sup class="cart_body">0</sup></i> </a><a href="<?=l('signout')?>">Logout</a></li>
+							<li><a href="<?=l('cart')?>" class="cart-icon"><i class="fas fa-shopping-cart"><sup class="cart_body">0</sup></i> </a></li>
+							<li class="dropdown-toggle"><a href="#"><span><img src="<?=i('')?>dp.png"></span>User  <i class="fal fa-angle-down"></i></a>
+								<div class="dropdown-box">
+									<ul class="user-links">
+										<li><a href="<?=l('signout')?>"> <i class="far fa-sign-out-alt"></i> Logout</a></li>
+									</ul>
+								</div>
+							</li>
+							<!-- <li><a href="<?//=l('cart')?>" class="cart-icon"><i class="fas fa-shopping-cart"><sup class="cart_body">0</sup></i> </a><a href="<?//=l('signout')?>">Logout</a></li> -->
 							<li><a href="signup">Register</a></li>
 						<? else :?>
 							<li><a href="<?=l('cart')?>" class="cart-icon"><i class="fas fa-shopping-cart"><sup class="cart_body">0</sup></i> </a> <a href="<?=l('login')?>">Sign In</a></li>

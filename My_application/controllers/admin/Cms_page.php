@@ -82,20 +82,30 @@ class Cms_page extends MY_Controller {
 	}
 
 	public function upload_images(){
+
+		// $this->register_plugins("s3");
+		include('assets/global/plugins/s3/s3.php');
+		// debug($this->register_plugins('ss3'));
+
+		
 		
 			// debug($_POST['cms_page']);
 			// debug($_FILES['cms_page']);
 
 		$formdata = $_POST['cms_page'];
+		debug($formdata);
 		// $filedata = $_FILES['cms_page'];
 		$cmsID = $formdata['cms_page_id'];
 
 
 		$uploads_dir = 'assets/uploads/cms_page';
+
+		debug($uploads_dir);
+
 		
 		$filedata = $_FILES['cms_page'];
 		
-		// debug($filedata);
+		 debug($filedata);
 		// debug(count($filedata['name']),1);
 	$cms_page_image = "";
 		for ($i=1; $i <= count($filedata['name']) ; $i++) { 
@@ -112,6 +122,21 @@ class Cms_page extends MY_Controller {
 		move_uploaded_file($tmp_name, "$uploads_dir/$name");
 	    $Nname = explode(".", $name);
 	    $allowEd = array('jpg','png','.JPG','jpeg','svg','SVG');
+
+
+		$test_var = new S3();
+		$test_var->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
+		$test_var->setRegion(AWS_S3_REGION);
+		$test_var->setSignatureVersion('v4');
+ 
+		$chk = $test_var->inputFile($tmp_name); 
+
+		// $test_var->putObject($test_var->inputFile($tmp_name), AWS_S3_BUCKET, 'assets/'.$name, $test_var->ACL_PUBLIC_READ,[],['Content-Type'=>'image/png']);
+		// S3::setAuth(AWS_S3_KEY, AWS_S3_SECRET);
+		// S3::setRegion(AWS_S3_REGION);
+		// S3::setSignatureVersion('v4');
+		// S3::putObject(S3::inputFile($tmp_name), AWS_S3_BUCKET, 'assets/'.$name, S3::ACL_PUBLIC_READ,[],['Content-Type'=>'image/'.$allowEd]);
+		// unlink($tmpfile);
 	   
 
 	    if(in_array($Nname[2],$allowEd)){

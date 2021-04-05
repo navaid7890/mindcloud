@@ -91,6 +91,13 @@ else
 	define("PHP_TIME_ZONE" , "Asia/Karachi");
 
 
+// S3 bucket details
+
+define('AWS_S3_KEY', 'AKIAXQ4HYQNY7UR7HLO5');
+define('AWS_S3_SECRET', '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');
+define('AWS_S3_REGION', 'us-east-1');
+define('AWS_S3_BUCKET', 'mindcloud-bucket');
+define('AWS_S3_URL', 'http://s3.'.AWS_S3_REGION.'.amazonaws.com/'.AWS_S3_BUCKET.'/');
 
 
 // define("FACTORY_TYPE" , 1);
