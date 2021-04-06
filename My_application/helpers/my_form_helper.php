@@ -6,7 +6,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * A form builder class help create Forms from Standard TKD Models...
  *
  * @package		TKD Form Helper
- * @author		Muhammad Uzair Khan * Muhammad.uzair@tradekey.com
+ * @author		Muhammad devemail0909@gmail.com Khan * Muhammad.devemail0909@gmail.com@tradekey.com
  * @copyright	Copyright (c) 2014 TKDigitals.com.
  * @since		Version 2.0 Moved To Class... from view.
  */

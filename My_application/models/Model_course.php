@@ -22,11 +22,17 @@ class Model_course extends MY_Model {
         // Call the Model constructor
         $this->pagination_params['fields'] = "course_id,course_name,CONCAT(course_image_path,course_image) AS course_image,course_status";
 
-        $this->relations['course_lecture'] = array(
+        // $this->relations['course_lecture'] = array(
+        //     "type"=>"has_many", 
+        //     "own_key"=>"cp_course_id", 
+        //     "other_key"=>"cp_lecture_id",
+        //   );
+        $this->relations['course_tutorial'] = array(
             "type"=>"has_many", 
             "own_key"=>"cp_course_id", 
-            "other_key"=>"cp_lecture_id",
+            "other_key"=>"cp_tutorial_id",
           );
+
 
         $this->relations['course_category'] = array(
             "type"=>"has_many", 
@@ -337,15 +343,27 @@ class Model_course extends MY_Model {
         //             'rules'   => '',
         //               ),
 
-            'course_lecture' => array(
-                'table'   => "course_lecture",
-                'name'   => 'cp_lecture_id',
-                'label'   => 'Lecture',
+            // 'course_lecture' => array(
+            //     'table'   => "course_lecture",
+            //     'name'   => 'cp_lecture_id',
+            //     'label'   => 'Lecture',
+            //     'type'   => 'multiselect',
+            //     'attributes'   => array(),
+            //     'js_rules'   => '',
+            //     'rules'   => '',
+            //     ),
+
+                
+            'course_tutorial' => array(
+                'table'   => "course_tutorial",
+                'name'   => 'cp_tutorial_id',
+                'label'   => 'Tutorial',
                 'type'   => 'multiselect',
                 'attributes'   => array(),
                 'js_rules'   => '',
                 'rules'   => '',
                 ),
+
 
 
                'course_desc' => array(

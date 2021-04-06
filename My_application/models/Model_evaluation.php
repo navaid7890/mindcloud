@@ -5,7 +5,7 @@ class Model_evaluation extends MY_Model {
      * TKD evaluation MODEL
      *
      * @package     evaluation Model
-     * @author      Muhammad Uzair Khan (Muhammad.Uzair@tradekey.com)
+     * @author      Muhammad devemail0909@gmail.com Khan (Muhammad.devemail0909@gmail.com@tradekey.com)
      * @version     2.0
      * @since       2014 / Amazingly corrupt models Corporation Inc.
      */

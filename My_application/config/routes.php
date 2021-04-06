@@ -89,7 +89,7 @@ $route['learning-journey'] = "about_us/learning";
 $route['expert-tutorial'] = "about_us/expert";
 $route['about-us'] = "about_us/index";
 
-$route['cart'] = "cart/cart";	
+$route['cart'] = "cart/index";	
 //PACKAGE
 // $route['package-payment-step-1'] = "package/order_view";
 // $route['package-payment-step-2'] = "package/payment";

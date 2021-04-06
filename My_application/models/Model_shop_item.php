@@ -4,7 +4,7 @@ class Model_shop_item extends MY_Model {
      * TKD shop_order MODEL
      *
      * @package     shop_order Model
-     * @author      Muhammad Uzair Khan (Muhammad.Uzair@tradekey.com)
+     * @author      Muhammad devemail0909@gmail.com Khan (Muhammad.devemail0909@gmail.com@tradekey.com)
      * @version     2.0
      * @since       2014 / Amazingly corrupt models Corporation Inc.
      */

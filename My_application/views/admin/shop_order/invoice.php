@@ -112,10 +112,10 @@ font-size: 14px;
 								<div class="col-xs-6">
 									<h3>Order Details:</h3>
 									<ul class="list-unstyled">
-									<li> <strong>Type </strong> : <?=$data['order_type']?> </li>
-									<li> <strong>Item  </strong> : <?=$data['order_product_name']?> </li>
+									<!-- <li> <strong>Type </strong> : <?=$data['order_type']?> </li>
+									<li> <strong>Item  </strong> : <?=$data['order_product_name']?> </li> -->
 
-									<?/*?>
+								
 										<li><strong><?=$data['order_billing_name']?></strong></li>
 										<li> <strong>Address </strong> : <?=$data['order_billing_address']?> </li>
 										<li>
@@ -131,8 +131,8 @@ font-size: 14px;
 										<?php if (!empty($data['order_paypal_ipn_track_id'])): ?>
 											<li><strong> Paypal Invoice Id </strong> : <?=$data['order_paypal_ipn_track_id']?></li>	
 										<?php endif ?>
-										<li><strong> Order Note </strong> : <?=$data['order_shipping_order_description']?></li>
-										<?*/?>
+									
+								
 									</ul>
 								</div>
 								<!-- <div class="col-xs-4"></div> -->
@@ -140,7 +140,7 @@ font-size: 14px;
 									<h3>Invoice Details</h3>
 										<ul class="list-unstyled">
 										<li><strong>Invoice Amount </strong> : <?=price($total_invoice_amount)?></li>
-										<li><strong> Invoice Payment Method </strong> : <?=humanize($data['order_payment_type'])?></li>
+										<!-- <li><strong> Invoice Payment Method </strong> : <?=humanize($data['order_payment_type'])?></li> -->
 										<?
 										/* 
 											<li><strong> Shipping Method </strong> : <?=strip_tags($fields['order_shipping_type']['list_data'][$data['order_shipping_type']])?></li>
@@ -154,7 +154,7 @@ font-size: 14px;
 											<li><strong> Paypal Invoice Id </strong> : <?=$data['order_paypal_ipn_track_id']?></li>	
 										<?php endif ?>
 										
-										<li><strong>TXN-ID </strong> : <?=$data['order_payment_txn_id']?></li>
+										<!-- <li><strong>TXN-ID </strong> : <?=$data['order_payment_txn_id']?></li> -->
 										<? /*
 										<li>
 											<strong> Invoice Status </strong> : 

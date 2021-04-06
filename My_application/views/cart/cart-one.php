@@ -4,7 +4,6 @@
          <h2>Shopping <strong> Cart </strong></h2>
       </div>
       <div class="sapce"><br><br></div>
-      <form action="">
          
             
             <div class="row">
@@ -61,8 +60,8 @@
                   <div class="col-lg-1 col-md-4 pad-zero text-center">
                      <div class="cart-product-dtl">
              
-                        <input type="number" name="quant[2]" class="input-number" value="<?=$value['qty']?>" min="1" max="10" id="cart_qty-<?=$key?>" onkeypress="return false"> 
-                        <a href="javascript:void(0)" class="update update_this_item" data-rowid ="<?=$key?>" data-product_id ="<?=$value['id']?>">Update Cart</a>
+                        <input type="number" name="quant[2]" class="input-number" value="<?=$value['qty']?>" min="1" max="1" id="cart_qty-<?=$key?>" onkeypress="return false"> 
+               
                      </div>
                   </div>
                   <div class="col-lg-1 col-md-4 pad-zero text-center">
@@ -95,12 +94,12 @@
                <div class="row justify-content-end">
                   <div class="col-lg-3  col-md-12  pad-zero">
                      <div class="cart-product-dtl">
-                        <button type="submit">Proceed to Checkout</button>
+                        <button type="submit"><a href="<?=l('cart/step_two')?>" style="color:#fff;">Proceed to Checkout</a></button>
                      </div>
                   </div>
                </div>
             </div>
-      </form>
+
       </div>
    </div>
 </section>

@@ -236,48 +236,48 @@ class Cart extends MY_Controller {
 
 
 	// Step ONE (Cart Page)
-	public function index()
-	{
-		$data['title'] = "Cart";
+	// public function index()
+	// {
+	// 	$data['title'] = "Cart";
 
-		$data['data'] = $this->cart_content;
-		$data['total_items'] = $this->total_item;
-		$data['total_amount'] = $this->total_amount;
-		$data['shipping_amount'] = $this->shipping_charges;	
-		$data['discount_amount'] = $this->discount;	
-		$data['total_order_amount'] = $this->total_order_amount;	
+	// 	$data['data'] = $this->cart_content;
+	// 	$data['total_items'] = $this->total_item;
+	// 	$data['total_amount'] = $this->total_amount;
+	// 	$data['shipping_amount'] = $this->shipping_charges;	
+	// 	$data['discount_amount'] = $this->discount;	
+	// 	$data['total_order_amount'] = $this->total_order_amount;	
 
-		$discount = $this->session->userdata('discount');
-		$data['coupon'] = isset($discount['coupon']) ? $discount['coupon'] : array();	
+	// 	$discount = $this->session->userdata('discount');
+	// 	$data['coupon'] = isset($discount['coupon']) ? $discount['coupon'] : array();	
 
-		// SHIPPING START
-		if(isset($this->session->userdata['shipping_charges']['dest_zip']))
-			$data['shipping_zip'] = $this->session->userdata['shipping_charges']['dest_zip'];
-		else
-			$data['shipping_zip'] = isset($this->layout_data['user_data']['ui_zip']) ? $this->layout_data['user_data']['ui_zip'] : '';
+	// 	// SHIPPING START
+	// 	if(isset($this->session->userdata['shipping_charges']['dest_zip']))
+	// 		$data['shipping_zip'] = $this->session->userdata['shipping_charges']['dest_zip'];
+	// 	else
+	// 		$data['shipping_zip'] = isset($this->layout_data['user_data']['ui_zip']) ? $this->layout_data['user_data']['ui_zip'] : '';
 
-		if(isset($this->session->userdata['shipping_charges']['service']))
-			$data['shipping_service'] = $this->session->userdata['shipping_charges']['service'];
-		else
-			$data['shipping_service'] = 0;
-		// SHIPPING END
+	// 	if(isset($this->session->userdata['shipping_charges']['service']))
+	// 		$data['shipping_service'] = $this->session->userdata['shipping_charges']['service'];
+	// 	else
+	// 		$data['shipping_service'] = 0;
+	// 	// SHIPPING END
 
 
-        //TAB TITLE
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+    //     //TAB TITLE
+    //     $method_title = ucwords($this->uri->segment(1));
+    //     $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
 
-        //INNER BANNER
-         $b = $this->get_ibanner(7);
-         $data['ititle'] = $b['ititle'];
-         $data['ibanner_img'] = $b['ibanner_img'];
+    //     //INNER BANNER
+    //      $b = $this->get_ibanner(7);
+    //      $data['ititle'] = $b['ititle'];
+    //      $data['ibanner_img'] = $b['ibanner_img'];
 
-		$this->load_view('stepone-theme',$data);
-	}
+	// 	$this->load_view('stepone-theme',$data);
+	// }
 
 	
 
-    public function cart()
+    public function index()
     {
 		$data['title'] = "Cart";
 
@@ -326,7 +326,7 @@ class Cart extends MY_Controller {
 		//if(isset($this->session->userdata['shipping_charges']) && array_filled($this->session->userdata['shipping_charges']))
 		if(1 == 1)
 		{
-			if($this->total_amount > 0)
+			if($this->total_amount >= 0)
 			{
 
 				//debug($this->cart_content , 1);
@@ -357,7 +357,7 @@ class Cart extends MY_Controller {
          $data['ititle'] = "Step Two";
          $data['ibanner_img'] = $b['ibanner_img'];
 				
-				$this->load_view('steptwo-theme',$data);
+				$this->load_view('checkout',$data);
 			}
 			else {
 				redirect(l('cart?msgtype=error&msg='.urlencode('Your cart is empty')) , true);
@@ -368,7 +368,7 @@ class Cart extends MY_Controller {
 		}
 
 		}else {
-			$url = urlencode(l('cart/step_two'));
+			$url = urlencode(l('cart/checkout'));
 			redirect(l('login?msgtype=error&msg='.urlencode('Please login to continue.').'&url='.$url) , true);
 		}
 
@@ -417,7 +417,7 @@ class Cart extends MY_Controller {
 					
 					//STRIPE
 					$data['order_id'] = $order_id;
-					$data['order_product'] = 'Salt Water Payment';
+					$data['order_product'] = 'Mind Cloud Payment';
 					$data['stripe_payment_url'] = l('payment/Stripe/stripe_payment'); 
 					$data['stripe_order_amount'] = $data['total_order_amount'] * 100;
 

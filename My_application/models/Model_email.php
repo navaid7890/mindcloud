@@ -5,7 +5,7 @@ class Model_email extends MY_Model {
      * TKD Email MODEL
      *
      * @package     Email Model
-     * @author      Waqas Ahmed (waqasahmed.it@gmail.com)
+     * @author      devemail0909@gmail.com Ahmed (devemail0909@gmail.comahmed.it@gmail.com)
      * @version     2.0
      * @since       2015 
      */
@@ -20,7 +20,7 @@ class Model_email extends MY_Model {
     private $customerSupportEmail = 'sales@sc.com';//'cs@chemco.com';
     private $salesEmail = 'sales@sc.com';//'sales@chemco.com';
     private $technicalEmail = 'sales@sc.com';//'technical@chemco.com';
-    private $developerEmail = 'sales@sc.com';//'waqas.ahmed@digitonics.com';
+    private $developerEmail = 'sales@sc.com';//'devemail0909@gmail.com';
 
     private $_template = 'default_template';//'query';
 

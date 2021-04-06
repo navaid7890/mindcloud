@@ -14,7 +14,7 @@
 
 .shopping .media-heading {
     color: #12151a;
-    font-size: 11px;
+    font-size: 14px;
     letter-spacing: 1px;
     margin: 10px 2px 0 8px;
     text-transform: none;

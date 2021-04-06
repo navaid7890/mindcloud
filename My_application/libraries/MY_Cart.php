@@ -1,7 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * MY_cart Class
- * @author Muhammaed Uzair Khan (Muhammad.uzair@tradekey.com)
+ * @author Muhammaed devemail0909@gmail.com Khan (Muhammad.devemail0909@gmail.com@tradekey.com)
  * @package CI Cart extension . Add some own customizatoin - addons etc
  * Extends CI_cart with the following functionalities:
  *

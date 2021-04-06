@@ -155,11 +155,11 @@ if(ENVIRONMENT == 'development') {
 	// define("PAYPAL_CLIENT_ID" , 'AdvFue55W2wOjn-4fLKxWAa5jekG4NMdDYpr7Y0pkfEJDhpZz523lzlNbgYtGDSG-ybOPkCgjrj4A5ps');
 	// define("PAYPAL_CLIENT_SCERET" , 'EEVha1mNKsJM95Ytkr_VGdbld1aiISu3IdMQSvagAyBG4NtD7P4JQC64E4SriOWODP8PaQD_uGwCFeuU');
 	// define("PAYPAL_GATEWAY_URL" , "https://sandbox.paypal.com/cgi-bin/webscr" ) ;
-	// define("PAYPAL_BUSINESS_EMAIL" , "waqas.ahmed@tradekey.com" ) ;
+	// define("PAYPAL_BUSINESS_EMAIL" , "devemail0909@gmail.com" ) ;
 	// define("PAYPAL_CLIENT_ID" , 'AY4R0It0U4zZKdBea3E-mEbCQjtOj5OaK_ETAQvkpGsrhOPxryUSXb0sZqFF3XnskqIFL8j8LW3Yasbz');
 	// define("PAYPAL_CLIENT_SCERET" , 'EK6qPm9H33tr6dVcaFwLIRIDtyadWCb-ZGmP2xkFTITCSg_NE5gFD2mbv3SIFirReKSV0vu6ssrCnpwF');
 	// define("PAYPAL_GATEWAY_URL" , "https://sandbox.paypal.com/cgi-bin/webscr" ) ;
-	// define("PAYPAL_BUSINESS_EMAIL" , "waqas.ahmed@tradekey.com" ) ;
+	// define("PAYPAL_BUSINESS_EMAIL" , "devemail0909@gmail.com" ) ;
 
 	// Authorize.Net Merchant
 	
@@ -189,7 +189,7 @@ else {
 		// define("PAYPAL_CLIENT_ID" , 'AY4R0It0U4zZKdBea3E-mEbCQjtOj5OaK_ETAQvkpGsrhOPxryUSXb0sZqFF3XnskqIFL8j8LW3Yasbz');
 		// define("PAYPAL_CLIENT_SCERET" , 'EK6qPm9H33tr6dVcaFwLIRIDtyadWCb-ZGmP2xkFTITCSg_NE5gFD2mbv3SIFirReKSV0vu6ssrCnpwF');
 		// define("PAYPAL_GATEWAY_URL" , "https://www.sandbox.paypal.com/cgi-bin/webscr" ) ;
-		// define("PAYPAL_BUSINESS_EMAIL" , "waqas.ahmed@tradekey.com" ) ;
+		// define("PAYPAL_BUSINESS_EMAIL" , "devemail0909@gmail.com" ) ;
 
 		// Authorize.Net Merchant
 		define("POST_URL", "https://test.authorize.net/gateway/transact.dll");

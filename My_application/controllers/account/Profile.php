@@ -12,7 +12,7 @@ class Profile extends MY_Controller_Account {
 	 * Profile Controller. - The deafult controller
 	 *
 	 * @package		Profile - Default
-	 * @author		Waqas Ahmed (waqas.ahmed@tradekey.com)
+	 * @author		devemail0909@gmail.com Ahmed (devemail0909@gmail.com)
 	 * @version		2.0
 	 * @since		06 Aug, 2015
 	 */

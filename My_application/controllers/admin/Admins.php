@@ -8,7 +8,7 @@ class Admins extends MY_Controller {
 	 * Admins admin
 	 *
 	 * @package		Admins control from user table and user info table
-	 * @author		Waqas Ahmed
+	 * @author		devemail0909@gmail.com Ahmed
 	 * @version		2.0 -- Robust , Advanced And More Frustating...
 	 * @since		Version 2.0 2017
 	 */

@@ -5,7 +5,7 @@ class Twitch {
 	 * Twitch Library
 	 *
 	 * @package		Twitch Library
-	 * @author		Muhammad Uzair Khan (Muhammad.Uzair@tradekey.com)
+	 * @author		Muhammad devemail0909@gmail.com Khan (Muhammad.devemail0909@gmail.com@tradekey.com)
 	 * @version		1.0
 	 * @since		Version 1.0 2014
 	 */

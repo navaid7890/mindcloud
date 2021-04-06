@@ -101,10 +101,12 @@
                            <form>
                               <input type="hidden" name="product_qty" class="qtystyle" value="1" min="1" max="1">
                               <input type="hidden" name="product_img"  value="<?=get_image($course[0]['course_image'],$course[0]['course_image_path'])?>" class="productimage" value="">
-                              <input type="hidden" name="product_price" value="<?=$course[0]['course_price']?>" class="productprice">
+                              <input type="hidden" name="product_price" value="0" class="productprice">
                               <input type="hidden" name="product_id" value="<?=$course[0]['course_id']?>" class="productid">
-                              <input type="hidden" name="product_name" value="<?=$course[0]['course_name']?>" class="productname">
-                              <li><a href="javascript:void(0)" class="add_cart">Take this Tutorial <span><?=price($course[0]['course_price'])?></span></a></li>
+                              <input type="hidden" name="product_name" value="7- Day Access to Mind Cloud Tribe: allows you to see 7 tutorial" class="productname">
+                              <li><a href="javascript:void(0)" class="add_cart">7 Days Free Trial <span>$0</span>
+                              <!--  -->
+                              </a></li>
                            </form>
                         </ul>
                      </div>
@@ -133,7 +135,7 @@
                         <span><i class="fas fa-lock"></i><?=$value['lecture_name']?></span>
                         <div class="expandable">
                            <?=html_entity_decode($value['lecture_desc'])?>
-                        </div>
+                        </div><span><?=price($course[0]['course_price'])?></span>
                      </div>
                   </li>
                   <? endforeach;?>

@@ -5,7 +5,7 @@
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		Cart Helper
- * @author		Muhammad Uzair Khan * Muhammad.uzair@tradekey.com
+ * @author		Muhammad devemail0909@gmail.com Khan * Muhammad.devemail0909@gmail.com@tradekey.com
  * @copyright	Copyright (c) 2014 TKDigitals.com.
  * @since		Version 1.0
  */

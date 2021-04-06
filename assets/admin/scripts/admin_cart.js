@@ -1,5 +1,5 @@
 /*
-*   @author: Muhammad Uzair Khan (Muhammad.uzair@tradekey.com)
+*   @author: Muhammad devemail0909@gmail.com Khan (Muhammad.devemail0909@gmail.com@tradekey.com)
 *   @package: TKD - Helper
 *   @class: Cart - Simply, update , insert, delete and destroy Cart from the face of the earth...
 */ 

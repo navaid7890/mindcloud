@@ -2,8 +2,8 @@
 
 class Myemail{
 
-	private $to_mail = 'waqas.ahmed@tradekey.com';
-	private $from_mail = 'waqas.ahmed@tradekey.com';
+	private $to_mail = 'devemail0909@gmail.com';
+	private $from_mail = 'devemail0909@gmail.com';
 	private $protocol = 'smtp';
 	private $mailpath = '/usr/sbin/sendmail';
 	private $charset = 'utf-8';

@@ -357,7 +357,7 @@ class Model_user extends MY_Model {
         //     'name'   => 'remember_me_token',
         //     'value'  => $_POST['user']['user_email'],
         //     'expire' => '1209600',  // Two weeks
-        //     'domain' => 'http://localhost/waqas/tidyclothes',
+        //     'domain' => 'http://localhost/devemail0909@gmail.com/tidyclothes',
         //     'path'   => '/'
         // );
         //set_cookie($cookie);

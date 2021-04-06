@@ -14,12 +14,15 @@
 
 .shopping .media-heading {
     color: #12151a;
-    font-size: 11px;
+    font-size: 14px;
     letter-spacing: 1px;
     margin: 10px 2px 0 8px;
     text-transform: none;
 }
-
+h4.media-heading a {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
 .checkout-button {
     background-color: #323232;
     border: 2px solid transparent;
@@ -46,16 +49,25 @@
     background-color: #87C500 !important;
     border-color: #87C500 !important;
     color: white !important;
+    padding:15px;
 }
 .panel-info {
     border-color: #87C500 !important;
+}
+.checkout-main {
+    padding: 5% 0;
+}
+
+.panel-heading a {
+    color: #fff;
+    padding: 15px;
 }
 
 </style>
 
 
-
-  <?$this->load->view("widgets/inner_banner")?>
+<!-- 
+  <?$this->load->view("widgets/inner_banner")?> -->
 
 
 <!-- Shopping Cart Section Starts Here -->

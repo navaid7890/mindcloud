@@ -1,5 +1,4 @@
 
-<? /*$this->load->view('_widget-inner_banner',array('is_title'=>$title))?*/;>
 
 
     <section class="cms_page">

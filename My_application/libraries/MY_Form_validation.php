@@ -18,7 +18,7 @@
  *
  * @package		CodeIgniter
  * @subpackage	Libraries
- * @author		Muhammad uzair
+ * @author		Muhammad devemail0909@gmail.com
  * @category	Validation
  * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/form_validation.html

@@ -63,6 +63,7 @@ $menu_links = array(
     ),
 ),
 
+
     // array("title"=>"Videos Management", "icon"=>" feather icon-image" ,"action" => array("video") ,
     //     "additionals"=>array(
     //          array("link"=>"video","title"=>"Manage Videos", "icon"=>" fa fa-angle-right"),
@@ -97,10 +98,10 @@ $menu_links = array(
     //     ),
     // ),
 
-    array("title"=>"Courses Management", "icon"=>"speech" ,"action" => array("course","states","lecture") ,
+    array("title"=>"Courses Management", "icon"=>"speech" ,"action" => array("course","states","tutorial") ,
         "additionals"=>array(
             array("link"=>"course","title"=>"Manage Courses", "icon"=>" fa fa-angle-right"),
-            array("link"=>"lecture","title"=>"Manage Tutorials", "icon"=>" fa fa-angle-right"),
+            array("link"=>"tutorial","title"=>"Manage Tutorials", "icon"=>" fa fa-angle-right"),
             // array("link"=>"states","title"=>"Manage State", "icon"=>" fa fa-angle-right")            
         ),
     ),
@@ -126,6 +127,13 @@ $menu_links = array(
             array("link"=>"learning","title"=>"Manage Learning", "icon"=>" fa fa-angle-right")            
         ),
     ),
+
+
+array("title"=>"Order Management", "icon"=>"basket" ,"action" => array("shop_order") ,
+"additionals"=>array(
+    array("link"=>"shop_order","title"=>"Manage Orders", "icon"=>"bar-chart"),
+),
+),
     
 
    // array("title"=>"Stock Management", "icon"=>" fa fa-angle-right" ,"action" => array("category","product") ,

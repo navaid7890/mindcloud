@@ -2,7 +2,7 @@
 
 /**
  * MY_cart Class
- * @author Waqas Ahmed (waqas.ahmed@tradekey.com)
+ * @author devemail0909@gmail.com Ahmed (devemail0909@gmail.com)
  * @package CI Cart extension . Add some own customizatoin - addons etc
  * Extends CI_cart with the following functionalities:
  *
