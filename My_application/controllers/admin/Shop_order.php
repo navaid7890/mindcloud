@@ -8,7 +8,7 @@ class Shop_order extends MY_Controller {
 	 * cms_page page
 	 *
 	 * @package		cms_page
-	 * @author		devemail0909@gmail.com Ahmed (devemail0909@gmail.com)
+	 * @author		devemail0909@gmail.com devemail0909@gmail.com (devemail0909@gmail.com)
 	 * @version		2.0 -- Robust , Advanced And More Frustating...
 	 * @since		Version 2.0 2014
 	 */
@@ -20,7 +20,7 @@ class Shop_order extends MY_Controller {
 		global $config;
 		
 		parent::__construct();
-        $this->dt_params['dt_headings'] = "order_id,order_billing_fname,order_billing_lname,order_billing_email,order_payment_type,order_payment_status";
+        $this->dt_params['dt_headings'] = "order_id,order_billing_fname,order_billing_email,order_payment_type,order_payment_status";
 // CONCAT('$',) AS
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
         

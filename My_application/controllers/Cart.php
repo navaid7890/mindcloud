@@ -429,6 +429,8 @@ class Cart extends MY_Controller {
 				         $b = $this->get_ibanner(7);
 				         $data['ititle'] = 'Payment';
 				         $data['ibanner_img'] = $b['ibanner_img'];
+						 $this->cart->destroy();
+
 
 					// Paypal Payment Option
 					$this->load_view('payment-theme',$data);

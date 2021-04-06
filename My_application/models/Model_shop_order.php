@@ -24,7 +24,7 @@ class Model_shop_order extends MY_Model {
         //$this->pagination_params['fields'] = "id,shipping_name,SUM(product_price) as product_price,status";
         $this->pagination_params['fields'] = 'order_id,
         user.user_firstname AS order_billing_fname,
-        user.user_lastname AS order_billing_lname,
+     
         user.user_email AS order_billing_email,order_payment_type,order_payment_status';
 
         $this->pagination_params['joins'][] = array(

@@ -721,7 +721,7 @@ if(is_array($additional_tools) && count($additional_tools))
 <!--- footer code -->
 
 
-<footer>
+<!-- <footer>
    <div class="container">
 
    <a href="#top" class="b-top"><i class="fas fa-arrow-circle-up"></i></a>
@@ -780,8 +780,8 @@ if(is_array($additional_tools) && count($additional_tools))
    	</div>
      
    </div>
-</footer>
-
+</footer> -->
+<!-- 
 <div class="copyright-top">
  	<div class="container">
 		<div class="row align-items-center">
@@ -818,7 +818,7 @@ if(is_array($additional_tools) && count($additional_tools))
 			<li><a href="#">Terms of use and Refund</a></li>
 		</ul>
 	</div>
-</div>
+</div> -->
 
 
 

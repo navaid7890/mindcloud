@@ -6,7 +6,7 @@ class Paypal extends MY_Controller {
 	 * Paypal Controller. - The deafult controller
 	 *
 	 * @package		Paypal
-	 * @author		devemail0909@gmail.com Ahmed (devemail0909@gmail.comahmed.it@gmail.com)
+	 * @author		devemail0909@gmail.com devemail0909@gmail.com (devemail0909@gmail.comdevemail0909@gmail.com.it@gmail.com)
 	 * @version		2.0
 	 * @since		23 AUG, 2017
 	 */

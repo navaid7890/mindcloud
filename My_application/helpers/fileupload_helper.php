@@ -54,7 +54,7 @@ Class Fileupload_helper {
 		/***
 			Adding file extension validation
 			Date : 21/11/2016
-			Developer Name : devemail0909@gmail.com Ahmed 
+			Developer Name : devemail0909@gmail.com devemail0909@gmail.com 
 		*/
 		// Start
 
@@ -67,7 +67,7 @@ Class Fileupload_helper {
 
 		if(!in_array($file_ext,$file_ext_allow))
 			return array( 'error' => "ERROR: not allow to ".$file_ext." file extension" );
-		// End // devemail0909@gmail.com Ahmed
+		// End // devemail0909@gmail.com devemail0909@gmail.com
 
 		if(move_uploaded_file( $params['tmp_name'] , $destination))
 		{
