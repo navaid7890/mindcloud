@@ -1,4 +1,28 @@
+<style>
 
+.cms_page h1
+{
+
+font-size:30px;
+margin:40px 0;
+
+
+
+}
+
+.cms_page h2
+{
+
+font-size:18px;
+margin:40px 0;
+
+
+
+}
+
+
+
+</style>
 
 
     <section class="cms_page">

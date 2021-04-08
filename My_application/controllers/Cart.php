@@ -72,7 +72,43 @@ class Cart extends MY_Controller {
 
 		return $charges;
 	}
+	// WHEN PAYMENT AMOUNT RECEIVED
+	public function success()
+	{
 
+		// if($this->userid > 0) {
+			$data['title'] = "Success Payment";
+
+			$this->cart->destroy();
+
+			$array_items = array();
+			$array_items = array('discount','shipping_charges','tax');
+			$this->session->unset_userdata($array_items);
+
+			$user_data =$this->session->userdata("logged_in_front");
+			
+			$data['username'] = $user_data['first_name'].' '.$user_data['last_name'];
+
+			$this->load_view('success',$data);
+		// }
+		// else {
+		// 	redirect(l(''),true);
+		// }
+	}
+
+	// WHEN ISSUE FACE IN PAYMENT AMOUNT
+	public function error()
+	{
+		// if($this->userid > 0) {
+			$data['title'] = "Error in Payment";
+
+			$this->load_view('error',$data);
+		// }
+		// else {
+		// 	redirect(l(''),true);
+		// }
+
+	}
 
 	private function get_order_amount()
 	{
@@ -357,7 +393,7 @@ class Cart extends MY_Controller {
          $data['ititle'] = "Step Two";
          $data['ibanner_img'] = $b['ibanner_img'];
 				
-				$this->load_view('checkout',$data);
+				$this->load_view('steptwo-theme',$data);
 			}
 			else {
 				redirect(l('cart?msgtype=error&msg='.urlencode('Your cart is empty')) , true);
@@ -368,19 +404,17 @@ class Cart extends MY_Controller {
 		}
 
 		}else {
-			$url = urlencode(l('cart/checkout'));
+			$url = urlencode(l('cart/step_two'));
 			redirect(l('login?msgtype=error&msg='.urlencode('Please login to continue.').'&url='.$url) , true);
 		}
 
 
 	}
 
+
 	public function payment()
 	{
-		//if($this->userid > 0) {
-		if(1==1)
-		{
-			//if(isset($_GET['oid']) AND intval($_GET['oid']) > 0)
+	
 			if(1==1)
 			{
 				$order_id = $this->input->get('oid');
@@ -388,59 +422,196 @@ class Cart extends MY_Controller {
 				$data['title'] = "Payment";
 
 				$order_data = $this->model_shop_order->get_order_by_pk($order_id);
-				// debug($order_data);
-				//if(isset($order_data) AND array_filled($order_data))
+			
 				if(1==1)
 				{
 					$data['data'] = $order_data;
-					
+					$data['order_id'] = $order_data['order_id'] ;
+
 					$data['total_items'] = count($order_data['items']);
 					$data['total_amount'] = $order_data['price'];
 					$data['shipping_amount'] = $order_data['order_shipping_amount'];
 					$data['discount_amount'] = $order_data['order_discount_amount'];
 					$data['total_order_amount'] = ($order_data['price']+$order_data['order_shipping_amount']+$order_data['order_tax_amount'])-$order_data['order_discount_amount'];
 
-					// debug($data['total_order_amount']);
+					$paymentType = $_GET['payment-type'];
+			
+					$data['paymentType'] = $paymentType;
+					$ptypes = array("downpayment","partialpayment");
+					    
+				    $amount_breakup = $this->model_shop_order->order_amount_breakup($data['total_order_amount']);
+			
 
-					if ($_GET['payment'] == 'stripe') {
-						$data['payment'] = 1; //stripe
-					}else{
-						$data['payment'] = 0; //paypal
+					if (in_array($paymentType,$ptypes)) {
+
+					if ($paymentType == "downpayment") {
+					
+						$down_payement = $amount_breakup[0];
+						$remaining = $amount_breakup[1];
+
+				
+					$data['shipping_paypl'] = $data['shipping_amount'];
+					$data['discount_amount_paypl'] = $data['discount_amount'] + $remaining;
+						
+		
+					$data['payment_amount'] = $down_payement;
+
+					$data['stripe_payment_url'] = l('cart/stripe_payment?payment-type=downpayment');
+							}
+
+				if ($paymentType == "partialpayment") {
+						
+						$down_payement = $amount_breakup[0];
+						$remaining = $amount_breakup[1];
+
+				
+					$data['shipping_paypl'] = 0;
+					$data['discount_amount_paypl'] = 0;
+						
+			
+					$data['payment_amount'] = $remaining;
+			
+					$data['stripe_payment_url'] = l('cart/stripe_payment?payment-type=partialpayment');
+							}
+
 					}
-					//Paypal
-					// $data['paypal_gateway_url'] = PAYPAL_GATEWAY_URL;
-					// $data['paypal_email'] = PAYPAL_BUSINESS_EMAIL;
+					
+					// else{
+						
+					// 	redirect(l('error404'),true);
 
-					$data['success_url'] = l("payment/paypal/paypal_success")."?id=".$order_id."&code=".$this->order_no_encrypt($order_id);
-					$data['notify_url'] = l("payment/paypal/paypal_notification")."?id=".$order_id."&code=".$this->order_no_encrypt($order_id);
-					$data['cancel_url'] = l("payment/paypal/paypal_error")."?id=".$order_id."&code=".$this->order_no_encrypt($order_id);
+					// }
+
+
+					//Paypal
+					$data['paypal_gateway_url'] = PAYPAL_GATEWAY_URL;
+					$data['paypal_email'] = PAYPAL_BUSINESS_EMAIL;
+
+					$data['success_url'] = l("paypal/paypal_success")."?id=".$order_id."&code=".md5($order_id);
+					$data['notify_url'] = l("paypal/paypal_notification")."?id=".$order_id."&code=".md5($order_id)."&payment-type=downpayment";
+					$data['cancel_url'] = l("paypal/paypal_error")."?id=".$order_id."&code=".md5($order_id);
 					
 					//STRIPE
 					$data['order_id'] = $order_id;
-					$data['order_product'] = 'Mind Cloud Payment';
-					$data['stripe_payment_url'] = l('payment/Stripe/stripe_payment'); 
-					$data['stripe_order_amount'] = $data['total_order_amount'] * 100;
+					$data['order_product'] = 'lovecustomart work';
 
-					    //TAB TITLE
+		 		 $this->amazonpay_config = array(
+                'merchant_id'   => AMAZON_MERCHANT_ID, // Merchant/SellerID
+                'access_key'    => AMAZON_ACCESS_KEY, // MWS Access Key
+                'secret_key'    => AMAZON_SECRET_KEY, // MWS Secret Key
+                'client_id'     => 'amzn1.application-oa2-client.028ef671d3a14fa8937dad75e126cac6', // Login With Amazon Client ID  elle deve id as clients url was not regsiter
+                'region'        => AMAZON_REGION,  // us, de, uk, jp
+                'currency_code' => AMAZON_CURRENCY, // USD, EUR, GBP, JPY
+                'sandbox'       => AMAZON_SANBOX);
+
+		
+       	$data['amazonpay_config'] = $this->amazonpay_config;
+
+       	$data['amazon_oid'] = $order_id;
+       	$data['amazon_code'] = md5($order_id);
+       	$data['amazon_payment_type'] = $paymentType;
+
+			
 				        $method_title = ucwords($this->uri->segment(1));
 				        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
 
-				        //INNER BANNER
+				 
 				         $b = $this->get_ibanner(7);
 				         $data['ititle'] = 'Payment';
 				         $data['ibanner_img'] = $b['ibanner_img'];
-						 $this->cart->destroy();
 
-
-					// Paypal Payment Option
 					$this->load_view('payment-theme',$data);
 				}
 			}
-		}
+		
 		else {
-			redirect(l(''),true);
+			redirect(l('error404'),true);
 		}
 	}
+
+	
+
+	// public function payment()
+	// {
+		
+	// 	$code = $_GET['code'];
+	// 	if($code == md5($_GET['oid']))
+	// 	{
+			
+	// 		if(1==1)
+	// 		{
+	// 			$order_id = $this->input->get('oid');
+
+	// 			$data['title'] = "Payment";
+
+	// 			$order_data = $this->model_shop_order->get_order_by_pk($order_id);
+			
+	// 			if(1==1)
+	// 			{
+	// 				$data['data'] = $order_data;
+	// 				$data['order_id'] = $order_data['order_id'] ;
+
+	// 				$data['total_items'] = count($order_data['items']);
+	// 				$data['total_amount'] = $order_data['price'];
+	// 				$data['shipping_amount'] = $order_data['order_shipping_amount'];
+	// 				$data['discount_amount'] = $order_data['order_discount_amount'];
+	// 				$data['total_order_amount'] = ($order_data['price']+$order_data['order_shipping_amount']+$order_data['order_tax_amount'])-$order_data['order_discount_amount'];
+
+	// 				$paymentType = $_GET['payment-type'];
+			
+	// 				$data['paymentType'] = $paymentType;
+	// 				$ptypes = array("downpayment","partialpayment");
+					    
+			
+			
+	// 				$data['paypal_gateway_url'] = PAYPAL_GATEWAY_URL;
+	// 				$data['paypal_email'] = PAYPAL_BUSINESS_EMAIL;
+
+	// 				$data['success_url'] = l("paypal/paypal_success")."?id=".$order_id."&code=".md5($order_id);
+	// 				$data['notify_url'] = l("paypal/paypal_notification")."?id=".$order_id."&code=".md5($order_id)."&payment-type=downpayment";
+	// 				$data['cancel_url'] = l("paypal/paypal_error")."?id=".$order_id."&code=".md5($order_id);
+		
+	// 				$data['order_id'] = $order_id;
+	// 				$data['order_product'] = 'mindcloud work';
+	
+
+	// 	 		 $this->amazonpay_config = array(
+    //             'merchant_id'   => AMAZON_MERCHANT_ID, // Merchant/SellerID
+    //             'access_key'    => AMAZON_ACCESS_KEY, // MWS Access Key
+    //             'secret_key'    => AMAZON_SECRET_KEY, // MWS Secret Key
+    //             'client_id'     => 'amzn1.application-oa2-client.028ef671d3a14fa8937dad75e126cac6', // Login With Amazon Client ID  elle deve id as clients url was not regsiter
+    //             'region'        => AMAZON_REGION,  // us, de, uk, jp
+    //             'currency_code' => AMAZON_CURRENCY, // USD, EUR, GBP, JPY
+    //             'sandbox'       => AMAZON_SANBOX);
+
+		 	
+		
+    //    	$data['amazonpay_config'] = $this->amazonpay_config;
+
+    //    	$data['amazon_oid'] = $order_id;
+    //    	$data['amazon_code'] = md5($order_id);
+    //    	$data['amazon_payment_type'] = $paymentType;
+
+			
+	// 			        $method_title = ucwords($this->uri->segment(1));
+	// 			        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+
+	// 			         $b = $this->get_ibanner(7);
+	// 			         $data['ititle'] = 'Payment';
+	// 			         $data['ibanner_img'] = $b['ibanner_img'];
+
+		
+	// 				$this->load_view('payment-theme',$data);
+	// 			}
+	// 		}
+	// 	}
+	// 	else {
+	// 		redirect(l('error404'),true);
+	// 	}
+	// }
+
+
+
 
 
 	private function order_no_encrypt($id)
