@@ -101,14 +101,10 @@ h4.media-heading a {
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"> Payment </a>
                   </h4>
               </div>
-              <div id="collapse2" class="panel-collapse collapse in">
+              <div id="collapse2" class="panel-collapse in">
                 <div class="panel-body">
-                    
-            <?php if ($payment == 1){
-                $this->load->view('widgets/_squareup');
-            }else{
-                $this->load->view('widgets/_paypal');
-            }?>
+                <br>    
+                <? $this->load->view('widgets/_amazon-step1');?>
 
                 </div>
             </div>

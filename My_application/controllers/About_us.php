@@ -368,17 +368,17 @@ class About_us extends MY_Controller {
 
        $tut=array();
        $tut['where']['cp_course_id']=$course[0]['course_id'];
-       $tutorail = $this->model_course_lecture->find_all_active($tut);
+       $tutorail = $this->model_course_tutorial->find_all_active($tut);
 
        foreach($tutorail as $key => $value)
        {
-        $all[]=$value['cp_lecture_id'];
+        $all[]=$value['cp_tutorial_id'];
        }
 
 
        $lec=array();
-       $lec['where_in']['lecture_id']=$all;
-       $data['lc'] = $this->model_lecture->find_all_active($lec);
+       $lec['where_in']['tutorial_id']=$all;
+       $data['lc'] = $this->model_tutorial->find_all_active($lec);
     //   debug($lc);
 
 

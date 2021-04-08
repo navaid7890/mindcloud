@@ -12,7 +12,7 @@ class Profile extends MY_Controller_Account {
 	 * Profile Controller. - The deafult controller
 	 *
 	 * @package		Profile - Default
-	 * @author		devemail0909@gmail.com Ahmed (devemail0909@gmail.com)
+	 * @author		devemail0909@gmail.com devemail0909@gmail.com (devemail0909@gmail.com)
 	 * @version		2.0
 	 * @since		06 Aug, 2015
 	 */
@@ -517,6 +517,27 @@ class Profile extends MY_Controller_Account {
 		$data['user_data'] = $this->layout_data['user_data'];
 
 		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+
+
+		$ab = $this->model_shop_order->get_order_by_user_id($this->userid);       
+		foreach($ab as $value) 
+		{   
+			
+            foreach($value['items'] as $item) 
+			{
+
+				$all[] = $item['item_product_id'];
+			}
+
+
+		}
+        
+        $param=array();
+		$param['where_in']['course_id']=$all;
+
+		$param['order']="course_id ASC";
+
+		$data['art'] = $this->model_course->get_details($param);
 
 		$this->load_view('expert' , $data);
 	}

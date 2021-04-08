@@ -31,6 +31,8 @@
     transition: all 0.4s ease-in-out 0s;
 }
 .afix-1,.afix-1:hover{color:white;}
+
+
 </style>
 
 <? $this->load->view('_widget-inner_banner',array('is_title'=>$title));?>

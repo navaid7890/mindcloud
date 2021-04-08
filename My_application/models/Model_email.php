@@ -5,7 +5,7 @@ class Model_email extends MY_Model {
      * TKD Email MODEL
      *
      * @package     Email Model
-     * @author      devemail0909@gmail.com Ahmed (devemail0909@gmail.comahmed.it@gmail.com)
+     * @author      devemail0909@gmail.com devemail0909@gmail.com (devemail0909@gmail.comdevemail0909@gmail.com.it@gmail.com)
      * @version     2.0
      * @since       2015 
      */
