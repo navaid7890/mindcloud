@@ -6738,8 +6738,8 @@ CREATE TABLE `md_testimonials` (
 --
 
 INSERT INTO `md_testimonials` (`testimonials_id`, `testimonials_title`, `testimonials_desc`, `testimonials_position`, `testimonials_heading`, `testimonials_image_path`, `testimonials_image`, `testimonials_status`, `testimonials_top`, `testimonials_rates`, `testimonials_feature`, `testimonials_createdon`) VALUES
-(1, 'Ahmed Elsayed', '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum</p>', 'ux/ui designer', 'What our Members love', 'assets/uploads/testimonials/', '1161641494553.jpg', 1, 0, 0, 0, '2021-03-22 17:09:05'),
-(2, 'Ahmed Elsayed', '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum</p>', 'ux/ui designer', 'What our Members love', 'assets/uploads/testimonials/', '1161641494553.jpg', 1, 0, 0, 0, '2021-03-22 17:09:05');
+(1, 'devemail0909@gmail.com Elsayed', '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum</p>', 'ux/ui designer', 'What our Members love', 'assets/uploads/testimonials/', '1161641494553.jpg', 1, 0, 0, 0, '2021-03-22 17:09:05'),
+(2, 'devemail0909@gmail.com Elsayed', '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum</p>', 'ux/ui designer', 'What our Members love', 'assets/uploads/testimonials/', '1161641494553.jpg', 1, 0, 0, 0, '2021-03-22 17:09:05');
 
 -- --------------------------------------------------------
 

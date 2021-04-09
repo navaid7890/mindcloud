@@ -56,8 +56,8 @@ class Course extends MY_Controller {
             array(''),"lecture_name");
         
         
-        $this->_list_data['course_lecture'] = $this->model_lecture->find_all_list_active(
-                array(''),"lecture_name");
+        $this->_list_data['course_tutorial'] = $this->model_tutorial->find_all_list_active(
+                array(''),"tutorial_name");
        
         $this->_list_data['course_category'] = $this->model_category->find_all_list_active(
                     array(''),"category_name");

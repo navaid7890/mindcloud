@@ -280,6 +280,45 @@ define("SQUARE_APPLICATION_ID" , "sandbox-sq0idb-gAMx9Un2o77qQHUBSQ-ZOw" ) ;
     define('PAYPAL_ENVIRONMENT','production');
     define('PAYPAL_CLIENTID','');
 
+
+}
+
+
+
+if (ENVIRONMENT == 'development') {
+    
+	define('AMAZON_MERCHANT_ID','A1RX1ZEKJGE93B');  
+    define('AMAZON_ACCESS_KEY','AKIAI5D4Z5GAWA3HD43A');  
+    define('AMAZON_SECRET_KEY','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');  
+    define('AMAZON_CLIENT_ID','amzn1.application-oa2-client.12aacd6441274cf0a658552a4afc523a');  
+    define('AMAZON_CLIENT_SECRET','2ea8275ac6a5dea978c43fae46ef33acc3741eebd11b36b8d8ac3cad524a99f5');  
+    define('AMAZON_REGION','uk');  
+    define('AMAZON_CURRENCY','GBP');  
+    define('AMAZON_SANBOX',TRUE); 
+
+}elseif(ENVIRONMENT == 'testing')
+{
+		// CLIENT CREDENTIALS
+	define('AMAZON_MERCHANT_ID','A1RX1ZEKJGE93B');  
+    define('AMAZON_ACCESS_KEY','AKIAI5D4Z5GAWA3HD43A');  
+    define('AMAZON_SECRET_KEY','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');  
+    define('AMAZON_CLIENT_ID','amzn1.application-oa2-client.12aacd6441274cf0a658552a4afc523a');  //elledev amazon account client ID
+    define('AMAZON_CLIENT_SECRET','2ea8275ac6a5dea978c43fae46ef33acc3741eebd11b36b8d8ac3cad524a99f5');  
+    define('AMAZON_REGION','uk');  
+    define('AMAZON_CURRENCY','GBP');  
+    define('AMAZON_SANBOX',TRUE); 
+
+}else
+{
+	// CLIENT CREDENTIALS
+	define('AMAZON_MERCHANT_ID','A1RX1ZEKJGE93B');  
+    define('AMAZON_ACCESS_KEY','AKIAI5D4Z5GAWA3HD43A');  
+    define('AMAZON_SECRET_KEY','');  
+    define('AMAZON_CLIENT_ID','');  
+    define('AMAZON_CLIENT_SECRET','');  
+    define('AMAZON_REGION','uk');  
+    define('AMAZON_CURRENCY','GBP');  
+    define('AMAZON_SANBOX',FALSE);  
 }
 
 // STRIPE KEYS

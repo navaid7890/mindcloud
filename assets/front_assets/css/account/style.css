@@ -215,9 +215,9 @@ button {
 }
 
 .hding-4 h4 {
-    font-size: 20px;
+    font-size: 26px;
     color: #33415C;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .hding-4 h4 strong {
@@ -744,6 +744,10 @@ ul.social-links>li.last {
     padding-right: 0;
 }
 
+.copyright ul>li.last:after {
+    display: none;
+}
+
 a.b-top {
     font-size: 40px;
     position: absolute;
@@ -762,6 +766,8 @@ ul.login-btn>li>a>span {
     vertical-align: middle;
     overflow: hidden;
     margin-right: 10px;
+    height: 32px;
+    overflow: hidden;
 }
 
 ul.dashboard-layout {
@@ -1149,6 +1155,7 @@ ul.dashboard-layout>li:nth-child(3) {
 
 .dashboard {
     height: 100vh;
+    overflow: hidden;
 }
 
 .course-scroll {
@@ -1312,7 +1319,7 @@ ul.rating {
     display: flex;
 }
 
-.fld-textarea {
+.fld-textarea textarea {
     width: 100%;
     background: #F3F7FB;
     height: 140px;
@@ -1321,10 +1328,9 @@ ul.rating {
 
 .fld-textarea textarea {
     width: 100%;
-    height: 100%;
     resize: none;
-    padding: 30px;
     font-size: 20px;
+    padding: 15px;
 }
 
 .fld-textarea textarea::placeholder,
@@ -1713,15 +1719,23 @@ button.fancybox-close-small:hover:after {
 
 /*multi form*/
 
-.tab {
+.tab,
+.tab1 {
     display: none;
 }
 
-.step.active {
+.tab p,
+.tab1 p {
+    font-size: 13px;
+}
+
+.step.active,
+.step1.active {
     opacity: 1;
 }
 
-form#regForm button {
+form#regForm button,
+form#regForm1 button {
     background: #1D90D9;
     padding: 25px 53px;
     color: #fff;
@@ -1754,7 +1768,8 @@ ul.fld-progress li.last:after {
     display: none;
 }
 
-form#regForm button#prevBtn {
+form#regForm button#prevBtn,
+form#regForm1 button#prevBtn1 {
     background: transparent;
     box-shadow: none;
     color: #000;
@@ -1763,7 +1778,7 @@ form#regForm button#prevBtn {
 
 ul.form-tabing>li {
     display: inline-block;
-    width: 14%;
+    width: 20%;
     position: relative;
     padding-left: 35px;
 }
@@ -1806,6 +1821,9 @@ ul.form-tabing {
 
 ul.fld-progress {
     /* overflow-x: auto; */
+    position: absolute;
+    top: 0;
+    padding-top: 0;
 }
 
 .course-box-head h3 {
@@ -2025,7 +2043,7 @@ ul.who-list {
     background: #1c8fd8;
 }
 
-.video-content span {
+.video-content>div>span {
     padding: 9px 32px;
     background: rgb(29 144 217 / 10%) 0% 0%;
     border-radius: 15px;
@@ -2501,8 +2519,17 @@ video-card {
     height: 538px;
 }
 
+.abt-tut-page .video-box {
+    width: 339px;
+    height: 255px;
+    overflow: hidden;
+}
+
 .video-box {
     position: relative;
+    width: 370px;
+    height: 280px;
+    overflow: hidden;
 }
 
 .video-box span {
@@ -2531,7 +2558,7 @@ video-card {
     background: #1c8fd8;
 }
 
-.video-content span {
+.video-content div>span {
     padding: 9px 32px;
     background: rgb(29 144 217 / 10%) 0% 0%;
     border-radius: 15px;
@@ -2747,6 +2774,457 @@ ul.user-links>li>a:hover {
     color: #fff;
 }
 
+ul.rating-list>li {
+    display: inline-block;
+}
+
+ul.rating-list>li label {
+    color: rgb(251 191 66 / 50%);
+    font-size: 35px;
+}
+
+ul.rating-list>li label>input {
+    display: none;
+}
+
+.rating-popup-content p {
+    font-size: 20px;
+    color: #425C73;
+    line-height: normal;
+}
+
+.rating-popup-box {
+    width: 834px;
+    padding: 100px;
+    text-align: center;
+    margin: auto;
+    background: #F3F7FB;
+}
+
+.rating-popup-content .fld-btn {
+    width: 340px;
+    margin: auto;
+    margin-top: 56px;
+}
+
+.rating-popup {
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.tut-des .tutorial-mid ul.mid-list>li {
+    line-height: normal;
+    position: relative;
+    padding-left: 65px;
+}
+
+.tut-des .tutorial-mid ul.mid-list>li:after {
+    display: none;
+}
+
+.tut-des .tutorial-mid ul.mid-list {
+    counter-reset: my-sec-counter;
+    position: relative;
+}
+
+.tut-des .tutorial-mid ul.mid-list>li:before {
+    counter-increment: my-sec-counter;
+    content: "Part " counter(my-sec-counter) ". ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    margin: auto;
+}
+
+.certificate-modal h2 {
+    font-size: 28px;
+    color: #4b647a;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.certificate-modal h3 {
+    font-size: 40px;
+    color: #425c73;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.certificate-modal p {
+    font-size: 18px;
+    color: #4b647a;
+}
+
+.certificate-modal {
+    text-align: center;
+    background: #f3f7fb;
+    padding: 120px 0 35px 0;
+    border: 10px solid #71c2fd;
+}
+
+.certificate-modal h6 {
+    font-style: italic;
+    font-size: 18px;
+    color: #4b647a;
+}
+
+.certificate-modal h6>span {
+    font-weight: 700;
+}
+
+.certificate-modal .col-md-4 p {
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.certificate-modal .col-md-4 p,
+.certificate-modal .col-md-4 h6 {
+    text-align: left;
+}
+
+.certificate-modal .col-md-4 h6 {
+    font-weight: 600;
+    padding-bottom: 4px;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+
+.index-page .certificate-modal {
+    padding: 80px 20px 35px;
+    margin-bottom: 15px;
+}
+
+.index-page .certificate-modal h3 {
+    font-size: 32px;
+}
+
+.index-page .certificate-modal h2 {
+    font-size: 26px;
+}
+
+.index-page .certificate-modal p,
+.index-page .certificate-modal .col-md-4 p {
+    font-size: 14px;
+}
+
+.tool-footer .tutorial-footer-content {
+    position: relative;
+    padding-top: 31%;
+}
+
+.fld-textarea label {
+    line-height: normal;
+}
+
+.fld-search button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    cursor: pointer;
+    color: #1BA8E8;
+    font-size: 20px;
+}
+
+.oder-detail {
+    padding: 28px 0;
+    background: #fff;
+}
+
+.oder-detail ul {
+    text-align: center;
+}
+
+.oder-detail ul>li {
+    display: inline-block;
+    margin-right: 145px;
+    text-align: left;
+}
+
+.oder-detail h6 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #33415C;
+    line-height: normal;
+}
+
+.oder-detail h6>span {
+    display: block;
+    color: #979DAC;
+}
+
+.oder-detail ul>li.last {
+    margin-right: 0;
+}
+
+button.cart-trim {
+    font-size: 22px;
+    width: 100%;
+    color: #fbbf42;
+    text-align: center;
+    cursor: pointer;
+}
+
+button.cart-trim:hover {
+    color: #000;
+}
+
+.cart-product-dtl p {
+    font-size: 18px;
+}
+
+.cart-product-dtl h6 {
+    font-size: 18px;
+    color: #979DAC;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+}
+
+.fld-cop {
+    width: 350px;
+    height: 60px;
+    background: #fff;
+    border: 2px solid #F1F3F4;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.fld-cop input {
+    height: 100%;
+    width: 100%;
+    padding: 0 16px;
+}
+
+.fld-cop button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 118px;
+    text-align: center;
+    background: #FDBE41;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.fld-cop button:hover {
+    background: #000;
+}
+
+.cart-product-dtl input[type="number"] {
+    width: 100%;
+    text-align: center;
+}
+
+.row-box {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f3f7fb;
+}
+
+.row-box .row {
+    margin: 0;
+}
+
+.row-box2 .cart-product-dtl h6 {
+    padding-bottom: 20px;
+}
+
+.row-box3 button {
+    width: 100%;
+    height: 65px;
+    background: #1D90D9 0% 0% no-repeat padding-box;
+    box-shadow: 0px 12px 24px #1D90D942;
+    border-radius: 12px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.row-box3 button:hover {
+    background: #000;
+    box-shadow: 0px 12px 24px #00233a42;
+}
+
+.cart-content {
+    padding: 45px;
+    background: #fff;
+}
+
+.cartSec {
+    padding-top: 50px;
+}
+
+.confirm-dtl {
+    padding: 55px;
+    background: #fff;
+}
+
+.row-box2 p {
+    font-weight: 700;
+    color: #33415C;
+    text-transform: uppercase;
+}
+
+.cart-product-dtl input[type="number"] {
+    text-align: left;
+}
+
+.order-confirm-footer ul {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20%;
+}
+
+.order-confirm-footer ul>li {
+    padding-bottom: 12px;
+    color: #5C677D;
+    font-size: 18px;
+}
+
+.order-confirm-footer ul>li>a {
+    color: #5C677D;
+}
+
+.order-confirm-footer ul:last-child {
+    margin: 0;
+}
+
+.order-confirm-footer ul>li>a>i {
+    width: 20px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.order-confirm,
+.place-order {
+    height: 780px;
+}
+
+.fld-bill label {
+    color: #5C677D;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.fld-bill label>span {
+    color: #fbbf42;
+}
+
+.fld-bill input,
+.fld-bill select {
+    width: 100%;
+    height: 60px;
+    background: #F3F6FA;
+    border-radius: 8px;
+    padding: 0 22px;
+    font-size: 14px;
+    color: #33415C;
+}
+
+.fld-bill input::placeholder {
+    color: #33415C;
+}
+
+.fld-bill {
+    margin-bottom: 30px;
+}
+
+.billing-form {
+    padding: 50px 30px;
+    background: #FFFFFF;
+}
+
+.fld-bill.fld-b-hlf {
+    width: 49%;
+    display: inline-block;
+}
+
+.billing-form h2 {
+    padding-bottom: 30px;
+}
+
+.fld-bill input::placeholder,
+.fld-bill select::placeholder {
+    color: #979DAC;
+}
+
+.order-dtl-box p {
+    font-size: 14px;
+}
+
+.fld-pla-chk label {
+    font-size: 17px;
+    color: #33415C;
+    vertical-align: middle;
+}
+
+.fld-pla-chk img {
+    width: 40px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.fld-pla-chk input {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.pay-op a {
+    font-size: 18px;
+    color: #189BD7;
+}
+
+.pay-itr {
+    padding: 20px;
+    background: #F3F6FA;
+    margin: 15px 0;
+    margin-bottom: 50px;
+}
+
+.pay-itr p {
+    color: #33415C;
+    font-size: 16px;
+    padding: 0;
+}
+
+.row-box3 p {
+    font-size: 16px;
+    color: #979DAC;
+    padding-bottom: 30px;
+}
+
+.row-box3 p>a {
+    display: inline-block;
+    color: #fbbf42;
+    font-weight: 600;
+}
+
+.fld-pla-btn {
+    width: 281px;
+    height: 60px;
+    background: #1D90D9 0% 0% no-repeat padding-box;
+    box-shadow: 0px 12px 24px #1D90D929;
+    border-radius: 8px;
+    margin-left: auto;
+    overflow: hidden;
+}
+
 @media (max-width: 1200px) {
     img {
         max-width: 100%;
@@ -2802,7 +3280,7 @@ ul.user-links>li>a:hover {
         text-transform: capitalize;
     }
     .logo img {
-        max-width: 50%;
+        max-width: 126%;
     }
     .container {
         position: relative;
@@ -2822,11 +3300,18 @@ ul.user-links>li>a:hover {
 }
 
 @media (max-width: 1440px) {
-    .vid-box {
-        min-height: auto;
+    .order-confirm,
+    .place-order {
+        height: 500px;
+    }
+    .tool-footer .tutorial-footer-content {
+        padding-top: 45%;
     }
     .index-page-wrap {
         height: 550px;
+    }
+    .vid-box {
+        min-height: auto;
     }
     a.cate-tag {
         top: 38%;
@@ -2934,6 +3419,41 @@ ul.user-links>li>a:hover {
 }
 
 @media (max-width: 824px) {
+    .row-box .text-right,
+    button.cart-trim,
+    .cart-product-dtl.text-center {
+        padding: 0;
+        text-align: left;
+    }
+    .fld-bill label {
+        font-size: 12px;
+    }
+    .fld-cop,
+    .fld-pla-btn {
+        width: 100%;
+    }
+    .cart-product-dtl h6 {
+        padding: 15px 0;
+    }
+    .order-confirm-head h2>strong {
+        display: block;
+    }
+    .order-confirm-head h2 {
+        padding-bottom: 15px;
+    }
+    .oder-detail ul>li {
+        margin-right: 60px;
+    }
+    .tool-footer .tutorial-footer-content {
+        padding-top: 0;
+    }
+    ul.fld-progress {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    ul.fld-progress {
+        position: relative;
+    }
     .cate-box {
         padding: 40px 15px 30% 15px;
     }
@@ -3077,6 +3597,9 @@ ul.user-links>li>a:hover {
         padding-bottom: 10px;
         text-align: center;
     }
+    .copyright ul>li:after {
+        display: none;
+    }
     .copyright ul>li.last {
         padding-bottom: 0;
     }
@@ -3194,9 +3717,9 @@ ul.user-links>li>a:hover {
     }
     .col-lg-3.col-md-12.text-right a {
         margin: auto;
-        text-align: center;
+        text-align: right;
         display: block;
-        margin-top: 15px;
+        margin-top: -65px;
     }
     ul.work-list>li {
         width: 40%;
@@ -3256,7 +3779,7 @@ ul.user-links>li>a:hover {
         font-size: 12px;
     }
     ul.form-tabing>li {
-        width: 45%;
+        width: 43%;
     }
     ul.fld-progress {
         width: 100%;
@@ -3357,9 +3880,59 @@ ul.user-links>li>a:hover {
     .certificate-slide button.slick-arrow {
         left: 8px;
     }
+    .rating-popup {
+        width: 365px;
+    }
+    .rating-popup-box {
+        width: 100%;
+        padding: 15px;
+    }
+    .col-lg-10 .cart-product-dtl {
+        margin-bottom: 30px;
+    }
+    .order-confirm-content .text-center {
+        text-align: left;
+    }
+    .order-confirm-footer ul>li {
+        font-size: 14px;
+    }
+    .confirm-dtl {
+        padding: 50px 15px;
+    }
+    .cart-img-view {
+        margin: 20px 0;
+    }
 }
 
 @media (max-width: 767px) {
+    .oder-detail ul>li {
+        margin-right: 0;
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .col-lg-3.col-md-12.text-right a {
+        margin: auto;
+        text-align: center;
+        display: block;
+        margin-top: 15px;
+    }
+    .certificate-modal {
+        padding: 15px;
+    }
+    .certificate-modal h2 {
+        font-size: 18px;
+    }
+    .certificate-modal h3 {
+        font-size: 17px;
+    }
+    .certificate-modal p {
+        font-size: 14px;
+    }
+    .certificate-modal .col-md-4 p,
+    .certificate-modal .col-md-4 h6 {
+        text-align: center;
+    }
     .expert-tut-sec>ul>li {
         width: 100%;
     }
@@ -3386,6 +3959,9 @@ ul.user-links>li>a:hover {
     }
     .course-box-head h3 {
         text-align: center;
+    }
+    .cart-product-dtl h6 {
+        padding: 15px 0;
     }
     .progressBox h6 {
         margin: auto;

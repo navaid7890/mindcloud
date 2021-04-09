@@ -108,20 +108,20 @@ class Model_tutorial extends MY_Model {
                   ),
 
          
-                  'tutorial_image' => array(
+                'tutorial_image' => array(
                 'table' => $this->_table,
                 'name' => 'tutorial_image',
                 'label' => 'Image',
                 'name_path' => 'tutorial_image_path',
                 'upload_config' => 'site_upload_tutorial',
-                'type' => 'fileupload',
-                'type_dt' => 'image',
+                'type' => 'videoupload',
+                'type_dt' => 'video',
                 'randomize' => true,
                 'preview' => 'true',
                 // 'thumb'   => array(array('name'=>'tutorial_image_thumb','max_width'=>260, 'max_height'=>250),),
                 'attributes'   => array(
                     'image_size_recommended'=>'366px × 397px',
-                    'allow_ext'=>'png|jpeg|jpg',
+                    'allow_ext'=>'mkv|avi|mp4',
                 ),
                 'dt_attributes' => array("width" => "10%"),
                 'rules' => 'trim|htmlentities',

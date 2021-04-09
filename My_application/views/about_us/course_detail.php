@@ -1,20 +1,6 @@
 <style>
-   /* .cloud-sec {
-   background: url( <?=get_image($con1['cms_page_image'],$con1['cms_page_image_path'])?>);
-   position: relative;
-   z-index: 0;
-   }
-   .joinSec {
-   background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(../images/banner/1.png);
-   text-align: center;
-   padding: 80px 0 90px;
-   background-size: cover;
-   background-position: center center;
-   }
-   .join-last {
-   background-image: linear-gradient(to left, rgba(65, 69, 79, 1), rgba(63, 67, 76, 0.65)), url(../images/lcd.png);
-   } */
-   .abt-tut-page .mainBanner {
+
+  .abt-tut-page .mainBanner {
    z-index: 0;
    background-image: url(<?=i('')?>abt-tut.png);
    height: 544px;
@@ -132,10 +118,11 @@
                   <? foreach($lc as $key=>$value):?>
                   <li>
                      <div class="faqBox">
-                        <span><i class="fas fa-lock"></i><?=$value['lecture_name']?></span>
+                        <span><i class="fas fa-lock"></i><?=$value['tutorial_name']?></span>
                         <div class="expandable">
-                           <?=html_entity_decode($value['lecture_desc'])?>
-                        </div><span><?=price($course[0]['course_price'])?></span>
+                           <?=html_entity_decode($value['tutorial_desc'])?>
+                        </div>
+                        <!-- <span><?=price($course[0]['course_price'])?></span> -->
                      </div>
                   </li>
                   <? endforeach;?>
@@ -143,7 +130,7 @@
                </ul>
             </div>
          </div>
-         <div class="jr-btm">
+         <!-- <div class="jr-btm">
             <div class="user-review">
                <h2>User <strong> Reviews </strong></h2>
                <div class="space"><br><br></div>
@@ -196,7 +183,7 @@
                   </div>
                </div>
             </div>
-         </div>
+         </div> -->
       </div>
    </section>
    <section class="joinSec cloud-sec hding-2 para">
@@ -297,3 +284,6 @@
       </div>
    </section>
 </div>
+
+
+

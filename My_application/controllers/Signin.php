@@ -6,7 +6,7 @@ class Signin extends MY_Controller {
      * Signin Controller. - The deafult controller
      *
      * @package     Signin
-     * @author      devemail0909@gmail.com Ahmed (devemail0909@gmail.comahmed.it@gmail.com)
+     * @author      devemail0909@gmail.com devemail0909@gmail.com (devemail0909@gmail.comdevemail0909@gmail.com.it@gmail.com)
      * @version     1.0
      * @since       03 Jun, 2015
      */

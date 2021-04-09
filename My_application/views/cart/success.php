@@ -1,3 +1,29 @@
+<style>
+
+.cms_page h1
+{
+
+font-size:30px;
+margin:40px 0;
+
+
+
+}
+
+.cms_page h2
+{
+
+font-size:18px;
+margin:40px 0;
+
+
+
+}
+
+
+
+</style>
+
 <? /*
 $this->load->view('_widget-inner_banner',array('is_title'=>$title)); */?>
 

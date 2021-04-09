@@ -536,6 +536,8 @@
 
 <link rel="stylesheet" href="<?=$config['base_url']?>assets/front_assets/css/account/style.css" type="text/css" />
 
+<link rel="stylesheet" href="<?=$config['base_url']?>assets/front_assets/css/account/front.css" type="text/css" />
+
 <script src="<?=$config['base_url']?>assets/front_assets/js/account/jquery.js"></script>
 
 <?
@@ -721,7 +723,7 @@ if(is_array($additional_tools) && count($additional_tools))
 <!--- footer code -->
 
 
-<footer>
+<!-- <footer>
    <div class="container">
 
    <a href="#top" class="b-top"><i class="fas fa-arrow-circle-up"></i></a>
@@ -780,8 +782,8 @@ if(is_array($additional_tools) && count($additional_tools))
    	</div>
      
    </div>
-</footer>
-
+</footer> -->
+<!-- 
 <div class="copyright-top">
  	<div class="container">
 		<div class="row align-items-center">
@@ -818,7 +820,7 @@ if(is_array($additional_tools) && count($additional_tools))
 			<li><a href="#">Terms of use and Refund</a></li>
 		</ul>
 	</div>
-</div>
+</div> -->
 
 
 
@@ -871,18 +873,15 @@ if(is_array($additional_tools) && count($additional_tools))
 
 
 <script src="<?=$config['base_url']?>assets/front_assets/js/account/custom.js"></script>
-
-<script> if ($(window).width() < 824) { AOS.init();} </script>
+ 
 
 <script>
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
+var currentTab = 0; 
+showTab(currentTab); 
 
 function showTab(n) {
-  // This function will display the specified tab of the form...
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
-  //... and fix the Previous/Next buttons:
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
@@ -893,68 +892,72 @@ function showTab(n) {
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
-  //... and run a function that will display the correct step indicator:
   fixStepIndicator(n)
 }
 
 function nextPrev(n) {
-  // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
-  // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
   x[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
-  // if you have reached the end of the form...
   if (currentTab >= x.length) {
-    // ... the form gets submitted:
     document.getElementById("regForm").submit();
     return false;
   }
-  // Otherwise, display the correct tab:
   showTab(currentTab);
 }
 
-function validateForm() {
-  // This function deals with validation of the form fields
-  var x, y, i, valid = true;
-  x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input","textarea");
-  // A loop that checks every input field in the current tab:
-  for (i = 0; i < y.length; i++) {
-    // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
-      y[i].className += " invalid";
-      // and set the current valid status to false
-      valid = false;
-    }
-  }
-  // If the valid status is true, mark the step as finished and valid:
-  if (valid) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
-  }
-  return valid; // return the valid status
-}
-
 function fixStepIndicator(n) {
-  // This function removes the "active" class of all steps...
   var i, x = document.getElementsByClassName("step");
   for (i = 0; i < x.length; i++) {
     x[i].className = x[i].className.replace(" active", "");
   }
-  //... and adds the "active" class on the current step:
   x[n].className += " active";
 }
 </script>
 
+
+
+
 <script>
-$("ul.course-scroll, .tutorial-scroll-content, .video-caption, .index-page-wrap ").mCustomScrollbar({
-    scrollButtons: { enable: true },
-    theme: "dark"
-});
+var currentTab1 = 0; 
+showTab1(currentTab1);
+
+function showTab1(n) {
+  var x = document.getElementsByClassName("tab1");
+  x[n].style.display = "block";
+  if (n == 0) {
+    document.getElementById("prevBtn1").style.display = "none";
+  } else {
+    document.getElementById("prevBtn1").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn1").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn1").innerHTML = "Next";
+  }
+  fixStepIndicator1(n)
+}
+
+function nextPrev1(n) {
+  var x = document.getElementsByClassName("tab1");
+  x[currentTab1].style.display = "none";
+  currentTab1 = currentTab1 + n;
+  if (currentTab1 >= x.length) {
+    document.getElementById("regForm1").submit();
+    return false;
+  }
+  showTab1(currentTab1);
+}
+
+function fixStepIndicator1(n) {
+  var i, x = document.getElementsByClassName("step1");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  x[n].className += " active";
+}
 </script>
+
  
 <?foreach($js_files AS $file){
 
