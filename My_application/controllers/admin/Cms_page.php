@@ -81,117 +81,119 @@ class Cms_page extends MY_Controller {
 		parent::index();
 	}
 
-	public function upload_images(){
-
-		// $this->register_plugins("s3");
-		include('assets/global/plugins/s3/s3.php');
-		// debug($this->register_plugins('ss3'));
-
-		
-		
-			// debug($_POST['cms_page']);
-			// debug($_FILES['cms_page']);
-
-		$formdata = $_POST['cms_page'];
-		debug($formdata);
-		// $filedata = $_FILES['cms_page'];
-		$cmsID = $formdata['cms_page_id'];
-
-
-		$uploads_dir = 'assets/uploads/cms_page';
-
-		debug($uploads_dir);
-
-		
-		$filedata = $_FILES['cms_page'];
-		
-		 debug($filedata);
-		// debug(count($filedata['name']),1);
-	$cms_page_image = "";
-		for ($i=1; $i <= count($filedata['name']) ; $i++) { 
-		if ($i == 1) {
-     	$cms_page_image = "cms_page_image";
-		}else{
-
-     	  $cms_page_image = "cms_page_image".$i;
-			}
-
-		$tmp_name = $filedata["tmp_name"]["$cms_page_image"];
-		$name = microtime()."_".$filedata["name"]["$cms_page_image"];
-		$name =  str_replace(" ","_", $name) ;
-		move_uploaded_file($tmp_name, "$uploads_dir/$name");
-	    $Nname = explode(".", $name);
-	    $allowEd = array('jpg','png','.JPG','jpeg','svg','SVG');
-
-
-		$test_var = new S3();
-		$test_var->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
-		$test_var->setRegion(AWS_S3_REGION);
-		$test_var->setSignatureVersion('v4');
- 
-		$chk = $test_var->inputFile($tmp_name); 
-
-		// $test_var->putObject($test_var->inputFile($tmp_name), AWS_S3_BUCKET, 'assets/'.$name, $test_var->ACL_PUBLIC_READ,[],['Content-Type'=>'image/png']);
-		// S3::setAuth(AWS_S3_KEY, AWS_S3_SECRET);
-		// S3::setRegion(AWS_S3_REGION);
-		// S3::setSignatureVersion('v4');
-		// S3::putObject(S3::inputFile($tmp_name), AWS_S3_BUCKET, 'assets/'.$name, S3::ACL_PUBLIC_READ,[],['Content-Type'=>'image/'.$allowEd]);
-		// unlink($tmpfile);
-	   
-
-	    if(in_array($Nname[2],$allowEd)){
-
-
-		    $insertImage["$cms_page_image"] = $name;
-		    $insertImage['cms_page_image_path'] = 'assets/uploads/cms_page/';
-		    $where['where']['cms_page_id'] = $cmsID;
-	        $status = $this->model_cms_page->update_model($where,$insertImage);
-
-	        if($status){
-	        	echo json_encode(array('status'=>1,'message'=>'image updated successfully.'));
-	        }
-	        else{
-	        	echo json_encode(array('status'=>0,'message'=>'Please try again.'));	
-	        }
-
-	    }
-	    else{
-	    	echo json_encode(array('status'=>0,'message'=>'Only JPG and PNG format allowed'));	
-	    }
-
-		}
-	  
-	}
 	// public function upload_images(){
+
+	// 	// $this->register_plugins("s3");
+	// 	include('assets/global/plugins/s3/s3.php');
+	// 	// debug($this->register_plugins('ss3'));
+
 		
+		
+	// 		// debug($_POST['cms_page']);
+	// 		// debug($_FILES['cms_page']);
+
 	// 	$formdata = $_POST['cms_page'];
-	// 	$filedata = $_FILES['cms_page'];
+	// 	debug($formdata);
+	// 	// $filedata = $_FILES['cms_page'];
 	// 	$cmsID = $formdata['cms_page_id'];
 
-	// 	$uploads_dir = 'assets/uploads/cms_page';
-	// 	$tmp_name = $filedata["tmp_name"]['cms_page_image'];
-	// 	$name = microtime()."_".$filedata["name"]['cms_page_image'];
-	// 	move_uploaded_file($tmp_name, "$uploads_dir/$name");
 
+	// 	$uploads_dir = 'assets/uploads/cms_page';
+
+	// 	debug($uploads_dir);
+
+		
+	// 	$filedata = $_FILES['cms_page'];
+		
+	// 	 debug($filedata);
+	// 	// debug(count($filedata['name']),1);
+	// $cms_page_image = "";
+	// 	for ($i=1; $i <= count($filedata['name']) ; $i++) { 
+	// 	if ($i == 1) {
+    //  	$cms_page_image = "cms_page_image";
+	// 	}else{
+
+    //  	  $cms_page_image = "cms_page_image".$i;
+	// 		}
+
+	// 	$tmp_name = $filedata["tmp_name"]["$cms_page_image"];
+	// 	$name = microtime()."_".$filedata["name"]["$cms_page_image"];
+	// 	$name =  str_replace(" ","_", $name) ;
+	// 	move_uploaded_file($tmp_name, "$uploads_dir/$name");
 	//     $Nname = explode(".", $name);
-	//     //debug($name);exit;
-	//     $allowEd = array('jpg','png','.JPG','jpeg');
+	//     $allowEd = array('jpg','png','.JPG','jpeg','svg','SVG');
+
+
+	// 	$test_var = new S3();
+	// 	$test_var->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
+	// 	$test_var->setRegion(AWS_S3_REGION);
+	// 	$test_var->setSignatureVersion('v4');
+ 
+	// 	$chk = $test_var->inputFile($tmp_name); 
+
+	// 	// $test_var->putObject($test_var->inputFile($tmp_name), AWS_S3_BUCKET, 'assets/'.$name, $test_var->ACL_PUBLIC_READ,[],['Content-Type'=>'image/png']);
+	// 	// S3::setAuth(AWS_S3_KEY, AWS_S3_SECRET);
+	// 	// S3::setRegion(AWS_S3_REGION);
+	// 	// S3::setSignatureVersion('v4');
+	// 	// S3::putObject(S3::inputFile($tmp_name), AWS_S3_BUCKET, 'assets/'.$name, S3::ACL_PUBLIC_READ,[],['Content-Type'=>'image/'.$allowEd]);
+	// 	// unlink($tmpfile);
+	   
+
 	//     if(in_array($Nname[2],$allowEd)){
-	// 	    $insertImage['cms_page_image'] = $name;
+
+
+	// 	    $insertImage["$cms_page_image"] = $name;
 	// 	    $insertImage['cms_page_image_path'] = 'assets/uploads/cms_page/';
 	// 	    $where['where']['cms_page_id'] = $cmsID;
 	//         $status = $this->model_cms_page->update_model($where,$insertImage);
+
 	//         if($status){
 	//         	echo json_encode(array('status'=>1,'message'=>'image updated successfully.'));
 	//         }
 	//         else{
 	//         	echo json_encode(array('status'=>0,'message'=>'Please try again.'));	
 	//         }
+
 	//     }
 	//     else{
 	//     	echo json_encode(array('status'=>0,'message'=>'Only JPG and PNG format allowed'));	
 	//     }
+
+	// 	}
+	  
 	// }
+
+	
+	public function upload_images(){
+		
+		$formdata = $_POST['cms_page'];
+		$filedata = $_FILES['cms_page'];
+		$cmsID = $formdata['cms_page_id'];
+
+		$uploads_dir = 'assets/uploads/cms_page';
+		$tmp_name = $filedata["tmp_name"]['cms_page_image'];
+		$name = microtime()."_".$filedata["name"]['cms_page_image'];
+		move_uploaded_file($tmp_name, "$uploads_dir/$name");
+
+	    $Nname = explode(".", $name);
+	    //debug($name);exit;
+	    $allowEd = array('jpg','png','.JPG','jpeg');
+	    if(in_array($Nname[2],$allowEd)){
+		    $insertImage['cms_page_image'] = $name;
+		    $insertImage['cms_page_image_path'] = 'assets/uploads/cms_page/';
+		    $where['where']['cms_page_id'] = $cmsID;
+	        $status = $this->model_cms_page->update_model($where,$insertImage);
+	        if($status){
+	        	echo json_encode(array('status'=>1,'message'=>'image updated successfully.'));
+	        }
+	        else{
+	        	echo json_encode(array('status'=>0,'message'=>'Please try again.'));	
+	        }
+	    }
+	    else{
+	    	echo json_encode(array('status'=>0,'message'=>'Only JPG and PNG format allowed'));	
+	    }
+	}
 
 	public function add($id='', $data=array())
 	{
