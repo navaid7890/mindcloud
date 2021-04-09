@@ -63,8 +63,6 @@ class Model_learning_journey_category extends MY_Model {
                      'rules'   => 'trim'
                 ),
 
-       
-
               'learning_journey_category_name' => array(
                      'table'   => $this->_table,
                      'name'   => 'learning_journey_category_name',
@@ -75,17 +73,6 @@ class Model_learning_journey_category extends MY_Model {
                      'js_rules'   => 'required',
                      'rules'   => 'required|trim|htmlentities'
                   ),
-
-              
-            //   'learning_journey_category_slug'  => array(
-            //       'table'   => $this->_table,
-            //       'name'   => 'learning_journey_category_slug',
-            //       'label'   => 'Slug',
-            //       'type'   => 'text',
-            //       'attributes'   => array(),
-            //       'js_rules'   => array("is_slug" => array()),
-            //       'rules'   => 'required|strtolower|htmlentities|is_unique['.$this->_table.'.'.$this->_field_prefix.'slug]|callback_is_slug'
-            //   ),
                   
 
 

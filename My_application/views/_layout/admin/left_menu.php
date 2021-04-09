@@ -58,6 +58,7 @@ $menu_links = array(
     array("title"=>"Learning Journey Management", "icon"=>" feather icon-image" ,"action" => array("learning_journey_category","learning_journey_content","language") ,
     "additionals"=>array(
          array("link"=>"learning_journey_category","title"=>"Manage Learning Journey Category", "icon"=>" fa fa-angle-right"),
+         array("link"=>"learning_journey_sub_category","title"=>"Manage Learning Journey Sub Category", "icon"=>" fa fa-angle-right"),
          array("link"=>"learning_journey_content","title"=>"Manage Learning Journey Content", "icon"=>" fa fa-angle-right"),
          array("link"=>"language","title"=>"Manage Language", "icon"=>" fa fa-angle-right"),
     ),
