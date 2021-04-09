@@ -24,3 +24,6 @@ RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
 
 php_value upload_max_filesize 1000M
 php_value post_max_size 1000M
+
+
+AddHandler application/x-httpd-php56 .php
