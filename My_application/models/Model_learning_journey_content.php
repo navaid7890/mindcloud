@@ -100,7 +100,23 @@ class Model_learning_journey_content extends MY_Model {
                      'js_rules'   => '',
                      'rules'   => 'trim|htmlentities'
                   ),
-
+                  'learning_journey_video' => array(
+                    'table' => $this->_table,
+                    'name' => 'learning_journey_video',
+                    'label' => 'Learning Video',
+                    'name_path' => 'learning_journey_video_path',
+                    'upload_config' => 'site_upload_learning',
+                    'type' => 'videoupload',
+                    'type_dt' => 'video',
+                    'randomize' => true,
+                    'preview' => 'true',
+                    'attributes'   => array(
+                        'allow_ext'=>'mkv|avi|mp4',
+                    ),
+                    'dt_attributes' => array("width" => "10%"),
+                    'rules' => 'trim|htmlentities',
+                    // 'js_rules'=>$is_required_image
+                ),
     
 
               'learning_journey_content_status' => array(
