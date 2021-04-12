@@ -922,10 +922,11 @@ class MY_Model extends CI_Model {
                     $file_params['destination_path'] = $destination_path ;
                     $file_params['field_config'] = $fld ;
                     $file_params['old_data'] = (isset($old_data))?$old_data:'';
-					
+
 
                     $uploadhelper = new Fileupload_helper($file_params);
                     $uploaded = $uploadhelper->do_upload();
+					//hello;
 				//	debug($uploaded,1);
                     if(isset($uploaded['error']))
                     {
