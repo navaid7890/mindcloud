@@ -304,7 +304,7 @@ Class My_form_helper
                             <span class="file-upload-custom-input">
 								<input type="file" class="default <?=(isset($field_class))?$field_class:''?>" name="<?=$p['field_name']?>"/>
 								<?
-								debug($field_class);
+								//debug($field_class);
 								?>
 							</span>
 
