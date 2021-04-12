@@ -250,18 +250,6 @@ class MY_Model extends CI_Model {
 		}
 		return false;
 	}
-
-	public function find_by_pk_active($id=0, $return_obj = false , $params=array())
-	{
-		$pk = $this->get_pk();
-		if($id)
-		{
-			$params['where'][$pk] = ($id) ;
-			$params['where'][$this->_status_field] =STATUS_ACTIVE ;
-			return $this->find_one($params , $return_obj);
-		}
-		return false;
-	}
 	
 	public function delete_by_pk($id=0)
 	{
@@ -497,6 +485,13 @@ class MY_Model extends CI_Model {
 		//if(trim($where_string))
 		if(isset($where_string))
 			$this->db->where(trim($where_string));
+
+		if(isset($where_like) && count($where_like))
+		{
+			foreach ($where_like as $like_value) {
+				$this->db->like($like_value['column'],$like_value['value'],$like_value['type']);
+			}			
+		}
 		
 		//if($fields)
 		if(isset($fields))
@@ -612,12 +607,12 @@ class MY_Model extends CI_Model {
         }
 
 		$params['fields'] = (isset($params['fields'])) ? $params['fields'] : ( $this->pagination_params['fields'] ? $this->pagination_params['fields'] : "*" );
-    	$params['group'] = (isset($params['group'])) ? $params['group'] : (isset($this->pagination_params['group']))?$this->pagination_params['group']:'' ;
+    	$params['group'] = (isset($params['group'])) ? $params['group'] : ((isset($this->pagination_params['group']))?$this->pagination_params['group']:'') ;
     	$params['order'] = (isset($params['order'])) ? $params['order'] : $this->pagination_params['order'] ;
     	if(isset($this->_order_field))
     		$params['order'] = $this->get_order_field() . " DESC" ;
 
-    	$params['joins'] = (isset($params['joins'])) ? $params['joins'] : (isset($this->pagination_params['joins']))?$this->pagination_params['joins']:'' ;
+    	$params['joins'] = (isset($params['joins'])) ? $params['joins'] : ((isset($this->pagination_params['joins']))?$this->pagination_params['joins']:'') ;
     	$params['return_count'] = true ;
         $params['offset'] = intval($_POST['start']) ; 
 
@@ -638,7 +633,7 @@ class MY_Model extends CI_Model {
     public function single_pagination_query($params= array())
     {
     	$params['where'] = $params['where'] ? $params['where'] : ($this->pagination_params['where'] ? $this->pagination_params['where'] : "*") ;
-    	$params['fields'] = $params['fields'] ? $params['fields'] : $this->pagination_params['fields'] ? $this->pagination_params['fields'] : "*" ;
+    	$params['fields'] = $params['fields'] ? $params['fields'] : ($this->pagination_params['fields'] ? $this->pagination_params['fields'] : "*") ;
     	$params['group'] = $params['group'] ? $params['group'] : $this->pagination_params['group'] ;
     	$params['order'] = $params['order'] ? $params['order'] : $this->pagination_params['order'] ;
     	$params['joins'] = $params['joins'] ? $params['joins'] : $this->pagination_params['joins'] ;
@@ -855,106 +850,8 @@ class MY_Model extends CI_Model {
 						
 
 					}
-					continue; //Awesomely, Skip remaining flow for this iteration
+					//continue; //Awesomely, Skip remaining flow for this iteration
 				break;
-				case 'customfileupload':
-					
-					if($config[ $fld['upload_config'] ])
-						$destination_path = $config[$fld['upload_config']] ;
-					else
-						$destination_path = $config['site_upload_default'] . $this->_table."/" ;
-					
-					if( is_array($_FILES) && $_FILES[$this->_table]['name'][$field_name] )
-					{
-						$file_params = array();
-						$file_params['name'] = $_FILES[$this->_table]['name'][$field_name] ;
-						$file_params['tmp_name'] = $_FILES[$this->_table] ['tmp_name'] [$field_name] ;
-						$file_params['destination_path'] = $destination_path ;
-						$file_params['field_config'] = $fld ;
-						$file_params['old_data'] = (isset($old_data))?$old_data:'';
-						
-						$uploadhelper = new Fileupload_helper($file_params);
-						$uploaded = $uploadhelper->do_upload();
-						if(isset($uploaded['error']))
-						{
-							//debug($uploaded,1);
-							// Fawwad
-                            $referer = $this->agent->referrer();
-                            if(strpos($referer,'?')){
-                                $url = explode('?',$referer);
-                                redirect($url[0]."?msgtype=error&msg=".$uploaded['error'], 'refresh');
-                            }
-                            else{
-                                redirect($referer."?msgtype=error&msg=".$uploaded['error'], 'refresh');
-                            }
-                            exit();
-						}
-						else
-						{
-							//$record = $record + $uploaded ;
-                            if(!empty($record)){
-                                $record = $record + $uploaded ;
-                            }
-                            else{
-                                $record = $uploaded ;
-                            }
-						}
-
-						// Remove Old file - If availabel
-						
-
-					}
-					continue; //Awesomely, Skip remaining flow for this iteration
-				break;
-
-				 case 'videoupload':
-
-                if($config[ $fld['upload_config'] ])
-                    $destination_path = $config[$fld['upload_config']] ;
-                else
-                    $destination_path = $config['site_upload_default'] . $this->_table."/" ;
-
-                if( is_array($_FILES) && $_FILES[$this->_table]['name'][$field_name] )
-                {
-                    $file_params = array();
-                    $file_params['name'] = $_FILES[$this->_table]['name'][$field_name] ;
-                    $file_params['tmp_name'] = $_FILES[$this->_table] ['tmp_name'] [$field_name] ;
-                    $file_params['destination_path'] = $destination_path ;
-                    $file_params['field_config'] = $fld ;
-                    $file_params['old_data'] = (isset($old_data))?$old_data:'';
-
-                    $uploadhelper = new Fileupload_helper($file_params);
-                    $uploaded = $uploadhelper->do_upload();
-                    if(isset($uploaded['error']))
-                    {
-                        $referer = $this->agent->referrer();
-                        //pre($uploaded['error']);
-                        if(strpos($referer,'?')){
-                            $url = explode('?',$referer);
-                            redirect($url[0]."?msgtype=error&msg=".$uploaded['error'], 'refresh');
-                        }
-                        else{
-                            redirect($referer."?msgtype=error&msg=".$uploaded['error'], 'refresh');
-                        }
-                        exit();
-                    }
-                    else
-                    {
-                        //$record = $record + $uploaded ;
-                        if(!empty($record)){
-                            $record = $record + $uploaded ;
-                        }
-                        else{
-                            $record = $uploaded ;
-                        }
-                    }
-
-                    // Remove Old file - If availabel
-
-
-                }
-                continue; //Awesomely, Skip remaining flow for this iteration
-                break;
 				case 'dropdown':
 					if(!empty($user_field_data))
 						$record[$field_name] = $user_field_data;
@@ -1274,6 +1171,15 @@ class MY_Model extends CI_Model {
         $status_fld = $this->get_table_status_field();
         $param['where'][$status_fld.' !='] = STATUS_DELETE;
         return $this->find_all($param);
+    }
+
+    public function _user_types($type_id = "")
+    {
+    	$type = array(
+            CUSTOMER_USER => "<span class=\"label label-primary\">Customer</span>" ,  
+            VENDOR_USER => "<span class=\"label label-success\">Artist</span>" ,  
+            );
+    	return !empty($type[$type_id]) ? $type[$type_id] : $type;
     }
 	
 

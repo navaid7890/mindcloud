@@ -451,7 +451,7 @@ class Model_course extends MY_Model {
                 'label' => 'Course Video',
                 'name_path' => 'course_video_path',
                 'upload_config' => 'site_upload_course',
-                'type' => 'videoupload',
+                'type' => 'customfileupload',
                 'type_dt' => 'video',
                 'randomize' => true,
                 'preview' => 'true',

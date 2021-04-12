@@ -6,7 +6,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * A form builder class help create Forms from Standard TKD Models...
  *
  * @package		TKD Form Helper
- * @author		Muhammad devemail0909@gmail.com Khan * Muhammad.devemail0909@gmail.com@tradekey.com
+ * @author		dalton * Muhammad.uzair@tradekey.com
  * @copyright	Copyright (c) 2014 TKDigitals.com.
  * @since		Version 2.0 Moved To Class... from view.
  */
@@ -18,11 +18,11 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 Class My_form_helper
 {
 	var $formWrapper =  array(
-		"class" => "cmxform form-horizontal tasi-form" ,
-		"method" => "POST" ,
-		"action" => "" ,
-		"enctype" => "multipart/form-data" ,
-		"wrap_class" => "col-md-3" ,
+			"class" => "cmxform form-horizontal tasi-form" ,
+			"method" => "POST" ,
+			"action" => "" ,
+			"enctype" => "multipart/form-data" ,
+			"wrap_class" => "col-md-3" ,
 		);
 
 	var $js_validation = array();
@@ -60,10 +60,10 @@ Class My_form_helper
 		if(is_array($this->form_fields))
 		{
 			foreach($this->form_fields AS $table=>$table_fields)
-			{
-				$this->titles[$table] = ucfirst(str_replace("_", " ", $table));
+	      	{
+	      		$this->titles[$table] = ucfirst(str_replace("_", " ", $table));
 	      		// Form Fields
-				if(is_array($table_fields))
+	      		if(is_array($table_fields))
 				{
 					foreach($table_fields AS $field_key=>$field)
 					{
@@ -73,7 +73,7 @@ Class My_form_helper
 						$this->render_field($prepared_fields);
 					}
 				}
-			}
+	      	}
 		}
 	}
 
@@ -92,12 +92,6 @@ Class My_form_helper
 	{
 		return '<input class=" form-control '.$p['attributes']['class'] .'" id="'.$p['id'].'" '.$p['additional'].' name="' . $p['field_name'] .'" type="'.$p['field']['type'].'" value="'.$p['field_data'].'"/>';
 	} 
-
-	public function gen_readonly($p='')
-	{
-		$class = (array_filled($p['attributes']>0))?$p['attributes']['class'] : '';
-		return '<input class=" form-control '.$class .'" id="'.$p['id'].'" '.$p['additional'].' name="' . $p['field_name'] .'" type="'.$p['field']['type'].'" value="'.$p['field_data'].'" readonly/>';
-	}
 
 	public function gen_password($p='')
 	{
@@ -128,7 +122,7 @@ Class My_form_helper
 
 	public function gen_checkbox($p=array())
 	{
-		$checked =  $p['field_data'] == 1 ? "checked" : $p['field']['default'] == 1 ? "checked" : "" ;
+		$checked =  $p['field_data'] == 1 ? "checked" : ($p['field']['default'] == 1 ? "checked" : "") ;
 		return '<input class=" form-control '.$p['attributes']['class'] .'" id="'.$p['id'].'" '.$p['additional'].' name="' . $p['field_name'] .'" type="'.$p['field']['type'].'" />';
 
 	}
@@ -175,8 +169,8 @@ Class My_form_helper
 			$list_data_key = $p['field']['list_data_key'] ? $p['field']['list_data_key'] : $p['field_key'] ;
 			$list_data = $this->_CI->_list_data[$list_data_key];
 		}
-
-		$option_list = "";
+	  	
+	  	$option_list = "";
 		// Populate OPtions list
 		if( array_filled($list_data) )
 		{
@@ -207,129 +201,7 @@ Class My_form_helper
 		return '<input '. $checked .' name="'.$p['field_name'] .'" type="checkbox" class="make-switch '.$p['attributes']['class'].'" '.$p['additional'].'data-on-text="'.$txtActive.'" value="1" data-off-text="'.$txtInActive.'"/>';
 	}
 
-	public function gen_fileupload($p=array())
-	{
-		$image_size_recommended = isset($p['attributes']['image_size']) ? $p['attributes']['image_size'] : '';
-		$image_size_recommended = isset($p['attributes']['image_size_recommended']) ? $p['attributes']['image_size_recommended'] : '';
-		//debug($p , 1);
-		global $config;
-		$this->_CI->register_plugins(array("bootstrap-fileupload"));
-		if($p['field_data'])
-			$image_path = $config['base_url'] . $p['form_data'][$p['table']][ $p['field']['name_path'] ] . $p['field_data'] ; 
-		else
-			$image_path = "http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
-		ob_start();
-		?>
-		<div class="">
-			<div class="uploadfile uploadfile-new" data-provides="uploadfile">
-				<div class="uploadfile-new thumbnail" style="max-width: 200px; max-height: 150px;">
-					<?php
-					if(isset($p['attributes']['file_name_show']) && ($p['attributes']['file_name_show'] == TRUE) && (intval($this->_CI->uri->segment(4)) > 0))
-					{
-						echo "<p>$image_path</p>";
-					}
-					else
-					{
-						?>
-						<img src="<?=$image_path?>" alt="" />
-						<?php
-					}
-					?>
-				</div>
-				<div class="uploadfile-preview uploadfile-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;">
-					<?=count($p['form_data']) ? $p['field_data'] : "" ?>
-				</div>
-				<div>
-					<span class="btn btn-file blue">
-						<span class="uploadfile-new"><i class="fa fa-paper-clip"></i> Select image</span>
-						<span class="uploadfile-exists"><i class="fa fa-undo"></i> Change</span>
-						<input type="file" class="default <?=$field_class?>" name="<?=$p['field_name']?>" />
-					</span>
-				</div>
-				<a href="#" class="btn btn-danger uploadfile-exists" data-dismiss="uploadfile"><i class="fa fa-trash"></i> Remove</a>
-				<div class="clearfix"></div>
-				<p style="color:green">
-					<?=!empty($image_size_recommended) ? "Image Size : ".$image_size_recommended: ''?> <br />
-					File Allow : <?=isset($p['attributes']['allow_ext']) ? $p['attributes']['allow_ext'] : 'jpg|png'?>
-				</p>
-			</div>
-		</div>
-		<?
-		return ob_get_clean();
-	}
 
-
-  // Video upload
-    public function gen_videoupload($p=array())
-    {
-        global $config;
-        $this->_CI->register_plugins(array("bootstrap-fileupload"));
-        if($p['field_data'])
-            //$image_path = $config['base_url'] . $p['form_data'][$p['table']][ $p['field']['name_path'] ] . $p['field_data'] ;
-            $image_path = $config['base_url'] . $p['form_data'][$p['table']][ $p['field']['name_path'] ] . $p['field_data'] ;
-        else
-            $image_path = g('admin_images_root')."video-icon.png";
-      //  ob_start();
-		// debug($p['field_data']);
-        ?>
-        <div class="">
-            <div class="uploadfile uploadfile-new" data-provides="uploadfile">
-                <?
-                if($p['field_data']){?>
-                    <div class="uploadfile-new thumbnail" style="min-width:150px;max-width: 350px; max-height: 350px; ">
-                        <video width="250" height="250" controls>
-                            <source src="<?=$image_path?>" type="video/mp4">
-                            <source src="<?=$image_path?>" type="video/mov">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                <?}
-                else{?>
-                    <div class="uploadfile-new thumbnail" style="min-width:150px;max-width: 150px; max-height: 150px; ">
-                        <img src="<?=$image_path?>" alt="" />
-                    </div>
-                <?}
-                ?>
-
-                <div class="uploadfile-preview uploadfile-exists thumbnail" style="min-width:150px;max-width: 350px; max-height: 267px; line-height: 20px;">
-                    <?=count($p['form_data']) ? $p['field_data'] : "" ?>
-                </div>
-                <div>
-							<span class="btn btn-file blue">
-								<span class="uploadfile-new"><i class="fa fa-paper-clip"></i> Select</span>
-								<span class="uploadfile-exists"><i class="fa fa-undo"></i> Change</span>
-								<!--<input type="file" class="default <?/*=(isset($field_class))?$field_class:''*/?>" name="<?/*=$p['field_name']*/?>" />-->
-							</span>
-                    <a href="#" class="btn btn-danger uploadfile-exists" data-dismiss="uploadfile"><i class="fa fa-trash"></i> Remove</a>
-                            <span class="file-upload-custom-input">
-								<input type="file" class="default <?=(isset($field_class))?$field_class:''?>" name="<?=$p['field_name']?>"/>
-								<?
-								//debug($field_class);
-								?>
-							</span>
-
-                </div>
-                <?php
-                if(isset($p['attributes']) && !empty($p['attributes'])){
-                    foreach($p['attributes'] as $key=>$value): ?>
-                        <span style="font-size: 10px;color:red;">
-								<?=humanize($key).': '.$value?>
-							    </span>
-                        <br>
-                    <?endforeach;
-                    ?>
-                <?php
-                }
-                ?>
-            </div>
-        </div>
-        <?
-
-        return ob_get_clean();
-    }
-    
-
-   // General File upload
 	public function gen_customfileupload($p=array())
 	{
 		global $config;
@@ -389,28 +261,79 @@ Class My_form_helper
 				<?
 
 				return ob_get_clean();
-			}
+	}
+			
+	public function gen_fileupload($p=array())
+	{
+		$image_size_recommended = isset($p['attributes']['image_size']) ? $p['attributes']['image_size'] : '';
+		$image_size_recommended = isset($p['attributes']['image_size_recommended']) ? $p['attributes']['image_size_recommended'] : '';
+		//debug($p , 1);
+		global $config;
+		$this->_CI->register_plugins(array("bootstrap-fileupload"));
+		if($p['field_data'])
+			$image_path = $config['base_url'] . $p['form_data'][$p['table']][ $p['field']['name_path'] ] . $p['field_data'] ; 
+		else
+			$image_path = "http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
+		ob_start();
+		?>
+				<div class="">
+					<div class="uploadfile uploadfile-new" data-provides="uploadfile">
+						<div class="uploadfile-new thumbnail" style="max-width: 200px; max-height: 150px;">
+							<?php
+							if(isset($p['attributes']['file_name_show']) && ($p['attributes']['file_name_show'] == TRUE) && (intval($this->_CI->uri->segment(4)) > 0))
+							{
+								echo "<p>$image_path</p>";
+							}
+							else
+							{
+							?>
+								<img src="<?=$image_path?>" alt="" />
+							<?php
+							}
+							?>
+						</div>
+						<div class="uploadfile-preview uploadfile-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;">
+							<?=count($p['form_data']) ? $p['field_data'] : "" ?>
+						</div>
+						<div>
+							<span class="btn btn-file blue">
+								<span class="uploadfile-new"><i class="fa fa-paper-clip"></i> Select image</span>
+								<span class="uploadfile-exists"><i class="fa fa-undo"></i> Change</span>
+								<input type="file" class="default <?=$field_class?>" name="<?=$p['field_name']?>" />
+							</span>
+						</div>
+						<a href="#" class="btn btn-danger uploadfile-exists" data-dismiss="uploadfile"><i class="fa fa-trash"></i> Remove</a>
+						<div class="clearfix"></div>
+						<p style="color:green">
+							<?=!empty($image_size_recommended) ? "Image Size : ".$image_size_recommended: ''?> <br />
+							File Allow : <?=isset($p['attributes']['allow_ext']) ? $p['attributes']['allow_ext'] : 'jpg|png'?>
+						</p>
+					</div>
+				</div>
+		<?
+		return ob_get_clean();
+	}
 
-			public function gen_date($p=array())
-			{
-				$this->_CI->register_plugins(array("bootstrap-datetimepicker1"));
+	public function gen_date($p=array())
+	{
+		$this->_CI->register_plugins(array("bootstrap-datetimepicker1"));
 		//$this->_CI->register_plugins(array("bootstrap-datepicker"));
-				$p['field_data'] = ($p['field_data']=="0000-00-00" || !$p['field_data'] ) ?  date("Y-m-d") : $p['field_data'] ;
-				$var = '';
+		$p['field_data'] = ($p['field_data']=="0000-00-00" || !$p['field_data'] ) ?  date("Y-m-d") : $p['field_data'] ;
+		$var = '';
 		//$var .= '<div class="col-md-3 col-xs-11">';
-				$var .= '<input type="date" value="'.$p['field_data'].'" id="'.$p['id'].'" size="16" name="'.$p['field_name'] .'" class="form-control form-control-inline default-date-picker1">';
+		$var .= '<input type="text" value="'.$p['field_data'].'" id="'.$p['id'].'" size="16" name="'.$p['field_name'] .'" class="form-control form-control-inline default-date-picker1">';
 		//$var .= '</div>';
-				return $var;
-			}
+		return $var;
+	}
 
-			public function gen_datetime($p=array())
-			{
-				$this->_CI->register_plugins(array("bootstrap-datetimepicker1"));
-				$p['field_data'] = ($p['field_data']=="0000-00-00" || !$p['field_data'] ) ?  date("Y-m-d H:i") : $p['field_data'] ;
-
-				return '
-				<input type="text" value="'.$p['field_data'].'" id="'.$p['id'].'" name="'.$p['field_name'] .'" btn class="form-control default-datetime-picker1 '.$p['field']['attributes']['class'].'">
-				';
+	public function gen_datetime($p=array())
+	{
+		$this->_CI->register_plugins(array("bootstrap-datetimepicker1"));
+		$p['field_data'] = ($p['field_data']=="0000-00-00" || !$p['field_data'] ) ?  date("Y-m-d H:i") : $p['field_data'] ;
+		
+		return '
+       		<input type="text" value="'.$p['field_data'].'" id="'.$p['id'].'" name="'.$p['field_name'] .'" btn class="form-control default-datetime-picker1 '.$p['field']['attributes']['class'].'">
+		';
 
 		/*
 		return '
@@ -466,17 +389,12 @@ Class My_form_helper
 		$p['id'] = str_replace("]", "", str_replace("[", "-", $p['id']) );
 
 		$return['id'] = str_replace(array('[',']'), array("-"), $p['id']);
-
-		if(isset($p['field']['attributes']['wrap_class']) AND !empty($p['field']['attributes']['wrap_class'])){
-			$p['wrap_class'] = $p['field']['attributes']['wrap_class'];
-		}
-		
 		switch($p['field']['type'])
 		{
 			// Handle low level customization
 			case("editor"):
 			case("textarea"):
-			$p['wrap_class'] = "col-md-9";
+				$p['wrap_class'] = "col-md-9";
 			break;
 			case("update_timestamp"):
 			case("hidden"):
@@ -491,16 +409,15 @@ Class My_form_helper
 			case("datetime"):
 			case("label"):
 			case("label_custom"):
-			case("readonly"):			
 				// Do nothing as of now..
 			break;
 
 			case("none"):
-			return "";
+				return "";
 			break;
 			
 			default:
-			$field_html = "Unknow field type";
+				$field_html = "Unknow field type";
 			break;
 		}
 		$function = "gen_".$p['field']['type'];
@@ -538,25 +455,25 @@ Class My_form_helper
 			$this->form_fields_html .= "";
 		else
 			$this->form_fields_html .= '<div class="form-group '.$field_error.'">
-		<label class="control-label col-md-2 '.$field_class.'" for="'.$p['id'].'"> 
-			'.$field_label.'
-		</label>
-		<div class="'.$wrap_class.'">
-			'.$field_html.'
-			'.form_error("field_class").'
-			'.$help_block.'
-		</div>
-	</div>';
-}
+										<label class="control-label col-md-2 '.$field_class.'" for="'.$p['id'].'"> 
+												'.$field_label.'
+										</label>
+							          	<div class="'.$wrap_class.'">
+							            	'.$field_html.'
+							            	'.form_error("field_class").'
+							            	'.$help_block.'
+							            </div>
+							        </div>';
+	}
 
-public function render_form($field=array())
-{
-	$data['form_obj'] = $this;
-	$this->_CI->load->view("_layout/form_widget",  $data);
+	public function render_form($field=array())
+	{
+		$data['form_obj'] = $this;
+		$this->_CI->load->view("_layout/form_widget",  $data);
 		// Clear Obj for other form use...
-	$this->clear_obj();
-}
+		$this->clear_obj();
+	}
 }
 
 /* Location: ./system/helpers/path_helper.php 
- */ 
+ */

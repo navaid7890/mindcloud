@@ -77,7 +77,7 @@ class Course extends MY_Controller {
 
     public function add($id=0 , $data = array()) {
         
-         debug($_POST,1);
+        // debug($_POST,1);
         parent::add($id, $data);
 
     }
