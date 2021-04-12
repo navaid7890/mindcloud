@@ -269,7 +269,8 @@ Class My_form_helper
             $image_path = $config['base_url'] . $p['form_data'][$p['table']][ $p['field']['name_path'] ] . $p['field_data'] ;
         else
             $image_path = g('admin_images_root')."video-icon.png";
-        ob_start();
+      //  ob_start();
+		// debug($p['field_data']);
         ?>
         <div class="">
             <div class="uploadfile uploadfile-new" data-provides="uploadfile">
@@ -302,6 +303,9 @@ Class My_form_helper
                     <a href="#" class="btn btn-danger uploadfile-exists" data-dismiss="uploadfile"><i class="fa fa-trash"></i> Remove</a>
                             <span class="file-upload-custom-input">
 								<input type="file" class="default <?=(isset($field_class))?$field_class:''?>" name="<?=$p['field_name']?>"/>
+								<?
+								debug($field_class,1);
+								?>
 							</span>
 
                 </div>
