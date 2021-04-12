@@ -925,7 +925,7 @@ class MY_Model extends CI_Model {
 
                     $uploadhelper = new Fileupload_helper($file_params);
                     $uploaded = $uploadhelper->do_upload();
-					debug($uploaded,1);
+				//	debug($uploaded,1);
                     if(isset($uploaded['error']))
                     {
                         $referer = $this->agent->referrer();
