@@ -928,7 +928,7 @@ class MY_Model extends CI_Model {
                     if(isset($uploaded['error']))
                     {
                         $referer = $this->agent->referrer();
-                        pre($uploaded['error']);
+                        debug($uploaded['error']);
                         if(strpos($referer,'?')){
                             $url = explode('?',$referer);
                             redirect($url[0]."?msgtype=error&msg=".$uploaded['error'], 'refresh');
