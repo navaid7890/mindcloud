@@ -1,179 +1,109 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-ERROR - 2021-04-09 06:39:18 --> 404 Page Not Found: admin/Profile/profile.png
-ERROR - 2021-04-09 06:39:26 --> 404 Page Not Found: admin/Profile/profile.png
-ERROR - 2021-04-09 09:39:30 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 395
-ERROR - 2021-04-09 09:39:30 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-04-09 09:39:30 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 443
-ERROR - 2021-04-09 09:39:30 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 444
-ERROR - 2021-04-09 09:39:30 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 445
-ERROR - 2021-04-09 09:39:30 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-04-09 09:39:30 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 09:39:30 --> Severity: 4096 --> Object of class Model_learning_journey_content could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 09:39:30 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-04-09 09:39:30 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-04-09 09:39:30 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-04-09 06:56:19 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 06:56:19 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 06:57:06 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 06:57:06 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 06:57:17 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 06:57:17 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:07:43 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:07:43 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:08:11 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:08:11 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:09:10 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:09:10 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:09:46 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:09:46 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:13:45 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:13:46 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:14:43 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:14:43 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:15:49 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:15:49 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:21:32 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:21:32 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:21:46 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:21:46 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:22:03 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:22:03 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:22:34 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:22:35 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:23:20 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:23:20 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:23:42 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:23:42 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:23:58 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:23:58 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:47:54 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:47:54 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:49:42 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:49:42 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:50:49 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:50:49 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:52:19 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:52:20 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:52:57 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:52:57 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:53:48 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:53:48 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:54:08 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:54:08 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:56:14 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:56:14 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 07:57:54 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 07:57:54 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 08:06:31 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 08:06:31 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 08:06:35 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 08:06:35 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 08:07:29 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 08:07:29 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 08:07:34 --> 404 Page Not Found: account//index
-ERROR - 2021-04-09 08:07:48 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 08:07:48 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 08:08:09 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 08:08:09 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 08:10:14 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 08:10:14 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 08:11:03 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 08:11:03 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 08:12:23 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 08:12:24 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 08:12:43 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 08:12:43 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 08:17:06 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 08:17:07 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 12:32:56 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 12:32:56 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 12:33:17 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 12:33:17 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 12:34:35 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 12:34:35 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 12:41:18 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 12:41:18 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 12:47:47 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 12:47:48 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 12:48:56 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 12:48:56 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 12:49:07 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 12:49:08 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 12:49:12 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 12:49:13 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 12:49:29 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 12:49:29 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 12:50:17 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 12:50:17 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 12:52:06 --> 404 Page Not Found: account/Profile/movie.mp4
-ERROR - 2021-04-09 12:52:07 --> 404 Page Not Found: account/Profile/movie.ogg
-ERROR - 2021-04-09 12:53:58 --> 404 Page Not Found: admin/Profile/profile.png
-ERROR - 2021-04-09 15:54:04 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 395
-ERROR - 2021-04-09 15:54:04 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-04-09 15:54:04 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 443
-ERROR - 2021-04-09 15:54:04 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 444
-ERROR - 2021-04-09 15:54:04 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 445
-ERROR - 2021-04-09 15:54:04 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-04-09 15:54:04 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 15:54:04 --> Severity: 4096 --> Object of class Model_learning_journey_content could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 15:54:04 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-04-09 15:54:04 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-04-09 15:54:04 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-04-09 13:14:45 --> 404 Page Not Found: admin/Profile/profile.png
-ERROR - 2021-04-09 13:43:05 --> 404 Page Not Found: admin/Profile/profile.png
-ERROR - 2021-04-09 16:43:08 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 395
-ERROR - 2021-04-09 16:43:08 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-04-09 16:43:08 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 443
-ERROR - 2021-04-09 16:43:08 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 444
-ERROR - 2021-04-09 16:43:08 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 445
-ERROR - 2021-04-09 16:43:08 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-04-09 16:43:08 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 16:43:08 --> Severity: 4096 --> Object of class Model_learning_journey_content could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 16:43:08 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-04-09 16:43:08 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-04-09 16:43:08 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-04-09 16:43:18 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 395
-ERROR - 2021-04-09 16:43:18 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-04-09 16:43:18 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 443
-ERROR - 2021-04-09 16:43:18 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 444
-ERROR - 2021-04-09 16:43:18 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 445
-ERROR - 2021-04-09 16:43:18 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-04-09 16:43:18 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 16:43:18 --> Severity: 4096 --> Object of class Model_learning_journey_content could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 16:43:18 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-04-09 16:43:18 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-04-09 16:43:18 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-04-09 16:43:58 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 395
-ERROR - 2021-04-09 16:43:58 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-04-09 16:43:58 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 443
-ERROR - 2021-04-09 16:43:58 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 444
-ERROR - 2021-04-09 16:43:58 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 445
-ERROR - 2021-04-09 16:43:58 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-04-09 16:43:58 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 16:43:58 --> Severity: 4096 --> Object of class Model_learning_journey_content could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 16:43:58 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-04-09 16:43:58 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-04-09 16:43:58 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-04-09 16:47:45 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 395
-ERROR - 2021-04-09 16:47:45 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-04-09 16:47:46 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 443
-ERROR - 2021-04-09 16:47:46 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 444
-ERROR - 2021-04-09 16:47:46 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 445
-ERROR - 2021-04-09 16:47:46 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-04-09 16:47:46 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 16:47:46 --> Severity: 4096 --> Object of class Model_learning_journey_content could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 16:47:46 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-04-09 16:47:46 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-04-09 16:47:46 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-04-09 16:47:54 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 395
-ERROR - 2021-04-09 16:47:54 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-04-09 16:47:54 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 443
-ERROR - 2021-04-09 16:47:54 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 444
-ERROR - 2021-04-09 16:47:54 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 445
-ERROR - 2021-04-09 16:47:54 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-04-09 16:47:54 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 16:47:54 --> Severity: 4096 --> Object of class Model_learning_journey_content could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-04-09 16:47:54 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-04-09 16:47:54 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-04-09 16:47:54 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
+ERROR - 2021-04-09 13:13:30 --> 404 Page Not Found: Profile/profile.png
+ERROR - 2021-04-09 13:13:36 --> 404 Page Not Found: admin/Profile/profile.png
+ERROR - 2021-04-09 16:13:40 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 395
+ERROR - 2021-04-09 16:13:40 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-04-09 16:13:40 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 443
+ERROR - 2021-04-09 16:13:40 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 444
+ERROR - 2021-04-09 16:13:40 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 445
+ERROR - 2021-04-09 16:13:40 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-04-09 16:13:40 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-04-09 16:13:40 --> Severity: 4096 --> Object of class Model_course could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-04-09 16:13:40 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-04-09 16:13:40 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-04-09 16:13:40 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-04-09 16:14:04 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 395
+ERROR - 2021-04-09 16:14:04 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-04-09 16:14:04 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 443
+ERROR - 2021-04-09 16:14:04 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 444
+ERROR - 2021-04-09 16:14:04 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 445
+ERROR - 2021-04-09 16:14:04 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-04-09 16:14:04 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-04-09 16:14:04 --> Severity: 4096 --> Object of class Model_course could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-04-09 16:14:04 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-04-09 16:14:04 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-04-09 16:14:04 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-04-09 16:14:32 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 395
+ERROR - 2021-04-09 16:14:32 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-04-09 16:14:32 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 443
+ERROR - 2021-04-09 16:14:32 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 444
+ERROR - 2021-04-09 16:14:32 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 445
+ERROR - 2021-04-09 16:14:32 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-04-09 16:14:32 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-04-09 16:14:32 --> Severity: 4096 --> Object of class Model_course could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-04-09 16:14:32 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-04-09 16:14:32 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-04-09 16:14:32 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-04-09 13:23:28 --> 404 Page Not Found: admin/Profile/profile.png
+ERROR - 2021-04-09 16:23:29 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:29 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:29 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:30 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:30 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:30 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:31 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:31 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:31 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:31 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:31 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:31 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:32 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:32 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:32 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:32 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:32 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:32 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:33 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:33 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:33 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:34 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:34 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:34 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:34 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:34 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:34 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:35 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:35 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:35 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:36 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:36 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:36 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:37 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:37 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:37 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:37 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:37 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:37 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:38 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:38 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:38 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:39 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:39 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:39 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 16:23:40 --> Severity: Warning --> mysqli_connect(): Server sent charset (255) unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:40 --> Severity: Warning --> mysqli_connect(): (HY000/2054): Server sent charset unknown to the client. Please, report to the developers /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 166
+ERROR - 2021-04-09 16:23:40 --> Severity: Warning --> mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 202
+ERROR - 2021-04-09 13:23:59 --> 404 Page Not Found: admin/Profile/profile.png
+ERROR - 2021-04-09 16:24:03 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 395
+ERROR - 2021-04-09 16:24:03 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-04-09 16:24:03 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 443
+ERROR - 2021-04-09 16:24:03 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 444
+ERROR - 2021-04-09 16:24:03 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 445
+ERROR - 2021-04-09 16:24:03 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-04-09 16:24:03 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-04-09 16:24:03 --> Severity: 4096 --> Object of class Model_course could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-04-09 16:24:03 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-04-09 16:24:03 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-04-09 16:24:03 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-04-09 16:24:33 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 395
+ERROR - 2021-04-09 16:24:33 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-04-09 16:24:33 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 443
+ERROR - 2021-04-09 16:24:33 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 444
+ERROR - 2021-04-09 16:24:33 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 445
+ERROR - 2021-04-09 16:24:33 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-04-09 16:24:33 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-04-09 16:24:33 --> Severity: 4096 --> Object of class Model_course could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-04-09 16:24:33 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-04-09 16:24:33 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-04-09 16:24:33 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448

@@ -6,6 +6,8 @@
    background-image:url('<?=get_image($banner['inner_banner_image'],$banner['inner_banner_image_path'])?>');
    }
 </style>
+
+
 <div class="mainBanner home-banner hding-1 hding-2">
    <div class="container">
       <div class="row align-items-center">
