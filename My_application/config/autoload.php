@@ -163,8 +163,20 @@ foreach($model_list as $model)
     }
 }
 
-function __autoload($class)
-{
+// function __autoload($class)
+// {
+//     if (strpos($class, 'CI_') !== 0)
+//     {
+//         if (file_exists($file = APPPATH . 'core/' . $class . EXT))
+//         {
+//             include $file;
+//         }
+//     }
+
+// }
+
+
+spl_autoload_register(function ($class) {
     if (strpos($class, 'CI_') !== 0)
     {
         if (file_exists($file = APPPATH . 'core/' . $class . EXT))
@@ -172,5 +184,6 @@ function __autoload($class)
             include $file;
         }
     }
+});
 
-}
+

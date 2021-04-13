@@ -156,10 +156,17 @@ class MY_Controller_Admin extends CI_Controller {
 	}
 
 
-	public function get_mysqli() { 
-		$db = (array)get_instance()->db;
-		return mysqli_connect('localhost', $db['username'], $db['password'], $db['database']);
-	}
+	// public function get_mysqli() {
+    //     $db = (array)get_instance()->db;
+    //     return mysqli_connect('localhost', $db['username'], $db['password'], $db['database']);
+    // }
+
+    public function get_mysqli() {
+     $db = (array)get_instance()->db;
+     return mysqli_connect('aarswslr2t7vuw.cihoyrcngosj.us-east-1.rds.amazonaws.com', 'mindcloud', 'mindcloud', 'ebdb');
+    }
+
+
 
 	// public function get_mysqli() { 
 	// 	$db = (array)get_instance()->db;
@@ -260,9 +267,9 @@ class MY_Controller_Admin extends CI_Controller {
 							$value = isset($list_data[$value]) ? $list_data[$value] : '' ;
 							break;
 						
-						// case 'hidden':
-						// 	continue;
-						// //	break;
+						case 'hidden':
+							//continue;
+							//break;
 					}
 
 					$dt_row[ $row_key ][ $field_key ] = $value ;
@@ -436,8 +443,9 @@ class MY_Controller_Admin extends CI_Controller {
 			}
 			else
 			{
-			    $data['error'] = validation_errors();
+				$data['error'] = validation_errors();
 			}
+			
 		}
 		
 		$data['page_title_min'] = "Management";
