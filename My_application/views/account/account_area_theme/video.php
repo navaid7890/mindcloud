@@ -45,8 +45,10 @@
                                  <div class="video-caption">
                                     <p>00:00:00</p>
                                     <div class="space"><br></div>
-                                    <? if(isset($learn_Content) AND array_filled($learn_Content)) :?>
-                                    <? foreach($learn_Content as $key=>$value):?>
+                                    <? if(isset($learn_content) AND array_filled($learn_content)) :?>
+                                    <? foreach($learn_content as $key=>$value):?>
+                                       
+                                      <?  //debug($learn_Content); ?>
                                     <p><?= html_entity_decode($value['learning_journey_content_desc']) ?></p>
                                     <? endforeach;?>
                                     <? endif;?>

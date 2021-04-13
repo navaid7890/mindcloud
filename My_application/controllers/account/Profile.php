@@ -596,8 +596,13 @@ class Profile extends MY_Controller_Account {
 
 		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
-		$data['learn_Content'] = $this->model_learning_journey_content->find_all_active();
 
+		$param=array();
+		if(isset($_GET['cat']) AND intval($_GET['cat']) > 0){
+			$param['where']['learning_journey_cat_id'] = intval($this->input->get('cat'));
+		}
+		$data['learn_content'] = $this->model_learning_journey_content->find_all_active($param);
+		// $data['learn_video'] =
 		$this->load_view('video' , $data);
 
 	}
