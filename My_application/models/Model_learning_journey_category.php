@@ -73,6 +73,7 @@ class Model_learning_journey_category extends MY_Model {
                      'js_rules'   => 'required',
                      'rules'   => 'required|trim|htmlentities'
                   ),
+
                   
 
 

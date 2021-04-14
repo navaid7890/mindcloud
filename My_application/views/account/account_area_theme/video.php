@@ -47,9 +47,9 @@
                                     <div class="space"><br></div>
                                     <? if(isset($learn_content) AND array_filled($learn_content)) :?>
                                     <? foreach($learn_content as $key=>$value):?>
-                                       
-                                      <?  //debug($learn_Content); ?>
-                                    <p><?= html_entity_decode($value['learning_journey_content_desc']) ?></p>
+
+                                    <?  //debug($learn_Content); ?>
+                                    <p><?= html_entity_decode($value['learning_journey_content_tags']) ?></p>
                                     <? endforeach;?>
                                     <? endif;?>
                                     <div class="space"><br><br></div>
@@ -61,11 +61,19 @@
                            </div>
                            <div class="col-md-7">
                               <div class="video-box">
+                                 <? if(isset($learn_content) AND array_filled($learn_content)) :?>
+                                 <? foreach($learn_content as $key=>$value):?>
                                  <video width="100%" height="100%" poster="<?= i('') ?>banner/3.png" controls>
-                                    <source src="movie.mp4" type="video/mp4">
-                                    <source src="movie.ogg" type="video/ogg">
+                                    <source src="<?=base_url()?><?=$value['learning_journey_video_path'] ?><?= $value['learning_journey_video'] ?>" type="video/mp4">
+                                    <source src=<?=base_url()?><?=$value['learning_journey_video_path'] ?><?= $value['learning_journey_video'] ?>" type="video/ogg">
                                     Your browser does not support the video tag.
                                  </video>
+                                 <p><?= html_entity_decode($value['learning_journey_content_desc']) ?></p>
+                                 <? endforeach;?>
+                                 <? endif;?>
+
+
+
                               </div>
                            </div>
                         </div>
@@ -76,21 +84,35 @@
                      <div class="tutorial-footer vid-tran para">
                         <div class="tutorial-footer-content">
                            <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
+                           <? //ucfirst($this->session_data['username']);?>
+                           <? //print_r($this->session->userdata); ?>
+                           <? //print_r($this->session_data['id']); ?>
+                           <? //print_r($this->session_data['username']); ?>
+                           
                            <div classs="space"><br><br></div>
                            <form action="">
                               <div class="fld-textarea">
-                                 <textarea placeholder="Write a Review…"></textarea>
+                              
+                              <input type="hidden" name="review_user_id" value="<?= html_entity_decode($this->session_data['id'])?>">
+                                 <? if(isset($learn_content) AND array_filled($learn_content)) :?>
+                                 <? foreach($learn_content as $key=>$value):?>
+                                    <input type="hidden" name="review_course_id" value="<?= html_entity_decode($value['learning_journey_content_id']) ?>">
+                                 <? endforeach;?>
+                                 <? endif;?>
+                              </div>      
+                              <div class="fld-textarea">
+                                 <textarea name="review_desc" placeholder="Write a Review…"></textarea>
                               </div>
                               <div class="space"><br></div>
 
                               <div class="row align-items-center">
                                  <div class="col-md-4">
                                     <ul class="rating">
-                                       <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
-                                       <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
-                                       <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
-                                       <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
-                                       <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                       <li><span>1</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                       <li><span>2</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                       <li><span>3</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                       <li><span>4</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                       <li><span>5</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                     </ul>
                                  </div>
                                  <div class="col-md-8 text-right">
@@ -102,7 +124,6 @@
                                     </div>
                                  </div>
                               </div>
-
                            </form>
                         </div>
                      </div>
@@ -113,3 +134,30 @@
       </ul>
    </section>
 </div>
+
+
+<script type="text/javascript">
+   // $('.rating li').click(function() {
+   //  var rating = parseInt($(this).text());
+   //  alert(rating);
+   // });
+
+    $('form').submit(function(e) {
+        e.preventDefault();
+       var course_id = $("input[name='review_course_id']").val();
+       var description = $("textarea[name='review_desc']").val();
+       var review_user_id = $("input[name='review_user_id']").val();
+      //  var rating = $("textarea[name='review_desc']").val();
+        $.ajax({
+           url: '/ajax-requestPost',
+           type: 'POST',
+           data: {course_id: course_id, description: description, review_user_id: review_user_id},
+           error: function() {
+              alert(review_user_id);
+           },
+           success: function(data) {
+               alert('Review added Successfully');
+           }
+        });
+    });
+</script>

@@ -102,6 +102,7 @@ $menu_links = array(
         "additionals"=>array(
             array("link"=>"course","title"=>"Manage Courses", "icon"=>" fa fa-angle-right"),
             array("link"=>"tutorial","title"=>"Manage Tutorials", "icon"=>" fa fa-angle-right"),
+            array("link"=>"learning_journey_course_review","title"=>"Manage Reviews", "icon"=>" fa fa-angle-right"),
             // array("link"=>"states","title"=>"Manage State", "icon"=>" fa fa-angle-right")            
         ),
     ),
