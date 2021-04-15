@@ -700,3 +700,9 @@ ERROR - 2021-04-15 10:55:06 --> Severity: Parsing Error --> syntax error, unexpe
 ERROR - 2021-04-15 10:55:06 --> Severity: Parsing Error --> syntax error, unexpected '?>' C:\xampp\htdocs\cloud\My_application\views\widgets\course-box.php 58
 ERROR - 2021-04-15 10:55:06 --> Severity: Parsing Error --> syntax error, unexpected '?>' C:\xampp\htdocs\cloud\My_application\views\widgets\course-box.php 58
 ERROR - 2021-04-15 10:55:06 --> Severity: Parsing Error --> syntax error, unexpected '?>' C:\xampp\htdocs\cloud\My_application\views\widgets\course-box.php 58
+ERROR - 2021-04-15 11:00:03 --> Query error: Unknown column 'order_paypal_ipn_track_id' in 'field list' - Invalid query: SELECT order_id, order_payment_type, order_ondate as order_date, SUM(item_price) as price, order_payment_status, order_status, order_user_id, order_shipping_amount, order_tax_amount, order_discount_amount, order_delivery_status, order_paypal_ipn_track_id, order_downpayment, order_downpayment_date, order_remaining_payment, order_partialpayment_date, order_discount_content, order_is_tc
+FROM `md_shop_order`
+JOIN `md_shop_item` ON `md_shop_order`.`order_id` = `md_shop_item`.`item_order_id`
+WHERE `order_user_id` = '1'
+GROUP BY `order_id`
+ERROR - 2021-04-15 08:07:47 --> 404 Page Not Found: admin/Profile/profile.png

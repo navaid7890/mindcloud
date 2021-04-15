@@ -550,7 +550,6 @@ class Profile extends MY_Controller_Account {
 		$data['title'] = 'My Profile';
 		
 		$data['user_data'] = $this->layout_data['user_data'];
-
 		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
 		$this->load_view('learning' , $data);
@@ -599,7 +598,7 @@ class Profile extends MY_Controller_Account {
 
 		$param=array();
 		if(isset($_GET['cat']) AND intval($_GET['cat']) > 0){
-			$param['where']['learning_journey_cat_id'] = intval($this->input->get('cat'));
+			$param['where']['learning_journey_content_id'] = intval($this->input->get('cat'));
 		}
 		$data['learn_content'] = $this->model_learning_journey_content->find_all_active($param);
 		// $data['learn_video'] =
@@ -617,7 +616,7 @@ class Profile extends MY_Controller_Account {
 		$data['user_data'] = $this->layout_data['user_data'];
 
 		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
-
+		$data['learn_content'] = $this->model_learning_journey_content->find_all_active($param);
 		$this->load_view('business' , $data);
 	}
 
