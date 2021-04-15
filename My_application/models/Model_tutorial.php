@@ -111,7 +111,7 @@ class Model_tutorial extends MY_Model {
                 'tutorial_image' => array(
                 'table' => $this->_table,
                 'name' => 'tutorial_image',
-                'label' => 'Image',
+                'label' => 'Video',
                 'name_path' => 'tutorial_image_path',
                 'upload_config' => 'site_upload_tutorial',
                 'type' => 'videoupload',

@@ -28,7 +28,7 @@
 						<li><a href="#">Consult with Experts</a></li>
 						<!-- <li><a href="about-tutorial">About us</a></li> -->
 						<li><a href="#">Enterprise Partners</a></li>
-						<li><a href="javascript:void" class="cart-icon"><i class="fas fa-shopping-cart"><sup class="cart_body">0</sup></i> </a></li>
+						<li><a href="<?=l('cart')?>" class="cart-icon"><i class="fas fa-shopping-cart"><sup class="cart_body">0</sup></i> </a></li>
 						<?php if(isset($this->session->userdata['logged_in_front']) AND array_filled($this->session->userdata['logged_in_front'])) : ?>
 							<li><a href="<?=l('account-area')?>">My Account</a></li>
 					   <li><a href="<?=l('signout')?>"> <i class="far fa-sign-out-alt"></i> Logout</a></li>
