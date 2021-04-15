@@ -55,8 +55,8 @@
                     <ul class="dropdown-box" style="display: none;">
                         <!-- <li><a href="business-model-canvas.php"><i class="fad fa-video"></i>Intro<span><i class="far fa-check"></i></span></a></li> -->
                         <li id="activeId-<?=$a?>"><a href="<?=l('account/profile/video')?>?cat=<?=$a?>"><i class="fad fa-video"></i> Video & Transcript <span><i class="far fa-check"></i></span></a></li>
-                        <li><a href="<?= l('account/profile/tools') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                        <li><a href="<?= l('account/profile/startup') ?>"><i class="fad fa-video"></i> Your Work<span><i class="far fa-check"></i></span></a></li>
+                        <!-- <li><a href="<?= l('account/profile/tools') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
+                        <li><a href="<?= l('account/profile/startup') ?>"><i class="fad fa-video"></i> Your Work<span><i class="far fa-check"></i></span></a></li> -->
                     </ul>
                 </li>
 				<? endforeach;?>

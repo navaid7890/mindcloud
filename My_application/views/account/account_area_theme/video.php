@@ -45,9 +45,9 @@
                                  <div class="video-caption">
                                     <p>00:00:00</p>
                                     <div class="space"><br></div>
+                                    
                                     <? if(isset($learn_content) AND array_filled($learn_content)) :?>
                                     <? foreach($learn_content as $key=>$value):?>
-
                                     <?  //debug($learn_Content); ?>
                                     <p><?= html_entity_decode($value['learning_journey_content_tags']) ?></p>
                                     <? endforeach;?>
@@ -245,7 +245,7 @@ $(document).ready(function(){
     
     var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
     var msg = "";
-    if (ratingValue > 1) {
+    if (ratingValue > 0) {
         msg = parseInt(ratingValue);
 
         $('#reviewId').val(msg)
