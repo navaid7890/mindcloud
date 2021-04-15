@@ -32,8 +32,7 @@ var Form = function () {
         comments : base_url + "comment/comment",
         verify : base_url + "verify/validate_certificate",
         evaluation : base_url + "course/ajax_save_evaluation",  //course evaluation
-        
-
+    
         // Account Script
         signup : base_url + "ajax-save-signup",
         signin : base_url + "signin",
@@ -44,6 +43,7 @@ var Form = function () {
         update_contact_info : base_url + "account/profile/ajax-contact-info-save",
         update_address : base_url + "account/profile/ajax-update-address-save",
         change_password : base_url + "account/profile/ajax-change-password",
+        course_review : base_url + "contact_us/review",
         //account_activate_process : base_url + "account/active_account/process",
         //review : base_url + "customer_review",
     };
@@ -79,6 +79,32 @@ var Form = function () {
                 //FOR GOOGLE CAPTCHA RESET:
                 grecaptcha.reset();
                 $(".openBtn").click();
+                return false;
+            }
+            else{
+                Toastr.error(response.msg.desc,'Error');
+                //Toastr.error('Error Found please try again','Error');
+                return false;
+            }
+            return false;
+        },
+
+        
+        course_review : function(form) {
+            // Disable the submit button to prevent repeated clicks:
+            $('#forms-review_us-btn').prop('disabled', true);
+            var data = form.serialize();
+            response = AjaxRequest.fire(urls.course_review, data) ;
+                      // return false;  
+            $('#forms-review_us-btn').prop('disabled', false);
+            
+            if(response.status){
+                
+                Toastr.success(response.msg.desc,'Success');  
+                $("#forms-review_us").find('input[type=text],input[type=email],textarea').val('');
+                //FOR GOOGLE CAPTCHA RESET:
+               // grecaptcha.reset();
+              //  $(".openBtn").click();
                 return false;
             }
             else{
@@ -479,6 +505,14 @@ $(function() {
     var $form = $('#forms-contact_us');
     $form.submit(function(event) {
       Form.contact_us($form);
+      return false;
+    });
+  });
+
+  $(function() {
+    var $form = $('#forms-review_us');
+    $form.submit(function(event) {
+      Form.course_review($form);
       return false;
     });
   });

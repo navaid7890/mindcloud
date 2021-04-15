@@ -62,22 +62,56 @@ class Model_learning_journey_course_review extends MY_Model {
                     'js_rules'   => '',
                     'rules'   => 'trim'
               ),
-             'learning_journey_course_review_course_id' => array(
-              'table'   => $this->_table,
-              'name'   => 'learning_journey_course_review_course_id',
-              'label'   => 'Content Name',
-              // 'type'   => 'text',
-              'type'   => 'readonly',
-              'list_data'    => array() ,
-              'attributes'   => array(),
-              'js_rules'   => '',
-              'rules'   => 'trim',
-           ),
+              'learning_journey_course_review_user_id' => array(
+                'table'   => $this->_table,
+                'name'   => 'learning_journey_course_review_user_id',
+                'label'   => 'user id #',
+                'type'   => 'hidden',
+                'type_dt'   => 'text',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width"=>"5%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+          ),
+
+
+
+                  //   'learning_journey_course_review_course_id' => array(
+                  //     'table'   => $this->_table,
+                  //     'name'   => 'learning_journey_course_review_course_id',
+                  //     'label'   => 'Content Name',
+                  //     // 'type'   => 'text',
+                  //     'type'   => 'readonly',
+                  //     'list_data'    => array() ,
+                  //     'attributes'   => array(),
+                  //     'js_rules'   => '',
+                  //     'rules'   => 'trim',
+                  // ),
+                  'learning_journey_course_review_course_id' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'learning_journey_course_review_course_id',
+                    'label'   => 'Content name',
+                    'type'   => 'dropdown',
+                    'type_dt'   => 'dropdown',
+                    'type_filter_dt' => 'dropdown',
+                    'list_data_key' => "learning_journey_course_review_course_id" ,
+                    'list_data' => array(),
+                    'default'   => '1',
+                    'attributes'   => array(),
+                    'dt_attributes'   => array("width"=>"25%"),
+                    'rules'   => 'trim'
+                 ),
+
+
+
+
+
+
                   'learning_journey_course_review_desc' => array(
                     'table'   => $this->_table,
                     'name'   => 'learning_journey_course_review_desc',
                     'label'   => 'Description',
-                    'type'   => 'text',
+                    'type'   => 'textarea',
                    // 'attributes'   => array("additional"=>'slugify="#'.$this->_table.'-'.$this->_field_prefix.'slug"'),
                      'attributes'   => array(),
                     'js_rules'   => 'required',

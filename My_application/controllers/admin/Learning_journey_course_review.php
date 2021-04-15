@@ -24,7 +24,7 @@ class Learning_journey_course_review extends MY_Controller {
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
 
         $this->dt_params['action'] = array(
-            "hide_add_button" => true ,
+            "hide_add_button" => false ,
             "hide" => false ,
             "show_delete" => true ,
             "show_edit" => true ,
@@ -52,7 +52,7 @@ class Learning_journey_course_review extends MY_Controller {
         // For use IN JS Files
         $config['js_config']['paginate'] = $this->dt_params['paginate'];
 
-        $this->_list_data['learning_journey_content_id'] = $this->model_learning_journey_content->find_all_list_active(array(),"learning_journey_content_name");
+        $this->_list_data['learning_journey_course_review_course_id'] = $this->model_learning_journey_content->find_all_list_active(array(),"learning_journey_content_name");
         // $this->_list_data['learning_journey_category_parent_id'] = $this->model_profession->find_all_list_active(
         //     array('where_string'=>'learning_journey_category_parent_id <= 1')
         //     ,"learning_journey_category_name");
@@ -68,6 +68,8 @@ class Learning_journey_course_review extends MY_Controller {
         parent::add($id, $data);
 
     }
+
+    
 
 
 }
