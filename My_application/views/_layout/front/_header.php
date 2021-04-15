@@ -32,7 +32,7 @@
 					<ul class="login-btn">
 					<li><a href="<?=l('cart')?>" class="cart-icon"><i class="fas fa-shopping-cart"><sup class="cart_body">0</sup></i> </a></li>
 						<?php if(isset($this->session->userdata['logged_in_front']) AND array_filled($this->session->userdata['logged_in_front'])) : ?>
-							<li class="dropdown-toggle"><a href="#"><span><img src="<?= i('') ?>profile/1.png"></span> Andrew Johnson <i class="fal fa-angle-down"></i></a>
+							<li class="dropdown-toggle"><a href="#"><span><img src="<?= i('') ?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a>
 								<div class="dropdown-box">
 									<ul class="user-links">
 										<li><a href="<?=l('account-area')?>"> <i class="fal fa-user-circle"></i> My Account</a></li>
