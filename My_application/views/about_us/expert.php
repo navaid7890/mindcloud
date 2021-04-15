@@ -5,7 +5,7 @@
    color: #fff;
    } 
    .joinSec {
-   background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(<?=get_image($check['cms_page_image'],$check['cms_page_image_path'])?>');
+   background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url('<?=get_image($check['cms_page_image'],$check['cms_page_image_path'])?>');
    text-align: center;
    padding: 80px 0 90px;
    background-size: cover;
@@ -120,7 +120,7 @@
                                     </ul>
                                  </div>
                                  <div class="col-md-4 text-right">
-                                    <h6><?=price($value['course_price'])?></h6>
+                                    <h6>$<?=$value['course_price']?></h6>
                                  </div>
                               </div>
                            </div>

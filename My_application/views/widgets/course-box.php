@@ -17,8 +17,9 @@
             <div class="space"><br><br><br></div>
 
             <div class="course-user-info">
+            <? // print_r($this->session->userdata); ?>   
                 <ul class="login-btn">
-                    <li><a href="#"><span><img src="<?= i('') ?>profile/1.png"></span> Genny Ghanimeh </a></li>
+                    <li><a href="#"><span><img src="<?= i('') ?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> </a></li>
                 </ul>
             </div>
         </div>

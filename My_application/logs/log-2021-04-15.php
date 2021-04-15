@@ -706,3 +706,5 @@ JOIN `md_shop_item` ON `md_shop_order`.`order_id` = `md_shop_item`.`item_order_i
 WHERE `order_user_id` = '1'
 GROUP BY `order_id`
 ERROR - 2021-04-15 08:07:47 --> 404 Page Not Found: admin/Profile/profile.png
+ERROR - 2021-04-15 12:13:31 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\cloud\My_application\views\about_us\expert.php 127
+ERROR - 2021-04-15 12:13:34 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\cloud\My_application\views\about_us\expert.php 127

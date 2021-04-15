@@ -8,7 +8,7 @@
             <li>
                <div class="index-page-wrap">
                     <div class="index-page-content hding-2">
-                        <h2>Welcome <strong>Genny</strong></h2>
+                        <h2>Welcome <strong><?= $this->session_data['username'] ?></strong></h2>
                         <div class="space"><br><br></div>
 
                         <div class="index-graph-box">
@@ -270,7 +270,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-md-10">
                                                         <ul class="login-btn">
-                                                            <li><a href="#"><span><img src="<?=i('')?>profile/1.png"></span> Andrew Johnson <i class="fal fa-angle-down"></i></a></li>
+                                                            <li><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-2">
@@ -319,7 +319,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-md-10">
                                                         <ul class="login-btn">
-                                                            <li><a href="#"><span><img src="<?=i('')?>profile/1.png"></span> Andrew Johnson <i class="fal fa-angle-down"></i></a></li>
+                                                            <li><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-2">
@@ -369,7 +369,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-md-10">
                                                         <ul class="login-btn">
-                                                            <li><a href="#"><span><img src="<?=i('')?>profile/1.png"></span> Andrew Johnson <i class="fal fa-angle-down"></i></a></li>
+                                                            <li><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-2">
@@ -431,7 +431,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-md-10">
                                                         <ul class="login-btn">
-                                                            <li><a href="#"><span><img src="<?=i('')?>profile/1.png"></span> Andrew Johnson <i class="fal fa-angle-down"></i></a></li>
+                                                            <li><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-2">
@@ -480,7 +480,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-md-10">
                                                         <ul class="login-btn">
-                                                            <li><a href="#"><span><img src="<?=i('')?>profile/1.png"></span> Andrew Johnson <i class="fal fa-angle-down"></i></a></li>
+                                                            <li><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-2">
@@ -530,7 +530,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-md-10">
                                                         <ul class="login-btn">
-                                                            <li><a href="#"><span><img src="<?=i('')?>profile/1.png"></span> Andrew Johnson <i class="fal fa-angle-down"></i></a></li>
+                                                            <li><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-2">
