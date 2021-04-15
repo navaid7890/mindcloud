@@ -190,17 +190,17 @@ class Model_cms_page extends MY_Model
                 // 'js_rules'=>$is_required_image
               );
  
-          $fields['cms_page_duration'] = array(
-                'table'   => $this->_table,
-                'name'   => 'cms_page_duration',
-                'label'   => 'Duration',
-                'type'   => $this->cms_duration,
-                'type_dt'   => 'text',
-                'attributes'   => array(),
-                'dt_attributes'   => array("width"=>"5%"),
-                'js_rules'   => 'required',
-                'rules'   => 'required|trim|htmlentities'
-           );
+          // $fields['cms_page_duration'] = array(
+          //       'table'   => $this->_table,
+          //       'name'   => 'cms_page_duration',
+          //       'label'   => 'Duration',
+          //       'type'   => $this->cms_duration,
+          //       'type_dt'   => 'text',
+          //       'attributes'   => array(),
+          //       'dt_attributes'   => array("width"=>"5%"),
+          //       'js_rules'   => 'required',
+          //       'rules'   => 'required|trim|htmlentities'
+          //  );
 
 
         $fields['cms_page_content'] = array(

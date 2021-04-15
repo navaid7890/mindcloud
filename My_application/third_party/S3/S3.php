@@ -6,7 +6,7 @@
 *
 * Redistribution and use in source and binary forms, with or without
 * modification, are permitted provided that the following conditions are met:
-*
+*a
 * - Redistributions of source code must retain the above copyright notice,
 *   this list of conditions and the following disclaimer.
 * - Redistributions in binary form must reproduce the above copyright
@@ -660,14 +660,17 @@ class S3
 	* @return array | false
 	*/
 	public static function inputFile($file, $md5sum = true)
-	{ 
-        debug('file name is '.$file);
+	{  
+        //debug($file);
+
 		if (!file_exists($file) || !is_file($file) || !is_readable($file))
-		{ 
+		{
+			//echo 'in func1';
 			self::__triggerError('S3::inputFile(): Unable to open input file: '.$file, __FILE__, __LINE__);
 			return false;
 		}
 		clearstatcache(false, $file);
+        //debug($file);
 		return array('file' => $file, 'size' => filesize($file), 'md5sum' => $md5sum !== false ?
 		(is_string($md5sum) ? $md5sum : base64_encode(md5_file($file, true))) : '', 'sha256sum' => hash_file('sha256', $file));
 	}
@@ -721,85 +724,82 @@ class S3
 	*/
 	public static function putObject($input, $bucket, $uri, $acl = self::ACL_PRIVATE, $metaHeaders = array(), $requestHeaders = array(), $storageClass = self::STORAGE_CLASS_STANDARD, $serverSideEncryption = self::SSE_NONE)
 	{
-        debug('I am in');
-        debug($input);
+		if ($input === false) return false;
+		$rest = new S3Request('PUT', $bucket, $uri, self::$endpoint);
 
-	// 	if ($input === false) return false;
-	// 	$rest = new S3Request('PUT', $bucket, $uri, self::$endpoint);
+		if (!is_array($input)) $input = array(
+			'data' => $input, 'size' => strlen($input),
+			'md5sum' => base64_encode(md5($input, true)),
+			'sha256sum' => hash('sha256', $input)
+		);
 
-	// 	if (!is_array($input)) $input = array(
-	// 		'data' => $input, 'size' => strlen($input),
-	// 		'md5sum' => base64_encode(md5($input, true)),
-	// 		'sha256sum' => hash('sha256', $input)
-	// 	);
+		// Data
+		if (isset($input['fp']))
+			$rest->fp =& $input['fp'];
+		elseif (isset($input['file']))
+			$rest->fp = @fopen($input['file'], 'rb');
+		elseif (isset($input['data']))
+			$rest->data = $input['data'];
 
-	// 	// Data
-	// 	if (isset($input['fp']))
-	// 		$rest->fp =& $input['fp'];
-	// 	elseif (isset($input['file']))
-	// 		$rest->fp = @fopen($input['file'], 'rb');
-	// 	elseif (isset($input['data']))
-	// 		$rest->data = $input['data'];
+		// Content-Length (required)
+		if (isset($input['size']) && $input['size'] >= 0)
+			$rest->size = $input['size'];
+		else {
+			if (isset($input['file'])) {
+				clearstatcache(false, $input['file']);
+				$rest->size = filesize($input['file']);
+			}
+			elseif (isset($input['data']))
+				$rest->size = strlen($input['data']);
+		}
 
-	// 	// Content-Length (required)
-	// 	if (isset($input['size']) && $input['size'] >= 0)
-	// 		$rest->size = $input['size'];
-	// 	else {
-	// 		if (isset($input['file'])) {
-	// 			clearstatcache(false, $input['file']);
-	// 			$rest->size = filesize($input['file']);
-	// 		}
-	// 		elseif (isset($input['data']))
-	// 			$rest->size = strlen($input['data']);
-	// 	}
+		// Custom request headers (Content-Type, Content-Disposition, Content-Encoding)
+		if (is_array($requestHeaders))
+			foreach ($requestHeaders as $h => $v)
+				strpos($h, 'x-amz-') === 0 ? $rest->setAmzHeader($h, $v) : $rest->setHeader($h, $v);
+		elseif (is_string($requestHeaders)) // Support for legacy contentType parameter
+			$input['type'] = $requestHeaders;
 
-	// 	// Custom request headers (Content-Type, Content-Disposition, Content-Encoding)
-	// 	if (is_array($requestHeaders))
-	// 		foreach ($requestHeaders as $h => $v)
-	// 			strpos($h, 'x-amz-') === 0 ? $rest->setAmzHeader($h, $v) : $rest->setHeader($h, $v);
-	// 	elseif (is_string($requestHeaders)) // Support for legacy contentType parameter
-	// 		$input['type'] = $requestHeaders;
+		// Content-Type
+		if (!isset($input['type']))
+		{
+			if (isset($requestHeaders['Content-Type']))
+				$input['type'] =& $requestHeaders['Content-Type'];
+			elseif (isset($input['file']))
+				$input['type'] = self::__getMIMEType($input['file']);
+			else
+				$input['type'] = 'application/octet-stream';
+		}
 
-	// 	// Content-Type
-	// 	if (!isset($input['type']))
-	// 	{
-	// 		if (isset($requestHeaders['Content-Type']))
-	// 			$input['type'] =& $requestHeaders['Content-Type'];
-	// 		elseif (isset($input['file']))
-	// 			$input['type'] = self::__getMIMEType($input['file']);
-	// 		else
-	// 			$input['type'] = 'application/octet-stream';
-	// 	}
+		if ($storageClass !== self::STORAGE_CLASS_STANDARD) // Storage class
+			$rest->setAmzHeader('x-amz-storage-class', $storageClass);
 
-	// 	if ($storageClass !== self::STORAGE_CLASS_STANDARD) // Storage class
-	// 		$rest->setAmzHeader('x-amz-storage-class', $storageClass);
+		if ($serverSideEncryption !== self::SSE_NONE) // Server-side encryption
+			$rest->setAmzHeader('x-amz-server-side-encryption', $serverSideEncryption);
 
-	// 	if ($serverSideEncryption !== self::SSE_NONE) // Server-side encryption
-	// 		$rest->setAmzHeader('x-amz-server-side-encryption', $serverSideEncryption);
+		// We need to post with Content-Length and Content-Type, MD5 is optional
+		if ($rest->size >= 0 && ($rest->fp !== false || $rest->data !== false))
+		{
+			$rest->setHeader('Content-Type', $input['type']);
+			if (isset($input['md5sum'])) $rest->setHeader('Content-MD5', $input['md5sum']);
 
-	// 	// We need to post with Content-Length and Content-Type, MD5 is optional
-	// 	if ($rest->size >= 0 && ($rest->fp !== false || $rest->data !== false))
-	// 	{
-	// 		$rest->setHeader('Content-Type', $input['type']);
-	// 		if (isset($input['md5sum'])) $rest->setHeader('Content-MD5', $input['md5sum']);
+			if (isset($input['sha256sum'])) $rest->setAmzHeader('x-amz-content-sha256', $input['sha256sum']);
 
-	// 		if (isset($input['sha256sum'])) $rest->setAmzHeader('x-amz-content-sha256', $input['sha256sum']);
+			$rest->setAmzHeader('x-amz-acl', $acl);
+			foreach ($metaHeaders as $h => $v) $rest->setAmzHeader('x-amz-meta-'.$h, $v);
+			$rest->getResponse();
+		} else
+			$rest->response->error = array('code' => 0, 'message' => 'Missing input parameters');
 
-	// 		$rest->setAmzHeader('x-amz-acl', $acl);
-	// 		foreach ($metaHeaders as $h => $v) $rest->setAmzHeader('x-amz-meta-'.$h, $v);
-	// 		$rest->getResponse();
-	// 	} else
-	// 		$rest->response->error = array('code' => 0, 'message' => 'Missing input parameters');
-
-	// 	if ($rest->response->error === false && $rest->response->code !== 200)
-	// 		$rest->response->error = array('code' => $rest->response->code, 'message' => 'Unexpected HTTP status');
-	// 	if ($rest->response->error !== false)
-	// 	{
-	// 		self::__triggerError(sprintf("S3::putObject(): [%s] %s",
-	// 		$rest->response->error['code'], $rest->response->error['message']), __FILE__, __LINE__);
-	// 		return false;
-	// 	}
-	// 	return true;
+		if ($rest->response->error === false && $rest->response->code !== 200)
+			$rest->response->error = array('code' => $rest->response->code, 'message' => 'Unexpected HTTP status');
+		if ($rest->response->error !== false)
+		{
+			self::__triggerError(sprintf("S3::putObject(): [%s] %s",
+			$rest->response->error['code'], $rest->response->error['message']), __FILE__, __LINE__);
+			return false;
+		}
+		return true;
 	}
 
 
