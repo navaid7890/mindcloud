@@ -814,7 +814,7 @@ ul.dashboard-layout {
 }
 
 ul.dashboard-layout>li {
-    height: 100vh;
+    /* height: 100vh; */
     display: inline-block;
     vertical-align: top;
 }
@@ -1154,7 +1154,7 @@ ul.dashboard-layout>li:nth-child(3) {
 }
 
 .dashboard {
-    height: 100vh;
+    /* height: 100vh; */
     overflow: hidden;
 }
 

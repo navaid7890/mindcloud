@@ -509,35 +509,78 @@ class Profile extends MY_Controller_Account {
 
 	public function expert()
 	{
-		global $config;
-		$user_id = $this->userid;
+		$data = array();
+        global $config;
 
-		$data['title'] = 'My Profile';
-		
-		$data['user_data'] = $this->layout_data['user_data'];
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
 
-		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+        $cont = $this->model_cms_page->get_page(2);
+        $data['cont1'] = $cont['child'][4];
+        $data['cont2'] = $cont['child'][5];
+
+        $conts = $this->model_cms_page->get_page(20);
+        $data['con1'] = $conts['child'][0];
+
+        $contss = $this->model_cms_page->get_page(20);
+  
+        $data['con2'] = $contss['child'][1];
+        $data['con3'] = $contss['child'][2];
+        $data['con4'] = $contss['child'][3];
+        $data['con5'] = $contss['child'][4];
+
+   
+           
+     
+
+        $par=array();
+        $par['order']="category_id ASC";
+        $data['main_categories'] = $this->model_category->find_all_active($par);
+
+        $par2=array();
+        $par2['order']="expert_id ASC";
+        $data['ex'] = $this->model_expert->find_all_active($par2);
+        //debug($data['main_categories']);
+
+          $param = array();
+          if(isset($_GET['expert']) AND intval($_GET['expert']) > 0){
+          $param['where']['course_expert_id'] = intval($this->input->get('expert'));
+          }
+
+   
+          if(isset($_GET['cat']) AND intval($_GET['cat']) > 0){
+          $param['where']['course_category_id'] = intval($this->input->get('cat'));
+      }
+
+ 
+
+  
 
 
-		$ab = $this->model_shop_order->get_order_by_user_id($this->userid);       
-		foreach($ab as $value) 
-		{   
-			
-            foreach($value['items'] as $item) 
-			{
+      $param['order']="course_id ASC";
+	  $param['where']['course_free_status']=1;
 
-				$all[] = $item['item_product_id'];
-			}
+      $data['art'] = $this->model_course->find_all_active($param);
+
+      
+      $pop=array();
+      $pop['where']['category_featured']=1;
+      $data['popular'] = $this->model_category->find_all_active($pop);
+     // debug($data['art']);
+
+           
+     $fa=array();
+     $fa['where']['faq_category']=1;
+     $fa['order']="faq_id ASC";
+     $data['faq'] = $this->model_faq->find_all_active($fa);
+      
+     $exp1 = $this->model_cms_page->get_page(26);
+  
+     $data['check'] = $exp1['child'][0];
+   
 
 
-		}
-        
-        $param=array();
-		$param['where_in']['course_id']=$all;
 
-		$param['order']="course_id ASC";
-
-		$data['art'] = $this->model_course->get_details($param);
 
 		$this->load_view('expert' , $data);
 	}
@@ -620,6 +663,71 @@ class Profile extends MY_Controller_Account {
 		$this->load_view('business' , $data);
 	}
 
+
+	public function course_detail_expert($slug ='')
+    {
+        global $config;
+        $data = array();
+
+      
+
+        $contss = $this->model_cms_page->get_page(30);
+        $data['con1'] = $contss['child'][0];
+        $data['con2'] = $contss['child'][1];
+        $data['con3'] = $contss['child'][2];
+
+    
+        $fa=array();
+        $fa['where']['faq_category']=2;
+        $fa['order']="faq_id ASC";
+        $data['faq'] = $this->model_faq->find_all_active($fa);
+
+
+        $ck=array();
+        $ck['where']['course_slug']=$slug;
+    
+        $course = $this->model_course->get_details($ck);
+       // debug($course[0]['course_id']);
+
+
+     
+        
+
+    
+        if (count($course) < 1) {
+         redirect("?msgtype=error&msg=invalid url");   
+        }
+
+  
+
+       $data['course'] = $course;
+       
+
+
+       $pop=array();
+       $pop['where']['course_slug !=']=$slug;
+       $pop['limit']=3;
+       $data['popular'] = $this->model_course->find_all_active($pop);
+
+       $tut=array();
+       $tut['where']['cp_course_id']=$course[0]['course_id'];
+       $tutorail = $this->model_course_tutorial->find_all_active($tut);
+
+       foreach($tutorail as $key => $value)
+       {
+        $all[]=$value['cp_tutorial_id'];
+       }
+
+
+       $lec=array();
+       $lec['where_in']['tutorial_id']=$all;
+       $data['lc'] = $this->model_tutorial->find_all_active($lec);
+    //   debug($lc);
+
+
+   
+        $this->load_view("course_detail_expert",$data);
+    }
 
 
 

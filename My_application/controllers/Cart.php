@@ -883,7 +883,7 @@ class Cart extends MY_Controller {
 						$json_param['order']['status'] = true;
 						$json_param['order']['msg']['title'] = 'Order save';
 						$json_param['order']['msg']['desc'] = '';
-						$json_param['order']['url'] = l('').'cart/payment?oid='.$order_id.'&code='.md5($order_id).'&payment='.$_POST['payment'];
+						$json_param['order']['url'] = l('').'cart/success?oid='.$order_id.'&code='.md5($order_id).'&payment='.$_POST['payment'];
 						$json_param['order']['order_id'] = $order_id;
 
 					}

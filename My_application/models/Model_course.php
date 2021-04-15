@@ -504,6 +504,22 @@ class Model_course extends MY_Model {
                      'dt_attributes'   => array("width"=>"7%"),
                      'rules'   => 'trim'
                   ),
+        
+        
+          'course_free_status' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'course_free_status',
+                    'label'   => 'Free Course',
+                    'type'   => 'switch',
+                    'type_dt'   => 'dropdown',
+                    'type_filter_dt' => 'dropdown',
+                    'list_data_key' => "course_status" ,
+                    'list_data' => array(),
+                    'default'   => '1',
+                    'attributes'   => array(),
+                    'dt_attributes'   => array("width"=>"7%"),
+                    'rules'   => 'trim'
+                 ),
 
               'course_status' => array(
                      'table'   => $this->_table,
