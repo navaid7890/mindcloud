@@ -1,8 +1,20 @@
+<style>
+ul.dashboard-layout>li:nth-child(1) {
+    width: 30%;
+}
+ul.dashboard-layout>li:nth-child(2) {
+    width: 70%;
+}
+</style>
 <section class="dashboard">
+        <div class="front-dashboard">
+            <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+            <? $this->load->view("widgets/dashboard-menu-box");?>
+        </div>
          <ul class="dashboard-layout">
-         <li> 
-                <? $this->load->view("widgets/dashboard-menu-box");?>
-            </li>
+            <!-- <li> 
+                <? // $this->load->view("widgets/dashboard-menu-box");?>
+            </li> -->
 
             <li> 
                 <? $this->load->view("widgets/course-box");?>

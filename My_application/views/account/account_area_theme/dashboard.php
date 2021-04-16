@@ -1,12 +1,10 @@
 <div class="index-page">
-   <section class="dashboard">
-         <ul class="dashboard-layout">
-            <li>
-               <? $this->load->view("widgets/dashboard-menu-box");?> 
-            </li>
-
-            <li>
-               <div class="index-page-wrap">
+    <section class="dashboard">
+        <div class="front-dashboard">
+            <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+            <? $this->load->view("widgets/dashboard-menu-box");?>
+        </div>
+                <div class="index-page-wrap">
                     <div class="index-page-content hding-2">
                         <h2>Welcome <strong><?= $this->session_data['username'] ?></strong></h2>
                         <div class="space"><br><br></div>
@@ -14,7 +12,7 @@
                         <div class="index-graph-box">
                             <div class="row">
                                 <div class="col-lg-7 col-md-12">
-                                    
+
                                     <div class="progress-box">
                                         <h2>My <strong> Learning Journey </strong></h2>
                                         <div class="space"><br><br><br></div>
@@ -73,7 +71,7 @@
                                             </div>
 
                                             <div class="progres-gray">
-                                                
+
                                             </div>
 
                                             <div class="progres-percentage">
@@ -89,7 +87,7 @@
                                             </div>
 
                                             <div class="progres-gray">
-                                                
+
                                             </div>
 
                                             <div class="progres-percentage">
@@ -105,7 +103,7 @@
                                             </div>
 
                                             <div class="progres-gray">
-                                                
+
                                             </div>
 
                                             <div class="progres-percentage">
@@ -146,7 +144,7 @@
                         <div class="index-graph-box">
                             <div class="row graph-box-2">
                                 <div class="col-lg-7 col-md-12">
-                                    
+
                                     <div class="progress-box">
                                         <h2>My <strong> Experts Tutorials </strong></h2>
                                         <div class="space"><br><br><br></div>
@@ -196,11 +194,11 @@
                                                 <span>12%</span>
                                             </div>
                                         </div>
-                                    
+
                                     </div>
 
                                     <div class="progress-btn btn-group">
-                                        <a href="#" class="btn-theme btn-hover">Continue Experts Tutorials  <span></span></a>
+                                        <a href="#" class="btn-theme btn-hover">Continue Experts Tutorials <span></span></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-12">
@@ -236,20 +234,22 @@
                                         <div class="vid-box">
                                             <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
                                                 <div class="video-box">
-                                                <img src="<?=i('')?>whoSec/1.png">
-                                                <span><i class="fas fa-play"></i> <p>Preview Course</p> </span>
+                                                    <img src="<?= i('') ?>whoSec/1.png">
+                                                    <span><i class="fas fa-play"></i>
+                                                        <p>Preview Course</p>
+                                                    </span>
                                                 </div>
                                             </a>
                                             <a href="javascript:;" class="cate-tag">business model</a>
-                                                
+
                                             <div class="vid-content">
                                                 <div class="row align-items-center">
                                                     <div class="col-md-8">
                                                         <h4>Building the Right Team</h4>
                                                         <ul class="rating">
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                                         </ul>
                                                     </div>
 
@@ -261,7 +261,7 @@
                                                                     <span id="startDeg1" class="8"></span>
                                                                 </div>
                                                             </div>
-                                                        </div>    
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -270,7 +270,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-md-10">
                                                         <ul class="login-btn">
-                                                            <li><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                            <li><a href="#"><span><img src="<?= i('') ?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-2">
@@ -285,20 +285,22 @@
                                         <div class="vid-box">
                                             <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
                                                 <div class="video-box">
-                                                <img src="<?=i('')?>whoSec/1.png">
-                                                <span><i class="fas fa-play"></i> <p>Preview Course</p> </span>
+                                                    <img src="<?= i('') ?>whoSec/1.png">
+                                                    <span><i class="fas fa-play"></i>
+                                                        <p>Preview Course</p>
+                                                    </span>
                                                 </div>
                                             </a>
                                             <a href="javascript:;" class="cate-tag">business model</a>
-                                                
+
                                             <div class="vid-content">
                                                 <div class="row align-items-center">
                                                     <div class="col-md-8">
                                                         <h4>Building the Right Team</h4>
                                                         <ul class="rating">
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                                         </ul>
                                                     </div>
 
@@ -310,7 +312,7 @@
                                                                     <span id="startDeg1" class="8"></span>
                                                                 </div>
                                                             </div>
-                                                        </div>    
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -319,7 +321,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-md-10">
                                                         <ul class="login-btn">
-                                                            <li><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                            <li><a href="#"><span><img src="<?= i('') ?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-2">
@@ -335,20 +337,22 @@
                                         <div class="vid-box">
                                             <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
                                                 <div class="video-box">
-                                                <img src="<?=i('')?>whoSec/1.png">
-                                                <span><i class="fas fa-play"></i> <p>Preview Course</p> </span>
+                                                    <img src="<?= i('') ?>whoSec/1.png">
+                                                    <span><i class="fas fa-play"></i>
+                                                        <p>Preview Course</p>
+                                                    </span>
                                                 </div>
                                             </a>
                                             <a href="javascript:;" class="cate-tag">business model</a>
-                                                
+
                                             <div class="vid-content">
                                                 <div class="row align-items-center">
                                                     <div class="col-md-8">
                                                         <h4>Building the Right Team</h4>
                                                         <ul class="rating">
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                                         </ul>
                                                     </div>
 
@@ -360,7 +364,7 @@
                                                                     <span id="startDeg1" class="8"></span>
                                                                 </div>
                                                             </div>
-                                                        </div>    
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -369,7 +373,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-md-10">
                                                         <ul class="login-btn">
-                                                            <li><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                            <li><a href="#"><span><img src="<?= i('') ?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-2">
@@ -381,7 +385,7 @@
                                     </li>
 
 
-                                    
+
                                 </ul>
                             </div>
 
@@ -397,20 +401,22 @@
                                         <div class="vid-box">
                                             <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
                                                 <div class="video-box">
-                                                <img src="<?=i('')?>whoSec/1.png">
-                                                <span><i class="fas fa-play"></i> <p>Preview Course</p> </span>
+                                                    <img src="<?= i('') ?>whoSec/1.png">
+                                                    <span><i class="fas fa-play"></i>
+                                                        <p>Preview Course</p>
+                                                    </span>
                                                 </div>
                                             </a>
                                             <a href="javascript:;" class="cate-tag">business model</a>
-                                                
+
                                             <div class="vid-content">
                                                 <div class="row align-items-center">
                                                     <div class="col-md-8">
                                                         <h4>Building the Right Team</h4>
                                                         <ul class="rating">
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                                         </ul>
                                                     </div>
 
@@ -422,7 +428,7 @@
                                                                     <span id="startDeg1" class="8"></span>
                                                                 </div>
                                                             </div>
-                                                        </div>    
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -431,7 +437,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-md-10">
                                                         <ul class="login-btn">
-                                                            <li><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                            <li><a href="#"><span><img src="<?= i('') ?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-2">
@@ -446,20 +452,22 @@
                                         <div class="vid-box">
                                             <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
                                                 <div class="video-box">
-                                                <img src="<?=i('')?>whoSec/1.png">
-                                                <span><i class="fas fa-play"></i> <p>Preview Course</p> </span>
+                                                    <img src="<?= i('') ?>whoSec/1.png">
+                                                    <span><i class="fas fa-play"></i>
+                                                        <p>Preview Course</p>
+                                                    </span>
                                                 </div>
                                             </a>
                                             <a href="javascript:;" class="cate-tag">business model</a>
-                                                
+
                                             <div class="vid-content">
                                                 <div class="row align-items-center">
                                                     <div class="col-md-8">
                                                         <h4>Building the Right Team</h4>
                                                         <ul class="rating">
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                                         </ul>
                                                     </div>
 
@@ -471,7 +479,7 @@
                                                                     <span id="startDeg1" class="8"></span>
                                                                 </div>
                                                             </div>
-                                                        </div>    
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -480,7 +488,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-md-10">
                                                         <ul class="login-btn">
-                                                            <li><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                            <li><a href="#"><span><img src="<?= i('') ?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-2">
@@ -496,20 +504,22 @@
                                         <div class="vid-box">
                                             <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
                                                 <div class="video-box">
-                                                <img src="<?=i('')?>whoSec/1.png">
-                                                <span><i class="fas fa-play"></i> <p>Preview Course</p> </span>
+                                                    <img src="<?= i('') ?>whoSec/1.png">
+                                                    <span><i class="fas fa-play"></i>
+                                                        <p>Preview Course</p>
+                                                    </span>
                                                 </div>
                                             </a>
                                             <a href="javascript:;" class="cate-tag">business model</a>
-                                                
+
                                             <div class="vid-content">
                                                 <div class="row align-items-center">
                                                     <div class="col-md-8">
                                                         <h4>Building the Right Team</h4>
                                                         <ul class="rating">
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
-                                                            <li><img src="<?=i('')?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                                         </ul>
                                                     </div>
 
@@ -521,7 +531,7 @@
                                                                     <span id="startDeg1" class="8"></span>
                                                                 </div>
                                                             </div>
-                                                        </div>    
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -530,7 +540,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-md-10">
                                                         <ul class="login-btn">
-                                                            <li><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                            <li><a href="#"><span><img src="<?= i('') ?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-2">
@@ -539,9 +549,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </li> 
+                                    </li>
                                 </ul>
-                                <div class="space"><br><br><br></div>            
+                                <div class="space"><br><br><br></div>
 
                                 <a href="#" class="btn-links">See All Experts</a>
                             </div>
@@ -569,14 +579,14 @@
                                                     <h6>by Expert <span> Kenneth Wong</span></h6>
                                                     <div class="space"><br><br></div>
                                                     <div class="space"><br><br></div>
-                                                    
+
                                                     <div class="row align-items-center">
                                                         <div class="col-md-4">
-                                                            <span><img src="<?=i('')?>logo.png" alt=""></span>
+                                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
                                                         </div>
 
                                                         <div class="col-md-4">
-                                                            <span><img src="<?=i('')?>logo.png" alt=""></span>
+                                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
                                                         </div>
 
                                                         <div class="col-md-4">
@@ -595,7 +605,7 @@
 
                                     <li>
                                         <div class="certificate">
-                                        <div class="certificate-modal">
+                                            <div class="certificate-modal">
                                                 <div>
                                                     <h2>certificate of completion</h2>
                                                     <div class="space"><br><br></div>
@@ -608,14 +618,14 @@
                                                     <h6>by Expert <span> Kenneth Wong</span></h6>
                                                     <div class="space"><br><br></div>
                                                     <div class="space"><br><br></div>
-                                                    
+
                                                     <div class="row align-items-center">
                                                         <div class="col-md-4">
-                                                            <span><img src="<?=i('')?>logo.png" alt=""></span>
+                                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
                                                         </div>
 
                                                         <div class="col-md-4">
-                                                            <span><img src="<?=i('')?>logo.png" alt=""></span>
+                                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
                                                         </div>
 
                                                         <div class="col-md-4">
@@ -634,7 +644,7 @@
 
                                     <li>
                                         <div class="certificate">
-                                        <div class="certificate-modal">
+                                            <div class="certificate-modal">
                                                 <div>
                                                     <h2>certificate of completion</h2>
                                                     <div class="space"><br><br></div>
@@ -647,14 +657,14 @@
                                                     <h6>by Expert <span> Kenneth Wong</span></h6>
                                                     <div class="space"><br><br></div>
                                                     <div class="space"><br><br></div>
-                                                    
+
                                                     <div class="row align-items-center">
                                                         <div class="col-md-4">
-                                                            <span><img src="<?=i('')?>logo.png" alt=""></span>
+                                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
                                                         </div>
 
                                                         <div class="col-md-4">
-                                                            <span><img src="<?=i('')?>logo.png" alt=""></span>
+                                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
                                                         </div>
 
                                                         <div class="col-md-4">
@@ -673,7 +683,7 @@
 
                                     <li>
                                         <div class="certificate">
-                                        <div class="certificate-modal">
+                                            <div class="certificate-modal">
                                                 <div>
                                                     <h2>certificate of completion</h2>
                                                     <div class="space"><br><br></div>
@@ -686,14 +696,14 @@
                                                     <h6>by Expert <span> Kenneth Wong</span></h6>
                                                     <div class="space"><br><br></div>
                                                     <div class="space"><br><br></div>
-                                                    
+
                                                     <div class="row align-items-center">
                                                         <div class="col-md-4">
-                                                            <span><img src="<?=i('')?>logo.png" alt=""></span>
+                                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
                                                         </div>
 
                                                         <div class="col-md-4">
-                                                            <span><img src="<?=i('')?>logo.png" alt=""></span>
+                                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
                                                         </div>
 
                                                         <div class="col-md-4">
@@ -710,7 +720,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                
+
                             </div>
                         </div>
 
@@ -729,33 +739,33 @@
                                     <div class="col-md-4 pad-zero">
                                         <div class="consult-left">
                                             <div>
-                                            <h2>Select <strong> Expert <br>Category </strong></h2> 
+                                                <h2>Select <strong> Expert <br>Category </strong></h2>
 
-                                            <ul class="consult-left-slide">
-                                                <li>
-                                                    <div class="consult-left-content">
-                                                       <p>From the menu on the right, choose the expertise topic you are interested in.</p>     
-                                                    </div>
-                                                </li>
+                                                <ul class="consult-left-slide">
+                                                    <li>
+                                                        <div class="consult-left-content">
+                                                            <p>From the menu on the right, choose the expertise topic you are interested in.</p>
+                                                        </div>
+                                                    </li>
 
-                                                <li>
-                                                    <div class="consult-left-content">
-                                                       <p>From the menu on the right, choose the expertise topic you are interested in.</p>     
-                                                    </div>
-                                                </li>
+                                                    <li>
+                                                        <div class="consult-left-content">
+                                                            <p>From the menu on the right, choose the expertise topic you are interested in.</p>
+                                                        </div>
+                                                    </li>
 
-                                                <li>
-                                                    <div class="consult-left-content">
-                                                       <p>From the menu on the right, choose the expertise topic you are interested in.</p>     
-                                                    </div>
-                                                </li>
+                                                    <li>
+                                                        <div class="consult-left-content">
+                                                            <p>From the menu on the right, choose the expertise topic you are interested in.</p>
+                                                        </div>
+                                                    </li>
 
-                                                <li>
-                                                    <div class="consult-left-content">
-                                                       <p>From the menu on the right, choose the expertise topic you are interested in.</p>     
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                                    <li>
+                                                        <div class="consult-left-content">
+                                                            <p>From the menu on the right, choose the expertise topic you are interested in.</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -765,28 +775,44 @@
                                             <h2>Select <strong>Topic</strong></h2>
 
                                             <ul class="cate-list">
-                                                <li><a href="#"><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Business Model (4)</p></a></li>
-                                                <li><a href="#"><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Digital marketing (12)</p></a></li>
-                                                <li><a href="#"><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Finance and Valuation (6)</p></a></li>
-                                                <li><a href="#"><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Leadership (9)</p></a></li>
-                                                <li><a href="#"><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Human resources (14)</p></a></li>
-                                                <li><a href="#"><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Customer Acquisition (12)</p></a></li>
-                                                <li><a href="#"><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Marketing &amp; Sales (10)</p></a></li>
-                                                <li><a href="#"><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Branding (4)</p></a></li>
-                                                <li><a href="#"><p><span><img src="<?=i('')?>icons/category/1.svg"></span> Business Model (4)</p></a></li>
+                                                <li><a href="#">
+                                                        <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> Business Model (4)</p>
+                                                    </a></li>
+                                                <li><a href="#">
+                                                        <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> Digital marketing (12)</p>
+                                                    </a></li>
+                                                <li><a href="#">
+                                                        <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> Finance and Valuation (6)</p>
+                                                    </a></li>
+                                                <li><a href="#">
+                                                        <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> Leadership (9)</p>
+                                                    </a></li>
+                                                <li><a href="#">
+                                                        <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> Human resources (14)</p>
+                                                    </a></li>
+                                                <li><a href="#">
+                                                        <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> Customer Acquisition (12)</p>
+                                                    </a></li>
+                                                <li><a href="#">
+                                                        <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> Marketing &amp; Sales (10)</p>
+                                                    </a></li>
+                                                <li><a href="#">
+                                                        <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> Branding (4)</p>
+                                                    </a></li>
+                                                <li><a href="#">
+                                                        <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> Business Model (4)</p>
+                                                    </a></li>
                                             </ul>
 
-                                        </div>  
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>    
+                        </div>
 
 
 
                     </div>
-               </div> 
-            </li>
-         </ul>
-      </section>
+                </div>
+    </section>
 </div>

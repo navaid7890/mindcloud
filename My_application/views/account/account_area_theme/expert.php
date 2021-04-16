@@ -2,16 +2,15 @@
 
 </style>
 <div class="index-page">
-    <section class="dashboard">
+    <section class="">
+      <div class="front-dashboard">
+         <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+         <? $this->load->view("widgets/dashboard-menu-box");?>
+      </div>
          <ul class="dashboard-layout">
-              <li> 
-                <? $this->load->view("widgets/dashboard-menu-box");?>
-              </li>
- 
             <li>
- 
-
    <div class="experttut-Sec">
+ 
       <div class="row">
          <div class="col-lg-4 col-md-6">
             <div class="side-bar sticky-top">

@@ -27,14 +27,13 @@
 
 </style>
 <div class="index-page">
-    <section class="dashboard">
-         <ul class="dashboard-layout">
-              <li> 
-                <? $this->load->view("widgets/dashboard-menu-box");?>
-              </li>
- 
-            <li>
-            <div class="abt-tut-page">
+    <section class="">
+    <div class="front-dashboard">
+         <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+         <? $this->load->view("widgets/dashboard-menu-box");?>
+      </div>
+<div class="abt-tut-page">
+
    <div class="mainBanner hding-1 para">
       <div class="container">
          <div class="row">
@@ -292,10 +291,6 @@
    </section>
  
 </div>
-
-            </li>
-
-            </ul>
             </section>
  </div>
  
