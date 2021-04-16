@@ -49,7 +49,7 @@ global $config;
             <span class="btn btn-file blue">
             <span class="uploadfile-new"><i class="fa fa-paper-clip"></i> Select image</span>
             <span class="uploadfile-exists"><i class="fa fa-undo"></i> Change</span>
-            <input type="file" name="cms_page[cms_page_image]" class="default">
+            <input type="file" name="ok" class="default">
             </span>
             <a data-dismiss="uploadfile" class="btn btn-danger uploadfile-exists" href="#"><i class="fa fa-trash"></i> Remove</a>
             </div>
@@ -93,7 +93,7 @@ $max_images = 4;
             <span class="btn btn-file blue">
             <span class="uploadfile-new"><i class="fa fa-paper-clip"></i> Select image</span>
             <span class="uploadfile-exists"><i class="fa fa-undo"></i> Change</span>
-            <input type="file" name="cms_page[cms_page_image<?=$i?>]" class="default">
+            <input type="file" name="ok" class="default">
             </span>
             <a data-dismiss="uploadfile" class="btn btn-danger uploadfile-exists" href="#"><i class="fa fa-trash"></i> Remove</a>
             </div>
@@ -140,9 +140,11 @@ $max_images = 4;
 	            {
 	                if(response.status == 1){
 	                   AdminToastr.success( response.message , "Success" );
+                       alert(response.message);
 	                }
 	                else{
 	                   AdminToastr.error( response.message , "Error" );
+                       alert(response.message);
 	                }
 	            }
 	        });  // JQUERY Native Ajax End*/

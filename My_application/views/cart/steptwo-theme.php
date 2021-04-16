@@ -193,7 +193,7 @@
 
                         <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="#"> Privacy Policy.</a></p>
                         <div class="fld-pla-btn">
-                           <button type="submit" id="signin-btn"  class="checkout-button">Continue Payment</button>
+                           <button type="submit" id="signin-btn"  class="checkout-button">Proceed To CheckOut</button>
                         </div>
                      </div>
 

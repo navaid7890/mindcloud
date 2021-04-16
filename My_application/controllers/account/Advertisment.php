@@ -22,6 +22,7 @@ class Advertisment extends MY_Controller_Account {
 
         global $config;
 
+
         parent::__construct();
 
         $this->class_name = $this->router->fetch_class();
