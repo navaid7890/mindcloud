@@ -35,7 +35,7 @@
                      <li>Category</li>
                      <li><a href="javascript:void(0)"><?=$dt['category_name']?></a></li>
                   </ul>
-                  <?=html_entity_decode($course[0]['course_desc2'])?><br>
+                  <?=html_entity_decode($course[0]['course_desc'])?><br>
                   <ul class="usr-rating">
                      <?php
                         for ($x = 1; $x <= $course[0]['course_rating']; $x++) {?>
@@ -90,7 +90,7 @@
                               <input type="hidden" name="product_price" value="0" class="productprice">
                               <input type="hidden" name="product_id" value="<?=$course[0]['course_id']?>" class="productid">
                               <input type="hidden" name="product_name" value="7- Day Access to Mind Cloud Tribe: allows you to see 7 tutorial" class="productname">
-                              <li><a href="javascript:void(0)" class="add_cart">7 Days Free Trial <span>$0</span>
+                              <li><a href="javascript:void(0)" class="add_cart">7 Days Free Trial <span></span>
                               <!--  -->
                               </a></li>
                            </form>
@@ -107,7 +107,7 @@
          <div class="jr-top">
             <div class="jrnyHead">
                <h2>About this <strong>Tutorial</strong></h2>
-               <p><?=html_entity_decode($course[0]['course_desc'])?></p>
+               <p><?=html_entity_decode($course[0]['course_desc2'])?></p>
             </div>
             <div class="space"><br><br><br></div>
             <div class="jrnyFaq">

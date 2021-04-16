@@ -708,3 +708,5 @@ GROUP BY `order_id`
 ERROR - 2021-04-15 08:07:47 --> 404 Page Not Found: admin/Profile/profile.png
 ERROR - 2021-04-15 12:13:31 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\cloud\My_application\views\about_us\expert.php 127
 ERROR - 2021-04-15 12:13:34 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\cloud\My_application\views\about_us\expert.php 127
+ERROR - 2021-04-15 12:14:24 --> 404 Page Not Found: Course_detail_expert/test_course_2
+ERROR - 2021-04-15 12:14:32 --> 404 Page Not Found: Course_detail_expert/index

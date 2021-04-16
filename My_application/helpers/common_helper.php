@@ -251,7 +251,7 @@ if ( ! function_exists('price'))
 		if(!$currency_rate)
 			$currency_rate = 1.00 ;
 		
-		$price = number_format($price / $currency_rate , 2 ) ;
+		$price = number_format($price / $currency_rate , 0 ) ;
 		return $prep_currency ? ( $currency . "" . $price ) : $price ;
 	}
 }

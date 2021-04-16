@@ -26,7 +26,7 @@
         
         <div class="course-list">
             <ul class="course-scroll">
-                <li><a href="javascript:void(0)" class="active">Introduction <span><i class="far fa-check"></i></span> </a></li>
+                <!-- <li><a href="javascript:void(0)" class="active">Introduction <span><i class="far fa-check"></i></span> </a></li> -->
 				<? if(isset($learn_cat) AND array_filled($learn_cat)) :?>
                 <? foreach($learn_cat as $key=>$value):?>
                 <h5><?= $value['learning_journey_category_name'] ?></h5>

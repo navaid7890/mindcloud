@@ -120,7 +120,7 @@
                                     </ul>
                                  </div>
                                  <div class="col-md-4 text-right">
-                                    <h6>$<?=$value['course_price']?></h6>
+                                    <h6><?=price($value['course_price'])?></h6>
                                  </div>
                               </div>
                            </div>
