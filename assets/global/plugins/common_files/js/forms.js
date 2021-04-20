@@ -7,7 +7,7 @@
 //- Forgot Password Ajax Script
 //- Reset Password Ajax Script
 //- Update User Information Ajax 
-//- Update About Ajax Script
+//- Update About Ajax Scrip
 //- Change Password Ajax Script
 //- Update address Ajax Script
 //- Update Contact Info Ajax Script
@@ -44,6 +44,7 @@ var Form = function () {
         update_contact_info : base_url + "account/profile/ajax-contact-info-save",
         update_address : base_url + "account/profile/ajax-update-address-save",
         change_password : base_url + "account/profile/ajax-change-password",
+        form_cto : base_url + "contact_us/ajax_formsend",
         //account_activate_process : base_url + "account/active_account/process",
         //review : base_url + "customer_review",
     };
@@ -88,6 +89,41 @@ var Form = function () {
             }
             return false;
         },
+
+        form_cto : function(form,action) {
+            
+            // Disable the submit button to prevent repeated clicks:
+            $('#forms-contact_send-btn').prop('disabled', true);
+             $('#forms-contact_send-btn1').prop('disabled', true);
+             $('#forms-contact_send-btn2').prop('disabled', true);
+
+            var data = form.serialize();
+
+            //response = AjaxRequest.fire(urls.form_cto, data) ;
+            response = AjaxRequest.fire(action, data) ;
+            
+            
+            $('#forms-contact_send-btn').prop('disabled', false);
+             $('#forms-contact_send-btn1').prop('disabled', false);
+             $('#forms-contact_send-btn2').prop('disabled', false);
+            if(response.status == 0){
+                Toastr.error(response.msg.desc,'Error');
+                return false;
+            }
+            else if(response.status == 1){
+
+                Toastr.success(response.msg.desc,'');  
+             
+                window.location = response.msg.url;
+
+                return false;
+            }
+            else{
+                Toastr.error('Error Found please try again','Error');
+                return false;
+            }
+        },
+
 
         evaluation : function(form) {
             // Disable the submit button to prevent repeated clicks:
@@ -471,7 +507,14 @@ $(document).ready(function () {
 });
 
 
-
+$(function() {
+    var $form = $('#form-send_us');
+    var action = $('#form-send_us').attr("action");
+    $form.submit(function(event) {
+      Form.form_cto($form,action);
+      return false;
+    });
+  });
 /*###########
 Contact us Ajax Script Start
 ###########*/
