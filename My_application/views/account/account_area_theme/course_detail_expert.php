@@ -103,9 +103,9 @@
                               <input type="hidden" name="product_price" value="0" class="productprice">
                               <input type="hidden" name="product_id" value="<?=$course[0]['course_id']?>" class="productid">
                               <input type="hidden" name="product_name" value="7- Day Access to Mind Cloud Tribe: allows you to see 7 tutorial" class="productname">
-                              <li><a href="javascript:void(0)" >Continue Expert Tutorial 
+                              <li><a href="<?=l('account/profile/expert-detail-tutorial')?>?courseid=<?=$course[0]['course_id']?>" >Continue Expert Tutorial 
                               <!--  -->
-                              <!-- </a></li>
+                              <!-- </a></li> 
                            </form> -->
                         </ul>
                      </div>

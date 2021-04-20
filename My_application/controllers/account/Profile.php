@@ -685,25 +685,12 @@ class Profile extends MY_Controller_Account {
 
         $ck=array();
         $ck['where']['course_slug']=$slug;
-    
         $course = $this->model_course->get_details($ck);
        // debug($course[0]['course_id']);
-
-
-     
-        
-
-    
         if (count($course) < 1) {
          redirect("?msgtype=error&msg=invalid url");   
         }
-
-  
-
        $data['course'] = $course;
-       
-
-
        $pop=array();
        $pop['where']['course_slug !=']=$slug;
        $pop['limit']=3;
@@ -731,8 +718,77 @@ class Profile extends MY_Controller_Account {
 
 
 
-	
+	public function expert_detail_tutorial()
+	{
+		global $config;
+		$user_id = $this->userid;
 
+		$data['title'] = 'My Profile';
+		$data['user_data'] = $this->layout_data['user_data'];
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+		$param=array();
+		if(isset($_GET['courseid']) AND intval($_GET['courseid']) > 0){
+			$param['where']['course_id'] = intval($_GET['courseid']);
+		}
+       $data['expert_course'] = $this->model_course->find_all_active($param);
+		$this->load_view('expert_detail_tutorial' , $data);
+	}
+	
+	
+	
+	
+	public function expert_detail_tutorial_intro_video()
+	{
+		global $config;
+		$user_id = $this->userid;
+
+		$data['title'] = 'My Profile';
+		$data['user_data'] = $this->layout_data['user_data'];
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+		$param=array();
+		if(isset($_GET['courseid']) AND intval($_GET['courseid']) > 0){
+			$param['where']['course_id'] = intval($_GET['courseid']);
+		}
+       $data['expert_course'] = $this->model_course->find_all_active($param);
+		$this->load_view('expert-detail-tutorial-intro-video' , $data);
+	}
+	
+	
+	
+	
+	public function expert_detail_tutorial_video()
+	{
+		global $config;
+		$user_id = $this->userid;
+
+		$data['title'] = 'My Profile';
+		$data['user_data'] = $this->layout_data['user_data'];
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+		$param=array();
+		if(isset($_GET['courseid']) AND intval($_GET['courseid']) > 0){
+			$param['where']['course_id'] = intval($_GET['courseid']);
+		}
+       $data['expert_course'] = $this->model_course->find_all_active($param);
+	
+	   $tutparm=array();
+		if(isset($_GET['courseid']) AND intval($_GET['courseid']) > 0){
+			$tutparm['where']['cp_course_id'] = intval($_GET['courseid']);
+		}
+	 //  $data['tutorial_course'] = $this->model_course_tutorial->find_all_active($tutparm);
+	
+	   $tutdata=array();
+		if(isset($_GET['tutorialid']) AND intval($_GET['tutorialid']) > 0){
+			$tutdata['where']['tutorial_id'] = intval($_GET['tutorialid']);
+		}
+
+		$tut=array();
+		$tut['where']['cp_course_id']=$_GET['courseid'];
+		$data['tutorail'] = $this->model_course_tutorial->find_all_active($tut);
+	 //  $data['tutorial_data'] = $this->model_tutorial->find_all_active($tutdata);
+	 
+	   $this->load_view('expert-detail-tutorial-video' , $data);
+	}
+	
 
 
 

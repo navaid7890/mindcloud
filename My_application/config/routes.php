@@ -139,6 +139,7 @@ $route['completion-certificate/(:any)'] = "quiz/pdf_convert/$1";
 $route['course-evaluation'] = "course/evaluation";
 
 $route['course-detail-expert/(:any)'] = "account/profile/course_detail_expert/$1";
+$route['expert-detail-tutorial/(:any)'] = "account/profile/expert_detail_tutorial";
 
 
 

@@ -462,6 +462,15 @@ class Model_course extends MY_Model {
                 'rules' => 'trim|htmlentities',
                 // 'js_rules'=>$is_required_image
             ),
+            'course_video_desc' => array(
+                'table'   => $this->_table,
+                'name'   => 'course_video_desc',
+                'label'   => 'Course Video Description',
+                'type'   => 'editor',
+                'attributes'   => array(),
+                'js_rules'   => '',
+                'rules'   => 'trim|htmlentities'
+             ),
            'course_rating' => array(
                              'table'   => $this->_table,
                              'name'   => 'course_rating',
