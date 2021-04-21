@@ -59,7 +59,6 @@ $menu_links = array(
     "additionals"=>array(
          array("link"=>"learning_journey_category","title"=>"Manage Learning Journey Category", "icon"=>" fa fa-angle-right"),
          array("link"=>"learning_journey_content","title"=>"Manage Learning Journey Content", "icon"=>" fa fa-angle-right"),
-         array("link"=>"language","title"=>"Manage Language", "icon"=>" fa fa-angle-right"),
     ),
 ),
 
@@ -103,6 +102,7 @@ $menu_links = array(
             array("link"=>"course","title"=>"Manage Courses", "icon"=>" fa fa-angle-right"),
             array("link"=>"tutorial","title"=>"Manage Tutorials", "icon"=>" fa fa-angle-right"),
             array("link"=>"learning_journey_course_review","title"=>"Manage Reviews", "icon"=>" fa fa-angle-right"),
+            array("link"=>"language","title"=>"Manage Language", "icon"=>" fa fa-angle-right"),
             // array("link"=>"states","title"=>"Manage State", "icon"=>" fa fa-angle-right")            
         ),
     ),

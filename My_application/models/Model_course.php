@@ -445,22 +445,15 @@ class Model_course extends MY_Model {
             //     // 'js_rules'=>$is_required_image
             // ),
 
+
             'course_video' => array(
                 'table' => $this->_table,
                 'name' => 'course_video',
-                'label' => 'Course Video',
-                'name_path' => 'course_video_path',
-                'upload_config' => 'site_upload_course',
-                'type' => 'videoupload',
-                'type_dt' => 'video',
-                'randomize' => true,
-                'preview' => 'true',
-                'attributes'   => array(
-                    'allow_ext'=>'mkv|avi|mp4',
-                ),
-                'dt_attributes' => array("width" => "10%"),
-                'rules' => 'trim|htmlentities',
-                // 'js_rules'=>$is_required_image
+                'label' => 'Video',
+                'type' => 'hidden',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
             ),
             'course_video_desc' => array(
                 'table'   => $this->_table,
@@ -471,6 +464,24 @@ class Model_course extends MY_Model {
                 'js_rules'   => '',
                 'rules'   => 'trim|htmlentities'
              ),
+
+            // 'course_video' => array(
+            //     'table' => $this->_table,
+            //     'name' => 'course_video',
+            //     'label' => 'Course Video',
+            //     'name_path' => 'course_video_path',
+            //     'upload_config' => 'site_upload_course',
+            //     'type' => 'videoupload',
+            //     'type_dt' => 'video',
+            //     'randomize' => true,
+            //     'preview' => 'true',
+            //     'attributes'   => array(
+            //         'allow_ext'=>'mkv|avi|mp4',
+            //     ),
+            //     'dt_attributes' => array("width" => "10%"),
+            //     'rules' => 'trim|htmlentities',
+            //     // 'js_rules'=>$is_required_image
+            // ),
            'course_rating' => array(
                              'table'   => $this->_table,
                              'name'   => 'course_rating',

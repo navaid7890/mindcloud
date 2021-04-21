@@ -1,7 +1,7 @@
 <?php
 	$video_url = '';
-	if(!empty($form_data['article']['a_video']))
-		$video_url = get_image($form_data['article']['a_video'],$form_data['article']['a_image_path']);
+	if(!empty($form_data['course']['course_video']))
+		$video_url = get_image($form_data['course']['course_video'],$form_data['course']['course_video_path']);
 ?>
 <div class="form-body">
 
