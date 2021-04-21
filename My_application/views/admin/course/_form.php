@@ -188,12 +188,11 @@ $(function() {
   var uploader = new plupload.Uploader({
     browse_button: 'uploadFile', // this can be an id of a DOM element or the DOM element itself
     url: BASE_URL+'admin/course/ajax-uploadtoserver?id=<?=$form_data['course']['course_id']?>',
-    chunk_size: '10mb',
-    max_retries: 1,
+    chunk_size: '1024kb',
+    max_retries: 3,
     multi_selection: false,
     preinit : {
         UploadComplete: function(up, files) {
-         // return false;
 
           AdminToastr.success('Video Uploaded');
           setTimeout(function(){ location.reload(); }, 1000);
@@ -207,7 +206,7 @@ $(function() {
   var html = '';
   plupload.each(files, function(file) {
     var ext = file.name.split('.').pop().toLowerCase();
-    if($.inArray(ext, ['mp4','ogg','webm','mov']) == -1) {
+    if($.inArray(ext, ['mp4','ogg','webm']) == -1) {
         
         file = '';
         AdminToastr.error('Extension Not allowed');

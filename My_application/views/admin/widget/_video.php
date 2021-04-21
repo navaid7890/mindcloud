@@ -27,6 +27,7 @@ Select file</a>
 </div>
 </div>
 <input type="hidden" id="file_ext" name="file_ext" value="<?=substr( md5( rand(10,100) ) , 0 ,10 )?>">
+
 <div id="console"></div>
 </div>
 
