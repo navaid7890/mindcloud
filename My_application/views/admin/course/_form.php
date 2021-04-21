@@ -56,16 +56,10 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
           </li>
 
           <?if($form_data){?>
-          
-            <li>
-              <a href="#tab_4" data-toggle="tab">
-              <?=humanize($page_title)?> Trailer</a>
-            </li>
-
-
+            
           <li>
             <a href="#tab_3" data-toggle="tab">
-            <?=humanize($page_title)?></a>
+            <?=humanize($page_title)?> Video</a>
           </li>
           <?}?>
         </ul>
@@ -183,7 +177,6 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
 
 
 
-
 $(function() {
   var uploader = new plupload.Uploader({
     browse_button: 'uploadFile', // this can be an id of a DOM element or the DOM element itself
@@ -193,7 +186,6 @@ $(function() {
     multi_selection: false,
     preinit : {
         UploadComplete: function(up, files) {
-         // return false;
 
           AdminToastr.success('Video Uploaded');
           setTimeout(function(){ location.reload(); }, 1000);
@@ -207,7 +199,7 @@ $(function() {
   var html = '';
   plupload.each(files, function(file) {
     var ext = file.name.split('.').pop().toLowerCase();
-    if($.inArray(ext, ['mp4','ogg','webm','mov']) == -1) {
+    if($.inArray(ext, ['mp4','ogg','webm']) == -1) {
         
         file = '';
         AdminToastr.error('Extension Not allowed');

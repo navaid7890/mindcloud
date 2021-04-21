@@ -134,6 +134,7 @@ class Course extends MY_Controller {
         $tmpfile = $_FILES["file"]["tmp_name"];
        //debug($tmpfile);
         $file = $fileName;
+        
       //  debug($file);
         $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>'video/mp4']);
 
