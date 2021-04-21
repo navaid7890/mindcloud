@@ -182,7 +182,7 @@ $(function() {
   var uploader = new plupload.Uploader({
     browse_button: 'uploadFile', // this can be an id of a DOM element or the DOM element itself
     url: BASE_URL+'admin/course/ajax-uploadtoserver?id=<?=$form_data['course']['course_id']?>',
-    chunk_size: '1024kb',
+    chunk_size: '4024gb',
     max_retries: 3,
     multi_selection: false,
     preinit : {
