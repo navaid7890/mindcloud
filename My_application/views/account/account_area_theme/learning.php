@@ -5,6 +5,9 @@ ul.dashboard-layout>li:nth-child(1) {
 ul.dashboard-layout>li:nth-child(2) {
     width: 70%;
 }
+ul.dashboard-layout {
+        margin-top: 80px;
+    }
 .front-dashboard .dashboard-menu-box {
         left: -20%;
         transition: 0.5s;
