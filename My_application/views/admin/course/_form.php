@@ -56,16 +56,10 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
           </li>
 
           <?if($form_data){?>
-          
-            <li>
-              <a href="#tab_4" data-toggle="tab">
-              <?=humanize($page_title)?> Trailer</a>
-            </li>
-
-
+            
           <li>
             <a href="#tab_3" data-toggle="tab">
-            <?=humanize($page_title)?></a>
+            <?=humanize($page_title)?> Video</a>
           </li>
           <?}?>
         </ul>
