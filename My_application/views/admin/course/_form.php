@@ -177,7 +177,6 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
 
 
 
-
 $(function() {
   var uploader = new plupload.Uploader({
     browse_button: 'uploadFile', // this can be an id of a DOM element or the DOM element itself
