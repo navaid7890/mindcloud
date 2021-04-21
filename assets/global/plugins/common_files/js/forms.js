@@ -43,11 +43,7 @@ var Form = function () {
         update_contact_info : base_url + "account/profile/ajax-contact-info-save",
         update_address : base_url + "account/profile/ajax-update-address-save",
         change_password : base_url + "account/profile/ajax-change-password",
-<<<<<<< HEAD
-        course_review : base_url + "contact_us/review",
-=======
         form_cto : base_url + "contact_us/ajax_formsend",
->>>>>>> dev/madiha
         //account_activate_process : base_url + "account/active_account/process",
         //review : base_url + "customer_review",
     };

@@ -99,7 +99,7 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
                     <div class="portlet box green">
                   <div class="portlet-title">
                     <div class="caption">
-                      <i class="fa fa-shopping-cart"></i><?=humanize('Movie Trailer')?>
+                      <i class="fa fa-shopping-cart"></i><?=humanize('Tutorial Trailer')?>
                           <small>Uploaded</small>
 
                     </div>
@@ -118,7 +118,7 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
                     <div class="portlet box green">
                   <div class="portlet-title">
                     <div class="caption">
-                      <i class="fa fa-shopping-cart"></i><?=humanize('Course')?>
+                      <i class="fa fa-shopping-cart"></i><?=humanize('Tutorial')?>
                           <small>Uploaded</small>
 
                     </div>
@@ -126,7 +126,7 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
                   <div class="portlet-body form">
                     
                     <!-- BEGIN FORM-->
-                    <? $this->load->view("admin/widget/_video");?>
+                    <? $this->load->view("admin/widget/_tutorial");?>
                     <!-- END FORM-->
                   </div>
                   <!-- END VALIDATION STATES-->
@@ -179,14 +179,14 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
 $(function() {
   var uploader = new plupload.Uploader({
     browse_button: 'uploadFile', // this can be an id of a DOM element or the DOM element itself
-    url: BASE_URL+'admin/course/ajax-uploadtoserver?id=<?=$form_data['course']['course_id']?>',
+    url: BASE_URL+'admin/tutorial/ajax-uploadtoserver?id=<?=$form_data['tutorial']['tutorial_id']?>',
     chunk_size: '4024gb',
     max_retries: 3,
     multi_selection: false,
     preinit : {
         UploadComplete: function(up, files) {
 
-          AdminToastr.success('Video Uploaded');
+          AdminToastr.success('Tutorial Uploaded');
           setTimeout(function(){ location.reload(); }, 1000);
         }
     }
