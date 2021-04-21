@@ -3,7 +3,7 @@
         <div class="course-box-head">
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <h3>Basics of Customer<br> Experience</h3>
+                    <h3><?= $course_name ?></h3>
                 </div>
                 <div class="col-md-4 text-right">
                     <div id="activeBorder" class="active-border">
@@ -22,18 +22,12 @@
                 </ul>
             </div>
         </div>
-
+       
         <div class="course-list">
             <ul class="course-scroll tut-menu-inner">
-                <? if(isset($expert_course) AND array_filled($expert_course)) :?>
-                <? foreach($expert_course as $key=>$value):?>
-                <h5><?= $value['course_name'] ?></h5>
-                <? endforeach;?>
-                <? endif;?>
-
-                <? if(isset($expert_course) AND array_filled($expert_course)) :?>
-                <? foreach($expert_course as $key=>$value):?>
-                <li><a href="<?= l('account/profile/expert-detail-tutorial') ?>?courseid=<?= $value['course_id'] ?>" class="active">Tutorial Description
+                <h5><?= $course_name ?></h5>
+                
+                <li><a href="<?= l('account/profile/expert-detail-tutorial') ?>?courseid=<?= $courseid ?>" class="active">Tutorial Description
                         <div id="activeBorder" class="active-border">
                             <div id="circle" class="circle">
                                 <span class="prec">66</span>
@@ -42,7 +36,7 @@
                         </div>
                     </a></li>
 
-                <li><a href="<?= l('account/profile/expert-detail-tutorial-intro-video') ?>?courseid=<?= $value['course_id'] ?>">Tutorial - 1 minute introduction
+                <li><a href="<?= l('account/profile/expert-detail-tutorial-intro-video') ?>?courseid=<?= $courseid ?>">Tutorial - 1 minute introduction
                         <div id="activeBorder" class="active-border">
                             <div id="circle" class="circle">
                                 <span class="prec">66</span>
@@ -51,7 +45,7 @@
                         </div>
                     </a></li>
 
-                <li><a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $value['course_id'] ?>">Tutorial Video and Transcript
+                <li><a href="">Tutorial Video and Transcript
                         <div id="activeBorder" class="active-border">
                             <div id="circle" class="circle">
                                 <span class="prec">66</span>
@@ -64,26 +58,17 @@
                         <? if(isset($tutorial_course) AND array_filled($tutorial_course)) :?>
                         <? foreach($tutorial_course as $key=>$tutor):
                             // $value['cp_tutorial_id']
-                            // debug($tutorial_course);
+                            //  debug($tutor);
+                             
                             ?>
-                        <?
-                            $al=array();
-                            $al['where']['tutorial_id']=$value['cp_tutorial_id'];
-                            
-                            $ck=$this->model_tutorial->find_all_active($al);
-                             // debug($ck);
-                            ?>
-                       
-                        <ul>
-                            <li><a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $value['course_id'] ?>?tutorialid=<?= $tutor['cp_tutorial_id'] ?>"><?= $tutor['cp_tutorial_id'] ?></a></li>
-                        </ul>
+                            <ul>
+                                <li><a href="<?= l('account/profile/expert-detail-tutorial-video')?>?courseid=<?= $courseid ?>&tutorialid=<?= $tutor['tutorial_id'] ?>"><?= $tutor['tutorial_name'] ?></a></li>
+                            </ul>
                         <? endforeach;?>
                         <? endif;?>
                     </ul>
-
+                    
                 </li>
-                <? endforeach;?>
-                <? endif;?>
 
             </ul>
         </div>

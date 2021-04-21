@@ -5,6 +5,32 @@ ul.dashboard-layout>li:nth-child(1) {
 ul.dashboard-layout>li:nth-child(2) {
     width: 70%;
 }
+.front-dashboard .dashboard-menu-box {
+        left: -20%;
+        transition: 0.5s;
+    }
+
+    a.menu-dash-front {
+        display: block;
+        padding: 20px 25px;
+        font-size: 20px;
+        font-weight: 700;
+        background: #33415c;
+        vertical-align: middle;
+        color: #fff;
+        position: fixed;
+        top: 112px;
+        z-index: 3;
+        width: 100%;
+    }
+
+    a.menu-dash-front i {
+        position: absolute;
+        right: 20px;
+        font-size: 26px;
+        vertical-align: middle;
+        line-height: 16px;
+    }
 </style>
 <section class="dashboard">
    <div class="front-dashboard">

@@ -14,6 +14,32 @@
     ul.dashboard-layout {
         margin-top: 80px;
     }
+    .front-dashboard .dashboard-menu-box {
+        left: -20%;
+        transition: 0.5s;
+    }
+
+    a.menu-dash-front {
+        display: block;
+        padding: 20px 25px;
+        font-size: 20px;
+        font-weight: 700;
+        background: #33415c;
+        vertical-align: middle;
+        color: #fff;
+        position: fixed;
+        top: 112px;
+        z-index: 3;
+        width: 100%;
+    }
+
+    a.menu-dash-front i {
+        position: absolute;
+        right: 20px;
+        font-size: 26px;
+        vertical-align: middle;
+        line-height: 16px;
+    }
 </style>
 <div class="business-page">
     <section class="dashboard">
@@ -65,11 +91,8 @@
                                             <div class="video-caption">
                                                 <p>00:00:00</p>
                                                 <div class="space"><br></div>
-                                                <? if(isset($expert_course) AND array_filled($expert_course)) :?>
-                                                <? foreach($expert_course as $key=>$value):?>
-                                                    <?= html_entity_decode($value['course_video_desc']) ?>
-                                                <? endforeach;?>
-                                                <? endif;?>
+                                                    <?= html_entity_decode($expert_course['course_video_desc']) ?>
+                                              
                                                 <div class="space"><br><br></div>
 
                                                 <p>00:01:16</p>
@@ -79,17 +102,15 @@
                                         </div>
                                     </div>
                                     <div class="col-md-7">
-                                        <? if(isset($expert_course) AND array_filled($expert_course)) :?>
-                                        <? foreach($expert_course as $key=>$value):?>
+                                        
                                         <div class="video-box">
                                             <video width="100%" height="100%" poster="<?= i('') ?>banner/3.png" controls>
-                                                <source src="<?= base_url() ?><?= $value['course_video_path'] ?><?= $value['course_video'] ?>" type="video/mp4">
-                                                <source src="<?= base_url() ?><?= $value['course_video_path'] ?><?= $value['course_video'] ?>" type="video/ogg">
+                                                <source src="<?= base_url() ?><?= $expert_course['course_video_path'] ?><?= $expert_course['course_video'] ?>" type="video/mp4">
+                                                <source src="<?= base_url() ?><?= $expert_course['course_video_path'] ?><?= $expert_course['course_video'] ?>" type="video/ogg">
                                                 Your browser does not support the video tag.
                                             </video>
                                         </div>
-                                        <? endforeach;?>
-                                        <? endif;?>
+                                        
                                     </div>
                                 </div>
                                 <div class="space"><br><br></div>

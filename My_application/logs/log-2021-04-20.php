@@ -162,3 +162,20 @@ ERROR - 2021-04-20 13:59:51 --> Severity: Warning --> include(includes/testimoni
 ERROR - 2021-04-20 13:59:51 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='C:\xampp\php\PEAR') C:\xampp\htdocs\cloud\My_application\views\cart\cart-one.php 243
 ERROR - 2021-04-20 13:59:51 --> Severity: Warning --> include(includes/testimonial.php): failed to open stream: No such file or directory C:\xampp\htdocs\cloud\My_application\views\cart\cart-one.php 246
 ERROR - 2021-04-20 13:59:51 --> Severity: Warning --> include(): Failed opening 'includes/testimonial.php' for inclusion (include_path='C:\xampp\php\PEAR') C:\xampp\htdocs\cloud\My_application\views\cart\cart-one.php 246
+ERROR - 2021-04-20 15:18:32 --> Severity: Parsing Error --> syntax error, unexpected 'endforeach' (T_ENDFOREACH) C:\xampp\htdocs\cloud\My_application\views\account\account_area_theme\expert-detail-tutorial-video.php 76
+ERROR - 2021-04-20 15:18:42 --> Severity: Parsing Error --> syntax error, unexpected 'endforeach' (T_ENDFOREACH) C:\xampp\htdocs\cloud\My_application\views\account\account_area_theme\expert-detail-tutorial-video.php 76
+ERROR - 2021-04-20 20:26:40 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 20:29:03 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 20:43:32 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 20:57:14 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 20:57:32 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 20:58:02 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 21:00:43 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 21:01:21 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 21:11:50 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 21:13:05 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 21:25:38 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 21:26:06 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 21:26:49 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 21:31:14 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-20 21:32:15 --> 404 Page Not Found: account/Profile/assets
