@@ -181,24 +181,26 @@ class Cms_page extends MY_Controller {
 		$tmp_name = $filedata["tmp_name"]['cms_page_image'];
 		$name = microtime()."_".$filedata["name"]['cms_page_image'];
 		move_uploaded_file($tmp_name, "$uploads_dir/$name");
-
-	    $Nname = explode(".", $name);
-		 // debug($name);exit;
-
-		$s = new S3();
-	
-		$s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
-		$s->setRegion(AWS_S3_REGION);
-		$s->setSignatureVersion('v4');
+ 
+ 
 		$tmpfile = $_FILES["ok"]["tmp_name"];
 		$file = $_FILES["ok"]["name"];
-		$s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>'image/png']);
-		// debug($s,1);
-	
-	    $allowEd = array('jpg','png','.JPG','jpeg');
-	    if(in_array($Nname[2],$allowEd)){
 
-            //debug($Nname);
+		$Nname = explode(".", $file); 
+
+	    $allowEd = array('jpg','png','.JPG','jpeg');
+	    if(in_array($Nname[1],$allowEd)){
+
+			$c_type = 'image/'.$Nname[1]; 
+
+            $s = new S3();
+	
+			$s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
+			$s->setRegion(AWS_S3_REGION);
+			$s->setSignatureVersion('v4'); 
+			$s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
+			// debug($s,1);
+		
 		   
 
 		    $insertImage['cms_page_image'] = $name;
