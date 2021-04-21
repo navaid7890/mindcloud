@@ -185,15 +185,9 @@ class Cms_page extends MY_Controller {
  
 		$tmpfile = $_FILES["ok"]["tmp_name"];
 		$file = $_FILES["ok"]["name"];
-<<<<<<< HEAD
-		$s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>'image/png']);
-	   // debug($s,1);
-	
-=======
 
 		$Nname = explode(".", $file); 
 
->>>>>>> dev/talha
 	    $allowEd = array('jpg','png','.JPG','jpeg');
 	    if(in_array($Nname[1],$allowEd)){
 
