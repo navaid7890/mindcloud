@@ -76,8 +76,10 @@ class Course extends MY_Controller {
 
 
     public function add($id=0 , $data = array()) {
+    
         $this->add_script(array( "jquery.validate.js" , "form-validation-script.js","plupload.full.min.js") , "js" );
         $this->register_plugins(array("datatables","jquery-file-upload"));
+        
         
         // debug($_POST,1);
         parent::add($id, $data);
@@ -91,6 +93,10 @@ class Course extends MY_Controller {
 
     public function ajax_uploadtoserver()
     {
+
+        require_once APPPATH.'third_party/S3/S3.php';
+
+
         // 5 minutes execution time
         @set_time_limit(5 * 60);
         // Uncomment this one to fake upload time
@@ -119,6 +125,21 @@ class Course extends MY_Controller {
         }
 
         $filePath = $targetDir . DIRECTORY_SEPARATOR . $fileName;
+
+        $s = new S3();
+    
+        $s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
+        $s->setRegion(AWS_S3_REGION);
+        $s->setSignatureVersion('v4');
+        $tmpfile = $_FILES["file"]["tmp_name"];
+       //debug($tmpfile);
+        $file = $fileName;
+      //  debug($file);
+        $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>'video/mp4']);
+
+       
+
+      
 
         // Chunking might be enabled
         $chunk = isset($_REQUEST["chunk"]) ? intval($_REQUEST["chunk"]) : 0;
@@ -190,11 +211,16 @@ class Course extends MY_Controller {
 
 
         if(($chunk+1) == $chunks) {
+         
 
+           
+        
+   
+       
             $data = array('course_video'=>$fileName,'course_video_path'=>$targetDir_path."/");
             $this->db->where('course_id',$this->input->get('id'));
             $this->db->update('course',$data);
-
+         
             $param = array();
             $param['status'] = true;
             $param['msg'] = 'Course Uploaded';
@@ -205,6 +231,8 @@ class Course extends MY_Controller {
             $param['msg'] = 'Course In-Progress';
             echo json_encode($param);    
         }
+      
+       // die();
         // Return Success JSON-RPC response
         //die('{"jsonrpc" : "2.0", "result" : null, "id" : "id"}');
 
