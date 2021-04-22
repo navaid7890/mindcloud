@@ -21,3 +21,5 @@ ERROR - 2021-04-22 10:22:15 --> Severity: 4096 --> Object of class Model_learnin
 ERROR - 2021-04-22 10:22:15 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-04-22 10:22:15 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-04-22 10:22:15 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
+ERROR - 2021-04-22 09:22:49 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-22 09:22:51 --> 404 Page Not Found: account/Profile/assets
