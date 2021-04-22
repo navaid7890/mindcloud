@@ -90,6 +90,8 @@ $route['expert-tutorial'] = "about_us/expert";
 $route['about-us'] = "about_us/index";
 
 $route['cart'] = "cart/index";	
+$route['step-1'] = "account/profile/tools";
+
 //PACKAGE
 // $route['package-payment-step-1'] = "package/order_view";
 // $route['package-payment-step-2'] = "package/payment";
