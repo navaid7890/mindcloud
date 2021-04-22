@@ -55,7 +55,7 @@ $menu_links = array(
         ),
     ),
 
-    array("title"=>"Learning Journey Management", "icon"=>" feather icon-image" ,"action" => array("learning_journey_category","learning_journey_content","language") ,
+    array("title"=>"Learning Journey Management", "icon"=>" feather icon-image" ,"action" => array("learning_journey_category","learning_journey_content") ,
     "additionals"=>array(
          array("link"=>"learning_journey_category","title"=>"Manage Learning Journey Category", "icon"=>" fa fa-angle-right"),
          array("link"=>"learning_journey_content","title"=>"Manage Learning Journey Content", "icon"=>" fa fa-angle-right"),
@@ -97,7 +97,7 @@ $menu_links = array(
     //     ),
     // ),
 
-    array("title"=>"Courses Management", "icon"=>"speech" ,"action" => array("course","states","tutorial") ,
+    array("title"=>"Courses Management", "icon"=>"speech" ,"action" => array("course","states","tutorial","language","learning_journey_course_review","expert_tutorial_review") ,
         "additionals"=>array(
             array("link"=>"course","title"=>"Manage Courses", "icon"=>" fa fa-angle-right"),
             array("link"=>"tutorial","title"=>"Manage Tutorials", "icon"=>" fa fa-angle-right"),

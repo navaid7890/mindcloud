@@ -392,3 +392,32 @@ ERROR - 2021-04-21 11:31:43 --> 404 Page Not Found: admin/Profile/profile.png
 ERROR - 2021-04-21 11:33:43 --> 404 Page Not Found: account/Profile/assets
 ERROR - 2021-04-21 11:42:46 --> 404 Page Not Found: admin/Profile/profile.png
 ERROR - 2021-04-21 11:43:09 --> 404 Page Not Found: admin/Profile/profile.png
+ERROR - 2021-04-21 11:51:32 --> 404 Page Not Found: admin/Profile/profile.png
+ERROR - 2021-04-21 11:52:38 --> 404 Page Not Found: Profile/profile.png
+ERROR - 2021-04-21 12:24:06 --> 404 Page Not Found: Profile/profile.png
+ERROR - 2021-04-21 12:27:19 --> 404 Page Not Found: admin/Profile/profile.png
+ERROR - 2021-04-21 15:27:25 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
+ERROR - 2021-04-21 15:27:25 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
+ERROR - 2021-04-21 15:27:25 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
+ERROR - 2021-04-21 15:27:25 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
+ERROR - 2021-04-21 15:27:25 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
+ERROR - 2021-04-21 15:27:25 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 449
+ERROR - 2021-04-21 15:27:25 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
+ERROR - 2021-04-21 15:27:25 --> Severity: 4096 --> Object of class Model_course could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
+ERROR - 2021-04-21 15:27:25 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
+ERROR - 2021-04-21 15:27:25 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
+ERROR - 2021-04-21 15:27:25 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
+ERROR - 2021-04-21 12:27:53 --> 404 Page Not Found: admin/Course/profile
+ERROR - 2021-04-21 15:29:15 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
+ERROR - 2021-04-21 15:29:15 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
+ERROR - 2021-04-21 15:29:15 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
+ERROR - 2021-04-21 15:29:15 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
+ERROR - 2021-04-21 15:29:15 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
+ERROR - 2021-04-21 15:29:15 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 449
+ERROR - 2021-04-21 15:29:15 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
+ERROR - 2021-04-21 15:29:15 --> Severity: 4096 --> Object of class Model_course could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
+ERROR - 2021-04-21 15:29:15 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
+ERROR - 2021-04-21 15:29:15 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
+ERROR - 2021-04-21 15:29:15 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
+ERROR - 2021-04-21 12:29:27 --> 404 Page Not Found: admin/Course/profile
+ERROR - 2021-04-21 12:29:45 --> 404 Page Not Found: account/Profile/assets

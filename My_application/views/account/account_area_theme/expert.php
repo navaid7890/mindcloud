@@ -25,6 +25,9 @@
         vertical-align: middle;
         line-height: 16px;
     }
+    .filtersSec{
+      padding: 0px 10%;
+    }
 </style>
 <div class="index-page">
     <section class="">
@@ -36,7 +39,7 @@
             <li>
    <div class="experttut-Sec">
  
-      <div class="row">
+      <div class="row filtersSec">
          <div class="col-lg-4 col-md-6">
             <div class="side-bar sticky-top">
                <!-- <div class="searchBox">
@@ -125,7 +128,7 @@
                            </div>
                         </div>
                      </li>
-                     <?php endforeach ?>
+                     <?php endforeach; ?>
                      <?php endif ?>
                   </ul>
                   <?}?>
