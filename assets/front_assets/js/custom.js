@@ -11,11 +11,7 @@ $(document).ready(function() {
         $('body').toggleClass('ovr-hiddn');
     });
 
-    $('a.menu-dash, .menu-dash-front').click(function() {
-        $(this).toggleClass('open');
-        $('.dashboard-menu-box, .front-dashboard').toggleClass('open');
-    });
-
+   
 
     $("ul.login-btn .dropdown-toggle > a").click(function(e) {
         $(this).toggleClass('open');
