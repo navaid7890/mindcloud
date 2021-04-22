@@ -107,26 +107,36 @@ class Model_tutorial extends MY_Model {
                      'rules'   => 'trim|htmlentities'
                   ),
 
-         
-                'tutorial_image' => array(
-                'table' => $this->_table,
-                'name' => 'tutorial_image',
-                'label' => 'Video',
-                'name_path' => 'tutorial_image_path',
-                'upload_config' => 'site_upload_tutorial',
-                'type' => 'videoupload',
-                'type_dt' => 'video',
-                'randomize' => true,
-                'preview' => 'true',
-                // 'thumb'   => array(array('name'=>'tutorial_image_thumb','max_width'=>260, 'max_height'=>250),),
-                'attributes'   => array(
-                    'image_size_recommended'=>'366px × 397px',
-                    'allow_ext'=>'mkv|avi|mp4',
+                  'tutorial_image' => array(
+                    'table' => $this->_table,
+                    'name' => 'tutorial_image',
+                    'label' => 'Video',
+                    'type' => 'hidden',
+                    'attributes' => array(),
+                    'js_rules' => '',
+                    'rules' => 'trim|htmlentities'
                 ),
-                'dt_attributes' => array("width" => "10%"),
-                'rules' => 'trim|htmlentities',
-                'js_rules'=>$is_required_image
-            ),
+
+         
+            //     'tutorial_image' => array(
+            //     'table' => $this->_table,
+            //     'name' => 'tutorial_image',
+            //     'label' => 'Video',
+            //     'name_path' => 'tutorial_image_path',
+            //     'upload_config' => 'site_upload_tutorial',
+            //     'type' => 'videoupload',
+            //     'type_dt' => 'video',
+            //     'randomize' => true,
+            //     'preview' => 'true',
+            //     // 'thumb'   => array(array('name'=>'tutorial_image_thumb','max_width'=>260, 'max_height'=>250),),
+            //     'attributes'   => array(
+            //         'image_size_recommended'=>'366px × 397px',
+            //         'allow_ext'=>'mkv|avi|mp4',
+            //     ),
+            //     'dt_attributes' => array("width" => "10%"),
+            //     'rules' => 'trim|htmlentities',
+            //     'js_rules'=>$is_required_image
+            // ),
 
 
 
