@@ -814,7 +814,7 @@ ul.dashboard-layout {
 }
 
 ul.dashboard-layout>li {
-    /* height: 100vh; */
+    height: 100vh;
     display: inline-block;
     vertical-align: top;
 }
@@ -1056,7 +1056,7 @@ ul.indicator-links>li.last {
 }
 
 .bredcum-right a.btn-round {
-    margin-right: 60px;
+    margin-right: 25px;
 }
 
 .tutorial-head {
@@ -1154,14 +1154,20 @@ ul.dashboard-layout>li:nth-child(3) {
 }
 
 .dashboard {
-    /* height: 100vh; */
+    height: 100vh;
     overflow: hidden;
 }
 
 .course-scroll {
-    height: 570px;
+    height: 75%;
+}
+.course-box-content {
+    height: 100%;
 }
 
+.course-list {
+    height: 100%;
+}
 .mCSB_inside>.mCSB_container {
     margin: 0;
 }
@@ -1171,7 +1177,7 @@ ul.dashboard-layout>li:nth-child(3) {
 }
 
 .tutorial-scroll-content {
-    height: 818px;
+    height: 100%;
 }
 
 .tutorial-box .mCSB_inside>.mCSB_container {
@@ -1371,7 +1377,7 @@ ul.rating {
 }
 
 .fld-html p {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -1734,8 +1740,7 @@ button.fancybox-close-small:hover:after {
     opacity: 1;
 }
 
-form#regForm button,
-form#regForm1 button {
+form#regForm button, form#regForm1 button, .next-prevBtn button:last-child {
     background: #1D90D9;
     padding: 25px 53px;
     color: #fff;
@@ -2767,6 +2772,7 @@ ul.login-btn .dropdown-box {
     top: 47px;
     overflow: hidden;
     z-index: 999;
+    width: 200px;
 }
 
 ul.user-links>li>a:hover {
@@ -2917,7 +2923,10 @@ ul.rating-list>li label>input {
 
 .fld-textarea label {
     line-height: normal;
+    font-weight:600;
+    font-size:18px;
 }
+.fld-textarea label>span{display:block;font-weight:400;font-size:14px;padding-top:15px;}
 
 .fld-search button {
     position: absolute;
@@ -3225,6 +3234,12 @@ button.cart-trim:hover {
     overflow: hidden;
 }
 
+.progress-btn a.btn-theme {
+    padding: 22px 28px;
+    text-align: center;
+}
+.table td, .table th{vertical-align: middle;}
+
 @media (max-width: 1200px) {
     img {
         max-width: 100%;
@@ -3380,10 +3395,10 @@ button.cart-trim:hover {
         margin-right: 0;
     }
     .course-scroll {
-        height: 280px;
+        height: 75%;
     }
     .tutorial-scroll-content {
-        height: 480px;
+        height: 100%;
     }
     ul.indicator-links>li {
         padding-right: 36px;
@@ -3419,6 +3434,8 @@ button.cart-trim:hover {
 }
 
 @media (max-width: 824px) {
+    .fld-text input{padding: 0 10px!important;}
+
     .row-box .text-right,
     button.cart-trim,
     .cart-product-dtl.text-center {
