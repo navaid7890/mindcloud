@@ -111,23 +111,32 @@ class Model_learning_journey_content extends MY_Model {
                     'rules'   => 'trim|htmlentities'
                  ),
             
-                  'learning_journey_video' => array(
+                 'learning_journey_video' => array(
                     'table' => $this->_table,
                     'name' => 'learning_journey_video',
                     'label' => 'Video',
-                    'name_path' => 'learning_journey_video_path',
-                    'upload_config' => 'site_upload_learning_journey_content',
-                    'type' => 'videoupload',
-                    'type_dt' => 'video',
-                    'randomize' => true,
-                    'preview' => 'true',
-                    'attributes'   => array(
-                        'allow_ext'=>'mkv|avi|mp4',
-                    ),
-                    'dt_attributes' => array("width" => "10%"),
-                    'rules' => 'trim|htmlentities',
-                    // 'js_rules'=>$is_required_image
+                    'type' => 'hidden',
+                    'attributes' => array(),
+                    'js_rules' => '',
+                    'rules' => 'trim|htmlentities'
                 ),
+                //   'learning_journey_video' => array(
+                //     'table' => $this->_table,
+                //     'name' => 'learning_journey_video',
+                //     'label' => 'Video',
+                //     'name_path' => 'learning_journey_video_path',
+                //     'upload_config' => 'site_upload_learning_journey_content',
+                //     'type' => 'videoupload',
+                //     'type_dt' => 'video',
+                //     'randomize' => true,
+                //     'preview' => 'true',
+                //     'attributes'   => array(
+                //         'allow_ext'=>'mkv|avi|mp4',
+                //     ),
+                //     'dt_attributes' => array("width" => "10%"),
+                //     'rules' => 'trim|htmlentities',
+                //     // 'js_rules'=>$is_required_image
+                // ),
 
     
 
