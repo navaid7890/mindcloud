@@ -28,6 +28,10 @@
     .filtersSec{
       padding: 0px 10%;
     }
+    .index-page ul.dashboard-layout>li.last {
+    width: 100%;
+    padding: 50px 0px;
+}
 </style>
 <div class="index-page">
     <section class="">
