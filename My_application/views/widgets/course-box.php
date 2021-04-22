@@ -1,8 +1,3 @@
-<style>
-.course-scroll h5:first-child {
-  display:none;
-}
-</style>
 <div class="course-box hding-3">
     <div class="course-box-content">
         <div class="course-box-head">
@@ -28,13 +23,10 @@
                 </ul>
             </div>
         </div>
-        <ul>
-            <li style="text-align: left;"><a href="<?= l('account/profile/learning') ?>" class="active" style="color: #000;font-weight: 900;padding: 20px;">Intro to Learning Journey </a></li>
-        </ul>
         
         <div class="course-list">
             <ul class="course-scroll">
-                
+                <!-- <li><a href="javascript:void(0)" class="active">Introduction <span><i class="far fa-check"></i></span> </a></li> -->
 				<? if(isset($learn_cat) AND array_filled($learn_cat)) :?>
                 <? foreach($learn_cat as $key=>$value):?>
                 <h5><?= $value['learning_journey_category_name'] ?></h5>
