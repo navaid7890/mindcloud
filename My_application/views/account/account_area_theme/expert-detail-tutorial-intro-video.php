@@ -14,6 +14,7 @@
     ul.dashboard-layout {
         margin-top: 80px;
     }
+
     .front-dashboard .dashboard-menu-box {
         left: -20%;
         transition: 0.5s;
@@ -91,8 +92,8 @@
                                             <div class="video-caption">
                                                 <p>00:00:00</p>
                                                 <div class="space"><br></div>
-                                                    <?= html_entity_decode($expert_course['course_video_desc']) ?>
-                                              
+                                                <?= html_entity_decode($expert_course['course_video_desc']) ?>
+
                                                 <div class="space"><br><br></div>
 
                                                 <p>00:01:16</p>
@@ -102,7 +103,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-7">
-                                        
+
                                         <div class="video-box">
                                             <video width="100%" height="100%" poster="<?= i('') ?>banner/3.png" controls>
                                                 <source src="<?= base_url() ?><?= $expert_course['course_video_path'] ?><?= $expert_course['course_video'] ?>" type="video/mp4">
@@ -110,7 +111,7 @@
                                                 Your browser does not support the video tag.
                                             </video>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="space"><br><br></div>
@@ -121,32 +122,61 @@
                                 <div class="tutorial-footer-content">
                                     <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
                                     <div classs="space"><br><br></div>
-                                    <form action="">
+                                    <form id="forms-review_us">
                                         <div class="fld-textarea">
-                                            <textarea placeholder="Write a Review…"></textarea>
+
+                                            <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_user_id]" value="<?= $this->session_data['id'] ?>">
+
+                                            <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_course_id]" value="<?= $_GET['courseid'] ?>">
+                                            <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_stars]" id="reviewId" value="">
+                                        </div>
+                                        <div class="fld-textarea">
+                                            <textarea name="learning_journey_course_review[learning_journey_course_review_desc]" placeholder="Write a Review…"></textarea>
                                         </div>
                                         <div class="space"><br></div>
 
                                         <div class="row align-items-center">
                                             <div class="col-md-4">
-                                                <ul class="rating">
-                                                    <li><img src="assets/images/icons/rat-d.svg"></li>
-                                                    <li><img src="assets/images/icons/rat-d.svg"></li>
-                                                    <li><img src="assets/images/icons/rat-d.svg"></li>
-                                                    <li><img src="assets/images/icons/rat-d.svg"></li>
-                                                    <li><img src="assets/images/icons/rat-d.svg"></li>
-                                                </ul>
+                                                <!-- <ul class="rating">
+                                       <li><span>1</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                       <li><span>2</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                       <li><span>3</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                       <li><span>4</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                       <li><span>5</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                    </ul> -->
+                                                <section class='rating-widget'>
+                                                    <!-- Rating Stars Box -->
+                                                    <div class='rating-stars'>
+                                                        <ul id='stars'>
+                                                            <li class='star' title='Poor' data-value='1'>
+                                                                <i class='fa fa-star fa-fw'></i>
+                                                            </li>
+                                                            <li class='star' title='Fair' data-value='2'>
+                                                                <i class='fa fa-star fa-fw'></i>
+                                                            </li>
+                                                            <li class='star' title='Good' data-value='3'>
+                                                                <i class='fa fa-star fa-fw'></i>
+                                                            </li>
+                                                            <li class='star' title='Excellent' data-value='4'>
+                                                                <i class='fa fa-star fa-fw'></i>
+                                                            </li>
+                                                            <li class='star' title='WOW!!!' data-value='5'>
+                                                                <i class='fa fa-star fa-fw'></i>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </section>
                                             </div>
                                             <div class="col-md-8 text-right">
                                                 <div class="fld-link">
                                                     <button>Skip</button>
                                                 </div>
                                                 <div class="fld-btn">
-                                                    <input type="submit" value="Submit Your Review">
+                                                    <input type="submit" value="Submit Your Review" id="forms-review_us-btn">
                                                 </div>
                                             </div>
                                         </div>
-
                                     </form>
                                 </div>
                             </div>
