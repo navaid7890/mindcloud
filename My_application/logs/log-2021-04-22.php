@@ -1,5 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+<<<<<<< HEAD
 ERROR - 2021-04-22 06:51:00 --> 404 Page Not Found: account/Profile/assets
 ERROR - 2021-04-22 06:51:33 --> 404 Page Not Found: account/Profile/assets
 ERROR - 2021-04-22 07:18:09 --> 404 Page Not Found: admin/Profile/profile.png
@@ -21,3 +22,15 @@ ERROR - 2021-04-22 10:22:15 --> Severity: 4096 --> Object of class Model_learnin
 ERROR - 2021-04-22 10:22:15 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-04-22 10:22:15 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-04-22 10:22:15 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
+=======
+ERROR - 2021-04-22 06:51:40 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-22 07:08:38 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-22 07:15:05 --> 404 Page Not Found: Profile/profile.png
+ERROR - 2021-04-22 07:15:08 --> 404 Page Not Found: admin/Profile/profile.png
+ERROR - 2021-04-22 07:40:15 --> 404 Page Not Found: Profile/profile.png
+ERROR - 2021-04-22 07:40:19 --> 404 Page Not Found: Accout_area/index
+ERROR - 2021-04-22 07:40:39 --> 404 Page Not Found: Accout/index
+ERROR - 2021-04-22 07:42:09 --> 404 Page Not Found: Account_area/profile
+ERROR - 2021-04-22 07:42:20 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-22 07:44:26 --> 404 Page Not Found: account/Profile/assets
+>>>>>>> dev/talha

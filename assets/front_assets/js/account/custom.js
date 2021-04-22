@@ -11,9 +11,9 @@ $(document).ready(function() {
         $('body').toggleClass('ovr-hiddn');
     });
 
-    $('a.menu-dash').click(function() {
+    $('a.menu-dash, .menu-dash-front').click(function() {
         $(this).toggleClass('open');
-        $('.dashboard-menu-box').toggleClass('open');
+        $('.dashboard-menu-box, .front-dashboard').toggleClass('open');
     });
 
 
@@ -42,6 +42,7 @@ $(document).ready(function() {
         var target = $(this).data('targetit');
         $('.' + target).siblings('[class^="box-"]').hide();
         $('.' + target).fadeIn();
+        $('.form-tabing').slick('setPosition');
     });
 
     // $('.dropdown-toggle').click(function() {
@@ -93,6 +94,9 @@ $(document).ready(function() {
 
 });
 
+
+
+
 // $(document).ready(function() {
 //     $('ul.dashboard-nav li a').click(function() {
 //         $('ul.dashboard-nav li a').removeClass("active");
@@ -119,8 +123,16 @@ $(window).load(function() {
 
 $(window).load(function() {
     var url = window.location.href;
-    $('ul.course-scroll>li, ul.dropdown-box li').find('.active').removeClass('active');
-    $('ul.course-scroll>li a, ul.dropdown-box li a').filter(function() {
+    $('ul.tut-menu-inner li').find('.active').removeClass('active');
+    $('ul.tut-menu-inner li a').filter(function() {
+        return this.href == url;
+    }).parent().addClass('active');
+});
+
+$(window).load(function() {
+    var url = window.location.href;
+    $('ul.dropdown-box li').find('.active').removeClass('active');
+    $('ul.dropdown-box li a').filter(function() {
         return this.href == url;
     }).parent().addClass('active');
 });
@@ -201,7 +213,7 @@ $(window).scroll(function() {
     }
 });
 
-$("ul.course-scroll, .tutorial-scroll-content, .video-caption, .index-page-wrap ").mCustomScrollbar({
+$("ul.course-scroll, .tutorial-scroll-content, .video-caption, .index-page-wrap, .order-confirm, .place-order ").mCustomScrollbar({
     scrollButtons: { enable: true },
     theme: "dark"
 });
