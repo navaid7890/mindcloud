@@ -282,7 +282,7 @@ public function stepcheck($stepid,$tool_builderid)
                 $this->json_param['status'] = true;
                 $this->json_param['msg']['title'] = 'Proceeding...';
                 $this->json_param['msg']['desc'] = 'Go to Next Step';
-                $this->json_param['msg']['url'] = l('step-1').'?query-id='.$id.'&key='.$_POST['key'];
+              //  $this->json_param['msg']['url'] = l('step-1').'?query-id='.$id.'&key='.$_POST['key'];
 
               }
         }

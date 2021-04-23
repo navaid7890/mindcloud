@@ -294,29 +294,81 @@ class Contact_us extends MY_Controller {
     }
 
 
-    public function ajax_formsend()
-    {
+    // public function ajax_formsend()
+    // {
        
 
+    //     if(array_filled($_POST)) 
+    //     {
+    //     $i = false;
+              
+    //                  if ($this->form_validation->run() == FALSE) {
+    //             $this->json_param['status'] = false;
+    //             $this->json_param['msg']['title'] = 'Error Occurred';
+    //             $this->json_param['msg']['desc'] = validation_errors();
+    //              }
+    //           else
+    //           {
+
+    //             // debug($_POST);
+    //             $data= array();
+    //             $data=$_POST['tool_builder'];
+    //             $data['tool_builder_user_id'] = $this->userid;
+    //             $data['tool_builder_step_id'] = 1;
+    //             // debug($data);
+    //             $this->model_tool_builder->set_attributes($data);
+    //             $inserted_id = $this->model_tool_builder->save();
+
+
+    //             $this->json_param['status'] = true;
+    //             $this->json_param['msg']['title'] = 'Saved';
+    //             $this->json_param['msg']['desc'] = 'Go to Next Step';
+    //           //  $this->json_param['msg']['url'] = l('step-1').'?query-id='.$inserted_id.'&key='.md5($inserted_id);
+
+    //           }
+            
+    //             echo json_encode($this->json_param);
+            
+    //     }
+    // }
+
+
+
+
+    public function ajax_formsend()
+    {
+              
         if(array_filled($_POST)) 
         {
-        $i = false;
-              
-                $this->form_validation->set_rules('tool_builder[tool_builder_customer_segments]', 'Customer Segments', 'trim');
-                if ($this->form_validation->run() == FALSE) {
+            $i = false;
+            if(isset($_POST['g-recaptcha-response']) && empty($_POST['g-recaptcha-response']))
+            {
+                
                 $this->json_param['status'] = false;
-                $this->json_param['msg']['title'] = 'Error Occurred';
-                $this->json_param['msg']['desc'] = validation_errors();
-                 }
-              else
+                    $this->json_param['msg']['title'] = 'Recaptcha Redquired';
+                    $this->json_param['msg']['desc'] = 'Please prove you\'re not a robot';
+            } 
+            else
+            {
+
+          if($this->validate("model_tool_builder"))
+          {
+              if()
               {
 
-                // debug($_POST);
-                $data= array();
-                $data=$_POST['tool_builder'];
+
+
+                
+              }  
+            
+              else{
+               $data = $_POST['tool_builder'];
+               $data['tool_builder_status'] = 1;
+                          
+          
                 $data['tool_builder_user_id'] = $this->userid;
                 $data['tool_builder_step_id'] = 1;
-                // debug($data);
+         
                 $this->model_tool_builder->set_attributes($data);
                 $inserted_id = $this->model_tool_builder->save();
 
@@ -324,12 +376,21 @@ class Contact_us extends MY_Controller {
                 $this->json_param['status'] = true;
                 $this->json_param['msg']['title'] = 'Saved';
                 $this->json_param['msg']['desc'] = 'Go to Next Step';
-                $this->json_param['msg']['url'] = l('step-1').'?query-id='.$inserted_id.'&key='.md5($inserted_id);
 
               }
+       
+             
             
+            }
+             else
+                {
+                    $this->json_param['status'] = false;
+                    $this->json_param['msg']['title'] = 'Error Occurred';
+                    $this->json_param['msg']['desc'] = validation_errors();
+                }
+                
+            }
                 echo json_encode($this->json_param);
-            
         }
     }
 

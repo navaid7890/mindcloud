@@ -142,39 +142,32 @@ var Form = function () {
             return false;
         },
 
-        form_cto : function(form,action) {
-            
-            // Disable the submit button to prevent repeated clicks:
+        form_cto : function(form) {
+          
             $('#forms-tool_builder-btn').prop('disabled', true);
-  
-
             var data = form.serialize();
-
-         
-            response = AjaxRequest.fire(action, data) ;
-            
-            
+            response = AjaxRequest.fire(urls.form_cto, data) ;
             $('#forms-tool_builder-btn').prop('disabled', false);
-           
-             //return false;
-            if(response.status == 0){
-                Toastr.error(response.msg.desc,'Error');
-                return false;
-            }
-            else if(response.status == 1){
 
-                Toastr.success(response.msg.desc,'');  
-             
-                window.location = response.msg.url;
-
+            //return false;
+            
+            if(response.status){
+                
+                Toastr.success(response.msg.desc,'Go To Next Step');  
+                $("#form-send_us").find('input[type=text],input[type=email],textarea').val('');
+            
+            
                 return false;
             }
             else{
-                Toastr.error('Error Found please try again','Error');
+                Toastr.error(response.msg.desc,'Error');
+               
                 return false;
             }
+            return false;
         },
 
+     
 
         evaluation : function(form) {
             // Disable the submit button to prevent repeated clicks:
@@ -558,11 +551,12 @@ $(document).ready(function () {
 });
 
 
-$(function() {
+
+
+  $(function() {
     var $form = $('#form-send_us');
-    var action = $('#form-send_us').attr("action");
     $form.submit(function(event) {
-      Form.form_cto($form,action);
+      Form.form_cto($form);
       return false;
     });
   });

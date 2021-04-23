@@ -124,15 +124,17 @@ ul.dashboard-layout {
                                           
                                           <div id="radio1" class="multi-fld">
                                              <div class="tab">
-                                             <?  
+                                            <?  
                                              
+                                            $param=array();
+                                            $param['order']="tool_builder_id DESC";
+                                            $param['where']['tool_builder_user_id']=$this->userid;
+                                            $tool = $this->model_tool_builder->find_one_active($param);
                                            
-                                            $tool = $this->model_tool_builder->find_by_pk($_GET['query-id']);
-                                           
-                                            ?>
+                                           ?>
                                            
   
-                                                <form id="form-send_us" action="<?=l('contact_us/ajax_formsend')?>" class="next-prevBtn" method="post">
+                                                <form id="form-send_us">
                                                 <input type="hidden"  name="tool_builder[tool_builder_user_id]" value="<?=($this->userid)?>"> 
 
                           
@@ -143,7 +145,7 @@ ul.dashboard-layout {
                                                    <textarea oninput="this.className = ''" name="tool_builder[tool_builder_customer_segments]"><?=$tool['tool_builder_customer_segments']?></textarea>
                                                    </div>
 
-                                                   <div>
+                                                   <div style="display:none">
                                                          <button type="submit" id="forms-tool_builder-btn">SUBMIT</button>
                                                    </div>
                                                 </form>  
@@ -152,10 +154,9 @@ ul.dashboard-layout {
                                              <div class="tab">
                                               
                                                 
-            <form id="form-send_us" action="<?=l('tool/ajax_steptwo')?>" class="next-prevBtn"> 
+            <form id="form-send_us"  class="next-prevBtn"> 
                   
-                  <input type="hidden" name="id" value="<?=$_GET['query-id']?>">
-                  <input type="hidden" name="key" value="<?=$_GET['key']?>">
+   
                                                    <div class="fld-textarea">
                                                    <label for="">What are your Value Propositions?</label>
                                                    <div class="space"><br></div>
@@ -163,7 +164,7 @@ ul.dashboard-layout {
                                                    <div class="space"><br></div>
                                                    <textarea oninput="this.className = ''" name="tool_builder[tool_builder_value_proposition]"><?=$tool['tool_builder_value_proposition']?></textarea>
                                                    </div>  
-                                                   <div>
+                                                   <div style="display:none">
                                                          <button type="submit" id="forms-tool_builder-btn">SUBMIT</button>
                                                    </div>
                                                 </form>  
