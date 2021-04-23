@@ -26,8 +26,12 @@
         line-height: 16px;
     }
     .filtersSec{
-      padding: 0px 10%;
+      padding: 0px 10% !important;
     }
+    .index-page ul.dashboard-layout>li.last {
+    width: 100%;
+    padding: 50px 00px;
+}
 </style>
 <div class="index-page">
     <section class="">
