@@ -302,7 +302,7 @@ class Contact_us extends MY_Controller {
         {
         $i = false;
               
-                $this->form_validation->set_rules('loan[loan_officername]', 'Officer Name', 'trim');
+                $this->form_validation->set_rules('tool_builder[tool_builder_customer_segments]', 'Customer Segments', 'trim');
                 if ($this->form_validation->run() == FALSE) {
                 $this->json_param['status'] = false;
                 $this->json_param['msg']['title'] = 'Error Occurred';
@@ -311,20 +311,20 @@ class Contact_us extends MY_Controller {
               else
               {
 
-                 // debug($_POST);
+                // debug($_POST);
                 $data= array();
-                $data=$_POST['loan'];
-                $data['loan_user_id'] = $this->userid;
-                $data['loan_step_id'] = 1;
+                $data=$_POST['tool_builder'];
+                $data['tool_builder_user_id'] = $this->userid;
+                $data['tool_builder_step_id'] = 1;
                 // debug($data);
-                $this->model_loan->set_attributes($data);
-                $inserted_id = $this->model_loan->save();
+                $this->model_tool_builder->set_attributes($data);
+                $inserted_id = $this->model_tool_builder->save();
 
 
                 $this->json_param['status'] = true;
                 $this->json_param['msg']['title'] = 'Saved';
                 $this->json_param['msg']['desc'] = 'Go to Next Step';
-                $this->json_param['msg']['url'] = l('step-two').'?query-id='.$inserted_id.'&key='.md5($inserted_id);
+                $this->json_param['msg']['url'] = l('step-1').'?query-id='.$inserted_id.'&key='.md5($inserted_id);
 
               }
             

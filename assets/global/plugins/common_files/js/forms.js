@@ -145,19 +145,18 @@ var Form = function () {
         form_cto : function(form,action) {
             
             // Disable the submit button to prevent repeated clicks:
-            $('#forms-contact_send-btn').prop('disabled', true);
-             $('#forms-contact_send-btn1').prop('disabled', true);
-             $('#forms-contact_send-btn2').prop('disabled', true);
+            $('#forms-tool_builder-btn').prop('disabled', true);
+  
 
             var data = form.serialize();
 
-            //response = AjaxRequest.fire(urls.form_cto, data) ;
+         
             response = AjaxRequest.fire(action, data) ;
             
             
-            $('#forms-contact_send-btn').prop('disabled', false);
-             $('#forms-contact_send-btn1').prop('disabled', false);
-             $('#forms-contact_send-btn2').prop('disabled', false);
+            $('#forms-tool_builder-btn').prop('disabled', false);
+           
+             //return false;
             if(response.status == 0){
                 Toastr.error(response.msg.desc,'Error');
                 return false;
