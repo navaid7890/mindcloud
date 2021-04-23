@@ -899,6 +899,9 @@ function nextPrev(n) {
   var x = document.getElementsByClassName("tab");
   x[currentTab].style.display = "none";
   currentTab = currentTab + n;
+  document.getElementById("regForm"+n).submit();
+  alert("regForm"+n);
+
   if (currentTab >= x.length) {
     document.getElementById("regForm").submit();
     return false;

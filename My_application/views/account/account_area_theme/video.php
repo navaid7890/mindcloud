@@ -139,7 +139,7 @@ ul.dashboard-layout {
 
                                  <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_user_id]" value="<?= $this->session_data['id'] ?>">
 
-                                 <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_course_id]" value="<?= html_entity_decode($value['learning_journey_content_id']) ?>">
+                                 <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_course_id]" value="<?= $_GET['cat'] ?>">
                                  <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_stars]" id="reviewId" value="">
                               </div>
                               <div class="fld-textarea">
