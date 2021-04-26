@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Tool_builder_vp extends MY_Controller {
+class Tool_builder_mc_mc extends MY_Controller {
 
     /**
      * profile page
@@ -20,7 +20,7 @@ class Tool_builder_vp extends MY_Controller {
         global $config;
         
         parent::__construct();
-        $this->dt_params['dt_headings'] = "tool_builder_vp_id,tool_builder_vp_user_id,tool_builder_vp_jobs,tool_builder_vp_pains,tool_builder_vp_approval_status,tool_builder_vp_status";
+        $this->dt_params['dt_headings'] = "tool_builder_mc_mc_id,tool_builder_mc_mc_user_id,tool_builder_mc_mc_prospect_personas,tool_builder_mc_mc_prospect_problems,tool_builder_mc_mc_approval_status,tool_builder_mc_mc_status";
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
         $this->dt_params['action'] = array(
                                         "hide" => false ,
@@ -63,10 +63,10 @@ class Tool_builder_vp extends MY_Controller {
     public function add($id='', $data=array())
     {  
         
-        $tool_builder_vp = $_POST['tool_builder_vp'];
+        $tool_builder_mc_mc = $_POST['tool_builder_mc_mc'];
         
-        if ($tool_builder_vp['tool_builder_vp_approval_status'] == 1) {
-            $this->model_email->contactInquiry2($tool_builder_vp['tool_builder_vp_user_id']);
+        if ($tool_builder_mc_mc['tool_builder_mc_mc_approval_status'] == 1) {
+            $this->model_email->contactInquiry2($tool_builder_mc_mc['tool_builder_mc_mc_user_id']);
          
 
            //debug($this->model_email,1);

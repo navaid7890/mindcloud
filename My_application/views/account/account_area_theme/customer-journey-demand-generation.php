@@ -93,13 +93,13 @@ ul.dashboard-layout {
                         </div>
 
                         <div class="tutorial-footer tool-footer vid-tran para">
-                           <div class="tutorial-footer-content">
+                           <div class="tutorial-footer-content" style="padding-top: 22%;">
                                     
 
                                     <ul class="form-tabing">
                                        <div class="fld-html">
-                                          <p>Value Map (The left side of the Value Proposition Canvas)</p>
-                                          <p>Customer Profile (The right side of the Value Proposition Canvas)</p>
+                                          <p>Customer Journey</p>
+                                          <p>Demand Generation</p>
                                        </div>
                                     </ul>      
 
@@ -109,6 +109,7 @@ ul.dashboard-layout {
                                              <ul class="fld-progress">
                                                 <li class="step"><p>Customer Segments</p></li>
                                                 <li class="step"><p>Value Propositions</p></li>
+                                                <li class="step"><p>Customer Segments</p></li>
                                              </ul>
                                           </div>
                                           
@@ -117,19 +118,13 @@ ul.dashboard-layout {
                                              <div class="tab">
                                                  <form id="regForm" class="next-prevBtn">
                                                      <div class="fld-textarea">
-                                                        <label for="">Jobs <span>List all the jobs your customers are trying to get done (jobs can be functional, emotional, or social ones)</span></label>
+                                                        <label for="">1. Awareness & Knowledge Phase <span>How will you attract attention, gain visibility, and show customers how you can help them reach their goals and get what they want and need? Examples are SEO, Interesting Content, YouTube Videos, FB Ads, Influencers Campaigns, Events.</span></label>
                                                         <div class="space"><br></div>
                                                         <textarea oninput="this.className = ''"></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
-                                                        <label for="">Pains <span>List customer pains, and possible dissatisfying experiences or outcomes that exist in current solutions</span></label>
-                                                        <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
-                                                     </div>
-
-                                                     <div class="fld-textarea">
-                                                        <label for="">Gains <span>List customer gains, which is essentially the expectations and benefits customers wish to have, in order to get the most satisfying customer experience</span></label>
+                                                        <label for="">2. Engagement or Interest Phase <span>How can you engage further your leads by providing additional information about your products and services? Examples are Communities, Whatsapp/Messenger Chat, Nurturing Emails.</span></label>
                                                         <div class="space"><br></div>
                                                         <textarea oninput="this.className = ''"></textarea>
                                                      </div>
@@ -143,19 +138,46 @@ ul.dashboard-layout {
                                              <div class="tab">
                                                  <form id="regForm2" class="next-prevBtn">
                                                      <div class="fld-textarea">
-                                                        <label for="">Products/Services <span>List the product, service, and features that your value proposition builds on</span></label>
+                                                        <label for="">3. Consideration, Evaluation or Intent Phases <span>What key differentiators and competitive advantages will be used to educate your potential leads further on your offering? Examples are Emails, Videos or material showing results, outcomes, and benefits of your solution</span></label>
                                                         <div class="space"><br></div>
                                                         <textarea oninput="this.className = ''"></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
-                                                        <label for="">Pain Relievers <span>Describe in which ways your product service and features ease customer pains, and make their life easier</span></label>
+                                                        <label for="">4. Purchase Phase (mid way!)<span>What tools, processes, and paths will you use to support your customers to make their purchase?</span></label>
                                                         <div class="space"><br></div>
                                                         <textarea oninput="this.className = ''"></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
-                                                        <label for="">Gain Creators<span>List how your product or service creates customer gains, and offers added value to the customer</span></label>
+                                                        <label for="">5. Activation Phase<span>Formalize further the relationship with your actual buyers or users by developing trust.  Examples are Excellent customer service after sale, Product/services integrity, ethical standards and consistency, show your customers that they are important to you through emails, follow-up, etc.</span></label>
+                                                        <div class="space"><br></div>
+                                                        <textarea oninput="this.className = ''"></textarea>
+                                                     </div>
+
+                                                     <div class="fld-textarea">
+                                                        <label for="">6. Repeat Phase<span>How will you capitalize on the trust gained with your customer? Examples are Add-Ons, Upsells, Bundles, Experience Enhancers, Membership</span></label>
+                                                        <div class="space"><br></div>
+                                                        <textarea oninput="this.className = ''"></textarea>
+                                                     </div>
+
+                                                     <div>
+                                                         <button type="submit">SUBMIT</button>
+                                                     </div>
+                                                 </form>  
+                                             </div>
+
+
+                                             <div class="tab">
+                                                 <form id="regForm2" class="next-prevBtn">
+                                                     <div class="fld-textarea">
+                                                        <label for="">7.  Loyalty Phase <span>How will you further reward your loyal customers? Examples are Loyalty coupons, easy payment plans, special offers.</span></label>
+                                                        <div class="space"><br></div>
+                                                        <textarea oninput="this.className = ''"></textarea>
+                                                     </div>
+
+                                                     <div class="fld-textarea">
+                                                        <label for="">8.  Advocacy Phase<span>How can you capitalize on your loyal customers to generate awareness, trust, and credibility with their own audience – which helps you acquire more customers? Examples are Testimonial, Repost, Contest, Affiliate Program</span></label>
                                                         <div class="space"><br></div>
                                                         <textarea oninput="this.className = ''"></textarea>
                                                      </div>

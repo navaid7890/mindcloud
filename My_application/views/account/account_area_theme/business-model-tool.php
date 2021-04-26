@@ -12,8 +12,6 @@ ul.dashboard-layout {
         left: -20%;
         transition: 0.5s;
     }
-    
-
     a.menu-dash-front {
         display: block;
         padding: 20px 25px;
@@ -27,7 +25,6 @@ ul.dashboard-layout {
         z-index: 3;
         width: 100%;
     }
-
     a.menu-dash-front i {
         position: absolute;
         right: 20px;
@@ -35,7 +32,6 @@ ul.dashboard-layout {
         vertical-align: middle;
         line-height: 16px;
     }
-
 </style>
    <div class="business-page">
       <section class="dashboard">

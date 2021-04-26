@@ -1,5 +1,5 @@
 <?
-class Model_tool_builder_vp extends MY_Model {
+class Model_tool_builder_cj_dg extends MY_Model {
     /**
      * tool_builder MODEL
      *
@@ -9,10 +9,10 @@ class Model_tool_builder_vp extends MY_Model {
      * @since       2016 / Amazingly corrupt models Corporation Inc.
      */
 
-    protected $_table    = 'tool_builder_vp';
-    protected $_field_prefix    = 'tool_builder_vp_';
-    protected $_pk    = 'tool_builder_vp_id';
-    protected $_status_field    = 'tool_builder_vp_status';
+    protected $_table    = 'tool_builder_cj_dg';
+    protected $_field_prefix    = 'tool_builder_cj_dg_';
+    protected $_pk    = 'tool_builder_cj_dg_id';
+    protected $_status_field    = 'tool_builder_cj_dg_status';
     public $relations = array();
     public $pagination_params = array();
     public $dt_params = array();
@@ -21,7 +21,7 @@ class Model_tool_builder_vp extends MY_Model {
     function __construct()
     {
         // Call the Model construtool_builderr
-        $this->pagination_params['fields'] = "tool_builder_vp_id,tool_builder_vp_user_id,tool_builder_vp_jobs,tool_builder_vp_pains,tool_builder_vp_approval_status,tool_builder_vp_status";
+        $this->pagination_params['fields'] = "tool_builder_cj_dg_id,tool_builder_cj_dg_user_id,tool_builder_cj_dg_awareness,tool_builder_cj_dg_engagement,tool_builder_cj_dg_approval_status,tool_builder_cj_dg_status";
         
         //$this->pagination_params['joins'][] = $this->join_user("LEFT");
 
@@ -99,9 +99,9 @@ class Model_tool_builder_vp extends MY_Model {
 
         $fields = array(
         
-              'tool_builder_vp_id' => array(
+              'tool_builder_cj_dg_id' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_vp_id',
+                     'name'   => 'tool_builder_cj_dg_id',
                      'label'   => 'id #',
                      'type'   => 'hidden',
                      'type_dt'   => 'text',
@@ -111,9 +111,9 @@ class Model_tool_builder_vp extends MY_Model {
                      'rules'   => 'trim'
                 ),
 
-                'tool_builder_vp_user_id' => array(
+                'tool_builder_cj_dg_user_id' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_vp_user_id',
+                     'name'   => 'tool_builder_cj_dg_user_id',
                      'label'   => 'User ID',
                      'type'   => 'hidden',
                      'type_filter_dt'   => 'dropdown',
@@ -125,9 +125,9 @@ class Model_tool_builder_vp extends MY_Model {
 
 
 
-                'tool_builder_vp_step_id' => array(
+                'tool_builder_cj_dg_step_id' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_vp_step_id',
+                     'name'   => 'tool_builder_cj_dg_step_id',
                      'label'   => 'Step ID',
                      'type'   => 'hidden',
                      'type_filter_dt'   => 'dropdown',
@@ -137,40 +137,40 @@ class Model_tool_builder_vp extends MY_Model {
                      'rules'   => 'trim'
                 ),
 
-              'tool_builder_vp_jobs' => array(
+              'tool_builder_cj_dg_awareness' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_vp_jobs',
-                     'label'   => 'Jobs',
+                     'name'   => 'tool_builder_cj_dg_awareness',
+                     'label'   => 'Awareness & Knowledge Phase',
                      'type'   => 'textarea',
                      'attributes'   => array(),
                      'js_rules'   => '',
                      'rules'   => 'trim|htmlentities'
                   ),
          
-                'tool_builder_vp_pains' => array(
+                'tool_builder_cj_dg_engagement' => array(
                 'table' => $this->_table,
-                'name' => '	tool_builder_vp_pains',
-                'label' => 'Pains',
+                'name' => '	tool_builder_cj_dg_engagement',
+                'label' => 'Engagement or Interest Phase',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
              
-               'tool_builder_vp_gains' => array(
+               'tool_builder_cj_dg_consideration' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_gains',
-                'label' => 'Gains',
+                'name' => 'tool_builder_cj_dg_consideration',
+                'label' => 'Consideration',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
 
-               'tool_builder_vp_products_services' => array(
+               'tool_builder_cj_dg_purchase' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_products_services',
-                'label' => 'Products/Services',
+                'name' => 'tool_builder_cj_dg_purchase',
+                'label' => 'Purchase Phase',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
@@ -178,29 +178,47 @@ class Model_tool_builder_vp extends MY_Model {
             ),
 
 
-            'tool_builder_vp_pain_relievers' => array(
+            'tool_builder_cj_dg_activation' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_pain_relievers',
-                'label' => 'Pain Relievers',
+                'name' => 'tool_builder_cj_dg_activation',
+                'label' => 'Activation Phase',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
 
-            'tool_builder_vp_gain_creators' => array(
+            'tool_builder_cj_dg_repeat' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_gain_creators',
-                'label' => 'Gain Creators',
+                'name' => 'tool_builder_cj_dg_repeat',
+                'label' => 'Repeat Phase',
+                'type' => 'textarea',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+            'tool_builder_cj_dg_loyalty' => array(
+                'table' => $this->_table,
+                'name' => 'tool_builder_cj_dg_loyalty',
+                'label' => 'Loyalty Phase',
+                'type' => 'textarea',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+            'tool_builder_cj_dg_advocacy' => array(
+                'table' => $this->_table,
+                'name' => 'tool_builder_cj_dg_advocacy',
+                'label' => 'Advocacy Phase',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
 
-             'tool_builder_vp_approval_status' => array(
+             'tool_builder_cj_dg_approval_status' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_approval_status',
+                'name' => 'tool_builder_cj_dg_approval_status',
                 'label' => 'Approval Status',
                 'type' => 'switch',
                 'default' => '0',
@@ -208,9 +226,9 @@ class Model_tool_builder_vp extends MY_Model {
                 'rules' => 'trim'
             ),
 
-           'tool_builder_vp_status' => array(
+           'tool_builder_cj_dg_status' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_status',
+                'name' => 'tool_builder_cj_dg_status',
                 'label' => 'Status?',
                 'type' => 'switch',
                 'default' => '1',

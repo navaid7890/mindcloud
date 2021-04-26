@@ -639,6 +639,36 @@ class Profile extends MY_Controller_Account {
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
 		$this->load_view('business-model-tool-vp' , $data);
 	}
+	public function tools_smp()
+	{
+		global $config;
+		$user_id = $this->userid;
+		$data['title'] = 'My Profile';
+		$data['user_data'] = $this->layout_data['user_data'];
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+		$this->load_view('strategic-marketing-tool' , $data);
+	}
+	public function tools_cjdg()
+	{
+		global $config;
+		$user_id = $this->userid;
+		$data['title'] = 'My Profile';
+		$data['user_data'] = $this->layout_data['user_data'];
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+		$this->load_view('customer-journey-demand-generation.php' , $data);
+	}
+	public function tools_mc()
+	{
+		global $config;
+		$user_id = $this->userid;
+		$data['title'] = 'My Profile';
+		$data['user_data'] = $this->layout_data['user_data'];
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+		$this->load_view('marketing-campaign-model-canvas.php' , $data);
+	}
 
 	public function video()
 	{

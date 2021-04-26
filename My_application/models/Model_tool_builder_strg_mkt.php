@@ -1,5 +1,5 @@
 <?
-class Model_tool_builder_vp extends MY_Model {
+class Model_tool_builder_strg_mkt extends MY_Model {
     /**
      * tool_builder MODEL
      *
@@ -9,10 +9,10 @@ class Model_tool_builder_vp extends MY_Model {
      * @since       2016 / Amazingly corrupt models Corporation Inc.
      */
 
-    protected $_table    = 'tool_builder_vp';
-    protected $_field_prefix    = 'tool_builder_vp_';
-    protected $_pk    = 'tool_builder_vp_id';
-    protected $_status_field    = 'tool_builder_vp_status';
+    protected $_table    = 'tool_builder_strg_mkt';
+    protected $_field_prefix    = 'tool_builder_strg_mkt_';
+    protected $_pk    = 'tool_builder_strg_mkt_id';
+    protected $_status_field    = 'tool_builder_strg_mkt_status';
     public $relations = array();
     public $pagination_params = array();
     public $dt_params = array();
@@ -21,7 +21,7 @@ class Model_tool_builder_vp extends MY_Model {
     function __construct()
     {
         // Call the Model construtool_builderr
-        $this->pagination_params['fields'] = "tool_builder_vp_id,tool_builder_vp_user_id,tool_builder_vp_jobs,tool_builder_vp_pains,tool_builder_vp_approval_status,tool_builder_vp_status";
+        $this->pagination_params['fields'] = "tool_builder_strg_mkt_id,tool_builder_strg_mkt_user_id,tool_builder_strg_mkt_situational_analysis,tool_builder_strg_mkt_mission,tool_builder_strg_mkt_approval_status,tool_builder_strg_mkt_status";
         
         //$this->pagination_params['joins'][] = $this->join_user("LEFT");
 
@@ -99,9 +99,9 @@ class Model_tool_builder_vp extends MY_Model {
 
         $fields = array(
         
-              'tool_builder_vp_id' => array(
+              'tool_builder_strg_mkt_id' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_vp_id',
+                     'name'   => 'tool_builder_strg_mkt_id',
                      'label'   => 'id #',
                      'type'   => 'hidden',
                      'type_dt'   => 'text',
@@ -111,9 +111,9 @@ class Model_tool_builder_vp extends MY_Model {
                      'rules'   => 'trim'
                 ),
 
-                'tool_builder_vp_user_id' => array(
+                'tool_builder_strg_mkt_user_id' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_vp_user_id',
+                     'name'   => 'tool_builder_strg_mkt_user_id',
                      'label'   => 'User ID',
                      'type'   => 'hidden',
                      'type_filter_dt'   => 'dropdown',
@@ -125,9 +125,9 @@ class Model_tool_builder_vp extends MY_Model {
 
 
 
-                'tool_builder_vp_step_id' => array(
+                'tool_builder_strg_mkt_step_id' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_vp_step_id',
+                     'name'   => 'tool_builder_strg_mkt_step_id',
                      'label'   => 'Step ID',
                      'type'   => 'hidden',
                      'type_filter_dt'   => 'dropdown',
@@ -137,40 +137,40 @@ class Model_tool_builder_vp extends MY_Model {
                      'rules'   => 'trim'
                 ),
 
-              'tool_builder_vp_jobs' => array(
+              'tool_builder_strg_mkt_situational_analysis' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_vp_jobs',
-                     'label'   => 'Jobs',
+                     'name'   => 'tool_builder_strg_mkt_situational_analysis',
+                     'label'   => 'Situational Analysis',
                      'type'   => 'textarea',
                      'attributes'   => array(),
                      'js_rules'   => '',
                      'rules'   => 'trim|htmlentities'
                   ),
          
-                'tool_builder_vp_pains' => array(
+                'tool_builder_strg_mkt_mission' => array(
                 'table' => $this->_table,
-                'name' => '	tool_builder_vp_pains',
-                'label' => 'Pains',
+                'name' => '	tool_builder_strg_mkt_mission',
+                'label' => 'Mission',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
              
-               'tool_builder_vp_gains' => array(
+               'tool_builder_strg_mkt_objectives' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_gains',
-                'label' => 'Gains',
+                'name' => 'tool_builder_strg_mkt_objectives',
+                'label' => 'Objectives',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
 
-               'tool_builder_vp_products_services' => array(
+               'tool_builder_strg_mkt_target_market' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_products_services',
-                'label' => 'Products/Services',
+                'name' => 'tool_builder_strg_mkt_target_market',
+                'label' => 'Target Market',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
@@ -178,29 +178,29 @@ class Model_tool_builder_vp extends MY_Model {
             ),
 
 
-            'tool_builder_vp_pain_relievers' => array(
+            'tool_builder_strg_mkt_implementation_tactics' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_pain_relievers',
-                'label' => 'Pain Relievers',
+                'name' => 'tool_builder_strg_mkt_implementation_tactics',
+                'label' => 'Implementation Tactics',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
 
-            'tool_builder_vp_gain_creators' => array(
+            'tool_builder_strg_mkt_evaluation' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_gain_creators',
-                'label' => 'Gain Creators',
+                'name' => 'tool_builder_strg_mkt_evaluation',
+                'label' => 'Evaluation',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
 
-             'tool_builder_vp_approval_status' => array(
+             'tool_builder_strg_mkt_approval_status' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_approval_status',
+                'name' => 'tool_builder_strg_mkt_approval_status',
                 'label' => 'Approval Status',
                 'type' => 'switch',
                 'default' => '0',
@@ -208,9 +208,9 @@ class Model_tool_builder_vp extends MY_Model {
                 'rules' => 'trim'
             ),
 
-           'tool_builder_vp_status' => array(
+           'tool_builder_strg_mkt_status' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_status',
+                'name' => 'tool_builder_strg_mkt_status',
                 'label' => 'Status?',
                 'type' => 'switch',
                 'default' => '1',

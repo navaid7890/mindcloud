@@ -449,7 +449,7 @@ class Model_course extends MY_Model {
             'course_video' => array(
                 'table' => $this->_table,
                 'name' => 'course_video',
-                'label' => 'Video',
+                'label' => 'intro Video',
                 'type' => 'hidden',
                 'attributes' => array(),
                 'js_rules' => '',
@@ -458,7 +458,7 @@ class Model_course extends MY_Model {
             'course_video_desc' => array(
                 'table'   => $this->_table,
                 'name'   => 'course_video_desc',
-                'label'   => 'Course Video Description',
+                'label'   => ' Video transcript',
                 'type'   => 'editor',
                 'attributes'   => array(),
                 'js_rules'   => '',

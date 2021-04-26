@@ -93,69 +93,71 @@ ul.dashboard-layout {
                         </div>
 
                         <div class="tutorial-footer tool-footer vid-tran para">
-                           <div class="tutorial-footer-content">
+                           <div class="tutorial-footer-content" style="padding: 0;">
                                     
 
                                     <ul class="form-tabing">
                                        <div class="fld-html">
-                                          <p>Value Map (The left side of the Value Proposition Canvas)</p>
-                                          <p>Customer Profile (The right side of the Value Proposition Canvas)</p>
+                                          <p>Marketing Campaign Model Canvas</p>
                                        </div>
                                     </ul>      
 
                                     <div class="box-1 showfirst" style="">      
-                                       
-                                          <div class="fld-html">
-                                             <ul class="fld-progress">
-                                                <li class="step"><p>Customer Segments</p></li>
-                                                <li class="step"><p>Value Propositions</p></li>
-                                             </ul>
-                                          </div>
-                                          
+
                                           <div id="radio1" class="multi-fld">
 
                                              <div class="tab">
                                                  <form id="regForm" class="next-prevBtn">
                                                      <div class="fld-textarea">
-                                                        <label for="">Jobs <span>List all the jobs your customers are trying to get done (jobs can be functional, emotional, or social ones)</span></label>
+                                                        <label for="">Prospect Personas <span>List the different segments of your target customers with their defined personas and archetypes (by gender, age, interests, occupation, social status, hangouts, education, etc.)</span></label>
                                                         <div class="space"><br></div>
                                                         <textarea oninput="this.className = ''"></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
-                                                        <label for="">Pains <span>List customer pains, and possible dissatisfying experiences or outcomes that exist in current solutions</span></label>
+                                                        <label for="">Prospect Problems <span>Use the Value Proposition Canvas to understand your target customers’ pains and gains, frame the problem they have and the job they need to be done, and give them the best solution for it.</span></label>
                                                         <div class="space"><br></div>
                                                         <textarea oninput="this.className = ''"></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
-                                                        <label for="">Gains <span>List customer gains, which is essentially the expectations and benefits customers wish to have, in order to get the most satisfying customer experience</span></label>
-                                                        <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
-                                                     </div>
-
-                                                     <div>
-                                                         <button type="submit">SUBMIT</button>
-                                                     </div>
-                                                 </form>  
-                                             </div>
-
-                                             <div class="tab">
-                                                 <form id="regForm2" class="next-prevBtn">
-                                                     <div class="fld-textarea">
-                                                        <label for="">Products/Services <span>List the product, service, and features that your value proposition builds on</span></label>
+                                                        <label for="">Value Proposition <span>Define your Value Proposition in connection to your Prospect Personas, and relevant to the Prospect Problems. What is your unique offering to your customers and why they care?</span></label>
                                                         <div class="space"><br></div>
                                                         <textarea oninput="this.className = ''"></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
-                                                        <label for="">Pain Relievers <span>Describe in which ways your product service and features ease customer pains, and make their life easier</span></label>
+                                                        <label for="">Channels <span>List all the channels to get your message out in relation to each of your segments. Examples: targeted emails, print, social media. (Be aware of corresponding budgets).</span></label>
                                                         <div class="space"><br></div>
                                                         <textarea oninput="this.className = ''"></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
-                                                        <label for="">Gain Creators<span>List how your product or service creates customer gains, and offers added value to the customer</span></label>
+                                                        <label for="">Content <span>List your key content messages, examples: catchy phrases, videos, articles, infographics, reports, blog, etc. Map your content strategy per customer segments, channels and customer journey phases.</span></label>
+                                                        <div class="space"><br></div>
+                                                        <textarea oninput="this.className = ''"></textarea>
+                                                     </div>
+
+                                                     <div class="fld-textarea">
+                                                        <label for="">Key Activities <span>List all your activities by tactics, schedule, milestones. Examples of tactics: lead generation, lead nurturing, demand generation, content-driven marketing, media buys, email marketing, web marketing. </span></label>
+                                                        <div class="space"><br></div>
+                                                        <textarea oninput="this.className = ''"></textarea>
+                                                     </div>
+
+                                                     <div class="fld-textarea">
+                                                        <label for="">Key Metrics <span>For every key Activities and Channels, identify the corresponding metrics, quantify them, put the processes in place to track, measure and assess. Examples: number of readership for the Blog Channel, open rate for newsletter, number of attendees for events.</span></label>
+                                                        <div class="space"><br></div>
+                                                        <textarea oninput="this.className = ''"></textarea>
+                                                     </div>
+
+                                                     <div class="fld-textarea">
+                                                        <label for="">Cost Structure <span>Set budgets for activities per channel based on industry, target market, competitive spending. What to do in-house, what to engage partners and agencies for?</span></label>
+                                                        <div class="space"><br></div>
+                                                        <textarea oninput="this.className = ''"></textarea>
+                                                     </div>
+
+                                                     <div class="fld-textarea">
+                                                        <label for="">ROI <span>Have a quantified, realistic projections of how the campaign investment will generate leads and/or revenue, market share, etc. Calculate your ROI according to your projected revenues and based on your set budgets. Validate and correct as you go!</span></label>
                                                         <div class="space"><br></div>
                                                         <textarea oninput="this.className = ''"></textarea>
                                                      </div>
@@ -168,14 +170,6 @@ ul.dashboard-layout {
 
                                           </div>
 
-                          
-                                          <div class="next-prevBtn" style="overflow:auto;">
-                                             <div style="float:right;">
-                                                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
-                                                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                                             </div>
-                                          </div>
-                                   
 
                                     </div>
 

@@ -899,14 +899,11 @@ function nextPrev(n) {
   var x = document.getElementsByClassName("tab");
   x[currentTab].style.display = "none";
   currentTab = currentTab + n;
-<<<<<<< HEAD
-  // document.getElementById("form-send_us").submit();
-  // alert("form-send_us"+n);
-
-=======
+if(n==1){
   document.getElementById("forms-tool_builder-btn").click();
+}
+  
   // alert("form-send_us");
->>>>>>> QA
   if (currentTab >= x.length) {
     document.getElementById("form-send_us").submit();
     return false;

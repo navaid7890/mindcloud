@@ -93,43 +93,53 @@ ul.dashboard-layout {
                         </div>
 
                         <div class="tutorial-footer tool-footer vid-tran para">
-                           <div class="tutorial-footer-content">
+                           <div class="tutorial-footer-content" style="padding: 0;">
                                     
 
                                     <ul class="form-tabing">
                                        <div class="fld-html">
-                                          <p>Value Map (The left side of the Value Proposition Canvas)</p>
-                                          <p>Customer Profile (The right side of the Value Proposition Canvas)</p>
+                                          <p>Strategic Marketing Plan</p>
                                        </div>
                                     </ul>      
 
                                     <div class="box-1 showfirst" style="">      
-                                       
-                                          <div class="fld-html">
-                                             <ul class="fld-progress">
-                                                <li class="step"><p>Customer Segments</p></li>
-                                                <li class="step"><p>Value Propositions</p></li>
-                                             </ul>
-                                          </div>
-                                          
+
                                           <div id="radio1" class="multi-fld">
 
                                              <div class="tab">
                                                  <form id="regForm" class="next-prevBtn">
                                                      <div class="fld-textarea">
-                                                        <label for="">Jobs <span>List all the jobs your customers are trying to get done (jobs can be functional, emotional, or social ones)</span></label>
+                                                        <label for="">1. Situational Analysis <span>List all your internal strengths/weaknesses, and your external opportunities/threats.</span></label>
                                                         <div class="space"><br></div>
                                                         <textarea oninput="this.className = ''"></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
-                                                        <label for="">Pains <span>List customer pains, and possible dissatisfying experiences or outcomes that exist in current solutions</span></label>
+                                                        <label for="">2. Mission <span>State your company’s mission statement as per goals, ethics, values, and culture. Make sure you answer to these questions: what the company does for its customers, employees, and its owners. </span></label>
                                                         <div class="space"><br></div>
                                                         <textarea oninput="this.className = ''"></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
-                                                        <label for="">Gains <span>List customer gains, which is essentially the expectations and benefits customers wish to have, in order to get the most satisfying customer experience</span></label>
+                                                        <label for="">3. Objectives <span>State your long-term results, so you can list them down into specific objectives. These objectives should be measurable over a period of time. Example, gaining 3000 followers on Instagram in 3 months. </span></label>
+                                                        <div class="space"><br></div>
+                                                        <textarea oninput="this.className = ''"></textarea>
+                                                     </div>
+
+                                                     <div class="fld-textarea">
+                                                        <label for="">4. Strategy & Implementation <span>(Here we have 2 essential elements to develop)</span> 4.A. Target Market: <span>Research and validate your target customers, their segments and their personas based on gender, age, likes, dislikes, social behavior, hangout places, social status, etc. </span></label>
+                                                        <div class="space"><br></div>
+                                                        <textarea oninput="this.className = ''"></textarea>
+                                                     </div>
+
+                                                     <div class="fld-textarea">
+                                                        <label for="">4.B. Implementation Tactics / Positioning / Marketing Mix: <span> We expanded a lot on Positioning and Marketing Mix in a previous tutorial. List your Marketing Mix tactics based on the 7 P’s (Product, People, Place, Price, Promotion, Process, Physical Evidence). Example of tactics: phone call, text, email, Facebook Ads, etc.</span></label>
+                                                        <div class="space"><br></div>
+                                                        <textarea oninput="this.className = ''"></textarea>
+                                                     </div>
+
+                                                     <div class="fld-textarea">
+                                                        <label for="">5. Evaluation <span>Have in place process for evaluation of tactics and strategies based on results, who is in charge to do that job and what is the frequency of that evaluation, assess budgets (of cost of acquisition) for better future planning.</span></label>
                                                         <div class="space"><br></div>
                                                         <textarea oninput="this.className = ''"></textarea>
                                                      </div>
@@ -139,41 +149,7 @@ ul.dashboard-layout {
                                                      </div>
                                                  </form>  
                                              </div>
-
-                                             <div class="tab">
-                                                 <form id="regForm2" class="next-prevBtn">
-                                                     <div class="fld-textarea">
-                                                        <label for="">Products/Services <span>List the product, service, and features that your value proposition builds on</span></label>
-                                                        <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
-                                                     </div>
-
-                                                     <div class="fld-textarea">
-                                                        <label for="">Pain Relievers <span>Describe in which ways your product service and features ease customer pains, and make their life easier</span></label>
-                                                        <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
-                                                     </div>
-
-                                                     <div class="fld-textarea">
-                                                        <label for="">Gain Creators<span>List how your product or service creates customer gains, and offers added value to the customer</span></label>
-                                                        <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
-                                                     </div>
-
-                                                     <div>
-                                                         <button type="submit">SUBMIT</button>
-                                                     </div>
-                                                 </form>  
-                                             </div>
-
-                                          </div>
-
-                          
-                                          <div class="next-prevBtn" style="overflow:auto;">
-                                             <div style="float:right;">
-                                                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
-                                                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                                             </div>
+ 
                                           </div>
                                    
 
@@ -183,7 +159,7 @@ ul.dashboard-layout {
                         </div>
                      </div>
                   </div>
-               </div> 
+               </div>
             </li>
 
     
