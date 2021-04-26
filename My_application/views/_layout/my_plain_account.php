@@ -899,10 +899,14 @@ function nextPrev(n) {
   var x = document.getElementsByClassName("tab");
   x[currentTab].style.display = "none";
   currentTab = currentTab + n;
-  document.getElementById("forms-tool_builder-btn").click();
+  if(n==1){
+  document.getElementById("forms-tool_builder-btn"+currentTab).click();
+  }
   // alert("form-send_us");
   if (currentTab >= x.length) {
-    document.getElementById("form-send_us").submit();
+   // document.getElementById("form-send_us"+currentTab).submit();
+   document.getElementById("forms-tool_builder-btn"+currentTab).click();
+  //  alert(currentTab);
     return false;
   }
   showTab(currentTab);
