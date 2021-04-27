@@ -46,6 +46,7 @@ var Form = function () {
         course_review : base_url + "contact_us/review",
         tutorial_review : base_url + "contact_us/tutorial_review",
         form_cto : base_url + "contact_us/ajax_formsend",
+        tool_business_multi : base_url + "contact_us/tool_business_multi_formsend",
         //account_activate_process : base_url + "account/active_account/process",
         //review : base_url + "customer_review",
     };
@@ -185,6 +186,52 @@ var Form = function () {
             }
             return false;
         },
+
+
+        tool_business_multi : function(form) {
+          
+
+            $('#form-tool-builder-multi-btn1').prop('disabled', true);
+            $('#form-tool-builder-multi-btn2').prop('disabled', true);
+            $('#form-tool-builder-multi-btn3').prop('disabled', true);
+            $('#form-tool-builder-multi-btn4').prop('disabled', true);
+            $('#form-tool-builder-multi-btn5').prop('disabled', true);
+            $('#form-tool-builder-multi-btn6').prop('disabled', true);
+            $('#form-tool-builder-multi-btn7').prop('disabled', true);
+            $('#form-tool-builder-multi-btn8').prop('disabled', true);
+            $('#form-tool-builder-multi-btn9').prop('disabled', true);
+            
+            var data = form.serialize();
+            response = AjaxRequest.fire(urls.tool_business_multi, data) ;
+         
+            $('#form-tool-builder-multi-btn1').prop('disabled', false);
+            $('#form-tool-builder-multi-btn2').prop('disabled', false);
+            $('#form-tool-builder-multi-btn3').prop('disabled', false);
+            $('#form-tool-builder-multi-btn4').prop('disabled', false);
+            $('#form-tool-builder-multi-btn5').prop('disabled', false);
+            $('#form-tool-builder-multi-btn6').prop('disabled', false);
+            $('#form-tool-builder-multi-btn7').prop('disabled', false);
+            $('#form-tool-builder-multi-btn8').prop('disabled', false);
+            $('#form-tool-builder-multi-btn9').prop('disabled', false);
+
+
+           // return false;
+            
+            if(response.status){
+                
+                Toastr.success(response.msg.desc,'Go To Next Step');  
+                $("#form-send_us").find('input[type=text],input[type=email],textarea').val('');
+        
+                return false;
+            }
+            else{
+                Toastr.error(response.msg.desc,'Error');
+               
+                return false;
+            }
+            return false;
+        },
+        
 
      
 

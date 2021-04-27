@@ -130,11 +130,11 @@ ul.dashboard-layout {
                                             $param['order']="tool_builder_id DESC";
                                             $param['where']['tool_builder_user_id']=$this->userid;
                                             $tool = $this->model_tool_builder->find_one_active($param);
-                                       
+                                           
                                            ?>
                                            
   
-                                                <form id="form-send_us1">
+                                                <form id="form-send_us">
                                                 <input type="hidden"  name="tool_builder[tool_builder_user_id]" value="<?=($this->userid)?>"> 
 
                           
@@ -146,7 +146,7 @@ ul.dashboard-layout {
                                                    </div>
 
                                                    <div style="display:none">
-                                                         <button type="submit" id="forms-tool_builder-btn1">SUBMIT</button>
+                                                         <button type="submit" id="forms-tool_builder-btn">SUBMIT</button>
                                                    </div>
                                                 </form>  
                                              </div>
@@ -154,7 +154,7 @@ ul.dashboard-layout {
                                              <div class="tab">
                                               
                                                 
-            <form id="form-send_us2"  class="next-prevBtn"> 
+            <form id="form-send_us"  class="next-prevBtn"> 
                   
    
                                                    <div class="fld-textarea">
@@ -162,117 +162,115 @@ ul.dashboard-layout {
                                                    <div class="space"><br></div>
                                                    <p>List out the different Value Propositions ranked by order of importance and connected to each of the Customer Segments you have.</p>
                                                    <div class="space"><br></div>
-                                                  
-                          
                                                    <textarea oninput="this.className = ''" name="tool_builder[tool_builder_value_proposition]"><?=$tool['tool_builder_value_proposition']?></textarea>
                                                    </div>  
                                                    <div style="display:none">
-                                                         <button type="submit" id="forms-tool_builder-btn2">SUBMIT</button>
+                                                         <button type="submit" id="forms-tool_builder-btn">SUBMIT</button>
                                                    </div>
                                                 </form>  
                                              </div>
 
                                              <div class="tab">
-                                                <form id="form-send_us3" class="next-prevBtn">
+                                                <form id="regForm3" class="next-prevBtn">
                                                    <div class="fld-textarea">
                                                    <label for="">What are your Channels?</label>
                                                    <div class="space"><br></div>
                                                    <p>List all the important Channels linked to the different Customer Segments for the value proposition to reach them.  Make sure you cover all the steps from promotion, sales, service, etc.</p>
                                                    <div class="space"><br></div>
-                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_channels]"><?=$tool['tool_builder_channels']?></textarea>
+                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_channels]"></textarea>
                                                    </div> 
-                                                   <div style="display:none">
-                                                         <button type="submit" id="forms-tool_builder-btn3">SUBMIT</button>
+                                                   <div>
+                                                         <button type="submit">SUBMIT</button>
                                                    </div>
                                                 </form>   
                                              </div>
 
                                              <div class="tab">
-                                                <form id="form-send_us4" class="next-prevBtn">
+                                                <form id="regForm4" class="next-prevBtn">
                                                    <div class="fld-textarea">
                                                    <label for="">What are your Customer Relationships?</label>
                                                    <div class="space"><br></div>
                                                    <p>List your Customer Relationships according to the different segments and across the customer journey, from acquisition, through growth, to retention.</p>
                                                    <div class="space"><br></div>
-                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_customer_relationship]"><?=$tool['tool_builder_customer_relationship']?></textarea>
+                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_customer_relationship]"></textarea>
                                                    </div> 
-                                                   <div style="display:none">
-                                                         <button type="submit" id="forms-tool_builder-btn4">SUBMIT</button>
+                                                   <div>
+                                                         <button type="submit">SUBMIT</button>
                                                    </div>
                                                 </form>   
                                              </div>
 
                                              <div class="tab">
-                                                <form id="form-send_us5" class="next-prevBtn">
+                                                <form id="regForm5" class="next-prevBtn">
                                                    <div class="fld-textarea">
                                                    <label for="">What are your Revenue Models?</label>
                                                    <div class="space"><br></div>
                                                    <p>Describe the different Revenue Models you have to capture value from the different Customer Segments. Example (Freemium, Subscription, Transactional, Affiliate, Advertising, etc.)</p>
                                                    <div class="space"><br></div>
-                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_revenue_model]"><?=$tool['tool_builder_revenue_model']?></textarea>
+                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_revenue_model]"></textarea>
                                                    </div> 
-                                                   <div style="display:none">
-                                                         <button type="submit" id="forms-tool_builder-btn5">SUBMIT</button>
+                                                   <div>
+                                                         <button type="submit">SUBMIT</button>
                                                    </div>
                                                 </form>   
                                              </div>
 
                                              <div class="tab">
-                                                <form id="form-send_us6" class="next-prevBtn">
+                                                <form id="regForm6" class="next-prevBtn">
                                                    <div class="fld-textarea">
                                                    <label for="">What are your Key Resources?</label>
                                                    <div class="space"><br></div>
                                                    <p>List all your Key Resources from financial, physical, intellectual, to human resources</p>
                                                    <div class="space"><br></div>
-                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_key_resources]"><?=$tool['tool_builder_key_resources']?></textarea>
+                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_key_resources]"></textarea>
                                                    </div>  
-                                                   <div style="display:none">
-                                                         <button type="submit" id="forms-tool_builder-btn6">SUBMIT</button>
+                                                   <div>
+                                                         <button type="submit">SUBMIT</button>
                                                    </div>
                                                 </form>  
                                              </div>
 
                                              <div class="tab">
-                                                <form id="form-send_us7" class="next-prevBtn">
+                                                <form id="regForm7" class="next-prevBtn">
                                                    <div class="fld-textarea">
                                                    <label for="">What are your Key Activities?</label>
                                                    <div class="space"><br></div>
                                                    <p>List all the Key Activities you must do to make your business model work</p>
                                                    <div class="space"><br></div>
-                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_key_activities]"><?=$tool['tool_builder_key_activities']?></textarea>
+                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_key_activities]"></textarea>
                                                    </div>  
-                                                   <div style="display:none">
-                                                         <button type="submit" id="forms-tool_builder-btn7">SUBMIT</button>
+                                                   <div>
+                                                         <button type="submit">SUBMIT</button>
                                                    </div>
                                                 </form> 
                                              </div>
 
                                              <div class="tab">
-                                                <form id="form-send_us8" class="next-prevBtn">
+                                                <form id="regForm8" class="next-prevBtn">
                                                    <div class="fld-textarea">
                                                    <label for="">Who are your Key Partners?</label>
                                                    <div class="space"><br></div>
                                                    <p>List all the partners that have Key Resources that you need, or perform Key Activities on your behalf (make sure to never compromise on the value you are delivering)</p>
                                                    <div class="space"><br></div>
-                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_key_partners]"><?=$tool['tool_builder_key_partners']?></textarea>
+                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_key_partners]"></textarea>
                                                    </div>  
-                                                   <div style="display:none">
-                                                         <button type="submit" id="forms-tool_builder-btn8">SUBMIT</button>
+                                                   <div>
+                                                         <button type="submit">SUBMIT</button>
                                                    </div>
                                                 </form> 
                                              </div>
 
                                              <div class="tab">
-                                                <form id="form-send_us9" class="next-prevBtn">
+                                                <form id="regForm9" class="next-prevBtn">
                                                    <div class="fld-textarea">
                                                    <label for="">What is your Cost Structure?</label>
                                                    <div class="space"><br></div>
                                                    <p>List the most important costs, from expensive resources, expensive activities, fixed costs, to variable costs, etc.  Note: Check for economies of scale.</p>
                                                    <div class="space"><br></div>
-                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_cost_structure]"><?=$tool['tool_builder_cost_structure']?></textarea>
+                                                   <textarea oninput="this.className = ''" name="tool_builder[tool_builder_cost_structure]"></textarea>
                                                    </div>  
-                                                   <div style="display:none">
-                                                         <button type="submit" id="forms-tool_builder-btn9">SUBMIT</button>
+                                                   <div>
+                                                         <button type="submit">SUBMIT</button>
                                                    </div>
                                                 </form>
                                              </div>
@@ -288,9 +286,14 @@ ul.dashboard-layout {
                                    
 
                                     </div>
-
-                                    <div class="box-2" style="">  
-                                       <form id="regForm1" action="">
+                                    <?
+                                    $data=array();
+                                    $data['order']="tool_builder_id DESC";
+                                    $data['where']['tool_builder_user_id']=$this->userid;
+                                    $multi=$this->model_tool_builder_bmc_multi->find_one_active($data); 
+                                    
+                                    ?>
+                                    <div class="box-2" style="">   
                                           
                                           <div class="fld-html">
                                              <ul class="fld-progress">
@@ -308,7 +311,8 @@ ul.dashboard-layout {
                                     
                                           <div id="radio2" class="multi-fld">
                                              <div class="tab1">
-                                                <form id="regForm10" class="next-prevBtn">
+                                                <form id="regForm10">
+                                                <input type="hidden"  name="tool_builder_bmc_multi[tool_builder_user_id]" value="<?=($this->userid)?>">  
                                                    <div class="fld-text">
                                                          <input type="text" placeholder="Side One" oninput="this.className = ''">
                                                    </div>  
@@ -329,7 +333,7 @@ ul.dashboard-layout {
                                                          <textarea oninput="this.className = ''"></textarea>
                                                    </div> 
                                                    <div>
-                                                         <button type="submit">SUBMIT</button>
+                                                         <button type="submit" id="form-tool-builder-multi-btn1">SUBMIT</button>
                                                    </div> 
                                                 </form>  
                                              </div>
@@ -344,7 +348,7 @@ ul.dashboard-layout {
                                                          <textarea oninput="this.className = ''"></textarea>
                                                    </div>  
                                                    <div>
-                                                         <button type="submit">SUBMIT</button>
+                                                         <button type="submit" id="form-tool-builder-multi-btn2">SUBMIT</button>
                                                    </div>
                                                 </form> 
                                              </div>
@@ -359,7 +363,7 @@ ul.dashboard-layout {
                                                          <textarea oninput="this.className = ''"></textarea>
                                                    </div>  
                                                    <div>
-                                                         <button type="submit">SUBMIT</button>
+                                                         <button type="submit" id="form-tool-builder-multi-btn3">SUBMIT</button>
                                                    </div>
                                                 </form> 
                                              </div>
@@ -375,7 +379,7 @@ ul.dashboard-layout {
                                                          <textarea oninput="this.className = ''"></textarea>
                                                    </div>  
                                                    <div>
-                                                         <button type="submit">SUBMIT</button>
+                                                         <button type="submit" id="form-tool-builder-multi-btn4">SUBMIT</button>
                                                    </div>
                                                 </form>  
                                              </div>
@@ -391,7 +395,7 @@ ul.dashboard-layout {
                                                          <textarea oninput="this.className = ''"></textarea>
                                                    </div>  
                                                    <div>
-                                                         <button type="submit">SUBMIT</button>
+                                                         <button type="submit" id="form-tool-builder-multi-btn5">SUBMIT</button>
                                                    </div>
                                                 </form>  
                                              </div>
@@ -407,7 +411,7 @@ ul.dashboard-layout {
                                                          <textarea oninput="this.className = ''"></textarea>
                                                    </div>  
                                                    <div>
-                                                         <button type="submit">SUBMIT</button>
+                                                         <button type="submit" id="form-tool-builder-multi-btn6">SUBMIT</button>
                                                    </div>
                                                 </form>  
                                                 
@@ -424,7 +428,7 @@ ul.dashboard-layout {
                                                          <textarea oninput="this.className = ''"></textarea>
                                                    </div>  
                                                    <div>
-                                                         <button type="submit">SUBMIT</button>
+                                                         <button type="submit" id="form-tool-builder-multi-btn7">SUBMIT</button>
                                                    </div>
                                                 </form> 
                                                 
@@ -443,7 +447,7 @@ ul.dashboard-layout {
                                                    </div>  
                                                 
                                                    <div>
-                                                         <button type="submit">SUBMIT</button>
+                                                         <button type="submit" id="form-tool-builder-multi-btn8">SUBMIT</button>
                                                    </div>
                                                 </form> 
 
@@ -460,7 +464,7 @@ ul.dashboard-layout {
                                                          <textarea oninput="this.className = ''"></textarea>
                                                    </div>  
                                                    <div>
-                                                         <button type="submit">SUBMIT</button>
+                                                         <button type="submit" id="form-tool-builder-multi-btn9">SUBMIT</button>
                                                    </div>
                                                 </form>
                                              </div>
@@ -473,8 +477,7 @@ ul.dashboard-layout {
                                                 <button type="button" id="prevBtn1" onclick="nextPrev1(-1)">Back</button>
                                                 <button type="button" id="nextBtn1" onclick="nextPrev1(1)">Next</button>
                                              </div>
-                                          </div>
-                                       </form>
+                                          </div> 
                                     </div>
 
                            </div>
