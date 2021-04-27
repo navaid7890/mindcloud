@@ -120,7 +120,7 @@ class Model_category extends MY_Model {
                 'preview' => 'true',
                 // 'thumb'   => array(array('name'=>'category_image_thumb','max_width'=>260, 'max_height'=>250),),
                 'attributes'   => array(
-                    'image_size_recommended'=>'366px × 397px',
+                    'image_size_recommended'=>'57px × 57px',
                     'allow_ext'=>'png|jpeg|jpg',
                 ),
                 'dt_attributes' => array("width" => "10%"),

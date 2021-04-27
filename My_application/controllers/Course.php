@@ -24,6 +24,8 @@ class Course extends MY_Controller {
 
          //CONTENT
           $data['course'] = $this->model_course->find_all_active();
+
+         // die();
           
         $this->load_view("index",$data);
     }

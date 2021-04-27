@@ -418,7 +418,7 @@ class Model_course extends MY_Model {
                 'preview' => 'true',
                 // 'thumb'   => array(array('name'=>'course_image_thumb','max_width'=>260, 'max_height'=>250),),
                 'attributes'   => array(
-                    'image_size_recommended'=>'366px × 397px',
+                    'image_size_recommended'=>'247px × 187px',
                     'allow_ext'=>'png|jpeg|jpg',
                 ),
                 'dt_attributes' => array("width" => "10%"),
@@ -449,7 +449,7 @@ class Model_course extends MY_Model {
             'course_video' => array(
                 'table' => $this->_table,
                 'name' => 'course_video',
-                'label' => 'intro Video',
+                'label' => 'Video',
                 'type' => 'hidden',
                 'attributes' => array(),
                 'js_rules' => '',

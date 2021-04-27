@@ -1091,6 +1091,7 @@
         background: #1D90D9;
         padding: 68px 0 30px;
         position: relative;
+        z-index: 9;
     }
     
     .widget h4 {
@@ -1172,11 +1173,16 @@
     
     .copyright-top {
         padding: 20px 0;
+        position: relative;
+        z-index: 9;
+        background: #f8f9fa;
     }
     
     .copyright {
         padding: 20px 0;
         background: #1d90d9;
+        position: relative;
+        z-index: 9;
     }
     
     .copyright ul>li {
@@ -2322,6 +2328,8 @@
     
     .front-dashboard.open .dashboard-menu-box {
         left: 0;
+        width: 18%;
+        padding: 48px 0;
     }
     
     .progres-box div#activeBorder1 {
@@ -2451,14 +2459,26 @@
     }
     
     @media (max-width: 1440px) {
+        .front-dashboard .dashboard-child-links ul>li>a {
+    padding-left: 0;
+    left: 0;
+}
+.front-dashboard .dashboard-menu-box.open .dashboard-child-links ul>li>a{padding-left: 65px;}
+
+.front-dashboard .dashboard-child-links ul>li>a span {
+    left: 20px!important;
+}
         .front-dashboard .dashboard-menu-box {
-            left: -20%;
+            left: 0;
             transition: 0.5s;
+            width: 5%;
+            overflow: hidden;
+            padding: 64px 0;
         }
         a.menu-dash-front {
             display: block;
             padding: 20px 25px;
-            font-size: 20px;
+            font-size: 0;
             font-weight: 700;
             background: #33415c;
             vertical-align: middle;
@@ -2466,12 +2486,12 @@
             position: fixed;
             top: 112px;
             z-index: 3;
-            width: 100%;
+            width: 5%;
         }
         a.menu-dash-front i {
             position: absolute;
-            right: 20px;
-            font-size: 26px;
+            right: 28px;
+            font-size: 23px;
             vertical-align: middle;
             line-height: 16px;
         }

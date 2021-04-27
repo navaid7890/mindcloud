@@ -45,7 +45,7 @@
                         </div>
                     </a></li>
 
-                <li><a href="">Tutorial Video and Transcript
+                <!-- <li><a href="">Tutorial Video and Transcript
                         <div id="activeBorder" class="active-border">
                             <div id="circle" class="circle">
                                 <span class="prec">66</span>
@@ -53,8 +53,8 @@
                             </div>
                         </div>
 
-                    </a>
-                    <ul class="subVideos">
+                    </a> -->
+                    <li class="subVideos">
                         <? if(isset($tutorial_course) AND array_filled($tutorial_course)) :?>
                         <? foreach($tutorial_course as $key=>$tutor):
                             // $value['cp_tutorial_id']
@@ -62,13 +62,13 @@
                              
                             ?>
                             <ul>
-                                <li><a href="<?= l('account/profile/expert-detail-tutorial-video')?>?courseid=<?= $courseid ?>&tutorialid=<?= $tutor['tutorial_id'] ?>"><?= $tutor['tutorial_name'] ?></a></li>
+                                <li><a href="<?= l('account/profile/expert-detail-tutorial-video')?>?courseid=<?= $courseid ?>&tutorialid=<?= $tutor['tutorial_id'] ?>">Tutorial Video and Transcript<?//= $tutor['tutorial_name'] ?></a></li>
                             </ul>
                         <? endforeach;?>
                         <? endif;?>
-                    </ul>
+                        </li>
                     
-                </li>
+                <!-- </li> -->
 
             </ul>
         </div>

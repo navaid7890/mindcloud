@@ -127,7 +127,7 @@
                         </div>
                      </li>
                      <?php endforeach; ?>
-                     <?php endif ?>
+                     <?php endif; ?>
                   </ul>
                   <?}?>
                   <!-- <div class="space"><br><br></div>

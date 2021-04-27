@@ -683,7 +683,7 @@ ul.user-links>li>a { font-size: 13px; text-align: left; display: block; padding:
 ul.user-links>li>a:hover { background-color: #208dd8; color: #fff; }
 ul.login-btn>li.dropdown-toggle>a { color: #000; font-weight: 700; font-size: 12px; }
 ul.login-btn>li.dropdown-toggle>a>span { width: 38px; border-radius: 100%; vertical-align: middle; overflow: hidden; margin-right: 10px; height: 32px; overflow: hidden; }
-ul.login-btn .dropdown-box { background: #fff; position: absolute; left: 0; right: 0; border-radius: 8px; top: 47px; overflow: hidden; z-index: 999; }
+ul.login-btn .dropdown-box {background: #fff;position: absolute;left: 0;right: 0;border-radius: 8px;top: 47px;overflow: hidden;z-index: 999;width: 200px;}
 
 .bannerContent h1:after {
     content: "";

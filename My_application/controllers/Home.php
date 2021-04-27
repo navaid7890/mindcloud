@@ -69,7 +69,8 @@ class Home extends MY_Controller {
       $data['testi'] = $this->model_testimonials->find_all_active();
       $firststate = $this->model_states->find_one_active();            
       $data['firststate'] =$firststate['states_id'];
-
+      $data['config']=$config;
+      debug($data['config']);
         // Load View
         $this->load_view("home",$data);
     }
