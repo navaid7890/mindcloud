@@ -20,7 +20,7 @@ class Tool_builder extends MY_Controller {
         global $config;
         
         parent::__construct();
-        $this->dt_params['dt_headings'] = "tool_builder_id,tool_builder_user_id,tool_builder_fname,tool_builder_lname,tool_builder_approval_status,tool_builder_status";
+        $this->dt_params['dt_headings'] = "tool_builder_id,tool_builder_user_id,tool_builder_customer_segments,tool_builder_value_proposition,tool_builder_approval_status,tool_builder_status";
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
         $this->dt_params['action'] = array(
                                         "hide" => false ,

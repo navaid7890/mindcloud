@@ -21,7 +21,7 @@ class Model_tool_builder extends MY_Model {
     function __construct()
     {
         // Call the Model construtool_builderr
-        $this->pagination_params['fields'] = "tool_builder_id,tool_builder_user_id,tool_builder_fname,tool_builder_lname,tool_builder_approval_status,tool_builder_status";
+        $this->pagination_params['fields'] = "tool_builder_id,tool_builder_user_id,tool_builder_customer_segments,tool_builder_value_proposition,tool_builder_approval_status,tool_builder_status";
         
         //$this->pagination_params['joins'][] = $this->join_user("LEFT");
 
@@ -120,7 +120,7 @@ class Model_tool_builder extends MY_Model {
                      'attributes'   => array(),
                      'dt_attributes'   => array("width"=>"10%"),
                      'js_rules'   => '',
-                     'rules'   => 'trim|required'
+                     'rules'   => 'trim'
                 ),
 
 
