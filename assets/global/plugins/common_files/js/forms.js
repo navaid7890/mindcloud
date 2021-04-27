@@ -144,19 +144,38 @@ var Form = function () {
 
         form_cto : function(form) {
           
-            $('#forms-tool_builder-btn').prop('disabled', true);
+
+            $('#forms-tool_builder-btn1').prop('disabled', true);
+            $('#forms-tool_builder-btn2').prop('disabled', true);
+            $('#forms-tool_builder-btn3').prop('disabled', true);
+            $('#forms-tool_builder-btn4').prop('disabled', true);
+            $('#forms-tool_builder-btn5').prop('disabled', true);
+            $('#forms-tool_builder-btn6').prop('disabled', true);
+            $('#forms-tool_builder-btn7').prop('disabled', true);
+            $('#forms-tool_builder-btn8').prop('disabled', true);
+            $('#forms-tool_builder-btn9').prop('disabled', true);
+            
             var data = form.serialize();
             response = AjaxRequest.fire(urls.form_cto, data) ;
-            $('#forms-tool_builder-btn').prop('disabled', false);
+         
+            $('#forms-tool_builder-btn1').prop('disabled', false);
+            $('#forms-tool_builder-btn2').prop('disabled', false);
+            $('#forms-tool_builder-btn3').prop('disabled', false);
+            $('#forms-tool_builder-btn4').prop('disabled', false);
+            $('#forms-tool_builder-btn5').prop('disabled', false);
+            $('#forms-tool_builder-btn6').prop('disabled', false);
+            $('#forms-tool_builder-btn7').prop('disabled', false);
+            $('#forms-tool_builder-btn8').prop('disabled', false);
+            $('#forms-tool_builder-btn9').prop('disabled', false);
 
-            //return false;
+
+           // return false;
             
             if(response.status){
                 
                 Toastr.success(response.msg.desc,'Go To Next Step');  
                 $("#form-send_us").find('input[type=text],input[type=email],textarea').val('');
-            
-            
+        
                 return false;
             }
             else{
@@ -553,8 +572,61 @@ $(document).ready(function () {
 
 
 
+
   $(function() {
-    var $form = $('#form-send_us');
+    var $form = $('#form-send_us1');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#form-send_us2');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#form-send_us3');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#form-send_us4');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#form-send_us5');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#form-send_us6');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#form-send_us7');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#form-send_us8');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#form-send_us9');
     $form.submit(function(event) {
       Form.form_cto($form);
       return false;

@@ -337,9 +337,16 @@ class Contact_us extends MY_Controller {
 
     public function ajax_formsend()
     {
+        
               
         if(array_filled($_POST)) 
         {
+            $param=array();
+            $param['order']="tool_builder_id DESC";
+            $param['where']['tool_builder_user_id']=$this->userid;
+            $tool = $this->model_tool_builder->find_one_active($param);
+            
+
             $i = false;
             if(isset($_POST['g-recaptcha-response']) && empty($_POST['g-recaptcha-response']))
             {
@@ -353,15 +360,28 @@ class Contact_us extends MY_Controller {
 
           if($this->validate("model_tool_builder"))
           {
-              if()
-              {
+        
+     
+             if(!empty($tool)){
+              
+          
 
-
-
-                
-              }  
+                 $id = $tool['tool_builder_id'];
             
-              else{
+                $data = array();
+                $data = $_POST['tool_builder'];
+      
+                $data['tool_builder_step_id'] = $tool['tool_builder_step_id']+1;
+                $this->model_tool_builder->update_by_pk($id,$data);
+
+                $this->json_param['status'] = true;
+                $this->json_param['msg']['title'] = 'Proceeding...';
+                $this->json_param['msg']['desc'] = 'Go to Next Step';
+
+
+             }
+             else{
+          
                $data = $_POST['tool_builder'];
                $data['tool_builder_status'] = 1;
                           
@@ -376,10 +396,10 @@ class Contact_us extends MY_Controller {
                 $this->json_param['status'] = true;
                 $this->json_param['msg']['title'] = 'Saved';
                 $this->json_param['msg']['desc'] = 'Go to Next Step';
-
-              }
+           
+           
        
-             
+             }
             
             }
              else
@@ -387,6 +407,7 @@ class Contact_us extends MY_Controller {
                     $this->json_param['status'] = false;
                     $this->json_param['msg']['title'] = 'Error Occurred';
                     $this->json_param['msg']['desc'] = validation_errors();
+                  
                 }
                 
             }
