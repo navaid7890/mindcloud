@@ -214,13 +214,12 @@ var Form = function () {
             $('#form-tool-builder-multi-btn8').prop('disabled', false);
             $('#form-tool-builder-multi-btn9').prop('disabled', false);
 
-
-           // return false;
+            return false ;
             
             if(response.status){
                 
                 Toastr.success(response.msg.desc,'Go To Next Step');  
-                $("#form-send_us").find('input[type=text],input[type=email],textarea').val('');
+                $("#regForm").find('input[type=text],input[type=email],textarea').val('');
         
                 return false;
             }
@@ -679,6 +678,76 @@ $(document).ready(function () {
       return false;
     });
   });
+
+
+
+//   for bms multi form 
+
+
+$(function() {
+    var $form = $('#regForm10');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#regForm11');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#regForm12');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#regForm13');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#regForm14');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#regForm15');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#regForm16');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#regForm17');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#regForm18');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });
+
+
+//   for bms multi form end 
+
+
 /*###########
 Contact us Ajax Script Start
 ###########*/

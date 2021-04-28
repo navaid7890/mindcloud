@@ -451,7 +451,7 @@ class Contact_us extends MY_Controller {
                  $id = $tool['tool_builder_id'];
             
                 $data = array();
-                $data = $_POST['tool_builder'];
+                $data = $_POST['tool_builder_bmc_multi'];
       
                 $data['tool_builder_step_id'] = $tool['tool_builder_step_id']+1;
                 $this->model_tool_builder_bmc_multi->update_by_pk($id,$data);
@@ -463,8 +463,9 @@ class Contact_us extends MY_Controller {
 
              }
              else{
-          
-               $data = $_POST['tool_builder'];
+                 
+               debug($_POST['tool_builder_bmc_multi']);
+               $data = $_POST['tool_builder_bmc_multi'];
                $data['tool_builder_status'] = 1;
                           
           
