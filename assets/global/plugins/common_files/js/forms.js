@@ -404,7 +404,7 @@ var Form = function () {
             var data = form.serialize();
             var s = AjaxRequest.fire(urls.signin,data); 
                 
-                // return false;    //for debugging
+            return 0;    //for debugging
             if(s.status) {
                 
                 form.find('#signin-btn').prop('disabled', false);
