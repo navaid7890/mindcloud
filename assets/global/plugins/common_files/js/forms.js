@@ -46,6 +46,8 @@ var Form = function () {
         course_review : base_url + "contact_us/review",
         tutorial_review : base_url + "contact_us/tutorial_review",
         form_cto : base_url + "contact_us/ajax_formsend",
+        tool_business_multi : base_url + "contact_us/tool_business_multi_formsend",
+        tool_vp : base_url + "contact_us/tool_vp_formsend",
         //account_activate_process : base_url + "account/active_account/process",
         //review : base_url + "customer_review",
     };
@@ -144,19 +146,38 @@ var Form = function () {
 
         form_cto : function(form) {
           
-            $('#forms-tool_builder-btn').prop('disabled', true);
+
+            $('#forms-tool_builder-btn1').prop('disabled', true);
+            $('#forms-tool_builder-btn2').prop('disabled', true);
+            $('#forms-tool_builder-btn3').prop('disabled', true);
+            $('#forms-tool_builder-btn4').prop('disabled', true);
+            $('#forms-tool_builder-btn5').prop('disabled', true);
+            $('#forms-tool_builder-btn6').prop('disabled', true);
+            $('#forms-tool_builder-btn7').prop('disabled', true);
+            $('#forms-tool_builder-btn8').prop('disabled', true);
+            $('#forms-tool_builder-btn9').prop('disabled', true);
+            
             var data = form.serialize();
             response = AjaxRequest.fire(urls.form_cto, data) ;
-            $('#forms-tool_builder-btn').prop('disabled', false);
+         
+            $('#forms-tool_builder-btn1').prop('disabled', false);
+            $('#forms-tool_builder-btn2').prop('disabled', false);
+            $('#forms-tool_builder-btn3').prop('disabled', false);
+            $('#forms-tool_builder-btn4').prop('disabled', false);
+            $('#forms-tool_builder-btn5').prop('disabled', false);
+            $('#forms-tool_builder-btn6').prop('disabled', false);
+            $('#forms-tool_builder-btn7').prop('disabled', false);
+            $('#forms-tool_builder-btn8').prop('disabled', false);
+            $('#forms-tool_builder-btn9').prop('disabled', false);
 
-            //return false;
+
+           // return false;
             
             if(response.status){
                 
                 Toastr.success(response.msg.desc,'Go To Next Step');  
                 $("#form-send_us").find('input[type=text],input[type=email],textarea').val('');
-            
-            
+        
                 return false;
             }
             else{
@@ -166,6 +187,81 @@ var Form = function () {
             }
             return false;
         },
+
+
+        tool_business_multi : function(form) {
+          
+
+            $('#form-tool-builder-multi-btn1').prop('disabled', true);
+            $('#form-tool-builder-multi-btn2').prop('disabled', true);
+            $('#form-tool-builder-multi-btn3').prop('disabled', true);
+            $('#form-tool-builder-multi-btn4').prop('disabled', true);
+            $('#form-tool-builder-multi-btn5').prop('disabled', true);
+            $('#form-tool-builder-multi-btn6').prop('disabled', true);
+            $('#form-tool-builder-multi-btn7').prop('disabled', true);
+            $('#form-tool-builder-multi-btn8').prop('disabled', true);
+            $('#form-tool-builder-multi-btn9').prop('disabled', true);
+            
+            var data = form.serialize();
+            response = AjaxRequest.fire(urls.tool_business_multi, data) ;
+         
+            $('#form-tool-builder-multi-btn1').prop('disabled', false);
+            $('#form-tool-builder-multi-btn2').prop('disabled', false);
+            $('#form-tool-builder-multi-btn3').prop('disabled', false);
+            $('#form-tool-builder-multi-btn4').prop('disabled', false);
+            $('#form-tool-builder-multi-btn5').prop('disabled', false);
+            $('#form-tool-builder-multi-btn6').prop('disabled', false);
+            $('#form-tool-builder-multi-btn7').prop('disabled', false);
+            $('#form-tool-builder-multi-btn8').prop('disabled', false);
+            $('#form-tool-builder-multi-btn9').prop('disabled', false);
+
+            // return false ;
+            
+            if(response.status){
+                
+                Toastr.success(response.msg.desc,'Go To Next Step');  
+                $("#regForm").find('input[type=text],input[type=email],textarea').val('');
+        
+                return false;
+            }
+            else{
+                Toastr.error(response.msg.desc,'Error');
+               
+                return false;
+            }
+            return false;
+        },
+
+
+        tool_vp : function(form) {
+          
+
+          $('#forms-tool_builder-btn1').prop('disabled', true);
+          $('#forms-tool_builder-btn2').prop('disabled', true); 
+          
+          var data = form.serialize();
+          response = AjaxRequest.fire(urls.tool_vp, data) ;
+       
+          $('#forms-tool_builder-btn1').prop('disabled', false); 
+          $('#forms-tool_builder-btn2').prop('disabled', false); 
+
+          // return false ;
+          
+          if(response.status){
+              
+              Toastr.success(response.msg.desc,'Go To Next Step');  
+              $("#form-vp").find('input[type=text],input[type=email],textarea').val('');
+      
+              return false;
+          }
+          else{
+              Toastr.error(response.msg.desc,'Error');
+             
+              return false;
+          }
+          return false;
+      },
+        
 
      
 
@@ -553,13 +649,160 @@ $(document).ready(function () {
 
 
 
+
   $(function() {
-    var $form = $('#form-send_us');
+    var $form = $('#form-send_us1');
     $form.submit(function(event) {
       Form.form_cto($form);
       return false;
     });
   });
+  $(function() {
+    var $form = $('#form-send_us2');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#form-send_us3');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#form-send_us4');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#form-send_us5');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#form-send_us6');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#form-send_us7');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#form-send_us8');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#form-send_us9');
+    $form.submit(function(event) {
+      Form.form_cto($form);
+      return false;
+    });
+  });
+
+
+
+//   for bms multi form 
+
+
+$(function() {
+    var $form = $('#regForm10');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#regForm11');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#regForm12');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#regForm13');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#regForm14');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#regForm15');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#regForm16');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });  $(function() {
+    var $form = $('#regForm17');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });
+  $(function() {
+    var $form = $('#regForm18');
+    $form.submit(function(event) {
+      Form.tool_business_multi($form);
+      return false;
+    });
+  });
+
+
+//   for bms multi form end 
+
+
+//   for business vp
+
+
+$(function() {
+  var $form = $('#form-vp1');
+  $form.submit(function(event) {
+    Form.tool_vp($form);
+    return false;
+  });
+});
+
+$(function() {
+  var $form = $('#form-vp2');
+  $form.submit(function(event) {
+    Form.tool_vp($form);
+    return false;
+  });
+});
+
+ 
+
+//   for business vp end
+
+
 /*###########
 Contact us Ajax Script Start
 ###########*/

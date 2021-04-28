@@ -1,7 +1,7 @@
 <?
-class Model_tool_builder extends MY_Model {
+class Model_tool_builder_bmc_multi extends MY_Model {
     /**
-     * tool_builder MODEL
+     * tool_builder_bmc_multi MODEL
      *
      * @package     tool_builder Model
      * @author      
@@ -9,8 +9,8 @@ class Model_tool_builder extends MY_Model {
      * @since       2016 / Amazingly corrupt models Corporation Inc.
      */
 
-    protected $_table    = 'tool_builder';
-    protected $_field_prefix    = 'tool_builder_';
+    protected $_table    = 'tool_builder_bmc_multi';
+    protected $_field_prefix    = 'tool_builder_bmc_multi_';
     protected $_pk    = 'tool_builder_id';
     protected $_status_field    = 'tool_builder_status';
     public $relations = array();
@@ -21,7 +21,7 @@ class Model_tool_builder extends MY_Model {
     function __construct()
     {
         // Call the Model construtool_builderr
-        $this->pagination_params['fields'] = "tool_builder_id,tool_builder_user_id,tool_builder_customer_segments,tool_builder_value_proposition,tool_builder_approval_status,tool_builder_status";
+        $this->pagination_params['fields'] = "tool_builder_id,tool_builder_user_id,	tool_builder_value_proposition, tool_builder_channels,tool_builder_approval_status,tool_builder_status";
         
         //$this->pagination_params['joins'][] = $this->join_user("LEFT");
 
@@ -137,15 +137,46 @@ class Model_tool_builder extends MY_Model {
                      'rules'   => 'trim'
                 ),
 
-              'tool_builder_customer_segments' => array(
+                'tool_builder_side_one' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'tool_builder_side_one',
+                    'label'   => 'Side One',
+                    'type'   => 'text',
+                    'attributes'   => array(),
+                    'js_rules'   => '',
+                    'rules'   => 'trim|htmlentities'
+                 ),
+
+                 'tool_builder_side_two' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'tool_builder_side_two',
+                    'label'   => 'Side Two',
+                    'type'   => 'text',
+                    'attributes'   => array(),
+                    'js_rules'   => '',
+                    'rules'   => 'trim|htmlentities'
+                 ),
+
+                 
+              'tool_builder_side_one_list' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_customer_segments',
-                     'label'   => 'Customer Segments',
+                     'name'   => 'tool_builder_side_one_list',
+                     'label'   => 'Side One List',
                      'type'   => 'textarea',
                      'attributes'   => array(),
                      'js_rules'   => '',
                      'rules'   => 'trim|htmlentities'
                   ),
+
+                'tool_builder_side_two_list' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'tool_builder_side_two_list',
+                    'label'   => 'Side Two List',
+                    'type'   => 'textarea',
+                    'attributes'   => array(),
+                    'js_rules'   => '',
+                    'rules'   => 'trim|htmlentities'
+                 ),
               
          
                 'tool_builder_value_proposition' => array(
