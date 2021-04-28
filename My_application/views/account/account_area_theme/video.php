@@ -109,8 +109,8 @@ ul.dashboard-layout {
                                  <? if(isset($learn_content) AND array_filled($learn_content)) :?>
                                  <? foreach($learn_content as $key=>$value):?>
                                  <video width="100%" height="100%" poster="<?= i('') ?>banner/3.png" controls>
-                                    <source src="<?= base_url() ?><?= $value['learning_journey_video_path'] ?><?= $value['learning_journey_video'] ?>" type="video/mp4">
-                                    <source src="<?= base_url() ?><?= $value['learning_journey_video_path'] ?><?= $value['learning_journey_video'] ?>" type="video/ogg">
+                                    <source src="<?=g('db.admin.bucket').$value['learning_journey_video']?>" type="video/mp4">
+                                    <source src="<?=g('db.admin.bucket').$value['learning_journey_video']?>" type="video/ogg">
                                     Your browser does not support the video tag.
                                  </video>
                                  <? endforeach;?>
