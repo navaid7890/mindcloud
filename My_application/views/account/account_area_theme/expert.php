@@ -104,7 +104,7 @@
                      <?php foreach ($art as $key => $value): ?>
                      <li>
                         <div class="vid-box">
-                           <a href="<?=get_image($value['course_video'],$value['course_video_path'])?>" data-fancybox="media">
+                           <a href="<?=g('db.admin.bucket').$value['course_video']?>" data-fancybox="media">
                               <div class="video-box">
                                  <img src="<?=get_image($value['course_image'],$value['course_image_path'])?>">
                                  <span><i class="fas fa-play"></i> </span>

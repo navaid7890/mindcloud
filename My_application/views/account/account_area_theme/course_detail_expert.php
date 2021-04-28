@@ -121,7 +121,7 @@
             </div>
             <div class="col-lg-5 col-md-12">
                <div class="video-card">
-                  <a href="<?=get_image($course[0]['course_video'],$course[0]['course_video_path'])?>" data-fancybox="media">
+                  <a href="<?=g('db.admin.bucket').$course[0]['course_video']?>" data-fancybox="media">
                      <div class="video-box">
                         <img src="<?=get_image($course[0]['course_image'],$course[0]['course_image_path'])?>" />
                         <span><i class="fas fa-play"></i></span>
@@ -286,7 +286,8 @@
             <?php foreach ($popular as $key => $value): ?>
             <li>
                <div class="vid-box">
-                  <a href="<?=get_image($value['course_video'],$value['course_video_path'])?>" data-fancybox="media">
+               
+                  <a href="<?=g('db.admin.bucket').$course[0]['course_video']?>" data-fancybox="media">
                      <div class="video-box">
                         <img src="<?=get_image($value['course_image'],$value['course_image_path'])?>">
                         <span><i class="fas fa-play"></i></span>
@@ -312,8 +313,8 @@
                   </div>
                </div>
             </li>
-            <?php endforeach ?>
-            <?php endif ?>
+            <?php endforeach; ?>
+            <?php endif; ?>
          </ul>
          <?}?>
       </div>
