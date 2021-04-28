@@ -879,7 +879,7 @@ if(is_array($additional_tools) && count($additional_tools))
 var currentTab = 0; 
 showTab(currentTab); 
 
-function showTab(n) {
+function showTab(n) { 
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
   if (n == 0) {
@@ -895,17 +895,17 @@ function showTab(n) {
   fixStepIndicator(n)
 }
 
-function nextPrev(n) {
+function nextPrev(n) { 
   var x = document.getElementsByClassName("tab");
   x[currentTab].style.display = "none";
   currentTab = currentTab + n;
-if(n==1){
-  document.getElementById("forms-tool_builder-btn").click();
-}
+  if(n==1){ 
+  document.getElementById("forms-tool_builder-btn"+currentTab).click();
+  }
   
-  // alert("form-send_us");
-  if (currentTab >= x.length) {
-    document.getElementById("form-send_us").submit();
+  if (currentTab >= x.length) { 
+   document.getElementById("forms-tool_builder-btn"+currentTab).click();
+
     return false;
   }
   showTab(currentTab);
@@ -955,14 +955,23 @@ function showTab1(n) {
 }
 
 function nextPrev1(n) {
+
   var x = document.getElementsByClassName("tab1");
-  x[currentTab1].style.display = "none";
-  currentTab1 = currentTab1 + n;
-  if (currentTab1 >= x.length) {
-    document.getElementById("regForm1").submit();
+  x[currentTab].style.display = "none";
+  currentTab = currentTab + n;
+  if(n==1){
+  document.getElementById("form-tool-builder-multi-btn"+currentTab).click();
+  }
+  
+  if (currentTab >= x.length) {
+  
+   document.getElementById("form-tool-builder-multi-btn"+currentTab).click();
+
     return false;
   }
-  showTab1(currentTab1);
+  showTab1(currentTab);
+ 
+ 
 }
 
 function fixStepIndicator1(n) {

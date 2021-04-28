@@ -1,7 +1,7 @@
 <?
-class Model_tool_builder extends MY_Model {
+class Model_tool_builder_swot extends MY_Model {
     /**
-     * tool_builder MODEL
+     * tool_builder_bmc_multi MODEL
      *
      * @package     tool_builder Model
      * @author      
@@ -9,8 +9,8 @@ class Model_tool_builder extends MY_Model {
      * @since       2016 / Amazingly corrupt models Corporation Inc.
      */
 
-    protected $_table    = 'tool_builder';
-    protected $_field_prefix    = 'tool_builder_';
+    protected $_table    = 'tool_builder_swot';
+    protected $_field_prefix    = 'tool_builder_swot';
     protected $_pk    = 'tool_builder_id';
     protected $_status_field    = 'tool_builder_status';
     public $relations = array();
@@ -21,7 +21,7 @@ class Model_tool_builder extends MY_Model {
     function __construct()
     {
         // Call the Model construtool_builderr
-        $this->pagination_params['fields'] = "tool_builder_id,tool_builder_user_id,tool_builder_customer_segments,tool_builder_value_proposition,tool_builder_approval_status,tool_builder_status";
+        $this->pagination_params['fields'] = "tool_builder_id,tool_builder_user_id,	tool_builder_strengths, tool_builder_weaknessess,tool_builder_approval_status,tool_builder_status";
         
         //$this->pagination_params['joins'][] = $this->join_user("LEFT");
 
@@ -120,7 +120,7 @@ class Model_tool_builder extends MY_Model {
                      'attributes'   => array(),
                      'dt_attributes'   => array("width"=>"10%"),
                      'js_rules'   => '',
-                     'rules'   => 'trim'
+                     'rules'   => 'trim|required'
                 ),
 
 
@@ -135,106 +135,49 @@ class Model_tool_builder extends MY_Model {
                      'dt_attributes'   => array("width"=>"10%"),
                      'js_rules'   => '',
                      'rules'   => 'trim'
-                ),
+                ), 
 
-              'tool_builder_customer_segments' => array(
+              'tool_builder_strengths' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_customer_segments',
-                     'label'   => 'Customer Segments',
+                     'name'   => 'tool_builder_strengths',
+                     'label'   => 'Strengths',
                      'type'   => 'textarea',
                      'attributes'   => array(),
                      'js_rules'   => '',
                      'rules'   => 'trim|htmlentities'
                   ),
+
+                'tool_builder_weaknessess' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'tool_builder_weaknessess',
+                    'label'   => 'Weaknessess',
+                    'type'   => 'textarea',
+                    'attributes'   => array(),
+                    'js_rules'   => '',
+                    'rules'   => 'trim|htmlentities'
+                 ),
               
          
-                'tool_builder_value_proposition' => array(
+                'tool_builder_opportunities' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_value_proposition',
-                'label' => 'Value Proposition',
+                'name' => 'tool_builder_opportunities',
+                'label' => 'Opportunities',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
              
-               'tool_builder_channels' => array(
+               'tool_builder_threats' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_channels',
-                'label' => 'Channels',
+                'name' => 'tool_builder_threats',
+                'label' => 'Threats',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
-
-
-
-               'tool_builder_customer_relationship' => array(
-                'table' => $this->_table,
-                'name' => 'tool_builder_customer_relationship',
-                'label' => 'Customer Relationship',
-                'type' => 'textarea',
-                'attributes' => array(),
-                'js_rules' => '',
-                'rules' => 'trim|htmlentities'
-            ),
-
-
-            'tool_builder_revenue_model' => array(
-                'table' => $this->_table,
-                'name' => 'tool_builder_revenue_model',
-                'label' => 'Revenue Model',
-                'type' => 'textarea',
-                'attributes' => array(),
-                'js_rules' => '',
-                'rules' => 'trim|htmlentities'
-            ),
-
-            'tool_builder_key_resources' => array(
-                'table' => $this->_table,
-                'name' => 'tool_builder_key_resources',
-                'label' => 'Key Resources',
-                'type' => 'textarea',
-                'attributes' => array(),
-                'js_rules' => '',
-                'rules' => 'trim|htmlentities'
-            ),
-          
-      
-
-            'tool_builder_key_activities' => array(
-                'table' => $this->_table,
-                'name' => 'tool_builder_key_activities',
-                'label' => 'Key Activities',
-                'type' => 'textarea',
-                'attributes' => array(),
-                'js_rules' => '',
-                'rules' => 'trim|htmlentities'
-            ),
-
-                'tool_builder_key_partners' => array(
-                'table' => $this->_table,
-                'name' => 'tool_builder_key_partners',
-                'label' => 'Key Partners',
-                'type' => 'textarea',
-                'attributes' => array(),
-                'js_rules' => '',
-                'rules' => 'trim|htmlentities'
-            ),
-          
-                'tool_builder_cost_structure' => array(
-                'table' => $this->_table,
-                'name' => 'tool_builder_cost_structure',
-                'label' => 'Cost Structure',
-                'type' => 'textarea',
-                'attributes' => array(),
-                'js_rules' => '',
-                'rules' => 'trim|htmlentities'
-            ),
-      
-           
-
+ 
              'tool_builder_approval_status' => array(
                 'table' => $this->_table,
                 'name' => 'tool_builder_approval_status',
