@@ -104,8 +104,8 @@
                            <div class="col-md-7">
                               <div class="video-box">
                                  <video width="100%" height="100%" poster="<?= i('') ?>banner/3.png" controls>
-                                    <source src="<?= base_url() ?><?= $tutorial_detail['tutorial_image_path'] ?><?= $tutorial_detail['tutorial_image'] ?>" type="video/mp4">
-                                    <source src="<?= base_url() ?><?= $tutorial_detail['tutorial_image_path'] ?><?= $tutorial_detail['tutorial_image'] ?>" type="video/ogg">
+                                    <source src="<?=g('db.admin.bucket').$tutorial_detail['tutorial_image']?>" type="video/mp4">
+                                    <source src="<?=g('db.admin.bucket').$tutorial_detail['tutorial_image']?>" type="video/ogg">
                                     Your browser does not support the video tag.
                                  </video>
                               </div>

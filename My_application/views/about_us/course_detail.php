@@ -19,6 +19,16 @@
    top: 0;
    margin: 20px;
    }
+   .faqBox a {
+    width: 100%;
+    font-size: 20px;
+    color: #5C677D;
+    text-transform: capitalize;
+}
+.faqBox a i {
+    opacity: 0.5;
+    margin-right: 34px;
+}
 </style>
 <div class="abt-tut-page">
    <div class="mainBanner hding-1 para">
@@ -26,14 +36,33 @@
          <div class="row">
             <div class="col-lg-7 col-md-12">
                <div>
+
+
+               
                   <?
-                     $a=$course[0]['course_category_id'];
-                     $dt=$this->model_category->find_by_pk($a);
-                     //  debug($dt);
+                  //debug($ct);
+                 // $ct[0]['category_name'] ;
+                     // $a=$course[0]['course_category_id'];
+                     // //debug($a);
+                     // $dt=$this->model_category->find_by_pk($a);
+                     
+                     // //  debug($dt);
                      ?>
                   <ul class="bnr-cate">
                      <li>Category</li>
-                     <li><a href="javascript:void(0)"><?=$dt['category_name']?></a></li>
+                     <li><a href="javascript:void(0)">
+                        
+                     <? foreach($ct as $key=>$value):
+                 $a=$value['category_name'];   
+                  echo $value['category_name'];
+                  if ($a <= 2){
+                     echo" , ";
+                 }
+                ?>
+               <? endforeach;?>
+                  
+                  
+                  </a></li>
                   </ul>
                   <?=html_entity_decode($course[0]['course_desc'])?><br>
                   <ul class="usr-rating">
@@ -114,19 +143,46 @@
                <h2>Tutorial Content</h2>
                <div class="sapace"><br><br></div>
                <ul class="colasebar">
-                  <? if(isset($lc) AND array_filled($lc)) :?>
-                  <? foreach($lc as $key=>$value):?>
                   <li>
+                     <div class="faqBox">
+                        <a href="<?=l('account/profile/expert-detail-tutorial-intro-video')?>?courseid=<?=$course[0]['course_id']?>">
+                        <i class="fas fa-video"></i> Intro Video</a>
+                     </div> 
+                  </li>
+                  <li>
+                     <div class="faqBox">
+                        <span><i class="fas fa-scroll"></i>Description</span>
+                        <div class="expandable">
+                        <?=html_entity_decode($course[0]['course_desc2'])?>
+                        </div>
+                     </div> 
+                  </li>
+                  <?  if(isset($lc) AND array_filled($lc)) :?>
+                  <? foreach($lc as $key=>$value):?>
+                     
+                     <li>
+                        <div class="faqBox">
+                           <a href="<?=l('account/profile/expert-detail-tutorial-video')?>?courseid=<?=$course[0]['course_id']?>&tutorialid=<?=$value['tutorial_id']?>">
+                           <i class="fas fa-video"></i> Video and Transcript</a>
+                        </div> 
+                     </li>
+                     
+                  <? endforeach;?>
+                  <? endif;?>
+
+                  <? // if(isset($lc) AND array_filled($lc)) :?>
+                  <?// foreach($lc as $key=>$value):?>
+                  <!-- <li>
                      <div class="faqBox">
                         <span><i class="fas fa-lock"></i><?=$value['tutorial_name']?></span>
                         <div class="expandable">
-                           <?=html_entity_decode($value['tutorial_desc'])?>
+                           <?//=html_entity_decode($value['tutorial_desc'])?>
                         </div>
-                        <!-- <span><?=price($course[0]['course_price'])?></span> -->
+                        <span><?//=price($course[0]['course_price'])?></span>
                      </div>
-                  </li>
-                  <? endforeach;?>
-                  <? endif;?>
+                  </li> -->
+                  <?// endforeach;?>
+                  <? //endif;?>
                </ul>
             </div>
          </div>

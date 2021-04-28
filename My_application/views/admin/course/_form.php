@@ -59,7 +59,7 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
             
           <li>
             <a href="#tab_3" data-toggle="tab">
-            <?=humanize($page_title)?> Video</a>
+            <?=humanize($page_title)?> Intro Video</a>
           </li>
           <?}?>
         </ul>

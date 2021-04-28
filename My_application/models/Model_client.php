@@ -228,7 +228,7 @@ class Model_client extends MY_Model {
                 'preview' => 'true',
                 // 'thumb'   => array(array('name'=>'client_image_thumb','max_width'=>260, 'max_height'=>250),),
                 'attributes'   => array(
-                    'image_size_recommended'=>'366px × 397px',
+                    'image_size_recommended'=>'170px × 130px',
                     'allow_ext'=>'png|jpeg|jpg',
                 ),
                 'dt_attributes' => array("width" => "10%"),

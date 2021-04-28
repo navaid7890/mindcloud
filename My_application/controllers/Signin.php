@@ -80,7 +80,7 @@ class Signin extends MY_Controller {
                         //     $json_param['msg']['title'] = '';
                         //     $json_param['msg']['desc'] = 'Your Email Address is not Verified.Please loggin your registered email id & verify.';  
                         // }
-                    
+                        
                     if(isset($_POST['url']) && strlen($_POST['url']) > 0) {
                         $url = $_POST['url'] . '?msg='.urlencode($json_param['msg']['desc']);
                     }
@@ -92,7 +92,7 @@ class Signin extends MY_Controller {
                     $json_param['redirect']['link'] = $url;
     
                     //$json_param['node_param']['data'] = $this->session->userdata('logged_in_front');
-                    //debug($json_param , 1);
+                    // debug($json_param , 1);
                 }
                 else {
                     $json_param['status'] = false;

@@ -382,6 +382,24 @@ class About_us extends MY_Controller {
     //   debug($lc);
 
 
+
+       $par7=array();
+       $par7['where']['cp_course_id']=$course[0]['course_id'];
+       $coursecat = $this->model_course_category->find_all_active($par7);
+      // debug($coursecat);
+
+       foreach($coursecat as $key => $value)
+       {
+        $all1[]=$value['cp_category_id'];
+       }
+      // debug($all1);
+       $ccategory=array();
+       $ccategory['where_in']['category_id']=$all1;
+       $data['ct'] = $this->model_category->find_all_active($ccategory);
+       //debug(  $data['ct']);
+
+       
+
    
         $this->load_view("course_detail",$data);
     }

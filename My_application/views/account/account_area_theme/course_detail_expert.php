@@ -47,6 +47,16 @@
         vertical-align: middle;
         line-height: 16px;
     }
+    .faqBox a {
+    width: 100%;
+    font-size: 20px;
+    color: #5C677D;
+    text-transform: capitalize;
+}
+.faqBox a i {
+    opacity: 0.5;
+    margin-right: 34px;
+}
 
 
 
@@ -111,7 +121,7 @@
             </div>
             <div class="col-lg-5 col-md-12">
                <div class="video-card">
-                  <a href="<?=get_image($course[0]['course_video'],$course[0]['course_video_path'])?>" data-fancybox="media">
+                  <a href="<?=g('db.admin.bucket').$course[0]['course_video']?>" data-fancybox="media">
                      <div class="video-box">
                         <img src="<?=get_image($course[0]['course_image'],$course[0]['course_image_path'])?>" />
                         <span><i class="fas fa-play"></i></span>
@@ -154,19 +164,44 @@
                <h2>Tutorial Content</h2>
                <div class="sapace"><br><br></div>
                <ul class="colasebar">
-                  <? if(isset($lc) AND array_filled($lc)) :?>
-                  <? foreach($lc as $key=>$value):?>
                   <li>
                      <div class="faqBox">
-                        <span><i class="fas fa-lock"></i><?=$value['tutorial_name']?></span>
-                        <div class="expandable">
-                           <?=html_entity_decode($value['tutorial_desc'])?>
-                        </div>
-                        <!-- <span><?=price($course[0]['course_price'])?></span> -->
-                     </div>
+                        <a href="<?=l('account/profile/expert-detail-tutorial-intro-video')?>?courseid=<?=$course[0]['course_id']?>">
+                        <i class="fas fa-video"></i> Intro Video</a>
+                     </div> 
                   </li>
+                  <li>
+                     <div class="faqBox">
+                        <span><i class="fas fa-scroll"></i>Description</span>
+                        <div class="expandable">
+                        <?=html_entity_decode($course[0]['course_desc2'])?>
+                        </div>
+                     </div> 
+                  </li>
+                  <?  if(isset($lc) AND array_filled($lc)) :?>
+                  <? foreach($lc as $key=>$value):?>
+                     
+                     <li>
+                        <div class="faqBox">
+                           <a href="<?=l('account/profile/expert-detail-tutorial-video')?>?courseid=<?=$course[0]['course_id']?>&tutorialid=<?=$value['tutorial_id']?>">
+                           <i class="fas fa-video"></i> Video and Transcript</a>
+                        </div> 
+                     </li>
+                     
                   <? endforeach;?>
                   <? endif;?>
+                  <?// if(isset($lc) AND array_filled($lc)) :?>
+                  <? //foreach($lc as $key=>$value):?>
+                  <!-- <li>
+                     <div class="faqBox">
+                        <span><i class="fas fa-lock"></i><?//=$value['tutorial_name']?></span>
+                        <div class="expandable">
+                           <?//=html_entity_decode($value['tutorial_desc'])?>
+                        </div>
+                        <span><?//=price($course[0]['course_price'])?></span>
+                  </li> -->
+                  <?// endforeach;?>
+                  <? //endif;?>
                </ul>
             </div>
          </div>
@@ -251,7 +286,8 @@
             <?php foreach ($popular as $key => $value): ?>
             <li>
                <div class="vid-box">
-                  <a href="<?=get_image($value['course_video'],$value['course_video_path'])?>" data-fancybox="media">
+               
+                  <a href="<?=g('db.admin.bucket').$course[0]['course_video']?>" data-fancybox="media">
                      <div class="video-box">
                         <img src="<?=get_image($value['course_image'],$value['course_image_path'])?>">
                         <span><i class="fas fa-play"></i></span>
@@ -277,8 +313,8 @@
                   </div>
                </div>
             </li>
-            <?php endforeach ?>
-            <?php endif ?>
+            <?php endforeach; ?>
+            <?php endif; ?>
          </ul>
          <?}?>
       </div>

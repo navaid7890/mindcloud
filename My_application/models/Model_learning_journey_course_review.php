@@ -90,7 +90,7 @@ class Model_learning_journey_course_review extends MY_Model {
                   'learning_journey_course_review_course_id' => array(
                     'table'   => $this->_table,
                     'name'   => 'learning_journey_course_review_course_id',
-                    'label'   => 'Content name',
+                    'label'   => 'Course name',
                     'type'   => 'dropdown',
                     'type_dt'   => 'dropdown',
                     'type_filter_dt' => 'dropdown',
