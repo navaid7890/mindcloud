@@ -112,7 +112,7 @@
                         <span><?=html_entity_decode($course[0]['course_desc3'])?></span>
                         <ul class="tut-info">
                            <li><i><img src="<?=i('')?>icons/1.png"></i> Professional Certification </li>
-                           <li><a href="javascript:void(0)">1-Year Access <span>$20/ month</span></a></li>
+                           <li><a href="javascript:void(0)" data-fancybox data-src="#hidden-content-1">1-Year Access <span>$20/ month</span></a></li>
                            <form>
                               <input type="hidden" name="product_qty" class="qtystyle" value="1" min="1" max="1">
                               <input type="hidden" name="product_img"  value="<?=get_image($course[0]['course_image'],$course[0]['course_image_path'])?>" class="productimage" value="">

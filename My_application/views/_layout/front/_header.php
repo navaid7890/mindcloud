@@ -25,6 +25,7 @@
 						<li><a href="#">Consult with Experts</a></li>
 						<!-- <li><a href="about-tutorial">About us</a></li> -->
 						<li><a href="#">Enterprise Partners</a></li>
+						<li><a href="https://mindcloudacademy.com/">The Academy</a></li>
 					</ul>
 					</div>
 				</div>

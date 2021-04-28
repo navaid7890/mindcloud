@@ -204,4 +204,29 @@
 		</ul>
 	</div>
 </div>
+<div style="display: none;" id="hidden-content-1">
+	<div class="login-wrap">
+	    <div class="w-100">
+	    <div class="login-content">
+	        <h4>ComingSoon!</h4>
+	    </div>
+	    <div class="space"><br><br></div>
+
+	    <div class="login-form signup-form">
+	        <div>
+	            <form action="">
+	                <div class="fld-login">
+	                    <label>Email Address</label>
+	                    <input type="text" placeholder="examle@dmain.com" required="">
+	                </div>
+
+	                <div class="fld-btn">
+	                    <input type="submit" value="Register">
+	                </div>
+	            </form>
+	        </div>
+	        </div>
+	    </div>
+	</div>
+</div>
 <?}?>
