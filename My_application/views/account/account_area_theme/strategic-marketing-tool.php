@@ -114,7 +114,7 @@
                                              $param=array();
                                              $param['order']="tool_builder_strg_mkt_id DESC";
                                              $param['where']['tool_builder_strg_mkt_user_id']=$this->userid;
-                                             $tool = $this->model_tool_builder->find_one_active($param);
+                                             $tool = $this->model_tool_builder_strg_mkt->find_one_active($param);
                                             
                                             ?>
                                     <form id="form-send_us">
