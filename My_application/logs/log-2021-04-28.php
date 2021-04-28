@@ -150,3 +150,16 @@ ERROR - 2021-04-28 11:45:45 --> Severity: Warning --> Illegal string offset 'for
 ERROR - 2021-04-28 11:45:45 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-04-28 11:45:45 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-04-28 08:46:29 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-28 09:10:28 --> Severity: Compile Error --> Cannot redeclare class Model_tool_builder_cj_dg C:\xampp\htdocs\cloud\My_application\models\Model_tool_builder_mc_mc.php 250
+ERROR - 2021-04-28 09:12:04 --> Severity: Compile Error --> Cannot redeclare class Model_tool_builder_cj_dg C:\xampp\htdocs\cloud\My_application\models\Model_tool_builder_mc_mc.php 250
+ERROR - 2021-04-28 09:12:05 --> Severity: Compile Error --> Cannot redeclare class Model_tool_builder_cj_dg C:\xampp\htdocs\cloud\My_application\models\Model_tool_builder_mc_mc.php 250
+ERROR - 2021-04-28 09:12:06 --> Severity: Compile Error --> Cannot redeclare class Model_tool_builder_cj_dg C:\xampp\htdocs\cloud\My_application\models\Model_tool_builder_mc_mc.php 250
+ERROR - 2021-04-28 09:12:07 --> Severity: Compile Error --> Cannot redeclare class Model_tool_builder_cj_dg C:\xampp\htdocs\cloud\My_application\models\Model_tool_builder_mc_mc.php 250
+ERROR - 2021-04-28 09:12:08 --> Severity: Compile Error --> Cannot redeclare class Model_tool_builder_cj_dg C:\xampp\htdocs\cloud\My_application\models\Model_tool_builder_mc_mc.php 250
+ERROR - 2021-04-28 09:12:08 --> Severity: Compile Error --> Cannot redeclare class Model_tool_builder_cj_dg C:\xampp\htdocs\cloud\My_application\models\Model_tool_builder_mc_mc.php 250
+ERROR - 2021-04-28 09:12:09 --> Severity: Compile Error --> Cannot redeclare class Model_tool_builder_cj_dg C:\xampp\htdocs\cloud\My_application\models\Model_tool_builder_mc_mc.php 250
+ERROR - 2021-04-28 09:12:16 --> Severity: Compile Error --> Cannot redeclare class Model_tool_builder_cj_dg C:\xampp\htdocs\cloud\My_application\models\Model_tool_builder_mc_mc.php 250
+ERROR - 2021-04-28 09:13:59 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-28 09:14:06 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-28 09:14:11 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-28 09:14:19 --> 404 Page Not Found: account/Profile/assets

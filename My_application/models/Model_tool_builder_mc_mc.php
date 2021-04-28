@@ -1,5 +1,5 @@
 <?
-class Model_tool_builder_cj_dg extends MY_Model {
+class Model_tool_builder_mc_mc extends MY_Model {
     /**
      * tool_builder MODEL
      *
@@ -9,10 +9,10 @@ class Model_tool_builder_cj_dg extends MY_Model {
      * @since       2016 / Amazingly corrupt models Corporation Inc.
      */
 
-    protected $_table    = 'tool_builder_cj_dg';
-    protected $_field_prefix    = 'tool_builder_cj_dg_';
-    protected $_pk    = 'tool_builder_cj_dg_id';
-    protected $_status_field    = 'tool_builder_cj_dg_status';
+    protected $_table    = 'tool_builder_mc_mc';
+    protected $_field_prefix    = 'tool_builder_mc_mc_';
+    protected $_pk    = 'tool_builder_mc_mc_id';
+    protected $_status_field    = 'tool_builder_mc_mc_status';
     public $relations = array();
     public $pagination_params = array();
     public $dt_params = array();
@@ -21,7 +21,7 @@ class Model_tool_builder_cj_dg extends MY_Model {
     function __construct()
     {
         // Call the Model construtool_builderr
-        $this->pagination_params['fields'] = "tool_builder_cj_dg_id,tool_builder_cj_dg_user_id,tool_builder_cj_dg_awareness,tool_builder_cj_dg_engagement,tool_builder_cj_dg_approval_status,tool_builder_cj_dg_status";
+        $this->pagination_params['fields'] = "tool_builder_mc_mc_id,tool_builder_mc_mc_user_id,tool_builder_mc_mc_prospect_personas,tool_builder_mc_mc_prospect_problems,tool_builder_mc_mc_approval_status,tool_builder_mc_mc_status";
         
         //$this->pagination_params['joins'][] = $this->join_user("LEFT");
 
@@ -99,9 +99,9 @@ class Model_tool_builder_cj_dg extends MY_Model {
 
         $fields = array(
         
-              'tool_builder_cj_dg_id' => array(
+              'tool_builder_mc_mc_id' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_cj_dg_id',
+                     'name'   => 'tool_builder_mc_mc_id',
                      'label'   => 'id #',
                      'type'   => 'hidden',
                      'type_dt'   => 'text',
@@ -111,9 +111,9 @@ class Model_tool_builder_cj_dg extends MY_Model {
                      'rules'   => 'trim'
                 ),
 
-                'tool_builder_cj_dg_user_id' => array(
+                'tool_builder_mc_mc_user_id' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_cj_dg_user_id',
+                     'name'   => 'tool_builder_mc_mc_user_id',
                      'label'   => 'User ID',
                      'type'   => 'hidden',
                      'type_filter_dt'   => 'dropdown',
@@ -125,9 +125,9 @@ class Model_tool_builder_cj_dg extends MY_Model {
 
 
 
-                'tool_builder_cj_dg_step_id' => array(
+                'tool_builder_mc_mc_step_id' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_cj_dg_step_id',
+                     'name'   => 'tool_builder_mc_mc_step_id',
                      'label'   => 'Step ID',
                      'type'   => 'hidden',
                      'type_filter_dt'   => 'dropdown',
@@ -137,9 +137,9 @@ class Model_tool_builder_cj_dg extends MY_Model {
                      'rules'   => 'trim'
                 ),
 
-              'tool_builder_cj_dg_awareness' => array(
+              'tool_builder_mc_mc_prospect_personas' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_cj_dg_awareness',
+                     'name'   => 'tool_builder_mc_mc_prospect_personas',
                      'label'   => 'Awareness & Knowledge Phase',
                      'type'   => 'textarea',
                      'attributes'   => array(),
@@ -147,9 +147,9 @@ class Model_tool_builder_cj_dg extends MY_Model {
                      'rules'   => 'trim|htmlentities'
                   ),
          
-                'tool_builder_cj_dg_engagement' => array(
+                'tool_builder_mc_mc_prospect_problems' => array(
                 'table' => $this->_table,
-                'name' => '	tool_builder_cj_dg_engagement',
+                'name' => '	tool_builder_mc_mc_prospect_problems',
                 'label' => 'Engagement or Interest Phase',
                 'type' => 'textarea',
                 'attributes' => array(),
@@ -157,9 +157,9 @@ class Model_tool_builder_cj_dg extends MY_Model {
                 'rules' => 'trim|htmlentities'
             ),
              
-               'tool_builder_cj_dg_consideration' => array(
+               'tool_builder_mc_mc_value_proposition' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_cj_dg_consideration',
+                'name' => 'tool_builder_mc_mc_value_proposition',
                 'label' => 'Consideration',
                 'type' => 'textarea',
                 'attributes' => array(),
@@ -167,9 +167,9 @@ class Model_tool_builder_cj_dg extends MY_Model {
                 'rules' => 'trim|htmlentities'
             ),
 
-               'tool_builder_cj_dg_purchase' => array(
+               'tool_builder_mc_mc_channels' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_cj_dg_purchase',
+                'name' => 'tool_builder_mc_mc_channels',
                 'label' => 'Purchase Phase',
                 'type' => 'textarea',
                 'attributes' => array(),
@@ -178,9 +178,9 @@ class Model_tool_builder_cj_dg extends MY_Model {
             ),
 
 
-            'tool_builder_cj_dg_activation' => array(
+            'tool_builder_mc_mc_content' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_cj_dg_activation',
+                'name' => 'tool_builder_mc_mc_content',
                 'label' => 'Activation Phase',
                 'type' => 'textarea',
                 'attributes' => array(),
@@ -188,27 +188,36 @@ class Model_tool_builder_cj_dg extends MY_Model {
                 'rules' => 'trim|htmlentities'
             ),
 
-            'tool_builder_cj_dg_repeat' => array(
+            'tool_builder_mc_mc_key_activities' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_cj_dg_repeat',
+                'name' => 'tool_builder_mc_mc_key_activities',
                 'label' => 'Repeat Phase',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
-            'tool_builder_cj_dg_loyalty' => array(
+            'tool_builder_mc_mc_key_metrics' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_cj_dg_loyalty',
+                'name' => 'tool_builder_mc_mc_key_metrics',
                 'label' => 'Loyalty Phase',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
-            'tool_builder_cj_dg_advocacy' => array(
+            'tool_builder_mc_mc_kost_structure' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_cj_dg_advocacy',
+                'name' => 'tool_builder_mc_mc_kost_structure',
+                'label' => 'Advocacy Phase',
+                'type' => 'textarea',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+            'tool_builder_mc_mc_roi' => array(
+                'table' => $this->_table,
+                'name' => 'tool_builder_mc_mc_roi',
                 'label' => 'Advocacy Phase',
                 'type' => 'textarea',
                 'attributes' => array(),
@@ -216,9 +225,9 @@ class Model_tool_builder_cj_dg extends MY_Model {
                 'rules' => 'trim|htmlentities'
             ),
 
-             'tool_builder_cj_dg_approval_status' => array(
+             'tool_builder_mc_mc_approval_status' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_cj_dg_approval_status',
+                'name' => 'tool_builder_mc_mc_approval_status',
                 'label' => 'Approval Status',
                 'type' => 'switch',
                 'default' => '0',
@@ -226,9 +235,9 @@ class Model_tool_builder_cj_dg extends MY_Model {
                 'rules' => 'trim'
             ),
 
-           'tool_builder_cj_dg_status' => array(
+           'tool_builder_mc_mc_status' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_cj_dg_status',
+                'name' => 'tool_builder_mc_mc_status',
                 'label' => 'Status?',
                 'type' => 'switch',
                 'default' => '1',
