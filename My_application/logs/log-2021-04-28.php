@@ -76,3 +76,45 @@ ERROR - 2021-04-28 11:39:58 --> 404 Page Not Found: account/Profile/assets
 ERROR - 2021-04-28 11:41:21 --> 404 Page Not Found: account/Profile/assets
 ERROR - 2021-04-28 11:43:16 --> 404 Page Not Found: account/Profile/assets
 ERROR - 2021-04-28 11:45:14 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-28 14:55:40 --> Query error: Unknown column 'tool_builder_strg_mkt_user_id' in 'where clause' - Invalid query: SELECT *
+FROM `md_tool_builder`
+WHERE `tool_builder_strg_mkt_user_id` = '1'
+AND `md_tool_builder`.`tool_builder_status` = 1
+ORDER BY `tool_builder_strg_mkt_id` DESC
+ LIMIT 1
+ERROR - 2021-04-28 11:55:40 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-28 14:56:59 --> Query error: Unknown column 'tool_builder_strg_mkt_user_id' in 'where clause' - Invalid query: SELECT *
+FROM `md_tool_builder`
+WHERE `tool_builder_strg_mkt_user_id` = '1'
+AND `md_tool_builder`.`tool_builder_status` = 1
+ORDER BY `tool_builder_strg_mkt_id` DESC
+ LIMIT 1
+ERROR - 2021-04-28 11:56:59 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-28 14:57:02 --> Query error: Table 'mindcloud.md_tool_builder_bmc_multi' doesn't exist - Invalid query: SELECT *
+FROM `md_tool_builder_bmc_multi`
+WHERE `tool_builder_user_id` = '1'
+AND `md_tool_builder_bmc_multi`.`tool_builder_status` = 1
+ORDER BY `tool_builder_id` DESC
+ LIMIT 1
+ERROR - 2021-04-28 11:57:02 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-28 14:57:05 --> Query error: Table 'mindcloud.md_tool_builder_bmc_multi' doesn't exist - Invalid query: SELECT *
+FROM `md_tool_builder_bmc_multi`
+WHERE `tool_builder_user_id` = '1'
+AND `md_tool_builder_bmc_multi`.`tool_builder_status` = 1
+ORDER BY `tool_builder_id` DESC
+ LIMIT 1
+ERROR - 2021-04-28 11:57:05 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-28 15:04:54 --> Query error: Unknown column 'tool_builder_strg_mkt_user_id' in 'where clause' - Invalid query: SELECT *
+FROM `md_tool_builder`
+WHERE `tool_builder_strg_mkt_user_id` = '1'
+AND `md_tool_builder`.`tool_builder_status` = 1
+ORDER BY `tool_builder_strg_mkt_id` DESC
+ LIMIT 1
+ERROR - 2021-04-28 12:04:54 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-28 15:04:56 --> Query error: Unknown column 'tool_builder_strg_mkt_user_id' in 'where clause' - Invalid query: SELECT *
+FROM `md_tool_builder`
+WHERE `tool_builder_strg_mkt_user_id` = '1'
+AND `md_tool_builder`.`tool_builder_status` = 1
+ORDER BY `tool_builder_strg_mkt_id` DESC
+ LIMIT 1
+ERROR - 2021-04-28 12:08:42 --> 404 Page Not Found: account/Profile/assets
