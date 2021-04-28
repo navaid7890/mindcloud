@@ -236,14 +236,14 @@ var Form = function () {
         tool_vp : function(form) {
           
 
-          $('#form-tool-builder-multi-btn1').prop('disabled', true);
-          $('#form-tool-builder-multi-btn2').prop('disabled', true); 
+          $('#forms-tool_builder-btn1').prop('disabled', true);
+          $('#forms-tool_builder-btn2').prop('disabled', true); 
           
           var data = form.serialize();
           response = AjaxRequest.fire(urls.tool_vp, data) ;
        
-          $('#form-tool-builder-multi-btn1').prop('disabled', false); 
-          $('#form-tool-builder-multi-btn2').prop('disabled', false); 
+          $('#forms-tool_builder-btn1').prop('disabled', false); 
+          $('#forms-tool_builder-btn2').prop('disabled', false); 
 
           // return false ;
           
@@ -777,6 +777,30 @@ $(function() {
 
 
 //   for bms multi form end 
+
+
+//   for business vp
+
+
+$(function() {
+  var $form = $('#form-vp1');
+  $form.submit(function(event) {
+    Form.tool_vp($form);
+    return false;
+  });
+});
+
+$(function() {
+  var $form = $('#form-vp2');
+  $form.submit(function(event) {
+    Form.tool_vp($form);
+    return false;
+  });
+});
+
+ 
+
+//   for business vp end
 
 
 /*###########

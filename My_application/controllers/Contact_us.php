@@ -529,7 +529,7 @@ class Contact_us extends MY_Controller {
      
              if(!empty($tool)){
               
-          
+        //   debug($tool, 1);
 
                  $id = $tool['tool_builder_vp_id'];
             
@@ -548,8 +548,8 @@ class Contact_us extends MY_Controller {
              else{
                  
             //    debug($_POST['tool_builder_vp_step_id']);
-               $data = $_POST['tool_builder_vp_step_id'];
-               $data['tool_builder_status'] = 1;
+               $data = $_POST['tool_builder_vp'];
+               $data['tool_builder_vp_status'] = 1;
                           
           
                 $data['tool_builder_vp_user_id'] = $this->userid;

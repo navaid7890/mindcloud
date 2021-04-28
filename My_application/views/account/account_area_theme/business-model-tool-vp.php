@@ -123,28 +123,30 @@ ul.dashboard-layout {
                                              $param['order']="tool_builder_vp_id DESC";
                                              $param['where']['tool_builder_vp_user_id']=$this->userid;
                                              $tool = $this->model_tool_builder_vp->find_one_active($param);
+
+                                             // debug($tool);
                                              
                                              ?>
 
                                              
                                              <form id="form-vp1">
-                                                <input type="hidden"  name="tool_builder[tool_builder_user_id]" value="<?=($this->userid)?>"> 
+                                                <input type="hidden"  name="tool_builder_vp[tool_builder_vp_user_id]" value="<?=($this->userid)?>"> 
                                                      <div class="fld-textarea">
                                                         <label for="">Jobs <span>List all the jobs your customers are trying to get done (jobs can be functional, emotional, or social ones)</span></label>
                                                         <div class="space"><br></div>
-                                                        <textarea name="tool_builder[tool_builder_customer_segments]"><?=$tool['tool_builder_customer_segments']?></textarea>
+                                                        <textarea name="tool_builder_vp[tool_builder_vp_jobs]"><?=$tool['tool_builder_vp_jobs']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">Pains <span>List customer pains, and possible dissatisfying experiences or outcomes that exist in current solutions</span></label>
                                                         <div class="space"><br></div>
-                                                        <textarea name="tool_builder[tool_builder_customer_segments]"><?=$tool['tool_builder_customer_segments']?></textarea>
+                                                        <textarea name="tool_builder_vp[tool_builder_vp_pains]"><?=$tool['tool_builder_vp_pains']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">Gains <span>List customer gains, which is essentially the expectations and benefits customers wish to have, in order to get the most satisfying customer experience</span></label>
                                                         <div class="space"><br></div>
-                                                        <textarea name="tool_builder[tool_builder_customer_segments]"><?=$tool['tool_builder_customer_segments']?></textarea>
+                                                        <textarea name="tool_builder_vp[tool_builder_vp_gains]"><?=$tool['tool_builder_vp_gains']?></textarea>
                                                      </div>
 
                                                      <div style="display:none;">
@@ -158,19 +160,19 @@ ul.dashboard-layout {
                                                      <div class="fld-textarea">
                                                         <label for="">Products/Services <span>List the product, service, and features that your value proposition builds on</span></label>
                                                         <div class="space"><br></div>
-                                                        <textarea name="tool_builder[tool_builder_customer_segments]"><?=$tool['tool_builder_customer_segments']?></textarea>
+                                                        <textarea name="tool_builder_vp[tool_builder_vp_products_services]"><?=$tool['tool_builder_vp_products_services']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">Pain Relievers <span>Describe in which ways your product service and features ease customer pains, and make their life easier</span></label>
                                                         <div class="space"><br></div>
-                                                        <textarea name="tool_builder[tool_builder_customer_segments]"><?=$tool['tool_builder_customer_segments']?></textarea>
+                                                        <textarea name="tool_builder_vp[tool_builder_vp_pain_relievers]"><?=$tool['tool_builder_vp_pain_relievers']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">Gain Creators<span>List how your product or service creates customer gains, and offers added value to the customer</span></label>
                                                         <div class="space"><br></div>
-                                                        <textarea name="tool_builder[tool_builder_customer_segments]"><?=$tool['tool_builder_customer_segments']?></textarea>
+                                                        <textarea name="tool_builder_vp[tool_builder_vp_gain_creators]"><?=$tool['tool_builder_vp_gain_creators']?></textarea>
                                                      </div>
 
                                                      <div style="display:none;">
