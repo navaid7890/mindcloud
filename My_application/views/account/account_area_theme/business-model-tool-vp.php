@@ -115,53 +115,66 @@ ul.dashboard-layout {
                                           <div id="radio1" class="multi-fld">
 
                                              <div class="tab">
-                                                 <form id="regForm" class="next-prevBtn">
+
+
+                                             <?  
+                                             
+                                             $param=array();
+                                             $param['order']="tool_builder_vp_id DESC";
+                                             $param['where']['tool_builder_vp_user_id']=$this->userid;
+                                             $tool = $this->model_tool_builder_vp->find_one_active($param);
+                                             
+                                             ?>
+
+                                             
+                                             <form id="form-vp1">
+                                                <input type="hidden"  name="tool_builder[tool_builder_user_id]" value="<?=($this->userid)?>"> 
                                                      <div class="fld-textarea">
                                                         <label for="">Jobs <span>List all the jobs your customers are trying to get done (jobs can be functional, emotional, or social ones)</span></label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder[tool_builder_customer_segments]"><?=$tool['tool_builder_customer_segments']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">Pains <span>List customer pains, and possible dissatisfying experiences or outcomes that exist in current solutions</span></label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder[tool_builder_customer_segments]"><?=$tool['tool_builder_customer_segments']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">Gains <span>List customer gains, which is essentially the expectations and benefits customers wish to have, in order to get the most satisfying customer experience</span></label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder[tool_builder_customer_segments]"><?=$tool['tool_builder_customer_segments']?></textarea>
                                                      </div>
 
-                                                     <div>
-                                                         <button type="submit">SUBMIT</button>
+                                                     <div style="display:none;">
+                                                         <button id="forms-tool_builder-btn1" type="submit">SUBMIT</button>
                                                      </div>
                                                  </form>  
                                              </div>
 
                                              <div class="tab">
-                                                 <form id="regForm2" class="next-prevBtn">
+                                                 <form id="form-vp2">
                                                      <div class="fld-textarea">
                                                         <label for="">Products/Services <span>List the product, service, and features that your value proposition builds on</span></label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder[tool_builder_customer_segments]"><?=$tool['tool_builder_customer_segments']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">Pain Relievers <span>Describe in which ways your product service and features ease customer pains, and make their life easier</span></label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder[tool_builder_customer_segments]"><?=$tool['tool_builder_customer_segments']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">Gain Creators<span>List how your product or service creates customer gains, and offers added value to the customer</span></label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder[tool_builder_customer_segments]"><?=$tool['tool_builder_customer_segments']?></textarea>
                                                      </div>
 
-                                                     <div>
-                                                         <button type="submit">SUBMIT</button>
+                                                     <div style="display:none;">
+                                                         <button id="forms-tool_builder-btn2" type="submit">SUBMIT</button>
                                                      </div>
                                                  </form>  
                                              </div>

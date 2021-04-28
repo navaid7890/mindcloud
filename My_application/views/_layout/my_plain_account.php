@@ -879,7 +879,7 @@ if(is_array($additional_tools) && count($additional_tools))
 var currentTab = 0; 
 showTab(currentTab); 
 
-function showTab(n) {
+function showTab(n) { 
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
   if (n == 0) {
@@ -895,16 +895,15 @@ function showTab(n) {
   fixStepIndicator(n)
 }
 
-function nextPrev(n) {
+function nextPrev(n) { 
   var x = document.getElementsByClassName("tab");
   x[currentTab].style.display = "none";
   currentTab = currentTab + n;
-  if(n==1){
+  if(n==1){ 
   document.getElementById("forms-tool_builder-btn"+currentTab).click();
   }
   
-  if (currentTab >= x.length) {
-  
+  if (currentTab >= x.length) { 
    document.getElementById("forms-tool_builder-btn"+currentTab).click();
 
     return false;

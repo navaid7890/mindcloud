@@ -464,7 +464,7 @@ class Contact_us extends MY_Controller {
              }
              else{
                  
-               debug($_POST['tool_builder_bmc_multi']);
+            //    debug($_POST['tool_builder_bmc_multi']);
                $data = $_POST['tool_builder_bmc_multi'];
                $data['tool_builder_status'] = 1;
                           
@@ -474,6 +474,89 @@ class Contact_us extends MY_Controller {
          
                 $this->model_tool_builder_bmc_multi->set_attributes($data);
                 $inserted_id = $this->model_tool_builder_bmc_multi->save();
+
+
+                $this->json_param['status'] = true;
+                $this->json_param['msg']['title'] = 'Saved';
+                $this->json_param['msg']['desc'] = 'Go to Next Step';
+           
+           
+       
+             }
+            
+            }
+             else
+                {
+                    $this->json_param['status'] = false;
+                    $this->json_param['msg']['title'] = 'Error Occurred';
+                    $this->json_param['msg']['desc'] = validation_errors();
+                  
+                }
+                
+            }
+                echo json_encode($this->json_param);
+        }
+    }
+
+
+
+    public function tool_vp_formsend()
+    {
+        
+              
+        if(array_filled($_POST)) 
+        {
+            $param=array();
+            $param['order']="tool_builder_vp_id DESC";
+            $param['where']['tool_builder_vp_user_id']=$this->userid;
+            $tool = $this->model_tool_builder_vp->find_one_active($param);
+            
+
+            $i = false;
+            if(isset($_POST['g-recaptcha-response']) && empty($_POST['g-recaptcha-response']))
+            {
+                
+                $this->json_param['status'] = false;
+                    $this->json_param['msg']['title'] = 'Recaptcha Redquired';
+                    $this->json_param['msg']['desc'] = 'Please prove you\'re not a robot';
+            } 
+            else
+            {
+
+          if($this->validate("model_tool_builder_vp"))
+          {
+        
+     
+             if(!empty($tool)){
+              
+          
+
+                 $id = $tool['tool_builder_vp_id'];
+            
+                $data = array();
+                $data = $_POST['tool_builder_vp'];
+      
+                $data['tool_builder_vp_step_id'] = $tool['tool_builder_vp_step_id']+1;
+                $this->model_tool_builder_vp->update_by_pk($id,$data);
+
+                $this->json_param['status'] = true;
+                $this->json_param['msg']['title'] = 'Proceeding...';
+                $this->json_param['msg']['desc'] = 'Go to Next Step';
+
+
+             }
+             else{
+                 
+            //    debug($_POST['tool_builder_vp_step_id']);
+               $data = $_POST['tool_builder_vp_step_id'];
+               $data['tool_builder_status'] = 1;
+                          
+          
+                $data['tool_builder_vp_user_id'] = $this->userid;
+                $data['tool_builder_vp_step_id'] = 1;
+         
+                $this->model_tool_builder_vp->set_attributes($data);
+                $inserted_id = $this->model_tool_builder_vp->save();
 
 
                 $this->json_param['status'] = true;
