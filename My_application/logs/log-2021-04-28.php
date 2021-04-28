@@ -112,3 +112,4 @@ ERROR - 2021-04-28 11:11:20 --> Severity: Error --> Cannot use string offset as 
 ERROR - 2021-04-28 08:20:09 --> 404 Page Not Found: account/Profile/assets
 ERROR - 2021-04-28 08:20:30 --> 404 Page Not Found: account/Profile/assets
 ERROR - 2021-04-28 08:20:33 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-04-28 08:34:01 --> 404 Page Not Found: account/Profile/assets
