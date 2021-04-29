@@ -39,7 +39,7 @@
 						<li class="dropdown-toggle"><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a>
 							<div class="dropdown-box">
 								<ul class="user-links">
-									<li><a href="#"> <i class="far fa-sign-out-alt"></i> Logout</a></li>
+									<li><a href="<?=l('signout')?>"> <i class="far fa-sign-out-alt"></i> Logout</a></li>
 								</ul>
 							</div>
 						</li>

@@ -30,7 +30,7 @@
             </div>
         </div>
         <ul>
-            <li style="text-align: left;"><a href="<?= l('account/profile/learning') ?>" class="active" style="color: #000;font-weight: 900;padding: 20px;">Intro to Learning Journey </a></li>
+            <li style="text-align: left;"><a href="<?= l('account/profile/learning') ?>" class="active" style="font-size: 15px;color: #122B46;font-weight: 700;padding: 18px 15px;">Intro to Learning Journey </a></li>
         </ul>
         <div class="course-list">
             <ul class="course-scroll">
