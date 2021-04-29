@@ -48,7 +48,12 @@ var Form = function () {
         form_cto : base_url + "contact_us/ajax_formsend",
         tool_business_multi : base_url + "contact_us/tool_business_multi_formsend",
         tool_vp : base_url + "contact_us/tool_vp_formsend",
+<<<<<<< HEAD
         tools_smp : base_url + "contact_us/tool_smp_formsend",
+=======
+        tool_swot : base_url + "contact_us/tool_swot_formsend",
+        tool_pmmt : base_url + "contact_us/tool_pmmt_formsend",
+>>>>>>> dev/talha
         //account_activate_process : base_url + "account/active_account/process",
         //review : base_url + "customer_review",
     };
@@ -262,6 +267,7 @@ var Form = function () {
           }
           return false;
       },
+<<<<<<< HEAD
       tools_smp : function(form) {
           
 
@@ -271,13 +277,30 @@ var Form = function () {
         response = AjaxRequest.fire(urls.tools_smp, data) ;
      
         $('#forms-tool_builder-btn1').prop('disabled', false); 
+=======
+
+
+      tool_swot : function(form) {
+          
+
+        $('#forms-tool_builder-btn1').prop('disabled', true); 
+        
+        var data = form.serialize();
+        response = AjaxRequest.fire(urls.tool_swot, data) ;
+     
+        $('#forms-tool_builder-btn1').prop('disabled', false);  
+>>>>>>> dev/talha
 
         // return false ;
         
         if(response.status){
             
             Toastr.success(response.msg.desc,'Go To Next Step');  
+<<<<<<< HEAD
             $("#form-smp").find('input[type=text],input[type=email],textarea').val('');
+=======
+            $("#form-send_swot").find('input[type=text],input[type=email],textarea').val('');
+>>>>>>> dev/talha
     
             return false;
         }
@@ -288,7 +311,40 @@ var Form = function () {
         }
         return false;
     },
+<<<<<<< HEAD
       
+=======
+
+
+    tool_pmmt : function(form) {
+          
+
+      $('#forms-tool_builder-btn1').prop('disabled', true); 
+      $('#forms-tool_builder-btn2').prop('disabled', true); 
+      
+      var data = form.serialize();
+      response = AjaxRequest.fire(urls.tool_pmmt, data) ;
+   
+      $('#forms-tool_builder-btn1').prop('disabled', false);  
+      $('#forms-tool_builder-btn2').prop('disabled', true); 
+
+      return false ;
+      
+      if(response.status){
+          
+          Toastr.success(response.msg.desc,'Go To Next Step');  
+          $("#form-pmmt").find('input[type=text],input[type=email],textarea').val('');
+  
+          return false;
+      }
+      else{
+          Toastr.error(response.msg.desc,'Error');
+         
+          return false;
+      }
+      return false;
+  },
+>>>>>>> dev/talha
         
 
      
@@ -836,6 +892,47 @@ $(function() {
  
 
 //   for business vp end
+
+
+//   for swot tool
+
+
+$(function() {
+  var $form = $('#form-send_swot1');
+  $form.submit(function(event) {
+    Form.tool_swot($form);
+    return false;
+  });
+}); 
+
+ 
+
+//   for swot tool end
+
+
+
+//   for pmmt tool
+
+
+$(function() {
+  var $form = $('#form-pmmt1');
+  $form.submit(function(event) {
+    Form.tool_pmmt($form);
+    return false;
+  });
+}); 
+
+$(function() {
+  var $form = $('#form-pmmt2');
+  $form.submit(function(event) {
+    Form.tool_pmmt($form);
+    return false;
+  });
+}); 
+
+ 
+
+//   for pmmt tool end
 
 
 /*###########
