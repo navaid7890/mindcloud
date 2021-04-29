@@ -48,6 +48,7 @@ var Form = function () {
         form_cto : base_url + "contact_us/ajax_formsend",
         tool_business_multi : base_url + "contact_us/tool_business_multi_formsend",
         tool_vp : base_url + "contact_us/tool_vp_formsend",
+        tool_swot : base_url + "contact_us/tool_swot_formsend",
         //account_activate_process : base_url + "account/active_account/process",
         //review : base_url + "customer_review",
     };
@@ -261,6 +262,34 @@ var Form = function () {
           }
           return false;
       },
+
+
+      tool_swot : function(form) {
+          
+
+        $('#forms-tool_builder-btn1').prop('disabled', true); 
+        
+        var data = form.serialize();
+        response = AjaxRequest.fire(urls.tool_swot, data) ;
+     
+        $('#forms-tool_builder-btn1').prop('disabled', false);  
+
+        // return false ;
+        
+        if(response.status){
+            
+            Toastr.success(response.msg.desc,'Go To Next Step');  
+            $("#form-send_swot").find('input[type=text],input[type=email],textarea').val('');
+    
+            return false;
+        }
+        else{
+            Toastr.error(response.msg.desc,'Error');
+           
+            return false;
+        }
+        return false;
+    },
         
 
      
@@ -801,6 +830,22 @@ $(function() {
  
 
 //   for business vp end
+
+
+//   for swot tool
+
+
+$(function() {
+  var $form = $('#form-send_swot1');
+  $form.submit(function(event) {
+    Form.tool_swot($form);
+    return false;
+  });
+}); 
+
+ 
+
+//   for swot tool end
 
 
 /*###########
