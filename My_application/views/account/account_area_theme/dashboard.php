@@ -1,37 +1,14 @@
-<style>
-        .front-dashboard .dashboard-menu-box {
-        left: -20%;
-        transition: 0.5s;
-    }
 
-    a.menu-dash-front {
-        display: block;
-        padding: 20px 25px;
-        font-size: 20px;
-        font-weight: 700;
-        background: #33415c;
-        vertical-align: middle;
-        color: #fff;
-        position: fixed;
-        top: 112px;
-        z-index: 3;
-        width: 100%;
-    }
-
-    a.menu-dash-front i {
-        position: absolute;
-        right: 20px;
-        font-size: 26px;
-        vertical-align: middle;
-        line-height: 16px;
-    }
-</style>
 <div class="index-page">
     <section class="dashboard">
+    <ul class="dashboard-layout">
+        <li>
         <div class="front-dashboard">
-            <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
-            <? $this->load->view("widgets/dashboard-menu-box");?>
-        </div>
+                 <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+                 <? $this->load->view("widgets/dashboard-menu-box");?>
+              </div>
+        </li>
+        <li>
                 <div class="index-page-wrap">
                     <div class="index-page-content hding-2">
                         <h2>Welcome <strong><?= $this->session_data['username'] ?></strong></h2>
@@ -842,5 +819,7 @@
 
                     </div>
                 </div>
+                </li>
+    </ul>
     </section>
 </div>

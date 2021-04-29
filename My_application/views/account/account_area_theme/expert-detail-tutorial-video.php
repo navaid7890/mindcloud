@@ -1,60 +1,16 @@
-<style>
-   ul.dashboard-layout>li:nth-child(1) {
-      width: 30%;
-   }
-
-   ul.dashboard-layout>li:nth-child(2) {
-      width: 70%;
-   }
-
-   .video-caption p {
-      font-size: 12px !important;
-   }
-
-   ul.dashboard-layout {
-      margin-top: 80px;
-   }
-
-   .front-dashboard .dashboard-menu-box {
-      left: -20%;
-      transition: 0.5s;
-   }
-
-   a.menu-dash-front {
-      display: block;
-      padding: 20px 25px;
-      font-size: 20px;
-      font-weight: 700;
-      background: #33415c;
-      vertical-align: middle;
-      color: #fff;
-      position: fixed;
-      top: 112px;
-      z-index: 3;
-      width: 100%;
-   }
-
-   a.menu-dash-front i {
-      position: absolute;
-      right: 20px;
-      font-size: 26px;
-      vertical-align: middle;
-      line-height: 16px;
-   }
-</style>
 <div class="business-page">
    <section class="dashboard">
-      <div class="front-dashboard">
-         <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
-         <? $this->load->view("widgets/dashboard-menu-box");?>
-      </div>
+
       <ul class="dashboard-layout">
-         <!-- <li>
-            <? // $this->load->view("widgets/dashboard-menu-box");?>
-         </li> -->
+         <li>
+            <div class="front-dashboard">
+               <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+               <? $this->load->view("widgets/dashboard-menu-box"); ?>
+            </div>
+         </li>
 
          <li>
-            <? $this->load->view("widgets/expert-course-box");?>
+            <? $this->load->view("widgets/expert-course-box"); ?>
          </li>
 
          <li>
@@ -104,8 +60,8 @@
                            <div class="col-md-7">
                               <div class="video-box">
                                  <video width="100%" height="100%" poster="<?= i('') ?>banner/3.png" controls>
-                                    <source src="<?=g('db.admin.bucket').$tutorial_detail['tutorial_image']?>" type="video/mp4">
-                                    <source src="<?=g('db.admin.bucket').$tutorial_detail['tutorial_image']?>" type="video/ogg">
+                                    <source src="<?= g('db.admin.bucket') . $tutorial_detail['tutorial_image'] ?>" type="video/mp4">
+                                    <source src="<?= g('db.admin.bucket') . $tutorial_detail['tutorial_image'] ?>" type="video/ogg">
                                     Your browser does not support the video tag.
                                  </video>
                               </div>
@@ -117,10 +73,14 @@
                      <div class="tutorial-footer vid-tran para">
                         <div class="tutorial-footer-content">
                            <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
-                           <? //ucfirst($this->session_data['username']);?>
-                           <? //print_r($this->session->userdata); ?>
-                           <? //print_r($this->session_data['id']); ?>
-                           <? //print_r($this->session_data['username']); ?>
+                           <? //ucfirst($this->session_data['username']);
+                           ?>
+                           <? //print_r($this->session->userdata); 
+                           ?>
+                           <? //print_r($this->session_data['id']); 
+                           ?>
+                           <? //print_r($this->session_data['username']); 
+                           ?>
 
                            <div classs="space"><br><br></div>
                            <form id="forms-tutorial-review_us">

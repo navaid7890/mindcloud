@@ -79,7 +79,7 @@ input[type="submit"] {
 }
 
 a:hover {
-    color: #e18e25;
+    color: #efefef;
 }
 
 span {
@@ -777,7 +777,7 @@ ul.dashboard-layout {
 }
 
 .dashboard-menu-box {
-    padding: 54px 0;
+    padding: 15px 0;
     background: #33415C;
     height: 100%;
 }
@@ -806,8 +806,15 @@ ul.dashboard-layout {
     width: 22px;
     position: absolute;
     left: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    align-items: center;
+    display: flex;
 }
-
+.dashboard-menu-box.open .dashboard-links ul>li>a {
+    font-size: 14px;
+}
 .dashboard-links ul>li>a:hover,
 .dashboard-links ul>li.active>a {
     background: #F4C150;
@@ -1563,7 +1570,7 @@ ul.fld-progress li:before {
 }
 
 ul.work-list>li {
-    width: 26%;
+    width: 25.7%;
     display: inline-block;
     margin-right: 75px;
     margin-bottom: 55px;
@@ -3315,6 +3322,17 @@ button.cart-trim:hover {
 }
 
 @media (max-width: 1440px) {
+    ul.dashboard-layout>li:nth-child(3) {
+    width: 68%;
+}
+
+ul.dashboard-layout>li:nth-child(2) {
+    width: 27.3%;
+}
+
+    ul.dashboard-layout>li:nth-child(1) {
+    width: 4.62%;
+}
     .order-confirm,
     .place-order {
         height: 500px;
@@ -3409,11 +3427,12 @@ button.cart-trim:hover {
     .home-banner {
         background-position: bottom;
     }
+    .abt-tut-page .dashboard-links ul>li>a{font-size:0;}
     .dashboard-links ul>li>a {
-        font-size: 14px;
+        font-size: 0;
     }
     .dashboard-child-links ul>li>a {
-        padding-left: 66px;
+        padding-left: 65px;
     }
     .dashboard-child-links ul>li>a>span {
         left: 33px;

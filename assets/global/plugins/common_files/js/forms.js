@@ -48,6 +48,7 @@ var Form = function () {
         form_cto : base_url + "contact_us/ajax_formsend",
         tool_business_multi : base_url + "contact_us/tool_business_multi_formsend",
         tool_vp : base_url + "contact_us/tool_vp_formsend",
+        tools_smp : base_url + "contact_us/tool_smp_formsend",
         //account_activate_process : base_url + "account/active_account/process",
         //review : base_url + "customer_review",
     };
@@ -261,6 +262,33 @@ var Form = function () {
           }
           return false;
       },
+      tools_smp : function(form) {
+          
+
+        $('#forms-tool_builder-btn1').prop('disabled', true);
+        
+        var data = form.serialize();
+        response = AjaxRequest.fire(urls.tools_smp, data) ;
+     
+        $('#forms-tool_builder-btn1').prop('disabled', false); 
+
+        // return false ;
+        
+        if(response.status){
+            
+            Toastr.success(response.msg.desc,'Go To Next Step');  
+            $("#form-smp").find('input[type=text],input[type=email],textarea').val('');
+    
+            return false;
+        }
+        else{
+            Toastr.error(response.msg.desc,'Error');
+           
+            return false;
+        }
+        return false;
+    },
+      
         
 
      
@@ -798,6 +826,13 @@ $(function() {
   });
 });
 
+$(function() {
+  var $form = $('#form-smp');
+  $form.submit(function(event) {
+    Form.tools_smp($form);
+    return false;
+  });
+});
  
 
 //   for business vp end

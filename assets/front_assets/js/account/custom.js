@@ -17,12 +17,12 @@ $(document).ready(function() {
     });
 
 
-    $("ul.login-btn .dropdown-toggle > a").click(function(e) {
-        $(this).toggleClass('open');
-        $('body').toggleClass('open');
-        $(".dropdown-box").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
-            e.stopPropagation()
-    })
+    // $("ul.login-btn .dropdown-toggle > a").click(function(e) {
+    //     $(this).toggleClass('open');
+    //     $('body').toggleClass('open');
+    //     $(".dropdown-box").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
+    //         e.stopPropagation()
+    // })
 
 
     $('ul.course-scroll .dropdown-toggle > a').click(function() {

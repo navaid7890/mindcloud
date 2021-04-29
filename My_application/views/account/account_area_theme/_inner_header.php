@@ -36,8 +36,15 @@
 
 				<div class="col-md-3 text-right">
 					<ul class="login-btn">
-						<li><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
-				
+						<li class="dropdown-toggle"><a href="#"><span><img src="<?=i('')?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a>
+							<div class="dropdown-box">
+								<ul class="user-links">
+									<li><a href="#"> <i class="far fa-sign-out-alt"></i> Logout</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#"><i class="fal fa-envelope-open-text"></i></a></li>
+						<li><a href="#" data-fancybox data-src="#video-intro"><i class="fal fa-bell"></i></a></li>
 					</ul>
 				</div>
 			</div>

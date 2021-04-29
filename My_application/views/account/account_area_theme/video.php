@@ -1,61 +1,18 @@
-<style>
-ul.dashboard-layout>li:nth-child(1) {
-    width: 30%;
-}
-ul.dashboard-layout>li:nth-child(2) {
-    width: 70%;
-}
-.video-caption p {
-    font-size: 12px !important;
-}
-ul.dashboard-layout {
-        margin-top: 80px;
-    }
-.front-dashboard .dashboard-menu-box {
-        left: -20%;
-        transition: 0.5s;
-    }
-
-    a.menu-dash-front {
-        display: block;
-        padding: 20px 25px;
-        font-size: 20px;
-        font-weight: 700;
-        background: #33415c;
-        vertical-align: middle;
-        color: #fff;
-        position: fixed;
-        top: 112px;
-        z-index: 3;
-        width: 100%;
-    }
-
-    a.menu-dash-front i {
-        position: absolute;
-        right: 20px;
-        font-size: 26px;
-        vertical-align: middle;
-        line-height: 16px;
-    }
-</style>
 <div class="business-page">
    <section class="dashboard">
-   <div class="front-dashboard">
-         <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
-         <? $this->load->view("widgets/dashboard-menu-box");?>
-      </div>
       <ul class="dashboard-layout">
-         <!-- <li>
-            <? // $this->load->view("widgets/dashboard-menu-box");?>
-         </li> -->
-
          <li>
-            <? $this->load->view("widgets/course-box");?>
+            <div class="front-dashboard">
+               <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+               <? $this->load->view("widgets/dashboard-menu-box"); ?>
+            </div>
          </li>
-
+         <li>
+            <? $this->load->view("widgets/course-box"); ?>
+         </li>
          <li>
             <div class="tutorial-box">
-            
+
                <div class="tutorial-scroll-content">
                   <div class="tutorial-content">
                      <div class="tutorial-head">
@@ -90,13 +47,14 @@ ul.dashboard-layout {
                                  <div class="video-caption">
                                     <p>00:00:00</p>
                                     <div class="space"><br></div>
-                                    
-                                    <? if(isset($learn_content) AND array_filled($learn_content)) :?>
-                                    <? foreach($learn_content as $key=>$value):?>
-                                    <?  //debug($learn_Content); ?>
-                                    <p><?= html_entity_decode($value['learning_journey_content_tags']) ?></p>
-                                    <? endforeach;?>
-                                    <? endif;?>
+
+                                    <? if (isset($learn_content) and array_filled($learn_content)) : ?>
+                                       <? foreach ($learn_content as $key => $value) : ?>
+                                          <?  //debug($learn_Content); 
+                                          ?>
+                                          <p><?= html_entity_decode($value['learning_journey_content_tags']) ?></p>
+                                       <? endforeach; ?>
+                                    <? endif; ?>
                                     <div class="space"><br><br></div>
                                     <p>00:01:16</p>
                                     <div class="space"><br></div>
@@ -106,15 +64,15 @@ ul.dashboard-layout {
                            </div>
                            <div class="col-md-7">
                               <div class="video-box">
-                                 <? if(isset($learn_content) AND array_filled($learn_content)) :?>
-                                 <? foreach($learn_content as $key=>$value):?>
-                                 <video width="100%" height="100%" poster="<?= i('') ?>banner/3.png" controls>
-                                    <source src="<?=g('db.admin.bucket').$value['learning_journey_video']?>" type="video/mp4">
-                                    <source src="<?=g('db.admin.bucket').$value['learning_journey_video']?>" type="video/ogg">
-                                    Your browser does not support the video tag.
-                                 </video>
-                                 <? endforeach;?>
-                                 <? endif;?>
+                                 <? if (isset($learn_content) and array_filled($learn_content)) : ?>
+                                    <? foreach ($learn_content as $key => $value) : ?>
+                                       <video width="100%" height="100%" poster="<?= i('') ?>banner/3.png" controls>
+                                          <source src="<?= g('db.admin.bucket') . $value['learning_journey_video'] ?>" type="video/mp4">
+                                          <source src="<?= g('db.admin.bucket') . $value['learning_journey_video'] ?>" type="video/ogg">
+                                          Your browser does not support the video tag.
+                                       </video>
+                                    <? endforeach; ?>
+                                 <? endif; ?>
 
 
 
@@ -128,10 +86,14 @@ ul.dashboard-layout {
                      <div class="tutorial-footer vid-tran para">
                         <div class="tutorial-footer-content">
                            <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
-                           <? //ucfirst($this->session_data['username']);?>
-                           <? //print_r($this->session->userdata); ?>
-                           <? //print_r($this->session_data['id']); ?>
-                           <? //print_r($this->session_data['username']); ?>
+                           <? //ucfirst($this->session_data['username']);
+                           ?>
+                           <? //print_r($this->session->userdata); 
+                           ?>
+                           <? //print_r($this->session_data['id']); 
+                           ?>
+                           <? //print_r($this->session_data['username']); 
+                           ?>
 
                            <div classs="space"><br><br></div>
                            <form id="forms-review_us">
@@ -177,7 +139,7 @@ ul.dashboard-layout {
                                              </li>
                                           </ul>
                                        </div>
-                                       
+
                                     </section>
                                  </div>
                                  <div class="col-md-8 text-right">
@@ -200,114 +162,116 @@ ul.dashboard-layout {
    </section>
 </div>
 <style>
+   * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+   }
 
-* {
-  -webkit-box-sizing:border-box;
-  -moz-box-sizing:border-box;
-  box-sizing:border-box;
-}
-
-*:before, *:after {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-}
-
-
-.text-center {text-align:center;}
+   *:before,
+   *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+   }
 
 
-/* Rating Star Widgets Style */
-.rating-stars ul {
-  list-style-type:none;
-  padding:0;
-  
-  -moz-user-select:none;
-  -webkit-user-select:none;
-}
-.rating-stars ul > li.star {
-  display:inline-block;
-  
-}
+   .text-center {
+      text-align: center;
+   }
 
-/* Idle State of the stars */
-.rating-stars ul > li.star > i.fa {
-   font-size: 18px; /* Change the size of the stars */
-  color:#ccc; /* Color on idle state */
-}
 
-/* Hover state of the stars */
-.rating-stars ul > li.star.hover > i.fa {
-  color:#FFCC36;
-}
+   /* Rating Star Widgets Style */
+   .rating-stars ul {
+      list-style-type: none;
+      padding: 0;
 
-/* Selected state of the stars */
-.rating-stars ul > li.star.selected > i.fa {
-  color:#FF912C;
-}
+      -moz-user-select: none;
+      -webkit-user-select: none;
+   }
 
+   .rating-stars ul>li.star {
+      display: inline-block;
+
+   }
+
+   /* Idle State of the stars */
+   .rating-stars ul>li.star>i.fa {
+      font-size: 18px;
+      /* Change the size of the stars */
+      color: #ccc;
+      /* Color on idle state */
+   }
+
+   /* Hover state of the stars */
+   .rating-stars ul>li.star.hover>i.fa {
+      color: #FFCC36;
+   }
+
+   /* Selected state of the stars */
+   .rating-stars ul>li.star.selected>i.fa {
+      color: #FF912C;
+   }
 </style>
 
 
 <script>
-$(document).ready(function(){
-  
-  /* 1. Visualizing things on Hover - See next part for action on click */
-  $('#stars li').on('mouseover', function(){
-    var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
-   
-    // Now highlight all the stars that's not after the current hovered star
-    $(this).parent().children('li.star').each(function(e){
-      if (e < onStar) {
-        $(this).addClass('hover');
-      }
-      else {
-        $(this).removeClass('hover');
-      }
-    });
-    
-  }).on('mouseout', function(){
-    $(this).parent().children('li.star').each(function(e){
-      $(this).removeClass('hover');
-    });
-  });
-  
-  
-  /* 2. Action to perform on click */
-  $('#stars li').on('click', function(){
-    var onStar = parseInt($(this).data('value'), 10); // The star currently selected
-    var stars = $(this).parent().children('li.star');
-    
-    for (i = 0; i < stars.length; i++) {
-      $(stars[i]).removeClass('selected');
-    }
-    
-    for (i = 0; i < onStar; i++) {
-      $(stars[i]).addClass('selected');
-    }
-    
-    // JUST RESPONSE (Not needed)
-    
-    var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
-    var msg = "";
-    if (ratingValue > 0) {
-        msg = parseInt(ratingValue);
+   $(document).ready(function() {
 
-        $('#reviewId').val(msg)
-    }
-    else {
-        msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
-    }
-    responseMessage(msg);
-    
-  });
-  
-  
-});
+      /* 1. Visualizing things on Hover - See next part for action on click */
+      $('#stars li').on('mouseover', function() {
+         var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+
+         // Now highlight all the stars that's not after the current hovered star
+         $(this).parent().children('li.star').each(function(e) {
+            if (e < onStar) {
+               $(this).addClass('hover');
+            } else {
+               $(this).removeClass('hover');
+            }
+         });
+
+      }).on('mouseout', function() {
+         $(this).parent().children('li.star').each(function(e) {
+            $(this).removeClass('hover');
+         });
+      });
 
 
-function responseMessage(msg) {
-  $('.success-box').fadeIn(200);  
-  $('.success-box div.text-message').html("<span>" + msg + "</span>");
-}
+      /* 2. Action to perform on click */
+      $('#stars li').on('click', function() {
+         var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+         var stars = $(this).parent().children('li.star');
+
+         for (i = 0; i < stars.length; i++) {
+            $(stars[i]).removeClass('selected');
+         }
+
+         for (i = 0; i < onStar; i++) {
+            $(stars[i]).addClass('selected');
+         }
+
+         // JUST RESPONSE (Not needed)
+
+         var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+         var msg = "";
+         if (ratingValue > 0) {
+            msg = parseInt(ratingValue);
+
+            $('#reviewId').val(msg)
+         } else {
+            msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+         }
+         responseMessage(msg);
+
+      });
+
+
+   });
+
+
+   function responseMessage(msg) {
+      $('.success-box').fadeIn(200);
+      $('.success-box div.text-message').html("<span>" + msg + "</span>");
+   }
 </script>
