@@ -49,6 +49,7 @@ var Form = function () {
         tool_business_multi : base_url + "contact_us/tool_business_multi_formsend",
         tool_vp : base_url + "contact_us/tool_vp_formsend",
         tool_swot : base_url + "contact_us/tool_swot_formsend",
+        tool_pmmt : base_url + "contact_us/tool_pmmt_formsend",
         //account_activate_process : base_url + "account/active_account/process",
         //review : base_url + "customer_review",
     };
@@ -290,6 +291,36 @@ var Form = function () {
         }
         return false;
     },
+
+
+    tool_pmmt : function(form) {
+          
+
+      $('#forms-tool_builder-btn1').prop('disabled', true); 
+      $('#forms-tool_builder-btn2').prop('disabled', true); 
+      
+      var data = form.serialize();
+      response = AjaxRequest.fire(urls.tool_pmmt, data) ;
+   
+      $('#forms-tool_builder-btn1').prop('disabled', false);  
+      $('#forms-tool_builder-btn2').prop('disabled', true); 
+
+      return false ;
+      
+      if(response.status){
+          
+          Toastr.success(response.msg.desc,'Go To Next Step');  
+          $("#form-pmmt").find('input[type=text],input[type=email],textarea').val('');
+  
+          return false;
+      }
+      else{
+          Toastr.error(response.msg.desc,'Error');
+         
+          return false;
+      }
+      return false;
+  },
         
 
      
@@ -846,6 +877,31 @@ $(function() {
  
 
 //   for swot tool end
+
+
+
+//   for pmmt tool
+
+
+$(function() {
+  var $form = $('#form-pmmt1');
+  $form.submit(function(event) {
+    Form.tool_pmmt($form);
+    return false;
+  });
+}); 
+
+$(function() {
+  var $form = $('#form-pmmt2');
+  $form.submit(function(event) {
+    Form.tool_pmmt($form);
+    return false;
+  });
+}); 
+
+ 
+
+//   for pmmt tool end
 
 
 /*###########

@@ -104,95 +104,104 @@ ul.dashboard-layout {
                                           <div id="radio1" class="multi-fld">
 
                                              <div class="tab">
-                                                 <form id="regForm" class="next-prevBtn">
+
+                                                <?  
+                                                
+                                                $param=array();
+                                                $param['order']="tool_builder_id DESC";
+                                                $param['where']['tool_builder_user_id']=$this->userid;
+                                                $tool = $this->model_tool_builder_pmmt->find_one_active($param); 
+                                                ?>
+                                            
+                                                 <form id="form-pmmt1">
                                                      <div class="fld-textarea">
                                                         <label for="">1.  Who/where are your Target Customers? </label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder_pmmt[tool_builder_target_customers]"><?=$tool['tool_builder_target_customers']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">2.  What are you Offering?</label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder_pmmt[tool_builder_offering]"><?=$tool['tool_builder_offering']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">3.  Why do they need you?</label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder_pmmt[tool_builder_need]"><?=$tool['tool_builder_need']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">4.  What is your Product Category?</label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder_pmmt[tool_builder_product_category]"><?=$tool['tool_builder_product_category']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">5.  What is your Price Category?</label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder_pmmt[tool_builder_price_category]"><?=$tool['tool_builder_price_category']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">6.  How is your solution different than that of your competitors?</label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder_pmmt[tool_builder_solution_competitors]"><?=$tool['tool_builder_solution_competitors']?></textarea>
                                                      </div>
 
-                                                     <div>
-                                                         <button type="submit">SUBMIT</button>
+                                                     <div style="display:none;">
+                                                         <button id="forms-tool_builder-btn1" type="submit">SUBMIT</button>
                                                      </div>
                                                  </form>  
                                              </div>
 
                                              <div class="tab">
-                                                 <form id="regForm2" class="next-prevBtn">
+                                                 <form id="form-pmmt2">
                                                      <div class="fld-textarea">
                                                         <label for="">1. What is your Product or Service?</label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder_pmmt[tool_builder_product_or_service]"><?=$tool['tool_builder_product_or_service']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">2.  What are your Pricing Strategies?</label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder_pmmt[tool_builder_pricing_strategies]"><?=$tool['tool_builder_pricing_strategies']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">3.  How/where does your Product reach your customer?</label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder_pmmt[tool_builder_product_customer]"><?=$tool['tool_builder_product_customer']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">4.  What type of Promotional Channels will you be using?</label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder_pmmt[tool_builder_promotional_channels]"><?=$tool['tool_builder_promotional_channels']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">5.  Who are the People that make up your team?</label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder_pmmt[tool_builder_people_for_team]"><?=$tool['tool_builder_people_for_team']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">6.  What are the different Processes needed for execution?</label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder_pmmt[tool_builder_execution]"><?=$tool['tool_builder_execution']?></textarea>
                                                      </div>
 
                                                      <div class="fld-textarea">
                                                         <label for="">7.  How do you ensure great experience, great delivery, etc.?</label>
                                                         <div class="space"><br></div>
-                                                        <textarea oninput="this.className = ''"></textarea>
+                                                        <textarea name="tool_builder_pmmt[tool_builder_great_experience]"><?=$tool['tool_builder_great_experience']?></textarea>
                                                      </div>
 
-                                                     <div>
-                                                         <button type="submit">SUBMIT</button>
+                                                     <div style="display:none;">
+                                                         <button id="forms-tool_builder-btn2" type="submit">SUBMIT</button>
                                                      </div>
                                                  </form>  
                                              </div>
