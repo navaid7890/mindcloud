@@ -1,7 +1,7 @@
 <?
-class Model_tool_builder_swot extends MY_Model {
+class Model_tool_builder_pmmt extends MY_Model {
     /**
-     * tool_builder_bmc_multi MODEL
+     * tool_builder MODEL
      *
      * @package     tool_builder Model
      * @author      
@@ -9,8 +9,8 @@ class Model_tool_builder_swot extends MY_Model {
      * @since       2016 / Amazingly corrupt models Corporation Inc.
      */
 
-    protected $_table    = 'tool_builder_swot';
-    protected $_field_prefix    = 'tool_builder_swot';
+    protected $_table    = 'tool_builder_pmmt';
+    protected $_field_prefix    = 'tool_builder_pmmt_';
     protected $_pk    = 'tool_builder_id';
     protected $_status_field    = 'tool_builder_status';
     public $relations = array();
@@ -21,7 +21,7 @@ class Model_tool_builder_swot extends MY_Model {
     function __construct()
     {
         // Call the Model construtool_builderr
-        $this->pagination_params['fields'] = "tool_builder_id,tool_builder_user_id,	tool_builder_strengths, tool_builder_weaknessess,tool_builder_approval_status,tool_builder_status";
+        $this->pagination_params['fields'] = "tool_builder_id,tool_builder_user_id,tool_builder_target_customers,tool_builder_offering,tool_builder_approval_status,tool_builder_status";
         
         //$this->pagination_params['joins'][] = $this->join_user("LEFT");
 
@@ -135,52 +135,142 @@ class Model_tool_builder_swot extends MY_Model {
                      'dt_attributes'   => array("width"=>"10%"),
                      'js_rules'   => '',
                      'rules'   => 'trim'
-                ), 
+                ),
 
-              'tool_builder_strengths' => array(
+              'tool_builder_target_customers' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_strengths',
-                     'label'   => 'Strengths',
+                     'name'   => 'tool_builder_target_customers',
+                     'label'   => 'Who/where are your Target Customers?',
                      'type'   => 'textarea',
                      'attributes'   => array(),
                      'js_rules'   => '',
                      'rules'   => 'trim|htmlentities'
                   ),
-
-                'tool_builder_weaknessess' => array(
-                    'table'   => $this->_table,
-                    'name'   => 'tool_builder_weaknessess',
-                    'label'   => 'Weaknessess',
-                    'type'   => 'textarea',
-                    'attributes'   => array(),
-                    'js_rules'   => '',
-                    'rules'   => 'trim|htmlentities'
-                 ),
-              
          
-                'tool_builder_opportunities' => array(
+                'tool_builder_offering' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_opportunities',
-                'label' => 'Opportunities',
+                'name' => '	tool_builder_offering',
+                'label' => 'What are you Offering?',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
              
-               'tool_builder_threats' => array(
+               'tool_builder_need' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_threats',
-                'label' => 'Threats',
+                'name' => 'tool_builder_need',
+                'label' => 'Why do they need you?',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
- 
-             'tool_builder_approval_status' => array(
+
+               'tool_builder_product_category' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_approval_status',
+                'name' => 'tool_builder_product_category',
+                'label' => 'What is your Product Category?',
+                'type' => 'textarea',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+
+
+            'tool_builder_price_category' => array(
+                'table' => $this->_table,
+                'name' => 'tool_builder_price_category',
+                'label' => 'What is your Price Category?',
+                'type' => 'textarea',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+
+            'tool_builder_solution_competitors' => array(
+                'table' => $this->_table,
+                'name' => 'tool_builder_solution_competitors',
+                'label' => 'How is your solution different than that of your competitors?',
+                'type' => 'textarea',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+
+            'tool_builder_product_or_service' => array(
+                'table' => $this->_table,
+                'name' => 'tool_builder_product_or_service',
+                'label' => 'What is your Product or Service?',
+                'type' => 'textarea',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+
+            'tool_builder_pricing_strategies' => array(
+                'table' => $this->_table,
+                'name' => 'tool_builder_pricing_strategies',
+                'label' => 'What are your Pricing Strategies?',
+                'type' => 'textarea',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+
+            'tool_builder_product_customer' => array(
+                'table' => $this->_table,
+                'name' => 'tool_builder_product_customer',
+                'label' => 'How/where does your Product reach your customer?',
+                'type' => 'textarea',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+
+            'tool_builder_solution_competitors' => array(
+                'table' => $this->_table,
+                'name' => 'tool_builder_promotional_channels',
+                'label' => 'What type of Promotional Channels will you be using?',
+                'type' => 'textarea',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+
+            'tool_builder_solution_competitors' => array(
+                'table' => $this->_table,
+                'name' => 'tool_builder_people_for_team',
+                'label' => 'Who are the People that make up your team?',
+                'type' => 'textarea',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+
+            'tool_builder_solution_competitors' => array(
+                'table' => $this->_table,
+                'name' => 'tool_builder_execution',
+                'label' => 'What are the different Processes needed for execution?',
+                'type' => 'textarea',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+
+            'tool_builder_solution_competitors' => array(
+                'table' => $this->_table,
+                'name' => 'tool_builder_great_experience',
+                'label' => 'How do you ensure great experience, great delivery, etc.?',
+                'type' => 'textarea',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+
+             'tool_builder_vp_approval_status' => array(
+                'table' => $this->_table,
+                'name' => 'tool_builder_vp_approval_status',
                 'label' => 'Approval Status',
                 'type' => 'switch',
                 'default' => '0',
@@ -188,9 +278,9 @@ class Model_tool_builder_swot extends MY_Model {
                 'rules' => 'trim'
             ),
 
-           'tool_builder_status' => array(
+           'tool_builder_vp_status' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_status',
+                'name' => 'tool_builder_vp_status',
                 'label' => 'Status?',
                 'type' => 'switch',
                 'default' => '1',
