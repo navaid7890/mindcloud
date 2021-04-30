@@ -120,7 +120,7 @@ class Model_tool_builder_cj_dg extends MY_Model {
                      'attributes'   => array(),
                      'dt_attributes'   => array("width"=>"10%"),
                      'js_rules'   => '',
-                     'rules'   => 'trim|required'
+                     'rules'   => 'trim'
                 ),
 
 

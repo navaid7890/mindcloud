@@ -1,5 +1,5 @@
 <?
-class Model_tool_builder_mc_mc extends MY_Model {
+class Model_tool_builder_osf extends MY_Model {
     /**
      * tool_builder MODEL
      *
@@ -9,10 +9,10 @@ class Model_tool_builder_mc_mc extends MY_Model {
      * @since       2016 / Amazingly corrupt models Corporation Inc.
      */
 
-    protected $_table    = 'tool_builder_mc_mc';
-    protected $_field_prefix    = 'tool_builder_mc_mc_';
-    protected $_pk    = 'tool_builder_mc_mc_id';
-    protected $_status_field    = 'tool_builder_mc_mc_status';
+    protected $_table    = 'tool_builder_osf';
+    protected $_field_prefix    = 'tool_builder_osf_';
+    protected $_pk    = 'tool_builder_osf_id';
+    protected $_status_field    = 'tool_builder_osf_status';
     public $relations = array();
     public $pagination_params = array();
     public $dt_params = array();
@@ -21,7 +21,7 @@ class Model_tool_builder_mc_mc extends MY_Model {
     function __construct()
     {
         // Call the Model construtool_builderr
-        $this->pagination_params['fields'] = "tool_builder_mc_mc_id,tool_builder_mc_mc_user_id,tool_builder_mc_mc_prospect_personas,tool_builder_mc_mc_prospect_problems,tool_builder_mc_mc_approval_status,tool_builder_mc_mc_status";
+        $this->pagination_params['fields'] = "tool_builder_osf_id,tool_builder_osf_user_id,tool_builder_osf_brand_awareness,tool_builder_osf_lead_gathering,tool_builder_osf_approval_status,tool_builder_osf_status";
         
         //$this->pagination_params['joins'][] = $this->join_user("LEFT");
 
@@ -99,9 +99,9 @@ class Model_tool_builder_mc_mc extends MY_Model {
 
         $fields = array(
         
-              'tool_builder_mc_mc_id' => array(
+              'tool_builder_osf_id' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_mc_mc_id',
+                     'name'   => 'tool_builder_osf_id',
                      'label'   => 'id #',
                      'type'   => 'hidden',
                      'type_dt'   => 'text',
@@ -111,9 +111,9 @@ class Model_tool_builder_mc_mc extends MY_Model {
                      'rules'   => 'trim'
                 ),
 
-                'tool_builder_mc_mc_user_id' => array(
+                'tool_builder_osf_user_id' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_mc_mc_user_id',
+                     'name'   => 'tool_builder_osf_user_id',
                      'label'   => 'User ID',
                      'type'   => 'hidden',
                      'type_filter_dt'   => 'dropdown',
@@ -125,9 +125,9 @@ class Model_tool_builder_mc_mc extends MY_Model {
 
 
 
-                'tool_builder_mc_mc_step_id' => array(
+                'tool_builder_osf_step_id' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_mc_mc_step_id',
+                     'name'   => 'tool_builder_osf_step_id',
                      'label'   => 'Step ID',
                      'type'   => 'hidden',
                      'type_filter_dt'   => 'dropdown',
@@ -137,40 +137,40 @@ class Model_tool_builder_mc_mc extends MY_Model {
                      'rules'   => 'trim'
                 ),
 
-              'tool_builder_mc_mc_prospect_personas' => array(
+              'tool_builder_osf_brand_awareness' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tool_builder_mc_mc_prospect_personas',
-                     'label'   => 'Awareness & Knowledge Phase',
+                     'name'   => 'tool_builder_osf_brand_awareness',
+                     'label'   => 'Brand Awareness',
                      'type'   => 'textarea',
                      'attributes'   => array(),
                      'js_rules'   => '',
                      'rules'   => 'trim|htmlentities'
                   ),
          
-                'tool_builder_mc_mc_prospect_problems' => array(
+                'tool_builder_osf_lead_gathering' => array(
                 'table' => $this->_table,
-                'name' => '	tool_builder_mc_mc_prospect_problems',
-                'label' => 'Engagement or Interest Phase',
+                'name' => '	tool_builder_osf_lead_gathering',
+                'label' => 'Lead Gathering',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
              
-               'tool_builder_mc_mc_value_proposition' => array(
+               'tool_builder_osf_lead_qualifying' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_mc_mc_value_proposition',
-                'label' => 'Consideration',
+                'name' => 'tool_builder_osf_lead_qualifying',
+                'label' => 'Lead Qualifying',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
 
-               'tool_builder_mc_mc_channels' => array(
+               'tool_builder_osf_optimize_audience' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_mc_mc_channels',
-                'label' => 'Purchase Phase',
+                'name' => 'tool_builder_osf_optimize_audience',
+                'label' => 'Optimize your Audience',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
@@ -178,56 +178,38 @@ class Model_tool_builder_mc_mc extends MY_Model {
             ),
 
 
-            'tool_builder_mc_mc_content' => array(
+            'tool_builder_osf_optimize_experience' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_mc_mc_content',
-                'label' => 'Activation Phase',
+                'name' => 'tool_builder_osf_optimize_experience',
+                'label' => 'Optimize your User Experience',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
 
-            'tool_builder_mc_mc_key_activities' => array(
+            'tool_builder_osf_optimize_Metrics' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_mc_mc_key_activities',
-                'label' => 'Repeat Phase',
+                'name' => 'tool_builder_osf_optimize_Metrics',
+                'label' => 'Optimize your Metrics of Success',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
-            'tool_builder_mc_mc_key_metrics' => array(
+            'tool_builder_osf_optimize_testing' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_mc_mc_key_metrics',
-                'label' => 'Loyalty Phase',
-                'type' => 'textarea',
-                'attributes' => array(),
-                'js_rules' => '',
-                'rules' => 'trim|htmlentities'
-            ),
-            'tool_builder_mc_mc_kost_structure' => array(
-                'table' => $this->_table,
-                'name' => 'tool_builder_mc_mc_kost_structure',
-                'label' => 'Advocacy Phase',
-                'type' => 'textarea',
-                'attributes' => array(),
-                'js_rules' => '',
-                'rules' => 'trim|htmlentities'
-            ),
-            'tool_builder_mc_mc_roi' => array(
-                'table' => $this->_table,
-                'name' => 'tool_builder_mc_mc_roi',
-                'label' => 'Advocacy Phase',
+                'name' => 'tool_builder_osf_optimize_testing',
+                'label' => 'Optimize your Testing',
                 'type' => 'textarea',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
 
-             'tool_builder_mc_mc_approval_status' => array(
+             'tool_builder_osf_approval_status' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_mc_mc_approval_status',
+                'name' => 'tool_builder_osf_approval_status',
                 'label' => 'Approval Status',
                 'type' => 'switch',
                 'default' => '0',
@@ -235,9 +217,9 @@ class Model_tool_builder_mc_mc extends MY_Model {
                 'rules' => 'trim'
             ),
 
-           'tool_builder_mc_mc_status' => array(
+           'tool_builder_osf_status' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_mc_mc_status',
+                'name' => 'tool_builder_osf_status',
                 'label' => 'Status?',
                 'type' => 'switch',
                 'default' => '1',

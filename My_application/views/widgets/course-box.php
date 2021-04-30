@@ -46,7 +46,7 @@
                         //  debug($ck);
                         ?>
                         <? if (isset($ck) and array_filled($ck)) : ?>
-                            <? foreach ($ck as $key => $value) :
+                            <? foreach ($ck as $keytwo => $value) :
                                 // debug($value); 
                                 $a = $value['learning_journey_content_id'];
                             ?>
@@ -69,22 +69,21 @@
                                         <!-- <li><a href="business-model-canvas.php"><i class="fad fa-video"></i>Intro<span><i class="far fa-check"></i></span></a></li> -->
                                         <li id="activeId-<?= $a ?>"><a href="<?= l('account/profile/video') ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Video & Transcript <span><i class="far fa-check"></i></span></a></li>
 
-                                        <!-- <?// if ($keynew == 0) { ?>
-                                            <li><a href="<?//= l('account/profile/tools') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <?// } ?>
-                                        <?// if ($keynew == 1) { ?>
-                                            <li><a href="<?//= l('account/profile/tools_vp') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <?// } ?>
-                                        <?// if ($keynew == 2) { ?>
-                                            <li><a href="<?//= l('account/profile/tools_smp') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <?// } ?>
-                                        <?// if ($keynew == 3) { ?>
-                                            <li><a href="<?//= l('account/profile/tools_cjdg') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <?// } ?>
-                                        <?// if ($keynew == 4) { ?>
-                                            <li><a href="<?//= l('account/profile/tools_mc') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <?// } ?> -->
-                                        <li><a href="<?= l('account/profile/tools') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
+                                        <? if ($keytwo == 0) { ?>
+                                            <li><a href="<?= l('account/profile/tools') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
+                                        <? } ?>
+                                        <? if ($keytwo == 1) { ?>
+                                            <li><a href="<?= l('account/profile/tools_vp') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
+                                        <? } ?>
+                                        <? if ($keytwo == 2) { ?>
+                                            <li><a href="<?= l('account/profile/tools_smp') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
+                                        <? } ?>
+                                        <? if ($keytwo == 3) { ?>
+                                            <li><a href="<?= l('account/profile/tools_cjdg') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
+                                        <? } ?>
+                                        <? if ($keytwo == 4) { ?>
+                                            <li><a href="<?= l('account/profile/tools_mc') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
+                                        <? } ?>
                                         <li><a href="<?= l('account/profile/startup') ?>"><i class="fad fa-video"></i> Your Work<span><i class="far fa-check"></i></span></a></li>
                                     </ul>
                                 </li>

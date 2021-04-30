@@ -1,9 +1,5 @@
 <div class="business-page">
    <section class="dashboard">
-      <div class="front-dashboard">
-         <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
-         <? $this->load->view("widgets/dashboard-menu-box"); ?>
-      </div>
       <ul class="dashboard-layout">
          <li>
             <div class="front-dashboard">
@@ -86,74 +82,82 @@
                               <div id="radio1" class="multi-fld">
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                 <?
+
+                                    $param = array();
+                                    $param['order'] = "tool_builder_cj_dg_id DESC";
+                                    $param['where']['tool_builder_cj_dg_user_id'] = $this->userid;
+                                    $tool = $this->model_tool_builder_cj_dg->find_one_active($param);
+
+                                    // debug($tool);
+
+                                    ?>
+                                    <form id="form-cjdg1" class="next-prevBtn">
+                                    <input type="hidden" name="tool_builder_cj_dg[tool_builder_cj_dg_user_id]" value="<?= ($this->userid) ?>">
                                        <div class="fld-textarea">
                                           <label for="">1. Awareness & Knowledge Phase <span>How will you attract attention, gain visibility, and show customers how you can help them reach their goals and get what they want and need? Examples are SEO, Interesting Content, YouTube Videos, FB Ads, Influencers Campaigns, Events.</span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_cj_dg[tool_builder_cj_dg_awareness]"><?= $tool['tool_builder_cj_dg_awareness'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">2. Engagement or Interest Phase <span>How can you engage further your leads by providing additional information about your products and services? Examples are Communities, Whatsapp/Messenger Chat, Nurturing Emails.</span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_cj_dg[tool_builder_cj_dg_engagement]"><?= $tool['tool_builder_cj_dg_engagement'] ?></textarea>
                                        </div>
-
-                                       <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <div style="display:none;">
+                                          <button id="forms-tool_builder-btn1" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
                                  <div class="tab">
-                                    <form id="regForm2" class="next-prevBtn">
+                                    <form id="form-cjdg2" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">3. Consideration, Evaluation or Intent Phases <span>What key differentiators and competitive advantages will be used to educate your potential leads further on your offering? Examples are Emails, Videos or material showing results, outcomes, and benefits of your solution</span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_cj_dg[tool_builder_cj_dg_consideration]"><?= $tool['tool_builder_cj_dg_consideration'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">4. Purchase Phase (mid way!)<span>What tools, processes, and paths will you use to support your customers to make their purchase?</span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_cj_dg[tool_builder_cj_dg_purchase]"><?= $tool['tool_builder_cj_dg_purchase'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">5. Activation Phase<span>Formalize further the relationship with your actual buyers or users by developing trust. Examples are Excellent customer service after sale, Product/services integrity, ethical standards and consistency, show your customers that they are important to you through emails, follow-up, etc.</span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_cj_dg[tool_builder_cj_dg_activation]"><?= $tool['tool_builder_cj_dg_activation'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">6. Repeat Phase<span>How will you capitalize on the trust gained with your customer? Examples are Add-Ons, Upsells, Bundles, Experience Enhancers, Membership</span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_cj_dg[tool_builder_cj_dg_repeat]"><?= $tool['tool_builder_cj_dg_repeat'] ?></textarea>
                                        </div>
-
-                                       <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <div style="display:none;">
+                                          <button id="forms-tool_builder-btn2" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
 
                                  <div class="tab">
-                                    <form id="regForm2" class="next-prevBtn">
+                                    <form id="form-cjdg3" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">7. Loyalty Phase <span>How will you further reward your loyal customers? Examples are Loyalty coupons, easy payment plans, special offers.</span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_cj_dg[tool_builder_cj_dg_loyalty]"><?= $tool['tool_builder_cj_dg_loyalty'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">8. Advocacy Phase<span>How can you capitalize on your loyal customers to generate awareness, trust, and credibility with their own audience – which helps you acquire more customers? Examples are Testimonial, Repost, Contest, Affiliate Program</span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_cj_dg[tool_builder_cj_dg_advocacy]"><?= $tool['tool_builder_cj_dg_advocacy'] ?></textarea>
                                        </div>
-
-                                       <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <div style="display:none;">
+                                          <button id="forms-tool_builder-btn3" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
