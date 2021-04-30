@@ -347,8 +347,6 @@ var Form = function () {
 >>>>>>> dev/talha
         
 
-     
-
         evaluation : function(form) {
             // Disable the submit button to prevent repeated clicks:
             $('#forms-evaluation-btn').prop('disabled', true);
