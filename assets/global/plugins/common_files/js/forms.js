@@ -1011,7 +1011,6 @@ $(function() {
 
 
 
-<<<<<<< HEAD
 $(function() {
   var $form = $('#form-cjdg2');
   $form.submit(function(event) {
@@ -1040,7 +1039,6 @@ $(function() {
     return false;
   });
 });
-=======
 //   for swot tool
 
 
@@ -1048,6 +1046,15 @@ $(function() {
   var $form = $('#form-send_swot1');
   $form.submit(function(event) {
     Form.tool_swot($form);
+    return false;
+  });
+}); 
+
+
+$(function() {
+  var $form = $('#form-smp');
+  $form.submit(function(event) {
+    Form.tools_smp($form);
     return false;
   });
 }); 
@@ -1081,7 +1088,6 @@ $(function() {
 
 //   for pmmt tool end
 
->>>>>>> QA
 
 /*###########
 Contact us Ajax Script Start

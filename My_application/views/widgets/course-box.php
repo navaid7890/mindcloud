@@ -32,10 +32,14 @@
         <ul>
             <li style="text-align: left;"><a href="<?= l('account/profile/learning') ?>" class="active" style="font-size: 15px;color: #122B46;font-weight: 700;padding: 18px 15px;">Intro to Learning Journey </a></li>
         </ul>
+        <?
+        $dt = array('tools', 'tools_vp', 'tools_swot', 'tools_pmmt', 'tools_smp', 'tools_cjdg', 'tools_mc', 'tools_osf');
+        ?>
         <div class="course-list">
             <ul class="course-scroll">
                 <!-- <li><a href="javascript:void(0)" class="active">Introduction <span><i class="far fa-check"></i></span> </a></li> -->
                 <? if (isset($learn_cat) and array_filled($learn_cat)) : ?>
+                    <?php $dt_index = 0; ?>
                     <? foreach ($learn_cat as $keynew => $value) : ?>
                         <h5><?= $value['learning_journey_category_name'] ?></h5>
                         <?
@@ -63,27 +67,12 @@
                                     </a>
 
                                     <ul class="dropdown-box" style="display: none;">
-                                        <?
-                                        $dt = array('tools', 'tools_vp');
-                                        ?>
                                         <!-- <li><a href="business-model-canvas.php"><i class="fad fa-video"></i>Intro<span><i class="far fa-check"></i></span></a></li> -->
                                         <li id="activeId-<?= $a ?>"><a href="<?= l('account/profile/video') ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Video & Transcript <span><i class="far fa-check"></i></span></a></li>
+                                        <li><a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
+                                        <?php $dt_index = $dt_index + 1; ?>
 
-                                        <? if ($keytwo == 0) { ?>
-                                            <li><a href="<?= l('account/profile/tools') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <? } ?>
-                                        <? if ($keytwo == 1) { ?>
-                                            <li><a href="<?= l('account/profile/tools_vp') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <? } ?>
-                                        <? if ($keytwo == 2) { ?>
-                                            <li><a href="<?= l('account/profile/tools_smp') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <? } ?>
-                                        <? if ($keytwo == 3) { ?>
-                                            <li><a href="<?= l('account/profile/tools_cjdg') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <? } ?>
-                                        <? if ($keytwo == 4) { ?>
-                                            <li><a href="<?= l('account/profile/tools_mc') ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <? } ?>
+
                                         <li><a href="<?= l('account/profile/startup') ?>"><i class="fad fa-video"></i> Your Work<span><i class="far fa-check"></i></span></a></li>
                                     </ul>
                                 </li>
