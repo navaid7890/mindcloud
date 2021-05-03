@@ -126,7 +126,7 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
                   <div class="portlet-body form">
                     
                     <!-- BEGIN FORM-->
-                    <? $this->load->view("admin/widget/_video");?>
+                 
                     <!-- END FORM-->
                   </div>
                   <!-- END VALIDATION STATES-->

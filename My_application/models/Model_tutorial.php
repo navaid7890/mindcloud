@@ -117,6 +117,37 @@ class Model_tutorial extends MY_Model {
                     'rules' => 'trim|htmlentities'
                 ),
 
+                'tutorial_image2' => array(
+                    'table' => $this->_table,
+                    'name' => 'tutorial_image2',
+                    'label' => 'Image',
+                    'type' => 'hidden',
+                    'attributes' => array(),
+                    'js_rules' => '',
+                    'rules' => 'trim|htmlentities'
+                ),
+
+                
+            // 'course_image2' => array(
+            //     'table' => $this->_table,
+            //     'name' => 'course_image2',
+            //     'label' => 'Other Related Image',
+            //     'name_path' => 'course_image_path',
+            //     'upload_config' => 'site_upload_course',
+            //     'type' => 'fileupload',
+            //     'type_dt' => 'image',
+            //     'randomize' => true,
+            //     'preview' => 'true',
+            //     'attributes'   => array(
+            //         'image_size_recommended'=>'366px × 397px',
+            //         'allow_ext'=>'png|jpeg|jpg',
+            //     ),
+            //     'dt_attributes' => array("width" => "10%"),
+            //     'rules' => 'trim|htmlentities',
+            //     // 'js_rules'=>$is_required_image
+            // ),
+
+
          
             //     'tutorial_image' => array(
             //     'table' => $this->_table,
