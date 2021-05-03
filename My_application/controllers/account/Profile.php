@@ -708,6 +708,16 @@ class Profile extends MY_Controller_Account {
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
 		$this->load_view('online-sales-funnel' , $data);
 	}
+	public function tools_lts()
+	{
+		global $config;
+		$user_id = $this->userid;
+		$data['title'] = 'My Profile';
+		$data['user_data'] = $this->layout_data['user_data'];
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+		$this->load_view('legal-term-sheet' , $data);
+	}
 
 	public function video()
 	{

@@ -49,15 +49,16 @@
                      // //  debug($dt);
                      ?>
                   <ul class="bnr-cate">
-                     <li>Category</li>
+                     <li>Category </li>
                      <li><a href="javascript:void(0)">
                         
                      <? foreach($ct as $key=>$value):
                  $a=$value['category_name'];   
+                 if ($key >= 1){
+                  echo" , ";
+              }
                   echo $value['category_name'];
-                  if ($a <= 2){
-                     echo" , ";
-                 }
+                  
                 ?>
                <? endforeach;?>
                   
