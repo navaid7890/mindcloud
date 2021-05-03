@@ -61,7 +61,12 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
             <a href="#tab_3" data-toggle="tab">
             <?=humanize($page_title)?> Video</a>
           </li>
+
           <?}?>
+          <li>
+            <a href="#tab_4" data-toggle="tab">
+            <?=humanize($page_title)?> image</a>
+          </li>
         </ul>
 
         <div class="tab-content">
@@ -99,7 +104,7 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
                     <div class="portlet box green">
                   <div class="portlet-title">
                     <div class="caption">
-                      <i class="fa fa-shopping-cart"></i><?=humanize('Tutorial Trailer')?>
+                      <i class="fa fa-shopping-cart"></i><?=humanize('Tutorial Image')?>
                           <small>Uploaded</small>
 
                     </div>
@@ -107,7 +112,7 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
                   <div class="portlet-body form">
                     
                     <!-- BEGIN FORM-->
-                    <? $this->load->view("admin/widget/_video_trailer");?>
+                    <? $this->load->view("admin/tutorial/image");?>
                     <!-- END FORM-->
                   </div>
                   <!-- END VALIDATION STATES-->
