@@ -101,11 +101,12 @@
                   </div>
                </div>
             </div>
+            
             <div class="col-lg-5 col-md-12">
                <div class="video-card">
-                  <a href="<?=get_image($course[0]['course_video'],$course[0]['course_video_path'])?>" data-fancybox="media">
+                  <a href="<?= g('db.admin.bucket') . $course[0]['course_video'] ?>" data-fancybox="media">
                      <div class="video-box">
-                        <img src="<?=get_image($course[0]['course_image'],$course[0]['course_image_path'])?>" />
+                        <img src="<?= g('db.admin.bucketimg') . $course[0]['course_image2'] ?>" />
                         <span><i class="fas fa-play"></i></span>
                      </div>
                   </a>
@@ -118,7 +119,7 @@
                            <li><a href="javascript:void(0)" data-fancybox data-src="#hidden-content-1">1-Year Access <span>$20/ month</span></a></li>
                            <form>
                               <input type="hidden" name="product_qty" class="qtystyle" value="1" min="1" max="1">
-                              <input type="hidden" name="product_img"  value="<?=get_image($course[0]['course_image'],$course[0]['course_image_path'])?>" class="productimage" value="">
+                              <input type="hidden" name="product_img"  value="<?= g('db.admin.bucketimg') . $course[0]['course_image2'] ?>" class="productimage" value="">
                               <input type="hidden" name="product_price" value="0" class="productprice">
                               <input type="hidden" name="product_id" value="<?=$course[0]['course_id']?>" class="productid">
                               <input type="hidden" name="product_name" value="7- Day Access to Mind Cloud Tribe: allows you to see 7 tutorial" class="productname">

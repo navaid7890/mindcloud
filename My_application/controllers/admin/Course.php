@@ -243,7 +243,6 @@ class Course extends MY_Controller {
 
 		require_once APPPATH.'third_party/S3/S3.php';
 		// $k=$this->load->library('S3');
-		//debug($k);
   
 		$formdata = $_POST['course'];
 		$filedata = $_FILES['course'];
@@ -271,7 +270,6 @@ class Course extends MY_Controller {
         $s->setSignatureVersion('v4'); 
         $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/images/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
         // debug($s,1);
-    
 
 	    $allowEd = array('jpg','png','.JPG','jpeg'); 
 	    if(in_array($Nname[1],$allowEd)){

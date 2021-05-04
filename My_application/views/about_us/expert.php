@@ -100,7 +100,7 @@
                         <div class="vid-box">
                            <a href="<?=g('db.admin.bucket').$value['course_video']?>" data-fancybox="media">
                               <div class="video-box">
-                                 <img src="<?=g('db.admin.bucketimg').$value['course_image']?>">
+                                 <img src="<?=g('db.admin.bucketimg').$value['course_image2']?>">
                                  <span><i class="fas fa-play"></i> </span>
                               </div>
                            </a>
