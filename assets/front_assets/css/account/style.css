@@ -2492,6 +2492,7 @@ ul.cate-list {
 .xpert-content>ul>li {
     margin-right: 30px;
     margin-bottom: 30px;
+    width: 47%;
 }
 
 .xpert-content>ul>li:nth-child(2) {
