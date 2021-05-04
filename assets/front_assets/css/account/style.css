@@ -2348,7 +2348,7 @@ ul.cate-list>li {
     box-shadow: 0px 3px 12px #3130340A;
 }
 
-ul.cate-list>li:nth-child(2n) {
+ul.cate-list>li:nth-child(3n) {
     margin-right: 0;
 }
 
