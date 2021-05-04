@@ -109,9 +109,10 @@
                         <span><i class="fas fa-play"></i></span>
                      </div>
                   </a>
+                  
                   <div class="video-content">
                      <div>
-                        <span><?=html_entity_decode($course[0]['course_desc3'])?></span>
+                        <span><?=html_entity_decode($course[0]['course_duration'])?></span>
                         <ul class="tut-info">
                            <li><i><img src="<?=i('')?>icons/1.png"></i> Professional Certification </li>
                            <li><a href="javascript:void(0)" data-fancybox data-src="#hidden-content-1">1-Year Access <span>$20/ month</span></a></li>
