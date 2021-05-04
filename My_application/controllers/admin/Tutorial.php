@@ -247,7 +247,7 @@ class Tutorial extends MY_Controller {
 	
         $s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
         $s->setRegion(AWS_S3_REGION);
-        $s->setSignatureVersion('v4'); 
+        $s->setSignatureVersion('v4'); ;
         $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/images/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
         //debug($s,1);
     

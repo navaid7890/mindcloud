@@ -267,11 +267,13 @@ class Course extends MY_Controller {
         $s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
         $s->setRegion(AWS_S3_REGION);
         $s->setSignatureVersion('v4'); 
-        $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/images/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
-        //debug($s,1);
+        $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/images/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>'png']);
+        // $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/images/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
+        // debug($s,1);
     
 
 	    $allowEd = array('jpg','png','.JPG','jpeg');
+        debug($allowEd);
 	    if(in_array($Nname[1],$allowEd)){
 
 		
@@ -282,6 +284,7 @@ class Course extends MY_Controller {
 		    $insertImage['course_image_path'] = 'assets/uploads/course/';
 		    $where['where']['course_id'] = $cmsID;
 	        $status = $this->model_course->update_model($where,$insertImage);
+            
 		
 			if($status){
 	        	echo json_encode(array('status'=>1,'message'=>'image updated successfully.'));

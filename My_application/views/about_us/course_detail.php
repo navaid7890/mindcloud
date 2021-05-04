@@ -20,10 +20,11 @@
    margin: 20px;
    }
    .faqBox a {
-    width: 100%;
     font-size: 20px;
     color: #5C677D;
     text-transform: capitalize;
+    display: block;
+    width: 100%;
 }
 .faqBox a i {
     opacity: 0.5;
