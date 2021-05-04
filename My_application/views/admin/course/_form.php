@@ -62,6 +62,10 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
             <?=humanize($page_title)?> Intro Video</a>
           </li>
           <?}?>
+          <li>
+            <a href="#tab_5" data-toggle="tab">
+            <?=humanize($page_title)?> image</a>
+          </li>
         </ul>
 
         <div class="tab-content">
@@ -94,6 +98,24 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
             if($on_multi_uploader) {
             // Images only in edit mode.  
               if($form_data){?>
+              <div class="tab-pane" id="tab_5">
+                    <div class="portlet box green">
+                  <div class="portlet-title">
+                    <div class="caption">
+                      <i class="fa fa-shopping-cart"></i><?=humanize('Course Image')?>
+                          <small>Uploaded</small>
+
+                    </div>
+                  </div>
+                  <div class="portlet-body form">
+                    
+                    <!-- BEGIN FORM-->
+                    <? $this->load->view("admin/course/image");?>
+                    <!-- END FORM-->
+                  </div>
+                  <!-- END VALIDATION STATES-->
+                </div>
+              </div>
 
                 <div class="tab-pane" id="tab_4">
                     <div class="portlet box green">
@@ -186,7 +208,7 @@ $(function() {
     preinit : {
         UploadComplete: function(up, files) {
 
-          AdminToastr.success('Video Uploaded');
+          AdminToastr.success('Course Uploaded');
           setTimeout(function(){ location.reload(); }, 1000);
         }
     }

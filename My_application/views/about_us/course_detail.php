@@ -270,7 +270,7 @@
                <div class="vid-box">
                   <a href="<?=get_image($value['course_video'],$value['course_video_path'])?>" data-fancybox="media">
                      <div class="video-box">
-                        <img src="<?=get_image($value['course_image'],$value['course_image_path'])?>">
+                        <img src="<?= g('db.admin.bucketimg') . $value['course_image2'] ?>">
                         <span><i class="fas fa-play"></i></span>
                      </div>
                   </a>

@@ -423,7 +423,17 @@ class Model_course extends MY_Model {
                 ),
                 'dt_attributes' => array("width" => "10%"),
                 'rules' => 'trim|htmlentities',
-                'js_rules'=>$is_required_image
+                // 'js_rules'=>$is_required_image
+            ),
+            
+            'course_image2' => array(
+                'table' => $this->_table,
+                'name' => 'course_image2',
+                'label' => 'Image',
+                'type' => 'hidden',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
             ),
 
             // 'course_image2' => array(
