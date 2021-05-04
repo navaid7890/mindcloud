@@ -37,7 +37,7 @@
                            <li>Category</li>
                            <li><a href="javascript:void(0)"><?= $dt['category_name'] ?></a></li>
                         </ul>
-                        <?= html_entity_decode($course[0]['course_desc2']) ?><br>
+                        <?= html_entity_decode($course[0]['course_desc']) ?><br>
                         <ul class="usr-rating">
                            <?php
                            for ($x = 1; $x <= $course[0]['course_rating']; $x++) { ?>
@@ -110,7 +110,7 @@
                <div class="jr-top">
                   <div class="jrnyHead">
                      <h2>About this <strong>Tutorial</strong></h2>
-                     <p><?= html_entity_decode($course[0]['course_desc']) ?></p>
+                     <p><?= html_entity_decode($course[0]['course_desc2']) ?></p>
                   </div>
                   <div class="space"><br><br><br></div>
                   <div class="jrnyFaq">
