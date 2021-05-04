@@ -799,6 +799,12 @@ class Profile extends MY_Controller_Account {
        $pop['limit']=3;
        $data['popular'] = $this->model_course->find_all_active($pop);
 
+
+	   $expert = array(); 
+	   $expert['where']['expert_id'] = $course[0]['course_expert_id'];
+	   $expert_data = $this->model_expert->find_all_active($expert); 
+	   $data['expert'] = $expert_data;
+
        $tut=array();
        $tut['where']['cp_course_id']=$course[0]['course_id'];
        $tutorail = $this->model_course_tutorial->find_all_active($tut);

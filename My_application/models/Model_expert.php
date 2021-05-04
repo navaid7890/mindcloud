@@ -108,24 +108,34 @@ class Model_expert extends MY_Model {
                   ),
 
          
-                  'expert_image' => array(
+            //       'expert_image' => array(
+            //     'table' => $this->_table,
+            //     'name' => 'expert_image',
+            //     'label' => 'Image',
+            //     'name_path' => 'expert_image_path',
+            //     'upload_config' => 'site_upload_expert',
+            //     'type' => 'fileupload',
+            //     'type_dt' => 'image',
+            //     'randomize' => true,
+            //     'preview' => 'true',
+            //     // 'thumb'   => array(array('name'=>'expert_image_thumb','max_width'=>260, 'max_height'=>250),),
+            //     'attributes'   => array(
+            //         'image_size_recommended'=>'31px × 31px',
+            //         'allow_ext'=>'png|jpeg|jpg|svg',
+            //     ),
+            //     'dt_attributes' => array("width" => "10%"),
+            //     'rules' => 'trim|htmlentities',
+            //     'js_rules'=>$is_required_image
+            // ),
+
+            'expert_image' => array(
                 'table' => $this->_table,
                 'name' => 'expert_image',
                 'label' => 'Image',
-                'name_path' => 'expert_image_path',
-                'upload_config' => 'site_upload_expert',
-                'type' => 'fileupload',
-                'type_dt' => 'image',
-                'randomize' => true,
-                'preview' => 'true',
-                // 'thumb'   => array(array('name'=>'expert_image_thumb','max_width'=>260, 'max_height'=>250),),
-                'attributes'   => array(
-                    'image_size_recommended'=>'31px × 31px',
-                    'allow_ext'=>'png|jpeg|jpg|svg',
-                ),
-                'dt_attributes' => array("width" => "10%"),
-                'rules' => 'trim|htmlentities',
-                'js_rules'=>$is_required_image
+                'type' => 'hidden',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
             ),
 
 

@@ -100,13 +100,14 @@
                         <div class="vid-box">
                            <a href="<?=g('db.admin.bucket').$value['course_video']?>" data-fancybox="media">
                               <div class="video-box">
-                                 <img src="<?=g('db.admin.bucketimg').$value['course_image2']?>">
+                                 <img src="<?=g('db.admin.bucketimg').$value['expert_image']?>">
                                  <span><i class="fas fa-play"></i> </span>
                               </div>
                            </a>
                            <a href="javascript:;" class="cate-tag"><?=$value['course_level']?></a>
                            <div class="vid-content">
                               <h4><a href="<?=l('course-detail').'/'.$value['course_slug']?>" style="color:#33415C;"><?=$value['course_name']?></a></h4>
+                              
                               <h4><?=$value['expert_name']?></h4>
                               <div class="row align-items-center pt-70">
                                  <div class="col-md-8">
