@@ -234,11 +234,13 @@ class Tutorial extends MY_Controller {
 		$uploads_dir = 'assets/uploads/tutorial';
 		$tmp_name = $filedata["tmp_name"]['tutorial_image2'];
 		$name = microtime()."_".$filedata["name"]['tutorial_image2'];
-		move_uploaded_file($tmp_name, "$uploads_dir/$name");
- 
- 
+		
+  
 		$tmpfile = $_FILES["ok"]["tmp_name"];
 		$file = $_FILES["ok"]["name"];
+ 
+        
+        move_uploaded_file($tmp_name, "$uploads_dir/$file");
 
 		$Nname = explode(".", $file); 
         $c_type = 'image/'.$Nname[1]; 
@@ -259,7 +261,7 @@ class Tutorial extends MY_Controller {
 
 		   
 
-		    $insertImage['tutorial_image2'] = $name;
+		    $insertImage['tutorial_image2'] = $file;
 		    $insertImage['tutorial_image_path'] = 'assets/uploads/tutorial/';
 		    $where['where']['tutorial_id'] = $cmsID;
 	        $status = $this->model_tutorial->update_model($where,$insertImage);

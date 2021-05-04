@@ -253,11 +253,13 @@ class Course extends MY_Controller {
 		$uploads_dir = 'assets/uploads/course';
 		$tmp_name = $filedata["tmp_name"]['course_image2'];
 		$name = microtime()."_".$filedata["name"]['course_image2'];
-		move_uploaded_file($tmp_name, "$uploads_dir/$name");
+		
  
  
 		$tmpfile = $_FILES["ok"]["tmp_name"];
 		$file = $_FILES["ok"]["name"];
+
+        move_uploaded_file($tmp_name, "$uploads_dir/$file");
 
 		$Nname = explode(".", $file); 
         $c_type = 'image/'.$Nname[1]; 
@@ -271,15 +273,14 @@ class Course extends MY_Controller {
         // debug($s,1);
     
 
-	    $allowEd = array('jpg','png','.JPG','jpeg');
-        debug($allowEd);
+	    $allowEd = array('jpg','png','.JPG','jpeg'); 
 	    if(in_array($Nname[1],$allowEd)){
 
 		
 
 		   
 
-		    $insertImage['course_image2'] = $name;
+		    $insertImage['course_image2'] = $file;
 		    $insertImage['course_image_path'] = 'assets/uploads/course/';
 		    $where['where']['course_id'] = $cmsID;
 	        $status = $this->model_course->update_model($where,$insertImage);
