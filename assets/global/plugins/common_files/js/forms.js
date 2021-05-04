@@ -54,6 +54,7 @@ var Form = function () {
         tools_osf : base_url + "contact_us/tool_osf_formsend",
         tool_swot : base_url + "contact_us/tool_swot_formsend",
         tool_pmmt : base_url + "contact_us/tool_pmmt_formsend",
+        tool_fm_income : base_url + "contact_us/tool_income_formsend",
         //account_activate_process : base_url + "account/active_account/process",
         //review : base_url + "customer_review",
     };
@@ -417,6 +418,35 @@ tools_osf : function(form) {
 },    
   
       
+
+
+
+      tool_fm_income : function(form) {
+          
+
+        $('#forms-tool_builder-btn1').prop('disabled', true);  
+        
+        var data = form.serialize();
+        response = AjaxRequest.fire(urls.tool_fm_income, data) ;
+
+        $('#forms-tool_builder-btn1').prop('disabled', false);   
+
+        // return false ;
+        
+        if(response.status){
+            
+            Toastr.success(response.msg.desc,'Go To Next Step');  
+            $("#form-income").find('input[type=text],input[type=email],textarea').val('');
+
+            return false;
+        }
+        else{
+            Toastr.error(response.msg.desc,'Error');
+          
+            return false;
+        }
+        return false;
+      },
 
 
     tool_pmmt : function(form) {
@@ -1087,6 +1117,26 @@ $(function() {
  
 
 //   for pmmt tool end
+
+
+
+//   for fm_income tool
+
+
+$(function() {
+  var $form = $('#form-income');
+  $form.submit(function(event) {
+    Form.tool_fm_income($form);
+    return false;
+  });
+});  
+
+ 
+
+//   for fm_income tool end
+
+
+
 
 
 /*###########

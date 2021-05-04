@@ -1,83 +1,129 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-ERROR - 2021-05-04 09:04:49 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-05-04 09:04:49 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
-ERROR - 2021-05-04 09:04:49 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-05-04 09:04:49 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-05-04 09:04:49 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-05-04 09:04:49 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 449
-ERROR - 2021-05-04 09:04:49 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:04:49 --> Severity: 4096 --> Object of class Model_course could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:04:49 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-05-04 09:04:49 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-05-04 09:04:49 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-05-04 09:09:02 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-05-04 09:09:02 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
-ERROR - 2021-05-04 09:09:02 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-05-04 09:09:02 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-05-04 09:09:02 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-05-04 09:09:02 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 449
-ERROR - 2021-05-04 09:09:02 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:09:02 --> Severity: 4096 --> Object of class Model_tutorial could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:09:02 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-05-04 09:09:02 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-05-04 09:09:02 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-05-04 09:09:58 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-05-04 09:09:58 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
-ERROR - 2021-05-04 09:09:58 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-05-04 09:09:58 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-05-04 09:09:58 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-05-04 09:09:58 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 449
-ERROR - 2021-05-04 09:09:58 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:09:58 --> Severity: 4096 --> Object of class Model_tutorial could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:09:58 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-05-04 09:09:58 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-05-04 09:09:58 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-05-04 06:15:37 --> 404 Page Not Found: 094437400%201620101424_/index
-ERROR - 2021-05-04 09:15:37 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-05-04 09:15:37 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
-ERROR - 2021-05-04 09:15:37 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-05-04 09:15:38 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-05-04 09:15:38 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-05-04 09:15:38 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 449
-ERROR - 2021-05-04 09:15:38 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:15:38 --> Severity: 4096 --> Object of class Model_tutorial could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:15:38 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-05-04 09:15:38 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-05-04 09:15:38 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-05-04 09:17:08 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= 'assets/uploads/tutorial/', `tutorial_featured` = 1, `tutorial_status` = 1
-WHE' at line 1 - Invalid query: UPDATE `md_tutorial` SET `tutorial_id` = '9', `tutorial_name` = 'tutorial 1.2', `tutorial_slug` = 'tutorial-12', `tutorial_desc` = '&lt;p&gt;tutorial 1.2 Lorem Ipsum&lt;/p&gt;', `tutorial_image` = 'testCourse.mp4', `tutorial_image2` = 'mage_shape2x161588168542.png',  = 'assets/uploads/tutorial/', `tutorial_featured` = 1, `tutorial_status` = 1
-WHERE `tutorial_id` = '9'
-ERROR - 2021-05-04 09:18:05 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-05-04 09:18:05 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
-ERROR - 2021-05-04 09:18:05 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-05-04 09:18:05 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-05-04 09:18:05 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-05-04 09:18:05 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 449
-ERROR - 2021-05-04 09:18:05 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:18:05 --> Severity: 4096 --> Object of class Model_tutorial could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:18:05 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-05-04 09:18:05 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-05-04 09:18:05 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-05-04 09:21:07 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-05-04 09:21:07 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
-ERROR - 2021-05-04 09:21:07 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-05-04 09:21:07 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-05-04 09:21:07 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-05-04 09:21:07 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 449
-ERROR - 2021-05-04 09:21:07 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:21:07 --> Severity: 4096 --> Object of class Model_course could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:21:07 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-05-04 09:21:07 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-05-04 09:21:07 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-05-04 09:21:33 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
-ERROR - 2021-05-04 09:21:33 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
-ERROR - 2021-05-04 09:21:33 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
-ERROR - 2021-05-04 09:21:33 --> Severity: Warning --> Illegal string offset 'page_title' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 447
-ERROR - 2021-05-04 09:21:34 --> Severity: Warning --> Illegal string offset 'class_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 448
-ERROR - 2021-05-04 09:21:34 --> Severity: Warning --> Illegal string offset 'model_name' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 449
-ERROR - 2021-05-04 09:21:34 --> Severity: Warning --> Illegal string offset 'model_obj' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:21:34 --> Severity: 4096 --> Object of class Model_course could not be converted to string C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 450
-ERROR - 2021-05-04 09:21:34 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-05-04 09:21:34 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
-ERROR - 2021-05-04 09:21:34 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
+ERROR - 2021-05-04 06:37:33 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-04 06:37:43 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-04 06:39:18 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-04 06:39:42 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-04 07:11:52 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-04 07:13:36 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-04 07:13:51 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-04 07:35:08 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-04 07:35:21 --> 404 Page Not Found: Profile/profile.png
+ERROR - 2021-05-04 07:36:53 --> 404 Page Not Found: admin/Profile/profile.png
+ERROR - 2021-05-04 07:46:08 --> 404 Page Not Found: admin/Tutorial/profile
+ERROR - 2021-05-04 10:46:17 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-05-04 10:46:17 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 399
+ERROR - 2021-05-04 10:46:17 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-05-04 10:46:17 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-05-04 10:46:17 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-05-04 10:46:17 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 449
+ERROR - 2021-05-04 10:46:17 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 10:46:17 --> Severity: 4096 --> Object of class Model_tutorial could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 10:46:17 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 10:46:17 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-05-04 10:46:17 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 10:46:35 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-05-04 10:46:35 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 399
+ERROR - 2021-05-04 10:46:35 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-05-04 10:46:35 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-05-04 10:46:35 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-05-04 10:46:35 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 449
+ERROR - 2021-05-04 10:46:35 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 10:46:35 --> Severity: 4096 --> Object of class Model_tutorial could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 10:46:35 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 10:46:35 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-05-04 10:46:35 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 11:00:17 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-05-04 11:00:17 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 399
+ERROR - 2021-05-04 11:00:17 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-05-04 11:00:17 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-05-04 11:00:17 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-05-04 11:00:17 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 449
+ERROR - 2021-05-04 11:00:17 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:00:17 --> Severity: 4096 --> Object of class Model_tutorial could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:00:17 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 11:00:17 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-05-04 11:00:17 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 08:00:21 --> 404 Page Not Found: admin/Profile/profile.png
+ERROR - 2021-05-04 11:00:28 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-05-04 11:00:28 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 399
+ERROR - 2021-05-04 11:00:28 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-05-04 11:00:28 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-05-04 11:00:28 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-05-04 11:00:28 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 449
+ERROR - 2021-05-04 11:00:28 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:00:28 --> Severity: 4096 --> Object of class Model_tutorial could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:00:28 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 11:00:28 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-05-04 11:00:28 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 11:04:32 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-05-04 11:04:32 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 399
+ERROR - 2021-05-04 11:04:32 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-05-04 11:04:32 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-05-04 11:04:32 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-05-04 11:04:32 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 449
+ERROR - 2021-05-04 11:04:32 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:04:32 --> Severity: 4096 --> Object of class Model_tutorial could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:04:32 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 11:04:32 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-05-04 11:04:32 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 11:06:42 --> Severity: User Warning --> S3::inputFile(): Unable to open input file: /opt/lampp/temp/phpcpwpSv /home/talha/www/cloud/My_application/third_party/S3/S3.php 457
+ERROR - 2021-05-04 11:11:31 --> Severity: User Warning --> S3::inputFile(): Unable to open input file: /opt/lampp/temp/phpnysats /home/talha/www/cloud/My_application/third_party/S3/S3.php 457
+ERROR - 2021-05-04 11:12:31 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-05-04 11:12:31 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 399
+ERROR - 2021-05-04 11:12:31 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-05-04 11:12:31 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-05-04 11:12:31 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-05-04 11:12:31 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 449
+ERROR - 2021-05-04 11:12:31 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:12:31 --> Severity: 4096 --> Object of class Model_tutorial could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:12:31 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 11:12:31 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-05-04 11:12:31 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 08:12:47 --> 404 Page Not Found: admin/Profile/profile.png
+ERROR - 2021-05-04 08:12:58 --> 404 Page Not Found: admin/Tutorial/profile
+ERROR - 2021-05-04 11:13:09 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-05-04 11:13:09 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 399
+ERROR - 2021-05-04 11:13:09 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-05-04 11:13:09 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-05-04 11:13:09 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-05-04 11:13:09 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 449
+ERROR - 2021-05-04 11:13:09 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:13:09 --> Severity: 4096 --> Object of class Model_tutorial could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:13:09 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 11:13:09 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-05-04 11:13:09 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 11:13:27 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-05-04 11:13:27 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 399
+ERROR - 2021-05-04 11:13:27 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-05-04 11:13:27 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-05-04 11:13:27 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-05-04 11:13:27 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 449
+ERROR - 2021-05-04 11:13:27 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:13:27 --> Severity: 4096 --> Object of class Model_tutorial could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:13:27 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 11:13:27 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-05-04 11:13:27 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 08:14:34 --> 404 Page Not Found: admin/Profile/profile.png
+ERROR - 2021-05-04 11:15:31 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-05-04 11:15:31 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 399
+ERROR - 2021-05-04 11:15:31 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-05-04 11:15:31 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-05-04 11:15:31 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-05-04 11:15:31 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 449
+ERROR - 2021-05-04 11:15:31 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:15:31 --> Severity: 4096 --> Object of class Model_course could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:15:31 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 11:15:31 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-05-04 11:15:31 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 11:18:23 --> Severity: Warning --> Illegal string offset 'form_data' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 397
+ERROR - 2021-05-04 11:18:23 --> Severity: Warning --> Illegal string offset 'user_input' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 399
+ERROR - 2021-05-04 11:18:23 --> Severity: Warning --> Illegal string offset 'page_title_min' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 446
+ERROR - 2021-05-04 11:18:23 --> Severity: Warning --> Illegal string offset 'page_title' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 447
+ERROR - 2021-05-04 11:18:23 --> Severity: Warning --> Illegal string offset 'class_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 448
+ERROR - 2021-05-04 11:18:23 --> Severity: Warning --> Illegal string offset 'model_name' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 449
+ERROR - 2021-05-04 11:18:23 --> Severity: Warning --> Illegal string offset 'model_obj' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:18:23 --> Severity: 4096 --> Object of class Model_course could not be converted to string /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 450
+ERROR - 2021-05-04 11:18:23 --> Severity: Warning --> Illegal string offset 'form_fields' /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
+ERROR - 2021-05-04 11:18:23 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /home/talha/www/cloud/My_system/core/Exceptions.php:271) /home/talha/www/cloud/My_system/core/Common.php 570
+ERROR - 2021-05-04 11:18:23 --> Severity: Error --> Cannot use string offset as an array /home/talha/www/cloud/My_application/core/MY_Controller_Admin.php 451
