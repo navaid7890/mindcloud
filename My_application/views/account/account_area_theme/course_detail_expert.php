@@ -1,3 +1,16 @@
+<style>
+   .faqBox a {
+    font-size: 20px;
+    color: #5C677D;
+    text-transform: capitalize;
+    display: block;
+    width: 100%;
+}
+.faqBox a i {
+    opacity: 0.5;
+    margin-right: 34px;
+}
+</style>
 <div class="index-page">
    <section class="">
    <ul class="dashboard-layout">

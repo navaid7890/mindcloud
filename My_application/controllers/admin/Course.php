@@ -237,7 +237,65 @@ class Course extends MY_Controller {
         // Return Success JSON-RPC response
         //die('{"jsonrpc" : "2.0", "result" : null, "id" : "id"}');
 
-    }   
+    }
+    
+    public function upload_images(){
+
+		require_once APPPATH.'third_party/S3/S3.php';
+		// $k=$this->load->library('S3');
+		//debug($k);
+  
+		$formdata = $_POST['course'];
+		$filedata = $_FILES['course'];
+		$cmsID = $formdata['course_id'];
+
+
+		$uploads_dir = 'assets/uploads/course';
+		$tmp_name = $filedata["tmp_name"]['course_image2'];
+		$name = microtime()."_".$filedata["name"]['course_image2'];
+		move_uploaded_file($tmp_name, "$uploads_dir/$name");
+ 
+ 
+		$tmpfile = $_FILES["ok"]["tmp_name"];
+		$file = $_FILES["ok"]["name"];
+
+		$Nname = explode(".", $file); 
+        $c_type = 'image/'.$Nname[1]; 
+
+        $s = new S3();
+	
+        $s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
+        $s->setRegion(AWS_S3_REGION);
+        $s->setSignatureVersion('v4'); 
+        $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/images/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
+        // debug($s,1);
+    
+
+	    $allowEd = array('jpg','png','.JPG','jpeg');
+        debug($allowEd);
+	    if(in_array($Nname[1],$allowEd)){
+
+		
+
+		   
+
+		    $insertImage['course_image2'] = $name;
+		    $insertImage['course_image_path'] = 'assets/uploads/course/';
+		    $where['where']['course_id'] = $cmsID;
+	        $status = $this->model_course->update_model($where,$insertImage);
+            
+		
+			if($status){
+	        	echo json_encode(array('status'=>1,'message'=>'image updated successfully.'));
+	        }
+	        else{
+	        	echo json_encode(array('status'=>0,'message'=>'Please try again.'));	
+	        }
+	    }
+	    else{
+	    	echo json_encode(array('status'=>0,'message'=>'Only JPG and PNG format allowed'));	
+	    }
+	}
 
 
 

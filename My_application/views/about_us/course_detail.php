@@ -20,10 +20,11 @@
    margin: 20px;
    }
    .faqBox a {
-    width: 100%;
     font-size: 20px;
     color: #5C677D;
     text-transform: capitalize;
+    display: block;
+    width: 100%;
 }
 .faqBox a i {
     opacity: 0.5;
@@ -49,15 +50,16 @@
                      // //  debug($dt);
                      ?>
                   <ul class="bnr-cate">
-                     <li>Category</li>
+                     <li>Category </li>
                      <li><a href="javascript:void(0)">
                         
                      <? foreach($ct as $key=>$value):
                  $a=$value['category_name'];   
+                 if ($key >= 1){
+                  echo" , ";
+              }
                   echo $value['category_name'];
-                  if ($a <= 2){
-                     echo" , ";
-                 }
+                  
                 ?>
                <? endforeach;?>
                   
@@ -269,7 +271,7 @@
                <div class="vid-box">
                   <a href="<?=get_image($value['course_video'],$value['course_video_path'])?>" data-fancybox="media">
                      <div class="video-box">
-                        <img src="<?=get_image($value['course_image'],$value['course_image_path'])?>">
+                        <img src="<?= g('db.admin.bucketimg') . $value['course_image2'] ?>">
                         <span><i class="fas fa-play"></i></span>
                      </div>
                   </a>
