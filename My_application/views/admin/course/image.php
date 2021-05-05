@@ -32,7 +32,7 @@ global $config;
             <?php
             if(!empty($form_data['course']['course_image2'])){
             ?>
-            	<img alt="" src="<?=g('base_url')?>assets/uploads/course/<?=$form_data['course']['course_image2']?>">
+            	<img alt="" src="<?= g('db.admin.bucketimg')?><?=$form_data['course']['course_image2']?>">
             <?php
             }
             else{
