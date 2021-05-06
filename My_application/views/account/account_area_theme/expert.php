@@ -59,7 +59,7 @@
                      </div>
                   </div>
                   <div class="col-lg-8 col-md-6">
-                     
+
                      <div class="xpert-box">
                         <div class="xpert-content">
                            <div class="sapce"><br><br></div>
@@ -69,14 +69,20 @@
                               <ul class="who-list tut-list">
                                  <?php if (isset($art) && array_filled($art)) : ?>
                                     <?php foreach ($art as $key => $value) : ?>
-                                       
+
                                        <li>
                                           <div class="vid-box">
-                                             
+
                                              <a href="<?= g('db.admin.bucket') . $value['course_video'] ?>" data-fancybox="media">
+
                                                 <div class="video-box">
-                                                   
-                                                <img src="<?=g('db.admin.bucketimg').$ex[0]['expert_image']?>">
+
+                                                   <?
+                                                   $cexpert = array();
+                                                   $cexpert['where']['expert_id'] = $value["course_expert_id"];
+                                                   $data = $this->model_expert->find_one_active($cexpert);
+                                                   ?>
+                                                   <img src="<?= g('db.admin.bucketimg') . $data['expert_image'] ?>">
                                                    <span><i class="fas fa-play"></i> </span>
                                                 </div>
                                              </a>
