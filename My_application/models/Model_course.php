@@ -359,7 +359,7 @@ class Model_course extends MY_Model
             'course_tutorial' => array(
                 'table'   => "course_tutorial",
                 'name'   => 'cp_tutorial_id',
-                'label'   => 'Tutorial',
+                'label'   => 'Videos',
                 'type'   => 'multiselect',
                 'attributes'   => array(),
                 'js_rules'   => '',
