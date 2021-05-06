@@ -1,9 +1,9 @@
 <?php
 	$video_url = '';
-	if(!empty($form_data['tutorial']['tutorial_image']))
+	if(!empty($form_data['videos']['videos_image']))
  
 	
-		$video_url = 'https://mindcloud-bucket.s3.amazonaws.com/assets/videos/'.$form_data['tutorial']['tutorial_image'];
+		$video_url = 'https://mindcloud-bucket.s3.amazonaws.com/assets/'.$form_data['videos']['videos_image'];
 ?>
 <div class="form-body">
 

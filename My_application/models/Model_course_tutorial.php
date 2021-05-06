@@ -22,7 +22,7 @@ class Model_course_tutorial extends MY_Model {
         $this->pagination_params['fields'] = "*";
         $this->pagination_params['joins'][] = array(
                                                     "table"=>"tutorial" , 
-                                                    "joint"=>"tutorial_id = cp_tutorial_id", 
+                                                    "joint"=>"videos_id = cp_tutorial_id", 
                                                 );
         parent::__construct();
 

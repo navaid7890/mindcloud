@@ -151,12 +151,12 @@
       <div class="container">
          <div class="jr-top">
             <div class="jrnyHead">
-               <h2>About this <strong>Tutorial</strong></h2>
+               <h2>About this <strong>Video</strong></h2>
                <p><?= html_entity_decode($course[0]['course_desc2']) ?></p>
             </div>
             <div class="space"><br><br><br></div>
             <div class="jrnyFaq">
-               <h2>Tutorial Content</h2>
+               <h2>Video Content</h2>
                <div class="sapace"><br><br></div>
                <ul class="colasebar">
                   <li>
@@ -175,10 +175,9 @@
                   </li>
                   <? if (isset($lc) and array_filled($lc)) : ?>
                      <? foreach ($lc as $key => $value) : ?>
-
                         <li>
                            <div class="faqBox">
-                              <a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $course[0]['course_id'] ?>&tutorialid=<?= $value['tutorial_id'] ?>">
+                              <a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $course[0]['course_id'] ?>&tutorialid=<?= $value['videos_id'] ?>">
                                  <i class="fas fa-video"></i> Video and Transcript</a>
                            </div>
                         </li>
@@ -192,7 +191,7 @@
                   ?>
                   <!-- <li>
                      <div class="faqBox">
-                        <span><i class="fas fa-lock"></i><?= $value['tutorial_name'] ?></span>
+                        <span><i class="fas fa-lock"></i><?//= $value['videos_name'] ?></span>
                         <div class="expandable">
                            <? //=html_entity_decode($value['tutorial_desc'])
                            ?>

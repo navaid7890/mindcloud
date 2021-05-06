@@ -62,7 +62,7 @@
                              
                             ?>
                             <ul>
-                                <li><a href="<?= l('account/profile/expert-detail-tutorial-video')?>?courseid=<?= $courseid ?>&tutorialid=<?= $tutor['tutorial_id'] ?>">Tutorial Video and Transcript<?//= $tutor['tutorial_name'] ?></a></li>
+                                <li><a href="<?= l('account/profile/expert-detail-tutorial-video')?>?courseid=<?= $courseid ?>&tutorialid=<?= $tutor['videos_id'] ?>">Video and Transcript<?//= $tutor['tutorial_name'] ?></a></li>
                             </ul>
                         <? endforeach;?>
                         <? endif;?>

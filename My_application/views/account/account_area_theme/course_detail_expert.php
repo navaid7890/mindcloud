@@ -146,7 +146,7 @@
 
                               <li>
                                  <div class="faqBox">
-                                    <a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $course[0]['course_id'] ?>&tutorialid=<?= $value['tutorial_id'] ?>">
+                                    <a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $course[0]['course_id'] ?>&tutorialid=<?= $value['videos_id'] ?>">
                                        <i class="fas fa-video"></i> Video and Transcript</a>
                                  </div>
                               </li>

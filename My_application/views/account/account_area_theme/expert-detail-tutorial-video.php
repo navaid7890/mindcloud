@@ -48,7 +48,7 @@
                                  <div class="video-caption">
                                     <p>00:00:00</p>
                                     <div class="space"><br></div>
-                                    <?= html_entity_decode($tutorial_detail['tutorial_transcript']) ?>
+                                    <?= html_entity_decode($tutorial_detail['videos_transcript']) ?>
                                     <div class="space"><br><br></div>
 
                                     <p>00:01:16</p>
@@ -59,9 +59,9 @@
                            </div>
                            <div class="col-md-7">
                               <div class="video-box">
-                                 <video width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['tutorial_image2'] ?>" controls>
-                                    <source src="<?= g('db.admin.bucket') . $tutorial_detail['tutorial_image'] ?>" type="video/mp4">
-                                    <source src="<?= g('db.admin.bucket') . $tutorial_detail['tutorial_image'] ?>" type="video/ogg">
+                                 <video width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
+                                    <source src="<?= g('db.admin.bucket') . $tutorial_detail['videos_image'] ?>" type="video/mp4">
+                                    <source src="<?= g('db.admin.bucket') . $tutorial_detail['videos_image'] ?>" type="video/ogg">
                                     Your browser does not support the video tag.
                                  </video>
                               </div>

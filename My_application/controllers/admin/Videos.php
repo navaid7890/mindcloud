@@ -2,12 +2,12 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Tutorial extends MY_Controller {
+class Videos extends MY_Controller {
 
     /**
      * Achievements page
      *
-     * @package		tutorial
+     * @package		videos
      *
      * @version		1.0
      * @since		Version 1.0 2017
@@ -20,7 +20,7 @@ class Tutorial extends MY_Controller {
         global $config;
 
         parent::__construct();
-        $this->dt_params['dt_headings'] = "tutorial_id,tutorial_name,tutorial_status";
+        $this->dt_params['dt_headings'] = "videos_id,videos_name,videos_status";
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
 
         $this->dt_params['action'] = array(
@@ -33,11 +33,11 @@ class Tutorial extends MY_Controller {
             "extra" => array() ,
         );
 
-        $this->_list_data['tutorial_status'] = array(
+        $this->_list_data['videos_status'] = array(
             STATUS_INACTIVE => "<span class=\"label label-default\">Inactive</span>" ,
             STATUS_ACTIVE =>  "<span class=\"label label-primary\">Active</span>"
         );
-        /*$this->_list_data['tutorial_feature'] = array(
+        /*$this->_list_data['videos_feature'] = array(
             STATUS_INACTIVE => "<span class=\"label label-default\">No</span>" ,
             STATUS_ACTIVE =>  "<span class=\"label label-primary\">Yes</span>"
         );
@@ -53,9 +53,9 @@ class Tutorial extends MY_Controller {
         $config['js_config']['paginate'] = $this->dt_params['paginate'];
 
 
-        // $this->_list_data['tutorial_parent_id'] = $this->model_tutorial->find_all_list_active(
-        //     array('where_string'=>'tutorial_parent_id <= 1')
-        //     ,"tutorial_name");
+        // $this->_list_data['videos_parent_id'] = $this->model_videos->find_all_list_active(
+        //     array('where_string'=>'videos_parent_id <= 1')
+        //     ,"videos_name");
         
 
         $_POST = $this->input->post(NULL, true);
@@ -84,7 +84,7 @@ class Tutorial extends MY_Controller {
         // usleep(5000);
 
         // Settings
-        $targetDir_path = "assets/uploads/tutorial";
+        $targetDir_path = "assets/uploads/videos";
         $targetDir = FCPATH . $targetDir_path;//"assets/uploads/video_gameplay_reviews";
 
         //$targetDir = ‘uploads’;
@@ -199,18 +199,18 @@ class Tutorial extends MY_Controller {
         
    
        
-            $data = array('tutorial_image'=>$fileName,'tutorial_image_path'=>$targetDir_path."/");
-            $this->db->where('tutorial_id',$this->input->get('id'));
-            $this->db->update('tutorial',$data);
+            $data = array('videos_image'=>$fileName,'videos_image_path'=>$targetDir_path."/");
+            $this->db->where('videos_id',$this->input->get('id'));
+            $this->db->update('videos',$data);
          
             $param = array();
             $param['status'] = true;
-            $param['msg'] = 'Tutorial Uploaded';
+            $param['msg'] = 'videos Uploaded';
             echo json_encode($param);
         }
         else {
             $param = array();
-            $param['msg'] = 'Tutorial In-Progress';
+            $param['msg'] = 'Videos In-Progress';
             echo json_encode($param);    
         }
       
@@ -226,14 +226,14 @@ class Tutorial extends MY_Controller {
 		// $k=$this->load->library('S3');
 		//debug($k);
   
-		$formdata = $_POST['tutorial'];
-		$filedata = $_FILES['tutorial'];
-		$cmsID = $formdata['tutorial_id'];
+		$formdata = $_POST['videos'];
+		$filedata = $_FILES['videos'];
+		$cmsID = $formdata['videos_id'];
 
 
-		$uploads_dir = 'assets/uploads/tutorial';
-		$tmp_name = $filedata["tmp_name"]['tutorial_image2'];
-		$name = microtime()."_".$filedata["name"]['tutorial_image2'];
+		$uploads_dir = 'assets/uploads/videos';
+		$tmp_name = $filedata["tmp_name"]['videos_image2'];
+		$name = microtime()."_".$filedata["name"]['videos_image2'];
 		
   
 		$tmpfile = $_FILES["ok"]["tmp_name"];
@@ -261,10 +261,10 @@ class Tutorial extends MY_Controller {
 
 		   
 
-		    $insertImage['tutorial_image2'] = $file;
-		    $insertImage['tutorial_image_path'] = 'assets/uploads/tutorial/';
-		    $where['where']['tutorial_id'] = $cmsID;
-	        $status = $this->model_tutorial->update_model($where,$insertImage);
+		    $insertImage['videos_image2'] = $file;
+		    $insertImage['videos_image_path'] = 'assets/uploads/videos/';
+		    $where['where']['videos_id'] = $cmsID;
+	        $status = $this->model_videos->update_model($where,$insertImage);
 		
 			if($status){
 	        	echo json_encode(array('status'=>1,'message'=>'image updated successfully.'));

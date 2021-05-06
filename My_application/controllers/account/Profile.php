@@ -816,8 +816,8 @@ class Profile extends MY_Controller_Account {
 
 
        $lec=array();
-       $lec['where_in']['tutorial_id']=$all;
-       $data['lc'] = $this->model_tutorial->find_all_active($lec);
+       $lec['where_in']['videos_id']=$all;
+       $data['lc'] = $this->model_videos->find_all_active($lec);
     //   debug($lc);
 	$par7=array();
 	$par7['where']['cp_course_id']=$course[0]['course_id'];
@@ -912,9 +912,9 @@ class Profile extends MY_Controller_Account {
 		$data['title'] = 'My Profile';
 		$param=array();		
 		if(isset($_GET['tutorialid']) AND intval($_GET['tutorialid']) > 0){
-			$param['where']['tutorial_id'] = intval($_GET['tutorialid']);			
+			$param['where']['videos_id'] = intval($_GET['tutorialid']);			
 		}
-		$tutorial_detail_arr = $this->model_tutorial->find_all_active($param);
+		$tutorial_detail_arr = $this->model_videos->find_all_active($param);
 		$tutorial_detail = $tutorial_detail_arr[0];
 		$data['tutorial_detail'] = $tutorial_detail;
 
@@ -951,8 +951,8 @@ class Profile extends MY_Controller_Account {
 		$all_tutorials = [];
 		foreach($tutorials as $t){
 			 $tutorials_id[] = $t['cp_tutorial_id'];
-			 $tutorial_param['where']['tutorial_id'] = $t['cp_tutorial_id'];
-			 $tutorial = $this->model_tutorial->find_all_active($tutorial_param);
+			 $tutorial_param['where']['videos_id'] = $t['cp_tutorial_id'];
+			 $tutorial = $this->model_videos->find_all_active($tutorial_param);
 			 if(sizeof($tutorial)){
 				 $all_tutorials[] = $tutorial[0];
 			 }		

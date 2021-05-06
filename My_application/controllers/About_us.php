@@ -377,8 +377,8 @@ class About_us extends MY_Controller {
 
 
        $lec=array();
-       $lec['where_in']['tutorial_id']=$all;
-       $data['lc'] = $this->model_tutorial->find_all_active($lec);
+       $lec['where_in']['videos_id']=$all;
+       $data['lc'] = $this->model_videos->find_all_active($lec);
     //   debug($lc);
 
 

@@ -1,17 +1,17 @@
 <?
-class Model_tutorial extends MY_Model {
+class Model_videos extends MY_Model {
     /**
      *
-     * @package     tutorial Model
+     * @package     videos Model
      * 
      * @version     1.0
      * @since       2017
      */
 
-    protected $_table    = 'tutorial';
-    protected $_field_prefix    = 'tutorial_';
-    protected $_pk    = 'tutorial_id';
-    protected $_status_field    = 'tutorial_status';
+    protected $_table    = 'videos';
+    protected $_field_prefix    = 'videos_';
+    protected $_pk    = 'videos_id';
+    protected $_status_field    = 'videos_status';
     public $relations = array();
     public $pagination_params = array();
     public $dt_params = array();
@@ -20,7 +20,7 @@ class Model_tutorial extends MY_Model {
     function __construct()
     {
         // Call the Model constructor
-        $this->pagination_params['fields'] = "tutorial_id,tutorial_name,tutorial_status";
+        $this->pagination_params['fields'] = "videos_id,videos_name,videos_status";
         parent::__construct();
 
     }
@@ -51,9 +51,9 @@ class Model_tutorial extends MY_Model {
 
         $fields = array(
         
-              'tutorial_id' => array(
+              'videos_id' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tutorial_id',
+                     'name'   => 'videos_id',
                      'label'   => 'id #',
                      'type'   => 'hidden',
                      'type_dt'   => 'text',
@@ -65,9 +65,9 @@ class Model_tutorial extends MY_Model {
 
        
 
-              'tutorial_name' => array(
+              'videos_name' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tutorial_name',
+                     'name'   => 'videos_name',
                      'label'   => 'Name',
                      'type'   => 'text',
                      'attributes'   => array("additional"=>'slugify="#'.$this->_table.'-'.$this->_field_prefix.'slug"'),
@@ -77,9 +77,9 @@ class Model_tutorial extends MY_Model {
                   ),
 
               
-              'tutorial_slug'  => array(
+              'videos_slug'  => array(
                   'table'   => $this->_table,
-                  'name'   => 'tutorial_slug',
+                  'name'   => 'videos_slug',
                   'label'   => 'Slug',
                   'type'   => 'text',
                   'attributes'   => array(),
@@ -87,9 +87,9 @@ class Model_tutorial extends MY_Model {
                   'rules'   => 'required|strtolower|htmlentities|is_unique['.$this->_table.'.'.$this->_field_prefix.'slug]|callback_is_slug'
               ),
                   
-                  /*'tutorial_price' => array(
+                  /*'videos_price' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tutorial_price',
+                     'name'   => 'videos_price',
                      'label'   => 'Price',
                      'type'   => 'text',
                      'attributes'   => array(),
@@ -97,18 +97,18 @@ class Model_tutorial extends MY_Model {
                      'rules'   => 'required|trim|htmlentities|numeric'
                   ),
 */
-               'tutorial_desc' => array(
+               'videos_desc' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tutorial_desc',
+                     'name'   => 'videos_desc',
                      'label'   => 'Description',
                      'type'   => 'editor',
                      'attributes'   => array(),
                      'js_rules'   => '',
                      'rules'   => 'trim|htmlentities'
                   ),
-                  'tutorial_transcript' => array(
+                  'videos_transcript' => array(
                     'table'   => $this->_table,
-                    'name'   => 'tutorial_transcript',
+                    'name'   => 'videos_transcript',
                     'label'   => 'Transcript',
                     'type'   => 'editor',
                     'attributes'   => array(),
@@ -116,9 +116,9 @@ class Model_tutorial extends MY_Model {
                     'rules'   => 'trim|htmlentities'
                  ),
 
-                  'tutorial_image' => array(
+                  'videos_image' => array(
                     'table' => $this->_table,
-                    'name' => 'tutorial_image',
+                    'name' => 'videos_image',
                     'label' => 'Video',
                     'type' => 'hidden',
                     'attributes' => array(),
@@ -126,9 +126,9 @@ class Model_tutorial extends MY_Model {
                     'rules' => 'trim|htmlentities'
                 ),
 
-                'tutorial_image2' => array(
+                'videos_image2' => array(
                     'table' => $this->_table,
-                    'name' => 'tutorial_image2',
+                    'name' => 'videos_image2',
                     'label' => 'Image',
                     'type' => 'hidden',
                     'attributes' => array(),
@@ -158,17 +158,17 @@ class Model_tutorial extends MY_Model {
 
 
          
-            //     'tutorial_image' => array(
+            //     'videos_image' => array(
             //     'table' => $this->_table,
-            //     'name' => 'tutorial_image',
+            //     'name' => 'videos_image',
             //     'label' => 'Video',
-            //     'name_path' => 'tutorial_image_path',
-            //     'upload_config' => 'site_upload_tutorial',
+            //     'name_path' => 'videos_image_path',
+            //     'upload_config' => 'site_upload_videos',
             //     'type' => 'videoupload',
             //     'type_dt' => 'video',
             //     'randomize' => true,
             //     'preview' => 'true',
-            //     // 'thumb'   => array(array('name'=>'tutorial_image_thumb','max_width'=>260, 'max_height'=>250),),
+            //     // 'thumb'   => array(array('name'=>'videos_image_thumb','max_width'=>260, 'max_height'=>250),),
             //     'attributes'   => array(
             //         'image_size_recommended'=>'366px × 397px',
             //         'allow_ext'=>'mkv|avi|mp4',
@@ -181,14 +181,14 @@ class Model_tutorial extends MY_Model {
 
 
       
-            'tutorial_featured' => array(
+            'videos_featured' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tutorial_featured',
+                     'name'   => 'videos_featured',
                      'label'   => 'Popular',
                      'type'   => 'switch',
                      'type_dt'   => 'dropdown',
                      'type_filter_dt' => 'dropdown',
-                     'list_data_key' => "tutorial_featured" ,
+                     'list_data_key' => "videos_featured" ,
                      'list_data' => array(),
                      'default'   => '1',
                      'attributes'   => array(),
@@ -196,14 +196,14 @@ class Model_tutorial extends MY_Model {
                      'rules'   => 'trim'
                   ),
 
-              'tutorial_status' => array(
+              'videos_status' => array(
                      'table'   => $this->_table,
-                     'name'   => 'tutorial_status',
+                     'name'   => 'videos_status',
                      'label'   => 'Status?',
                      'type'   => 'switch',
                      'type_dt'   => 'dropdown',
                      'type_filter_dt' => 'dropdown',
-                     'list_data_key' => "tutorial_status" ,
+                     'list_data_key' => "videos_status" ,
                      'list_data' => array(),
                      'default'   => '1',
                      'attributes'   => array(),

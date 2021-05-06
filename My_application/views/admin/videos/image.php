@@ -6,7 +6,7 @@ global $config;
 <form class="cmxform horizontal-form tasi-form" 
 	id="uploadCmsimage" 
 	method="POST" 
-	action="<?=$config['base_url']?>admin/tutorial/upload_image" 
+	action="<?=$config['base_url']?>admin/videos/upload_image" 
 >
 		<div class="form-body">
             
@@ -19,7 +19,7 @@ global $config;
               Your form validation is successful!
             </div>
 
-        	<input type = "hidden" value="<?=$form_data['tutorial']['tutorial_id']?>" name = "tutorial[tutorial_id]" />
+        	<input type = "hidden" value="<?=$form_data['videos']['videos_id']?>" name = "videos[videos_id]" />
 
             <div class="row item_set">
 	            							        
@@ -30,9 +30,9 @@ global $config;
             <div data-provides="uploadfile" class="uploadfile uploadfile-new">
             <div style="max-width: 200px; max-height: 150px;" class="uploadfile-new thumbnail">
             <?php
-            if(!empty($form_data['tutorial']['tutorial_image2'])){
+            if(!empty($form_data['videos']['videos_image2'])){
             ?>
-            	<img alt="" src="<?= g('db.admin.bucketimg')?><?=$form_data['tutorial']['tutorial_image2']?>">
+            	<img alt="" src="<?= g('db.admin.bucketimg')?><?=$form_data['videos']['videos_image2']?>">
             <?php
             }
             else{
@@ -65,7 +65,7 @@ $max_images = 4;
     for($i ; $i <= $max_images; $i++ )
     {?>
 
-         <?php if ($form_data['tutorial']['tutorial_is_image'.$i]  == 1): ?>
+         <?php if ($form_data['videos']['videos_is_image'.$i]  == 1): ?>
        
         <div class="col-md-4">
             <div class="form-group ">
@@ -74,9 +74,9 @@ $max_images = 4;
             <div style="max-width: 200px; max-height: 150px;" class="uploadfile-new thumbnail">
 
             <?php
-            if(!empty($form_data['tutorial']['tutorial_image2'.$i])){
+            if(!empty($form_data['videos']['videos_image2'.$i])){
             ?>
-                <img alt="" src="<?=g('base_url')?>assets/uploads/tutorial/<?=$form_data['tutorial']['tutorial_image2'.$i]?>">
+                <img alt="" src="<?=g('base_url')?>assets/uploads/videos/<?=$form_data['videos']['videos_image2'.$i]?>">
             <?php
             }
             else{
@@ -127,7 +127,7 @@ $max_images = 4;
 		$("#saveImageCms").click(function(){
 
 	        var data = new FormData(document.getElementById("uploadCmsimage"));
-	        var url = "<?=$config['base_url']?>admin/tutorial/upload_images/";
+	        var url = "<?=$config['base_url']?>admin/videos/upload_images/";
 	        
 	        $.ajax({
 	            url: url,
