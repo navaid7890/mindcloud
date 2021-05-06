@@ -11,6 +11,9 @@
    background-size: cover;
    background-position: center center;
    }
+   .bannerSeactionArea a {
+    color: #e18e25;
+}
 </style>
 <div class="mainBanner home-banner para" style="background-image:url('<?=get_image($cont1['cms_page_image'],$cont1['cms_page_image_path'])?>');">
    <div class="container">
@@ -20,10 +23,10 @@
                <h1><?=$cont1['cms_page_title']?>  </strong></h1>
                <div class="space"><br><br></div>
                <div class="row">
-                  <div class="col-lg-6 col-md-12">
+                  <div class="col-lg-6 col-md-12 bannerSeactionArea">
                      <?=html_entity_decode($cont1['cms_page_content'])?>
                   </div>
-                  <div class="col-lg-6 col-md-12">
+                  <div class="col-lg-6 col-md-12 bannerSeactionArea">
                      <?=html_entity_decode($cont2['cms_page_content'])?>
                   </div>
                </div>
