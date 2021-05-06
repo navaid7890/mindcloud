@@ -18,9 +18,11 @@ class Model_expert extends MY_Model {
     public $_per_page    = 20;
     
     function __construct()
-    {
+        {
+            $s3path=g('db.admin.bucketimg');
         // Call the Model constructor
-        $this->pagination_params['fields'] = "expert_id,expert_name,CONCAT(expert_image_path,expert_image) AS expert_image,expert_status";
+        // $this->pagination_params['fields'] = "expert_id,expert_name,CONCAT(expert_image_path,expert_image) AS expert_image,expert_status";
+        $this->pagination_params['fields'] = "expert_id,expert_name,expert_status";
         parent::__construct();
 
     }

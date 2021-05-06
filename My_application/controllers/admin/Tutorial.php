@@ -20,7 +20,7 @@ class Tutorial extends MY_Controller {
         global $config;
 
         parent::__construct();
-        $this->dt_params['dt_headings'] = "tutorial_id,tutorial_name,tutorial_image,tutorial_status";
+        $this->dt_params['dt_headings'] = "tutorial_id,tutorial_name,tutorial_status";
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
 
         $this->dt_params['action'] = array(

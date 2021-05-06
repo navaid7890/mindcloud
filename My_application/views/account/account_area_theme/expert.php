@@ -49,7 +49,6 @@
                                     <? foreach ($main_categories as $key => $value) : ?>
                                        <?
                                        $a = $value['category_id'];
-
                                        ?>
                                        <li><a href="<?= l('account/profile/expert') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?></a></li>
                                     <? endforeach; ?>
@@ -60,6 +59,7 @@
                      </div>
                   </div>
                   <div class="col-lg-8 col-md-6">
+                     
                      <div class="xpert-box">
                         <div class="xpert-content">
                            <div class="sapce"><br><br></div>
@@ -69,6 +69,7 @@
                               <ul class="who-list tut-list">
                                  <?php if (isset($art) && array_filled($art)) : ?>
                                     <?php foreach ($art as $key => $value) : ?>
+                                       
                                        <li>
                                           <div class="vid-box">
                                              

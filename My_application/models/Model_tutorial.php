@@ -20,7 +20,8 @@ class Model_tutorial extends MY_Model {
     function __construct()
     {
         // Call the Model constructor
-        $this->pagination_params['fields'] = "tutorial_id,tutorial_name,CONCAT(tutorial_image_path,tutorial_image) AS tutorial_image,tutorial_status";
+        // $this->pagination_params['fields'] = "tutorial_id,tutorial_name,CONCAT(tutorial_image_path,tutorial_image) AS tutorial_image,tutorial_status";
+        $this->pagination_params['fields'] = "tutorial_id,tutorial_name,tutorial_status";
         parent::__construct();
 
     }
@@ -106,6 +107,15 @@ class Model_tutorial extends MY_Model {
                      'js_rules'   => '',
                      'rules'   => 'trim|htmlentities'
                   ),
+                  'tutorial_transcript' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'tutorial_transcript',
+                    'label'   => 'Transcript',
+                    'type'   => 'editor',
+                    'attributes'   => array(),
+                    'js_rules'   => '',
+                    'rules'   => 'trim|htmlentities'
+                 ),
 
                   'tutorial_image' => array(
                     'table' => $this->_table,

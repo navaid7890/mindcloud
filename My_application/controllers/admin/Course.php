@@ -20,7 +20,7 @@ class Course extends MY_Controller {
         global $config;
 
         parent::__construct();
-        $this->dt_params['dt_headings'] = "course_id,course_name,course_image,course_status";
+        $this->dt_params['dt_headings'] = "course_id,course_name,course_status";
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
 
         $this->dt_params['action'] = array(

@@ -48,7 +48,7 @@
                                  <div class="video-caption">
                                     <p>00:00:00</p>
                                     <div class="space"><br></div>
-                                    <?= html_entity_decode($tutorial_detail['tutorial_desc']) ?>
+                                    <?= html_entity_decode($tutorial_detail['tutorial_transcript']) ?>
                                     <div class="space"><br><br></div>
 
                                     <p>00:01:16</p>

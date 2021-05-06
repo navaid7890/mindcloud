@@ -1,3 +1,11 @@
+<style>
+    .video-box {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+</style>
 <div class="business-page">
     <section class="dashboard">
 
@@ -41,14 +49,14 @@
 
                             <div class="tutorial-mid hding-4 hding-3 para">
                                 <div class="row">
-                                    <div class="col-md-5">
+                                    <!-- <div class="col-md-5">
                                         <div class="tutorial-mid-content">
                                             <h4>Tutorial and Transcript</h4>
                                             <div class="space"><br></div>
                                             <div class="video-caption">
                                                 <p>00:00:00</p>
                                                 <div class="space"><br></div>
-                                                <?= html_entity_decode($expert_course['course_video_desc']) ?>
+                                                <?//= html_entity_decode($expert_course['course_video_desc']) ?>
 
                                                 <div class="space"><br><br></div>
 
@@ -57,12 +65,12 @@
                                                 <p>We will learn - What is CX and what is</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-7">
-
+                                    </div> -->
+                                    <div class="col-md-12">
+                                        
                                         <div class="video-box">
                                         
-                                            <video width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $expert_course['course_image2'] ?>" controls>
+                                            <video width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $ct['expert_image'] ?>" controls>
                                                 <source src="<?= g('db.admin.bucket') . $expert_course['course_video'] ?>" type="video/mp4">
                                                 <source src="<?= g('db.admin.bucket') . $expert_course['course_video'] ?>" type="video/ogg">
                                                 Your browser does not support the video tag.

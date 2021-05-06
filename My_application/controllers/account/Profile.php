@@ -819,8 +819,23 @@ class Profile extends MY_Controller_Account {
        $lec['where_in']['tutorial_id']=$all;
        $data['lc'] = $this->model_tutorial->find_all_active($lec);
     //   debug($lc);
+	$par7=array();
+	$par7['where']['cp_course_id']=$course[0]['course_id'];
+	$coursecat = $this->model_course_category->find_all_active($par7);
+   // debug($coursecat);
+
+	foreach($coursecat as $key => $value)
+	{
+	 $all1[]=$value['cp_category_id'];
+	}
+	$ccategory=array();
+	$ccategory['where_in']['category_id']=$all1;
+	$data['ct'] = $this->model_category->find_all_active($ccategory);
 
 
+
+
+	// debug(  $data['ct']);
    
         $this->load_view("course_detail_expert",$data);
     }
@@ -862,6 +877,25 @@ class Profile extends MY_Controller_Account {
 		if(isset($_GET['courseid']) AND intval($_GET['courseid']) > 0){
 			$param['where']['course_id'] = intval($_GET['courseid']);
 		}
+
+
+
+
+       $par7=array();
+       $par7['where']['course_id']=intval($_GET['courseid']);
+       $coursecat = $this->model_course->find_one_active($par7);
+	//    debug($coursecat);
+
+      // debug($all1);
+       $ccategory=array();
+       $ccategory['where']['expert_id']= $coursecat['course_expert_id'];
+       $data['ct'] = $this->model_expert->find_one_active($ccategory);
+	//    debug($data['ct']);
+	   
+
+	   
+
+
 		$this->load_view('expert-detail-tutorial-intro-video' , $data);
 	}
 	
@@ -883,6 +917,11 @@ class Profile extends MY_Controller_Account {
 		$tutorial_detail_arr = $this->model_tutorial->find_all_active($param);
 		$tutorial_detail = $tutorial_detail_arr[0];
 		$data['tutorial_detail'] = $tutorial_detail;
+
+		
+
+
+
 	//    debug($tutorial_detail);
 	   $this->load_view('expert-detail-tutorial-video' , $data);
 	}

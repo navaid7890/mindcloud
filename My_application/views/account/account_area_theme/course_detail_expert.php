@@ -1,24 +1,25 @@
 <style>
    .faqBox a {
-    font-size: 20px;
-    color: #5C677D;
-    text-transform: capitalize;
-    display: block;
-    width: 100%;
-}
-.faqBox a i {
-    opacity: 0.5;
-    margin-right: 34px;
-}
+      font-size: 20px;
+      color: #5C677D;
+      text-transform: capitalize;
+      display: block;
+      width: 100%;
+   }
+
+   .faqBox a i {
+      opacity: 0.5;
+      margin-right: 34px;
+   }
 </style>
 <div class="index-page">
    <section class="">
 
       <div class="abt-tut-page">
-      <div class="front-dashboard">
-         <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
-         <? $this->load->view("widgets/dashboard-menu-box"); ?>
-      </div>
+         <div class="front-dashboard">
+            <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+            <? $this->load->view("widgets/dashboard-menu-box"); ?>
+         </div>
          <div class="mainBanner hding-1 para">
             <div class="container">
                <div class="row">
@@ -27,11 +28,24 @@
                         <?
                         $a = $course[0]['course_category_id'];
                         $dt = $this->model_category->find_by_pk($a);
-                        //  debug($dt);
+
                         ?>
                         <ul class="bnr-cate">
                            <li>Category</li>
-                           <li><a href="javascript:void(0)"><?= $dt['category_name'] ?></a></li>
+                           <li><a href="javascript:void(0)">
+
+                                 <? foreach ($ct as $key => $value) :
+                                    $a = $value['category_name'];
+                                    if ($key >= 1) {
+                                       echo " , ";
+                                    }
+                                    echo $value['category_name'];
+
+                                 ?>
+                                 <? endforeach; ?>
+
+
+                              </a></li>
                         </ul>
                         <?= html_entity_decode($course[0]['course_desc']) ?><br>
                         <ul class="usr-rating">
@@ -78,7 +92,7 @@
                         </a>
                         <div class="video-content">
                            <div>
-                              <span><?= html_entity_decode($course[0]['course_desc3']) ?></span>
+                              <span><?= html_entity_decode($course[0]['course_duration']) ?></span>
                               <ul class="tut-info">
                                  <li><i><img src="<?= i('') ?>icons/1.png"></i> Professional Certification </li>
                                  <li><a href="javascript:void(0)">1-Year Access </a></li>

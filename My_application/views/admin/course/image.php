@@ -43,8 +43,8 @@ global $config;
             ?>
             
             </div>
-            <div style="max-width: 200px; max-height: 150px; line-height: 20px;" class="uploadfile-preview uploadfile-exists thumbnail">
-            </div>
+            <!-- <div style="max-width: 200px; max-height: 150px; line-height: 20px;" class="uploadfile-preview uploadfile-exists thumbnail">
+            </div> -->
             <div>
             <span class="btn btn-file blue">
             <span class="uploadfile-new"><i class="fa fa-paper-clip"></i> Select image</span>

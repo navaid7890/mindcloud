@@ -32,7 +32,7 @@ global $config;
             <?php
             if(!empty($form_data['tutorial']['tutorial_image2'])){
             ?>
-            	<img alt="" src="<?=g('base_url')?>assets/uploads/tutorial/<?=$form_data['tutorial']['tutorial_image2']?>">
+            	<img alt="" src="<?= g('db.admin.bucketimg')?><?=$form_data['tutorial']['tutorial_image2']?>">
             <?php
             }
             else{
@@ -43,8 +43,8 @@ global $config;
             ?>
             
             </div>
-            <div style="max-width: 200px; max-height: 150px; line-height: 20px;" class="uploadfile-preview uploadfile-exists thumbnail">
-            </div>
+            <!-- <div style="max-width: 200px; max-height: 150px; line-height: 20px;" class="uploadfile-preview uploadfile-exists thumbnail">
+            </div> -->
             <div>
             <span class="btn btn-file blue">
             <span class="uploadfile-new"><i class="fa fa-paper-clip"></i> Select image</span>

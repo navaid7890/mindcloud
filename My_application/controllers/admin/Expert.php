@@ -20,7 +20,7 @@ class Expert extends MY_Controller {
         global $config;
 
         parent::__construct();
-        $this->dt_params['dt_headings'] = "expert_id,expert_name,expert_image,expert_status";
+        $this->dt_params['dt_headings'] = "expert_id,expert_name,expert_status";
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
 
         $this->dt_params['action'] = array(
