@@ -185,8 +185,8 @@ class About_us extends MY_Controller {
         $data['states'] = $this->model_states->find_all_active();            
         
         $param = array();
-        $param['where']['course_featured'] = 1;
-        $data['course'] = $this->model_course->find_all_active($param);
+        $param['where']['tutorial_featured'] = 1;
+        $data['course'] = $this->model_tutorial->find_all_active($param);
 
         
         $cont = $this->model_cms_page->get_page(2);
@@ -282,12 +282,12 @@ class About_us extends MY_Controller {
 
           $param = array();
           if(isset($_GET['expert']) AND intval($_GET['expert']) > 0){
-          $param['where']['course_expert_id'] = intval($this->input->get('expert'));
+          $param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
           }
 
    
           if(isset($_GET['cat']) AND intval($_GET['cat']) > 0){
-          $param['where']['course_category_id'] = intval($this->input->get('cat'));
+          $param['where']['tutorial_category_id'] = intval($this->input->get('cat'));
       }
 
  
@@ -295,9 +295,9 @@ class About_us extends MY_Controller {
   
 
 
-      $param['order']="course_id ASC";
+      $param['order']="tutorial_id ASC";
 
-      $data['art'] = $this->model_course->get_details($param);
+      $data['art'] = $this->model_tutorial->get_details($param);
 
       
       $pop=array();
@@ -341,9 +341,9 @@ class About_us extends MY_Controller {
 
 
         $ck=array();
-        $ck['where']['course_slug']=$slug;
+        $ck['where']['tutorial_slug']=$slug;
     
-        $course = $this->model_course->get_details($ck);
+        $course = $this->model_tutorial->get_details($ck);
        // debug($course[0]['course_id']);
 
 
@@ -362,12 +362,12 @@ class About_us extends MY_Controller {
 
 
        $pop=array();
-       $pop['where']['course_slug !=']=$slug;
+       $pop['where']['tutorial_slug !=']=$slug;
        $pop['limit']=3;
-       $data['popular'] = $this->model_course->find_all_active($pop);
+       $data['popular'] = $this->model_tutorial->find_all_active($pop);
 
        $tut=array();
-       $tut['where']['cp_course_id']=$course[0]['course_id'];
+       $tut['where']['cp_course_id']=$course[0]['tutorial_id'];
        $tutorail = $this->model_course_tutorial->find_all_active($tut);
 
        foreach($tutorail as $key => $value)
@@ -376,15 +376,20 @@ class About_us extends MY_Controller {
        }
 
 
-       $lec=array();
+    //    $lec=array();
+    //    $lec['where_in']['tutorial_id']=$all;
+    //    $data['lc'] = $this->model_tutorial->find_all_active($lec);
+    //   debug($data['lc']);
+
+
+    $lec=array();
        $lec['where_in']['videos_id']=$all;
        $data['lc'] = $this->model_videos->find_all_active($lec);
-    //   debug($lc);
 
 
 
        $par7=array();
-       $par7['where']['cp_course_id']=$course[0]['course_id'];
+       $par7['where']['cp_course_id']=$course[0]['tutorial_id'];
        $coursecat = $this->model_course_category->find_all_active($par7);
       // debug($coursecat);
 

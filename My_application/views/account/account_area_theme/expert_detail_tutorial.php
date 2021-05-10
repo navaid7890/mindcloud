@@ -50,7 +50,7 @@
 
                                 <? if(isset($expert_course) AND array_filled($expert_course)) :?>
                                 <? foreach($expert_course as $key=>$value):?>
-                                <h5><?= html_entity_decode($value['course_desc']) ?></h5>
+                                <h5><?= html_entity_decode($value['tutorial_desc']) ?></h5>
                                 <? endforeach;?>
                                 <? endif;?>
 
@@ -58,7 +58,7 @@
 
                                 <? if(isset($expert_course) AND array_filled($expert_course)) :?>
                                 <? foreach($expert_course as $key=>$value):?>
-                                <h5><?= html_entity_decode($value['course_desc2']) ?></h5>
+                                <h5><?= html_entity_decode($value['tutorial_desc2']) ?></h5>
                                 <? endforeach;?>
                                 <? endif;?>
                                 <!-- <ul class="mid-list">

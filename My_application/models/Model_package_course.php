@@ -21,8 +21,8 @@ class Model_package_course extends MY_Model {
         // Call the Model constructor
         $this->pagination_params['fields'] = "*";
         $this->pagination_params['joins'][] = array(
-                                                    "table"=>"course" , 
-                                                    "joint"=>"course_id = pc_course_id", 
+                                                    "table"=>"tutorial" , 
+                                                    "joint"=>"tutorial_id = pc_course_id", 
                                                 );
         parent::__construct();
 

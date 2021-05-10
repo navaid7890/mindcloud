@@ -57,7 +57,7 @@ class Shop_item extends MY_Controller {
         //     );
 
 		//$this->_list_data['banner_category_id'] = $this->model_category->find_all_list_active(array(),"category_name");
-		$this->_list_data['item_product_id'] = $this->model_course->find_all_list_active(array(),"course_name");
+		$this->_list_data['item_product_id'] = $this->model_tutorial->find_all_list_active(array(),"tutorial_name");
 
 		$_POST = $this->input->post(NULL, true);
 	}

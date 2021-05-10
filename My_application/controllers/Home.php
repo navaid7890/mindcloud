@@ -34,8 +34,8 @@ class Home extends MY_Controller {
         $data['states'] = $this->model_states->find_all_active();            
         
         $param = array();
-        $param['where']['course_featured'] = 1;
-        $data['course'] = $this->model_course->find_all_active($param);
+        $param['where']['tutorial_featured'] = 1;
+        $data['course'] = $this->model_tutorial->find_all_active($param);
 
         
         $cont = $this->model_cms_page->get_page(2);
@@ -93,19 +93,19 @@ class Home extends MY_Controller {
             $keyword = trim(htmlentities($_GET['keyword']));
         
         if (!empty($keyword)) {
-        $param['where_like'][] = array('column'=>'course_keywords','value'=>$keyword,'type'=>'both');   
+        $param['where_like'][] = array('column'=>'tutorial_keywords','value'=>$keyword,'type'=>'both');   
         }
         if (!empty($state)) {
-        $param['where_like'][] = array('column'=>'course_state_id','value'=>$state,'type'=>'both');   
+        $param['where_like'][] = array('column'=>'tutorial_state_id','value'=>$state,'type'=>'both');   
         }
         if (!empty($profession)) {
         // $param['where_like'][] = array('column'=>'course_state_id','value'=>$state,'type'=>'both');   
        $param['joins'][] = array(
-                            "table"=>"course_profession", 
-                            "joint"=>"course_profession.cp_course_id = course.course_id and cp_profession_id = $profession"
+                            "table"=>"tutorial_profession", 
+                            "joint"=>"tutorial_profession.cp_course_id = tutorial.tutorial_id and cp_profession_id = $profession"
                                 );
         }
-        $pro = $this->model_course->find_all_active($param);
+        $pro = $this->model_tutorial->find_all_active($param);
        //  debug($pro);
        // debug( $this->db->last_query(),1);
           $data['course'] = $pro;

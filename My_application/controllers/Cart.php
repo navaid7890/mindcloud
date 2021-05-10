@@ -181,21 +181,21 @@ class Cart extends MY_Controller {
 			{
 				$ids = explode(",", $_POST['ids']);
 				$params = array();
-				$params['fields'] = 'course_id,course_name,course_price,course_image_path,course_image';
-				$params['where_in']['course_id'] = $ids;
-				$data = $this->model_course->find_all_active($params);
+				$params['fields'] = 'tutorial_id,tutorial_name,tutorial_price,tutorial_image_path,tutorial_image';
+				$params['where_in']['tutorial_id'] = $ids;
+				$data = $this->model_tutorial->find_all_active($params);
 				
 				if(isset($data) AND array_filled($data))
 				{
 					foreach($data as $value)
 					{
 						$cart_data = array(
-								   'id'      => intval($value['course_id']),
+								   'id'      => intval($value['tutorial_id']),
 								   'qty'     => 1,
-								   'price'   => $value['course_price'],
-								   'name'    => htmlentities($value['course_name']),
+								   'price'   => $value['tutorial_price'],
+								   'name'    => htmlentities($value['tutorial_name']),
 								   'options' => array(
-								   					'product_img' => get_image($value['course_image'],$value['course_image_path']),
+								   					'product_img' => get_image($value['tutorial_image'],$value['tutorial_image_path']),
 								   					'type'=>$type,
 								   					//'weight' => $_POST['product_weight'],
 								   					//'cart_additional' => $_POST['cart'],

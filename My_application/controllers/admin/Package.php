@@ -39,7 +39,7 @@ class Package extends MY_Controller {
             STATUS_ACTIVE =>  "<span class=\"label label-primary\">Active</span>"
         );
 
-        $this->_list_data['package_course'] = $this->model_course->find_all_list_active(array(),"course_name");
+        $this->_list_data['package_course'] = $this->model_tutorial->find_all_list_active(array(),"tutorial_name");
 
         // For use IN JS Files
         $config['js_config']['paginate'] = $this->dt_params['paginate'];

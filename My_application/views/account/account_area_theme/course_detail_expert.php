@@ -26,7 +26,7 @@
                   <div class="col-lg-7 col-md-12">
                      <div>
                         <?
-                        $a = $course[0]['course_category_id'];
+                        $a = $course[0]['tutorial_category_id'];
                         $dt = $this->model_category->find_by_pk($a);
 
                         ?>
@@ -47,10 +47,10 @@
 
                               </a></li>
                         </ul>
-                        <?= html_entity_decode($course[0]['course_desc']) ?><br>
+                        <?= html_entity_decode($course[0]['tutorial_desc']) ?><br>
                         <ul class="usr-rating">
                            <?php
-                           for ($x = 1; $x <= $course[0]['course_rating']; $x++) { ?>
+                           for ($x = 1; $x <= $course[0]['tutorial_rating']; $x++) { ?>
                               <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
                            <? } ?>
                         </ul>
@@ -77,14 +77,14 @@
                               <span>
                                  <i class="fas fa-calendar-plus"></i>
                               </span>
-                              <h6><span>Last updated</span><?= $course[0]['course_createdon'] ?></h6>
+                              <h6><span>Last updated</span><?= $course[0]['tutorial_createdon'] ?></h6>
                            </div>
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-5 col-md-12">
                      <div class="video-card">
-                        <a href="<?= g('db.admin.bucket') . $course[0]['course_video'] ?>" data-fancybox="media">
+                        <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox="media">
                            <div class="video-box">
                               <img src="<?= g('db.admin.bucketimg') . $expert[0]['expert_image'] ?>" />
                               <span><i class="fas fa-play"></i></span>
@@ -92,17 +92,17 @@
                         </a>
                         <div class="video-content">
                            <div>
-                              <span><?= html_entity_decode($course[0]['course_duration']) ?></span>
+                              <span><?= html_entity_decode($course[0]['tutorial_duration']) ?></span>
                               <ul class="tut-info">
                                  <li><i><img src="<?= i('') ?>icons/1.png"></i> Professional Certification </li>
                                  <li><a href="javascript:void(0)">1-Year Access </a></li>
                                  <!-- <form> -->
                                  <input type="hidden" name="product_qty" class="qtystyle" value="1" min="1" max="1">
-                                 <input type="hidden" name="product_img" value="<?= get_image($course[0]['course_image'], $course[0]['course_image_path']) ?>" class="productimage" value="">
+                                 <input type="hidden" name="product_img" value="<?= get_image($course[0]['tutorial_image'], $course[0]['tutorial_image_path']) ?>" class="productimage" value="">
                                  <input type="hidden" name="product_price" value="0" class="productprice">
-                                 <input type="hidden" name="product_id" value="<?= $course[0]['course_id'] ?>" class="productid">
+                                 <input type="hidden" name="product_id" value="<?= $course[0]['tutorial_id'] ?>" class="productid">
                                  <input type="hidden" name="product_name" value="7- Day Access to Mind Cloud Tribe: allows you to see 7 tutorial" class="productname">
-                                 <li><a href="<?= l('account/profile/expert-detail-tutorial') ?>?courseid=<?= $course[0]['course_id'] ?>">Continue Expert Tutorial
+                                 <li><a href="<?= l('account/profile/expert-detail-tutorial') ?>?courseid=<?= $course[0]['tutorial_id'] ?>">Continue Expert Tutorial
                                        <!--  -->
                                     </a></li>
                                  <!-- 
@@ -120,7 +120,7 @@
                <div class="jr-top">
                   <div class="jrnyHead">
                      <h2>About this <strong>Tutorial</strong></h2>
-                     <p><?= html_entity_decode($course[0]['course_desc2']) ?></p>
+                     <p><?= html_entity_decode($course[0]['tutorial_desc2']) ?></p>
                   </div>
                   <div class="space"><br><br><br></div>
                   <div class="jrnyFaq">
@@ -129,7 +129,7 @@
                      <ul class="colasebar">
                         <li>
                            <div class="faqBox">
-                              <a href="<?= l('account/profile/expert-detail-tutorial-intro-video') ?>?courseid=<?= $course[0]['course_id'] ?>">
+                              <a href="<?= l('account/profile/expert-detail-tutorial-intro-video') ?>?courseid=<?= $course[0]['tutorial_id'] ?>">
                                  <i class="fas fa-video"></i> Intro Video</a>
                            </div>
                         </li>
@@ -137,16 +137,17 @@
                            <div class="faqBox">
                               <span><i class="fas fa-scroll"></i>Description</span>
                               <div class="expandable">
-                                 <?= html_entity_decode($course[0]['course_desc2']) ?>
+                                 <?= html_entity_decode($course[0]['tutorial_desc2']) ?>
                               </div>
                            </div>
                         </li>
+                        
                         <? if (isset($lc) and array_filled($lc)) : ?>
                            <? foreach ($lc as $key => $value) : ?>
 
                               <li>
                                  <div class="faqBox">
-                                    <a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $course[0]['course_id'] ?>&tutorialid=<?= $value['videos_id'] ?>">
+                                    <a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $course[0]['tutorial_id'] ?>&tutorialid=<?= $value['videos_id'] ?>">
                                        <i class="fas fa-video"></i> Video and Transcript</a>
                                  </div>
                               </li>
@@ -256,19 +257,19 @@
                            <li>
                               <div class="vid-box">
 
-                                 <a href="<?= g('db.admin.bucket') . $course[0]['course_video'] ?>" data-fancybox="media">
+                                 <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox="media">
                                     <div class="video-box">
-                                       <img src="<?= get_image($value['course_image'], $value['course_image_path']) ?>">
+                                       <img src="<?= get_image($value['tutorial_image'], $value['tutorial_image_path']) ?>">
                                        <span><i class="fas fa-play"></i></span>
                                     </div>
                                  </a>
                                  <div class="vid-content">
-                                    <h4 style="color: #000;"><?= $value['course_name'] ?></h4>
+                                    <h4 style="color: #000;"><?= $value['tutorial_name'] ?></h4>
                                     <div class="row align-items-center pt-70">
                                        <div class="col-md-8">
                                           <ul class="rating">
                                              <?php
-                                             for ($x = 1; $x <= $value['course_rating']; $x++) { ?>
+                                             for ($x = 1; $x <= $value['tutorial_rating']; $x++) { ?>
                                                 "
                                                 <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
                                                 ";
@@ -276,7 +277,7 @@
                                           </ul>
                                        </div>
                                        <div class="col-md-4 text-right">
-                                          <h6><?= price($value['course_price']) ?></h6>
+                                          <h6><?= price($value['tutorial_price']) ?></h6>
                                        </div>
                                     </div>
                                  </div>

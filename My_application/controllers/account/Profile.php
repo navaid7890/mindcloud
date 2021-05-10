@@ -53,16 +53,16 @@ class Profile extends MY_Controller_Account {
 
 		$param=array();
 		if(isset($_GET['cat']) AND intval($_GET['cat']) > 0){
-			$param['where']['course_category_id'] = intval($this->input->get('cat'));
+			$param['where']['tutorial_category_id'] = intval($this->input->get('cat'));
 		}
-		$param['order'] ="course_id DESC";
+		$param['order'] ="tutorial_id DESC";
 
 		// $param['joins'][] = array(
 		// 	"table"=>"category" , 
 		// 	"joint"=>"category.category_id = course.course_category_id"
 		// );
 			
-		$data['tutorial'] = $this->model_course->find_all_active($param);
+		$data['tutorial'] = $this->model_tutorial->find_all_active($param);
 		$data['category'] = $this->model_category->find_all_active();
 
 
@@ -544,12 +544,12 @@ class Profile extends MY_Controller_Account {
 
           $param = array();
           if(isset($_GET['expert']) AND intval($_GET['expert']) > 0){
-          $param['where']['course_expert_id'] = intval($this->input->get('expert'));
+          $param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
           }
 
    
           if(isset($_GET['cat']) AND intval($_GET['cat']) > 0){
-          $param['where']['course_category_id'] = intval($this->input->get('cat'));
+          $param['where']['tutorial_category_id'] = intval($this->input->get('cat'));
       }
 
  
@@ -557,10 +557,10 @@ class Profile extends MY_Controller_Account {
   
 
 
-      $param['order']="course_id ASC";
-	  $param['where']['course_free_status']=1;
+      $param['order']="tutorial_id ASC";
+	  $param['where']['tutorial_free_status']=1;
 
-      $data['art'] = $this->model_course->find_all_active($param);
+      $data['art'] = $this->model_tutorial->find_all_active($param);
 
       
       $pop=array();
@@ -787,26 +787,26 @@ class Profile extends MY_Controller_Account {
 
 
         $ck=array();
-        $ck['where']['course_slug']=$slug;
-        $course = $this->model_course->get_details($ck);
+        $ck['where']['tutorial_slug']=$slug;
+        $course = $this->model_tutorial->get_details($ck);
        // debug($course[0]['course_id']);
         if (count($course) < 1) {
          redirect("?msgtype=error&msg=invalid url");   
         }
        $data['course'] = $course;
        $pop=array();
-       $pop['where']['course_slug !=']=$slug;
+       $pop['where']['tutorial_slug !=']=$slug;
        $pop['limit']=3;
-       $data['popular'] = $this->model_course->find_all_active($pop);
+       $data['popular'] = $this->model_tutorial->find_all_active($pop);
 
 
 	   $expert = array(); 
-	   $expert['where']['expert_id'] = $course[0]['course_expert_id'];
+	   $expert['where']['expert_id'] = $course[0]['tutorial_expert_id'];
 	   $expert_data = $this->model_expert->find_all_active($expert); 
 	   $data['expert'] = $expert_data;
 
        $tut=array();
-       $tut['where']['cp_course_id']=$course[0]['course_id'];
+       $tut['where']['cp_course_id']=$course[0]['tutorial_id'];
        $tutorail = $this->model_course_tutorial->find_all_active($tut);
 
        foreach($tutorail as $key => $value)
@@ -820,7 +820,7 @@ class Profile extends MY_Controller_Account {
        $data['lc'] = $this->model_videos->find_all_active($lec);
     //   debug($lc);
 	$par7=array();
-	$par7['where']['cp_course_id']=$course[0]['course_id'];
+	$par7['where']['cp_course_id']=$course[0]['tutorial_id'];
 	$coursecat = $this->model_course_category->find_all_active($par7);
    // debug($coursecat);
 
@@ -854,9 +854,9 @@ class Profile extends MY_Controller_Account {
 		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
 		$param=array();
 		if(isset($_GET['courseid']) AND intval($_GET['courseid']) > 0){
-			$param['where']['course_id'] = intval($_GET['courseid']);
+			$param['where']['tutorial_id'] = intval($_GET['courseid']);
 		}
-       $data['expert_course'] = $this->model_course->find_all_active($param);
+       $data['expert_course'] = $this->model_tutorial->find_all_active($param);
 		$this->load_view('expert_detail_tutorial' , $data);
 	}
 	
@@ -875,20 +875,20 @@ class Profile extends MY_Controller_Account {
 		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
 		$param=array();
 		if(isset($_GET['courseid']) AND intval($_GET['courseid']) > 0){
-			$param['where']['course_id'] = intval($_GET['courseid']);
+			$param['where']['tutorial_id'] = intval($_GET['courseid']);
 		}
 
 
 
 
        $par7=array();
-       $par7['where']['course_id']=intval($_GET['courseid']);
-       $coursecat = $this->model_course->find_one_active($par7);
+       $par7['where']['tutorial_id']=intval($_GET['courseid']);
+       $coursecat = $this->model_tutorial->find_one_active($par7);
 	//    debug($coursecat);
 
       // debug($all1);
        $ccategory=array();
-       $ccategory['where']['expert_id']= $coursecat['course_expert_id'];
+       $ccategory['where']['expert_id']= $coursecat['tutorial_expert_id'];
        $data['ct'] = $this->model_expert->find_one_active($ccategory);
 	//    debug($data['ct']);
 	   
@@ -930,13 +930,13 @@ class Profile extends MY_Controller_Account {
 		$data['user_data'] = $this->layout_data['user_data'];
 		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
 		if(isset($_GET['courseid']) AND intval($_GET['courseid']) > 0){
-			$param['where']['course_id'] = intval($_GET['courseid']);
+			$param['where']['tutorial_id'] = intval($_GET['courseid']);
 		}
-		$expert_course = $this->model_course->find_all_active($param);
+		$expert_course = $this->model_tutorial->find_all_active($param);
 
 		
 		$data['expert_course'] = $expert_course[0];
-		$data['course_name'] = $expert_course[0]['course_name'];
+		$data['course_name'] = $expert_course[0]['tutorial_name'];
 		$data['courseid'] = $_GET['courseid'];
 		$tutparm=array();
 		

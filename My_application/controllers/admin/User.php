@@ -111,7 +111,7 @@ class User extends MY_Controller {
                 "Take Quiz",
                 "Actions",
             );
-		$c = $this->model_course->user_enrollcourses($id);
+		$c = $this->model_tutorial->user_enrollcourses($id);
 		// debug($this->db->last_query());
 		// $data['enrolled_courses'] = $c;
 

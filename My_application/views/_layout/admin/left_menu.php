@@ -97,9 +97,9 @@ $menu_links = array(
     //     ),
     // ),
 
-    array("title"=>"Courses Management", "icon"=>"speech" ,"action" => array("course","states","videos","language","learning_journey_course_review","expert_tutorial_review") ,
+    array("title"=>"Courses Management", "icon"=>"speech" ,"action" => array("tutorial","states","videos","language","learning_journey_course_review","expert_tutorial_review") ,
         "additionals"=>array(
-            array("link"=>"course","title"=>"Manage Courses", "icon"=>" fa fa-angle-right"),
+            array("link"=>"tutorial","title"=>"Manage Tutorial", "icon"=>" fa fa-angle-right"),
             array("link"=>"videos","title"=>"Manage Videos", "icon"=>" fa fa-angle-right"),
             array("link"=>"language","title"=>"Manage Language", "icon"=>" fa fa-angle-right"),
             array("link"=>"learning_journey_course_review","title"=>"Courses Reviews", "icon"=>" fa fa-angle-right"),
