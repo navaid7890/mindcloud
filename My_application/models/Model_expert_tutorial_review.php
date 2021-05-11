@@ -68,7 +68,7 @@ class Model_expert_tutorial_review extends MY_Model {
               ),
               'tutorial_review_user_id' => array(
                 'table'   => $this->_table,
-                'name'   => 'tutorial_review_user_id',
+                'name'   => 'user id',
                 'label'   => 'user id #',
                 'type'   => 'hidden',
                 'type_dt'   => 'text',
@@ -93,8 +93,8 @@ class Model_expert_tutorial_review extends MY_Model {
                   // ),
                   'tutorial_review_course_id' => array(
                     'table'   => $this->_table,
-                    'name'   => 'tutorial_review_course_id',
-                    'label'   => 'tutorial_review_course_id',
+                    'name'   => 'review course id',
+                    'label'   => 'review course id',
                     'type'   => 'text',
                     'attributes'   => array(),
                     'js_rules'   => 'required',
@@ -103,7 +103,7 @@ class Model_expert_tutorial_review extends MY_Model {
                  'tutorial_review_tutorial_id' => array(
                   'table'   => $this->_table,
                   'name'   => 'tutorial_review_tutorial_id',
-                  'label'   => 'tutorial_review_tutorial_id',
+                  'label'   => 'tutorial id',
                   'type'   => 'text',
                   'attributes'   => array(),
                   'js_rules'   => 'required',

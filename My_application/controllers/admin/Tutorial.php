@@ -7,7 +7,7 @@ class Tutorial extends MY_Controller {
     /**
      * Achievements page
      *
-     * @package		tutorial
+     * @package		course
      *
      * @version		1.0
      * @since		Version 1.0 2017
@@ -37,7 +37,7 @@ class Tutorial extends MY_Controller {
             STATUS_INACTIVE => "<span class=\"label label-default\">Inactive</span>" ,
             STATUS_ACTIVE =>  "<span class=\"label label-primary\">Active</span>"
         );
-        /*$this->_list_data['tutorial_feature'] = array(
+        /*$this->_list_data['course_feature'] = array(
             STATUS_INACTIVE => "<span class=\"label label-default\">No</span>" ,
             STATUS_ACTIVE =>  "<span class=\"label label-primary\">Yes</span>"
         );
@@ -52,14 +52,14 @@ class Tutorial extends MY_Controller {
         // For use IN JS Files
         $config['js_config']['paginate'] = $this->dt_params['paginate'];
 
-        $this->_list_data['tutorial_state_id'] = $this->model_lecture->find_all_list_active(
+        $this->_list_data['course_state_id'] = $this->model_lecture->find_all_list_active(
             array(''),"lecture_name");
         
         
-        $this->_list_data['tutorial_tutorial'] = $this->model_videos->find_all_list_active(
+        $this->_list_data['course_tutorial'] = $this->model_videos->find_all_list_active(
                 array(''),"videos_name");
        
-        $this->_list_data['tutorial_category'] = $this->model_category->find_all_list_active(
+        $this->_list_data['course_category'] = $this->model_category->find_all_list_active(
                     array(''),"category_name");
 
                     
@@ -103,6 +103,7 @@ class Tutorial extends MY_Controller {
         // usleep(5000);
 
         // Settings
+        //$targetDir_path = "assets/uploads/course";
         $targetDir_path = "assets/uploads/tutorial";
         $targetDir = FCPATH . $targetDir_path;//"assets/uploads/video_gameplay_reviews";
 
@@ -224,12 +225,12 @@ class Tutorial extends MY_Controller {
          
             $param = array();
             $param['status'] = true;
-            $param['msg'] = 'tutorial Uploaded';
+            $param['msg'] = 'Tutorial Uploaded';
             echo json_encode($param);
         }
         else {
             $param = array();
-            $param['msg'] = 'tutorial In-Progress';
+            $param['msg'] = 'Tutorial In-Progress';
             echo json_encode($param);    
         }
       
