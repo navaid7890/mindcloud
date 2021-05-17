@@ -6,7 +6,7 @@ global $config;
 <form class="cmxform horizontal-form tasi-form" 
 	id="uploadCmsimage" 
 	method="POST" 
-	action="<?=$config['base_url']?>admin/tutorial/upload_image" 
+	action="<?=$config['base_url']?>admin/tutorial/upload_images" 
 >
 		<div class="form-body">
             

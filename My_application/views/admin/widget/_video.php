@@ -1,7 +1,13 @@
 <?php
+	// $video_url = '';
+	// if(!empty($form_data['tutorial']['tutorial_video']))
+	// 	$video_url = get_image($form_data['tutorial']['tutorial_video'],$form_data['tutorial']['tutorial_video_path']);
+?>
+
+<?php
 	$video_url = '';
-	if(!empty($form_data['course']['course_video']))
-		$video_url = get_image($form_data['course']['course_video'],$form_data['course']['course_video_path']);
+	if(!empty($form_data['tutorial']['tutorial_video']))
+		$video_url = g('db.admin.bucket') . $form_data['tutorial']['tutorial_video'];
 ?>
 <div class="form-body">
 

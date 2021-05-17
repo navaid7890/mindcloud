@@ -42,7 +42,7 @@ class Questions extends MY_Controller {
 
         
           // $this->_list_data['questions_service_id'] = $this->model_service->find_all_list_active(array(),"service_name");
-          $this->_list_data['questions_course_id'] = $this->model_course->find_all_list_active(array(),"course_name");
+          $this->_list_data['questions_course_id'] = $this->model_tutorial->find_all_list_active(array(),"tutorial_name");
           $this->_list_data['questions_options'] = $this->model_options->find_all_list_active(array(),"options_name");
 
         // For use IN JS Files

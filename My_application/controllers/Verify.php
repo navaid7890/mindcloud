@@ -36,14 +36,14 @@ class Verify extends MY_Controller {
 
         $param['where']['quiz_certificate_number'] = $_GET['certificate-number'];
         $quiz = $this->model_quiz->find_one($param);
-        $course = $this->model_course->find_by_pk($quiz['quiz_course_id']);
+        $course = $this->model_tutorial->find_by_pk($quiz['quiz_course_id']);
         $user_data = $this->model_user->find_by_pk($quiz['quiz_user_id']);
 
                //CERTIFICATE VARIABLES
       $data['completion_date'] = csl_date($quiz['quiz_createdon'],'d-m-Y');
       $data['certificate_number']  = $quiz['quiz_certificate_number'];
-      $data['course_title'] = $course['course_name'];
-      $data['course_tracking_number'] = $course['course_identity'];
+      $data['course_title'] = $course['tutorial_name'];
+      $data['course_tracking_number'] = $course['tutorial_identity'];
       $data['username'] = $user_data['user_firstname'].' '.$user_data['user_lastname'];
       $data['ce_provider'] = g('db.admin.CE_provider');
 

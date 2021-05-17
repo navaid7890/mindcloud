@@ -29,8 +29,8 @@ class Model_questions extends MY_Model
         questions_status";
 
         $this->pagination_params['joins'][] = array(
-                                "table"=> "course", 
-                                "joint"=> "course.course_id = questions.questions_course_id",
+                                "table"=> "tutorial", 
+                                "joint"=> "tutorial.tutorial_id = questions.questions_course_id",
                                 "type" => "left"
                                 );
 

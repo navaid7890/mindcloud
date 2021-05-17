@@ -63,10 +63,10 @@ class Tool_builder_lts extends MY_Controller {
     public function add($id='', $data=array())
     {  
         
-        $tool_builder_lts = $_POST['tool_builder_lts'];
+        $toolb_lts = $_POST['toolb_lts'];
         
-        if ($tool_builder_lts['tool_builder_lts_approval_status'] == 1) {
-            $this->model_email->contactInquiry2($tool_builder_lts['tool_builder_lts_user_id']);
+        if ($toolb_lts['toolb_lts_approval_status'] == 1) {
+            $this->model_email->contactInquiry2($toolb_lts['toolb_lts_user_id']);
          
 
            //debug($this->model_email,1);

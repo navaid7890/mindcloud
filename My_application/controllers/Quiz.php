@@ -53,8 +53,8 @@ class Quiz extends MY_Controller {
         $data['course_id'] = $course_id;
         $data['order_item_id'] = $order_item_id;
 
-        $only['fields'] = "course_name,course_quiz_time";
-        $course = $this->model_course->find_by_pk_active($course_id,false,$only);
+        $only['fields'] = "tutorial_name,course_quiz_time";
+        $course = $this->model_tutorial->find_by_pk_active($course_id,false,$only);
         $data['course'] = $course;
 
         $param = array();
@@ -142,7 +142,7 @@ class Quiz extends MY_Controller {
          redirect("?msgtype=error&msg=Page not Found");    
         }
 
-         $course = $this->model_course->find_by_pk($quiz['quiz_course_id']);
+         $course = $this->model_tutorial->find_by_pk($quiz['quiz_course_id']);
          $data['course'] = $course;
           
           $call = $this->uri->segment(1);
@@ -178,7 +178,7 @@ class Quiz extends MY_Controller {
          $quiz = $this->model_quiz->find_by_pk($quizid);
          $data['quiz'] = $quiz;
 
-         $data['course'] = $this->model_course->find_by_pk($quiz['quiz_course_id']);
+         $data['course'] = $this->model_tutorial->find_by_pk($quiz['quiz_course_id']);
 
          $this->load_view("fail",$data);
       }
@@ -195,7 +195,7 @@ class Quiz extends MY_Controller {
     // $data['logo'] = g('dirname').$logodata['logo_image_path'].$logodata['logo_image'];
 
     $quiz = $this->model_quiz->find_by_pk($quizid);
-    $course = $this->model_course->find_by_pk($quiz['quiz_course_id']);
+    $course = $this->model_tutorial->find_by_pk($quiz['quiz_course_id']);
 
     $pu = array();
     $pu['fields'] = "user_firstname,user_lastname";
@@ -204,8 +204,8 @@ class Quiz extends MY_Controller {
     //CERTIFICATE VARIABLES
       $data['completion_date'] = csl_date($quiz['quiz_createdon'],'d-m-Y');
       $data['certificate_number']  = $quiz['quiz_certificate_number'];
-      $data['course_title'] = $course['course_name'];
-      $data['course_tracking_number'] = $course['course_identity'];
+      $data['course_title'] = $course['tutorial_name'];
+      $data['course_tracking_number'] = $course['tutorial_identity'];
       $data['username'] = $user_data['user_firstname'].' '.$user_data['user_lastname'];
       $data['ce_provider'] = '110221021';
       

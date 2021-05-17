@@ -59,12 +59,11 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
             
           <li>
             <a href="#tab_3" data-toggle="tab">
-            <?=humanize($page_title)?> Video</a>
+            <?=humanize($page_title)?> Intro Video</a>
           </li>
-
           <?}?>
           <li>
-            <a href="#tab_4" data-toggle="tab">
+            <a href="#tab_5" data-toggle="tab">
             <?=humanize($page_title)?> image</a>
           </li>
         </ul>
@@ -99,8 +98,7 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
             if($on_multi_uploader) {
             // Images only in edit mode.  
               if($form_data){?>
-
-                <div class="tab-pane" id="tab_4">
+              <div class="tab-pane" id="tab_5">
                     <div class="portlet box green">
                   <div class="portlet-title">
                     <div class="caption">
@@ -119,11 +117,11 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
                 </div>
               </div>
 
-                <div class="tab-pane" id="tab_3">
+                <div class="tab-pane" id="tab_4">
                     <div class="portlet box green">
                   <div class="portlet-title">
                     <div class="caption">
-                      <i class="fa fa-shopping-cart"></i><?=humanize('Tutorial')?>
+                      <i class="fa fa-shopping-cart"></i><?=humanize('Movie Trailer')?>
                           <small>Uploaded</small>
 
                     </div>
@@ -131,7 +129,26 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
                   <div class="portlet-body form">
                     
                     <!-- BEGIN FORM-->
-                    <? $this->load->view("admin/widget/_tutorial");?>
+                    <? $this->load->view("admin/widget/_video_trailer");?>
+                    <!-- END FORM-->
+                  </div>
+                  <!-- END VALIDATION STATES-->
+                </div>
+              </div>
+
+                <div class="tab-pane" id="tab_3">
+                    <div class="portlet box green">
+                  <div class="portlet-title">
+                    <div class="caption">
+                      <i class="fa fa-shopping-cart"></i><?=humanize('tutorial')?>
+                          <small>Uploaded</small>
+
+                    </div>
+                  </div>
+                  <div class="portlet-body form">
+                    
+                    <!-- BEGIN FORM-->
+                    <? $this->load->view("admin/widget/_video");?>
                     <!-- END FORM-->
                   </div>
                   <!-- END VALIDATION STATES-->
@@ -191,7 +208,7 @@ $(function() {
     preinit : {
         UploadComplete: function(up, files) {
 
-          AdminToastr.success('Tutorial Uploaded');
+          AdminToastr.success('tutorial Uploaded');
           setTimeout(function(){ location.reload(); }, 1000);
         }
     }

@@ -101,22 +101,22 @@
                      <?php foreach ($art as $key => $value): ?>
                      <li>
                         <div class="vid-box">
-                           <a href="<?=g('db.admin.bucket').$value['course_video']?>" data-fancybox="media">
+                           <a href="<?=g('db.admin.bucket').$value['tutorial_video']?>" data-fancybox="media">
                               <div class="video-box">
                                  <img src="<?=g('db.admin.bucketimg').$value['expert_image']?>">
                                  <span><i class="fas fa-play"></i> </span>
                               </div>
                            </a>
-                           <a href="javascript:;" class="cate-tag"><?=$value['course_level']?></a>
+                           <a href="javascript:;" class="cate-tag"><?=$value['tutorial_level']?></a>
                            <div class="vid-content">
-                              <h4><a href="<?=l('course-detail').'/'.$value['course_slug']?>" style="color:#33415C;"><?=$value['course_name']?></a></h4>
+                              <h4><a href="<?=l('course-detail').'/'.$value['tutorial_slug']?>" style="color:#33415C;"><?=$value['tutorial_name']?></a></h4>
                               
                               <h4><?=$value['expert_name']?></h4>
                               <div class="row align-items-center pt-70">
                                  <div class="col-md-8">
                                     <ul class="rating">
                                        <?php
-                                          for ($x = 1; $x <= $value['course_rating']; $x++) {?>
+                                          for ($x = 1; $x <= $value['tutorial_rating']; $x++) {?>
                                        "
                                        <li><img src="<?=i('')?>icons/rat-l.svg"></li>
                                        ";
@@ -124,7 +124,7 @@
                                     </ul>
                                  </div>
                                  <div class="col-md-4 text-right">
-                                    <h6><?=price($value['course_price'])?></h6>
+                                    <h6><?=price($value['tutorial_price'])?></h6>
                                  </div>
                               </div>
                            </div>
@@ -210,7 +210,7 @@
                      <? foreach($art as $key=>$value):?>  
                      <li>
                         <a href="javascript:void(0)">
-                           <p><span><img src="<?=i('')?>icons/category/1.svg"></span> <?=$value['course_name']?> </p>
+                           <p><span><img src="<?=i('')?>icons/category/1.svg"></span> <?=$value['tutorial_name']?> </p>
                         </a>
                      </li>
                      <? endforeach;?>

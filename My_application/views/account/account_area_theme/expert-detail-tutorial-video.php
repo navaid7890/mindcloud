@@ -48,7 +48,7 @@
                                  <div class="video-caption">
                                     <p>00:00:00</p>
                                     <div class="space"><br></div>
-                                    <?= html_entity_decode($tutorial_detail['tutorial_transcript']) ?>
+                                    <?= html_entity_decode($tutorial_detail['videos_transcript']) ?>
                                     <div class="space"><br><br></div>
 
                                     <p>00:01:16</p>
@@ -59,20 +59,20 @@
                            </div>
                            <div class="col-md-7">
                               <div class="video-box">
-                                 <video width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['tutorial_image2'] ?>" controls>
-                                    <source src="<?= g('db.admin.bucket') . $tutorial_detail['tutorial_image'] ?>" type="video/mp4">
-                                    <source src="<?= g('db.admin.bucket') . $tutorial_detail['tutorial_image'] ?>" type="video/ogg">
+                                 <video width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
+                                    <source src="<?= g('db.admin.bucket') . $tutorial_detail['videos_image'] ?>" type="video/mp4">
+                                    <source src="<?= g('db.admin.bucket') . $tutorial_detail['videos_image'] ?>" type="video/ogg">
                                     Your browser does not support the video tag.
                                  </video>
                               </div>
                            </div>
                         </div>
                         <div class="space"><br><br></div>
-                        <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p>
+                        <!-- <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p> -->
                      </div>
                      <div class="tutorial-footer vid-tran para">
                         <div class="tutorial-footer-content">
-                           <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
+                           <p>Complete this tutorials to receive Certificate.</p>
                            <? //ucfirst($this->session_data['username']);
                            ?>
                            <? //print_r($this->session->userdata); 

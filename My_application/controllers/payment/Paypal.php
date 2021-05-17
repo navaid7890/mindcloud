@@ -156,11 +156,11 @@ class Paypal extends MY_Controller {
 
         if ($type == "course") {
 
-            $only['fields'] = "course_name,course_image,course_image_path,course_price";
-            $course = $this->model_course->find_by_pk_active($invoice_no,false,$only);
-            $vars['order_product_id'] =  $course['course_id'];
-            $vars['order_product_name'] =  $course['course_name'];
-            $vars['order_product_img'] =  get_image($course['course_image'],$course['course_image_path']);
+            $only['fields'] = "tutorial_name,tutorial_image,tutorial_image_path,tutorial_price";
+            $course = $this->model_tutorial->find_by_pk_active($invoice_no,false,$only);
+            $vars['order_product_id'] =  $course['tutorial_id'];
+            $vars['order_product_name'] =  $course['tutorial_name'];
+            $vars['order_product_img'] =  get_image($course['tutorial_image'],$course['tutorial_image_path']);
 
         }else{
   
@@ -175,17 +175,17 @@ class Paypal extends MY_Controller {
           $order_id = $this->model_order->insert_record($vars);
 
         $shop_item = array();
-        $package_courses = $this->model_course->get_package_courses($package['package_id']);
+        $package_courses = $this->model_tutorial->get_package_courses($package['package_id']);
         if (isset($package_courses) && array_filled($package_courses)) {
           foreach ($package_courses as $key => $value) {
                 
                 $shop_item['item_order_id'] = $order_id;
-                $shop_item['item_product_id'] = $value['course_id']; 
-                $shop_item['item_product_name'] = $value['course_name'];
-                $shop_item['item_product_img'] = get_image($value['course_image'],$value['course_image_path']);
+                $shop_item['item_product_id'] = $value['tutorial_id']; 
+                $shop_item['item_product_name'] = $value['tutorial_name'];
+                $shop_item['item_product_img'] = get_image($value['tutorial_image'],$value['tutorial_image_path']);
                 $shop_item['item_qty'] = 1;
                 // $shop_item['item_type'] = 2;  
-                $shop_item['item_price'] = $course['course_price'];
+                $shop_item['item_price'] = $course['tutorial_price'];
                 $this->model_shop_item->insert_record($shop_item);
           }
         }

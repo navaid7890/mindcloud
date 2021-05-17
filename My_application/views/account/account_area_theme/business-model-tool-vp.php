@@ -43,6 +43,7 @@
                            <div class="row align-items-center">
                               <div class="col-lg-9 col-md-12">
                                  <h4>Tool and Tool Builder - Business Model Canvas</h4>
+                                 <a href="<?= base_url()?>account/profile/dl_tools_vp" class="btn btn-success">Download word file</a>
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> Business Model Canvas. </strong></p>
                               </div>

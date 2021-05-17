@@ -7,7 +7,7 @@ class Tutorial extends MY_Controller {
     /**
      * Achievements page
      *
-     * @package		tutorial
+     * @package		course
      *
      * @version		1.0
      * @since		Version 1.0 2017
@@ -37,7 +37,7 @@ class Tutorial extends MY_Controller {
             STATUS_INACTIVE => "<span class=\"label label-default\">Inactive</span>" ,
             STATUS_ACTIVE =>  "<span class=\"label label-primary\">Active</span>"
         );
-        /*$this->_list_data['tutorial_feature'] = array(
+        /*$this->_list_data['course_feature'] = array(
             STATUS_INACTIVE => "<span class=\"label label-default\">No</span>" ,
             STATUS_ACTIVE =>  "<span class=\"label label-primary\">Yes</span>"
         );
@@ -52,10 +52,23 @@ class Tutorial extends MY_Controller {
         // For use IN JS Files
         $config['js_config']['paginate'] = $this->dt_params['paginate'];
 
+        $this->_list_data['course_state_id'] = $this->model_lecture->find_all_list_active(
+            array(''),"lecture_name");
+        
+        
+        $this->_list_data['course_tutorial'] = $this->model_videos->find_all_list_active(
+                array(''),"videos_name");
+       
+        $this->_list_data['course_category'] = $this->model_category->find_all_list_active(
+                    array(''),"category_name");
 
-        // $this->_list_data['tutorial_parent_id'] = $this->model_tutorial->find_all_list_active(
-        //     array('where_string'=>'tutorial_parent_id <= 1')
-        //     ,"tutorial_name");
+                    
+        $this->_list_data['tutorial_expert_id'] = $this->model_expert->find_all_list_active(
+            array(''),"expert_name");
+
+        $this->_list_data['tutorial_language_id'] = $this->model_language->find_all_list_active(
+                array(''),"language_name");
+            
         
 
         $_POST = $this->input->post(NULL, true);
@@ -63,15 +76,21 @@ class Tutorial extends MY_Controller {
 
 
     public function add($id=0 , $data = array()) {
+    
         $this->add_script(array( "jquery.validate.js" , "form-validation-script.js","plupload.full.min.js") , "js" );
         $this->register_plugins(array("datatables","jquery-file-upload"));
         
-     
+        
+        // debug($_POST,1);
         parent::add($id, $data);
 
     }
 
     
+
+
+
+
     public function ajax_uploadtoserver()
     {
 
@@ -84,6 +103,7 @@ class Tutorial extends MY_Controller {
         // usleep(5000);
 
         // Settings
+        //$targetDir_path = "assets/uploads/course";
         $targetDir_path = "assets/uploads/tutorial";
         $targetDir = FCPATH . $targetDir_path;//"assets/uploads/video_gameplay_reviews";
 
@@ -199,7 +219,7 @@ class Tutorial extends MY_Controller {
         
    
        
-            $data = array('tutorial_image'=>$fileName,'tutorial_image_path'=>$targetDir_path."/");
+            $data = array('tutorial_video'=>$fileName,'tutorial_video_path'=>$targetDir_path."/");
             $this->db->where('tutorial_id',$this->input->get('id'));
             $this->db->update('tutorial',$data);
          
@@ -218,13 +238,12 @@ class Tutorial extends MY_Controller {
         // Return Success JSON-RPC response
         //die('{"jsonrpc" : "2.0", "result" : null, "id" : "id"}');
 
-    }  
+    }
     
     public function upload_images(){
 
 		require_once APPPATH.'third_party/S3/S3.php';
 		// $k=$this->load->library('S3');
-		//debug($k);
   
 		$formdata = $_POST['tutorial'];
 		$filedata = $_FILES['tutorial'];
@@ -235,11 +254,11 @@ class Tutorial extends MY_Controller {
 		$tmp_name = $filedata["tmp_name"]['tutorial_image2'];
 		$name = microtime()."_".$filedata["name"]['tutorial_image2'];
 		
-  
+ 
+ 
 		$tmpfile = $_FILES["ok"]["tmp_name"];
 		$file = $_FILES["ok"]["name"];
- 
-        
+
         move_uploaded_file($tmp_name, "$uploads_dir/$file");
 
 		$Nname = explode(".", $file); 
@@ -249,12 +268,11 @@ class Tutorial extends MY_Controller {
 	
         $s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
         $s->setRegion(AWS_S3_REGION);
-        $s->setSignatureVersion('v4'); ;
+        $s->setSignatureVersion('v4'); 
         $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/images/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
-        //debug($s,1);
-    
+        // debug($s,1);
 
-	    $allowEd = array('jpg','png','.JPG','jpeg');
+	    $allowEd = array('jpg','png','.JPG','jpeg'); 
 	    if(in_array($Nname[1],$allowEd)){
 
 		
@@ -265,6 +283,7 @@ class Tutorial extends MY_Controller {
 		    $insertImage['tutorial_image_path'] = 'assets/uploads/tutorial/';
 		    $where['where']['tutorial_id'] = $cmsID;
 	        $status = $this->model_tutorial->update_model($where,$insertImage);
+            
 		
 			if($status){
 	        	echo json_encode(array('status'=>1,'message'=>'image updated successfully.'));
@@ -277,6 +296,13 @@ class Tutorial extends MY_Controller {
 	    	echo json_encode(array('status'=>0,'message'=>'Only JPG and PNG format allowed'));	
 	    }
 	}
+
+
+
+
+/* End of file welcome.php */
+/* Location: ./application/controllers/welcome.php */
+
 
 
 }

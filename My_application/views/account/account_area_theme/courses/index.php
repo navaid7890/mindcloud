@@ -21,11 +21,11 @@
          foreach ($course as $key => $value): ?>
            <tr>
              <td><?=$sno?></td>
-             <td><img src="<?=get_image($value['course_image'],$value['course_image_path'])?>" style="height:100px"></td>
+             <td><img src="<?=get_image($value['tutorial_image'],$value['tutorial_image_path'])?>" style="height:100px"></td>
              <td><?=$value['item_product_name']?></td>
-             <td><?=count($this->model_course->get_lectures($value['item_product_id']))?></td>
-             <td><?=$value['course_identity']?></td>
-             <td><?=$value['course_duration']?></td>
+             <td><?=count($this->model_tutorial->get_lectures($value['item_product_id']))?></td>
+             <td><?=$value['tutorial_identity']?></td>
+             <td><?=$value['tutorial_duration']?></td>
              <td>
                <a href="javascript:void(0)" class="btn btn-success course_lecture" data-id="<?=$value['item_product_id']?>"><i class="fa fa-book" aria-hidden="true"></i></a>
              </td>

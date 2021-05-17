@@ -57,7 +57,7 @@ class Courses extends MY_Controller_Account {
                 "Actions",
             );
 
-    $course = $this->model_course->user_enrollcourses($this->userid);
+    $course = $this->model_tutorial->user_enrollcourses($this->userid);
     $data['course'] = $course;
         // debug($course);
 

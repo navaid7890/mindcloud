@@ -50,7 +50,7 @@
                                         <td>
                                             <?=$item['item_product_name']?><br />
                                         </td>
-                                        <td><?=count($this->model_course->get_lectures($item['item_product_id']))?></td>
+                                        <td><?=count($this->model_tutorial->get_lectures($item['item_product_id']))?></td>
                                         <!-- <td>
                                             <a href="<?=l('lecture').'/'?>" class="btn btn-success" title="View Lecures"><i class="fa fa-sticky-note-o" aria-hidden="true"></i></a>
                                         </td> -->

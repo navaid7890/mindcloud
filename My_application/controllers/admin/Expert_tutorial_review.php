@@ -52,7 +52,7 @@ class Expert_tutorial_review extends MY_Controller {
         // For use IN JS Files
         $config['js_config']['paginate'] = $this->dt_params['paginate'];
 
-        $this->_list_data['tutorial_review_tutorial_id'] = $this->model_tutorial->find_all_list_active(array(),"tutorial_name");
+        $this->_list_data['tutorial_review_tutorial_id'] = $this->model_videos->find_all_list_active(array(),"videos_name");
         // $this->_list_data['learning_journey_category_parent_id'] = $this->model_profession->find_all_list_active(
         //     array('where_string'=>'learning_journey_category_parent_id <= 1')
         //     ,"learning_journey_category_name");

@@ -71,8 +71,8 @@
                                         <div class="video-box">
                                         
                                             <video width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $ct['expert_image'] ?>" controls>
-                                                <source src="<?= g('db.admin.bucket') . $expert_course['course_video'] ?>" type="video/mp4">
-                                                <source src="<?= g('db.admin.bucket') . $expert_course['course_video'] ?>" type="video/ogg">
+                                                <source src="<?= g('db.admin.bucket') . $expert_course['tutorial_video'] ?>" type="video/mp4">
+                                                <source src="<?= g('db.admin.bucket') . $expert_course['tutorial_video'] ?>" type="video/ogg">
                                                 Your browser does not support the video tag.
                                             </video>
                                         </div>
@@ -85,7 +85,7 @@
 
                             <div class="tutorial-footer vid-tran para">
                                 <div class="tutorial-footer-content">
-                                    <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
+                                    <!-- <p>Complete all tutorials of Learning Journey to receive Certificate.</p> -->
                                     <div classs="space"><br><br></div>
                                     <form id="forms-review_us">
                                         <div class="fld-textarea">
