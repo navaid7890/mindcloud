@@ -649,9 +649,7 @@ class Profile extends MY_Controller_Account
 		$phpWord->getCompatibility()->setOoxmlVersion(14);
 		$phpWord->getCompatibility()->setOoxmlVersion(15);
 
-		debug('hi 2');
-		// debug($tootl_vp);
-		 die;
+		
 		// $targetFile = "./global/uploads/";
 		$filename = 'vp.docx';
 
@@ -668,7 +666,9 @@ class Profile extends MY_Controller_Account
 			$section->addText($n['tool_builder_vp_pains'], array('name' => 'arial', 'size' => 14), array('align' => 'left', 'spaceAfter' => 100));
 			 
 		}
-
+		debug('hi 3');
+		// debug($tootl_vp);
+		 die;
 
 		$this->download($filename, $phpWord);
 	}
