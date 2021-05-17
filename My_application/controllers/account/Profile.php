@@ -653,25 +653,27 @@ class Profile extends MY_Controller_Account
 		// $targetFile = "./global/uploads/";
 		$filename = 'vp.docx';
 		debug($tootl_vp);
-		debug('hi 7');
 		
-		 die;
 		// add style settings for the title and paragraph
 		foreach ($tootl_vp as $n) {
-
-			// if(){
-				
-			// }
-			$n['tool_builder_vp_jobs'];
+			debug('hi 8 a');		
+			debug($n);		
+			debug('hi 8 b');
 			$section = $phpWord->addSection();
+			debug('hi 9');
 			$section->addText($n['tool_builder_vp_jobs'], array('bold' => true, 'underline' => 'single', 'name' => 'arial', 'size' => 21, 'color' => 'red'), array('align' => 'center', 'spaceAfter' => 10));
+			
+			debug('hi 10');
 			$section->addTextBreak(1);
+			debug('hi 11');
 			// if(!empty($n['ne_img'])){
 			// 	$section->addImage($targetFile.$n['ne_img'], array('align' => 'center','width'=>200, 'height'=>200));
 			// }
 			$section->addTextBreak(1);
+			debug('hi 12');
 			$section->addText($n['tool_builder_vp_pains'], array('name' => 'arial', 'size' => 14), array('align' => 'left', 'spaceAfter' => 100));
-			 
+			debug('hi 13');
+			die;
 		}
 		
 
