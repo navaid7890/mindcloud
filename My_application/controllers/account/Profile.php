@@ -632,15 +632,15 @@ class Profile extends MY_Controller_Account
 
 		$tootl_vp=[];
 		$tootl_vp[0] = [
-			'tool_builder_vp_jobs'=>'my t 1',
+			'tool_builder_vp_jobs'=>'my tt 1',
 			'tool_builder_vp_pains'=>' de 1',
 		];
 		$tootl_vp[1] = [
-			'tool_builder_vp_jobs'=>'my t 2',
+			'tool_builder_vp_jobs'=>'my tt 2',
 			'tool_builder_vp_pains'=>' de 2',
 		];
 		$tootl_vp[2] = [
-			'tool_builder_vp_jobs'=>'my t 3',
+			'tool_builder_vp_jobs'=>'my tt 3',
 			'tool_builder_vp_pains'=>' de 3',
 		];
 
@@ -652,7 +652,7 @@ class Profile extends MY_Controller_Account
 		
 		// $targetFile = "./global/uploads/";
 		$filename = 'vp.docx';
-		debug($tootl_vp);
+		
 		// add style settings for the title and paragraph
 		foreach ($tootl_vp as $n) {
 
@@ -670,8 +670,8 @@ class Profile extends MY_Controller_Account
 			$section->addText($n['tool_builder_vp_pains'], array('name' => 'arial', 'size' => 14), array('align' => 'left', 'spaceAfter' => 100));
 			 
 		}
-		debug('hi 5');
-		
+		debug('hi 6');
+		debug($tootl_vp);
 		 die;
 
 		$this->download($filename, $phpWord);
