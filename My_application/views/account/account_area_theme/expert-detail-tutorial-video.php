@@ -68,11 +68,11 @@
                            </div>
                         </div>
                         <div class="space"><br><br></div>
-                        <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p>
+                        <!-- <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p> -->
                      </div>
                      <div class="tutorial-footer vid-tran para">
                         <div class="tutorial-footer-content">
-                           <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
+                           <p>Complete this tutorials to receive Certificate.</p>
                            <? //ucfirst($this->session_data['username']);
                            ?>
                            <? //print_r($this->session->userdata); 

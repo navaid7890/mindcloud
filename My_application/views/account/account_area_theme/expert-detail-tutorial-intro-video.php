@@ -85,7 +85,7 @@
 
                             <div class="tutorial-footer vid-tran para">
                                 <div class="tutorial-footer-content">
-                                    <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
+                                    <!-- <p>Complete all tutorials of Learning Journey to receive Certificate.</p> -->
                                     <div classs="space"><br><br></div>
                                     <form id="forms-review_us">
                                         <div class="fld-textarea">
