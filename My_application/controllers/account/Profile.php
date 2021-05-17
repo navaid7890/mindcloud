@@ -644,13 +644,14 @@ class Profile extends MY_Controller_Account
 		// 	'tool_builder_vp_pains'=>' de 3',
 		// ];
 
-		debug($tootl_vp);
-		 die;
 
 		$phpWord = new \PhpOffice\PhpWord\PhpWord();
 		$phpWord->getCompatibility()->setOoxmlVersion(14);
 		$phpWord->getCompatibility()->setOoxmlVersion(15);
 
+		debug('hi');
+		debug($tootl_vp);
+		 die;
 		// $targetFile = "./global/uploads/";
 		$filename = 'vp.docx';
 
