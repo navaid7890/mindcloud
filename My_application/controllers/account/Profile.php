@@ -630,19 +630,19 @@ class Profile extends MY_Controller_Account
 		$tootl_vp = $data['tootl_vp'];
 		
 
-		// $tootl_vp=[];
-		// $tootl_vp[0] = [
-		// 	'tool_builder_vp_jobs'=>'my t 1',
-		// 	'tool_builder_vp_pains'=>' de 1',
-		// ];
-		// $tootl_vp[1] = [
-		// 	'tool_builder_vp_jobs'=>'my t 2',
-		// 	'tool_builder_vp_pains'=>' de 2',
-		// ];
-		// $tootl_vp[2] = [
-		// 	'tool_builder_vp_jobs'=>'my t 3',
-		// 	'tool_builder_vp_pains'=>' de 3',
-		// ];
+		$tootl_vp=[];
+		$tootl_vp[0] = [
+			'tool_builder_vp_jobs'=>'my t 1',
+			'tool_builder_vp_pains'=>' de 1',
+		];
+		$tootl_vp[1] = [
+			'tool_builder_vp_jobs'=>'my t 2',
+			'tool_builder_vp_pains'=>' de 2',
+		];
+		$tootl_vp[2] = [
+			'tool_builder_vp_jobs'=>'my t 3',
+			'tool_builder_vp_pains'=>' de 3',
+		];
 
 
 		$phpWord = new \PhpOffice\PhpWord\PhpWord();
@@ -652,10 +652,14 @@ class Profile extends MY_Controller_Account
 		
 		// $targetFile = "./global/uploads/";
 		$filename = 'vp.docx';
-
+		debug($tootl_vp);
 		// add style settings for the title and paragraph
 		foreach ($tootl_vp as $n) {
 
+			// if(){
+				
+			// }
+			$n['tool_builder_vp_jobs'];
 			$section = $phpWord->addSection();
 			$section->addText($n['tool_builder_vp_jobs'], array('bold' => true, 'underline' => 'single', 'name' => 'arial', 'size' => 21, 'color' => 'red'), array('align' => 'center', 'spaceAfter' => 10));
 			$section->addTextBreak(1);
@@ -666,8 +670,8 @@ class Profile extends MY_Controller_Account
 			$section->addText($n['tool_builder_vp_pains'], array('name' => 'arial', 'size' => 14), array('align' => 'left', 'spaceAfter' => 100));
 			 
 		}
-		debug('hi 3');
-		// debug($tootl_vp);
+		debug('hi 5');
+		
 		 die;
 
 		$this->download($filename, $phpWord);
