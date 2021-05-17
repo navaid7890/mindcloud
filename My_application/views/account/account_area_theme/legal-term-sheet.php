@@ -103,7 +103,7 @@
                                           <textarea name="tool_builder_lts[tool_builder_lts_jv_comp_obligations]"><?= $tool['tool_builder_lts_jv_comp_obligations'] ?></textarea>
                                        </div>
 
-                                       <div>
+                                       <div style="display:none;">
                                        <button id="forms-tool_builder-btn1" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
