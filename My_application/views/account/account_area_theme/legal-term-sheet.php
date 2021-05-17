@@ -71,12 +71,12 @@
                                     <?
 
                                     $param = array();
-                                    $param['order'] = "tool_builder_strg_mkt_id DESC";
-                                    $param['where']['tool_builder_strg_mkt_user_id'] = $this->userid;
-                                    $tool = $this->model_tool_builder_strg_mkt->find_one_active($param);
+                                    $param['order'] = "tool_builder_lts_id DESC";
+                                    $param['where']['tool_builder_lts_user_id'] = $this->userid;
+                                    $tool = $this->model_tool_builder_lts->find_one_active($param);
 
                                     ?>
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts1" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">Items For Consideration For Draft Term Sheet <span>In your Tools, you have a Draft MOU of International JV (for a new partnership or a new company). Please find below the related list of items for consideration in the corresponding Draft Term Sheet.</span></label>
                                        </div>
@@ -94,23 +94,23 @@
                                                 - Are any of the parties subsidiary or holding companies?
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">1.1 Will the JV Company also have obligations?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn1" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts2" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">2. What is the business of the JV Company? <span>
                                                 - Is the purpose of the joint venture to carry out a specific project or a continuing business?
@@ -122,68 +122,68 @@
                                                 - What are the parties' objectives?
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">2.1 What is the likely turnover or market share?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">2.2 What regulatory consents, approvals and licenses will be required for the JV Company and its business?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">2.3 Where will the business be based?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn2" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts3" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">3. Regulatory Approvals<br>3. Is the JV Company business a regulated activity? (financial services? Telecom? Healthcare?)</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">3.1 Are there any regulatory approvals in overseas jurisdictions?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">3.2 Is it possible that the JV Company will be regarded as a "collective investment scheme"?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">3.3 Should provision be made for the parties to provide information or assistance in the event of any regulatory enquiry after the JV Company has been set up</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn3" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts4" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">4. Structure & Setting-up of the JV Company<br>4. Is the JV Company business to be carried out through a separate company? or does it fit within one of the parties’ existing business? <span>
                                                 - A collaboration agreement, for joint marketing, joint research or the development and manufacture of goods to a particular design?
@@ -195,41 +195,41 @@
                                                 - A distribution or agency agreement?
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">4.1 What will the legal the form of the JV Company be?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">4.2 In what jurisdiction(s) will the JV Company be established?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">4.3 What formalities are required for establishing the relevant structure, including relevant registration requirements and approvals? How long is it likely to take?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">4.4 Applicable tax considerations?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn4" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts5" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">5. Financing the JV Company<br>5. Will each party provide funding?<span>
                                                 -In what proportion?
@@ -239,19 +239,19 @@
                                                 -Will the initial investment be in cash or in kind?
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">5.1 Are there advantages (in relation to tax or otherwise) in funding through debt rather than equity, or vice versa?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">5.2 Is third party funding required? Banks? Security? Who will provide it?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
@@ -265,23 +265,23 @@
                                                 - Will each party be required (or entitled) to contribute to continuing calls for funding, pro rata to its original investment or otherwise?
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">5.4 What happens if one of the parties defaults?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn5" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts6" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">6. Contribution of Assets to the JV Company<br>6. Will either JV party contribute an asset to the JV Company?<span>
                                                 - On what terms?
@@ -295,30 +295,30 @@
                                                 - How are contributed assets to be valued, and how will any adjustments be made for any shortfall or excess in relation to any contributor's proportionate funding obligation?
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">6.1 Do assets need to be valued (if, for example, they are transferred in consideration for the issue of shares in a joint venture company)?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">6.2 When can assets be contributed? Regulatory approvals? Transferability restrictions? What due diligence investigations will be made into assets being contributed and what warranties and indemnities will be given in this regard and to whom?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn6" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts7" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">7. Competition & Restrictions<br>7. Will the parties be prohibited from competing with the JV Company?<span>
                                                 -Territory limitations
@@ -329,43 +329,43 @@
 
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">7.1 Will the parties be prevented from soliciting customers and employees from the joint venture?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">7.2 How will the business of the JV Company be defined for the purposes of such restrictions?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">7.3 Will the parties have obligations to refer business to the joint venture?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">7.4 How will the business of the JV Company be defined for the purposes of such restrictions?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn7" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts8" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">8. Board of Directors<br>8. Board of Directors composition and Chairperson<span>
                                                 -What rights will each party have to appoint directors? And chairperson?
@@ -376,37 +376,37 @@
 
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">8.1 How will the General Manager/CEO be appointed?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">8.2 Shareholder matters vs Board matters vs management matters</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">8.3 Conflict Situations</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
 
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn8" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts9" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">9. Shareholders <br>9. Ownership of the JV Company<span>
                                                 - Shareholding and voting rights of each party are equal?
@@ -417,29 +417,29 @@
 
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">9.1 What quorum and notice requirements will apply for shareholder meetings?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">9.2 Should there be any limitation on possible locations for shareholders' meetings?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn9" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts10" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">10. Control & Minority Protection <br>10. Minority protection against majority decision at shareholder and/or director :<span>
                                                 - Requirements for unanimity?
@@ -450,35 +450,35 @@
 
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">10.1 Class rights attaching to shares?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">10.2 Will any such protections extend to all matters for decision or just to some?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">10.3 What remedies are available if minority rights are breached?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn10" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts11" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">11. Transfer of Shares <br>11. Are transfers of shares permitted?<span>
                                                 - Freely?
@@ -495,72 +495,72 @@
 
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">11.1 How will shares be valued for the purposes of the transfer provisions?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">11.2 Will any new shareholder be required to become a party to the joint venture agreement?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">11.3 Will the joint venture's name have to be changed if shares are transferred?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">11.4 What will happen to any arrangements between a leaving shareholder and the JV Company?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">11.5 What happens to monies owed to the JV Company by the outgoing shareholder?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">11.6 Key Person arrangements?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">11.7 Change in control of a shareholder? Insolvency of shareholder?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">11.8 Breach of undertakings by a shareholder?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">11.9 Death of a shareholder?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn11" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts12" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">12. Deadlock <br>12. When does deadlock occur?<span>
                                                 - Issues specified in the JV agreement
@@ -568,7 +568,7 @@
                                                 - issues designated as deadlock issues by any of the JV parties
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
@@ -582,30 +582,30 @@
                                                 - Reference to chairpersons or chief executives of the parties to the joint venture?
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">12.2 Will any "cooling off" period apply?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">12.3 If deadlock occurs, can one or more parties terminate the joint venture? buy the shares of the other JV party and if so at what price? Trigger the sale of the JV Company to a third party and if so at what valuation?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn12" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts13" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">13. Continuous Business Involvement of the JV Parties:<br>13. Will any of the JV parties supply support to the JV Company?<span>
                                                 - Offices? or other accommodation, support services or facilities, or training for staff?
@@ -615,7 +615,7 @@
                                                 - What happens if the JV party stops being a JV party?
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
@@ -625,22 +625,22 @@
                                                 - Impact on the JV party’s entitlement to the profits or responsibility for losses?
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">13.2 Flow of information to and reporting from the JV Company to the parties? Procedures. Frequency. Format.</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn13" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts14" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">14. Employees<br>14. Will the JV Company need employees?<span>
                                                 - New employees
@@ -649,136 +649,136 @@
 
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">14.1 Consider the management structure</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">14.2 Consider share option or incentive schemes</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">14.3 Pension arrangements?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">14.4 Will any of the JV parties have to make redundancies as a result of the creation of the joint venture? If so, how will the cost be borne by the parties?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn14" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts15" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">15. Intellectual Property<br>15. What IP Rights are to be contributed to the joint venture?<span>
                                                 - Should they be licensed or transferred?
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">15.1 Who will own the IP Rights developed by the JV Company? Or by any of the parties?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">15.2 Who will have the right to exploit the IP Rights? Will there be any compensation for this?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">15.3 Will the parties have independent rights over confidential information, know-how and other IP Rights belonging to the JV Company?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">15.4 What will happen to the IP Rights on termination of the joint venture? <span>- Will any of the parties require a license of any IP Rights following termination? <br> - Will there be different methods of dealing with IP Rights depending on the exit route used?</span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn15" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts16" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">16. Administration<br>16. Name of the joint venture</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">16.1 Joint venture's lending bankers</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">16.2 Lawyers (company agreements, supplier agreements, IP, IT etc)</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">16.3 Auditors (financial year, accounting and auditing procedures)</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">16.4 What other professional advisers will be appointed, and by whom?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">16.5 Where will the joint venture's registered office and headquarters be located?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
                                           <label for="">16.6 What will be the dividend policy? How much will be distributed to the parties, when and who will make decisions on this?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn16" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
                                  <div class="tab">
-                                    <form id="regForm" class="next-prevBtn">
+                                    <form id="form-lts17" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">17. Termination<br>17. Is the joint venture for a fixed term or indefinite in duration?</label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
@@ -792,7 +792,7 @@
                                                 - The transfer of any party's shares
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
@@ -804,7 +804,7 @@
                                                 - By notice of termination given after the expiry of a minimum fixed term
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div class="fld-textarea">
@@ -816,11 +816,11 @@
                                                 - The assumption or discharge of any other liabilities of the joint venture.
                                              </span></label>
                                           <div class="space"><br></div>
-                                          <textarea oninput="this.className = ''"></textarea>
+                                          <textarea name="tool_builder_lts[tool_builder_vp_jobs]"><?= $tool['tool_builder_vp_jobs'] ?></textarea>
                                        </div>
 
                                        <div>
-                                          <button type="submit">SUBMIT</button>
+                                       <button id="forms-tool_builder-btn17" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
