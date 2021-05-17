@@ -20,7 +20,7 @@ class Tool_builder_lts extends MY_Controller {
         global $config;
         
         parent::__construct();
-        $this->dt_params['dt_headings'] = "tool_builder_lts_id,tool_builder_lts_user_id,tool_builder_lts_identify_parties,tool_builder_lts_jv_comp_obligations,tool_builder_lts_approval_status,tool_builder_lts_status";
+        $this->dt_params['dt_headings'] = "toolb_lts_id,toolb_lts_user_id,toolb_lts_identify_parties,toolb_lts_jv_comp_obligations,toolb_lts_approval_status,toolb_lts_status";
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
         $this->dt_params['action'] = array(
                                         "hide" => false ,
@@ -63,10 +63,10 @@ class Tool_builder_lts extends MY_Controller {
     public function add($id='', $data=array())
     {  
         
-        $tool_builder_lts = $_POST['tool_builder_lts'];
+        $toolb_lts = $_POST['toolb_lts'];
         
-        if ($tool_builder_lts['tool_builder_lts_approval_status'] == 1) {
-            $this->model_email->contactInquiry2($tool_builder_lts['tool_builder_lts_user_id']);
+        if ($toolb_lts['toolb_lts_approval_status'] == 1) {
+            $this->model_email->contactInquiry2($toolb_lts['toolb_lts_user_id']);
          
 
            //debug($this->model_email,1);
