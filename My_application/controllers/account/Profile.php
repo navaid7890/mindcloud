@@ -649,8 +649,8 @@ class Profile extends MY_Controller_Account
 		$phpWord->getCompatibility()->setOoxmlVersion(14);
 		$phpWord->getCompatibility()->setOoxmlVersion(15);
 
-		debug('hi');
-		debug($tootl_vp);
+		debug('hi 2');
+		// debug($tootl_vp);
 		 die;
 		// $targetFile = "./global/uploads/";
 		$filename = 'vp.docx';
