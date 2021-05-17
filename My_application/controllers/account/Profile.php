@@ -645,7 +645,7 @@ class Profile extends MY_Controller_Account
 		// ];
 
 		debug($tootl_vp);
-		// die;
+		 die;
 
 		$phpWord = new \PhpOffice\PhpWord\PhpWord();
 		$phpWord->getCompatibility()->setOoxmlVersion(14);
