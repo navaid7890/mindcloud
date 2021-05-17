@@ -628,7 +628,8 @@ class Profile extends MY_Controller_Account
 		$vp['where']['tool_builder_vp_user_id'] = $this->userid;
 		$data['tootl_vp'] = $this->model_tool_builder_vp->find_all_active($vp);
 		$tootl_vp = $data['tootl_vp'];
-
+		debug($tootl_vp);
+		die;
 
 		$phpWord = new \PhpOffice\PhpWord\PhpWord();
 		$phpWord->getCompatibility()->setOoxmlVersion(14);
