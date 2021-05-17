@@ -56,6 +56,7 @@ var Form = function () {
     tool_pmmt: base_url + "contact_us/tool_pmmt_formsend",
     tool_fm_income: base_url + "contact_us/tool_income_formsend",
     tool_lts: base_url + "contact_us/tool_lts_formsend",
+    tool_ids: base_url + "contact_us/tool_ids_formsend",
     //account_activate_process : base_url + "account/active_account/process",
     //review : base_url + "customer_review",
   };
@@ -537,6 +538,57 @@ var Form = function () {
       }
       return false;
     },
+
+    
+    tool_ids: function (form) {
+
+
+
+      $('#forms-tool_builder-btn1').prop('disabled', true);
+      $('#forms-tool_builder-btn2').prop('disabled', true);
+      $('#forms-tool_builder-btn3').prop('disabled', true);
+      $('#forms-tool_builder-btn4').prop('disabled', true);
+      $('#forms-tool_builder-btn5').prop('disabled', true);
+      $('#forms-tool_builder-btn6').prop('disabled', true);
+      $('#forms-tool_builder-btn7').prop('disabled', true);
+      $('#forms-tool_builder-btn8').prop('disabled', true);
+      $('#forms-tool_builder-btn9').prop('disabled', true);
+      $('#forms-tool_builder-btn10').prop('disabled', true);
+      $('#forms-tool_builder-btn11').prop('disabled', true);
+
+      var data = form.serialize();
+      response = AjaxRequest.fire(urls.tool_ids, data);
+      $('#forms-tool_builder-btn1').prop('disabled', false);
+      $('#forms-tool_builder-btn2').prop('disabled', false);
+      $('#forms-tool_builder-btn3').prop('disabled', false);
+      $('#forms-tool_builder-btn4').prop('disabled', false);
+      $('#forms-tool_builder-btn5').prop('disabled', false);
+      $('#forms-tool_builder-btn6').prop('disabled', false);
+      $('#forms-tool_builder-btn7').prop('disabled', false);
+      $('#forms-tool_builder-btn8').prop('disabled', false);
+      $('#forms-tool_builder-btn9').prop('disabled', false);
+      $('#forms-tool_builder-btn10').prop('disabled', false);
+      $('#forms-tool_builder-btn11').prop('disabled', false);
+
+      // return false;
+
+      if (response.status) {
+
+        Toastr.success(response.msg.desc, 'Go To Next Step');
+        $("#form-ids").find('input[type=text],input[type=email],textarea').val('');
+
+        return false;
+      }
+      else {
+        Toastr.error(response.msg.desc, 'Error');
+
+        return false;
+      }
+      return false;
+    },
+
+
+
     evaluation: function (form) {
       // Disable the submit button to prevent repeated clicks:
       $('#forms-evaluation-btn').prop('disabled', true);
@@ -1306,12 +1358,88 @@ $(function () {
   });
 });
 
+//   for fm_ids tool
 
 
+$(function () {
+  var $form = $('#form-ids1');
+  $form.submit(function (event) {
+    Form.tool_ids($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#form-ids2');
+  $form.submit(function (event) {
+    Form.tool_ids($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#form-ids3');
+  $form.submit(function (event) {
+    Form.tool_ids($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#form-ids4');
+  $form.submit(function (event) {
+    Form.tool_ids($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#form-ids5');
+  $form.submit(function (event) {
+    Form.tool_ids($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#form-ids6');
+  $form.submit(function (event) {
+    Form.tool_ids($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#form-ids7');
+  $form.submit(function (event) {
+    Form.tool_ids($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#form-ids8');
+  $form.submit(function (event) {
+    Form.tool_ids($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#form-ids9');
+  $form.submit(function (event) {
+    Form.tool_ids($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#form-ids10');
+  $form.submit(function (event) {
+    Form.tool_ids($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#form-ids11');
+  $form.submit(function (event) {
+    Form.tool_ids($form);
+    return false;
+  });
+});
 
-//   for fm_lts tool end
-
-
+//   for fm_ids tool end
 
 /*###########
 Contact us Ajax Script Start

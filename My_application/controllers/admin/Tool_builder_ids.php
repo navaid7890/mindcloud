@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Tool_builder_strg_mkt extends MY_Controller {
+class Tool_builder_ids extends MY_Controller {
 
     /**
      * profile page
@@ -20,7 +20,7 @@ class Tool_builder_strg_mkt extends MY_Controller {
         global $config;
         
         parent::__construct();
-        $this->dt_params['dt_headings'] = "tool_builder_strg_mkt_id,tool_builder_strg_mkt_user_id,tool_builder_strg_mkt_situational_analysis,tool_builder_strg_mkt_mission,tool_builder_strg_mkt_approval_status,tool_builder_strg_mkt_status";
+        $this->dt_params['dt_headings'] = "tool_builder_ids_id,tool_builder_ids_user_id,tool_builder_ids_value_proposition,tool_builder_ids_problem,tool_builder_ids_approval_status,tool_builder_ids_status";
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
         $this->dt_params['action'] = array(
                                         "hide" => false ,
@@ -63,10 +63,10 @@ class Tool_builder_strg_mkt extends MY_Controller {
     public function add($id='', $data=array())
     {  
         
-        $tool_builder_strg_mkt = $_POST['tool_builder_strg_mkt'];
+        $tool_builder_ids = $_POST['tool_builder_ids'];
         
-        if ($tool_builder_strg_mkt['tool_builder_strg_mkt_approval_status'] == 1) {
-            $this->model_email->contactInquiry2($tool_builder_strg_mkt['tool_builder_strg_mkt_user_id']);
+        if ($tool_builder_ids['tool_builder_ids_approval_status'] == 1) {
+            $this->model_email->contactInquiry2($tool_builder_ids['tool_builder_ids_user_id']);
          
 
            //debug($this->model_email,1);
