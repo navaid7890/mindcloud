@@ -111,7 +111,7 @@ a.btn-theme>span { background: #2b2b2b; }
 /* Menu Css */
 .cart-icon > i { color: #1d90d9; }
 .menu { font-size: 0px; display: inline-block; vertical-align: middle; }
-.menu li { display: inline-block; vertical-align: middle; margin-right: 38px; }
+.menu li {display: inline-block;vertical-align: middle;margin-right: 16px;}
 .menu li.last { margin: 0; }
 .menu li a { text-transform: capitalize; display: block; font-size: 14px; color: #33415C; font-weight: 300; }
 .menu li:nth-last-child(-n+2) a { display: none; }
