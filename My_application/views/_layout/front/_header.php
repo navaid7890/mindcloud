@@ -17,7 +17,7 @@
 					<img src="<?=i('')?>logo.png" alt="">
 					</a>
 				</div>
-				<div class="col-md-8">
+				<div class="col-md-7">
 					<div class="menuWrap">
 					<ul class="menu">
 						<li><a class="active" href="<?=l('expert-tutorial')?>">Experts Tutorials</a></li>
@@ -29,7 +29,7 @@
 					</ul>
 					</div>
 				</div>
-				<div class="col-md-2 text-right">
+				<div class="col-md-3 text-right">
 					<ul class="login-btn">
 					<li><a href="<?=l('cart')?>" class="cart-icon"><i class="fas fa-shopping-cart"><sup class="cart_body">0</sup></i> </a></li>
 						<?php if(isset($this->session->userdata['logged_in_front']) AND array_filled($this->session->userdata['logged_in_front'])) : ?>
