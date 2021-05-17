@@ -158,7 +158,7 @@ class MY_Controller_Admin extends CI_Controller {
 
 	public function get_mysqli() {
         $db = (array)get_instance()->db;
-        return mysqli_connect('localhost', $db['username'], $db['password'], $db['database']);
+        return mysqli_connect($db['hostname'], $db['username'], $db['password'], $db['database']);
     }
 
     // public function get_mysqli() {
