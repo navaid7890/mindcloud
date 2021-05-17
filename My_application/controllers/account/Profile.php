@@ -624,12 +624,28 @@ class Profile extends MY_Controller_Account
 	}
 	public function dl_tools_vp()
 	{
-		$vp = array();
-		$vp['where']['tool_builder_vp_user_id'] = $this->userid;
-		$data['tootl_vp'] = $this->model_tool_builder_vp->find_all_active($vp);
-		$tootl_vp = $data['tootl_vp'];
-		debug($tootl_vp);
-		die;
+		// $vp = array();
+		// $vp['where']['tool_builder_vp_user_id'] = $this->userid;
+		// $data['tootl_vp'] = $this->model_tool_builder_vp->find_all_active($vp);
+		// $tootl_vp = $data['tootl_vp'];
+		
+
+		$tootl_vp=[];
+		$tootl_vp[0] = [
+			'tool_builder_vp_jobs'=>'my t 1',
+			'tool_builder_vp_pains'=>' de 1',
+		];
+		$tootl_vp[1] = [
+			'tool_builder_vp_jobs'=>'my t 2',
+			'tool_builder_vp_pains'=>' de 2',
+		];
+		$tootl_vp[2] = [
+			'tool_builder_vp_jobs'=>'my t 3',
+			'tool_builder_vp_pains'=>' de 3',
+		];
+
+		// debug($tootl_vp);
+		// die;
 
 		$phpWord = new \PhpOffice\PhpWord\PhpWord();
 		$phpWord->getCompatibility()->setOoxmlVersion(14);
@@ -649,7 +665,7 @@ class Profile extends MY_Controller_Account
 			// }
 			$section->addTextBreak(1);
 			$section->addText($n['tool_builder_vp_pains'], array('name' => 'arial', 'size' => 14), array('align' => 'left', 'spaceAfter' => 100));
-			 break;
+			 
 		}
 
 
