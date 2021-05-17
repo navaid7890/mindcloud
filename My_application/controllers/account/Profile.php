@@ -639,6 +639,8 @@ class Profile extends MY_Controller_Account
 		$filename = 'vp.docx';
 
 		// add style settings for the title and paragraph
+		// debug($tootl_vp);
+		// die;
 		foreach ($tootl_vp as $n) {
 
 			$section = $phpWord->addSection();
@@ -649,7 +651,7 @@ class Profile extends MY_Controller_Account
 			// }
 			$section->addTextBreak(1);
 			$section->addText($n['tool_builder_vp_pains'], array('name' => 'arial', 'size' => 14), array('align' => 'left', 'spaceAfter' => 100));
-			 break;
+			 
 		}
 
 
