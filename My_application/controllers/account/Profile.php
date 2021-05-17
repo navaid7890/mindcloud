@@ -644,7 +644,7 @@ class Profile extends MY_Controller_Account
 		// 	'tool_builder_vp_pains'=>' de 3',
 		// ];
 
-		// debug($tootl_vp);
+		debug($tootl_vp);
 		// die;
 
 		$phpWord = new \PhpOffice\PhpWord\PhpWord();
