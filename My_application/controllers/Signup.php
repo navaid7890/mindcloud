@@ -99,9 +99,11 @@ class Signup extends MY_Controller {
 					{
 						// sent email to user for info and email verification
 						$this->model_email->notification_register($user_id , 'user');
+						debug($this->model_email);
 
 						// sent email to admin for one user added
 						$this->model_email->notification_register($user_id , 'admin');
+						debug($this->model_email,1);
 					}
 
 
