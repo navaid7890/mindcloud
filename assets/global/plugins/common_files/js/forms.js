@@ -59,6 +59,7 @@ var Form = function () {
     tool_ids: base_url + "contact_us/tool_ids_formsend",
     tool_fm_bss : base_url + "contact_us/tool_bss_formsend",
     tool_fm_cfs : base_url + "contact_us/tool_cfs_formsend",
+    tool_fm_beps : base_url + "contact_us/tool_beps_formsend",
     //account_activate_process : base_url + "account/active_account/process",
     //review : base_url + "customer_review",
   };
@@ -1003,6 +1004,34 @@ var Form = function () {
     },
 
 
+    tool_fm_beps : function(form) {
+                            
+
+      $('#forms-tool_builder-btn1').prop('disabled', true);  
+      
+      var data = form.serialize();
+      response = AjaxRequest.fire(urls.tool_fm_beps, data) ;
+
+      $('#forms-tool_builder-btn1').prop('disabled', false);   
+
+      // return false ;
+      
+      if(response.status){
+          
+          Toastr.success(response.msg.desc,'Go To Next Step');  
+          $("#form-income").find('input[type=text],input[type=email],textarea').val('');
+
+          return false;
+      }
+      else{
+          Toastr.error(response.msg.desc,'Error');
+        
+          return false;
+      }
+      return false;
+  },
+
+
 
   }; // End of class return
 
@@ -1541,6 +1570,22 @@ $(function() {
  
 
 //   for fm_cfs tool end
+
+
+//   for fm_beps tool
+
+
+$(function() {
+  var $form = $('#form-beps');
+  $form.submit(function(event) {
+    Form.tool_fm_beps($form);
+    return false;
+  });
+});  
+
+ 
+
+//   for fm_beps tool end
 
 
 //   for fm_bss tool
