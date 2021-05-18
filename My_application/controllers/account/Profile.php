@@ -624,6 +624,8 @@ class Profile extends MY_Controller_Account
 	}
 	public function dl_tools_vp()
 	{
+		phpinfo();
+		die;
 		$vp = array();
 		$vp['where']['tool_builder_vp_user_id'] = $this->userid;
 		$data['tootl_vp'] = $this->model_tool_builder_vp->find_all_active($vp);
