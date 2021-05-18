@@ -520,6 +520,18 @@ class Profile extends MY_Controller_Account
 		$par2 = array();
 		$par2['order'] = "expert_id ASC";
 		$data['ex'] = $this->model_expert->find_all_active($par2);
+
+		$coursecat=array();
+        $coursecat['where']['cp_category_id']=intval($this->input->get('cat'));
+        $cate = $this->model_course_category->find_all_active($coursecat);
+
+       // debug($cate);
+  
+        foreach($cate as $key => $value)
+        {
+         $all[]=$value['cp_course_id'];
+        }
+        
 		//debug($data['main_categories']);
 
 		$param = array();
@@ -528,9 +540,6 @@ class Profile extends MY_Controller_Account
 		}
 
 
-		if (isset($_GET['cat']) and intval($_GET['cat']) > 0) {
-			$param['where']['tutorial_category_id'] = intval($this->input->get('cat'));
-		}
 
 
 
@@ -539,6 +548,7 @@ class Profile extends MY_Controller_Account
 
 		$param['order'] = "tutorial_id ASC";
 		$param['where']['tutorial_free_status'] = 1;
+		$param['where_in']['tutorial_id']=$all;
 
 		$data['art'] = $this->model_tutorial->find_all_active($param);
 
