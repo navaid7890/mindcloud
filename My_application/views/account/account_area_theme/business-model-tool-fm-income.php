@@ -21,7 +21,7 @@
                            <div class="col-md-7">
                               <ul class="bredcum-links">
                                  <li><a href="#">Learning Journey</a></li>
-                                 <li><a href="#">Business Model Canvas</a></li>
+                                 <li><a href="#">Income Statement</a></li>
                                  <li><a href="#">Tool and Tool Builder</a></li>
                               </ul>
                            </div>
@@ -42,9 +42,9 @@
                         <div class="tutorial-mid-content">
                            <div class="row align-items-center">
                               <div class="col-lg-9 col-md-12">
-                                 <h4>Tool and Tool Builder - Financial Management</h4>
+                                 <h4>Tool and Tool Builder - Income Statement</h4>
                                  <div class="space"><br></div>
-                                 <p>Complete these steps to build your <strong> Financial Management. </strong></p>
+                                 <p>Complete these steps to build your <strong> Income Statement. </strong></p>
                               </div>
                               <div class="col-lg-3 col-md-12 text-right">
                               <a href="<?= base_url()?>account/profile/dl_tools_vp"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
