@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Tool_builder_lts extends MY_Controller {
+class Business_tool_fm_beps extends MY_Controller {
 
     /**
      * profile page
@@ -20,7 +20,7 @@ class Tool_builder_lts extends MY_Controller {
         global $config;
         
         parent::__construct();
-        $this->dt_params['dt_headings'] = "tool_builder_lts_id,tool_builder_lts_user_id,tool_builder_lts_identify_parties,tool_builder_lts_jv_comp_obligations,tool_builder_lts_approval_status,tool_builder_lts_status";
+        $this->dt_params['dt_headings'] = "tool_builder_id,tool_builder_user_id,tool_builder_currency,tool_builder_price_per_unit,cash,tool_builder_approval_status,tool_builder_status";
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
         $this->dt_params['action'] = array(
                                         "hide" => false ,
@@ -63,10 +63,10 @@ class Tool_builder_lts extends MY_Controller {
     public function add($id='', $data=array())
     {  
         
-        $tool_builder_lts = $_POST['tool_builder_lts'];
+        $tool_builder = $_POST['tool_builder'];
         
-        if ($tool_builder_lts['tool_builder_lts_approval_status'] == 1) {
-            $this->model_email->contactInquiry2($tool_builder_lts['tool_builder_lts_user_id']);
+        if ($tool_builder['tool_builder_approval_status'] == 1) {
+            $this->model_email->contactInquiry2($tool_builder['tool_builder_user_id']);
          
 
            //debug($this->model_email,1);
