@@ -791,7 +791,7 @@ var Form = function () {
       var data = form.serialize();
       var s = AjaxRequest.fire(urls.signup, data);
 
-       return false;    //for debugging
+      // return false;    //for debugging
 
       if (s.status) {
         form.find('#signup-btn').prop('disabled', false);
