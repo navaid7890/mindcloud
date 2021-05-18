@@ -1,5 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+<<<<<<< HEAD
 ERROR - 2021-05-18 07:33:56 --> 404 Page Not Found: Profile/profile.png
 ERROR - 2021-05-18 07:34:03 --> 404 Page Not Found: admin/Profile/profile.png
 ERROR - 2021-05-18 07:34:06 --> 404 Page Not Found: admin/Tutorial/profile
@@ -23,3 +24,15 @@ ERROR - 2021-05-18 09:37:38 --> 404 Page Not Found: account/Profile/assets
 ERROR - 2021-05-18 09:38:26 --> 404 Page Not Found: account/Profile/assets
 ERROR - 2021-05-18 09:41:29 --> 404 Page Not Found: account/Profile/assets
 ERROR - 2021-05-18 09:41:35 --> 404 Page Not Found: account/Profile/assets
+=======
+ERROR - 2021-05-18 06:07:27 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-18 06:16:55 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-18 06:17:47 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-18 06:17:56 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-18 06:20:58 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-18 06:21:18 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-18 06:35:59 --> 404 Page Not Found: Front_assets/images
+ERROR - 2021-05-18 06:36:33 --> 404 Page Not Found: Front_assets/images
+ERROR - 2021-05-18 06:48:00 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-18 06:50:29 --> 404 Page Not Found: account/Profile/assets
+>>>>>>> fazal
