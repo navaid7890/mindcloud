@@ -1,5 +1,11 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+<<<<<<< HEAD
+ERROR - 2021-05-07 11:25:59 --> 404 Page Not Found: account/Profile/icons8_user161673589418.png
+ERROR - 2021-05-07 11:26:14 --> 404 Page Not Found: account/Profile/assets
+ERROR - 2021-05-07 11:26:40 --> 404 Page Not Found: account/Profile/tools_bss
+ERROR - 2021-05-07 11:26:50 --> 404 Page Not Found: account/Profile/assets
+=======
 ERROR - 2021-05-07 09:20:51 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-05-07 09:20:51 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
 ERROR - 2021-05-07 09:20:51 --> Severity: Warning --> Illegal string offset 'page_title_min' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 446
@@ -111,3 +117,4 @@ ERROR - 2021-05-07 12:01:39 --> Severity: Warning --> Illegal string offset 'for
 ERROR - 2021-05-07 12:01:39 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-05-07 12:01:39 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-05-07 09:45:32 --> 404 Page Not Found: Course_detail/index
+>>>>>>> QA

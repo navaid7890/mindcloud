@@ -1360,6 +1360,38 @@ $(function () {
 
 //   for fm_ids tool
 
+//   for fm_cfs tool
+
+
+$(function() {
+  var $form = $('#form-cfs');
+  $form.submit(function(event) {
+    Form.tool_fm_cfs($form);
+    return false;
+  });
+});  
+
+ 
+
+//   for fm_cfs tool end
+
+
+//   for fm_bss tool
+
+
+$(function() {
+  var $form = $('#form-bss');
+  $form.submit(function(event) {
+    Form.tool_fm_bss($form);
+    return false;
+  });
+});  
+
+ 
+
+//   for fm_bss tool end
+
+
 
 $(function () {
   var $form = $('#form-ids1');
