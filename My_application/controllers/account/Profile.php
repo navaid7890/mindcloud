@@ -837,7 +837,7 @@ class Profile extends MY_Controller_Account
 		$data['user_data'] = $this->layout_data['user_data'];
 
 		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
-		$data['learn_content'] = $this->model_learning_journey_content->find_all_active($param);
+		// $data['learn_content'] = $this->model_learning_journey_content->find_all_active($param);
 		$this->load_view('business', $data);
 	}
 
