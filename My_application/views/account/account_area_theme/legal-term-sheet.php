@@ -47,7 +47,7 @@
                                  <p>Complete these steps to build your <strong> Business Model Canvas. </strong></p>
                               </div>
                               <div class="col-lg-3 col-md-12 text-right">
-                                 <a href="#"> <img src="assets/images/dashboard/home/icons/4.svg" alt=""></a>
+                              <a href="<?= base_url()?>account/profile/dl_tools_vp"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
                               </div>
                            </div>
                         </div>
@@ -103,7 +103,7 @@
                                           <textarea name="tool_builder_lts[tool_builder_lts_jv_comp_obligations]"><?= $tool['tool_builder_lts_jv_comp_obligations'] ?></textarea>
                                        </div>
 
-                                       <div>
+                                       <div style="display:none;">
                                        <button id="forms-tool_builder-btn1" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
