@@ -257,32 +257,41 @@ class Quiz extends MY_Controller {
     // {
     //   $this->load->library('excel');
 
+    //   $param=array();
+    //   $param['where']['tool_builder_user_id']=$this->userid; 
+    //   $employee_data = $this->model_tool_builder->find_one_active($param);
     //   $object = new PHPExcel();
 
     //   $object->setActiveSheetIndex(0);
     
-    //   $table_columns = array("Name", "Address", "Gender", "Designation", "Age");
+    //   // $table_columns = array("Name", "Address", "Gender", "Designation", "Age");
     
     //   $column = 0;
     
-    //   foreach($table_columns as $field)
+    //   foreach($employee_data as $field =>$value)
     //   {
+    //    // debug($field);
     //    $object->getActiveSheet()->setCellValueByColumnAndRow($column, 1, $field);
     //    $column++;
     //   }
     
-    //   $employee_data = $this->model_tool_builder->find_all_active();
+    
     
     //   $excel_row = 2;
-    
-    //   foreach($employee_data as $row)
-    //   {
-    //    $object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, $row->name);
-    //    $object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->address);
-    //    $object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->gender);
-    //    $object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, $row->designation);
-    //    $object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, $row->age);
-    //    $excel_row++;
+    //   $count=0;
+    //   foreach($employee_data as $key =>$row)
+    //   { 
+    //     // debug($key);
+    //  //  debug($row['tool_builder_customer_segments']);
+
+  
+    //    $object->getActiveSheet()->setCellValueByColumnAndRow($count, $excel_row, $row);
+    //   //  $object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->address);
+    //   //  $object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->gender);
+    //   //  $object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, $row->designation);
+    //   //  $object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, $row->age);
+    //   $count++;  
+    //  // $excel_row++;
     //   }
     
     //   $object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel5');
@@ -290,6 +299,52 @@ class Quiz extends MY_Controller {
     //   header('Content-Disposition: attachment;filename="Employee Data.xls"');
     //   $object_writer->save('php://output');
     //  }
+    
+
+
+     public function test()
+    {
+      require_once APPPATH."/third_party/PHPExcel/IOFactory.php"; 
+      global $config;
+      $this->load->library('excel');
+
+      $param=array();
+      $param['where']['tool_builder_user_id']=$this->userid; 
+      $employee_data = $this->model_tool_builder->find_one_active($param);
+      $object = new PHPExcel();
+
+ 
+   
+      $file_path =  $config['base_url'].'assets/front_assets/images/test.xlsx';
+
+      //include 'Classes/PHPExcel/IOFactory.php';
+      $inputFileName = $file_path; 
+      $objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
+      $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
+      $arrayCount = count($allDataInSheet);  // Here get total count of row in that Excel sheet
+      for($i=2;$i<=$arrayCount;$i++)
+      {                   
+          // 'product'=$allDataInSheet[$i]["C"],
+          // 'brand'=$allDataInSheet[$i]["I"],
+          // 'standard'=$allDataInSheet[$i]["J"]
+      }
+    
+      // $excel_row = 2;
+      // $count=0;
+      // foreach($employee_data as $key =>$row)
+      // { 
+
+  
+      //  $object->getActiveSheet()->setCellValueByColumnAndRow($count, $excel_row, $row);
+      //     $count++;  
+
+      // }
+      // $filename=$config['base_url'].'assets/front_assets/images/test.xlsx';
+      // $object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel5');
+      // header('Content-Type: application/vnd.ms-excel');
+      // header('Content-Disposition: attachment;filename="'.$filename.'"');
+      // $object_writer->save('php://output');
+     }
     
 
 
