@@ -28,7 +28,7 @@ global $config;
             <div class="form-group ">
             <div class="">
             <div data-provides="uploadfile" class="uploadfile uploadfile-new">
-            <div style="max-width: 200px; max-height: 150px;" class="uploadfile-new thumbnail">
+            <div style="max-width: 200px; max-height: 100%;" class="uploadfile-new thumbnail">
             <?php
             if(!empty($form_data['tutorial']['tutorial_image2'])){
             ?>
@@ -71,7 +71,7 @@ $max_images = 4;
             <div class="form-group ">
             <div class="">
             <div data-provides="uploadfile" class="uploadfile uploadfile-new">
-            <div style="max-width: 200px; max-height: 150px;" class="uploadfile-new thumbnail">
+            <div style="max-width: 200px; max-height: 100%;" class="uploadfile-new thumbnail">
 
             <?php
             if(!empty($form_data['tutorial']['tutorial_image2'.$i])){
@@ -92,7 +92,7 @@ $max_images = 4;
             <div>
             <span class="btn btn-file blue">
             <span class="uploadfile-new"><i class="fa fa-paper-clip"></i> Select image</span>
-            <span class="uploadfile-exists"><i class="fa fa-undo"></i> Change</span>
+            <!-- <span class="uploadfile-exists"><i class="fa fa-undo"></i> Change</span> -->
             <input type="file" name="ok" class="default">
             </span>
             <a data-dismiss="uploadfile" class="btn btn-danger uploadfile-exists" href="#"><i class="fa fa-trash"></i> Remove</a>
