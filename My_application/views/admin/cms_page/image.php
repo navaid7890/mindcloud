@@ -28,7 +28,7 @@ global $config;
             <div class="form-group ">
             <div class="">
             <div data-provides="uploadfile" class="uploadfile uploadfile-new">
-            <div style="max-width: 200px; max-height: 150px;" class="uploadfile-new thumbnail">
+            <div style="max-width: 200px; max-height: 100%;" class="uploadfile-new thumbnail">
             <?php
             if(!empty($form_data['cms_page']['cms_page_image'])){
             ?>
@@ -43,7 +43,7 @@ global $config;
             ?>
             
             </div>
-            <div style="max-width: 200px; max-height: 150px; line-height: 20px;" class="uploadfile-preview uploadfile-exists thumbnail">
+            <div style="max-width: 200px; max-height: 100%; line-height: 20px;" class="uploadfile-preview uploadfile-exists thumbnail">
             </div>
             <div>
             <span class="btn btn-file blue">
@@ -71,7 +71,7 @@ $max_images = 4;
             <div class="form-group ">
             <div class="">
             <div data-provides="uploadfile" class="uploadfile uploadfile-new">
-            <div style="max-width: 200px; max-height: 150px;" class="uploadfile-new thumbnail">
+            <div style="max-width: 200px; max-height: 100%;" class="uploadfile-new thumbnail">
 
             <?php
             if(!empty($form_data['cms_page']['cms_page_image'.$i])){
@@ -87,7 +87,7 @@ $max_images = 4;
             ?>
             
             </div>
-            <div style="max-width: 200px; max-height: 150px; line-height: 20px;" class="uploadfile-preview uploadfile-exists thumbnail">
+            <div style="max-width: 200px; max-height: 100%; line-height: 20px;" class="uploadfile-preview uploadfile-exists thumbnail">
             </div>
             <div>
             <span class="btn btn-file blue">

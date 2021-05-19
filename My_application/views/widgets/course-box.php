@@ -5,6 +5,9 @@
     li.dropdown-toggle.b-child.catLj19 ul {
     display: none !important;
 }
+.course-list ul li.dropdown-toggle.catLj19>a:after {
+    content: "";
+}
 </style>
 <div class="course-box hding-3">
     <div class="course-box-content">

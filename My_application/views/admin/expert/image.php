@@ -28,7 +28,7 @@ global $config;
             <div class="form-group ">
             <div class="">
             <div data-provides="uploadfile" class="uploadfile uploadfile-new">
-            <div style="max-width: 200px; max-height: 150px;" class="uploadfile-new thumbnail">
+            <div style="max-width: 200px; max-height: 100%;" class="uploadfile-new thumbnail">
             <?php
             if(!empty($form_data['expert']['expert_image'])){
             ?>
