@@ -194,7 +194,7 @@
                                                         <th>Total</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" id="tfc_total" name="tool_builder_fm_beps[tool_builder_total]" value="<?= $tool['tool_builder_total'] ?>" placeholder="0">
+                                                            <input type="text" id="tfc_total" readonly name="tool_builder_fm_beps[tool_builder_total]" value="<?= $tool['tool_builder_total'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -253,7 +253,7 @@
                                                         <th>Total</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" id="v_total" name="tool_builder_fm_beps[tool_builder_total_1]" value="<?= $tool['tool_builder_total_1'] ?>"  placeholder="0">
+                                                            <input type="text" id="v_total" readonly name="tool_builder_fm_beps[tool_builder_total_1]" value="<?= $tool['tool_builder_total_1'] ?>"  placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -275,7 +275,7 @@
                                                         <th>CM</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" id="cm_total" name="tool_builder_fm_beps[tool_builder_cm]" value="<?= $tool['tool_builder_cm'] ?>" placeholder="0">
+                                                            <input type="text" id="cm_total" readonly name="tool_builder_fm_beps[tool_builder_cm]" value="<?= $tool['tool_builder_cm'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -297,7 +297,7 @@
                                                         <th>CMR</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" id="cmr_total" name="tool_builder_fm_beps[tool_builder_cmr]" value="<?= $tool['tool_builder_cmr'] ?>" placeholder="NaN">
+                                                            <input type="text" id="cmr_total" readonly name="tool_builder_fm_beps[tool_builder_cmr]" value="<?= $tool['tool_builder_cmr'] ?>" placeholder="NaN">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -320,7 +320,7 @@
                                                         <th>X</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" id="x_total" name="tool_builder_fm_beps[tool_builder_x]" value="<?= $tool['tool_builder_x'] ?>" placeholder="NaN">
+                                                            <input type="text" id="x_total" readonly name="tool_builder_fm_beps[tool_builder_x]" value="<?= $tool['tool_builder_x'] ?>" placeholder="NaN">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -343,7 +343,7 @@
                                                         <th>S</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" id="s_total" name="tool_builder_fm_beps[tool_builder_s]" value="<?= $tool['tool_builder_s'] ?>" placeholder="NaN">
+                                                            <input type="text" id="s_total" readonly name="tool_builder_fm_beps[tool_builder_s]" value="<?= $tool['tool_builder_s'] ?>" placeholder="NaN">
                                                         </div>
                                                         </td>
                                                     </tr>
