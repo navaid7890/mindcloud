@@ -202,6 +202,7 @@ class PhpWord
     public function addSection($style = null)
     {
         $section = new Section(count($this->sections) + 1, $style);
+        
         $section->setPhpWord($this);
         $this->sections[] = $section;
 

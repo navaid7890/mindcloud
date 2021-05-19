@@ -634,14 +634,15 @@ class Profile extends MY_Controller_Account
 	}
 	public function dl_tools_vp()
 	{
-		phpinfo();
-		die;
+		// phpinfo();
+		// die;
 		$vp = array();
 		$vp['where']['tool_builder_vp_user_id'] = $this->userid;
 		$data['tootl_vp'] = $this->model_tool_builder_vp->find_all_active($vp);
 		$tootl_vp = $data['tootl_vp'];
 		// debug($tootl_vp);
 		// die;
+
 
 		$phpWord = new \PhpOffice\PhpWord\PhpWord();
 		$phpWord->getCompatibility()->setOoxmlVersion(14);
@@ -784,6 +785,16 @@ class Profile extends MY_Controller_Account
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
 		$this->load_view('business-model-tool-fm-income', $data);
 	}
+	public function tools_ids()
+	{
+		global $config;
+		$user_id = $this->userid;
+		$data['title'] = 'My Profile';
+		$data['user_data'] = $this->layout_data['user_data'];
+		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
+		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+		$this->load_view('investment-deck-slides', $data);
+	}
 
 
 	public function tools_fm_bss()
@@ -796,6 +807,19 @@ class Profile extends MY_Controller_Account
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
 		$this->load_view('business-model-tool-fm-bss' , $data);
 	}
+
+
+	public function tools_fm_beps()
+	{
+		global $config;
+		$user_id = $this->userid;
+		$data['title'] = 'My Profile';
+		$data['user_data'] = $this->layout_data['user_data'];
+		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+		$this->load_view('business-model-tool-fm-beps' , $data);
+	}
+
 
 	public function tools_fm_cfs()
 	{
@@ -839,7 +863,7 @@ class Profile extends MY_Controller_Account
 		$data['user_data'] = $this->layout_data['user_data'];
 
 		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
-		$data['learn_content'] = $this->model_learning_journey_content->find_all_active($param);
+		// $data['learn_content'] = $this->model_learning_journey_content->find_all_active($param);
 		$this->load_view('business', $data);
 	}
 

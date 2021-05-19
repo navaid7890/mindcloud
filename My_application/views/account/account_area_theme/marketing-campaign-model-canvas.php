@@ -21,7 +21,7 @@
                            <div class="col-md-7">
                               <ul class="bredcum-links">
                                  <li><a href="#">Learning Journey</a></li>
-                                 <li><a href="#">Business Model Canvas</a></li>
+                                 <li><a href="#">Marketing Campaign Model Canvas</a></li>
                                  <li><a href="#">Tool and Tool Builder</a></li>
                               </ul>
                            </div>
@@ -42,12 +42,12 @@
                         <div class="tutorial-mid-content">
                            <div class="row align-items-center">
                               <div class="col-lg-9 col-md-12">
-                                 <h4>Tool and Tool Builder - Business Model Canvas</h4>
+                                 <h4>Tool and Tool Builder - Marketing Campaign Model Canvas</h4>
                                  <div class="space"><br></div>
-                                 <p>Complete these steps to build your <strong> Business Model Canvas. </strong></p>
+                                 <p>Complete these steps to build your <strong> Marketing Campaign Model Canvas. </strong></p>
                               </div>
                               <div class="col-lg-3 col-md-12 text-right">
-                                 <a href="#"> <img src="assets/images/dashboard/home/icons/4.svg" alt=""></a>
+                              <a href="<?= base_url()?>account/profile/dl_tools_vp"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
                               </div>
                            </div>
                         </div>
