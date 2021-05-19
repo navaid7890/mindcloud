@@ -36,7 +36,7 @@
             <li style="text-align: left;"><a href="<?= l('account/profile/learning') ?>" class="active" style="font-size: 15px;color: #122B46;font-weight: 700;padding: 18px 15px;">Intro to Learning Journey </a></li>
         </ul>
         <?
-        $dt = array('tools', 'tools_vp', 'tools_swot', 'tools_pmmt', 'tools_smp', 'tools_cjdg', 'tools_mc', 'tools_osf', 'tools_lts','' , 'tools_fm_income', 'tools_fm_bss', 'tools_fm_cfs', 'tools_fm_beps', '', 'tools_ids');
+        $dt = array('tools', 'tools_vp', 'tools_swot', 'tools_pmmt', 'tools_smp', 'tools_cjdg', 'tools_mc', 'tools_osf', 'tools_lts','' , 'tools_fm_income', 'tools_fm_bss', 'tools_fm_cfs', 'tools_fm_beps', 'tools_fm_dcvm', 'tools_ids');
         ?>
         <div class="course-list">
             <ul class="course-scroll">
