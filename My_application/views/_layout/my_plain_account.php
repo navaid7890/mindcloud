@@ -949,6 +949,74 @@ function calc_v(){
     document.getElementById('s_total').value = x_total * per_unit;
 }
 
+function calc_current_asset(){ 
+
+    var total = 0;
+    var current_asset_total = document.querySelectorAll('.current_assets_total');
+    for (var i = 0; i < current_asset_total.length; i++) {
+        if (current_asset_total[i].value > 0) {
+            var current_asset_val = current_asset_total[i];
+            total += parseFloat(current_asset_val.value);
+        }
+    } 
+    document.getElementById('current_assets_total').value = total;
+}
+
+function calc_fixed_assets(){ 
+
+    var total = 0;
+    var fixed_assets_total = document.querySelectorAll('.fixed_assets_total');
+    for (var i = 0; i < fixed_assets_total.length; i++) {
+        if (fixed_assets_total[i].value > 0) {
+            var fixed_assets_val = fixed_assets_total[i];
+            total += parseFloat(fixed_assets_val.value);
+        }
+    } 
+    document.getElementById('fixed_assets_total').value = total;
+}
+
+function calc_other_assets(){ 
+
+    var total = 0;
+    var other_assets_total = document.querySelectorAll('.other_assets_total');
+    for (var i = 0; i < other_assets_total.length; i++) {
+        if (other_assets_total[i].value > 0) {
+            var other_assets_val = other_assets_total[i];
+            total += parseFloat(other_assets_val.value);
+        }
+    } 
+    document.getElementById('other_assets_total').value = total;
+}
+
+function calc_tool_bss_values(id,total_value){ 
+
+    var total = 0;
+    var other_assets_total = document.querySelectorAll('.'+id);
+    for (var i = 0; i < other_assets_total.length; i++) {
+        if (other_assets_total[i].value > 0) {
+            var other_assets_val = other_assets_total[i];
+            total += parseFloat(other_assets_val.value);
+        }
+    } 
+    document.getElementById(id).value = total;
+
+    if(total_value == "tool_builder_total_assets"){
+        var other_assets_total = document.getElementById('other_assets_total').value;
+        var fixed_assets_total = document.getElementById('fixed_assets_total').value;
+        var current_assets_total = document.getElementById('current_assets_total').value;
+
+        document.getElementById('tool_builder_total_assets').value = Number(other_assets_total) + Number(fixed_assets_total) + Number(current_assets_total);
+    }
+    else if(total_value == "tool_builder_total_liabilities"){
+        var current_liabilities_total = document.getElementById('current_liabilities_total').value;
+        var other_current_liabilities_total = document.getElementById('other_current_liabilities_total').value;
+        var owners_equity_total = document.getElementById('owners_equity_total').value;
+
+        document.getElementById('tool_builder_total_liabilities').value = Number(current_liabilities_total) + Number(other_current_liabilities_total) + Number(owners_equity_total);
+    }
+    else{}
+}
+ 
 // function nextPrev(n) {
 //   var x = document.getElementsByClassName("tab");
 //   x[currentTab].style.display = "none";
