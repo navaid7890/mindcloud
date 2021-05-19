@@ -74,7 +74,7 @@
                                             $param = array();
                                             $param['order'] = "tool_builder_id DESC";
                                             $param['where']['tool_builder_user_id'] = $this->userid;
-                                            $tool = $this->model_tool_builder_fm_beps->find_one_active($param);
+                                            $tool = $this->model_tool_builder_fm_beps->find_one_active($param); 
                                             ?>
 
 
@@ -131,7 +131,7 @@
                                                         <th>Depreciation</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text" name="tool_builder_fm_beps[tool_builder_depreciation]" value="<?= $tool['tool_builder_depreciation'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -140,7 +140,7 @@
                                                         <th>Manufacturing</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text" name="tool_builder_fm_beps[tool_builder_manufacturing]" value="<?= $tool['tool_builder_manufacturing'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -149,7 +149,7 @@
                                                         <th>Payroll</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text" name="tool_builder_fm_beps[tool_builder_payroll]" value="<?= $tool['tool_builder_payroll'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -158,7 +158,7 @@
                                                         <th>Rent</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text" name="tool_builder_fm_beps[tool_builder_rent]" value="<?= $tool['tool_builder_rent'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -167,7 +167,7 @@
                                                         <th>Other</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text" name="tool_builder_fm_beps[tool_builder_other]" value="<?= $tool['tool_builder_other'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -176,7 +176,7 @@
                                                         <th>Other</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text" name="tool_builder_fm_beps[tool_builder_other_1]" value="<?= $tool['tool_builder_other_1'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -185,7 +185,7 @@
                                                         <th>Other</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text" name="tool_builder_fm_beps[tool_builder_other_2]" value="<?= $tool['tool_builder_other_2'] ?>"  placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -194,7 +194,7 @@
                                                         <th>Total</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text" name="tool_builder_fm_beps[tool_builder_total]" value="<?= $tool['tool_builder_total'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -217,7 +217,7 @@
                                                         <th>Costs of Goods Sold</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text"  name="tool_builder_fm_beps[tool_builder_cost_of_goods_sold]" value="<?= $tool['tool_builder_cost_of_goods_sold'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -226,7 +226,7 @@
                                                         <th>Direct Labor</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text"  name="tool_builder_fm_beps[tool_builder_direct_labour]" value="<?= $tool['tool_builder_direct_labour'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -235,7 +235,7 @@
                                                         <th>Overhead</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text" name="tool_builder_fm_beps[tool_builder_overhead]" value="<?= $tool['tool_builder_overhead'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -244,7 +244,7 @@
                                                         <th>Commisions</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text"  name="tool_builder_fm_beps[tool_builder_commisions]" value="<?= $tool['tool_builder_commisions'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -253,7 +253,7 @@
                                                         <th>Total</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text"  name="tool_builder_fm_beps[tool_builder_total_1]" value="<?= $tool['tool_builder_total_1'] ?>"  placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -275,7 +275,7 @@
                                                         <th>CM</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="0">
+                                                            <input type="text" name="tool_builder_fm_beps[tool_builder_cm]" value="<?= $tool['tool_builder_cm'] ?>" placeholder="0">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -297,7 +297,7 @@
                                                         <th>CMR</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="NaN">
+                                                            <input type="text" name="tool_builder_fm_beps[tool_builder_cmr]" value="<?= $tool['tool_builder_cmr'] ?>" placeholder="NaN">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -320,7 +320,7 @@
                                                         <th>X</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="NaN">
+                                                            <input type="text" name="tool_builder_fm_beps[tool_builder_x]" value="<?= $tool['tool_builder_x'] ?>" placeholder="NaN">
                                                         </div>
                                                         </td>
                                                     </tr>
@@ -343,7 +343,7 @@
                                                         <th>S</th>
                                                         <td>
                                                         <div class="fld-text mb-0">
-                                                            <input type="text" name="" placeholder="NaN">
+                                                            <input type="text" name="tool_builder_fm_beps[tool_builder_s]" value="<?= $tool['tool_builder_s'] ?>" placeholder="NaN">
                                                         </div>
                                                         </td>
                                                     </tr>

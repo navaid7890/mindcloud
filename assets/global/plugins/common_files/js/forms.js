@@ -60,6 +60,7 @@ var Form = function () {
     tool_fm_bss : base_url + "contact_us/tool_bss_formsend",
     tool_fm_cfs : base_url + "contact_us/tool_cfs_formsend",
     tool_fm_beps : base_url + "contact_us/tool_beps_formsend",
+    tool_fm_dcvm : base_url + "contact_us/tool_dcvm_formsend",
     //account_activate_process : base_url + "account/active_account/process",
     //review : base_url + "customer_review",
   };
@@ -1019,7 +1020,7 @@ var Form = function () {
       if(response.status){
           
           Toastr.success(response.msg.desc,'Go To Next Step');  
-          $("#form-income").find('input[type=text],input[type=email],textarea').val('');
+          $("#form-beps").find('input[type=text],input[type=email],textarea').val('');
 
           return false;
       }
@@ -1030,6 +1031,35 @@ var Form = function () {
       }
       return false;
   },
+
+
+
+      tool_fm_dcvm : function(form) {
+                                  
+
+          $('#forms-tool_builder-btn1').prop('disabled', true);  
+          
+          var data = form.serialize();
+          response = AjaxRequest.fire(urls.tool_fm_dcvm, data) ;
+
+          $('#forms-tool_builder-btn1').prop('disabled', false);   
+
+          // return false ;
+          
+          if(response.status){
+              
+              Toastr.success(response.msg.desc,'Go To Next Step');  
+              $("#form-beps").find('input[type=text],input[type=email],textarea').val('');
+
+              return false;
+          }
+          else{
+              Toastr.error(response.msg.desc,'Error');
+            
+              return false;
+          }
+          return false;
+      },
 
 
 
@@ -1586,6 +1616,23 @@ $(function() {
  
 
 //   for fm_beps tool end
+
+
+
+//   for fm_dcvm tool
+
+
+$(function() {
+  var $form = $('#form-dcvm');
+  $form.submit(function(event) {
+    Form.tool_fm_dcvm($form);
+    return false;
+  });
+});  
+
+ 
+
+//   for fm_dcvm tool end
 
 
 //   for fm_bss tool
