@@ -14,8 +14,7 @@
    .bannerSeactionArea a {
     color: #e18e25;
 }
-</style>
-<a href='<?= base_url() ?>quiz/test'>Export</a><br><br>
+</style> 
 <div class="mainBanner home-banner para" style="background-image:url('<?=get_image($cont1['cms_page_image'],$cont1['cms_page_image_path'])?>');">
    <div class="container">
       <div class="row align-items-center">
