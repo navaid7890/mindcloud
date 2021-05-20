@@ -41,12 +41,12 @@
                         <div class="tutorial-mid-content">
                            <div class="row align-items-center">
                               <div class="col-lg-9 col-md-12">
-                                 <h4>Tool and Tool Builder - SWOT Analysis</h4>
+                                 <h4>Tool and Tool Builder - SWOT Analysis Check asd</h4>
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> SWOT Analysis. </strong></p>
                               </div>
                               <div class="col-lg-3 col-md-12 text-right">
-                              <a href="<?= base_url()?>account/profile/dl_tools_vp"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                              <a href="<?= base_url()?>account/profile/dl_tools_swot"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
                               </div>
                            </div>
                         </div>
@@ -54,7 +54,6 @@
 
                      <div class="tutorial-footer tool-footer vid-tran para">
                         <div class="tutorial-footer-content" style="padding: 0;">
-
 
                            <ul class="form-tabing">
                               <div class="fld-html">

@@ -949,6 +949,107 @@ function calc_v(){
     document.getElementById('s_total').value = x_total * per_unit;
 }
 
+function calc_current_asset(){ 
+
+    var total = 0;
+    var current_asset_total = document.querySelectorAll('.current_assets_total');
+    for (var i = 0; i < current_asset_total.length; i++) {
+        if (current_asset_total[i].value > 0) {
+            var current_asset_val = current_asset_total[i];
+            total += parseFloat(current_asset_val.value);
+        }
+    } 
+    document.getElementById('current_assets_total').value = total;
+}
+
+function calc_fixed_assets(){ 
+
+    var total = 0;
+    var fixed_assets_total = document.querySelectorAll('.fixed_assets_total');
+    for (var i = 0; i < fixed_assets_total.length; i++) {
+        if (fixed_assets_total[i].value > 0) {
+            var fixed_assets_val = fixed_assets_total[i];
+            total += parseFloat(fixed_assets_val.value);
+        }
+    } 
+    document.getElementById('fixed_assets_total').value = total;
+}
+
+function calc_other_assets(){ 
+
+    var total = 0;
+    var other_assets_total = document.querySelectorAll('.other_assets_total');
+    for (var i = 0; i < other_assets_total.length; i++) {
+        if (other_assets_total[i].value > 0) {
+            var other_assets_val = other_assets_total[i];
+            total += parseFloat(other_assets_val.value);
+        }
+    } 
+    document.getElementById('other_assets_total').value = total;
+}
+
+function calc_tool_bss_values(id,total_value){ 
+
+    var total = 0;
+    var other_assets_total = document.querySelectorAll('.'+id);
+    for (var i = 0; i < other_assets_total.length; i++) {
+        if (other_assets_total[i].value > 0) {
+            var other_assets_val = other_assets_total[i];
+            total += parseFloat(other_assets_val.value);
+        }
+    } 
+    document.getElementById(id).value = total;
+
+    if(total_value == "tool_builder_total_assets"){
+        var other_assets_total = document.getElementById('other_assets_total').value;
+        var fixed_assets_total = document.getElementById('fixed_assets_total').value;
+        var current_assets_total = document.getElementById('current_assets_total').value;
+
+        document.getElementById('tool_builder_total_assets').value = Number(other_assets_total) + Number(fixed_assets_total) + Number(current_assets_total);
+    }
+    else if(total_value == "tool_builder_total_liabilities"){
+        var current_liabilities_total = document.getElementById('current_liabilities_total').value;
+        var other_current_liabilities_total = document.getElementById('other_current_liabilities_total').value;
+        var owners_equity_total = document.getElementById('owners_equity_total').value;
+
+        document.getElementById('tool_builder_total_liabilities').value = Number(current_liabilities_total) + Number(other_current_liabilities_total) + Number(owners_equity_total);
+    }
+    else{}
+}
+
+function calc_tool_dcvm_values(){
+    var net_profit = document.getElementById('net_profit').value;
+    var growth_rate = document.getElementById('growth_rate').value;
+
+    var net_profit_year_2 = document.getElementById('net_profit_year_2');
+    var net_profit_year_3 = document.getElementById('net_profit_year_3');
+    var net_profit_year_4 = document.getElementById('net_profit_year_4');
+    var net_profit_year_5 = document.getElementById('net_profit_year_5');
+
+    var discount_rate = document.getElementById('discount_rate').value;
+
+    var discount_rate_year_1 = document.getElementById('discount_rate_year_1');
+    var discount_rate_year_2 = document.getElementById('discount_rate_year_2');
+    var discount_rate_year_3 = document.getElementById('discount_rate_year_3');
+    var discount_rate_year_4 = document.getElementById('discount_rate_year_4');
+    var discount_rate_year_5 = document.getElementById('discount_rate_year_5');
+
+    var dcf_value = document.getElementById('dcf_value');
+
+    net_profit_year_2.value = Math.round((net_profit / 100 * growth_rate) + Number(net_profit));
+    net_profit_year_3.value = Math.round((Number(net_profit_year_2.value) / 100 * growth_rate) + Number(net_profit_year_2.value));
+    net_profit_year_4.value = Math.round((Number(net_profit_year_3.value) / 100 * growth_rate) + Number(net_profit_year_3.value));
+    net_profit_year_5.value = Math.round((Number(net_profit_year_4.value) / 100 * growth_rate) + Number(net_profit_year_4.value));
+
+    discount_rate_year_1.value = Math.ceil(net_profit / (1 + discount_rate / 100));
+    discount_rate_year_2.value = Math.ceil(net_profit_year_2.value / Math.pow((1 + discount_rate / 100), 2));
+    discount_rate_year_3.value = Math.ceil(net_profit_year_3.value / Math.pow((1 + discount_rate / 100), 3));
+    discount_rate_year_4.value = Math.ceil(net_profit_year_4.value / Math.pow((1 + discount_rate / 100), 4));
+    discount_rate_year_5.value = Math.ceil(net_profit_year_5.value / Math.pow((1 + discount_rate / 100), 5));
+
+    dcf_value.value = Number(discount_rate_year_1.value) + Number(discount_rate_year_2.value) + Number(discount_rate_year_3.value) + Number(discount_rate_year_4.value) + Number(discount_rate_year_5.value);
+}
+ 
 // function nextPrev(n) {
 //   var x = document.getElementsByClassName("tab");
 //   x[currentTab].style.display = "none";

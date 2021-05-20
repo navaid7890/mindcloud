@@ -90,7 +90,7 @@
                                                         <tr class="align-items-center">
                                                           <td>
                                                             <div class="fld-text mb-0">
-                                                              <input type="text" name="">
+                                                              <input type="text" id="net_profit" onkeyup="calc_tool_dcvm_values()" name="tool_builder_fm_dcvm[tool_builder_net_profit]" value="<?= $tool['tool_builder_net_profit'] ?>">
                                                             </div>
                                                           </td>
                                                         </tr>
@@ -106,7 +106,7 @@
                                                         <tr class="align-items-center">
                                                           <td>
                                                             <div class="fld-text mb-0">
-                                                              <input type="text" name="">
+                                                              <input type="text" id="growth_rate" onkeyup="calc_tool_dcvm_values()" name="tool_builder_fm_dcvm[tool_builder_growth_rate]" value="<?= $tool['tool_builder_growth_rate'] ?>">
                                                             </div>
                                                           </td>
                                                           <td>%</td>
@@ -131,22 +131,22 @@
                                                         <tr class="align-items-center">
                                                           <td>
                                                             <div class="fld-text mb-0">
-                                                              <input type="text" name="" placeholder="0">
+                                                              <input type="text" id="net_profit_year_2" name="tool_builder_fm_dcvm[tool_builder_net_profit_year_2]" value="<?= $tool['tool_builder_net_profit_year_2'] ?>" placeholder="0">
                                                             </div>
                                                           </td>
                                                           <td>
                                                             <div class="fld-text mb-0">
-                                                              <input type="text" name="" placeholder="0">
+                                                              <input type="text" id="net_profit_year_3" name="tool_builder_fm_dcvm[tool_builder_net_profit_year_3]" value="<?= $tool['tool_builder_net_profit_year_3'] ?>" placeholder="0">
                                                             </div>
                                                           </td>
                                                           <td>
                                                             <div class="fld-text mb-0">
-                                                              <input type="text" name="" placeholder="0">
+                                                              <input type="text" id="net_profit_year_4" name="tool_builder_fm_dcvm[tool_builder_net_profit_year_4]" value="<?= $tool['tool_builder_net_profit_year_4'] ?>" placeholder="0">
                                                             </div>
                                                           </td>
                                                           <td>
                                                             <div class="fld-text mb-0">
-                                                              <input type="text" name="" placeholder="0">
+                                                              <input type="text" id="net_profit_year_5" name="tool_builder_fm_dcvm[tool_builder_net_profit_year_5]" value="<?= $tool['tool_builder_net_profit_year_5'] ?>" placeholder="0">
                                                             </div>
                                                           </td>
                                                         </tr>
@@ -162,7 +162,7 @@
                                                         <tr class="align-items-center">
                                                           <td>
                                                             <div class="fld-text mb-0">
-                                                              <input type="text" name="">
+                                                              <input type="text" id="discount_rate" onkeyup="calc_tool_dcvm_values()" name="tool_builder_fm_dcvm[tool_builder_discount_rate]" value="<?= $tool['tool_builder_discount_rate'] ?>">
                                                             </div>
                                                           </td>
                                                           <td>%</td>
@@ -188,22 +188,27 @@
                                                         <tr class="align-items-center">
                                                           <td>
                                                             <div class="fld-text mb-0">
-                                                              <input type="text" name="" placeholder="0">
+                                                              <input type="text" id="discount_rate_year_1" name="tool_builder_fm_dcvm[tool_builder_discount_rate_year_1]" value="<?= $tool['tool_builder_discount_rate_year_1'] ?>" placeholder="0">
                                                             </div>
                                                           </td>
                                                           <td>
                                                             <div class="fld-text mb-0">
-                                                              <input type="text" name="" placeholder="0">
+                                                              <input type="text" id="discount_rate_year_2" name="tool_builder_fm_dcvm[tool_builder_discount_rate_year_2]" value="<?= $tool['tool_builder_discount_rate_year_2'] ?>" placeholder="0">
                                                             </div>
                                                           </td>
                                                           <td>
                                                             <div class="fld-text mb-0">
-                                                              <input type="text" name="" placeholder="0">
+                                                              <input type="text" id="discount_rate_year_3" name="tool_builder_fm_dcvm[tool_builder_discount_rate_year_3]" value="<?= $tool['tool_builder_discount_rate_year_3'] ?>" placeholder="0">
                                                             </div>
                                                           </td>
                                                           <td>
                                                             <div class="fld-text mb-0">
-                                                              <input type="text" name="" placeholder="0">
+                                                              <input type="text" id="discount_rate_year_4"name="tool_builder_fm_dcvm[tool_builder_discount_rate_year_4]" value="<?= $tool['tool_builder_discount_rate_year_4'] ?>" placeholder="0">
+                                                            </div>
+                                                          </td>
+                                                          <td>
+                                                            <div class="fld-text mb-0">
+                                                              <input type="text" id="discount_rate_year_5" name="tool_builder_fm_dcvm[tool_builder_discount_rate_year_5]" value="<?= $tool['tool_builder_discount_rate_year_5'] ?>" placeholder="0">
                                                             </div>
                                                           </td>
                                                         </tr>
@@ -234,7 +239,7 @@
                                                           <th>DCF Value</th>
                                                           <td>
                                                             <div class="fld-text mb-0">
-                                                              <input type="text" name="" placeholder="0">
+                                                              <input type="text" id="dcf_value" name="tool_builder_fm_dcvm[tool_builder_dcf_value]" value="<?= $tool['tool_builder_dcf_value'] ?>" placeholder="0">
                                                             </div>
                                                           </td>
                                                         </tr>

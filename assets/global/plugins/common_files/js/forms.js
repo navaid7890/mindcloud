@@ -465,9 +465,9 @@ var Form = function () {
       response = AjaxRequest.fire(urls.tool_pmmt, data);
 
       $('#forms-tool_builder-btn1').prop('disabled', false);
-      $('#forms-tool_builder-btn2').prop('disabled', true);
+      $('#forms-tool_builder-btn2').prop('disabled', false);
 
-      return false;
+      // return false;
 
       if (response.status) {
 
