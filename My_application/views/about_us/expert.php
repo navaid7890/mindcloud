@@ -15,7 +15,11 @@
     color: #e18e25;
 }
 </style>
-<a href='<?= base_url() ?>quiz/test'>Export</a><br><br>
+<a href='<?= base_url() ?>quiz/cashflow'>Cash Flow</a>
+<a href='<?= base_url() ?>quiz/balance'>Balance</a>
+<!-- <a href='<?= base_url() ?>quiz/test1'>Export</a>
+<a href='<?= base_url() ?>quiz/test1'>Export</a>
+<a href='<?= base_url() ?>quiz/test1'>Export</a> -->
 <div class="mainBanner home-banner para" style="background-image:url('<?=get_image($cont1['cms_page_image'],$cont1['cms_page_image_path'])?>');">
    <div class="container">
       <div class="row align-items-center">

@@ -302,48 +302,144 @@ class Quiz extends MY_Controller {
     
 
 
-     public function test()
-    {
-      require_once APPPATH."/third_party/PHPExcel/IOFactory.php"; 
-      global $config;
-      $this->load->library('excel');
+    public function cashflow()
+    {  
+      
+
+      if ($this->userid < 1) {
+        redirect("?msgtype=error&msg=Please Login First");   
+      }
+
+      else{
+      $file = APPPATH.'test4.xlsx';
+    
+       $this->load->library('excel');
+       $this->load->library('PHPExcel');
+  
 
       $param=array();
       $param['where']['tool_builder_user_id']=$this->userid; 
       $employee_data = $this->model_tool_builder->find_one_active($param);
-      $object = new PHPExcel();
 
- 
-   
-      $file_path =  $config['base_url'].'assets/front_assets/images/test.xlsx';
+     
 
-      //include 'Classes/PHPExcel/IOFactory.php';
-      $inputFileName = $file_path; 
-      $objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
-      $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
-      $arrayCount = count($allDataInSheet);  // Here get total count of row in that Excel sheet
-      for($i=2;$i<=$arrayCount;$i++)
-      {                   
-          // 'product'=$allDataInSheet[$i]["C"],
-          // 'brand'=$allDataInSheet[$i]["I"],
-          // 'standard'=$allDataInSheet[$i]["J"]
-      }
-    
-      // $excel_row = 2;
-      // $count=0;
-      // foreach($employee_data as $key =>$row)
-      // { 
 
+      $inputFileType = 'Excel2007';
+      $inputFileName = $file;
   
-      //  $object->getActiveSheet()->setCellValueByColumnAndRow($count, $excel_row, $row);
-      //     $count++;  
+      $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+      $objPHPExcelReader = $objReader->load($inputFileName);
+  
+      $loadedSheetNames = $objPHPExcelReader->getSheetNames();
 
-      // }
-      // $filename=$config['base_url'].'assets/front_assets/images/test.xlsx';
-      // $object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel5');
+      $objPHPExcelReader->getActiveSheet()->setCellValue('C5', $employee_data['tool_builder_customer_segments']);
+
+
+
+
+      $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
+      header('Content-Type: application/vnd.ms-excel');
+  
+      $object_writer->save('php://output');
+
+      }
+ 
+
+
+     }
+
+
+     public function balance()
+    {  
+      
+
+      if ($this->userid < 1) {
+        redirect("?msgtype=error&msg=Please Login First");   
+      }
+
+      else{
+      $file = APPPATH.'test3.xlsx';
+    
+       $this->load->library('excel');
+       $this->load->library('PHPExcel');
+  
+
+      $param=array();
+      $param['where']['tool_builder_user_id']=$this->userid; 
+      $employee_data = $this->model_tool_builder_fm_bss->find_one_active($param);
+      debug($employee_data);
+
+     
+
+
+      $inputFileType = 'Excel2007';
+      $inputFileName = $file;
+  
+      $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+      $objPHPExcelReader = $objReader->load($inputFileName);
+  
+      $loadedSheetNames = $objPHPExcelReader->getSheetNames();
+
+      $objPHPExcelReader->getActiveSheet()->setCellValue('C4', $employee_data['tool_builder_cash']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('C5', $employee_data['tool_builder_accounts_receivable']);
+$objPHPExcelReader->getActiveSheet()->setCellValue('C6', $employee_data['tool_builder_inventory']);
+$objPHPExcelReader->getActiveSheet()->setCellValue('C7', $employee_data['tool_builder_prepaid_expenses']);
+$objPHPExcelReader->getActiveSheet()->setCellValue('C8', $employee_data['tool_builder_short_term']);
+//
+$objPHPExcelReader->getActiveSheet()->setCellValue('C9', $employee_data['tool_builder_customer_segments']);
+
+$objPHPExcelReader->getActiveSheet()->setCellValue('C12', $employee_data['tool_builder_long_term']);
+$objPHPExcelReader->getActiveSheet()->setCellValue('C13', $employee_data['tool_builder_property_planted']);
+$objPHPExcelReader->getActiveSheet()->setCellValue('C14', $employee_data['tool_builder_less_accumulated']);
+$objPHPExcelReader->getActiveSheet()->setCellValue('C15', $employee_data['tool_builder_intangible_assets']);
+//
+$objPHPExcelReader->getActiveSheet()->setCellValue('C16', $employee_data['tool_builder_customer_segments']);
+
+
+      $objPHPExcelReader->getActiveSheet()->setCellValue('C19', $employee_data['tool_builder_deffered_income']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('C20', $employee_data['tool_builder_customer_segments']);
+$objPHPExcelReader->getActiveSheet()->setCellValue('C21', $employee_data['tool_builder_customer_segments']);
+$objPHPExcelReader->getActiveSheet()->setCellValue('C22', $employee_data['tool_builder_customer_segments']);
+
+      $objPHPExcelReader->getActiveSheet()->setCellValue('C24', $employee_data['tool_builder_customer_segments']);
+
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G4', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G5', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G6', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G7', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G8', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G9', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G10', $employee_data['tool_builder_customer_segments']);
+     
+     
+     
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G13', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G14', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G15', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G16', $employee_data['tool_builder_customer_segments']);
+
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G19', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G20', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G21', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G22', $employee_data['tool_builder_customer_segments']);
+
+
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G24', $employee_data['tool_builder_customer_segments']);
+
+
+
+
+
+
+      // $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
       // header('Content-Type: application/vnd.ms-excel');
-      // header('Content-Disposition: attachment;filename="'.$filename.'"');
+  
       // $object_writer->save('php://output');
+
+      }
+ 
+
+
      }
     
 
