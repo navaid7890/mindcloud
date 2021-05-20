@@ -214,10 +214,16 @@
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_r_8]" value="<?=$tool['tool_builder_other_r_8']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_3" onkeyup="calc_tool_income_values('owners_equity_total','tool_builder_total_liabilities')" name="tool_builder_fm_income[tool_builder_other_r_8]" value="<?=$tool['tool_builder_other_r_8']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
+
+                                                            <input type="hidden" id="revenues_total_year_1"  name="tool_builder_fm_income[total_revenues_year_1]" value="<?= $tool['total_revenues_year_1'] ?>" placeholder="0">
+                                                            <input type="hidden" id="revenues_total_year_2"  name="tool_builder_fm_income[total_revenues_year_2]" value="<?= $tool['total_revenues_year_2'] ?>" placeholder="0">
+                                                            <input type="hidden" id="revenues_total_year_3"  name="tool_builder_fm_income[total_revenues_year_3]" value="<?= $tool['total_revenues_year_3'] ?>" placeholder="0">
+
+                                                            
                                                         </tbody>
                                                         </table>
 
