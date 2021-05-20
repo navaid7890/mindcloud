@@ -620,21 +620,31 @@ class Profile extends MY_Controller_Account
 	{
 		// $this->load->library('phpword');
 			$vp = array();
-			$vp['where']['tool_builder_user_id'] = $this->userid;
+			$vp['where']['tool_builder_user_id'] = 0;//$this->userid;
 			$data['tootl'] = $this->model_tool_builder->find_all_active($vp);
 			$tootl = $data['tootl'];
 			// debug( $tootl);
 			// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/business_model_canvus.docx');
-		$templateProcessor->setValue('tool_builder_customer_segments', $tootl[0]['tool_builder_customer_segments']);
-		$templateProcessor->setValue('tool_builder_value_proposition', $tootl[0]['tool_builder_value_proposition']);
-		$templateProcessor->setValue('tool_builder_channels', $tootl[0]['tool_builder_channels']);
-		$templateProcessor->setValue('tool_builder_customer_relationship', $tootl[0]['tool_builder_customer_relationship']);
-		$templateProcessor->setValue('tool_builder_revenue_model', $tootl[0]['tool_builder_revenue_model']);
-		$templateProcessor->setValue('tool_builder_key_resources', $tootl[0]['tool_builder_key_resources']);
-		$templateProcessor->setValue('tool_builder_key_activities', $tootl[0]['tool_builder_key_activities']);
-		$templateProcessor->setValue('tool_builder_key_partners', $tootl[0]['tool_builder_key_partners']);
-		$templateProcessor->setValue('tool_builder_cost_structure', $tootl[0]['tool_builder_cost_structure']);
+		// debug($tootl);
+		// die();
+		foreach($tootl[0] as $column_name =>$value){
+			// debug($column_name);
+			// debug($value);
+			$templateProcessor->setValue($column_name, $value);
+
+		}
+		// die();
+		
+		// $templateProcessor->setValue('tool_builder_customer_segments', $tootl[0]['tool_builder_customer_segments']);
+		// $templateProcessor->setValue('tool_builder_value_proposition', $tootl[0]['tool_builder_value_proposition']);
+		// $templateProcessor->setValue('tool_builder_channels', $tootl[0]['tool_builder_channels']);
+		// $templateProcessor->setValue('tool_builder_customer_relationship', $tootl[0]['tool_builder_customer_relationship']);
+		// $templateProcessor->setValue('tool_builder_revenue_model', $tootl[0]['tool_builder_revenue_model']);
+		// $templateProcessor->setValue('tool_builder_key_resources', $tootl[0]['tool_builder_key_resources']);
+		// $templateProcessor->setValue('tool_builder_key_activities', $tootl[0]['tool_builder_key_activities']);
+		// $templateProcessor->setValue('tool_builder_key_partners', $tootl[0]['tool_builder_key_partners']);
+		// $templateProcessor->setValue('tool_builder_cost_structure', $tootl[0]['tool_builder_cost_structure']);
 		$filename = 'Business Model Canvas.docx';
 		$templateProcessor->saveAs($filename);
 		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
@@ -1034,7 +1044,6 @@ class Profile extends MY_Controller_Account
 		$templateProcessor->setValue('tool_builder_lts_identify_parties', $tootl[0]['tool_builder_lts_identify_parties']);
 		$templateProcessor->setValue('tool_builder_lts_jv_comp_obligations', $tootl[0]['tool_builder_lts_jv_comp_obligations']);
 		$templateProcessor->setValue('tool_builder_lts_business_jv_company', $tootl[0]['tool_builder_lts_business_jv_company']);
-
 		$templateProcessor->setValue('tool_builder_lts_likely_turnover', $tootl[0]['tool_builder_lts_likely_turnover']);
 		$templateProcessor->setValue('tool_builder_lts_regulatory_consents', $tootl[0]['tool_builder_lts_regulatory_consents']);
 		$templateProcessor->setValue('tool_builder_lts_business_based', $tootl[0]['tool_builder_lts_business_based']);
@@ -1042,7 +1051,6 @@ class Profile extends MY_Controller_Account
 		$templateProcessor->setValue('tool_builder_lts_regulatory_approvals_overseas_jurisdictions', $tootl[0]['tool_builder_lts_regulatory_approvals_overseas_jurisdictions']);
 		$templateProcessor->setValue('tool_builder_lts_collective_investment_scheme', $tootl[0]['tool_builder_lts_collective_investment_scheme']);
 		$templateProcessor->setValue('tool_builder_lts_regulatory_enquiry', $tootl[0]['tool_builder_lts_regulatory_enquiry']);
-
 		$templateProcessor->setValue('tool_builder_lts_structure_settingup_jv_company', $tootl[0]['tool_builder_lts_structure_settingup_jv_company']);
 		$templateProcessor->setValue('tool_builder_lts_legal_form_of_jv_company', $tootl[0]['tool_builder_lts_legal_form_of_jv_company']);
 		$templateProcessor->setValue('tool_builder_lts_jv_company_established', $tootl[0]['tool_builder_lts_jv_company_established']);
@@ -1052,7 +1060,6 @@ class Profile extends MY_Controller_Account
 		$templateProcessor->setValue('tool_builder_lts_unding_through_debt_rather_than_equity', $tootl[0]['tool_builder_lts_unding_through_debt_rather_than_equity']);
 		$templateProcessor->setValue('tool_builder_lts_party_funding_required_banks_security', $tootl[0]['tool_builder_lts_party_funding_required_banks_security']);
 		$templateProcessor->setValue('tool_builder_lts_continuing_funding_requirements', $tootl[0]['tool_builder_lts_continuing_funding_requirements']);
-		
 		$templateProcessor->setValue('tool_builder_lts_parties_defaults', $tootl[0]['tool_builder_lts_parties_defaults']);
 		$templateProcessor->setValue('tool_builder_lts_contribution_assets', $tootl[0]['tool_builder_lts_contribution_assets']);
 		$templateProcessor->setValue('tool_builder_lts_assets_need_to_valued', $tootl[0]['tool_builder_lts_assets_need_to_valued']);
@@ -1111,7 +1118,6 @@ class Profile extends MY_Controller_Account
 		$templateProcessor->setValue('tool_builder_lts_automatically_terminate', $tootl[0]['tool_builder_lts_automatically_terminate']);
 		$templateProcessor->setValue('tool_builder_lts_entitled_to_terminate', $tootl[0]['tool_builder_lts_entitled_to_terminate']);
 		$templateProcessor->setValue('tool_builder_lts_arrangements_will_apply_on_termination', $tootl[0]['tool_builder_lts_arrangements_will_apply_on_termination']);
-
 		$filename = 'Legal Term Sheet.docx';
 		$templateProcessor->saveAs($filename);
 		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
