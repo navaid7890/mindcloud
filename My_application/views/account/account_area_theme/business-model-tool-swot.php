@@ -55,7 +55,6 @@
                      <div class="tutorial-footer tool-footer vid-tran para">
                         <div class="tutorial-footer-content" style="padding: 0;">
 
-
                            <ul class="form-tabing">
                               <div class="fld-html">
                                  <p>SWOT Analysis</p>
