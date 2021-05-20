@@ -275,6 +275,21 @@ class About_us extends MY_Controller {
         $par['order']="category_id ASC";
         $data['main_categories'] = $this->model_category->find_all_active($par);
 
+        $coursecat=array();
+        $coursecat['where']['cp_category_id']=intval($this->input->get('cat'));
+        $cate = $this->model_course_category->find_all_active($coursecat);
+
+       // debug($cate);
+  
+        foreach($cate as $key => $value)
+        {
+         $all[]=$value['cp_course_id'];
+        }
+
+       // debug($all);
+   
+        
+
         $par2=array();
         $par2['order']="expert_id ASC";
         $data['ex'] = $this->model_expert->find_all_active($par2);
@@ -286,16 +301,15 @@ class About_us extends MY_Controller {
           }
 
    
-          if(isset($_GET['cat']) AND intval($_GET['cat']) > 0){
-          $param['where']['tutorial_category_id'] = intval($this->input->get('cat'));
-      }
-
- 
-
+    //       if(isset($_GET['cat']) AND intval($_GET['cat']) > 0){
+    //       $param['where']['tutorial_category_id'] = intval($this->input->get('cat'));
+    //   }
   
+      
 
-
+      
       $param['order']="tutorial_id ASC";
+      $param['where_in']['tutorial_id']=$all;
 
       $data['art'] = $this->model_tutorial->get_details($param);
 
@@ -382,7 +396,7 @@ class About_us extends MY_Controller {
     //   debug($data['lc']);
 
 
-    $lec=array();
+       $lec=array();
        $lec['where_in']['videos_id']=$all;
        $data['lc'] = $this->model_videos->find_all_active($lec);
 

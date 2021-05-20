@@ -14,7 +14,7 @@
    .bannerSeactionArea a {
     color: #e18e25;
 }
-</style>
+</style> 
 <div class="mainBanner home-banner para" style="background-image:url('<?=get_image($cont1['cms_page_image'],$cont1['cms_page_image_path'])?>');">
    <div class="container">
       <div class="row align-items-center">
