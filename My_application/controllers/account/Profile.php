@@ -1021,17 +1021,20 @@ class Profile extends MY_Controller_Account
 	}
 	public function dl_tools_lts()
 	{
-		// $this->load->library('phpword');
-			$vp = array();
+
+		$vp = array();
 			$vp['where']['tool_builder_lts_user_id'] = $this->userid;
 			$data['tootl'] = $this->model_tool_builder_lts->find_all_active($vp);
 			$tootl = $data['tootl'];
-			// debug( $tootl);
+			// debug( $tootl[0]['tool_builder_lts_structure_settingup_jv_company']);
 			// die;
+			// html_entity_decode();
+
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/legal_term_sheet.docx');
 		$templateProcessor->setValue('tool_builder_lts_identify_parties', $tootl[0]['tool_builder_lts_identify_parties']);
 		$templateProcessor->setValue('tool_builder_lts_jv_comp_obligations', $tootl[0]['tool_builder_lts_jv_comp_obligations']);
 		$templateProcessor->setValue('tool_builder_lts_business_jv_company', $tootl[0]['tool_builder_lts_business_jv_company']);
+
 		$templateProcessor->setValue('tool_builder_lts_likely_turnover', $tootl[0]['tool_builder_lts_likely_turnover']);
 		$templateProcessor->setValue('tool_builder_lts_regulatory_consents', $tootl[0]['tool_builder_lts_regulatory_consents']);
 		$templateProcessor->setValue('tool_builder_lts_business_based', $tootl[0]['tool_builder_lts_business_based']);
@@ -1039,6 +1042,7 @@ class Profile extends MY_Controller_Account
 		$templateProcessor->setValue('tool_builder_lts_regulatory_approvals_overseas_jurisdictions', $tootl[0]['tool_builder_lts_regulatory_approvals_overseas_jurisdictions']);
 		$templateProcessor->setValue('tool_builder_lts_collective_investment_scheme', $tootl[0]['tool_builder_lts_collective_investment_scheme']);
 		$templateProcessor->setValue('tool_builder_lts_regulatory_enquiry', $tootl[0]['tool_builder_lts_regulatory_enquiry']);
+
 		$templateProcessor->setValue('tool_builder_lts_structure_settingup_jv_company', $tootl[0]['tool_builder_lts_structure_settingup_jv_company']);
 		$templateProcessor->setValue('tool_builder_lts_legal_form_of_jv_company', $tootl[0]['tool_builder_lts_legal_form_of_jv_company']);
 		$templateProcessor->setValue('tool_builder_lts_jv_company_established', $tootl[0]['tool_builder_lts_jv_company_established']);
@@ -1048,6 +1052,7 @@ class Profile extends MY_Controller_Account
 		$templateProcessor->setValue('tool_builder_lts_unding_through_debt_rather_than_equity', $tootl[0]['tool_builder_lts_unding_through_debt_rather_than_equity']);
 		$templateProcessor->setValue('tool_builder_lts_party_funding_required_banks_security', $tootl[0]['tool_builder_lts_party_funding_required_banks_security']);
 		$templateProcessor->setValue('tool_builder_lts_continuing_funding_requirements', $tootl[0]['tool_builder_lts_continuing_funding_requirements']);
+		
 		$templateProcessor->setValue('tool_builder_lts_parties_defaults', $tootl[0]['tool_builder_lts_parties_defaults']);
 		$templateProcessor->setValue('tool_builder_lts_contribution_assets', $tootl[0]['tool_builder_lts_contribution_assets']);
 		$templateProcessor->setValue('tool_builder_lts_assets_need_to_valued', $tootl[0]['tool_builder_lts_assets_need_to_valued']);
@@ -1056,7 +1061,7 @@ class Profile extends MY_Controller_Account
 		$templateProcessor->setValue('tool_builder_lts_soliciting_customers_employees', $tootl[0]['tool_builder_lts_soliciting_customers_employees']);
 		$templateProcessor->setValue('tool_builder_lts_purposes_of_such_restrictions', $tootl[0]['tool_builder_lts_purposes_of_such_restrictions']);
 		$templateProcessor->setValue('tool_builder_lts_business_to_the_joint_venture', $tootl[0]['tool_builder_lts_business_to_the_joint_venture']);
-		$templateProcessor->setValue('tool_builder_lts_purposes_of_such_restrictions2', $tootl[0]['tool_builder_lts_purposes_of_such_restrictions2']);
+		// // $templateProcessor->setValue('tool_builder_lts_purposes_of_such_restrictions2', $tootl[0]['tool_builder_lts_purposes_of_such_restrictions2']);
 		$templateProcessor->setValue('tool_builder_lts_board_of_directors', $tootl[0]['tool_builder_lts_board_of_directors']);
 		$templateProcessor->setValue('tool_builder_lts_general_manager_ceo_appointed', $tootl[0]['tool_builder_lts_general_manager_ceo_appointed']);
 		$templateProcessor->setValue('tool_builder_lts_shareholder_Board_management_matters', $tootl[0]['tool_builder_lts_shareholder_Board_management_matters']);
@@ -1096,7 +1101,7 @@ class Profile extends MY_Controller_Account
 		$templateProcessor->setValue('tool_builder_lts_confidential_information', $tootl[0]['tool_builder_lts_confidential_information']);
 		$templateProcessor->setValue('tool_builder_lts_ip_rights_on_termination', $tootl[0]['tool_builder_lts_ip_rights_on_termination']);
 		$templateProcessor->setValue('tool_builder_lts_administration', $tootl[0]['tool_builder_lts_administration']);
-		$templateProcessor->setValue('tool_builder_lts_lending_bankers', $tootl[0]['tool_builder_lts_lending_bankers']);
+		// // $templateProcessor->setValue('tool_builder_lts_lending_bankers', $tootl[0]['tool_builder_lts_lending_bankers']);
 		$templateProcessor->setValue('tool_builder_lts_lawyers', $tootl[0]['tool_builder_lts_lawyers']);
 		$templateProcessor->setValue('tool_builder_lts_auditors', $tootl[0]['tool_builder_lts_auditors']);
 		$templateProcessor->setValue('tool_builder_lts_professional_advisers', $tootl[0]['tool_builder_lts_professional_advisers']);

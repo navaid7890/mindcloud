@@ -25,7 +25,7 @@ ${tool_builder_lts_competition_restrictions}
 ${tool_builder_lts_soliciting_customers_employees} 
 ${tool_builder_lts_purposes_of_such_restrictions} 
 ${tool_builder_lts_business_to_the_joint_venture} 
-${tool_builder_lts_purposes_of_such_restrictions2} 
+	${tool_builder_lts_purposes_of_such_restrictions2} 
 ${tool_builder_lts_board_of_directors} 
 ${tool_builder_lts_general_manager_ceo_appointed} 
 ${tool_builder_lts_shareholder_Board_management_matters} 
@@ -65,7 +65,7 @@ ${tool_builder_lts_exploit_the_ip_rights}
 ${tool_builder_lts_confidential_information} 
 ${tool_builder_lts_ip_rights_on_termination} 
 ${tool_builder_lts_administration} 
-${tool_builder_lts_lending_bankers} 
+	${tool_builder_lts_lending_bankers} 
 ${tool_builder_lts_lawyers} 
 ${tool_builder_lts_auditors} 
 ${tool_builder_lts_professional_advisers} 
