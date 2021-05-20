@@ -268,9 +268,9 @@ class Model_tool_builder_pmmt extends MY_Model {
                 'rules' => 'trim|htmlentities'
             ),
 
-             'tool_builder_vp_approval_status' => array(
+             'tool_builder_approval_status' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_approval_status',
+                'name' => 'tool_builder_approval_status',
                 'label' => 'Approval Status',
                 'type' => 'switch',
                 'default' => '0',
@@ -278,9 +278,9 @@ class Model_tool_builder_pmmt extends MY_Model {
                 'rules' => 'trim'
             ),
 
-           'tool_builder_vp_status' => array(
+           'tool_builder_status' => array(
                 'table' => $this->_table,
-                'name' => 'tool_builder_vp_status',
+                'name' => 'tool_builder_status',
                 'label' => 'Status?',
                 'type' => 'switch',
                 'default' => '1',
