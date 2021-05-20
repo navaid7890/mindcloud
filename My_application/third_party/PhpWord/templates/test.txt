@@ -1,0 +1,17 @@
+
+
+${tool_builder_osf_brand_awareness}
+${tool_builder_osf_lead_gathering}
+${tool_builder_osf_lead_qualifying}
+${tool_builder_osf_optimize_audience}
+${tool_builder_osf_optimize_experience}
+${tool_builder_osf_optimize_Metrics}
+${tool_builder_osf_optimize_testing}
+
+${tool_builder_mc_mc_kost_structure}
+${tool_builder_mc_mc_roi}
+
+${tool_builder_promotional_channels}
+${tool_builder_people_for_team}
+${tool_builder_execution}
+${tool_builder_great_experience}
