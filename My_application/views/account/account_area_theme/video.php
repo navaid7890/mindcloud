@@ -64,15 +64,15 @@
                            </div>
                            <div class="col-md-7">
                               <div class="video-box">
-                                 <? if (isset($learn_content) and array_filled($learn_content)) : ?>
-                                    <? foreach ($learn_content as $key => $value) : ?>
+                                 <? // if (isset($learn_content) and array_filled($learn_content)) : ?>
+                                    <?// foreach ($learn_content as $key => $value) : ?>
                                        <video width="100%" height="100%" poster="<?= i('') ?>banner/3.png" controls>
-                                          <source src="<?= g('db.admin.bucket') . $value['learning_journey_video'] ?>" type="video/mp4">
-                                          <source src="<?= g('db.admin.bucket') . $value['learning_journey_video'] ?>" type="video/ogg">
+                                          <source src="<?= g('db.admin.bucket') . $learn_content[0]['learning_journey_video'] ?>" type="video/mp4">
+                                          <source src="<?= g('db.admin.bucket') . $learn_content[0]['learning_journey_video'] ?>" type="video/ogg">
                                           Your browser does not support the video tag.
                                        </video>
-                                    <? endforeach; ?>
-                                 <? endif; ?>
+                                    <?// endforeach; ?>
+                                 <?// endif; ?>
 
 
 
