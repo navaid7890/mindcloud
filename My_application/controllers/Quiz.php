@@ -314,7 +314,7 @@ class Quiz extends MY_Controller {
       else{
       
       $file = APPPATH.'third_party/PHPExcel/finance/test4.xlsx';
-      
+
  
        $this->load->library('excel');
        $this->load->library('PHPExcel');
@@ -365,10 +365,10 @@ class Quiz extends MY_Controller {
 
 
 
-      // $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
-      // header('Content-Type: application/vnd.ms-excel');
+      $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
+      header('Content-Type: application/vnd.ms-excel');
   
-      // $object_writer->save('php://output');
+      $object_writer->save('php://output');
 
       }
  
