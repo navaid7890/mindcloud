@@ -14,16 +14,16 @@
    .bannerSeactionArea a {
     color: #e18e25;
 }
-<<<<<<< HEAD
+
 </style>
-<a href='<?= base_url() ?>quiz/cashflow'>Cash Flow</a>
+<a href='<?= base_url() ?>quiz/cashflow'>Discount Cash Flow</a>
 <a href='<?= base_url() ?>quiz/balance'>Balance</a>
-<!-- <a href='<?= base_url() ?>quiz/test1'>Export</a>
-<a href='<?= base_url() ?>quiz/test1'>Export</a>
-<a href='<?= base_url() ?>quiz/test1'>Export</a> -->
-=======
-</style> 
->>>>>>> QA
+<a href='<?= base_url() ?>quiz/breaked'>Break Event</a>
+ <a href='<?= base_url() ?>quiz/income'>Income Statement</a>
+<a href='<?= base_url() ?>quiz/cash'>Cash</a>  
+
+
+
 <div class="mainBanner home-banner para" style="background-image:url('<?=get_image($cont1['cms_page_image'],$cont1['cms_page_image_path'])?>');">
    <div class="container">
       <div class="row align-items-center">
