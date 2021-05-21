@@ -620,21 +620,18 @@ class Profile extends MY_Controller_Account
 	{
 		// $this->load->library('phpword');
 			$vp = array();
-			$vp['where']['tool_builder_user_id'] = $this->userid;
+			$vp['where']['tool_builder_user_id'] =$this->userid;
 			$data['tootl'] = $this->model_tool_builder->find_all_active($vp);
 			$tootl = $data['tootl'];
 			// debug( $tootl);
 			// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/business_model_canvus.docx');
-		$templateProcessor->setValue('tool_builder_customer_segments', $tootl[0]['tool_builder_customer_segments']);
-		$templateProcessor->setValue('tool_builder_value_proposition', $tootl[0]['tool_builder_value_proposition']);
-		$templateProcessor->setValue('tool_builder_channels', $tootl[0]['tool_builder_channels']);
-		$templateProcessor->setValue('tool_builder_customer_relationship', $tootl[0]['tool_builder_customer_relationship']);
-		$templateProcessor->setValue('tool_builder_revenue_model', $tootl[0]['tool_builder_revenue_model']);
-		$templateProcessor->setValue('tool_builder_key_resources', $tootl[0]['tool_builder_key_resources']);
-		$templateProcessor->setValue('tool_builder_key_activities', $tootl[0]['tool_builder_key_activities']);
-		$templateProcessor->setValue('tool_builder_key_partners', $tootl[0]['tool_builder_key_partners']);
-		$templateProcessor->setValue('tool_builder_cost_structure', $tootl[0]['tool_builder_cost_structure']);
+		// debug($tootl);
+		// die();
+		foreach($tootl[0] as $column_name =>$value){
+			$templateProcessor->setValue($column_name, $value);
+
+		}
 		$filename = 'Business Model Canvas.docx';
 		$templateProcessor->saveAs($filename);
 		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
@@ -683,12 +680,12 @@ class Profile extends MY_Controller_Account
 			// debug( $tootl_vp);
 			// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/value_proposition_canvas.docx');
-		$templateProcessor->setValue('tool_builder_vp_jobs', $tootl_vp[0]['tool_builder_vp_jobs']);
-		$templateProcessor->setValue('tool_builder_vp_pains', $tootl_vp[0]['tool_builder_vp_pains']);
-		$templateProcessor->setValue('tool_builder_vp_gains', $tootl_vp[0]['tool_builder_vp_gains']);
-		$templateProcessor->setValue('tool_builder_vp_products_services', $tootl_vp[0]['tool_builder_vp_products_services']);
-		$templateProcessor->setValue('tool_builder_vp_pain_relievers', $tootl_vp[0]['tool_builder_vp_pain_relievers']);
-		$templateProcessor->setValue('tool_builder_vp_gain_creators', $tootl_vp[0]['tool_builder_vp_gain_creators']);
+
+		foreach($tootl_vp[0] as $column_name =>$value){
+			$templateProcessor->setValue($column_name, $value);
+
+		}
+
 		$filename = 'Value Proposition Canvas.docx';
 		$templateProcessor->saveAs($filename);
 		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
@@ -734,10 +731,11 @@ class Profile extends MY_Controller_Account
 			// debug( $tootl);
 			// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/swot_analysis.docx');
-		$templateProcessor->setValue('tool_builder_strengths', $tootl[0]['tool_builder_strengths']);
-		$templateProcessor->setValue('tool_builder_weaknessess', $tootl[0]['tool_builder_weaknessess']);
-		$templateProcessor->setValue('tool_builder_opportunities', $tootl[0]['tool_builder_opportunities']);
-		$templateProcessor->setValue('tool_builder_threats', $tootl[0]['tool_builder_threats']);
+		foreach($tootl[0] as $column_name =>$value){
+			$templateProcessor->setValue($column_name, $value);
+
+		}
+
 		$filename = 'SWOT Analysis.docx';
 		$templateProcessor->saveAs($filename);
 		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
@@ -782,19 +780,11 @@ class Profile extends MY_Controller_Account
 			// debug( $tootl);
 			// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/positioning_marketing_mix.docx');
-		$templateProcessor->setValue('tool_builder_target_customers', $tootl[0]['tool_builder_target_customers']);
-		$templateProcessor->setValue('tool_builder_offering', $tootl[0]['tool_builder_offering']);
-		$templateProcessor->setValue('tool_builder_need', $tootl[0]['tool_builder_need']);
-		$templateProcessor->setValue('tool_builder_product_category', $tootl[0]['tool_builder_product_category']);
-		$templateProcessor->setValue('tool_builder_price_category', $tootl[0]['tool_builder_price_category']);
-		$templateProcessor->setValue('tool_builder_solution_competitors', $tootl[0]['tool_builder_solution_competitors']);
-		$templateProcessor->setValue('tool_builder_product_or_service', $tootl[0]['tool_builder_product_or_service']);
-		$templateProcessor->setValue('tool_builder_pricing_strategies', $tootl[0]['tool_builder_pricing_strategies']);
-		$templateProcessor->setValue('tool_builder_product_customer', $tootl[0]['tool_builder_product_customer']);
-		$templateProcessor->setValue('tool_builder_promotional_channels', $tootl[0]['tool_builder_promotional_channels']);
-		$templateProcessor->setValue('tool_builder_people_for_team', $tootl[0]['tool_builder_people_for_team']);
-		$templateProcessor->setValue('tool_builder_execution', $tootl[0]['tool_builder_execution']);
-		$templateProcessor->setValue('tool_builder_great_experience', $tootl[0]['tool_builder_great_experience']);
+		foreach($tootl[0] as $column_name =>$value){
+			$templateProcessor->setValue($column_name, $value);
+
+		}
+
 		$filename = 'Positioning and Marketing Mix.docx';
 		$templateProcessor->saveAs($filename);
 		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
@@ -836,12 +826,11 @@ class Profile extends MY_Controller_Account
 			// debug( $tootl);
 			// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/strategic_marketing_plan.docx');
-		$templateProcessor->setValue('tool_builder_strg_mkt_situational_analysis', $tootl[0]['tool_builder_strg_mkt_situational_analysis']);
-		$templateProcessor->setValue('tool_builder_strg_mkt_mission', $tootl[0]['tool_builder_strg_mkt_mission']);
-		$templateProcessor->setValue('tool_builder_strg_mkt_objectives', $tootl[0]['tool_builder_strg_mkt_objectives']);
-		$templateProcessor->setValue('tool_builder_strg_mkt_target_market', $tootl[0]['tool_builder_strg_mkt_target_market']);
-		$templateProcessor->setValue('tool_builder_strg_mkt_implementation_tactics', $tootl[0]['tool_builder_strg_mkt_implementation_tactics']);
-		$templateProcessor->setValue('tool_builder_strg_mkt_evaluation', $tootl[0]['tool_builder_strg_mkt_evaluation']);
+		foreach($tootl[0] as $column_name =>$value){
+			$templateProcessor->setValue($column_name, $value);
+
+		}
+
 		$filename = 'Strategic Marketing Plan.docx';
 		$templateProcessor->saveAs($filename);
 		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
@@ -882,14 +871,10 @@ class Profile extends MY_Controller_Account
 			// debug( $tootl);
 			// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/customer_journey_demand_generation.docx');
-		$templateProcessor->setValue('tool_builder_cj_dg_awareness', $tootl[0]['tool_builder_cj_dg_awareness']);
-		$templateProcessor->setValue('tool_builder_cj_dg_engagement', $tootl[0]['tool_builder_cj_dg_engagement']);
-		$templateProcessor->setValue('tool_builder_cj_dg_consideration', $tootl[0]['tool_builder_cj_dg_consideration']);
-		$templateProcessor->setValue('tool_builder_cj_dg_purchase', $tootl[0]['tool_builder_cj_dg_purchase']);
-		$templateProcessor->setValue('tool_builder_cj_dg_activation', $tootl[0]['tool_builder_cj_dg_activation']);
-		$templateProcessor->setValue('tool_builder_cj_dg_repeat', $tootl[0]['tool_builder_cj_dg_repeat']);
-		$templateProcessor->setValue('tool_builder_cj_dg_loyalty', $tootl[0]['tool_builder_cj_dg_loyalty']);
-		$templateProcessor->setValue('tool_builder_cj_dg_advocacy', $tootl[0]['tool_builder_cj_dg_advocacy']);
+		foreach($tootl[0] as $column_name =>$value){
+			$templateProcessor->setValue($column_name, $value);
+
+		}
 
 		$filename = 'Customer Journey Demand Generation.docx';
 		$templateProcessor->saveAs($filename);
@@ -931,15 +916,11 @@ class Profile extends MY_Controller_Account
 			// debug( $tootl);
 			// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/marketing_campaign_model_canvas.docx');
-		$templateProcessor->setValue('tool_builder_mc_mc_prospect_personas', $tootl[0]['tool_builder_mc_mc_prospect_personas']);
-		$templateProcessor->setValue('tool_builder_mc_mc_prospect_problems', $tootl[0]['tool_builder_mc_mc_prospect_problems']);
-		$templateProcessor->setValue('tool_builder_mc_mc_value_proposition', $tootl[0]['tool_builder_mc_mc_value_proposition']);
-		$templateProcessor->setValue('tool_builder_mc_mc_channels', $tootl[0]['tool_builder_mc_mc_channels']);
-		$templateProcessor->setValue('tool_builder_mc_mc_content', $tootl[0]['tool_builder_mc_mc_content']);
-		$templateProcessor->setValue('tool_builder_mc_mc_key_activities', $tootl[0]['tool_builder_mc_mc_key_activities']);
-		$templateProcessor->setValue('tool_builder_mc_mc_key_metrics', $tootl[0]['tool_builder_mc_mc_key_metrics']);
-		$templateProcessor->setValue('tool_builder_mc_mc_kost_structure', $tootl[0]['tool_builder_mc_mc_kost_structure']);
-		$templateProcessor->setValue('tool_builder_mc_mc_roi', $tootl[0]['tool_builder_mc_mc_roi']);
+		foreach($tootl[0] as $column_name =>$value){
+			$templateProcessor->setValue($column_name, $value);
+
+		}
+
 
 		$filename = 'Marketing Campaign Model Canvas.docx';
 		$templateProcessor->saveAs($filename);
@@ -981,13 +962,10 @@ class Profile extends MY_Controller_Account
 			// debug( $tootl);
 			// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/online_sales_funnel.docx');
-		$templateProcessor->setValue('tool_builder_osf_brand_awareness', $tootl[0]['tool_builder_osf_brand_awareness']);
-		$templateProcessor->setValue('tool_builder_osf_lead_gathering', $tootl[0]['tool_builder_osf_lead_gathering']);
-		$templateProcessor->setValue('tool_builder_osf_lead_qualifying', $tootl[0]['tool_builder_osf_lead_qualifying']);
-		$templateProcessor->setValue('tool_builder_osf_optimize_audience', $tootl[0]['tool_builder_osf_optimize_audience']);
-		$templateProcessor->setValue('tool_builder_osf_optimize_experience', $tootl[0]['tool_builder_osf_optimize_experience']);
-		$templateProcessor->setValue('tool_builder_osf_optimize_Metrics', $tootl[0]['tool_builder_osf_optimize_Metrics']);
-		$templateProcessor->setValue('tool_builder_osf_optimize_testing', $tootl[0]['tool_builder_osf_optimize_testing']);
+		foreach($tootl[0] as $column_name =>$value){
+			$templateProcessor->setValue($column_name, $value);
+
+		}
 
 		$filename = 'Online Sales Funnel.docx';
 		$templateProcessor->saveAs($filename);
@@ -1018,6 +996,43 @@ class Profile extends MY_Controller_Account
 		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
 		$this->load_view('legal-term-sheet', $data);
+	}
+	public function dl_tools_lts()
+	{
+
+		$vp = array();
+			$vp['where']['tool_builder_lts_user_id'] = $this->userid;
+			$data['tootl'] = $this->model_tool_builder_lts->find_all_active($vp);
+			$tootl = $data['tootl'];
+			// debug( $tootl[0]['tool_builder_lts_structure_settingup_jv_company']);
+			// die;
+			// html_entity_decode();
+
+		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/legal_term_sheet.docx');
+		foreach($tootl[0] as $column_name =>$value){
+			$templateProcessor->setValue($column_name, $value);
+
+		}
+		
+		$filename = 'Legal Term Sheet.docx';
+		$templateProcessor->saveAs($filename);
+		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
+		$xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+		// $xmlWriter->save('result.docx');
+		// $targetFile = "./global/uploads/";
+		// $filename = 'Value Proposition Canvas.docx';
+		header('Content-Description: File Transfer');
+		header('Content-Type: application/octet-stream');
+		header('Content-Disposition: attachment; filename=' . $filename);
+		header('Content-Transfer-Encoding: binary');
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+		header('Pragma: public');
+		header('Content-Length: ' . filesize($filename));
+		flush();
+		readfile($filename);
+		unlink($filename); // deletes the temporary file
+		exit;
 	}
 
 	public function tools_fm_income()
