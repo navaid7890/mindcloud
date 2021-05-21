@@ -620,7 +620,7 @@ class Profile extends MY_Controller_Account
 	{
 		// $this->load->library('phpword');
 			$vp = array();
-			$vp['where']['tool_builder_user_id'] = 0;//$this->userid;
+			$vp['where']['tool_builder_user_id'] =$this->userid;
 			$data['tootl'] = $this->model_tool_builder->find_all_active($vp);
 			$tootl = $data['tootl'];
 			// debug( $tootl);
