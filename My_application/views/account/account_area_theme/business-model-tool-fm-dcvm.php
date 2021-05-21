@@ -60,6 +60,7 @@
                                     <ul class="form-tabing">
                                        <div class="fld-html">
                                           <p>Discounted Cash Flow Valuation</p>
+                                          <a href='<?= base_url() ?>quiz/cashflow'>Download Here</a>
                                        </div>
                                     </ul>      
 
