@@ -314,6 +314,7 @@ class Quiz extends MY_Controller {
       else{
       
       $file = APPPATH.'third_party/PHPExcel/finance/test4.xlsx';
+      
  
        $this->load->library('excel');
        $this->load->library('PHPExcel');
