@@ -313,7 +313,7 @@ class Quiz extends MY_Controller {
 
       else{
       $file = APPPATH.'test4.xlsx';
-      debug($file);
+      debug($file,1);
     
        $this->load->library('excel');
        $this->load->library('PHPExcel');
