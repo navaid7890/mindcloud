@@ -313,6 +313,7 @@ class Quiz extends MY_Controller {
 
       else{
       $file = APPPATH.'test4.xlsx';
+      debug($file);
     
        $this->load->library('excel');
        $this->load->library('PHPExcel');
@@ -321,7 +322,7 @@ class Quiz extends MY_Controller {
       $param=array();
       $param['where']['tool_builder_user_id']=$this->userid; 
       $employee_data = $this->model_tool_builder_fm_dcvm->find_one_active($param);
-      //debug($employee_data);
+      debug($employee_data);
 
      
 
@@ -876,9 +877,6 @@ $objPHPExcelReader->getActiveSheet()->setCellValue('C24', $employee_data['tool_b
         $objPHPExcelReader->getActiveSheet()->setCellValue('E77', $employee_data['tool_builder_growth_rate']);
         $objPHPExcelReader->getActiveSheet()->setCellValue('G77', $employee_data['tool_builder_growth_rate']);
 
-
-      
-        
         // $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
         // header('Content-Type: application/vnd.ms-excel');
     
