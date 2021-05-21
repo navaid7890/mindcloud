@@ -312,8 +312,9 @@ class Quiz extends MY_Controller {
       }
 
       else{
-      $file = APPPATH.'test4.xlsx';
-    
+      
+      $file = APPPATH.'third_party/PHPExcel/finance/test4.xlsx';
+ 
        $this->load->library('excel');
        $this->load->library('PHPExcel');
   
@@ -321,7 +322,7 @@ class Quiz extends MY_Controller {
       $param=array();
       $param['where']['tool_builder_user_id']=$this->userid; 
       $employee_data = $this->model_tool_builder_fm_dcvm->find_one_active($param);
-      //debug($employee_data);
+   
 
      
 
@@ -363,10 +364,10 @@ class Quiz extends MY_Controller {
 
 
 
-      $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
-      header('Content-Type: application/vnd.ms-excel');
+      // $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
+      // header('Content-Type: application/vnd.ms-excel');
   
-      $object_writer->save('php://output');
+      // $object_writer->save('php://output');
 
       }
  
