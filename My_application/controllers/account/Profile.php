@@ -1055,6 +1055,43 @@ class Profile extends MY_Controller_Account
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
 		$this->load_view('investment-deck-slides', $data);
 	}
+	public function dl_tools_ids()
+	{
+
+		$vp = array();
+			$vp['where']['tool_builder_ids_user_id'] = $this->userid;
+			$data['tootl'] = $this->model_tool_builder_ids->find_all_active($vp);
+			$tootl = $data['tootl'];
+			// debug( $tootl[0]['tool_builder_lts_structure_settingup_jv_company']);
+			// die;
+			// html_entity_decode();
+
+		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/investment_deck_slides.docx');
+
+		foreach($tootl[0] as $column_name =>$value){
+			$templateProcessor->setValue($column_name, $value);
+		}
+		
+		$filename = 'Investment Deck Slides.docx';
+		$templateProcessor->saveAs($filename);
+		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
+		$xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+		// $xmlWriter->save('result.docx');
+		// $targetFile = "./global/uploads/";
+		// $filename = 'Value Proposition Canvas.docx';
+		header('Content-Description: File Transfer');
+		header('Content-Type: application/octet-stream');
+		header('Content-Disposition: attachment; filename=' . $filename);
+		header('Content-Transfer-Encoding: binary');
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+		header('Pragma: public');
+		header('Content-Length: ' . filesize($filename));
+		flush();
+		readfile($filename);
+		unlink($filename); // deletes the temporary file
+		exit;
+	}
 
 
 	public function tools_fm_bss()
