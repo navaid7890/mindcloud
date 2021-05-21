@@ -988,6 +988,55 @@ function calc_other_assets(){
     document.getElementById('other_assets_total').value = total;
 }
 
+
+
+
+function calc_tool_income_values(id){ 
+
+      var total = 0;
+      var other_assets_total = document.querySelectorAll('.'+id);
+      for (var i = 0; i < other_assets_total.length; i++) {
+          if (other_assets_total[i].value > 0) {
+              var other_assets_val = other_assets_total[i];
+              total += parseFloat(other_assets_val.value);
+          }
+      } 
+      document.getElementById(id).value = total; 
+
+
+      var revenues_year_1 = document.getElementById('revenues_total_year_1').value;
+      var revenues_year_2 = document.getElementById('revenues_total_year_2').value;
+      var revenues_year_3 = document.getElementById('revenues_total_year_3').value;
+
+      var expenses_year_1 = document.getElementById('expenses_total_year_1').value;
+      var expenses_year_2 = document.getElementById('expenses_total_year_2').value;
+      var expenses_year_3 = document.getElementById('expenses_total_year_3').value;
+
+      var tax_total_year_1 = document.getElementById('tax_total_year_1').value;
+      var tax_total_year_2 = document.getElementById('tax_total_year_2').value;
+      var tax_total_year_3 = document.getElementById('tax_total_year_3').value;
+  
+      var net_income_before_tax_year_1 = document.getElementById('net_income_before_tax_year_1');
+      var net_income_before_tax_year_2 = document.getElementById('net_income_before_tax_year_2');
+      var net_income_before_tax_year_3 = document.getElementById('net_income_before_tax_year_3');
+
+      var net_income_year_1 = document.getElementById('net_income_year_1');
+      var net_income_year_2 = document.getElementById('net_income_year_2');
+      var net_income_year_3 = document.getElementById('net_income_year_3');
+
+      net_income_before_tax_year_1.value = Number(revenues_year_1) - Number(expenses_year_1);
+      net_income_before_tax_year_2.value = Number(revenues_year_2) - Number(expenses_year_2);
+      net_income_before_tax_year_3.value = Number(revenues_year_3) - Number(expenses_year_3);
+
+      net_income_year_1.value = Number(net_income_before_tax_year_1.value) - Number(tax_total_year_1);
+      net_income_year_2.value = Number(net_income_before_tax_year_2.value) - Number(tax_total_year_2);
+      net_income_year_3.value = Number(net_income_before_tax_year_3.value) - Number(tax_total_year_3);
+
+ 
+ 
+}
+
+
 function calc_tool_bss_values(id,total_value){ 
 
     var total = 0;
