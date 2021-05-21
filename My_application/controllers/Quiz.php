@@ -312,8 +312,8 @@ class Quiz extends MY_Controller {
       }
 
       else{
-      $file = base_url().'/My_application/test4.xlsx';
-      debug($file,1);
+      $file = base_url().'My_application/test4.xlsx';
+      // debug($file,1);
     
        $this->load->library('excel');
        $this->load->library('PHPExcel');
@@ -322,7 +322,7 @@ class Quiz extends MY_Controller {
       $param=array();
       $param['where']['tool_builder_user_id']=$this->userid; 
       $employee_data = $this->model_tool_builder_fm_dcvm->find_one_active($param);
-      debug($employee_data);
+     // debug($employee_data);
 
      
 
