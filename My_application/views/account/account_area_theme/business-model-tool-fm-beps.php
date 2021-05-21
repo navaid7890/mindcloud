@@ -61,6 +61,8 @@
                                 <ul class="form-tabing">
                                     <div class="fld-html">
                                         <p>Break-Event Point</p>
+                                        <a href='<?= base_url() ?>quiz/breaked'>Download Here</a>
+                                        
                                     </div>
                                 </ul>      
 
