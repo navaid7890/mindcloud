@@ -312,15 +312,18 @@ class Quiz extends MY_Controller {
       }
 
       else{
-      $file = APPPATH.'test4.xlsx';
-    
+      
+      $file = APPPATH.'third_party/PHPExcel/finance/test4.xlsx';
+
+ 
        $this->load->library('excel');
        $this->load->library('PHPExcel');
   
 
       $param=array();
       $param['where']['tool_builder_user_id']=$this->userid; 
-      $employee_data = $this->model_tool_builder->find_one_active($param);
+      $employee_data = $this->model_tool_builder_fm_dcvm->find_one_active($param);
+   
 
      
 
@@ -333,10 +336,25 @@ class Quiz extends MY_Controller {
   
       $loadedSheetNames = $objPHPExcelReader->getSheetNames();
 
-      $objPHPExcelReader->getActiveSheet()->setCellValue('C5', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('B4', $employee_data['tool_builder_growth_rate']);
 
+      $objPHPExcelReader->getActiveSheet()->setCellValue('C5', $employee_data['tool_builder_net_profit']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('D5', $employee_data['tool_builder_net_profit_year_2']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('E5', $employee_data['tool_builder_net_profit_year_3']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('F5', $employee_data['tool_builder_net_profit_year_4']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G5', $employee_data['tool_builder_net_profit_year_5']);
 
+      $objPHPExcelReader->getActiveSheet()->setCellValue('C8', $employee_data['tool_builder_discount_rate']);
 
+      
+      $objPHPExcelReader->getActiveSheet()->setCellValue('C10', $employee_data['tool_builder_discount_rate_year_1']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('D10', $employee_data['tool_builder_discount_rate_year_2']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('E10', $employee_data['tool_builder_discount_rate_year_3']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('F10', $employee_data['tool_builder_discount_rate_year_4']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G10', $employee_data['tool_builder_discount_rate_year_5']);
+
+      
+      $objPHPExcelReader->getActiveSheet()->setCellValue('H11', $employee_data['tool_builder_dcf_value']);
 
       $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
       header('Content-Type: application/vnd.ms-excel');
@@ -359,7 +377,7 @@ class Quiz extends MY_Controller {
       }
 
       else{
-      $file = APPPATH.'test3.xlsx';
+      $file = APPPATH.'third_party/PHPExcel/finance/test4.xlsx';
     
        $this->load->library('excel');
        $this->load->library('PHPExcel');
@@ -368,7 +386,7 @@ class Quiz extends MY_Controller {
       $param=array();
       $param['where']['tool_builder_user_id']=$this->userid; 
       $employee_data = $this->model_tool_builder_fm_bss->find_one_active($param);
-      debug($employee_data);
+      //debug($employee_data);
 
      
 
@@ -386,65 +404,469 @@ class Quiz extends MY_Controller {
 $objPHPExcelReader->getActiveSheet()->setCellValue('C6', $employee_data['tool_builder_inventory']);
 $objPHPExcelReader->getActiveSheet()->setCellValue('C7', $employee_data['tool_builder_prepaid_expenses']);
 $objPHPExcelReader->getActiveSheet()->setCellValue('C8', $employee_data['tool_builder_short_term']);
-//
-$objPHPExcelReader->getActiveSheet()->setCellValue('C9', $employee_data['tool_builder_customer_segments']);
+$objPHPExcelReader->getActiveSheet()->setCellValue('C9', $employee_data['tool_builder_total_current_assets']);
 
 $objPHPExcelReader->getActiveSheet()->setCellValue('C12', $employee_data['tool_builder_long_term']);
 $objPHPExcelReader->getActiveSheet()->setCellValue('C13', $employee_data['tool_builder_property_planted']);
 $objPHPExcelReader->getActiveSheet()->setCellValue('C14', $employee_data['tool_builder_less_accumulated']);
 $objPHPExcelReader->getActiveSheet()->setCellValue('C15', $employee_data['tool_builder_intangible_assets']);
-//
-$objPHPExcelReader->getActiveSheet()->setCellValue('C16', $employee_data['tool_builder_customer_segments']);
+$objPHPExcelReader->getActiveSheet()->setCellValue('C16', $employee_data['tool_builder_total_fixed_assets']);
 
 
       $objPHPExcelReader->getActiveSheet()->setCellValue('C19', $employee_data['tool_builder_deffered_income']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('C20', $employee_data['tool_builder_customer_segments']);
-$objPHPExcelReader->getActiveSheet()->setCellValue('C21', $employee_data['tool_builder_customer_segments']);
-$objPHPExcelReader->getActiveSheet()->setCellValue('C22', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('C20', $employee_data['tool_builder_other_assets_2']);
+$objPHPExcelReader->getActiveSheet()->setCellValue('C21', $employee_data['tool_builder_other_assets_4']);
+$objPHPExcelReader->getActiveSheet()->setCellValue('C22', $employee_data['tool_builder_total_other_assets']);
+$objPHPExcelReader->getActiveSheet()->setCellValue('C24', $employee_data['tool_builder_total_assets']);
 
-      $objPHPExcelReader->getActiveSheet()->setCellValue('C24', $employee_data['tool_builder_customer_segments']);
-
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G4', $employee_data['tool_builder_customer_segments']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G5', $employee_data['tool_builder_customer_segments']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G6', $employee_data['tool_builder_customer_segments']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G7', $employee_data['tool_builder_customer_segments']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G8', $employee_data['tool_builder_customer_segments']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G9', $employee_data['tool_builder_customer_segments']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G10', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G4', $employee_data['tool_builder_accounts_payable']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G5', $employee_data['tool_builder_short_term_loans']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G6', $employee_data['tool_builder_taxes_payable']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G7', $employee_data['tool_builder_accrued_salaries']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G8', $employee_data['tool_builder_unearned_revenue']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G9', $employee_data['tool_builder_current_portion']);
+     $objPHPExcelReader->getActiveSheet()->setCellValue('G10', $employee_data['tool_builder_total_current_liabilities']);
      
      
      
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G13', $employee_data['tool_builder_customer_segments']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G14', $employee_data['tool_builder_customer_segments']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G15', $employee_data['tool_builder_customer_segments']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G16', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G13', $employee_data['tool_builder_long_term_debt']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G14', $employee_data['tool_builder_deffered_income_tax']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G15', $employee_data['tool_builder_other_long_term_liabilities_2']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G16', $employee_data['tool_builder_total_long_term_liabilities']);
 
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G19', $employee_data['tool_builder_customer_segments']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G20', $employee_data['tool_builder_customer_segments']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G21', $employee_data['tool_builder_customer_segments']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G22', $employee_data['tool_builder_customer_segments']);
-
-
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G24', $employee_data['tool_builder_customer_segments']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G19', $employee_data['tool_builder_owners_investment']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G20', $employee_data['tool_builder_retained_earnings']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G21', $employee_data['tool_builder_other_equity_2']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G22', $employee_data['tool_builder_total_owners_equity']);
 
 
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G24', $employee_data['tool_builder_total_liabilities']);
 
-
-
-
-      // $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
-      // header('Content-Type: application/vnd.ms-excel');
+      $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
+      header('Content-Type: application/vnd.ms-excel');
   
-      // $object_writer->save('php://output');
+      $object_writer->save('php://output');
 
       }
  
-
-
      }
+
+
+
+     
     
 
+     public function breaked()
+     {  
+       
+       if ($this->userid < 1) {
+         redirect("?msgtype=error&msg=Please Login First");   
+       }
+ 
+       else{
+        $file = APPPATH.'third_party/PHPExcel/finance/test4.xlsx';
+     
+        $this->load->library('excel');
+        $this->load->library('PHPExcel');
+   
+ 
+       $param=array();
+       $param['where']['tool_builder_user_id']=$this->userid; 
+       $employee_data = $this->model_tool_builder_fm_beps->find_one_active($param);
+     
+ 
+ 
+       $inputFileType = 'Excel2007';
+       $inputFileName = $file;
+   
+       $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+       $objPHPExcelReader = $objReader->load($inputFileName);
+   
+       $loadedSheetNames = $objPHPExcelReader->getSheetNames();
+ 
+       $objPHPExcelReader->getActiveSheet()->setCellValue('E2', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('E3', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('E4', $employee_data['tool_builder_s']);
+     
+       $objPHPExcelReader->getActiveSheet()->setCellValue('F7', $employee_data['tool_builder_advertising']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('F8', $employee_data['tool_builder_accounting']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('F9', $employee_data['tool_builder_depreciation']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('F10', $employee_data['tool_builder_manufacturing']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('F11', $employee_data['tool_builder_payroll']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('F12', $employee_data['tool_builder_rent']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('F13', $employee_data['tool_builder_other']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('F14', $employee_data['tool_builder_other_1']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('F15', $employee_data['tool_builder_other_2']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('F16', $employee_data['tool_builder_total']);
+      
+       $objPHPExcelReader->getActiveSheet()->setCellValue('E20', $employee_data['tool_builder_cost_of_goods_sold']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('E21', $employee_data['tool_builder_direct_labour']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('E22', $employee_data['tool_builder_overhead']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('E23', $employee_data['tool_builder_commisions']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('E24', $employee_data['tool_builder_total_1']);
+ 
+          $objPHPExcelReader->getActiveSheet()->setCellValue('F26', $employee_data['tool_builder_total_1']);
+          $objPHPExcelReader->getActiveSheet()->setCellValue('F27', $employee_data['tool_builder_cm']);
+          $objPHPExcelReader->getActiveSheet()->setCellValue('F28', $employee_data['tool_builder_cmr']);
+         
+          $objPHPExcelReader->getActiveSheet()->setCellValue('F31', $employee_data['tool_builder_x']);
+          $objPHPExcelReader->getActiveSheet()->setCellValue('F32', $employee_data['tool_builder_s']);
+      
+    
+       $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
+       header('Content-Type: application/vnd.ms-excel');
+   
+       $object_writer->save('php://output');
+ 
+       }
+  
+ 
+ 
+      }
 
+
+
+     public function income()
+     {  
+       
+ 
+       if ($this->userid < 1) {
+         redirect("?msgtype=error&msg=Please Login First");   
+       }
+ 
+       else{
+        $file = APPPATH.'third_party/PHPExcel/finance/test4.xlsx';
+        $this->load->library('excel');
+        $this->load->library('PHPExcel');
+   
+ 
+       $param=array();
+       $param['where']['tool_builder_user_id']=$this->userid; 
+       $employee_data = $this->model_tool_builder_fm_income->find_one_active($param);
+     
+ 
+ 
+       $inputFileType = 'Excel2007';
+       $inputFileName = $file;
+   
+       $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+       $objPHPExcelReader = $objReader->load($inputFileName);
+   
+       $loadedSheetNames = $objPHPExcelReader->getSheetNames();
+ 
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C4', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D4', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C5', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D5', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C6', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D6', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C7', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D7', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C8', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D8', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C9', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D9', $employee_data['tool_builder_x']);
+ 
+
+
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C12', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D12', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C13', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D13', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C14', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D14', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C15', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D15', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C16', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D16', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C17', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D17', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C18', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D18', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C19', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D19', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C20', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D20', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C21', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D21', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C22', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D22', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C23', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D23', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C24', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D24', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C25', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D25', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C26', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D26', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C27', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D27', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C28', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D28', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C29', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D29', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C30', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D30', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C31', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D31', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C32', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D32', $employee_data['tool_builder_x']);
+
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C34', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D34', $employee_data['tool_builder_x']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C35', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D35', $employee_data['tool_builder_x']);
+       
+
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C37', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D37', $employee_data['tool_builder_x']);
+
+
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C39', $employee_data['tool_builder_price_per_unit']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D39', $employee_data['tool_builder_x']);
+
+      //  $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
+      //  header('Content-Type: application/vnd.ms-excel');
+   
+      //  $object_writer->save('php://output');
+ 
+       }
+  
+ 
+ 
+      }
+
+
+      public function cash()
+      {  
+      
+        if ($this->userid < 1) {
+          redirect("?msgtype=error&msg=Please Login First");   
+        }
+  
+        else{
+         $file = APPPATH.'third_party/PHPExcel/finance/test4.xlsx';
+      
+         $this->load->library('excel');
+         $this->load->library('PHPExcel');
+    
+  
+        $param=array();
+        $param['where']['tool_builder_user_id']=$this->userid; 
+        $employee_data = $this->model_tool_builder_fm_cfs->find_one_active($param);
+        //debug($employee_data);
+  
+       
+  
+  
+        $inputFileType = 'Excel2007';
+        $inputFileName = $file;
+    
+        $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+        $objPHPExcelReader = $objReader->load($inputFileName);
+    
+        $loadedSheetNames = $objPHPExcelReader->getSheetNames();
+  
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C5', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('D5', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E5', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('F5', $employee_data['tool_builder_growth_rate']);
+  
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C7', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E7', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G7', $employee_data['tool_builder_growth_rate']);
+
+        
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C10', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E10', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G10', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C11', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E12', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G12', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C13', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E13', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G13', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C14', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E14', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G14', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C15', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E15', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G15', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C16', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E16', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G16', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C17', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E17', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G17', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C18', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E18', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G18', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C19', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E19', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G19', $employee_data['tool_builder_growth_rate']);
+        
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C23', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E23', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G23', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C24', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E24', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G24', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C25', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E25', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G25', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C26', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E26', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G26', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C27', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E27', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G27', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C28', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E28', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G28', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C29', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E29', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G29', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C30', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E30', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G30', $employee_data['tool_builder_growth_rate']);
+      
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C33', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E33', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G33', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C34', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E34', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G34', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C35', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E35', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G35', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C36', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E36', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G36', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C37', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E37', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G37', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C38', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E38', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G38', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C39', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E39', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G39', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C40', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E40', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G40', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C41', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E41', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G41', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C42', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E42', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G42', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C43', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E43', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G43', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C44', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E44', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G45', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C46', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E46', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G46', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C47', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E47', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G47', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C48', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E48', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G48', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C49', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E49', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G49', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C50', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E50', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G50', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C51', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E51', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G51', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C52', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E52', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G52', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C53', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E53', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G53', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C54', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E54', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G54', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C55', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E55', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G55', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C56', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E56', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G56', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C57', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E57', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G57', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C58', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E58', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G58', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C59', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E59', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G59', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C60', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E60', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G60', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C61', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E61', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G61', $employee_data['tool_builder_growth_rate']);
+
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C64', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E64', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G64', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C65', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E65', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G65', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C66', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E66', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G66', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C67', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E67', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G67', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C68', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E68', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G68', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C69', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E69', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G69', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C70', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E70', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G70', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C71', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E71', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G71', $employee_data['tool_builder_growth_rate']);
+        
+
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C73', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E73', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G73', $employee_data['tool_builder_growth_rate']);
+
+
+
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C75', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E75', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G75', $employee_data['tool_builder_growth_rate']);
+
+
+
+        $objPHPExcelReader->getActiveSheet()->setCellValue('C77', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('E77', $employee_data['tool_builder_growth_rate']);
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G77', $employee_data['tool_builder_growth_rate']);
+
+        // $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
+        // header('Content-Type: application/vnd.ms-excel');
+    
+        // $object_writer->save('php://output');
+  
+        }
+   
+  
+  
+       }
     
 
 

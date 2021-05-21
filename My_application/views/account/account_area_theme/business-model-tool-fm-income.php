@@ -101,17 +101,17 @@
                                                             <th>Sales Revenue</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_sales_1]" value="<?=$tool['tool_builder_sales_1']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_1" onkeyup="calc_tool_income_values('revenues_total_year_1')" name="tool_builder_fm_income[tool_builder_sales_1]" value="<?=$tool['tool_builder_sales_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_sales_2]" value="<?=$tool['tool_builder_sales_2']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_2" onkeyup="calc_tool_income_values('revenues_total_year_2')" name="tool_builder_fm_income[tool_builder_sales_2]" value="<?=$tool['tool_builder_sales_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_sales_3]" value="<?=$tool['tool_builder_sales_3']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_3" onkeyup="calc_tool_income_values('revenues_total_year_3')" name="tool_builder_fm_income[tool_builder_sales_3]" value="<?=$tool['tool_builder_sales_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -120,17 +120,17 @@
                                                             <th>(Less Sales Returns and Allowances)</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_returns_1]" value="<?=$tool['tool_builder_returns_1']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_1" onkeyup="calc_tool_income_values('revenues_total_year_1')" name="tool_builder_fm_income[tool_builder_returns_1]" value="<?=$tool['tool_builder_returns_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_returns_2]" value="<?=$tool['tool_builder_returns_2']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_2" onkeyup="calc_tool_income_values('revenues_total_year_2')" name="tool_builder_fm_income[tool_builder_returns_2]" value="<?=$tool['tool_builder_returns_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_returns_3]" value="<?=$tool['tool_builder_returns_3']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_3" onkeyup="calc_tool_income_values('revenues_total_year_3')" name="tool_builder_fm_income[tool_builder_returns_3]" value="<?=$tool['tool_builder_returns_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -139,17 +139,17 @@
                                                             <th>Service Revenue</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_service_1]" value="<?=$tool['tool_builder_service_1']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_1" onkeyup="calc_tool_income_values('revenues_total_year_1')" name="tool_builder_fm_income[tool_builder_service_1]" value="<?=$tool['tool_builder_service_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_service_2]" value="<?=$tool['tool_builder_service_2']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_2" onkeyup="calc_tool_income_values('revenues_total_year_2')" name="tool_builder_fm_income[tool_builder_service_2]" value="<?=$tool['tool_builder_service_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_service_3]" value="<?=$tool['tool_builder_service_3']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_3" onkeyup="calc_tool_income_values('revenues_total_year_3')" name="tool_builder_fm_income[tool_builder_service_3]" value="<?=$tool['tool_builder_service_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -158,17 +158,17 @@
                                                             <th>Interest Revenue</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_interest_1]" value="<?=$tool['tool_builder_interest_1']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_1" onkeyup="calc_tool_income_values('revenues_total_year_1')" name="tool_builder_fm_income[tool_builder_interest_1]" value="<?=$tool['tool_builder_interest_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_interest_2]" value="<?=$tool['tool_builder_interest_2']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_2" onkeyup="calc_tool_income_values('revenues_total_year_2')" name="tool_builder_fm_income[tool_builder_interest_2]" value="<?=$tool['tool_builder_interest_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_interest_3]" value="<?=$tool['tool_builder_interest_3']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_3" onkeyup="calc_tool_income_values('revenues_total_year_3')" name="tool_builder_fm_income[tool_builder_interest_3]" value="<?=$tool['tool_builder_interest_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -181,17 +181,17 @@
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_r_2]" value="<?=$tool['tool_builder_other_r_2']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_1" onkeyup="calc_tool_income_values('revenues_total_year_1')" name="tool_builder_fm_income[tool_builder_other_r_2]" value="<?=$tool['tool_builder_other_r_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_r_3]" value="<?=$tool['tool_builder_other_r_3']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_2" onkeyup="calc_tool_income_values('revenues_total_year_2')" name="tool_builder_fm_income[tool_builder_other_r_3]" value="<?=$tool['tool_builder_other_r_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_r_4]" value="<?=$tool['tool_builder_other_r_4']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_3" onkeyup="calc_tool_income_values('revenues_total_year_3')" name="tool_builder_fm_income[tool_builder_other_r_4]" value="<?=$tool['tool_builder_other_r_4']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -204,17 +204,17 @@
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_r_6]" value="<?=$tool['tool_builder_other_r_6']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_1" onkeyup="calc_tool_income_values('revenues_total_year_1')" name="tool_builder_fm_income[tool_builder_other_r_6]" value="<?=$tool['tool_builder_other_r_6']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_r_7]" value="<?=$tool['tool_builder_other_r_7']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_2" onkeyup="calc_tool_income_values('revenues_total_year_2')" name="tool_builder_fm_income[tool_builder_other_r_7]" value="<?=$tool['tool_builder_other_r_7']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" class="revenues_total_year_3" onkeyup="calc_tool_income_values('owners_equity_total','tool_builder_total_liabilities')" name="tool_builder_fm_income[tool_builder_other_r_8]" value="<?=$tool['tool_builder_other_r_8']?>" placeholder="0">
+                                                                <input type="number" class="revenues_total_year_3" onkeyup="calc_tool_income_values('revenues_total_year_3')" name="tool_builder_fm_income[tool_builder_other_r_8]" value="<?=$tool['tool_builder_other_r_8']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -245,17 +245,17 @@
                                                             <th>Advertising</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_advertising_1]" value="<?=$tool['tool_builder_advertising_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_advertising_1]" value="<?=$tool['tool_builder_advertising_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_advertising_2]" value="<?=$tool['tool_builder_advertising_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')"  name="tool_builder_fm_income[tool_builder_advertising_2]" value="<?=$tool['tool_builder_advertising_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_advertising_3]" value="<?=$tool['tool_builder_advertising_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_advertising_3]" value="<?=$tool['tool_builder_advertising_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -264,17 +264,17 @@
                                                             <th>Bad Debt</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_debt_1]" value="<?=$tool['tool_builder_debt_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_debt_1]" value="<?=$tool['tool_builder_debt_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_debt_2]" value="<?=$tool['tool_builder_debt_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_debt_2]" value="<?=$tool['tool_builder_debt_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_debt_3]" value="<?=$tool['tool_builder_debt_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_debt_3]" value="<?=$tool['tool_builder_debt_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -283,17 +283,17 @@
                                                             <th>Commissions</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_commissions_1]" value="<?=$tool['tool_builder_commissions_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_commissions_1]" value="<?=$tool['tool_builder_commissions_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_commissions_2]" value="<?=$tool['tool_builder_commissions_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_commissions_2]" value="<?=$tool['tool_builder_commissions_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_commissions_3]" value="<?=$tool['tool_builder_commissions_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_commissions_3]" value="<?=$tool['tool_builder_commissions_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -302,17 +302,17 @@
                                                             <th>Cost of Goods Sold</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_goods_1]" value="<?=$tool['tool_builder_goods_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_goods_1]" value="<?=$tool['tool_builder_goods_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_goods_2]" value="<?=$tool['tool_builder_goods_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_goods_2]" value="<?=$tool['tool_builder_goods_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_goods_3]" value="<?=$tool['tool_builder_goods_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_goods_3]" value="<?=$tool['tool_builder_goods_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -321,17 +321,17 @@
                                                             <th>Depreciation</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_depreciation_1]" value="<?=$tool['tool_builder_depreciation_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_depreciation_1]" value="<?=$tool['tool_builder_depreciation_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_depreciation_2]" value="<?=$tool['tool_builder_depreciation_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_depreciation_2]" value="<?=$tool['tool_builder_depreciation_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_depreciation_3]" value="<?=$tool['tool_builder_depreciation_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_depreciation_3]" value="<?=$tool['tool_builder_depreciation_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -340,17 +340,17 @@
                                                             <th>Employee Benefits</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_benefits_1]" value="<?=$tool['tool_builder_benefits_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_benefits_1]" value="<?=$tool['tool_builder_benefits_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_benefits_2]" value="<?=$tool['tool_builder_benefits_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_benefits_2]" value="<?=$tool['tool_builder_benefits_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_benefits_3]" value="<?=$tool['tool_builder_benefits_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_benefits_3]" value="<?=$tool['tool_builder_benefits_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -359,17 +359,17 @@
                                                             <th>Furniture and Equipment</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_equipment_1]" value="<?=$tool['tool_builder_equipment_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_equipment_1]" value="<?=$tool['tool_builder_equipment_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_equipment_2]" value="<?=$tool['tool_builder_equipment_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_equipment_2]" value="<?=$tool['tool_builder_equipment_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_equipment_3]" value="<?=$tool['tool_builder_equipment_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_equipment_3]" value="<?=$tool['tool_builder_equipment_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -378,17 +378,17 @@
                                                             <th>Insurance</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_insurance_1]" value="<?=$tool['tool_builder_insurance_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_insurance_1]" value="<?=$tool['tool_builder_insurance_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_insurance_2]" value="<?=$tool['tool_builder_insurance_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_insurance_2]" value="<?=$tool['tool_builder_insurance_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_insurance_3]" value="<?=$tool['tool_builder_insurance_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_insurance_3]" value="<?=$tool['tool_builder_insurance_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -397,17 +397,17 @@
                                                             <th>Interest Expense</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_expense_1]" value="<?=$tool['tool_builder_expense_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_expense_1]" value="<?=$tool['tool_builder_expense_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_expense_2]" value="<?=$tool['tool_builder_expense_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_expense_2]" value="<?=$tool['tool_builder_expense_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_expense_3]" value="<?=$tool['tool_builder_expense_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_expense_3]" value="<?=$tool['tool_builder_expense_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -416,17 +416,17 @@
                                                             <th>Maintenance and Repairs</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_maintenance_1]" value="<?=$tool['tool_builder_maintenance_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_maintenance_1]" value="<?=$tool['tool_builder_maintenance_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_maintenance_2]" value="<?=$tool['tool_builder_maintenance_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_maintenance_2]" value="<?=$tool['tool_builder_maintenance_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_maintenance_3]" value="<?=$tool['tool_builder_maintenance_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_maintenance_3]" value="<?=$tool['tool_builder_maintenance_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -435,17 +435,17 @@
                                                             <th>Office Supplies</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_supplies_1]" value="<?=$tool['tool_builder_supplies_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_supplies_1]" value="<?=$tool['tool_builder_supplies_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_supplies_2]" value="<?=$tool['tool_builder_supplies_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_supplies_2]" value="<?=$tool['tool_builder_supplies_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_supplies_3]" value="<?=$tool['tool_builder_supplies_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_supplies_3]" value="<?=$tool['tool_builder_supplies_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -454,17 +454,17 @@
                                                             <th>Payroll Taxes</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_payroll_1]" value="<?=$tool['tool_builder_payroll_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_payroll_1]" value="<?=$tool['tool_builder_payroll_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_payroll_2]" value="<?=$tool['tool_builder_payroll_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_payroll_2]" value="<?=$tool['tool_builder_payroll_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_payroll_3]" value="<?=$tool['tool_builder_payroll_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_payroll_3]" value="<?=$tool['tool_builder_payroll_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -473,17 +473,17 @@
                                                             <th>Rent</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_rent_1]" value="<?=$tool['tool_builder_rent_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_rent_1]" value="<?=$tool['tool_builder_rent_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_rent_2]" value="<?=$tool['tool_builder_rent_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_rent_2]" value="<?=$tool['tool_builder_rent_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_rent_3]" value="<?=$tool['tool_builder_rent_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_rent_3]" value="<?=$tool['tool_builder_rent_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -492,17 +492,17 @@
                                                             <th>Research and Development</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_research_1]" value="<?=$tool['tool_builder_research_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_research_1]" value="<?=$tool['tool_builder_research_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_research_2]" value="<?=$tool['tool_builder_research_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_research_2]" value="<?=$tool['tool_builder_research_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_research_3]" value="<?=$tool['tool_builder_research_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_research_3]" value="<?=$tool['tool_builder_research_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -511,17 +511,17 @@
                                                             <th>Salaries and Wages</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_salaries_1]" value="<?=$tool['tool_builder_salaries_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_salaries_1]" value="<?=$tool['tool_builder_salaries_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_salaries_2]" value="<?=$tool['tool_builder_salaries_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_salaries_2]" value="<?=$tool['tool_builder_salaries_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_salaries_3]" value="<?=$tool['tool_builder_salaries_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_salaries_3]" value="<?=$tool['tool_builder_salaries_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -530,17 +530,17 @@
                                                             <th>Software</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_software_1]" value="<?=$tool['tool_builder_software_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_software_1]" value="<?=$tool['tool_builder_software_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_software_2]" value="<?=$tool['tool_builder_software_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_software_2]" value="<?=$tool['tool_builder_software_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_software_3]" value="<?=$tool['tool_builder_software_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_software_3]" value="<?=$tool['tool_builder_software_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -549,17 +549,17 @@
                                                             <th>Travel</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_travel_1]" value="<?=$tool['tool_builder_travel_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_travel_1]" value="<?=$tool['tool_builder_travel_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_travel_2]" value="<?=$tool['tool_builder_travel_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_travel_2]" value="<?=$tool['tool_builder_travel_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_travel_3]" value="<?=$tool['tool_builder_travel_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_travel_3]" value="<?=$tool['tool_builder_travel_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -568,17 +568,17 @@
                                                             <th>Utilities</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_utilities_1]" value="<?=$tool['tool_builder_utilities_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_utilities_1]" value="<?=$tool['tool_builder_utilities_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_utilities_2]" value="<?=$tool['tool_builder_utilities_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_utilities_2]" value="<?=$tool['tool_builder_utilities_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_utilities_3]" value="<?=$tool['tool_builder_utilities_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_utilities_3]" value="<?=$tool['tool_builder_utilities_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -587,17 +587,17 @@
                                                             <th>Web Hosting and Domains</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_hosting_1]" value="<?=$tool['tool_builder_hosting_1']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_hosting_1]" value="<?=$tool['tool_builder_hosting_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_hosting_2]" value="<?=$tool['tool_builder_hosting_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_hosting_2]" value="<?=$tool['tool_builder_hosting_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_hosting_3]" value="<?=$tool['tool_builder_hosting_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_hosting_3]" value="<?=$tool['tool_builder_hosting_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -610,17 +610,17 @@
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_e_2]" value="<?=$tool['tool_builder_other_e_2']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_other_e_2]" value="<?=$tool['tool_builder_other_e_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_e_3]" value="<?=$tool['tool_builder_other_e_3']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_other_e_3]" value="<?=$tool['tool_builder_other_e_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_e_4]" value="<?=$tool['tool_builder_other_e_4']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_other_e_4]" value="<?=$tool['tool_builder_other_e_4']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -633,20 +633,26 @@
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_e_6]" value="<?=$tool['tool_builder_other_e_6']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_1" onkeyup="calc_tool_income_values('expenses_total_year_1')" name="tool_builder_fm_income[tool_builder_other_e_6]" value="<?=$tool['tool_builder_other_e_6']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_e_7]" value="<?=$tool['tool_builder_other_e_7']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_2" onkeyup="calc_tool_income_values('expenses_total_year_2')" name="tool_builder_fm_income[tool_builder_other_e_7]" value="<?=$tool['tool_builder_other_e_7']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_e_8]" value="<?=$tool['tool_builder_other_e_8']?>" placeholder="0">
+                                                                <input type="number" class="expenses_total_year_3" onkeyup="calc_tool_income_values('expenses_total_year_3')" name="tool_builder_fm_income[tool_builder_other_e_8]" value="<?=$tool['tool_builder_other_e_8']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
+
+                                                            <input type="hidden" id="expenses_total_year_1"  name="tool_builder_fm_income[total_expenses_year_1]" value="<?= $tool['total_expenses_year_1'] ?>" placeholder="0">
+                                                            <input type="hidden" id="expenses_total_year_2"  name="tool_builder_fm_income[total_expenses_year_2]" value="<?= $tool['total_expenses_year_2'] ?>" placeholder="0">
+                                                            <input type="hidden" id="expenses_total_year_3"  name="tool_builder_fm_income[total_expenses_year_3]" value="<?= $tool['total_expenses_year_3'] ?>" placeholder="0">
+
+
                                                         </tbody>
                                                         </table>
 
@@ -668,17 +674,17 @@
                                                             <th>Tax Expenses</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_tax_expense_1]" value="<?=$tool['tool_builder_tax_expense_1']?>" placeholder="0">
+                                                                <input type="number" class="tax_total_year_1" onkeyup="calc_tool_income_values('tax_total_year_1')" name="tool_builder_fm_income[tool_builder_tax_expense_1]" value="<?=$tool['tool_builder_tax_expense_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_tax_expense_2]" value="<?=$tool['tool_builder_tax_expense_2']?>" placeholder="0">
+                                                                <input type="number" class="tax_total_year_2" onkeyup="calc_tool_income_values('tax_total_year_2')" name="tool_builder_fm_income[tool_builder_tax_expense_2]" value="<?=$tool['tool_builder_tax_expense_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_tax_expense_3]" value="<?=$tool['tool_builder_tax_expense_3']?>" placeholder="0">
+                                                                <input type="number" class="tax_total_year_3" onkeyup="calc_tool_income_values('tax_total_year_3')" name="tool_builder_fm_income[tool_builder_tax_expense_3]" value="<?=$tool['tool_builder_tax_expense_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
@@ -687,20 +693,35 @@
                                                             <th>Other Tax Expenses</th>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_tax_expense_1]" value="<?=$tool['tool_builder_other_tax_expense_1']?>" placeholder="0">
+                                                                <input type="number" class="tax_total_year_1" onkeyup="calc_tool_income_values('tax_total_year_1')" name="tool_builder_fm_income[tool_builder_other_tax_expense_1]" value="<?=$tool['tool_builder_other_tax_expense_1']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_tax_expense_2]" value="<?=$tool['tool_builder_other_tax_expense_2']?>" placeholder="0">
+                                                                <input type="number" class="tax_total_year_2" onkeyup="calc_tool_income_values('tax_total_year_2')" name="tool_builder_fm_income[tool_builder_other_tax_expense_2]" value="<?=$tool['tool_builder_other_tax_expense_2']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="fld-text mb-0">
-                                                                <input type="number" name="tool_builder_fm_income[tool_builder_other_tax_expense_3]" value="<?=$tool['tool_builder_other_tax_expense_3']?>" placeholder="0">
+                                                                <input type="number" class="tax_total_year_3" onkeyup="calc_tool_income_values('tax_total_year_3')" name="tool_builder_fm_income[tool_builder_other_tax_expense_3]" value="<?=$tool['tool_builder_other_tax_expense_3']?>" placeholder="0">
                                                                 </div>
                                                             </td>
                                                             </tr>
+
+                                                            <input type="hidden" id="tax_total_year_1"  name="tool_builder_fm_income[total_tax_year_1]" value="<?= $tool['total_tax_year_1'] ?>" placeholder="0">
+                                                            <input type="hidden" id="tax_total_year_2"  name="tool_builder_fm_income[total_tax_year_2]" value="<?= $tool['total_tax_year_2'] ?>" placeholder="0">
+                                                            <input type="hidden" id="tax_total_year_3"  name="tool_builder_fm_income[total_tax_year_3]" value="<?= $tool['total_tax_year_3'] ?>" placeholder="0">
+
+
+                                                            <input type="hidden" id="net_income_before_tax_year_1"  name="tool_builder_fm_income[net_income_before_taxes_year_1]" value="<?= $tool['net_income_before_taxes_year_1'] ?>" placeholder="0">
+                                                            <input type="hidden" id="net_income_before_tax_year_2"  name="tool_builder_fm_income[net_income_before_taxes_year_2]" value="<?= $tool['net_income_before_taxes_year_2'] ?>" placeholder="0">
+                                                            <input type="hidden" id="net_income_before_tax_year_3"  name="tool_builder_fm_income[net_income_before_taxes_year_3]" value="<?= $tool['net_income_before_taxes_year_3'] ?>" placeholder="0">
+
+
+                                                            <input type="hidden" id="net_income_year_1"  name="tool_builder_fm_income[net_income_year_1]" value="<?= $tool['net_income_year_1'] ?>" placeholder="0">
+                                                            <input type="hidden" id="net_income_year_2"  name="tool_builder_fm_income[net_income_year_2]" value="<?= $tool['net_income_year_2'] ?>" placeholder="0">
+                                                            <input type="hidden" id="net_income_year_3"  name="tool_builder_fm_income[net_income_year_3]" value="<?= $tool['net_income_year_3'] ?>" placeholder="0">
+
                                                         </tbody>
                                                         </table>
 
