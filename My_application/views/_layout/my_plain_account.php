@@ -1023,7 +1023,6 @@ function calc_other_assets(){
     } 
     document.getElementById(id).value = total_i;  
 
-
     var tool_builder_total_cash_payments_current = document.getElementById('tool_builder_total_cash_payments_current');
     var tool_builder_total_cash_payments_previous = document.getElementById('tool_builder_total_cash_payments_previous');
     var tool_builder_total_cash_payments_increase = document.getElementById('tool_builder_total_cash_payments_increase');
