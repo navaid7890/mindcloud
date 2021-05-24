@@ -43,11 +43,14 @@
                            <div class="row align-items-center">
                               <div class="col-lg-9 col-md-12">
                                  <h4>Tool and Tool Builder - Income Statement</h4>
+                                 <a href='<?= base_url() ?>quiz/income'>Download Here</a>
+
+                                 
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> Income Statement. </strong></p>
                               </div>
                               <div class="col-lg-3 col-md-12 text-right">
-                              <a href="<?= base_url()?>account/profile/dl_tools_vp"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                              <a href="#"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
                               </div>
                            </div>
                         </div>

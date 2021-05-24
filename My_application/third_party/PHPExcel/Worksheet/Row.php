@@ -1,8 +1,9 @@
 <?php
+
 /**
  * PHPExcel
  *
- * Copyright (c) 2006 - 2013 PHPExcel
+ * Copyright (c) 2006 - 2014 PHPExcel
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,11 +21,10 @@
  *
  * @category   PHPExcel
  * @package    PHPExcel_Worksheet
- * @copyright  Copyright (c) 2006 - 2013 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @copyright  Copyright (c) 2006 - 2014 PHPExcel (http://www.codeplex.com/PHPExcel)
  * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.9, 2013-06-02
+ * @version    1.8.0, 2014-03-02
  */
-
 
 /**
  * PHPExcel_Worksheet_Row
@@ -33,58 +33,59 @@
  *
  * @category   PHPExcel
  * @package    PHPExcel_Worksheet
- * @copyright  Copyright (c) 2006 - 2013 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @copyright  Copyright (c) 2006 - 2014 PHPExcel (http://www.codeplex.com/PHPExcel)
  */
-class PHPExcel_Worksheet_Row
-{
-	/**
-	 * PHPExcel_Worksheet
-	 *
-	 * @var PHPExcel_Worksheet
-	 */
-	private $_parent;
+class PHPExcel_Worksheet_Row {
 
-	/**
-	 * Row index
-	 *
-	 * @var int
-	 */
-	private $_rowIndex = 0;
+    /**
+     * PHPExcel_Worksheet
+     *
+     * @var PHPExcel_Worksheet
+     */
+    private $_parent;
 
-	/**
-	 * Create a new row
-	 *
-	 * @param PHPExcel_Worksheet 		$parent
-	 * @param int						$rowIndex
-	 */
-	public function __construct(PHPExcel_Worksheet $parent = null, $rowIndex = 1) {
-		// Set parent and row index
-		$this->_parent 		= $parent;
-		$this->_rowIndex 	= $rowIndex;
-	}
+    /**
+     * Row index
+     *
+     * @var int
+     */
+    private $_rowIndex = 0;
 
-	/**
-	 * Destructor
-	 */
-	public function __destruct() {
-		unset($this->_parent);
-	}
+    /**
+     * Create a new row
+     *
+     * @param PHPExcel_Worksheet 		$parent
+     * @param int						$rowIndex
+     */
+    public function __construct(PHPExcel_Worksheet $parent = null, $rowIndex = 1) {
+        // Set parent and row index
+        $this->_parent = $parent;
+        $this->_rowIndex = $rowIndex;
+    }
 
-	/**
-	 * Get row index
-	 *
-	 * @return int
-	 */
-	public function getRowIndex() {
-		return $this->_rowIndex;
-	}
+    /**
+     * Destructor
+     */
+    public function __destruct() {
+        unset($this->_parent);
+    }
 
-	/**
-	 * Get cell iterator
-	 *
-	 * @return PHPExcel_Worksheet_CellIterator
-	 */
-	public function getCellIterator() {
-		return new PHPExcel_Worksheet_CellIterator($this->_parent, $this->_rowIndex);
-	}
+    /**
+     * Get row index
+     *
+     * @return int
+     */
+    public function getRowIndex() {
+        return $this->_rowIndex;
+    }
+
+    /**
+     * Get cell iterator
+     *
+     * @return PHPExcel_Worksheet_CellIterator
+     */
+    public function getCellIterator() {
+        return new PHPExcel_Worksheet_CellIterator($this->_parent, $this->_rowIndex);
+    }
+
 }
