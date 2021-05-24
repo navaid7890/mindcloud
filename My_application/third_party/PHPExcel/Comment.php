@@ -1,8 +1,9 @@
 <?php
+
 /**
  * PHPExcel
  *
- * Copyright (c) 2006 - 2013 PHPExcel
+ * Copyright (c) 2006 - 2014 PHPExcel
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,21 +21,20 @@
  *
  * @category   PHPExcel
  * @package    PHPExcel
- * @copyright  Copyright (c) 2006 - 2013 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @copyright  Copyright (c) 2006 - 2014 PHPExcel (http://www.codeplex.com/PHPExcel)
  * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
- * @version    1.7.9, 2013-06-02
+ * @version    1.8.0, 2014-03-02
  */
-
 
 /**
  * PHPExcel_Comment
  *
  * @category   PHPExcel
  * @package    PHPExcel
- * @copyright  Copyright (c) 2006 - 2013 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @copyright  Copyright (c) 2006 - 2014 PHPExcel (http://www.codeplex.com/PHPExcel)
  */
-class PHPExcel_Comment implements PHPExcel_IComparable
-{
+class PHPExcel_Comment implements PHPExcel_IComparable {
+
     /**
      * Author
      *
@@ -103,13 +103,12 @@ class PHPExcel_Comment implements PHPExcel_IComparable
      *
      * @throws PHPExcel_Exception
      */
-    public function __construct()
-    {
+    public function __construct() {
         // Initialise variables
-        $this->_author		= 'Author';
-        $this->_text		= new PHPExcel_RichText();
-        $this->_fillColor	= new PHPExcel_Style_Color('FFFFFFE1');
-        $this->_alignment	= PHPExcel_Style_Alignment::HORIZONTAL_GENERAL;
+        $this->_author = 'Author';
+        $this->_text = new PHPExcel_RichText();
+        $this->_fillColor = new PHPExcel_Style_Color('FFFFFFE1');
+        $this->_alignment = PHPExcel_Style_Alignment::HORIZONTAL_GENERAL;
     }
 
     /**
@@ -288,16 +287,16 @@ class PHPExcel_Comment implements PHPExcel_IComparable
      */
     public function getHashCode() {
         return md5(
-              $this->_author
-            . $this->_text->getHashCode()
-            . $this->_width
-            . $this->_height
-            . $this->_marginLeft
-            . $this->_marginTop
-            . ($this->_visible ? 1 : 0)
-            . $this->_fillColor->getHashCode()
-            . $this->_alignment
-            . __CLASS__
+                $this->_author
+                . $this->_text->getHashCode()
+                . $this->_width
+                . $this->_height
+                . $this->_marginLeft
+                . $this->_marginTop
+                . ($this->_visible ? 1 : 0)
+                . $this->_fillColor->getHashCode()
+                . $this->_alignment
+                . __CLASS__
         );
     }
 
