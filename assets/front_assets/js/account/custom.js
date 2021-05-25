@@ -13,7 +13,7 @@ $(document).ready(function() {
 
     $('a.menu-dash, .menu-dash-front').click(function() {
         $(this).toggleClass('open');
-        $('.dashboard-menu-box, .front-dashboard').toggleClass('open');
+        $('.dashboard-menu-box, .front-dashboard, .dashboard-layout>li:nth-child(2), .dashboard-layout>li:nth-child(3)').toggleClass('open');
     });
 
 
@@ -215,7 +215,7 @@ $(window).scroll(function() {
 
 $("ul.course-scroll, .tutorial-scroll-content, .video-caption, .index-page-wrap, .order-confirm, .place-order ").mCustomScrollbar({
     scrollButtons: { enable: true },
-    theme: "dark"
+    theme: "dark",
 });
 
 // $("ul.fld-progress").mCustomScrollbar({

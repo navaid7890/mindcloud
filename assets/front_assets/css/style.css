@@ -75,7 +75,7 @@ button { background: transparent; border: none; border-radius: 0px; font-family:
 
 /*header css*/
 header {-webkit-transition: all 0.4s ease-In-out;-moz-transition: all 0.4s ease-In-out;-o-transition: all 0.4s ease-In-out;transition: all 0.4s ease-In-out;padding: 30px 12%;box-shadow: 0px 3px 6px #00000029;position: relative;background: #fff;}
-ul.login-btn { font-size: 0; }
+ul.login-btn {font-size: 0;padding-bottom: 20px;}
 ul.login-btn>li { display: inline-block; margin-right: 6px; vertical-align: middle; position: relative; }
 ul.login-btn>li>a { font-size: 16px; color: #1D90D9; }
 ul.login-btn>li>a:hover { color: #000; }
@@ -149,7 +149,7 @@ ul.dropdown li.last { margin-bottom: 0px; }
 .video-card { background: #FFFFFF 0% 0% no-repeat padding-box; box-shadow: 0px 3px 12px #3130340A; border-radius: 15px; max-width: 100%; height: 538px; }
 .video-box {position: relative;width: 100%;height: 280px;overflow: hidden;}
 .whyjoinSec .video-box { width: 100%; height: 767px; overflow: hidden; }
-.video-box span { position: absolute; bottom: 0; top: 0; left: 0; right: 0; align-items: center; display: flex; justify-content: center; font-size: 25px; color: #fff; flex-direction: column; }
+.video-box span {position: absolute;bottom: 0;top: 0;left: 0;right: 0;align-items: center;display: flex;justify-content: center;font-size: 25px;color: #fff;flex-direction: column;}
 .video-box span>i { border: 2px solid #fff; padding: 20px 24px; border-radius: 100px; width: 68px; transition: 0.5s; }
 .video-box:hover span>i { background: #1c8fd8; }
 .video-content div>span { padding: 9px 32px; background: rgb(29 144 217 / 10%) 0% 0%; border-radius: 15px; font-size: 15px; color: #1D90D9; right: 0; position: absolute; top: 0; margin: 20px; }
@@ -344,10 +344,10 @@ ul.cate-list { margin-bottom: 78px; }
 .expert-page-Sec .vid-content h4 {font-size: 18px;text-transform: capitalize;height: 69px;line-height: normal;overflow: hidden;-webkit-line-clamp: 3;-webkit-box-orient: vertical;text-overflow: ellipsis;display: block;display: -webkit-box;}
 .expert-page-Sec ul.tut-list .vid-content { padding: 20px; }
 .expert-page-Sec .vid-box { min-height: auto; }
-.expert-page-Sec .pt-70 { padding-top: 60px; }
+.expert-page-Sec .pt-70 {padding-top: 20px;}
 .expert-page-Sec .video-box span { opacity: 0; transition: 0.5s; }
 .expert-page-Sec ul.who-list>li:hover .video-box span { opacity: 1; }
-.expert-page-Sec ul.who-list>li a.cate-tag { top: 39%; }
+.expert-page-Sec ul.who-list>li a.cate-tag {top: 139px;}
 .expert-page-Sec a.btn-links { color: #1BA8E8; text-align: center; display: block; font-weight: 600; text-decoration: underline; }
 .expert-page-Sec a.btn-links:hover { color: #000; }
 .consult-content ul.cate-list>li { width: 45%; }
@@ -583,7 +583,7 @@ button.cart-trim:hover { color: #000; }
 .fld-place input::placeholder { color: #5C677D; }
 .fld-place { margin-bottom: 15px; }
 .abtBox .video-box { width: 100%; height: 410px; }
-.xpert-content .video-box {width: 247px;height: 185px;overflow: hidden;}
+.xpert-content .video-box {width: 247px;height: 185px;overflow: hidden;position: relative;}
 .xpert-content ul.who-list.tut-list .video-box img {
     position: absolute;
     left: 0;
@@ -1652,6 +1652,26 @@ ul.who-list .video-box img {
     width: 370px;
     height: 280px;
 }
+
+.xpert-content ul.login-btn>li>a {
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+}
+
+.xpert-content ul.login-btn>li {
+    margin: 0;
+}
+ul.login-btn>li>a>span {
+    width: 38px;
+    border-radius: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 10px;
+    height: 32px;
+    overflow: hidden;
+}
+
 
 @media (min-width:768px) {
     .copyright-top .col-md-9 { flex: 0 0 92% !important; max-width: 100%; }
