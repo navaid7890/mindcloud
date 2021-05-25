@@ -1224,7 +1224,7 @@ class Profile extends MY_Controller_Account
 
 
 		$fa = array();
-		$fa['where']['faq_category'] = 2;
+		$fa['where']['faq_category'] = 1;
 		$fa['order'] = "faq_id ASC";
 		$data['faq'] = $this->model_faq->find_all_active($fa);
 
