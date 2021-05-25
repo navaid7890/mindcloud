@@ -152,7 +152,7 @@
             <div class="col-md-6">
                 <div class="popup-col">
                    
-                    <a href="<?= base_url()?>account/profile/pdf_convert?courseid=<?=$_GET['courseid']?>"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                    <a href="<?= base_url()?>account/profile/pdf_convert?courseid=<?=$_GET['courseid']?>" target="_blank"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
                 </div>
             </div>
         </div>
