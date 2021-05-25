@@ -989,6 +989,66 @@ function calc_other_assets(){
 }
 
 
+  function calc_cfs_values(id, sum_val, total_receipt){ 
+
+    var current_period = document.getElementById(id+'1').value;
+    var previous_period = document.getElementById(id+'2').value;
+
+    var increase = document.getElementById(id+'3');
+
+    increase.value = current_period - previous_period;
+
+    var total = 0;
+    var other_assets_total = document.querySelectorAll('.'+sum_val);
+    for (var i = 0; i < other_assets_total.length; i++) {
+        if (other_assets_total[i].value > 0) {
+            var other_assets_val = other_assets_total[i];
+            total += parseFloat(other_assets_val.value);
+        }
+    } 
+    document.getElementById(sum_val).value = total; 
+
+    get_cfs_total(total_receipt);
+ 
+  } 
+
+
+  function get_cfs_total(id){  
+    var total_i = 0;
+
+    var get_id = document.getElementsByClassName(id);
+
+    for (var i = 0; i < get_id.length; i++) { 
+      total_i += Number(get_id[i].value);
+    } 
+    document.getElementById(id).value = total_i;  
+
+    var tool_builder_total_cash_payments_current = document.getElementById('tool_builder_total_cash_payments_current');
+    var tool_builder_total_cash_payments_previous = document.getElementById('tool_builder_total_cash_payments_previous');
+    var tool_builder_total_cash_payments_increase = document.getElementById('tool_builder_total_cash_payments_increase');
+
+    var tool_builder_net_cash_change_current = document.getElementById('tool_builder_net_cash_change_current');
+    var tool_builder_net_cash_change_previous = document.getElementById('tool_builder_net_cash_change_previous');
+    var tool_builder_net_cash_change_increase = document.getElementById('tool_builder_net_cash_change_increase');
+
+    var tool_builder_month_ending_current = document.getElementById('tool_builder_month_ending_current');
+    var tool_builder_month_ending_previous = document.getElementById('tool_builder_month_ending_previous');
+    var tool_builder_month_ending_increase = document.getElementById('tool_builder_month_ending_increase');
+
+    tool_builder_total_cash_payments_current.value = Number(document.getElementById('c_o_g_c').value) + Number(document.getElementById('o_e_c').value) + Number(document.getElementById('a_e_c').value);
+    tool_builder_total_cash_payments_previous.value = Number(document.getElementById('c_o_g_p').value) + Number(document.getElementById('o_e_p').value) + Number(document.getElementById('a_e_p').value);
+    tool_builder_total_cash_payments_increase.value = Number(tool_builder_total_cash_payments_current.value) - Number(tool_builder_total_cash_payments_previous.value);
+
+    tool_builder_net_cash_change_current.value = Number(document.getElementById('c_o_h_c').value) - Number(tool_builder_total_cash_payments_increase.value);
+    tool_builder_net_cash_change_previous.value = Number(document.getElementById('c_o_h_p').value) - Number(tool_builder_total_cash_payments_previous.value);
+    tool_builder_net_cash_change_increase.value = Number(tool_builder_net_cash_change_current.value) - Number(tool_builder_net_cash_change_previous.value);
+
+    tool_builder_month_ending_current.value = (Number(document.getElementById('cash_on_hand1').value) + Number(document.getElementById('c_o_h_c').value)) - Number(tool_builder_total_cash_payments_current.value);
+    tool_builder_month_ending_previous.value = (Number(document.getElementById('cash_on_hand2').value) + Number(document.getElementById('c_o_h_p').value)) - Number(tool_builder_total_cash_payments_previous.value);
+    tool_builder_month_ending_increase.value = Number(tool_builder_month_ending_current.value) - Number(tool_builder_month_ending_previous.value);
+  }
+
+
 
 
 function calc_tool_income_values(id){ 
