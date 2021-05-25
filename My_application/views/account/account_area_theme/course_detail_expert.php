@@ -83,10 +83,25 @@
                      </div>
                   </div>
                   <div class="col-lg-5 col-md-12">
+                     <?//= debug($course[0]['tutorial_id']) ?>
+
+                     <?
+                     // debug($value);
+                     $vidcat = array();
+                     $vidcat['where']['cp_course_id'] = $course[0]['tutorial_id'];
+                     $vidcat = $this->model_course_tutorial->find_all_active($vidcat);
+                     // debug($cate) ;
+                     $vid_name = array();
+                     $vid_name['where']['videos_id'] = $vidcat[0]['cp_tutorial_id'];
+                     $vid_name = $this->model_videos->find_all_active($vid_name);
+                     
+                     ?>
+
+
                      <div class="video-card">
                         <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox="media">
                            <div class="video-box">
-                              <img src="<?= g('db.admin.bucketimg') . $expert[0]['expert_image'] ?>" />
+                              <img src="<?= g('db.admin.bucketimg') . $vid_name[0]['videos_image2'] ?>" />
                               <span><i class="fas fa-play"></i></span>
                            </div>
                         </a>
@@ -141,7 +156,7 @@
                               </div>
                            </div>
                         </li>
-                        
+
                         <? if (isset($lc) and array_filled($lc)) : ?>
                            <? foreach ($lc as $key => $value) : ?>
 

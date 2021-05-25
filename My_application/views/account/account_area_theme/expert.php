@@ -78,15 +78,28 @@
                                                 <div class="video-box">
 
                                                    <?
-                                                   $cexpert = array();
-                                                   $cexpert['where']['expert_id'] = $value["tutorial_expert_id"];
-                                                   $data = $this->model_expert->find_one_active($cexpert);
+                                                   // $cexpert = array();
+                                                   // $cexpert['where']['expert_id'] = $value["tutorial_expert_id"];
+                                                   // $data = $this->model_expert->find_one_active($cexpert);
                                                    ?>
-                                                   <img src="<?= g('db.admin.bucketimg') . $data['expert_image'] ?>">
+                                                   <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
                                                    <span><i class="fas fa-play"></i> </span>
                                                 </div>
                                              </a>
-                                             <a href="javascript:;" class="cate-tag"><?= $value['tutorial_level'] ?></a>
+                                             <?
+                                             // debug($value);
+                                             $coursecat = array();
+                                             $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
+                                             $cate = $this->model_course_category->find_all_active($coursecat);
+                                             
+                                             $cat_name = array();
+                                             $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                             $cat_name = $this->model_category->find_all_active($cat_name);
+                                             ?>
+                                             <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+
+                                             <!-- <a href="javascript:;" class="cate-tag"><? //= $value['tutorial_level'] 
+                                                                                          ?></a> -->
                                              <div class="vid-content">
                                                 <h4><a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
                                                 <h4><?= $value['expert_name'] ?></h4>

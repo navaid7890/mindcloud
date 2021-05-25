@@ -356,10 +356,6 @@ class Quiz extends MY_Controller {
       
       $objPHPExcelReader->getActiveSheet()->setCellValue('H11', $employee_data['tool_builder_dcf_value']);
 
-<<<<<<< HEAD
-      
-=======
->>>>>>> QA
       $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
       header('Content-Type: application/vnd.ms-excel');
   
@@ -381,11 +377,7 @@ class Quiz extends MY_Controller {
       }
 
       else{
-<<<<<<< HEAD
-      $file = APPPATH.'third_party/PHPExcel/finance/test3.xlsx';
-=======
       $file = APPPATH.'third_party/PHPExcel/finance/test4.xlsx';
->>>>>>> QA
     
        $this->load->library('excel');
        $this->load->library('PHPExcel');
@@ -450,10 +442,6 @@ $objPHPExcelReader->getActiveSheet()->setCellValue('C24', $employee_data['tool_b
 
       $objPHPExcelReader->getActiveSheet()->setCellValue('G24', $employee_data['tool_builder_total_liabilities']);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> QA
       $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
       header('Content-Type: application/vnd.ms-excel');
   
@@ -476,11 +464,7 @@ $objPHPExcelReader->getActiveSheet()->setCellValue('C24', $employee_data['tool_b
        }
  
        else{
-<<<<<<< HEAD
-       $file = APPPATH.'third_party/PHPExcel/finance/test5.xlsx';
-=======
         $file = APPPATH.'third_party/PHPExcel/finance/test4.xlsx';
->>>>>>> QA
      
         $this->load->library('excel');
         $this->load->library('PHPExcel');
@@ -517,10 +501,6 @@ $objPHPExcelReader->getActiveSheet()->setCellValue('C24', $employee_data['tool_b
        $objPHPExcelReader->getActiveSheet()->setCellValue('E22', $employee_data['tool_builder_overhead']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('E23', $employee_data['tool_builder_commisions']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('E24', $employee_data['tool_builder_total_1']);
-<<<<<<< HEAD
-     
-=======
->>>>>>> QA
  
           $objPHPExcelReader->getActiveSheet()->setCellValue('F26', $employee_data['tool_builder_total_1']);
           $objPHPExcelReader->getActiveSheet()->setCellValue('F27', $employee_data['tool_builder_cm']);
@@ -552,12 +532,8 @@ $objPHPExcelReader->getActiveSheet()->setCellValue('C24', $employee_data['tool_b
        }
  
        else{
-<<<<<<< HEAD
        $file = APPPATH.'third_party/PHPExcel/finance/test2.xlsx';
      
-=======
-        $file = APPPATH.'third_party/PHPExcel/finance/test4.xlsx';
->>>>>>> QA
         $this->load->library('excel');
         $this->load->library('PHPExcel');
    
@@ -698,11 +674,7 @@ $objPHPExcelReader->getActiveSheet()->setCellValue('C24', $employee_data['tool_b
         }
   
         else{
-<<<<<<< HEAD
         $file = APPPATH.'third_party/PHPExcel/finance/test1.xlsx';
-=======
-         $file = APPPATH.'third_party/PHPExcel/finance/test4.xlsx';
->>>>>>> QA
       
          $this->load->library('excel');
          $this->load->library('PHPExcel');

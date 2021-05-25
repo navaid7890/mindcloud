@@ -48,7 +48,7 @@
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
-                                            <h6>My SWOT<br> Analysis</h6>
+                                            <h6>Business <br> Model <br> Canvas</h6>
                                             <div class="work-prew">
                                                 <img src="<?= i('') ?>dashboard/work/1.png" alt="">
                                             </div>
@@ -60,7 +60,7 @@
                                                 <p>My Business Model Canvas.</p>
                                             </div>
                                             <div class="col-md-3 text-right">
-                                                <a data-fancybox data-src="#popup-down" href="javascript:;"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                                <a href="<?= base_url()?>account/profile/dl_tools"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
                                             </div>
                                         </div>
                                     </div>
@@ -70,7 +70,7 @@
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
-                                            <h6>My SWOT<br> Analysis</h6>
+                                            <h6>Value<br> Proposition<br> Canvas</h6>
                                             <div class="work-prew">
                                                 <img src="<?= i('') ?>dashboard/work/1.png" alt="">
                                             </div>
@@ -79,10 +79,10 @@
                                     <div class="work-footer">
                                         <div class="row align-items-center">
                                             <div class="col-md-9">
-                                                <p>My Business Model Canvas.</p>
+                                                <p>My Value Proposition Canvas .</p>
                                             </div>
                                             <div class="col-md-3 text-right">
-                                                <a data-fancybox data-src="#popup-down" href="javascript:;"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            <a href="<?= base_url()?>account/profile/dl_tools_vp"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
                                             </div>
                                         </div>
                                     </div>
@@ -92,7 +92,7 @@
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
-                                            <h6>My SWOT<br> Analysis</h6>
+                                            <h6>SWOT<br> Analysis</h6>
                                             <div class="work-prew">
                                                 <img src="<?= i('') ?>dashboard/work/1.png" alt="">
                                             </div>
@@ -101,10 +101,10 @@
                                     <div class="work-footer">
                                         <div class="row align-items-center">
                                             <div class="col-md-9">
-                                                <p>My Business Model Canvas.</p>
+                                                <p>My SWOT Analysis.</p>
                                             </div>
                                             <div class="col-md-3 text-right">
-                                                <a data-fancybox data-src="#popup-down" href="javascript:;"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            <a href="<?= base_url()?>account/profile/dl_tools_swot"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
                                             </div>
                                         </div>
                                     </div>
@@ -114,7 +114,7 @@
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
-                                            <h6>My SWOT<br> Analysis</h6>
+                                            <h6>Positioning<br> and <br> Marketing<br> Mix</h6>
                                             <div class="work-prew">
                                                 <img src="<?= i('') ?>dashboard/work/1.png" alt="">
                                             </div>
@@ -123,10 +123,10 @@
                                     <div class="work-footer">
                                         <div class="row align-items-center">
                                             <div class="col-md-9">
-                                                <p>My Business Model Canvas.</p>
+                                                <p>My Positioning and Marketing Mix.</p>
                                             </div>
                                             <div class="col-md-3 text-right">
-                                                <a data-fancybox data-src="#popup-down" href="javascript:;"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            <a href="<?= base_url()?>account/profile/dl_tools_pmmt"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
                                             </div>
                                         </div>
                                     </div>
@@ -136,7 +136,7 @@
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
-                                            <h6>My SWOT<br> Analysis</h6>
+                                            <h6>Strategic <br> Marketing <br> Plan</h6>
                                             <div class="work-prew">
                                                 <img src="<?= i('') ?>dashboard/work/1.png" alt="">
                                             </div>
@@ -145,10 +145,10 @@
                                     <div class="work-footer">
                                         <div class="row align-items-center">
                                             <div class="col-md-9">
-                                                <p>My Business Model Canvas.</p>
+                                                <p>My Strategic Marketing Plan.</p>
                                             </div>
                                             <div class="col-md-3 text-right">
-                                                <a data-fancybox data-src="#popup-down" href="javascript:;"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            <a href="<?= base_url()?>account/profile/dl_tools_smp"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
                                             </div>
                                         </div>
                                     </div>
@@ -158,7 +158,7 @@
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
-                                            <h6>My SWOT<br> Analysis</h6>
+                                            <h6>Customer <br> Journey</h6>
                                             <div class="work-prew">
                                                 <img src="<?= i('') ?>dashboard/work/1.png" alt="">
                                             </div>
@@ -167,10 +167,10 @@
                                     <div class="work-footer">
                                         <div class="row align-items-center">
                                             <div class="col-md-9">
-                                                <p>My Business Model Canvas.</p>
+                                                <p>My Customer Journey Demand Generation.</p>
                                             </div>
                                             <div class="col-md-3 text-right">
-                                                <a data-fancybox data-src="#popup-down" href="javascript:;"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            <a href="<?= base_url()?>account/profile/dl_tools_cjdg"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
                                             </div>
                                         </div>
                                     </div>
@@ -180,7 +180,7 @@
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
-                                            <h6>My SWOT<br> Analysis</h6>
+                                            <h6>Marketing<br> Campaign<br> Model<br> Canvas</h6>
                                             <div class="work-prew">
                                                 <img src="<?= i('') ?>dashboard/work/1.png" alt="">
                                             </div>
@@ -189,10 +189,10 @@
                                     <div class="work-footer">
                                         <div class="row align-items-center">
                                             <div class="col-md-9">
-                                                <p>My Business Model Canvas.</p>
+                                                <p>My Marketing Campaign Model Canvas.</p>
                                             </div>
                                             <div class="col-md-3 text-right">
-                                                <a data-fancybox data-src="#popup-down" href="javascript:;"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            <a href="<?= base_url()?>account/profile/dl_tools_mc"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
                                             </div>
                                         </div>
                                     </div>
@@ -202,7 +202,7 @@
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
-                                            <h6>My SWOT<br> Analysis</h6>
+                                            <h6>Online Sales <br> Funnel</h6>
                                             <div class="work-prew">
                                                 <img src="<?= i('') ?>dashboard/work/1.png" alt="">
                                             </div>
@@ -211,10 +211,52 @@
                                     <div class="work-footer">
                                         <div class="row align-items-center">
                                             <div class="col-md-9">
-                                                <p>My Business Model Canvas.</p>
+                                                <p>My Online Sales Funnel.</p>
                                             </div>
                                             <div class="col-md-3 text-right">
-                                                <a data-fancybox data-src="#popup-down" href="javascript:;"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            <a href="<?= base_url()?>account/profile/dl_tools_osf"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="work-box">
+                                        <div>
+                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
+                                            <h6>Legal<br> Term<br> Sheet</h6>
+                                            <div class="work-prew">
+                                                <img src="<?= i('') ?>dashboard/work/1.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="work-footer">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-9">
+                                                <p>My Legal Term Sheet.</p>
+                                            </div>
+                                            <div class="col-md-3 text-right">
+                                            <a href="<?= base_url()?>account/profile/dl_tools_lts"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="work-box">
+                                        <div>
+                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
+                                            <h6>Investment<br> Deck<br> Slides</h6>
+                                            <div class="work-prew">
+                                                <img src="<?= i('') ?>dashboard/work/1.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="work-footer">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-9">
+                                                <p>My Investment Deck Slides.</p>
+                                            </div>
+                                            <div class="col-md-3 text-right">
+                                            <a href="<?= base_url()?>account/profile/dl_tools_ids"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
                                             </div>
                                         </div>
                                     </div>

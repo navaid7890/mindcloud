@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Learning_journey_course_review extends MY_Controller {
+class Learning_journey_content_review extends MY_Controller {
 
     /**
      * Achievements page
@@ -20,7 +20,7 @@ class Learning_journey_course_review extends MY_Controller {
         global $config;
 
         parent::__construct();
-        $this->dt_params['dt_headings'] = "learning_journey_course_review_id,learning_journey_course_review_course_id,learning_journey_course_review_desc,learning_journey_course_review_stars,learning_journey_course_review_status";
+        $this->dt_params['dt_headings'] = "learning_journey_content_review_id,learning_journey_content_review_content_id,learning_journey_content_review_desc,learning_journey_content_review_stars,learning_journey_content_review_status";
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
 
         $this->dt_params['action'] = array(
@@ -33,7 +33,7 @@ class Learning_journey_course_review extends MY_Controller {
             "extra" => array() ,
         );
 
-        $this->_list_data['learning_journey_course_review_status'] = array(
+        $this->_list_data['learning_journey_content_review_status'] = array(
             STATUS_INACTIVE => "<span class=\"label label-default\">Inactive</span>" ,
             STATUS_ACTIVE =>  "<span class=\"label label-primary\">Active</span>"
         );
@@ -53,7 +53,7 @@ class Learning_journey_course_review extends MY_Controller {
         $config['js_config']['paginate'] = $this->dt_params['paginate'];
 
         // $this->_list_data['learning_journey_course_review_course_id'] = $this->model_learning_journey_content->find_all_list_active(array(),"learning_journey_content_name");
-        $this->_list_data['learning_journey_course_review_course_id'] = $this->model_tutorial->find_all_list_active(array(),"tutorial_name");
+        $this->_list_data['learning_journey_content_review_content_id'] = $this->model_learning_journey_content->find_all_list_active(array(),"learning_journey_content_name");
         // $this->_list_data['learning_journey_category_parent_id'] = $this->model_profession->find_all_list_active(
         //     array('where_string'=>'learning_journey_category_parent_id <= 1')
         //     ,"learning_journey_category_name");

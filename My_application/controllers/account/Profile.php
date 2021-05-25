@@ -9,6 +9,7 @@ include_once(APPPATH . "third_party/PhpWord/Autoloader.php");
 
 use PhpOffice\PhpWord\Autoloader;
 use PhpOffice\PhpWord\Settings;
+use SquareConnect\Model\Device;
 
 Autoloader::register();
 Settings::loadConfig();
@@ -541,11 +542,6 @@ class Profile extends MY_Controller_Account
 
 
 
-
-
-
-
-
 		$param['order'] = "tutorial_id ASC";
 		$param['where']['tutorial_free_status'] = 1;
 		$param['where_in']['tutorial_id']=$all;
@@ -568,6 +564,7 @@ class Profile extends MY_Controller_Account
 
 		$data['check'] = $exp1['child'][0];
 
+		
 
 
 
@@ -626,6 +623,42 @@ class Profile extends MY_Controller_Account
 			// debug( $tootl);
 			// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/business_model_canvus.docx');
+		// debug($tootl);
+		// die();
+		foreach($tootl[0] as $column_name =>$value){
+			$templateProcessor->setValue($column_name, $value);
+
+		}
+		$filename = 'Business Model Canvas.docx';
+		$templateProcessor->saveAs($filename);
+		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
+		$xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+		// $xmlWriter->save('result.docx');
+		// $targetFile = "./global/uploads/";
+		// $filename = 'Value Proposition Canvas.docx';
+		header('Content-Description: File Transfer');
+		header('Content-Type: application/octet-stream');
+		header('Content-Disposition: attachment; filename=' . $filename);
+		header('Content-Transfer-Encoding: binary');
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+		header('Pragma: public');
+		header('Content-Length: ' . filesize($filename));
+		flush();
+		readfile($filename);
+		unlink($filename); // deletes the temporary file
+		exit;
+	}
+	public function dl_tools_multi()
+	{
+		// $this->load->library('phpword');
+			$vp = array();
+			$vp['where']['tool_builder_user_id'] =$this->userid;
+			$data['tootl'] = $this->model_tool_builder_bmc_multi->find_all_active($vp);
+			$tootl = $data['tootl'];
+			// debug( $tootl);
+			// die;
+		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/business_model_canvus_multi.docx');
 		// debug($tootl);
 		// die();
 		foreach($tootl[0] as $column_name =>$value){
@@ -1267,6 +1300,83 @@ class Profile extends MY_Controller_Account
 		$data['expert_course'] = $this->model_tutorial->find_all_active($param);
 		$this->load_view('expert_detail_tutorial', $data);
 	}
+
+	public function pdf_convert($tutorialid='',$view=0)
+	{
+		$tutorialid=$_GET['courseid'];
+		$view =1;
+		
+		$this->layout_data['template_config']['show_toolbar'] = false ;
+		
+		$logodata = $this->model_logo->find_by_pk(1);
+		$logo = Links::img($logodata['logo_image_path'],$logodata['logo_image']);
+		// $data['logo'] = g('dirname').$logodata['logo_image_path'].$logodata['logo_image'];
+	
+	  //   $quiz = $this->model_quiz->find_by_pk($tutorialid);
+		$course = $this->model_tutorial->find_by_pk($tutorialid);
+	
+		$pu = array();
+		$pu['fields'] = "user_firstname,user_lastname";
+		$user_data = $this->model_user->find_by_pk($this->userid,false,$pu);
+		
+
+		$al = array();
+		$al['where']['expert_id'] = $course['tutorial_expert_id'];
+
+		$expert = $this->model_expert->find_all_active($al);
+		//   debug($expert[0]['expert_name']);
+		// debug($expert[0]['expert_name']);
+		// die;
+
+		//CERTIFICATE VARIABLES
+		  // $data['completion_date'] = csl_date($quiz['quiz_createdon'],'d-m-Y');
+		  // $data['certificate_number']  = $quiz['quiz_certificate_number'];
+		  $data['course_title'] = $course['tutorial_name'];
+		  $data['expert_name'] = $expert[0]['expert_name'];
+		  $data['course_tracking_number'] = $course['tutorial_identity'];
+		  $data['username'] = $user_data['user_firstname'].' '.$user_data['user_lastname'];
+		  $data['ce_provider'] = '110221021';
+		  
+		  $data['logo'] = g('dirname').'assets/front_assets/images/logo.png';    //for PDF
+		  $data['certificate'] = g('dirname').'assets/front_assets/images/certificate.png';    //for PDF
+		  $data['signature'] = g('dirname').'assets/front_assets/images/signature.jpg';    //for PDF
+	
+		  // $data['certificate'] = l('').'assets/front_assets/images/certificate_pdf.jpg';
+		  $filename = "Certificate";
+	  
+	  $this->load->view("widgets/pdf_certificate",$data);
+	
+		  // // Get output html
+	   $html = $this->output->get_output();
+	   // debug($html , 1);
+	
+		// Load library
+		$this->load->library('dompdf_gen');
+	  
+		// $dompdf = new Dompdf();
+		//     $options = $dompdf->getOptions();
+		//     $options->set(array('isRemoteEnabled' => true));
+		//     $dompdf->setOptions($options);
+		//     $dompdf->loadHtml($html);
+			
+		// Convert to PDF
+		$this->dompdf->load_html($html);
+		//$paper_size = array(0,0,1050.72,800);
+		// $paper_size = array(0,0,1050.72,841.42);
+		//$this->dompdf->set_paper($paper_size);
+		$this->dompdf->set_paper('A4', 'portrait');
+		$this->dompdf->render();
+	
+		// if(isset($_GET['view']) AND ($_GET['view'] == 1)) { // just view certificates
+		if(isset($view) AND ($view == 1)) { // just view certificates
+		  $this->dompdf->stream("{$filename}.pdf", array("Attachment" => false));
+		  exit(0);
+		}
+		else{ // download certificates
+		  $this->dompdf->stream("{$filename}.pdf");
+		}
+  
+	  }
 
 
 

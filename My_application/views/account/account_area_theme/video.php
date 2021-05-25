@@ -96,16 +96,16 @@
                            ?>
 
                            <div classs="space"><br><br></div>
-                           <form id="forms-review_us">
+                           <form id="forms-content-review_us">
                               <div class="fld-textarea">
 
-                                 <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_user_id]" value="<?= $this->session_data['id'] ?>">
+                                 <input type="hidden" name="learning_journey_content_review[learning_journey_content_review_user_id]" value="<?= $this->session_data['id'] ?>">
 
-                                 <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_course_id]" value="<?= $_GET['cat'] ?>">
-                                 <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_stars]" id="reviewId" value="">
+                                 <input type="hidden" name="learning_journey_content_review[learning_journey_content_review_content_id]" value="<?= $_GET['cat'] ?>">
+                                 <input type="hidden" name="learning_journey_content_review[learning_journey_content_review_stars]" id="reviewId" value="">
                               </div>
                               <div class="fld-textarea">
-                                 <textarea name="learning_journey_course_review[learning_journey_course_review_desc]" placeholder="Write a Review…"></textarea>
+                                 <textarea name="learning_journey_content_review[learning_journey_content_review_desc]" placeholder="Write a Review…"></textarea>
                               </div>
                               <div class="space"><br></div>
 
@@ -143,9 +143,9 @@
                                     </section>
                                  </div>
                                  <div class="col-md-8 text-right">
-                                    <div class="fld-link">
+                                    <!-- <div class="fld-link">
                                        <button>Skip</button>
-                                    </div>
+                                    </div> -->
                                     <div class="fld-btn">
                                        <input type="submit" value="Submit Your Review" id="forms-review_us-btn">
                                     </div>

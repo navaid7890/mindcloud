@@ -133,9 +133,9 @@
                                     </section>
                                  </div>
                                  <div class="col-md-8 text-right">
-                                    <div class="fld-link">
+                                    <!-- <div class="fld-link">
                                        <button>Skip</button>
-                                    </div>
+                                    </div> -->
                                     <div class="fld-btn">
                                        <input type="submit" value="Submit Your Review" id="forms-tutorial-review_us-btn">
                                     </div>

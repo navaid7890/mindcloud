@@ -44,6 +44,7 @@ var Form = function () {
     update_address: base_url + "account/profile/ajax-update-address-save",
     change_password: base_url + "account/profile/ajax-change-password",
     course_review: base_url + "contact_us/review",
+    content_review: base_url + "contact_us/content_review",
     tutorial_review: base_url + "contact_us/tutorial_review",
     form_cto: base_url + "contact_us/ajax_formsend",
     tool_business_multi: base_url + "contact_us/tool_business_multi_formsend",
@@ -114,6 +115,30 @@ var Form = function () {
       response = AjaxRequest.fire(urls.course_review, data);
       // return false;  
       $('#forms-review_us-btn').prop('disabled', false);
+
+      if (response.status) {
+
+        Toastr.success(response.msg.desc, 'Success');
+        $("#forms-review_us").find('input[type=text],input[type=email],textarea').val('');
+        //FOR GOOGLE CAPTCHA RESET:
+        // grecaptcha.reset();
+        //  $(".openBtn").click();
+        return false;
+      }
+      else {
+        Toastr.error(response.msg.desc, 'Error');
+        //Toastr.error('Error Found please try again','Error');
+        return false;
+      }
+      return false;
+    },
+    content_review: function (form) {
+      // Disable the submit button to prevent repeated clicks:
+      $('#content-review_us-btn').prop('disabled', true);
+      var data = form.serialize();
+      response = AjaxRequest.fire(urls.content_review, data);
+      // return false;  
+      $('#content-review_us-btn').prop('disabled', false);
 
       if (response.status) {
 
@@ -1666,6 +1691,13 @@ $(function () {
   var $form = $('#forms-review_us');
   $form.submit(function (event) {
     Form.course_review($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#forms-content-review_us');
+  $form.submit(function (event) {
+    Form.content_review($form);
     return false;
   });
 });

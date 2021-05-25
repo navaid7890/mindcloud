@@ -118,14 +118,15 @@
 
                 <div class="row align-items-center">
                     <div class="col-md-4">
-                        <span><img src="assets/images/logo.png" alt=""></span>
+                        <span><img src="<?= base_url() ?>assets/front_assets/images/logo.png" alt=""></span>
                     </div>
 
                     <div class="col-md-4">
-                        <span><img src="assets/images/logo.png" alt=""></span>
+                        <span><img src="<?= base_url() ?>assets/front_assets/images/certificate.png" alt=""></span>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-4 text-left">
+                    <img src="<?= base_url() ?>assets/front_assets/images/signature.jpg" alt="" style="text-align: left; mix-blend-mode: darken;">
                         <h6>genny ghanimeh</h6>
                         <p>founder mind cloud tribe</p>
                     </div>
@@ -150,8 +151,8 @@
             </div>
             <div class="col-md-6">
                 <div class="popup-col">
-                    <p>Download Certificate:</p>
-                    <a href="#"><img src="assets/images/dashboard/home/icons/4.svg" alt=""></a>
+                   
+                    <a href="<?= base_url()?>account/profile/pdf_convert?courseid=<?=$_GET['courseid']?>"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
                 </div>
             </div>
         </div>
