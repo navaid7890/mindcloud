@@ -339,9 +339,8 @@
                 <section class="faqSec hding-2 para">
                     <div class="container">
                         <div class="faqHead">
-                        <h2>FAQs about <strong>Learning Journey</strong></h2>
-                        </div>
-
+                        <h2>FAQs about <strong>Expert Tutorials</strong></h2>
+                        </div>             
                         <ul class="colasebar">
                         <? if (isset($faq) and array_filled($faq)) : ?>
                            <? foreach ($faq as $key => $value) : ?>
