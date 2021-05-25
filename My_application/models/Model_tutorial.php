@@ -467,15 +467,15 @@ class Model_tutorial extends MY_Model
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
-            'tutorial_video_desc' => array(
-                'table'   => $this->_table,
-                'name'   => 'tutorial_video_desc',
-                'label'   => ' Video transcript',
-                'type'   => 'editor',
-                'attributes'   => array(),
-                'js_rules'   => '',
-                'rules'   => 'trim|htmlentities'
-            ),
+            // 'tutorial_video_desc' => array(
+            //     'table'   => $this->_table,
+            //     'name'   => 'tutorial_video_desc',
+            //     'label'   => ' Video transcript',
+            //     'type'   => 'editor',
+            //     'attributes'   => array(),
+            //     'js_rules'   => '',
+            //     'rules'   => 'trim|htmlentities'
+            // ),
 
             // 'course_video' => array(
             //     'table' => $this->_table,
