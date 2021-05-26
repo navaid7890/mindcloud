@@ -13,16 +13,16 @@ $(document).ready(function() {
 
     $('a.menu-dash, .menu-dash-front').click(function() {
         $(this).toggleClass('open');
-        $('.dashboard-menu-box, .front-dashboard').toggleClass('open');
+        $('.dashboard-menu-box, .front-dashboard, .dashboard-layout>li:nth-child(2), .dashboard-layout>li:nth-child(3)').toggleClass('open');
     });
 
 
-    // $("ul.login-btn .dropdown-toggle > a").click(function(e) {
-    //     $(this).toggleClass('open');
-    //     $('body').toggleClass('open');
-    //     $(".dropdown-box").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
-    //         e.stopPropagation()
-    // })
+    $("ul.login-btn .dropdown-toggle > a").click(function(e) {
+        $(this).toggleClass('open');
+        $('body').toggleClass('open');
+        $(".dropdown-box").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
+            e.stopPropagation()
+    })
 
 
     $('ul.course-scroll .dropdown-toggle > a').click(function() {
@@ -215,7 +215,7 @@ $(window).scroll(function() {
 
 $("ul.course-scroll, .tutorial-scroll-content, .video-caption, .index-page-wrap, .order-confirm, .place-order ").mCustomScrollbar({
     scrollButtons: { enable: true },
-    theme: "dark"
+    theme: "dark",
 });
 
 // $("ul.fld-progress").mCustomScrollbar({

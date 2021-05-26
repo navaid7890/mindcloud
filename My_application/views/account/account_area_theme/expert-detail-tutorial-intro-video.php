@@ -1,10 +1,10 @@
 <style>
     .video-box {
-    position: relative;
-    width: 100%;
-    height: 450px;
-    overflow: hidden;
-}
+        position: relative;
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+    }
 </style>
 <div class="business-page">
     <section class="dashboard">
@@ -56,7 +56,8 @@
                                             <div class="video-caption">
                                                 <p>00:00:00</p>
                                                 <div class="space"><br></div>
-                                                <?//= html_entity_decode($expert_course['course_video_desc']) ?>
+                                                <? //= html_entity_decode($expert_course['course_video_desc']) 
+                                                ?>
 
                                                 <div class="space"><br><br></div>
 
@@ -67,10 +68,24 @@
                                         </div>
                                     </div> -->
                                     <div class="col-md-12">
-                                        
+
+                                        <?
+                                        //   debug($expert_course);
+                                        $vidcat = array();
+                                        $vidcat['where']['cp_course_id'] = $expert_course['tutorial_id'];
+                                        $vidcat = $this->model_course_tutorial->find_all_active($vidcat);
+                                        //  debug($vidcat) ;
+                                        $vid_name = array();
+                                        $vid_name['where']['videos_id'] = $vidcat[0]['cp_tutorial_id'];
+                                        $vid_name = $this->model_videos->find_all_active($vid_name);
+                                        //    debug($vid_name[0]['videos_image2']) ;
+
+                                        ?>
+
                                         <div class="video-box">
-                                        
-                                            <video width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $ct['expert_image'] ?>" controls>
+
+
+                                            <video width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $vid_name[0]['videos_image2'] ?>" controls>
                                                 <source src="<?= g('db.admin.bucket') . $expert_course['tutorial_video'] ?>" type="video/mp4">
                                                 <source src="<?= g('db.admin.bucket') . $expert_course['tutorial_video'] ?>" type="video/ogg">
                                                 Your browser does not support the video tag.
@@ -134,9 +149,9 @@
                                                 </section>
                                             </div>
                                             <div class="col-md-8 text-right">
-                                                <div class="fld-link">
+                                                <!-- <div class="fld-link">
                                                     <button>Skip</button>
-                                                </div>
+                                                </div> -->
                                                 <div class="fld-btn">
                                                     <input type="submit" value="Submit Your Review" id="forms-review_us-btn">
                                                 </div>
