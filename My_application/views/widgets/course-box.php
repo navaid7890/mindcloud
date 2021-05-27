@@ -64,7 +64,7 @@
 
                                         <div id="activeBorder" class="active-border">
                                             <div id="circle" class="circle">
-                                                <span class="prec">66</span>
+                                                <span class="prec" id="played1">66</span>
                                                 <span id="startDeg" class="90"></span>
                                             </div>
                                         </div>
