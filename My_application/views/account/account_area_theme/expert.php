@@ -104,7 +104,7 @@
 
                                                                         <div class="row align-items-center ">
                                                                             <div class="col-md-12">
-                                                                                <h4><a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+                                                                                <a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><h4><?= $value['tutorial_name'] ?></h4></a>
                                                                                 <ul class="rating">
                                                                                     <?php
                                                                                     for ($x = 1; $x <= $value['tutorial_rating']; $x++) { ?>
