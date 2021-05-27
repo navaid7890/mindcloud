@@ -120,7 +120,7 @@ class Learning_journey_content extends MY_Controller {
         $file = $fileName;
         
       //  debug($file);
-        $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>'video/mp4']);
+        $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/videos/content/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>'video/mp4']);
 
        
 

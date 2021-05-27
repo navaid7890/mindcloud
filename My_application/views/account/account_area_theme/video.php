@@ -67,8 +67,8 @@
                               <div class="video-box">
                                 
                                        <video width="100%" controls="true" id="video" height="100%" poster="<?= i('') ?>banner/3.png">
-                                          <source src="<?= g('db.admin.bucket') . $learn_content[0]['learning_journey_video'] ?>" type="video/mp4">
-                                          <source src="<?= g('db.admin.bucket') . $learn_content[0]['learning_journey_video'] ?>" type="video/ogg">
+                                          <source src="<?= g('db.admin.bucket') .'assets/videos/content/'. $learn_content[0]['learning_journey_video'] ?>" type="video/mp4">
+                                          <source src="<?= g('db.admin.bucket') .'assets/videos/content/'. $learn_content[0]['learning_journey_video'] ?>" type="video/ogg">
                                           Your browser does not support the video tag.
                                        </video>
                       
