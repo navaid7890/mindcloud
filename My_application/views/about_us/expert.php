@@ -83,7 +83,8 @@
                                  $a = $value['category_id'];
 
                                  ?>
-                                 <li><a href="<?= l('expert-tutorial') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?></a> ( <?= $value['tutorials'] ?> )</li>
+                                 <!-- ( <?//= $value['tutorials'] ?> ) -->
+                                 <li><a href="<?= l('expert-tutorial') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?></a> </li>
                               <? endforeach; ?>
                            <? endif; ?>
                         </ul>

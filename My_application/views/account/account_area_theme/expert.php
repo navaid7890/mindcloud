@@ -57,7 +57,8 @@
                                                             <?
                                                             $a = $value['category_id'];
                                                             ?>
-                                                            <li><a href="<?= l('account/profile/expert') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?></a> (<?= $value['tutorials'] ?>) </li>
+                                                            <!-- (<? // = $value['tutorials'] ?>) -->
+                                                            <li><a href="<?= l('account/profile/expert') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?></a>  </li>
                                                         <? endforeach; ?>
                                                     <? endif; ?>
                                                 </ul>
