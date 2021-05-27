@@ -46,17 +46,17 @@
          <div class="row">
             <div class="col-lg-4 col-md-6">
                <div class="side-bar sticky-top">
-                  <!-- <div class="searchBox">
+                  <div class="searchBox">
                   <h4>What do you want to learn?</h4>
                   <form action="" method="GET">
                       <div class="fld-search">
                           <input type="text" placeholder="Search Expert Tutorials" name="keyword">
                       </div>
                   </form>
-                  </div> -->
+                  </div>
                   <div class="space"><br><br><br></div>
                   <div class="select-cate">
-                     <h4>Select by Expert</h4>
+                     <h4>Select by Expert </h4>
                      <div class="fld-select">
                         <select id='forum_category'>
                            <option>All Experts</option>
@@ -83,7 +83,7 @@
                                  $a = $value['category_id'];
 
                                  ?>
-                                 <li><a href="<?= l('expert-tutorial') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?></a></li>
+                                 <li><a href="<?= l('expert-tutorial') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?></a> ( <?= $value['tutorials'] ?> )</li>
                               <? endforeach; ?>
                            <? endif; ?>
                         </ul>
@@ -124,11 +124,14 @@
                                        <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
                                        <div class="vid-content">
                                           <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
-
-                                          <h4><?= $value['expert_name'] ?></h4>
                                           <div class="row align-items-center pt-70">
+                                             <div class="col-md-12">
+                                             <ul class="login-btn">
+                                                            <li><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $value['expert_image'] ?>"></span> <?= $value['expert_name'] ?> </a></li>
+                                                        </ul>
+                                             </div>
                                              <div class="col-md-8">
-                                                <ul class="rating">
+                                             <ul class="rating">
                                                    <?php
                                                    for ($x = 1; $x <= $value['tutorial_rating']; $x++) { ?>
                                                       "
@@ -136,7 +139,7 @@
                                                       ";
                                                    <? } ?>
                                                 </ul>
-                                             </div>
+                                                    </div>
                                              <div class="col-md-4 text-right">
                                                 <h6><?= price($value['tutorial_price']) ?></h6>
                                              </div>
@@ -158,8 +161,121 @@
          </div>
       </div>
 </section>
+<section class="joinSec hding-2 para">
+        <div class="joinContent">
+            <h2><strong>Can’t find </strong> what you’re looking for?</h2>
+            <div class="space"><br></div>
+            <p>Get limited access to your <strong>7-day free trial.</strong></p>
+            <div class="space"><br><br></div>
+            <a href="#" class="btn-theme btn-hover">Post your Requirement <span></span></a>
+        </div>
+    </section>
 <section class="whoSec hding-2 para pad-sec">
    <div class="container">
+   <div class="whoHead">
+               <h2>Most watched  <strong> Tutorials</strong></h2>
+               <div class="space"><br></div>
+            </div>
+            <div class="space"><br><br><br></div>
+
+            <ul class="who-list tut-list pb-100">
+            <li>
+                  <div class="vid-box">
+                     <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/SOCIAL_CUT_Christian_Expert_23%20May_Digital%20Marketing_INTRO.mp4" data-fancybox="media" data-fancybox data-ratio="15">
+                        <div class="video-box">
+                           <img src="<?= i('') ?>/whoSec/1.png">
+                           <span><i class="fas fa-play"></i>  <p>Preview Course</p> </span>
+                        </div>
+                     </a>
+                     <a href="#" class="cate-tag">business model</a>
+
+                     <div class="vid-content">
+                        <h4>Building the Right<br> Team</h4>
+                        <div class="row align-items-center pt-70">
+                           <div class="col-md-9">
+                              <ul class="rating">
+                                 <li><img src="<?= i('') ?>icons//rat-d.svg"></li>
+                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
+                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
+                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
+                                 <li><img src="<?= i('') ?>/icons/rat-l.svg"></li>
+                                 <li><p>(250)</p></li>
+                              </ul>
+                           </div>
+
+                           <div class="col-md-3 text-right">
+                              <h6>$15</h6>      
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+
+               <li>
+                  <div class="vid-box">
+                     <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/SOCIAL_CUT_Christian_Expert_23%20May_Digital%20Marketing_INTRO.mp4" data-fancybox="media" data-fancybox data-ratio="15">
+                        <div class="video-box">
+                           <img src="<?= i('') ?>/whoSec/2.png">
+                           <span><i class="fas fa-play"></i>  <p>Preview Course</p> </span>
+                        </div>
+                     </a>
+                     <a href="#" class="cate-tag">business model</a>
+
+                     <div class="vid-content">
+                        <h4>Business Protection for Entrepreneurs </h4>
+                        <div class="row align-items-center pt-70">
+                           <div class="col-md-9">
+                              <ul class="rating">
+                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
+                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
+                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
+                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
+                                 <li><img src="<?= i('') ?>/icons/rat-l.svg"></li>
+                                 <li><p>(250)</p></li>
+                              </ul>
+                           </div>
+
+                           <div class="col-md-3 text-right">
+                              <h6>$15</h6>      
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+
+               <li>
+                  <div class="vid-box">
+                     <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/SOCIAL_CUT_Christian_Expert_23%20May_Digital%20Marketing_INTRO.mp4" data-fancybox="media" data-fancybox data-ratio="15">
+                        <div class="video-box">
+                           <img src="<?= i('') ?>/whoSec/3.png">
+                           <span><i class="fas fa-play"></i> <p>Preview Course</p></span>
+                        </div>
+                     </a>
+                     <a href="#" class="cate-tag">business model</a>
+
+                     <div class="vid-content">
+                        <h4>Basics of Brands and Branding</h4>
+
+                        <div class="row align-items-center pt-70">
+                           <div class="col-md-9">
+                              <ul class="rating">
+                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
+                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
+                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
+                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
+                                 <li><img src="<?= i('') ?>/icons/rat-l.svg"></li>
+                                 <li><p>(250)</p></li>
+                              </ul>
+                           </div>
+
+                           <div class="col-md-3 text-right">
+                              <h6>$15</h6>      
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+            </ul>
       <div class="mostcateSec">
          <div class="mostHead">
             <h2>Most Popular <strong> Categories </strong></h2>

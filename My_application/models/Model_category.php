@@ -46,6 +46,22 @@ class Model_category extends MY_Model {
     *                   -----Incase list_data_key is not defined, it will look for field_name as a $key
     *                   -----USED IN ADMIN_CONTROLLER AND admin's database.php
     */
+
+
+    
+	public function get_category_tutorials(){
+		$this->db->select('category.category_id,category.category_name,count(md_tutorial.tutorial_id) as tutorials');
+		$this->db->from('category');
+		$this->db->join('course_category', 'category.category_id = course_category.cp_category_id');
+		$this->db->join('tutorial', 'tutorial.tutorial_id = course_category.cp_course_id');
+		$this->db->group_by(['category.category_id']);
+        // debug();
+		$query = $this->db->get();
+        // debug($this->db->last_query());die();
+		return $query->result_array() ;
+	}
+
+    
     public function get_fields( $specific_field = "" )
     {
 
