@@ -328,6 +328,43 @@ class Contact_us extends MY_Controller {
                 echo json_encode($this->json_param);
         }
     }
+    public function learing_startup()
+    {
+        if(array_filled($_POST)) 
+        {
+        
+
+                //$this->form_validation->set_rules('g-recaptcha-response', 'Captcha', 'required');
+                if($this->validate("model_startup"))
+                {
+                    $data = $_POST['startup'];
+                    $data['startup_status'] = 1;
+                
+
+                    $this->model_startup->set_attributes($data);
+                    $inserted_id = $this->model_startup->save();
+               
+
+                    $form_data = $this->model_startup->find_by_pk($inserted_id);
+                   // $this->model_email->contactInquiry($form_data);  
+
+                    $this->json_param['status'] = true;
+                    $this->json_param['msg']['title'] = 'Review Send';
+                    $this->json_param['msg']['desc'] = 'We appreciate that you’ve taken the time to write us. We\'ll get back to you very soon.';
+        
+                }
+                else
+                {
+                    $this->json_param['status'] = false;
+                    $this->json_param['msg']['title'] = 'Error Occurred';
+                    $this->json_param['msg']['desc'] = validation_errors();
+                }
+                
+            
+                echo json_encode($this->json_param);
+        }
+    }
+    
 
 
     // public function ajax_formsend()

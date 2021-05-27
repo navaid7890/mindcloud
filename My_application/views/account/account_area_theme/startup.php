@@ -40,7 +40,8 @@
 
                         <div class="tutorial-mid hding-4 hding-3 para">
                             <div class="tutorial-mid-content">
-                                <h4>My <strong>Startup: App Monster</strong></h4>
+                                
+                                <h4>My <strong>Startup: <?=$startup[0] ['startup_name']?></strong></h4>
                             </div>
                             <div class="space"><br><br></div>
                             <ul class="work-list">

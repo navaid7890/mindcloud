@@ -510,13 +510,25 @@ class Profile extends MY_Controller_Account
 		$data['con4'] = $contss['child'][3];
 		$data['con5'] = $contss['child'][4];
 
+		// $par = array();
+		// $par['order'] = "category_id ASC";
+		// $par['group'] = "category_id";
+		
+		// $par['joins'][] = array(
+        //     "table" => "course_category",
+        //     "joint" => "category.category_id = course_category.cp_category_id"
+        // );
 
+		
+		// $par['joins'][] = array(
+        //     "table" => "tutorial",
+        //     "joint" => "tutorial.tutorial_id = course_category.cp_course_id"
+        // );
 
+		$categories = $this->model_category->get_category_tutorials();
+		$data['main_categories'] = $categories ;
 
-
-		$par = array();
-		$par['order'] = "category_id ASC";
-		$data['main_categories'] = $this->model_category->find_all_active($par);
+		// $data['main_categories'] = $this->model_category->find_all_active($par);
 
 		$par2 = array();
 		$par2['order'] = "expert_id ASC";
@@ -526,15 +538,20 @@ class Profile extends MY_Controller_Account
         $coursecat['where']['cp_category_id']=intval($this->input->get('cat'));
         $cate = $this->model_course_category->find_all_active($coursecat);
 
-       // debug($cate);
+    //    debug($cate);
   
         foreach($cate as $key => $value)
         {
          $all[]=$value['cp_course_id'];
         }
+		
+		// $newone=count($all);
         
 		//debug($data['main_categories']);
 
+		
+		// debug($categories);
+		// die();
 		$param = array();
 		if (isset($_GET['expert']) and intval($_GET['expert']) > 0) {
 			$param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
@@ -549,10 +566,12 @@ class Profile extends MY_Controller_Account
 		$data['art'] = $this->model_tutorial->find_all_active($param);
 
 
+
+
 		$pop = array();
 		$pop['where']['category_featured'] = 1;
 		$data['popular'] = $this->model_category->find_all_active($pop);
-		// debug($data['art']);
+		//  debug($data['art']);
 
 
 		$fa = array();
@@ -582,6 +601,16 @@ class Profile extends MY_Controller_Account
 		$data['user_data'] = $this->layout_data['user_data'];
 		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+
+			$startup = array();
+			 $startup['where']['startup_user_id'] =$this->userid;
+			$data['startup'] = $this->model_startup->find_all_active($startup);
+
+			
+
+
+
+
 		$this->load_view('learning', $data);
 	}
 
@@ -596,6 +625,14 @@ class Profile extends MY_Controller_Account
 
 		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+
+		
+		$startup = array();
+		$startup['where']['startup_user_id'] =$this->userid;
+	   $data['startup'] = $this->model_startup->find_all_active($startup);
+
+
+
 		$this->load_view('startup', $data);
 	}
 

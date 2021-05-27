@@ -36,7 +36,7 @@
                         </div>
                      </div>
                   </div>
-
+                  
                   <div class="tutorial-mid hding-4 hding-3 para">
                      <div class="tutorial-mid-content">
                         <h4>What kind of Entrepreneur are you?</h4>
@@ -44,10 +44,13 @@
                         <p>Our Learning Journey is designed for entrepreneurs at all different stages </p>
                      </div>
                      <div class="space"><br><br></div>
-
+                     <?
+                     
+                     // debug($startup);
+                     ?>
                      <ul class="tutorial-box-list">
                         <li>
-                           <a href="#" data-fancybox="media">
+                           <a href="<?= g('db.admin.bucket') .'videos/'. $startup[0]['startup_video_new'] ?>" data-fancybox="media">
                               <div class="tutorial-list-box">
                                  <div class="tutorial-box-content">
                                     <span><img src="<?= i('') ?>dashboard/home/icons/1.svg"></span>
@@ -60,7 +63,7 @@
                         </li>
 
                         <li>
-                           <a href="#" data-fancybox="media">
+                           <a href="<?= g('db.admin.bucket') .'videos/'. $startup[0]['startup_video_corporate'] ?>" data-fancybox="media">
                               <div class="tutorial-list-box">
                                  <div class="tutorial-box-content">
                                     <span><img src="<?= i('') ?>dashboard/home/icons/5.svg"></span>
@@ -73,7 +76,7 @@
                         </li>
 
                         <li>
-                           <a href="#" data-fancybox="media">
+                           <a href="<?= g('db.admin.bucket') .'videos/'. $startup[0]['startup_video_growth'] ?>" data-fancybox="media">
                               <div class="tutorial-list-box">
                                  <div class="tutorial-box-content">
                                     <span><img src="<?= i('') ?>dashboard/home/icons/6.png"></span>
@@ -86,17 +89,17 @@
                         </li>
                      </ul>
                   </div>
-
                   <div class="tutorial-footer hding-4">
                      <div class="tutorial-footer-content">
                         <h4>What is the name of your Startup?</h4>
                         <div classs="space"><br><br></div>
-                        <form action="">
+                        <form id="forms-content-statup">
+                        <input type="hidden" name="startup[startup_user_id]" value="<?= $this->userid ?>">
                            <div class="fld-email">
-                              <input type="email" placeholder="Write Startup name here" required="">
+                              <input type="text" name="startup[startup_name]" placeholder="Write Startup name here" required="">
                            </div>
                            <div class="fld-btn">
-                              <input type="submit" value="Confirm">
+                              <input type="submit" value="Submit Your Review" id="forms-startup-btn">
                            </div>
                         </form>
                      </div>

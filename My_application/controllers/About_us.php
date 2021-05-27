@@ -288,7 +288,8 @@ class About_us extends MY_Controller {
 
        // debug($all);
    
-        
+       $categories = $this->model_category->get_category_tutorials();
+       $data['main_categories'] = $categories ;
 
         $par2=array();
         $par2['order']="expert_id ASC";
