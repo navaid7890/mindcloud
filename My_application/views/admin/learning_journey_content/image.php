@@ -6,7 +6,7 @@ global $config;
 <form class="cmxform horizontal-form tasi-form" 
 	id="uploadCmsimage" 
 	method="POST" 
-	action="<?=$config['base_url']?>admin/cms_page/upload_image" 
+	action="<?=$config['base_url']?>admin/learning_journey_content/upload_images" 
 >
 		<div class="form-body">
             
@@ -19,7 +19,7 @@ global $config;
               Your form validation is successful!
             </div>
 
-        	<input type = "hidden" value="<?=$form_data['cms_page']['cms_page_id']?>" name = "cms_page[cms_page_id]" />
+        	<input type = "hidden" value="<?=$form_data['learning_journey_content']['learning_journey_content_id']?>" name = "learning_journey_content[learning_journey_content_id]" />
 
             <div class="row item_set">
 	            							        
@@ -30,9 +30,9 @@ global $config;
             <div data-provides="uploadfile" class="uploadfile uploadfile-new">
             <div style="max-width: 200px; max-height: 100%;" class="uploadfile-new thumbnail">
             <?php
-            if(!empty($form_data['cms_page']['cms_page_image'])){
+            if(!empty($form_data['learning_journey_content']['learning_journey_content_image'])){
             ?>
-            	<img alt="" src="<?=g('base_url')?>assets/uploads/cms_page/<?=$form_data['cms_page']['cms_page_image']?>">
+            	<img alt="" src="<?= g('db.admin.bucketimg')?><?=$form_data['learning_journey_content']['learning_journey_content_image']?>">
             <?php
             }
             else{
@@ -43,13 +43,13 @@ global $config;
             ?>
             
             </div>
-            <div style="max-width: 200px; max-height: 100%; line-height: 20px;" class="uploadfile-preview uploadfile-exists thumbnail">
-            </div>
+            <!-- <div style="max-width: 200px; max-height: 150px; line-height: 20px;" class="uploadfile-preview uploadfile-exists thumbnail">
+            </div> -->
             <div>
             <span class="btn btn-file blue">
             <span class="uploadfile-new"><i class="fa fa-paper-clip"></i> Select image</span>
             <span class="uploadfile-exists"><i class="fa fa-undo"></i> Change</span>
-            <input type="file" name="cms_page[cms_page_image]" class="default">
+            <input type="file" name="ok" class="default">
             </span>
             <a data-dismiss="uploadfile" class="btn btn-danger uploadfile-exists" href="#"><i class="fa fa-trash"></i> Remove</a>
             </div>
@@ -65,7 +65,7 @@ $max_images = 4;
     for($i ; $i <= $max_images; $i++ )
     {?>
 
-         <?php if ($form_data['cms_page']['cms_page_is_image'.$i]  == 1): ?>
+         <?php if ($form_data['learning_journey_content']['learning_journey_content_is_image'.$i]  == 1): ?>
        
         <div class="col-md-4">
             <div class="form-group ">
@@ -74,9 +74,9 @@ $max_images = 4;
             <div style="max-width: 200px; max-height: 100%;" class="uploadfile-new thumbnail">
 
             <?php
-            if(!empty($form_data['cms_page']['cms_page_image'.$i])){
+            if(!empty($form_data['learning_journey_content']['learning_journey_content_image'.$i])){
             ?>
-                <img alt="" src="<?=g('base_url')?>assets/uploads/cms_page/<?=$form_data['cms_page']['cms_page_image'.$i]?>">
+                <img alt="" src="<?=g('base_url')?>assets/uploads/learning_journey_content/<?=$form_data['learning_journey_content']['learning_journey_content_image'.$i]?>">
             <?php
             }
             else{
@@ -87,13 +87,13 @@ $max_images = 4;
             ?>
             
             </div>
-            <div style="max-width: 200px; max-height: 100%; line-height: 20px;" class="uploadfile-preview uploadfile-exists thumbnail">
+            <div style="max-width: 200px; max-height: 150px; line-height: 20px;" class="uploadfile-preview uploadfile-exists thumbnail">
             </div>
             <div>
             <span class="btn btn-file blue">
             <span class="uploadfile-new"><i class="fa fa-paper-clip"></i> Select image</span>
-            <span class="uploadfile-exists"><i class="fa fa-undo"></i> Change</span>
-            <input type="file" name="cms_page[cms_page_image]" class="default">
+            <!-- <span class="uploadfile-exists"><i class="fa fa-undo"></i> Change</span> -->
+            <input type="file" name="ok" class="default">
             </span>
             <a data-dismiss="uploadfile" class="btn btn-danger uploadfile-exists" href="#"><i class="fa fa-trash"></i> Remove</a>
             </div>
@@ -127,7 +127,7 @@ $max_images = 4;
 		$("#saveImageCms").click(function(){
 
 	        var data = new FormData(document.getElementById("uploadCmsimage"));
-	        var url = "<?=$config['base_url']?>admin/cms_page/upload_images/";
+	        var url = "<?=$config['base_url']?>admin/learning_journey_content/upload_images/";
 	        
 	        $.ajax({
 	            url: url,
@@ -140,7 +140,7 @@ $max_images = 4;
 	            {
 	                if(response.status == 1){
 	                   AdminToastr.success( response.message , "Success" );
-                      // alert(response.message);
+                      alert(response.message);
 	                }
 	                else{
 	                   AdminToastr.error( response.message , "Error" );

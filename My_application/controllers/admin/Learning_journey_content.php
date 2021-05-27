@@ -64,6 +64,62 @@ class Learning_journey_content extends MY_Controller {
         $_POST = $this->input->post(NULL, true);
     }
 
+    public function upload_images(){
+      
+		require_once APPPATH.'third_party/S3/S3.php';
+		// $k=$this->load->library('S3');
+  
+		$formdata = $_POST['learning_journey_content'];
+		$filedata = $_FILES['learning_journey_content'];
+		$cmsID = $formdata['learning_journey_content_id'];
+
+
+		$uploads_dir = 'assets/uploads/learning_journey_content';
+		$tmp_name = $filedata["tmp_name"]['learning_journey_content_image'];
+		$name = microtime()."_".$filedata["name"]['learning_journey_content_image'];
+		
+ 
+ 
+		$tmpfile = $_FILES["ok"]["tmp_name"];
+		$file = $_FILES["ok"]["name"];
+
+       
+
+        move_uploaded_file($tmp_name, "$uploads_dir/$file");
+
+		$Nname = explode(".", $file); 
+        $c_type = 'image/'.$Nname[1]; 
+
+        $s = new S3();
+	
+        $s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
+        $s->setRegion(AWS_S3_REGION);
+        $s->setSignatureVersion('v4'); 
+        $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/images/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
+        
+   
+	    $allowEd = array('jpg','png','.JPG','jpeg'); 
+	    if(in_array($Nname[1],$allowEd)){
+
+	
+		    $insertImage['learning_journey_content_image'] = $file;
+		    $insertImage['learning_journey_content_image_path'] = 'assets/uploads/learning_journey_content/';
+		    $where['where']['learning_journey_content_id'] = $cmsID;
+	        $status = $this->model_learning_journey_content->update_model($where,$insertImage);
+            
+		   // debug($status);
+			if($status){
+	        	echo json_encode(array('status'=>1,'message'=>'image updated successfully.'));
+	        }
+	        else{
+	        	echo json_encode(array('status'=>0,'message'=>'Please try again.'));	
+	        }
+	    }
+	    else{
+	    	echo json_encode(array('status'=>0,'message'=>'Only JPG and PNG format allowed'));	
+	    }
+	}
+
 
     public function add($id=0 , $data = array()) {
         

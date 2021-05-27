@@ -120,9 +120,9 @@ class Model_learning_journey_content extends MY_Model {
                     'js_rules' => '',
                     'rules' => 'trim|htmlentities'
                 ),
-                'learning_journey_image' => array(
+                'learning_journey_content_image' => array(
                     'table' => $this->_table,
-                    'name' => 'learning_journey_image',
+                    'name' => 'learning_journey_content_image',
                     'label' => 'Image',
                     'type' => 'hidden',
                     'attributes' => array(),
