@@ -114,12 +114,19 @@ $max_images = 4;
 	<div class="form-actions">
 	    <div class="row">
 	      <div class="col-md-offset-3 col-md-9">
-	        <button type="button" class="btn sub-btn green" id="saveImageCms">Save</button>	        
+	        <button type="button" class="btn sub-btn green" id="saveImageCms">Save</button>	 
+            <div id="loading-image" style="display: none;">
+                    <img src="<?= g('base_url') ?>assets/front_assets/images/icons/loader.gif">
+            </div>       
 	      </div>
 	    </div>
   	</div>
 </form>
-
+<style>
+    div#loading-image img {
+        width: 8%;
+    }
+</style>
 
 <script>
 	$(document).ready(function() {
@@ -128,7 +135,11 @@ $max_images = 4;
 
 	        var data = new FormData(document.getElementById("uploadCmsimage"));
 	        var url = "<?=$config['base_url']?>admin/videos/upload_images/";
-	        
+	        $('#loading-image').bind('ajaxStart', function() {
+                $(this).show();
+            }).bind('ajaxStop', function() {
+                $(this).hide();
+            });
 	        $.ajax({
 	            url: url,
 	            type: "POST",
