@@ -16,6 +16,9 @@
    .bannerSeactionArea a {
       color: #e18e25;
    }
+   .joinContent strong {
+    font-weight: 700;
+}
 </style>
 
 <div class="mainBanner home-banner para" style="background-image:url('<?= get_image($cont1['cms_page_image'], $cont1['cms_page_image_path']) ?>');">
@@ -162,121 +165,14 @@
          </div>
       </div>
 </section>
-<section class="joinSec hding-2 para">
-        <div class="joinContent">
-            <h2><strong>Can’t find </strong> what you’re looking for?</h2>
-            <div class="space"><br></div>
-            <p>Get limited access to your <strong>7-day free trial.</strong></p>
-            <div class="space"><br><br></div>
-            <a href="#" class="btn-theme btn-hover">Post your Requirement <span></span></a>
-        </div>
-    </section>
+<? $this->load->view('widgets/_cant_find_what_youre_looking_for'); ?>
+
+
 <section class="whoSec hding-2 para pad-sec">
    <div class="container">
-   <div class="whoHead">
-               <h2>Most watched  <strong> Tutorials</strong></h2>
-               <div class="space"><br></div>
-            </div>
-            <div class="space"><br><br><br></div>
+   <? $this->load->view('widgets/_most_watched_tutorials'); ?> 
 
-            <ul class="who-list tut-list pb-100">
-            <li>
-                  <div class="vid-box">
-                     <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/SOCIAL_CUT_Christian_Expert_23%20May_Digital%20Marketing_INTRO.mp4" data-fancybox="media" data-fancybox data-ratio="15">
-                        <div class="video-box">
-                           <img src="<?= i('') ?>/whoSec/1.png">
-                           <span><i class="fas fa-play"></i>  <p>Preview Course</p> </span>
-                        </div>
-                     </a>
-                     <a href="#" class="cate-tag">business model</a>
-
-                     <div class="vid-content">
-                        <h4>Building the Right<br> Team</h4>
-                        <div class="row align-items-center pt-70">
-                           <div class="col-md-9">
-                              <ul class="rating">
-                                 <li><img src="<?= i('') ?>icons//rat-d.svg"></li>
-                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
-                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
-                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
-                                 <li><img src="<?= i('') ?>/icons/rat-l.svg"></li>
-                                 <li><p>(250)</p></li>
-                              </ul>
-                           </div>
-
-                           <div class="col-md-3 text-right">
-                              <h6>$15</h6>      
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </li>
-
-               <li>
-                  <div class="vid-box">
-                     <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/SOCIAL_CUT_Christian_Expert_23%20May_Digital%20Marketing_INTRO.mp4" data-fancybox="media" data-fancybox data-ratio="15">
-                        <div class="video-box">
-                           <img src="<?= i('') ?>/whoSec/2.png">
-                           <span><i class="fas fa-play"></i>  <p>Preview Course</p> </span>
-                        </div>
-                     </a>
-                     <a href="#" class="cate-tag">business model</a>
-
-                     <div class="vid-content">
-                        <h4>Business Protection for Entrepreneurs </h4>
-                        <div class="row align-items-center pt-70">
-                           <div class="col-md-9">
-                              <ul class="rating">
-                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
-                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
-                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
-                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
-                                 <li><img src="<?= i('') ?>/icons/rat-l.svg"></li>
-                                 <li><p>(250)</p></li>
-                              </ul>
-                           </div>
-
-                           <div class="col-md-3 text-right">
-                              <h6>$15</h6>      
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </li>
-
-               <li>
-                  <div class="vid-box">
-                     <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/SOCIAL_CUT_Christian_Expert_23%20May_Digital%20Marketing_INTRO.mp4" data-fancybox="media" data-fancybox data-ratio="15">
-                        <div class="video-box">
-                           <img src="<?= i('') ?>/whoSec/3.png">
-                           <span><i class="fas fa-play"></i> <p>Preview Course</p></span>
-                        </div>
-                     </a>
-                     <a href="#" class="cate-tag">business model</a>
-
-                     <div class="vid-content">
-                        <h4>Basics of Brands and Branding</h4>
-
-                        <div class="row align-items-center pt-70">
-                           <div class="col-md-9">
-                              <ul class="rating">
-                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
-                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
-                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
-                                 <li><img src="<?= i('') ?>icons//rat-d.svg">"></li>
-                                 <li><img src="<?= i('') ?>/icons/rat-l.svg"></li>
-                                 <li><p>(250)</p></li>
-                              </ul>
-                           </div>
-
-                           <div class="col-md-3 text-right">
-                              <h6>$15</h6>      
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </li>
-            </ul>
+            
       <div class="mostcateSec">
          <div class="mostHead">
             <h2>Most Popular <strong> Categories </strong></h2>
@@ -355,7 +251,7 @@
 </section>
 <section class="joinSec hding-2 para">
    <div class="joinContent">
-      <h2><?= $check['cms_page_title'] ?></h2>
+      <h2><?= html_entity_decode($check['cms_page_title']) ?></h2>
       <div class="space"><br></div>
       <?= html_entity_decode($check['cms_page_content']) ?>
       <div class="space"><br><br></div>

@@ -1310,10 +1310,15 @@ class Profile extends MY_Controller_Account
 		$ccategory['where_in']['category_id'] = $all1;
 		$data['ct'] = $this->model_category->find_all_active($ccategory);
 
+		//   debug($course_review_data[0]['learning_journey_course_review_course_id']);
+		 $review = array();
+		 $review['where']['learning_journey_course_review_course_id'] = $coursecat[0]['cp_course_id'];
+		 $review_data = $this->model_learning_journey_course_review->find_all_active($review);
 
+		 $data['review'] = $review_data;
 
-
-		// debug(  $data['ct']);
+		//  debug($coursecat[0]['cp_course_id']);
+		//  debug($review_data);
 
 		$this->load_view("course_detail_expert", $data);
 	}

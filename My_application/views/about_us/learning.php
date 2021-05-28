@@ -15,6 +15,9 @@
    padding: 0px 0;
    background: #fff;
    }
+   .joinContent strong {
+    font-weight: 700;
+}
 </style>
 <div class="mainBanner hding-1 para">
    <div class="container">
@@ -97,7 +100,7 @@
 </section>
 <section class="joinSec hding-2 para">
    <div class="joinContent">
-      <h2><?=$check['cms_page_title']?></h2>
+      <h2><?=html_entity_decode($check['cms_page_title'])?></h2>
       <div class="space"><br></div>
       <?=html_entity_decode($check['cms_page_content'])?>
       <div class="space"><br><br></div>
@@ -107,6 +110,7 @@
 <section class="faqSec hding-2 para">
    <div class="container">
       <div class="faqHead">
+      
          <h2>FAQs about <strong>Learning Journey</strong></h2>
       </div>
       <ul class="colasebar">

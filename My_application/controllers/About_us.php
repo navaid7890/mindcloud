@@ -205,7 +205,7 @@ class About_us extends MY_Controller {
         $data['cont12'] = $cont['child'][11];
         $data['cont13'] = $cont['child'][12];
         $data['cont14'] = $cont['child'][13];
-        $data['cont15'] = $cont['child'][14];
+        
 
         $data['banner'] = $this->model_inner_banner->find_by_pk(1); 
 
@@ -254,9 +254,12 @@ class About_us extends MY_Controller {
         $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
 
         $cont = $this->model_cms_page->get_page(2);
+
+        //  debug($cont);
         $data['cont1'] = $cont['child'][4];
         $data['cont2'] = $cont['child'][5];
-
+        $data['cont3'] = $cont['child'][17];
+        // debug($data['cont3']);
         $conts = $this->model_cms_page->get_page(20);
         $data['con1'] = $conts['child'][0];
 
@@ -266,7 +269,10 @@ class About_us extends MY_Controller {
         $data['con3'] = $contss['child'][2];
         $data['con4'] = $contss['child'][3];
         $data['con5'] = $contss['child'][4];
+        $data['con6'] = $contss['child'][4];
 
+        // $test_f = $cont['0']['0'];
+        // debug($data['con4']);
    
            
      
@@ -361,9 +367,15 @@ class About_us extends MY_Controller {
         $course = $this->model_tutorial->get_details($ck);
        // debug($course[0]['course_id']);
 
-
+       $par7 = array();
+       $par7['where']['cp_course_id'] = $course[0]['tutorial_id'];
+       $coursecat = $this->model_course_category->find_all_active($par7);
      
-        
+       $review = array();
+       $review['where']['learning_journey_course_review_course_id'] = $coursecat[0]['cp_course_id'];
+       $review_data = $this->model_learning_journey_course_review->find_all_active($review);
+
+       $data['review'] = $review_data;
 
     
         if (count($course) < 1) {
