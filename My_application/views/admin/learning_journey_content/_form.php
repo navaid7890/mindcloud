@@ -58,6 +58,10 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
           <?if($form_data){?>
             
           <li>
+            <a href="#tab_2" data-toggle="tab">
+            <?=humanize($page_title)?> image</a>
+          </li>
+          <li>
             <a href="#tab_3" data-toggle="tab">
             <?=humanize($page_title)?> Video</a>
           </li>
@@ -95,43 +99,43 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
             // Images only in edit mode.  
               if($form_data){?>
 
-                <div class="tab-pane" id="tab_4">
-                    <div class="portlet box green">
-                  <div class="portlet-title">
-                    <div class="caption">
-                      <i class="fa fa-shopping-cart"></i><?=humanize('Movie Trailer')?>
-                          <small>Uploaded</small>
+                <div class="tab-pane" id="tab_2">
+                  <div class="portlet box green">
+                    <div class="portlet-title">
+                      <div class="caption">
+                        <i class="fa fa-shopping-cart"></i><?=humanize('Learning_journey_content')?>
+                            <small>Uploaded</small>
 
+                      </div>
+                    </div>
+                    <div class="portlet-body form">
+                      
+                      <!-- BEGIN FORM-->
+                      <? $this->load->view("admin/learning_journey_content/image");?>
+                      <!-- END FORM-->
+                    </div>
+                    <!-- END VALIDATION STATES-->
+                  </div>
+                </div>
+
+                  <div class="tab-pane" id="tab_3">
+                    <div class="portlet box green">
+                      <div class="portlet-title">
+                        <div class="caption">
+                          <i class="fa fa-shopping-cart"></i><?=humanize('Learning_journey_content')?>
+                              <small>Uploaded</small>
+
+                        </div>
+                      </div>
+                      <div class="portlet-body form">
+                        
+                        <!-- BEGIN FORM-->
+                        <? $this->load->view("admin/widget/learning_video");?>
+                        <!-- END FORM-->
+                      </div>
+                      <!-- END VALIDATION STATES-->
                     </div>
                   </div>
-                  <div class="portlet-body form">
-                    
-                    <!-- BEGIN FORM-->
-                    <? $this->load->view("admin/widget/_video_trailer");?>
-                    <!-- END FORM-->
-                  </div>
-                  <!-- END VALIDATION STATES-->
-                </div>
-              </div>
-
-                <div class="tab-pane" id="tab_3">
-                    <div class="portlet box green">
-                  <div class="portlet-title">
-                    <div class="caption">
-                      <i class="fa fa-shopping-cart"></i><?=humanize('Learning_journey_content')?>
-                          <small>Uploaded</small>
-
-                    </div>
-                  </div>
-                  <div class="portlet-body form">
-                    
-                    <!-- BEGIN FORM-->
-                    <? $this->load->view("admin/widget/learning_video");?>
-                    <!-- END FORM-->
-                  </div>
-                  <!-- END VALIDATION STATES-->
-                </div>
-              </div>
 
               <?
               }
