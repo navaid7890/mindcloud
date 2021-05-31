@@ -32,7 +32,7 @@ global $config;
             <?php
             if(!empty($form_data['cms_page']['cms_page_image'])){
             ?>
-            	<img alt="" src="<?=g('base_url')?>assets/uploads/cms_page/<?=$form_data['cms_page']['cms_page_image']?>">
+            	<img alt="" src="<?= g('db.admin.bucket') .'images/cms_image/'. $form_data['cms_page']['cms_page_image']?>">
             <?php
             }
             else{
@@ -76,7 +76,7 @@ $max_images = 4;
             <?php
             if(!empty($form_data['cms_page']['cms_page_image'.$i])){
             ?>
-                <img alt="" src="<?=g('base_url')?>assets/uploads/cms_page/<?=$form_data['cms_page']['cms_page_image'.$i]?>">
+                <img alt="" src="<?= g('db.admin.bucket') .'images/cms_image/'. $form_data['cms_page']['cms_page_image']?>">
             <?php
             }
             else{
