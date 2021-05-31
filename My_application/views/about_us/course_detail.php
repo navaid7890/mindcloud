@@ -2,7 +2,6 @@
    .abt-tut-page .mainBanner {
       z-index: 0;
       background-image: url(<?= i('') ?>abt-tut.png);
-      height: 544px;
       position: relative;
       align-items: inherit;
       padding-top: 100px;
