@@ -1,10 +1,18 @@
+<style>
+    .mainBanner strong {
+    font-weight: 700;
+}
+.mainBanner h1 {
+    display: inline-block;
+}
+</style>
 <section class="lrnjSec">
     <div class="mainBanner hding-1 para">
         <div class="container">
             <div class="row align-items-center"> 
                 <div class="col-lg-8 col-md-12">
                     <div>
-                    <h1><?=$cont7['cms_page_title']?></h1>
+                    <h1><?=html_entity_decode($cont7['cms_page_title'])?></h1>
                     <div class="space"><br><br><br><br></div>
 
                     <?=html_entity_decode($cont7['cms_page_content'])?> 

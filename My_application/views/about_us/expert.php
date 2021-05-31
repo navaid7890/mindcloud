@@ -16,8 +16,18 @@
    .bannerSeactionArea a {
       color: #e18e25;
    }
+   .consult-left h2 strong span strong,
+   .consult-head strong,
+   .mainBanner strong,
    .joinContent strong {
     font-weight: 700;
+}
+.consult-left h2 strong {
+    font-weight: 400;
+}
+.mainBanner h1 {
+    border-bottom: 8px solid #F4C150;
+    display: inline-block;
 }
 </style>
 
@@ -26,7 +36,7 @@
       <div class="row align-items-center">
          <div class="col-lg-12 col-md-12">
             <div class="my">
-               <h1><?= $cont1['cms_page_title'] ?> </strong></h1>
+               <h1><?=html_entity_decode( $cont1['cms_page_title'] )?> </strong></h1>
                <div class="space"><br><br></div>
                <div class="row">
                   <div class="col-lg-6 col-md-12 bannerSeactionArea">
@@ -194,7 +204,7 @@
    <div class="container">
       <div class="consult-sec hding-2 para">
          <div class="consult-head">
-            <h2><?= $con1['cms_page_title'] ?> </h2>
+            <h2><?= html_entity_decode($con1['cms_page_title']) ?> </h2>
             <div class="space"><br><br></div>
             <?= html_entity_decode($con1['cms_page_content']) ?>
          </div>
@@ -203,7 +213,7 @@
             <div class="col-lg-4 col-md-5 pad-zero">
                <div class="consult-left">
                   <div>
-                     <h2><strong><?= $con1['cms_page_title'] ?></strong></h2>
+                     <h2><strong><?= html_entity_decode($con1['cms_page_title']) ?></strong></h2>
                      <ul class="consult-left-slide">
                         <li>
                            <div class="consult-left-content">

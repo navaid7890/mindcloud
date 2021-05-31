@@ -6,6 +6,13 @@
    .home-banner{
    background-image:url('<?=get_image($banner['inner_banner_image'],$banner['inner_banner_image_path'])?>');
    }
+   .readySec strong {
+    font-weight: 700;
+}
+.whyHead strong,
+.expertSec strong {
+    font-weight: 700;
+}
 </style>
 
 
@@ -14,7 +21,7 @@
       <div class="row align-items-center">
          <div class="col-lg-8 col-md-12">
             <div>
-               <h1><?= $banner['inner_banner_title'] ?></h1>
+               <h1><?= html_entity_decode($banner['inner_banner_title']) ?></h1>
                <div class="space"><br><br></div>
                <?= html_entity_decode($banner['inner_banner_content']) ?> 
                <div class="space"><br><br></div>
@@ -52,7 +59,7 @@
             <div class="iconBox">
                <span><img src="<?=get_image($cont1['cms_page_image'],$cont1['cms_page_image_path'])?>"></span>
                <div class="space"><br></div>
-               <h3 class="home-h3"><?=$cont1['cms_page_title']?></h3>
+               <h3 class="home-h3"><?=html_entity_decode($cont1['cms_page_title'])?></h3>
                <div class="space"><br></div>
                <?=html_entity_decode($cont1['cms_page_content'])?> 
             </div>
@@ -61,7 +68,7 @@
             <div class="iconBox">
                <span><img src="<?=get_image($cont2['cms_page_image'],$cont2['cms_page_image_path'])?>"></span>
                <div class="space"><br></div>
-               <h3 class="home-h3"><?=$cont2['cms_page_title']?></h3>
+               <h3 class="home-h3"><?=html_entity_decode($cont2['cms_page_title'])?></h3>
                <div class="space"><br></div>
                <?=html_entity_decode($cont2['cms_page_content'])?> 
             </div>
@@ -70,7 +77,7 @@
             <div class="iconBox">
                <span><img src="<?=get_image($cont3['cms_page_image'],$cont3['cms_page_image_path'])?>"></span>
                <div class="space"><br></div>
-               <h3 class="home-h3"><?=$cont3['cms_page_title']?></h3>
+               <h3 class="home-h3"><?=html_entity_decode($cont3['cms_page_title'])?></h3>
                <div class="space"><br></div>
                <?=html_entity_decode($cont3['cms_page_content'])?> 
             </div>
@@ -78,10 +85,11 @@
       </div>
    </div>
 </section>
+
 <section class="readySec para hding-1">
    <div class="container">
       <div class="redyContent text-center">
-         <h1><?=$cont4['cms_page_title']?></h1>
+         <h1><?=html_entity_decode($cont4['cms_page_title'])?></h1>
          <?=html_entity_decode($cont4['cms_page_content'])?>
          <div class="space"><br><br></div>
          <a href="javascript:void(0)" class="btn-theme btn-hover">About Mind Cloud Tribe <span></span></a>
@@ -92,7 +100,7 @@
    <div class="container">
       <div class="expertSec hding-1 para">
          <div class="expertHead">
-            <h1><?=$cont5['cms_page_title']?></strong></h1>
+            <h1><?=html_entity_decode($cont5['cms_page_title'])?></strong></h1>
          </div>
          <div class="space"><br><br></div>
          <div class="row">
@@ -114,7 +122,7 @@
 <section class="whyjoinSec hding-1 para">
    <div class="container">
       <div class="whyHead">
-         <h1><?=$cont13['cms_page_title']?></h1>
+         <h1><?=html_entity_decode($cont13['cms_page_title'])?></h1>
       </div>
       <div class="space"><br><br></div>
       <div class="row">

@@ -2,6 +2,15 @@
 .joinContent strong {
     font-weight: 700;
 }
+.consult-left h2 strong span strong,
+   .consult-head strong,
+   .mainBanner strong,
+   .joinContent strong {
+    font-weight: 700;
+}
+.consult-left h2 strong {
+    font-weight: 400;
+}
 </style>
 <div class="index-page">
     <section class="dashboard">
@@ -309,7 +318,7 @@
                                     <div class="col-md-4 pad-zero">
                                         <div class="consult-left">
                                             <div>
-                                                <h2><strong><?= $con1['cms_page_title'] ?></strong></h2>
+                                                <h2><strong><?=html_entity_decode( $con1['cms_page_title'] )?></strong></h2>
 
                                                 <ul class="consult-left-slide">
                                                     <li>

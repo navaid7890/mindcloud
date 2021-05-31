@@ -294,6 +294,9 @@ ul.cate-list>li { width: 31.3%; padding: 18px 15px; justify-content: flex-start;
 ul.cate-list>li:nth-child(3n) { margin-right: 0; }
 ul.cate-list>li:nth-last-child(-n+3) { margin-bottom: 0; }
 ul.cate-list { margin-bottom: 78px; }
+ul.cate-list img {
+    width: 20px;
+}
 .mostcateSec a.btn-theme { margin: auto; display: block; text-align: center; width: 29%; }
 .iconSec { background: #fff; }
 .readySec { background: #fff; padding-bottom: 80px; }
@@ -1663,7 +1666,7 @@ ul.who-list .video-box img {
     margin: 0;
 }
 ul.login-btn>li>a>span {
-    width: 38px;
+    width: 0px;
     border-radius: 100%;
     vertical-align: middle;
     overflow: hidden;
@@ -1955,7 +1958,6 @@ ul.login-btn>li>a>span {
     .vid-content { padding: 40px 75px 34px 40px; }
     .jrnyContent ul>li { width: 100%; display: block; }
     .logo img { max-width: 60%; }
-    
     .consult-left { padding: 15% 40px; }
     ul.who-list>li { width: 100%; }
     ul.who-list>li { margin-right: 0; }
