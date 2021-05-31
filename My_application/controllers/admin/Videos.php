@@ -232,17 +232,17 @@ class Videos extends MY_Controller {
 
 
 		$uploads_dir = 'assets/uploads/videos';
-		$tmp_name = $filedata["tmp_name"]['videos_image2'];
-		$name = microtime()."_".$filedata["name"]['videos_image2'];
+		$tmp_name = $_FILES["ok"]["tmp_name"];
+		$name = rand(1000,100000)."_".$_FILES["ok"]["name"];
 		
   
-		$tmpfile = $_FILES["ok"]["tmp_name"];
-		$file = $_FILES["ok"]["name"];
+		// $tmpfile = $_FILES["ok"]["tmp_name"];
+		// $file = $_FILES["ok"]["name"];
  
         
-        move_uploaded_file($tmp_name, "$uploads_dir/$file");
+        // move_uploaded_file($tmp_name, "$uploads_dir/$file");
 
-		$Nname = explode(".", $file); 
+		$Nname = explode(".", $name); 
         $c_type = 'image/'.$Nname[1]; 
 
         $s = new S3();
@@ -250,7 +250,7 @@ class Videos extends MY_Controller {
         $s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
         $s->setRegion(AWS_S3_REGION);
         $s->setSignatureVersion('v4'); ;
-        $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/images/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
+        $s->putObject($s->inputFile($tmp_name), AWS_S3_BUCKET, 'assets/images/'.$name, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
         //debug($s,1);
     
 
@@ -261,7 +261,7 @@ class Videos extends MY_Controller {
 
 		   
 
-		    $insertImage['videos_image2'] = $file;
+		    $insertImage['videos_image2'] = $name;
 		    $insertImage['videos_image_path'] = 'assets/uploads/videos/';
 		    $where['where']['videos_id'] = $cmsID;
 	        $status = $this->model_videos->update_model($where,$insertImage);
