@@ -32,7 +32,7 @@ global $config;
             <?php
             if(!empty($form_data['learning_journey_content']['learning_journey_content_image'])){
             ?>
-            	<img alt="" src="<?= g('db.admin.bucketimg')?><?=$form_data['learning_journey_content']['learning_journey_content_image']?>">
+            	<img alt="" src="<?= g('db.admin.bucketimg').'learning_journey_content/'?><?=$form_data['learning_journey_content']['learning_journey_content_image']?>">
             <?php
             }
             else{
@@ -76,7 +76,7 @@ $max_images = 4;
             <?php
             if(!empty($form_data['learning_journey_content']['learning_journey_content_image'.$i])){
             ?>
-                <img alt="" src="<?=g('base_url')?>assets/uploads/learning_journey_content/<?=$form_data['learning_journey_content']['learning_journey_content_image'.$i]?>">
+                <img alt="" src="<?= g('db.admin.bucketimg').'learning_journey_content/'?><?=$form_data['learning_journey_content']['learning_journey_content_image']?>">
             <?php
             }
             else{
