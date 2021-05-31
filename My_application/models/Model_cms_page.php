@@ -53,6 +53,13 @@ class Model_cms_page extends MY_Model
         {
             $this->cms_url = "hidden";
         }
+        $segment_duration = array(10);
+        if (in_array($this->uri->segment(4), $segment_duration)) {
+            $this->cms_duration = "text";
+        }else
+        {
+            $this->cms_duration = "hidden";
+        }
 
         $segment_video = array(10,12,13,14,15, 44,45, 47);
         if (in_array($this->uri->segment(4), $segment_video)) {
@@ -170,6 +177,16 @@ class Model_cms_page extends MY_Model
                    'js_rules' => '',
                 'rules' => 'trim|htmlentities'
               );
+              $fields['cms_page_duration'] = array(
+                'table'   => $this->_table,
+                'name'   => 'cms_page_duration',
+                'label'   => 'Duration',
+                'type'   => $this->cms_duration,
+                'attributes'   => array(),
+                'dt_attributes'   => array("width"=>"5%"),
+                'js_rules' => '',
+             'rules' => 'trim|htmlentities'
+           );
 
 
         $fields['tutorial_video'] = array(

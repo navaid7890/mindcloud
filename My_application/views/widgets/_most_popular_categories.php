@@ -10,5 +10,5 @@
         <? endforeach ?>
     </ul>
     
-    <a href="#" class="btn-theme btn-hover">View all Tutorials <span></span></a>
+    <a href="<?= l('expert-tutorial') ?>" class="btn-theme btn-hover">View all Tutorials <span></span></a>
 </div>

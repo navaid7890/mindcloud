@@ -1714,8 +1714,6 @@ ul.login-btn>li>a>span {
     .quoteSec p{font-size: 18px;}
     .advis-mdl {margin-bottom: 30px;}
     .jr-top:after {content: "";width: 100%;}
-
-
     .forEnterprise2-page .InnerBanner {height: 460px;}
     .forEnterprise2-page .InnerBanner h1{font-size: 32px;}
     .forEnterprise2-page .whyPartSec h1 {font-size: 28px;}
@@ -1901,6 +1899,10 @@ ul.login-btn>li>a>span {
     .iconSec { padding-bottom: 0; }
     .redyContent h1 { margin-bottom: 30px; }
     .form-card { padding: 0 15px; height: auto; padding: 15%; margin-top: 40px; }
+    .form-card {
+        position: relative;
+        right: 0%;
+    }
     .home-banner ul>li { font-size: 20px; }
     .home-banner ul>li:after { display: none; }
     .fld-input,

@@ -18,7 +18,7 @@
                     <?=html_entity_decode($cont7['cms_page_content'])?> 
                     <div class="space"><br><br></div>
 
-                    <a href="#" class="btn-theme btn-hover">Start your Free Trial <span></span></a>
+                    <a href="#" class="btn-theme btn-hover">Start your Learing Journey <span></span></a>
                     </div>
                 </div>
 

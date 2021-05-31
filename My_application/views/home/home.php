@@ -92,7 +92,7 @@
          <h1><?=html_entity_decode($cont4['cms_page_title'])?></h1>
          <?=html_entity_decode($cont4['cms_page_content'])?>
          <div class="space"><br><br></div>
-         <a href="javascript:void(0)" class="btn-theme btn-hover">About Mind Cloud Tribe <span></span></a>
+         <a href="<?= l('about-tutorial') ?>" class="btn-theme btn-hover">About Mind Cloud Tribe <span></span></a>
       </div>
    </div>
 </section>
@@ -119,6 +119,7 @@
 <? $this->load->view('widgets/_learning_journey'); ?> 
 <? $this->load->view('widgets/_learning_journey_content'); ?>
 <? $this->load->view('widgets/_who_is_it_for'); ?> 
+
 <section class="whyjoinSec hding-1 para">
    <div class="container">
       <div class="whyHead">
