@@ -1,3 +1,8 @@
+<style>
+.joinContent strong {
+    font-weight: 700;
+}
+</style>
 <div class="index-page">
     <section class="dashboard">
         <ul class="dashboard-layout">
@@ -58,7 +63,7 @@
                                                             $a = $value['category_id'];
                                                             ?>
                                                             <!-- (<? // = $value['tutorials'] ?>) -->
-                                                            <li><a href="<?= l('account/profile/expert') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?></a>  </li>
+                                                            <li><a href="<?= l('account/profile/expert') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?></a> (<?= $value['tutorials'] ?>) </li>
                                                         <? endforeach; ?>
                                                     <? endif; ?>
                                                 </ul>
@@ -362,7 +367,7 @@
 
                     <section class="joinSec hding-2 para">
                         <div class="joinContent">
-                            <h2><?= $check['cms_page_title'] ?></h2>
+                            <h2><?= html_entity_decode($check['cms_page_title'])?></h2>
                             <div class="space"><br></div>
                             <p><?= html_entity_decode($check['cms_page_content']) ?></p>
                             <div class="space"><br><br></div>

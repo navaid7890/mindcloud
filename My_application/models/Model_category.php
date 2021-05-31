@@ -54,6 +54,7 @@ class Model_category extends MY_Model {
 		$this->db->from('category');
 		$this->db->join('course_category', 'category.category_id = course_category.cp_category_id');
 		$this->db->join('tutorial', 'tutorial.tutorial_id = course_category.cp_course_id');
+        $this->db->where('tutorial_status','1');
 		$this->db->group_by(['category.category_id']);
         // debug();
 		$query = $this->db->get();

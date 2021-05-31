@@ -164,23 +164,23 @@
       <div class="container">
          <div class="jr-top">
             <div class="jrnyHead">
-               <h2>About this <strong>Video</strong></h2>
+               <h2>About this <strong>Tutorial</strong></h2>
                <p><?= html_entity_decode($course[0]['tutorial_desc2']) ?></p>
             </div>
             <div class="space"><br><br><br></div>
             <div class="jrnyFaq">
-               <h2>Video Content</h2>
+               <h2>Tutorial Content</h2>
                <div class="sapace"><br><br></div>
                <ul class="colasebar">
                   <li>
                      <div class="faqBox">
                         <a href="<?= l('account/profile/expert-detail-tutorial-intro-video') ?>?courseid=<?= $course[0]['tutorial_id'] ?>">
-                           <i class="fas fa-video"></i> Intro Video</a>
+                           <i class="fas fa-video"></i> Tutorial - 1 Minute Intro</a>
                      </div>
                   </li>
                   <li>
                      <div class="faqBox">
-                        <span><i class="fas fa-scroll"></i>Description</span>
+                        <span><i class="fas fa-scroll"></i>Tutorial Description</span>
                         <div class="expandable">
                            <?= html_entity_decode($course[0]['tutorial_desc2']) ?>
                         </div>
@@ -192,7 +192,7 @@
                         <li>
                            <div class="faqBox">
                               <a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $course[0]['tutorial_id'] ?>&tutorialid=<?= $value['videos_id'] ?>">
-                                 <i class="fas fa-video"></i> Video and Transcript</a>
+                                 <i class="fas fa-video"></i> Tutorial - Video and Transcript</a>
                            </div>
                         </li>
 
@@ -221,60 +221,49 @@
                </ul>
             </div>
          </div>
-         <!-- <div class="jr-btm">
+         <div class="jr-btm">
             <div class="user-review">
-               <h2>User <strong> Reviews </strong></h2>
+               
+               <?php if (isset($review) && array_filled($review)) : ?>
+                  <h2>User <strong> Reviews </strong></h2>
                <div class="space"><br><br></div>
-               <div class="row">
-                  <div class="col-lg-1 col-md-12">
-                     <div class="profile-img">
-                        <img src="<?= i('') ?>whoSec/1.png" alt="">
+                  <?php foreach ($review as $key => $value) : ?>
+                     <div class="row">
+                        <div class="col-lg-1 col-md-12">
+                           <div class="profile-img">
+                              <img src="<?= i('') ?>/profile/profile.png" alt="">
+                           </div>
+                        </div>
+
+                        <div class="col-lg-11 col-md-12">
+
+                           <div class="usr-review">
+                           <?
+                           $user_name = array();
+                           $user_name['where']['user_id'] = $review[$key]['learning_journey_course_review_user_id'];
+                           $user = $this->model_user->find_all_active($user_name);
+                           ?>
+                              <h3><?=$user[0]['user_firstname']?></h3>
+                              <div class="space"><br></div>
+                              <ul class="usr-rating">
+                                 <?php
+                                 for ($x = 1; $x <= $review[$key]['learning_journey_course_review_stars']; $x++) { ?>
+                                    <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                 <? } ?>
+                              </ul>
+                              <p><?=$review[$key]['learning_journey_course_review_createdon']?></p>
+                           </div>
+                           <div class="user-content">
+                              <p><?=$review[$key]['learning_journey_course_review_desc']?></p>
+                           </div>
+
+                        </div>
                      </div>
-                  </div>
-                  <div class="col-lg-11 col-md-12">
-                     <div class="usr-review">
-                        <h3>Jacob Evans</h3>
-                        <div class="space"><br></div>
-                        <ul class="usr-rating">
-                           <li><a href="#"><i class="fas fa-star"></i></a></li>
-                           <li><a href="#"><i class="fas fa-star"></i></a></li>
-                           <li><a href="#"><i class="fas fa-star"></i></a></li>
-                           <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        </ul>
-                        <p>August 6, 2020</p>
-                     </div>
-                     <div class="user-content">
-                        <p>I had an amazing learning experience. Would highly recommend for anyone looking to learn Customer Experience</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="space"><br><br><br></div>
-               <div class="row">
-                  <div class="col-lg-1 col-md-12">
-                     <div class="profile-img">
-                        <img src="<?= i('') ?>whoSec/1.png" alt="">
-                     </div>
-                  </div>
-                  <div class="col-lg-11 col-md-12">
-                     <div class="usr-review">
-                        <h3>Samantha Rohany</h3>
-                        <div class="space"><br></div>
-                        <ul class="usr-rating">
-                           <li><a href="#"><i class="fas fa-star"></i></a></li>
-                           <li><a href="#"><i class="fas fa-star"></i></a></li>
-                           <li><a href="#"><i class="fas fa-star"></i></a></li>
-                           <li><a href="#"><i class="fas fa-star"></i></a></li>
-                           <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        </ul>
-                        <p>August 6, 2020</p>
-                     </div>
-                     <div class="user-content">
-                        <p>I like the instructors adaptive teaching methods. Really helped me improve the performance of my company products Customer Experience and it showed immediate results!</p>
-                     </div>
-                  </div>
-               </div>
+                     <div class="space"><br><br><br></div>
+                  <?php endforeach; ?>
+               <?php endif ?>
             </div>
-         </div> -->
+         </div>
       </div>
    </section>
    <section class="joinSec cloud-sec hding-2 para">

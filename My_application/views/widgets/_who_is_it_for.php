@@ -1,7 +1,12 @@
+<style>
+.whoHead strong {
+    font-weight: 700;
+}
+</style>
 <section class="whoSec bg-white hding-2 para">
     <div class="container">
         <div class="whoHead">
-            <h2><?=$cont9['cms_page_title']?></h2>
+            <h2><?=html_entity_decode($cont9['cms_page_title'])?></h2>
             <div class="space"><br></div>
             <?=html_entity_decode($cont9['cms_page_content'])?>
         </div>

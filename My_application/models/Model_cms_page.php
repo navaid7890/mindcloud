@@ -34,7 +34,7 @@ class Model_cms_page extends MY_Model
             $this->heading = "hidden";
         }else
         {
-            $this->heading = "text";
+            $this->heading = "editor";
         }
 
         $segment_d = array(45);
