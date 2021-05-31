@@ -27,9 +27,9 @@
 						<li><a href="https://mindcloudacademy.com/">The Academy</a></li>
 						<!-- <li><a href="https://mindcloudacademy.com/"> The Academy</a></li> -->
 						<!-- <li><a href="#"><span><img src="<?//=i('')?><?//= $this->session_data['profile_image'] ?>"></span> <?//= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li> -->
-						<li><a href="#">Community</a></li>
-						<li><a href="#">Community</a></li>
-						<li><a href="#">Community</a></li>
+						<li><a href="#"><i class="fal fa-envelope-open-text"></i></a></li>
+						<li><a href="#" data-fancybox data-src="#video-intro"><i class="fal fa-bell"></i></a></li>
+						<li><a href="<?=l('signout')?>"> <i class="far fa-sign-out-alt"></i> Logout</a></li>
 					</ul>
 					</div>
 				</div>
