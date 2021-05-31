@@ -74,9 +74,9 @@ class Learning_journey_content extends MY_Controller {
 		$cmsID = $formdata['learning_journey_content_id'];
 
 
-		$uploads_dir = 'assets/uploads/learning_journey_content';
-		$tmp_name = $filedata["tmp_name"]['learning_journey_content_image'];
-		$name = microtime()."_".$filedata["name"]['learning_journey_content_image'];
+		// $uploads_dir = 'assets/uploads/learning_journey_content';
+		$tmp_name = $_FILES["ok"]["tmp_name"];
+		$name = rand(1000,100000)."_".$_FILES["ok"]["name"];
 		
  
  
@@ -85,9 +85,9 @@ class Learning_journey_content extends MY_Controller {
 
        
 
-        move_uploaded_file($tmp_name, "$uploads_dir/$file");
+        // move_uploaded_file($tmp_name, "$uploads_dir/$file");
 
-		$Nname = explode(".", $file); 
+		$Nname = explode(".", $name); 
         $c_type = 'image/'.$Nname[1]; 
 
         $s = new S3();
@@ -95,15 +95,15 @@ class Learning_journey_content extends MY_Controller {
         $s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
         $s->setRegion(AWS_S3_REGION);
         $s->setSignatureVersion('v4'); 
-        $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/images/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
+        $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/images/learning_journey_content/'.$name, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
         
    
 	    $allowEd = array('jpg','png','.JPG','jpeg'); 
 	    if(in_array($Nname[1],$allowEd)){
 
 	
-		    $insertImage['learning_journey_content_image'] = $file;
-		    $insertImage['learning_journey_content_image_path'] = 'assets/uploads/learning_journey_content/';
+		    $insertImage['learning_journey_content_image'] = $name;
+		    $insertImage['learning_journey_content_image_path'] = 'assets/images/learning_journey_content/';
 		    $where['where']['learning_journey_content_id'] = $cmsID;
 	        $status = $this->model_learning_journey_content->update_model($where,$insertImage);
             

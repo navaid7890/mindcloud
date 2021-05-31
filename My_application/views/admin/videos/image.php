@@ -76,7 +76,7 @@ $max_images = 4;
             <?php
             if(!empty($form_data['videos']['videos_image2'.$i])){
             ?>
-                <img alt="" src="<?=g('base_url')?>assets/uploads/videos/<?=$form_data['videos']['videos_image2'.$i]?>">
+                <img alt="" src="<?= g('db.admin.bucketimg')?><?=$form_data['videos']['videos_image2']?>">
             <?php
             }
             else{

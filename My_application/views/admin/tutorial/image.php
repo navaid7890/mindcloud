@@ -70,7 +70,7 @@ global $config;
                                         <?php
                                         if (!empty($form_data['tutorial']['tutorial_image2' . $i])) {
                                         ?>
-                                            <img alt="" src="<?= g('base_url') ?>assets/uploads/tutorial/<?= $form_data['tutorial']['tutorial_image2' . $i] ?>">
+                                            <img alt="" src="<?= g('db.admin.bucketimg') ?><?= $form_data['tutorial']['tutorial_image2'] ?>">
                                         <?php
                                         } else {
                                         ?>
