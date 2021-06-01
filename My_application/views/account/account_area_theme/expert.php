@@ -1,16 +1,18 @@
 <style>
-.joinContent strong {
-    font-weight: 700;
-}
-.consult-left h2 strong span strong,
-   .consult-head strong,
-   .mainBanner strong,
-   .joinContent strong {
-    font-weight: 700;
-}
-.consult-left h2 strong {
-    font-weight: 400;
-}
+    .joinContent strong {
+        font-weight: 700;
+    }
+
+    .consult-left h2 strong span strong,
+    .consult-head strong,
+    .mainBanner strong,
+    .joinContent strong {
+        font-weight: 700;
+    }
+
+    .consult-left h2 strong {
+        font-weight: 400;
+    }
 </style>
 <div class="index-page">
     <section class="dashboard">
@@ -31,13 +33,13 @@
                                     <div class="side-bar">
                                         <div class="searchBox">
                                             <h4>What do you want to learn?</h4>
-                                            <form action="">
+                                            <form action="" method="GET">
                                                 <div class="fld-search">
-                                                    <input type="text" placeholder="Search Expert Tutorials">
+                                                    <input type="text" name="search" placeholder="Search Expert Tutorials">
                                                     <button type="submit"><i class="fal fa-search"></i></button>
                                                 </div>
                                             </form>
-                                       </div>
+                                        </div>
                                         <div class="space"><br><br><br></div>
 
                                         <div class="select-cate">
@@ -71,7 +73,8 @@
                                                             <?
                                                             $a = $value['category_id'];
                                                             ?>
-                                                            <!-- (<? // = $value['tutorials'] ?>) -->
+                                                            <!-- (<? // = $value['tutorials'] 
+                                                                    ?>) -->
                                                             <li><a href="<?= l('account/profile/expert') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?></a> (<?= $value['tutorials'] ?>) </li>
                                                         <? endforeach; ?>
                                                     <? endif; ?>
@@ -84,7 +87,7 @@
                                 <div class="col-md-8">
                                     <div class="xpert-box">
                                         <div class="xpert-content">
-                                        <h2>What to Learn next in <strong>Experts Tutorials </strong></h2>
+                                            <h2>What to Learn next in <strong>Experts Tutorials </strong></h2>
                                             <? if (empty($art)) { ?>
                                                 <h1 class="text-center" style="color: #000; font-size:30px; font-weight:700;">Course Not Found</h1>
                                             <? } else { ?>
@@ -118,7 +121,9 @@
 
                                                                         <div class="row align-items-center ">
                                                                             <div class="col-md-12">
-                                                                                <a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><h4><?= $value['tutorial_name'] ?></h4></a>
+                                                                                <a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;">
+                                                                                    <h4><?= $value['tutorial_name'] ?></h4>
+                                                                                </a>
                                                                                 <ul class="rating">
                                                                                     <?php
                                                                                     for ($x = 1; $x <= $value['tutorial_rating']; $x++) { ?>
@@ -318,7 +323,7 @@
                                     <div class="col-md-4 pad-zero">
                                         <div class="consult-left">
                                             <div>
-                                                <h2><strong><?=html_entity_decode( $con1['cms_page_title'] )?></strong></h2>
+                                                <h2><strong><?= html_entity_decode($con1['cms_page_title']) ?></strong></h2>
 
                                                 <ul class="consult-left-slide">
                                                     <li>
@@ -376,7 +381,7 @@
 
                     <section class="joinSec hding-2 para">
                         <div class="joinContent">
-                            <h2><?= html_entity_decode($check['cms_page_title'])?></h2>
+                            <h2><?= html_entity_decode($check['cms_page_title']) ?></h2>
                             <div class="space"><br></div>
                             <p><?= html_entity_decode($check['cms_page_content']) ?></p>
                             <div class="space"><br><br></div>

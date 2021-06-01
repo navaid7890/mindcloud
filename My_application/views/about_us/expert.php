@@ -16,19 +16,22 @@
    .bannerSeactionArea a {
       color: #e18e25;
    }
+
    .consult-left h2 strong span strong,
    .consult-head strong,
    .mainBanner strong,
    .joinContent strong {
-    font-weight: 700;
-}
-.consult-left h2 strong {
-    font-weight: 400;
-}
-.mainBanner h1 {
-    border-bottom: 8px solid #F4C150;
-    display: inline-block;
-}
+      font-weight: 700;
+   }
+
+   .consult-left h2 strong {
+      font-weight: 400;
+   }
+
+   .mainBanner h1 {
+      border-bottom: 8px solid #F4C150;
+      display: inline-block;
+   }
 </style>
 
 <div class="mainBanner home-banner para" style="background-image:url('<?= get_image($cont1['cms_page_image'], $cont1['cms_page_image_path']) ?>');">
@@ -36,7 +39,7 @@
       <div class="row align-items-center">
          <div class="col-lg-12 col-md-12">
             <div class="my">
-               <h1><?=html_entity_decode( $cont1['cms_page_title'] )?> </strong></h1>
+               <h1><?= html_entity_decode($cont1['cms_page_title']) ?> </strong></h1>
                <div class="space"><br><br></div>
                <div class="row">
                   <div class="col-lg-6 col-md-12 bannerSeactionArea">
@@ -60,12 +63,14 @@
             <div class="col-lg-4 col-md-6">
                <div class="side-bar sticky-top">
                   <div class="searchBox">
-                  <h4>What do you want to learn?</h4>
-                  <form action="" method="GET">
-                      <div class="fld-search">
-                          <input type="text" placeholder="Search Expert Tutorials" name="keyword">
-                      </div>
-                  </form>
+                     <h4>What do you want to learn?</h4>
+                     
+                     <form action="" method="GET">
+                        <div class="fld-search">
+                           <input type="text" name="search" placeholder="Search Expert Tutorials">
+                           <button type="submit"><i class="fal fa-search"></i></button>
+                        </div>
+                     </form>
                   </div>
                   <div class="space"><br><br><br></div>
                   <div class="select-cate">
@@ -96,7 +101,8 @@
                                  $a = $value['category_id'];
 
                                  ?>
-                                 <!-- ( <?//= $value['tutorials'] ?> ) -->
+                                 <!-- ( <? //= $value['tutorials'] 
+                                          ?> ) -->
                                  <li><a href="<?= l('expert-tutorial') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?></a> ( <?= $value['tutorials'] ?> ) </li>
                               <? endforeach; ?>
                            <? endif; ?>
@@ -117,7 +123,7 @@
                               <?php foreach ($art as $key => $value) : ?>
                                  <li>
                                     <div class="vid-box">
-                                    
+
                                        <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
                                           <div class="video-box">
                                              <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
@@ -134,18 +140,19 @@
                                        $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
                                        $cat_name = $this->model_category->find_all_active($cat_name);
                                        ?>
-                                       <!-- <a href="javascript:;" class="cate-tag"><? // $value['tutorial_level'] ?></a> -->
+                                       <!-- <a href="javascript:;" class="cate-tag"><? // $value['tutorial_level'] 
+                                                                                    ?></a> -->
                                        <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
                                        <div class="vid-content">
                                           <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
                                           <div class="row align-items-center pt-70">
                                              <div class="col-md-12">
-                                             <ul class="login-btn">
-                                                            <li><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $value['expert_image'] ?>"></span> <?= $value['expert_name'] ?> </a></li>
-                                                        </ul>
+                                                <ul class="login-btn">
+                                                   <li><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $value['expert_image'] ?>"></span> <?= $value['expert_name'] ?> </a></li>
+                                                </ul>
                                              </div>
                                              <div class="col-md-8">
-                                             <ul class="rating">
+                                                <ul class="rating">
                                                    <?php
                                                    for ($x = 1; $x <= $value['tutorial_rating']; $x++) { ?>
                                                       "
@@ -153,7 +160,7 @@
                                                       ";
                                                    <? } ?>
                                                 </ul>
-                                                    </div>
+                                             </div>
                                              <div class="col-md-4 text-right">
                                                 <h6><?= price($value['tutorial_price']) ?></h6>
                                              </div>
@@ -180,9 +187,9 @@
 
 <section class="whoSec hding-2 para pad-sec">
    <div class="container">
-   <? $this->load->view('widgets/_most_watched_tutorials'); ?> 
+      <? $this->load->view('widgets/_most_watched_tutorials'); ?>
 
-            
+
       <div class="mostcateSec">
          <div class="mostHead">
             <h2>Most Popular <strong> Categories </strong></h2>

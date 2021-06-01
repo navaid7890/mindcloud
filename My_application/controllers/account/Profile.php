@@ -556,6 +556,10 @@ class Profile extends MY_Controller_Account
 		if (isset($_GET['expert']) and intval($_GET['expert']) > 0) {
 			$param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
 		}
+		if(isset($_GET['search'])){
+            // debug($_GET['search']);
+         $param['where_like'][] = array('column'=>'tutorial_name','value'=>$_GET['search']);
+        }
 
 
 

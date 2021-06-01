@@ -1,15 +1,16 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class About_us extends MY_Controller {
+class About_us extends MY_Controller
+{
 
-	/**
-	 * Default Controller
-	 */
+    /**
+     * Default Controller
+     */
 
-	public function __construct()
+    public function __construct()
     {
-    	// Call the Model constructor latest_product
-    	// $this->cms_page_id = 24;
+        // Call the Model constructor latest_product
+        // $this->cms_page_id = 24;
         parent::__construct();
         // $this->view_pre = "cms/";
 
@@ -17,32 +18,32 @@ class About_us extends MY_Controller {
     }
 
     // Default Home Page
-	public function index()
-	{
+    public function index()
+    {
         global $config;
         $data = array();
 
         $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
-        
+        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+
 
         //INNER BANNER
-         $b = $this->get_ibanner(1);
-         $data['ititle'] = $b['ititle'];
-         $data['ibanner_img'] = $b['ibanner_img'];
+        $b = $this->get_ibanner(1);
+        $data['ititle'] = $b['ititle'];
+        $data['ibanner_img'] = $b['ibanner_img'];
 
 
         //BANNER
-         // $b = $this->get_banner(1);
-         // $data['bcontent'] = $b['bcontent'];
-         // $data['bimage'] = $b['bimage'];
+        // $b = $this->get_banner(1);
+        // $data['bcontent'] = $b['bcontent'];
+        // $data['bimage'] = $b['bimage'];
 
-         $cont = $this->model_cms_page->get_page(12);
+        $cont = $this->model_cms_page->get_page(12);
         $data['cont1'] = $cont['child'][0];
         $data['cont2'] = $cont['child'][1];
 
-		$this->load_view("index",$data);
-	}
+        $this->load_view("index", $data);
+    }
 
     public function terms()
     {
@@ -50,34 +51,34 @@ class About_us extends MY_Controller {
         global $config;
 
         $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
 
         //INNER BANNER
-         $b = $this->get_ibanner(6);
-         $data['ititle'] = $b['ititle'];
-         $data['ibanner_img'] = $b['ibanner_img'];
-            //BANNER
-         // $b = $this->get_banner(9);
-         // $data['bcontent'] = $b['bcontent'];
-         // $data['bimage'] = $b['bimage'];
-         $content = $this->model_cms_page->get_page(32);
-         // debug($cont);
+        $b = $this->get_ibanner(6);
+        $data['ititle'] = $b['ititle'];
+        $data['ibanner_img'] = $b['ibanner_img'];
+        //BANNER
+        // $b = $this->get_banner(9);
+        // $data['bcontent'] = $b['bcontent'];
+        // $data['bimage'] = $b['bimage'];
+        $content = $this->model_cms_page->get_page(32);
+        // debug($cont);
         $data['content'] = $content;
-         
 
-        $this->load_view("terms",$data);
+
+        $this->load_view("terms", $data);
     }
 
 
 
     public function cart()
     {
-        $this->load_view("cart-one",$data);
+        $this->load_view("cart-one", $data);
     }
 
     public function checkout()
     {
-        $this->load_view("checkout",$data);
+        $this->load_view("checkout", $data);
     }
 
 
@@ -88,22 +89,22 @@ class About_us extends MY_Controller {
         global $config;
 
         $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
 
         //INNER BANNER
-         $b = $this->get_ibanner(7);
-         $data['ititle'] = $b['ititle'];
-         $data['ibanner_img'] = $b['ibanner_img'];
-            //BANNER
-         // $b = $this->get_banner(10);
-         // $data['bcontent'] = $b['bcontent'];
-         // $data['bimage'] = $b['bimage'];
+        $b = $this->get_ibanner(7);
+        $data['ititle'] = $b['ititle'];
+        $data['ibanner_img'] = $b['ibanner_img'];
+        //BANNER
+        // $b = $this->get_banner(10);
+        // $data['bcontent'] = $b['bcontent'];
+        // $data['bimage'] = $b['bimage'];
 
-         $cont = $this->model_cms_page->get_page(34);
-         
-        $data['content'] = $cont;         
+        $cont = $this->model_cms_page->get_page(34);
 
-        $this->load_view("terms",$data);
+        $data['content'] = $cont;
+
+        $this->load_view("terms", $data);
     }
 
     // public function faq()
@@ -144,7 +145,7 @@ class About_us extends MY_Controller {
     //     $data['test'] = $this->model_testimonials->find_one_active($test);
 
     //     $data['testimonials'] = $this->model_testimonials->find_all_active();
-    
+
     //     $this->load_view("testimonials",$data);
     // }
 
@@ -171,24 +172,24 @@ class About_us extends MY_Controller {
     //     $this->load_view("showcase",$data);
     // }
 
-    
+
     public function learning()
     {
         $data = array();
         global $config;
 
         $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
 
 
-        $data['professions'] = $this->model_profession->find_all_active();            
-        $data['states'] = $this->model_states->find_all_active();            
-        
+        $data['professions'] = $this->model_profession->find_all_active();
+        $data['states'] = $this->model_states->find_all_active();
+
         $param = array();
         $param['where']['tutorial_featured'] = 1;
         $data['course'] = $this->model_tutorial->find_all_active($param);
 
-        
+
         $cont = $this->model_cms_page->get_page(2);
         // debug($cont);
         $data['cont1'] = $cont['child'][0];
@@ -205,44 +206,44 @@ class About_us extends MY_Controller {
         $data['cont12'] = $cont['child'][11];
         $data['cont13'] = $cont['child'][12];
         $data['cont14'] = $cont['child'][13];
-        
 
-        $data['banner'] = $this->model_inner_banner->find_by_pk(1); 
+
+        $data['banner'] = $this->model_inner_banner->find_by_pk(1);
 
         $data['learning'] = $this->model_learning->find_all_active();
         $data['testimonial'] = $this->model_testimonials->find_all_active();
-   
+
         $param = array();
         $param['where']['category_featured'] = 1;
-        $data['category'] = $this->model_category->find_all_active($param); 
+        $data['category'] = $this->model_category->find_all_active($param);
 
 
-      $data['testi'] = $this->model_testimonials->find_all_active();
-      $firststate = $this->model_states->find_one_active();            
-      $data['firststate'] =$firststate['states_id'];
+        $data['testi'] = $this->model_testimonials->find_all_active();
+        $firststate = $this->model_states->find_one_active();
+        $data['firststate'] = $firststate['states_id'];
 
-      $exp1 = $this->model_cms_page->get_page(26);
-  
-      $data['check'] = $exp1['child'][0];
+        $exp1 = $this->model_cms_page->get_page(26);
 
-               
-     $fa=array();
-     $fa['where']['faq_category']=2;
-     $fa['order']="faq_id ASC";
-     $data['faq'] = $this->model_faq->find_all_active($fa);
-
-     $contdata = $this->model_cms_page->get_page(28);
-     // debug($cont);
-     $data['contd'] = $contdata['child'][0];
+        $data['check'] = $exp1['child'][0];
 
 
-     $data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
-       
-   //  debug($data['learn_cat']);
-      
-          
+        $fa = array();
+        $fa['where']['faq_category'] = 2;
+        $fa['order'] = "faq_id ASC";
+        $data['faq'] = $this->model_faq->find_all_active($fa);
 
-        $this->load_view("learning",$data);
+        $contdata = $this->model_cms_page->get_page(28);
+        // debug($cont);
+        $data['contd'] = $contdata['child'][0];
+
+
+        $data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+
+        //  debug($data['learn_cat']);
+
+
+
+        $this->load_view("learning", $data);
     }
 
     public function expert()
@@ -251,7 +252,7 @@ class About_us extends MY_Controller {
         global $config;
 
         $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
 
         $cont = $this->model_cms_page->get_page(2);
 
@@ -264,7 +265,7 @@ class About_us extends MY_Controller {
         $data['con1'] = $conts['child'][0];
 
         $contss = $this->model_cms_page->get_page(20);
-  
+
         $data['con2'] = $contss['child'][1];
         $data['con3'] = $contss['child'][2];
         $data['con4'] = $contss['child'][3];
@@ -273,171 +274,147 @@ class About_us extends MY_Controller {
 
         // $test_f = $cont['0']['0'];
         // debug($data['con4']);
-   
-           
-     
-
-        $par=array();
-        $par['order']="category_id ASC";
+        $par = array();
+        $par['order'] = "category_id ASC";
         $data['main_categories'] = $this->model_category->find_all_active($par);
 
-        $coursecat=array();
-        $coursecat['where']['cp_category_id']=intval($this->input->get('cat'));
+        $coursecat = array();
+        $coursecat['where']['cp_category_id'] = intval($this->input->get('cat'));
         $cate = $this->model_course_category->find_all_active($coursecat);
-
-       // debug($cate);
-  
-        foreach($cate as $key => $value)
-        {
-         $all[]=$value['cp_course_id'];
+        // debug($cate);
+        foreach ($cate as $key => $value) {
+            $all[] = $value['cp_course_id'];
         }
+        // debug($all);
+        $categories = $this->model_category->get_category_tutorials();
+        $data['main_categories'] = $categories;
 
-       // debug($all);
-   
-       $categories = $this->model_category->get_category_tutorials();
-       $data['main_categories'] = $categories ;
-
-        $par2=array();
-        $par2['order']="expert_id ASC";
+        $par2 = array();
+        $par2['order'] = "expert_id ASC";
         $data['ex'] = $this->model_expert->find_all_active($par2);
         //debug($data['main_categories']);
+        
+        $param = array();
+        if (isset($_GET['expert']) and intval($_GET['expert']) > 0) {
+            $param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
+        }
+        if(isset($_GET['search'])){
+            // debug($_GET['search']);
+         $param['where_like'][] = array('column'=>'tutorial_name','value'=>$_GET['search']);
+        }
+        
+        $param['order'] = "tutorial_id ASC";
+        $param['where_in']['tutorial_id'] = $all;
 
-          $param = array();
-          if(isset($_GET['expert']) AND intval($_GET['expert']) > 0){
-          $param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
-          }
+        $data['art'] = $this->model_tutorial->get_details($param);
+        // debug($data['art']);
 
-   
-    //       if(isset($_GET['cat']) AND intval($_GET['cat']) > 0){
-    //       $param['where']['tutorial_category_id'] = intval($this->input->get('cat'));
-    //   }
-  
-      
+        $pop = array();
+        $pop['where']['category_featured'] = 1;
+        $data['popular'] = $this->model_category->find_all_active($pop);
+        
 
-      
-      $param['order']="tutorial_id ASC";
-      $param['where_in']['tutorial_id']=$all;
+        $fa = array();
+        $fa['where']['faq_category'] = 1;
+        $fa['order'] = "faq_id ASC";
+        $data['faq'] = $this->model_faq->find_all_active($fa);
 
-      $data['art'] = $this->model_tutorial->get_details($param);
+        $exp1 = $this->model_cms_page->get_page(26);
 
-      
-      $pop=array();
-      $pop['where']['category_featured']=1;
-      $data['popular'] = $this->model_category->find_all_active($pop);
-     // debug($data['art']);
+        $data['check'] = $exp1['child'][0];
 
-           
-     $fa=array();
-     $fa['where']['faq_category']=1;
-     $fa['order']="faq_id ASC";
-     $data['faq'] = $this->model_faq->find_all_active($fa);
-      
-     $exp1 = $this->model_cms_page->get_page(26);
-  
-     $data['check'] = $exp1['child'][0];
-   
-
-
-
-        $this->load_view("expert",$data);
+        $this->load_view("expert", $data);
     }
 
-    public function course_detail($slug ='')
+    public function course_detail($slug = '')
     {
         global $config;
         $data = array();
 
-      
+
 
         $contss = $this->model_cms_page->get_page(30);
         $data['con1'] = $contss['child'][0];
         $data['con2'] = $contss['child'][1];
         $data['con3'] = $contss['child'][2];
 
-    
-        $fa=array();
-        $fa['where']['faq_category']=1;
-        $fa['order']="faq_id ASC";
+
+        $fa = array();
+        $fa['where']['faq_category'] = 1;
+        $fa['order'] = "faq_id ASC";
         $data['faq'] = $this->model_faq->find_all_active($fa);
 
 
-        $ck=array();
-        $ck['where']['tutorial_slug']=$slug;
-    
+        $ck = array();
+        $ck['where']['tutorial_slug'] = $slug;
+
         $course = $this->model_tutorial->get_details($ck);
-       // debug($course[0]['course_id']);
+        // debug($course[0]['course_id']);
 
-       $par7 = array();
-       $par7['where']['cp_course_id'] = $course[0]['tutorial_id'];
-       $coursecat = $this->model_course_category->find_all_active($par7);
-     
-       $review = array();
-       $review['where']['learning_journey_course_review_course_id'] = $coursecat[0]['cp_course_id'];
-       $review_data = $this->model_learning_journey_course_review->find_all_active($review);
+        $par7 = array();
+        $par7['where']['cp_course_id'] = $course[0]['tutorial_id'];
+        $coursecat = $this->model_course_category->find_all_active($par7);
 
-       $data['review'] = $review_data;
+        $review = array();
+        $review['where']['learning_journey_course_review_course_id'] = $coursecat[0]['cp_course_id'];
+        $review_data = $this->model_learning_journey_course_review->find_all_active($review);
 
-    
+        $data['review'] = $review_data;
+
+
         if (count($course) < 1) {
-         redirect("?msgtype=error&msg=invalid url");   
+            redirect("?msgtype=error&msg=invalid url");
         }
 
-  
-
-       $data['course'] = $course;
-       
 
 
-       $pop=array();
-       $pop['where']['tutorial_slug !=']=$slug;
-       $pop['limit']=3;
-       $data['popular'] = $this->model_tutorial->find_all_active($pop);
-
-       $tut=array();
-       $tut['where']['cp_course_id']=$course[0]['tutorial_id'];
-       $tutorail = $this->model_course_tutorial->find_all_active($tut);
-
-       foreach($tutorail as $key => $value)
-       {
-        $all[]=$value['cp_tutorial_id'];
-       }
-
-
-    //    $lec=array();
-    //    $lec['where_in']['tutorial_id']=$all;
-    //    $data['lc'] = $this->model_tutorial->find_all_active($lec);
-    //   debug($data['lc']);
-
-
-       $lec=array();
-       $lec['where_in']['videos_id']=$all;
-       $data['lc'] = $this->model_videos->find_all_active($lec);
+        $data['course'] = $course;
 
 
 
-       $par7=array();
-       $par7['where']['cp_course_id']=$course[0]['tutorial_id'];
-       $coursecat = $this->model_course_category->find_all_active($par7);
-      // debug($coursecat);
+        $pop = array();
+        $pop['where']['tutorial_slug !='] = $slug;
+        $pop['limit'] = 3;
+        $data['popular'] = $this->model_tutorial->find_all_active($pop);
 
-       foreach($coursecat as $key => $value)
-       {
-        $all1[]=$value['cp_category_id'];
-       }
-      // debug($all1);
-       $ccategory=array();
-       $ccategory['where_in']['category_id']=$all1;
-       $data['ct'] = $this->model_category->find_all_active($ccategory);
-       //debug(  $data['ct']);
+        $tut = array();
+        $tut['where']['cp_course_id'] = $course[0]['tutorial_id'];
+        $tutorail = $this->model_course_tutorial->find_all_active($tut);
 
-       
+        foreach ($tutorail as $key => $value) {
+            $all[] = $value['cp_tutorial_id'];
+        }
 
-   
-        $this->load_view("course_detail",$data);
+
+        //    $lec=array();
+        //    $lec['where_in']['tutorial_id']=$all;
+        //    $data['lc'] = $this->model_tutorial->find_all_active($lec);
+        //   debug($data['lc']);
+
+
+        $lec = array();
+        $lec['where_in']['videos_id'] = $all;
+        $data['lc'] = $this->model_videos->find_all_active($lec);
+
+
+
+        $par7 = array();
+        $par7['where']['cp_course_id'] = $course[0]['tutorial_id'];
+        $coursecat = $this->model_course_category->find_all_active($par7);
+        // debug($coursecat);
+
+        foreach ($coursecat as $key => $value) {
+            $all1[] = $value['cp_category_id'];
+        }
+        // debug($all1);
+        $ccategory = array();
+        $ccategory['where_in']['category_id'] = $all1;
+        $data['ct'] = $this->model_category->find_all_active($ccategory);
+        //debug(  $data['ct']);
+
+
+
+
+        $this->load_view("course_detail", $data);
     }
-
-    
-
-
-
 }
