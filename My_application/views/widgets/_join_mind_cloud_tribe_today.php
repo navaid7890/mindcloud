@@ -9,6 +9,6 @@
     <div class="space"><br></div>
         <?=html_entity_decode($cont15['cms_page_content'])?>
     <div class="space"><br><br></div>
-    <a href="#" class="btn-theme btn-hover">Start Free Trial <span></span></a>
+    <a href="<?= l('expert-tutorial') ?>" class="btn-theme btn-hover">Start Free Trial <span></span></a>
     </div>
 </section>

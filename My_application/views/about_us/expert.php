@@ -272,7 +272,7 @@
       <div class="space"><br></div>
       <?= html_entity_decode($check['cms_page_content']) ?>
       <div class="space"><br><br></div>
-      <a href="javascript:void(0)" class="btn-theme btn-hover">Start Free Trial <span></span></a>
+      <a href="<?= l('learning-journey') ?>" class="btn-theme btn-hover">Start Free Trial <span></span></a>
    </div>
 </section>
 <section class="faqSec hding-2 para">
