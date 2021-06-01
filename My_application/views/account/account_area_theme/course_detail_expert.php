@@ -22,6 +22,10 @@
       background: #fff;
       z-index: 2;
    }
+   .contentArea {
+      color: #fff;
+      padding-top: 15px;
+   }
 </style>
 <div class="abt-tut-page">
 
@@ -57,7 +61,18 @@
 
                         </a></li>
                   </ul>
-                  <?= html_entity_decode($course[0]['tutorial_desc']) ?><br>
+                  <ul>
+                     <li>
+                        <div class="tutorialName">
+                           <h1><?= $course[0]['tutorial_name'] ?></h1>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="contentArea">
+                           <?= html_entity_decode($course[0]['tutorial_desc']) ?><br>
+                        </div>
+                     </li>
+                  </ul>
                   <ul class="usr-rating">
                      <?php
                      for ($x = 1; $x <= $course[0]['tutorial_rating']; $x++) { ?>

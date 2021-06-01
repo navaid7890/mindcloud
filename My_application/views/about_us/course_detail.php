@@ -33,12 +33,15 @@
    }
 
    .contentArea li.first.last {
-    margin-left: 15px;
-    color: #fff;;
-}
-.contentArea  {
-    color: #fff;;
-}
+      margin-left: 15px;
+      color: #fff;
+      ;
+   }
+
+   .contentArea {
+      color: #fff;
+      padding-top: 15px;
+   }
 </style>
 <div class="abt-tut-page">
    <div class="mainBanner hding-1 para">
@@ -56,7 +59,7 @@
                   // //debug($a);
                   // $dt=$this->model_category->find_by_pk($a);
 
-                    debug($dt);
+                  debug($dt);
                   ?>
                   <ul class="bnr-cate">
                      <li>Category</li>
@@ -71,13 +74,22 @@
 
                            ?>
                            <? endforeach; ?>
-
-
-                        </a></li>
+                        </a>
+                     </li>
                   </ul>
-                  <div class="contentArea">
-                     <?= html_entity_decode($course[0]['tutorial_desc']) ?><br>
-                  </div>
+                  <ul>
+                     <li>
+                        <div class="tutorialName">
+                           <h1><?= $course[0]['tutorial_name'] ?></h1>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="contentArea">
+                           <?= html_entity_decode($course[0]['tutorial_desc']) ?><br>
+                        </div>
+                     </li>
+                  </ul>
+
                   <ul class="usr-rating">
                      <?php
                      for ($x = 1; $x <= $course[0]['tutorial_rating']; $x++) { ?>
@@ -114,19 +126,19 @@
             </div>
 
             <div class="col-lg-5 col-md-12">
-               
-            <?
-                     // debug($value);
-                     $vidcat = array();
-                     $vidcat['where']['cp_course_id'] = $course[0]['tutorial_id'];
-                     $vidcat = $this->model_course_tutorial->find_all_active($vidcat);
-                     // debug($cate) ;
-                     $vid_name = array();
-                     $vid_name['where']['videos_id'] = $vidcat[0]['cp_tutorial_id'];
-                     $vid_name = $this->model_videos->find_all_active($vid_name);
-                     //  debug($vid_name[0]['videos_image2']) ;
-                     
-                     ?>
+
+               <?
+               // debug($value);
+               $vidcat = array();
+               $vidcat['where']['cp_course_id'] = $course[0]['tutorial_id'];
+               $vidcat = $this->model_course_tutorial->find_all_active($vidcat);
+               // debug($cate) ;
+               $vid_name = array();
+               $vid_name['where']['videos_id'] = $vidcat[0]['cp_tutorial_id'];
+               $vid_name = $this->model_videos->find_all_active($vid_name);
+               //  debug($vid_name[0]['videos_image2']) ;
+
+               ?>
                <div class="video-card">
                   <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox="media">
                      <div class="video-box">
@@ -185,7 +197,7 @@
                         </div>
                      </div>
                   </li>
-                  
+
                   <? if (isset($lc) and array_filled($lc)) : ?>
                      <? foreach ($lc as $key => $value) : ?>
                         <li>
@@ -204,7 +216,8 @@
                   ?>
                   <!-- <li>
                      <div class="faqBox">
-                        <span><i class="fas fa-lock"></i><?//= $value['videos_name'] ?></span>
+                        <span><i class="fas fa-lock"></i><? //= $value['videos_name'] 
+                                                         ?></span>
                         <div class="expandable">
                            <? //=html_entity_decode($value['tutorial_desc'])
                            ?>
@@ -222,10 +235,10 @@
          </div>
          <div class="jr-btm">
             <div class="user-review">
-               
+
                <?php if (isset($review) && array_filled($review)) : ?>
                   <h2>User <strong> Reviews </strong></h2>
-               <div class="space"><br><br></div>
+                  <div class="space"><br><br></div>
                   <?php foreach ($review as $key => $value) : ?>
                      <div class="row">
                         <div class="col-lg-1 col-md-12">
@@ -237,12 +250,12 @@
                         <div class="col-lg-11 col-md-12">
 
                            <div class="usr-review">
-                           <?
-                           $user_name = array();
-                           $user_name['where']['user_id'] = $review[$key]['learning_journey_course_review_user_id'];
-                           $user = $this->model_user->find_all_active($user_name);
-                           ?>
-                              <h3><?=$user[0]['user_firstname']?></h3>
+                              <?
+                              $user_name = array();
+                              $user_name['where']['user_id'] = $review[$key]['learning_journey_course_review_user_id'];
+                              $user = $this->model_user->find_all_active($user_name);
+                              ?>
+                              <h3><?= $user[0]['user_firstname'] ?></h3>
                               <div class="space"><br></div>
                               <ul class="usr-rating">
                                  <?php
@@ -250,10 +263,10 @@
                                     <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
                                  <? } ?>
                               </ul>
-                              <p><?=$review[$key]['learning_journey_course_review_createdon']?></p>
+                              <p><?= $review[$key]['learning_journey_course_review_createdon'] ?></p>
                            </div>
                            <div class="user-content">
-                              <p><?=$review[$key]['learning_journey_course_review_desc']?></p>
+                              <p><?= $review[$key]['learning_journey_course_review_desc'] ?></p>
                            </div>
 
                         </div>
@@ -288,7 +301,7 @@
                <?php if (isset($popular) && array_filled($popular)) : ?>
                   <?php foreach ($popular as $key => $value) : ?>
                      <li>
-                        
+
                         <div class="vid-box">
                            <a href="<?= get_image($value['tutorial_video'], $value['tutorial_video_path']) ?>" data-fancybox="media">
                               <div class="video-box">
