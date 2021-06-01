@@ -59,12 +59,24 @@
                            </div>
                            <div class="col-md-7">
                               <div class="video-box">
-                              <?php
-                              // debug($tutorial_detail);
-                              ?>
-                                 <video width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
-                                    <source src="<?= g('db.admin.bucket') .'videos/'. $tutorial_detail['videos_image'] ?>" type="video/mp4">
-                                    <source src="<?= g('db.admin.bucket') .'videos/'. $tutorial_detail['videos_image'] ?>" type="video/ogg">
+                                 <script>
+                                    function plusOne() {
+                                       var number = 1;
+                                       var count = document.getElementById('count');
+
+                                       number++;
+                                       count.innerHTML = number;
+                                    }
+                                 </script>
+                                 <?php
+                                 // debug($tutorial_detail);
+                                 ?>
+                                 <div>
+                                    <span id="count">1</span>
+                                 </div>
+                                 <video onclick="plusOne()" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
+                                    <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/mp4">
+                                    <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/ogg">
                                     Your browser does not support the video tag.
                                  </video>
                               </div>
