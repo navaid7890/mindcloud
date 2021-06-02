@@ -28,6 +28,7 @@ Class Fileupload_helper {
 	public function do_upload()
 	{
 		global $config ; 
+		require_once APPPATH.'third_party/S3/S3.php';
 		$return =  array();
 		$params = $this->file_params ;
 		$random_suffix = "";
@@ -62,6 +63,24 @@ Class Fileupload_helper {
 			$file_ext_allow = explode("|", $this->file_params['field_config']['attributes']['allow_ext']);
 		else
 			$file_ext_allow = array('jpeg','jpg','png','pdf');
+	
+
+			$s = new S3();
+	
+			$s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
+			$s->setRegion(AWS_S3_REGION);
+			$s->setSignatureVersion('v4'); 
+			$tmpfile = $params['tmp_name'];
+			
+			$file = $filename;
+
+			$Nname = explode(".", $file); 
+        	$c_type = 'image/'.$Nname[1]; 
+
+	       
+			$s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
+		
+         
 		
 		$file_ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
 
