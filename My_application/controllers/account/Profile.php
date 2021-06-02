@@ -1469,6 +1469,8 @@ class Profile extends MY_Controller_Account
 	public function expert_detail_tutorial_video()
 	{
 		global $config;
+		
+		
 		$user_id = $this->userid;
 
 		$data = $this->get_sidebar_data();
@@ -1482,9 +1484,14 @@ class Profile extends MY_Controller_Account
 		$tutorial_detail = $tutorial_detail_arr[0];
 		$data['tutorial_detail'] = $tutorial_detail;
 
+		$count_tutorial=$this->model_videos->find_by_pk($_GET['tutorialid']);
+		if (isset($_GET['count_id']) and intval($_GET['count_id']) > 0) {
+		  $count_tutorial['videos_views']=$_GET['count_id']; 
+		  $count_up=$this->model_videos->update_by_pk($_GET['tutorialid'],$count_tutorial);	 
 
+		}
 
-
+		// debug($count_up,1);		
 
 		//    debug($tutorial_detail);
 		$this->load_view('expert-detail-tutorial-video', $data);
