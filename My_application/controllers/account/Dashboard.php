@@ -51,7 +51,28 @@ class Dashboard extends MY_Controller_Account {
 		// $data['dob']['day'] = $dd[2];
 		//debug($data['dob'] , 1);
 
+		$pop = array();
+		$pop['where']['tutorial_free_status'] = '1';
+		$pop['limit'] = 3;
+		$data['popular'] = $this->model_tutorial->find_all_active($pop);
+		$art = $data['popular'];
 
+		// debug($data['popular']);
+
+
+		$cont = $this->model_cms_page->get_page(2);
+		$data['cont1'] = $cont['child'][4];
+		$data['cont2'] = $cont['child'][5];
+
+		$conts = $this->model_cms_page->get_page(20);
+		$data['con1'] = $conts['child'][0];
+
+		$contss = $this->model_cms_page->get_page(20);
+
+		$data['con2'] = $contss['child'][1];
+		$data['con3'] = $contss['child'][2];
+		$data['con4'] = $contss['child'][3];
+		$data['con5'] = $contss['child'][4];
 
 		$this->load_view("dashboard",$data);
 	}

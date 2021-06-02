@@ -211,14 +211,22 @@ Class My_form_helper
 	{
 		$image_size_recommended = isset($p['attributes']['image_size']) ? $p['attributes']['image_size'] : '';
 		$image_size_recommended = isset($p['attributes']['image_size_recommended']) ? $p['attributes']['image_size_recommended'] : '';
-		//debug($p , 1);
+		
 		global $config;
 		$this->_CI->register_plugins(array("bootstrap-fileupload"));
-		if($p['field_data'])
-			$image_path = $config['base_url'] . $p['form_data'][$p['table']][ $p['field']['name_path'] ] . $p['field_data'] ; 
+
+
+		if($p['field_data']){
+
+	
+	    $image_path = $config['base_url'] . $p['form_data'][$p['table']][ $p['field']['name_path'] ] . $p['field_data'] ;
+
+		}
+			
 		else
 			$image_path = "http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
 		ob_start();
+
 		?>
 		<div class="">
 			<div class="uploadfile uploadfile-new" data-provides="uploadfile">
@@ -245,6 +253,7 @@ Class My_form_helper
 						<span class="uploadfile-exists"><i class="fa fa-undo"></i> Change</span>
 						<input type="file" class="default <?=$field_class?>" name="<?=$p['field_name']?>" />
 					</span>
+			
 				</div>
 				<a href="#" class="btn btn-danger uploadfile-exists" data-dismiss="uploadfile"><i class="fa fa-trash"></i> Remove</a>
 				<div class="clearfix"></div>

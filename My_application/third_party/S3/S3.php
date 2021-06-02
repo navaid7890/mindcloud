@@ -661,16 +661,17 @@ class S3
 	*/
 	public static function inputFile($file, $md5sum = true)
 	{  
-        //debug($file);
+      //  debug($file,1);
 
 		if (!file_exists($file) || !is_file($file) || !is_readable($file))
 		{
+			//debug($file,1);
 			//echo 'in func1';
 			self::__triggerError('S3::inputFile(): Unable to open input file: '.$file, __FILE__, __LINE__);
 			return false;
 		}
 		clearstatcache(false, $file);
-        //debug($file);
+        //debug($file,1);
 		return array('file' => $file, 'size' => filesize($file), 'md5sum' => $md5sum !== false ?
 		(is_string($md5sum) ? $md5sum : base64_encode(md5_file($file, true))) : '', 'sha256sum' => hash_file('sha256', $file));
 	}
