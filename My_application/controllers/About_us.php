@@ -372,6 +372,11 @@ class About_us extends MY_Controller
         $fa['order'] = "faq_id ASC";
         $data['faq'] = $this->model_faq->find_all_active($fa);
 
+
+        $param = array();
+        $param['where']['category_featured'] = 1;
+        $data['category'] = $this->model_category->find_all_active($param); 
+
         $exp1 = $this->model_cms_page->get_page(26);
 
         $data['check'] = $exp1['child'][0];
