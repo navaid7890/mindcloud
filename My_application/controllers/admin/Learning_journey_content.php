@@ -275,6 +275,12 @@ class Learning_journey_content extends MY_Controller {
     }
 
 
+
+    // public function update_count(){
+    //     echo 'value updated';
+    // }
+
+
 }
 
 /* End of file welcome.php */

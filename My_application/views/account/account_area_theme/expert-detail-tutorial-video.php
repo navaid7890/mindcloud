@@ -58,23 +58,15 @@
                               </div>
                            </div>
                            <div class="col-md-7">
-                              <div class="video-box">
-                                 <script>
-                                    function plusOne() {
-                                       var number = 1;
-                                       var count = document.getElementById('count');
-
-                                       number++;
-                                       count.innerHTML = number;
-                                    }
-                                 </script>
-                                 <?php
-                                 // debug($tutorial_detail);
+                              <div class="video-box"> 
+                                 <?php 
+                                       // $param = array();
+                                       // $param['order'] = "tool_builder_id DESC";
+                                       // $param['where']['tool_builder_user_id'] = $this->userid;
+                                       // $tool = $this->model_tool_builder_fm_cfs->find_one_active($param); 
                                  ?>
-                                 <div>
-                                    <span id="count">1</span>
-                                 </div>
-                                 <video onclick="plusOne()" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
+                                 
+                                 <video onclick="plusOne(<?= $tutorial_detail['videos_views']; ?>)" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
                                     <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/mp4">
                                     <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/ogg">
                                     Your browser does not support the video tag.
@@ -267,8 +259,7 @@
          responseMessage(msg);
 
       });
-
-
+ 
    });
 
 
@@ -276,4 +267,36 @@
       $('.success-box').fadeIn(200);
       $('.success-box div.text-message').html("<span>" + msg + "</span>");
    }
+
+   function plusOne(id) { 
+      id = Number(id) + 1; 
+      var hours = 1;
+      var now = new Date().getTime();
+      var setupTime = localStorage.getItem('count_time');
+       
+      
+      var x = localStorage.getItem("count_id");
+      if(x !== '1'){
+         if (setupTime == null) {
+            localStorage.setItem("count_id", "1");
+         
+            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.search + '&count_id='+id;
+            window.history.pushState({path:newurl},'',newurl);
+            
+            localStorage.setItem('count_time', now);
+            
+            
+
+
+
+         } else {
+            if(now-setupTime > hours*60*1) {
+               localStorage.clear()
+               localStorage.setItem('count_time', now);
+            }
+         } 
+      }
+      else{} 
+   } 
+
 </script>
