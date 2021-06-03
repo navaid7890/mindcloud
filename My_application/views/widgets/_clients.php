@@ -12,7 +12,7 @@
         <ul class="client-logo">
             <?php foreach ($client as $key => $value): ?>
                 <?php if ($value['client_type'] == '1'): ?> 
-                    <li><a href="#"><img src="<?=get_image($value['client_image'],$value['client_image_path'])?>" alt=""></a></li> 
+                    <li><a href="#"><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $value['client_image'] ?>" alt=""></a></li> 
                 <?php endif ?>
             <?php endforeach ?> 
         </ul>
@@ -26,7 +26,7 @@
         <ul class="client-logo"> 
             <?php foreach ($client as $key => $value): ?>
                 <?php if ($value['client_type'] == '2'): ?> 
-                    <li><a href="#"><img src="<?=get_image($value['client_image'],$value['client_image_path'])?>" alt=""></a></li> 
+                    <li><a href="#"><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $value['client_image'] ?>" alt=""></a></li> 
                 <?php endif ?>
             <?php endforeach ?> 
         </ul>
