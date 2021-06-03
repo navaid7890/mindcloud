@@ -1,7 +1,8 @@
 
 <style>
+   
    .joinSec {
-   background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(<?=get_image($cont15['cms_page_image'],$cont15['cms_page_image_path'])?>);
+   background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(<?= g('db.admin.bucketimg') . "cms_image/" . $cont15['cms_page_image'] ?>);
    }
    .home-banner{
    background-image:url('<?=get_image($banner['inner_banner_image'],$banner['inner_banner_image_path'])?>');
