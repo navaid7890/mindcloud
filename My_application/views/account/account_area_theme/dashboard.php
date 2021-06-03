@@ -1,26 +1,4 @@
-<?
-$yourt = array();
-$yourt['where']['tutorial_free_status'] = '1';
-$yourt['limit'] = 3;
-$data['yourtutorial'] = $this->model_tutorial->find_all_active($yourt);
 
-$your_tut = $data['yourtutorial'];
-
-
-$nexttut = array();
-$nexttut['where']['tutorial_free_status'] = '0';
-$nexttut['limit'] = 3;
-$data['nexttutorial'] = $this->model_tutorial->find_all_active($nexttut);
-
-$next_tut = $data['nexttutorial'];
-
-
-$cat = array();
-$data['catagory'] = $this->model_tutorial->find_all_active($cat);
-
-$art = $data['catagory'];
-
-?>
 <div class="index-page">
     <section class="dashboard">
         <ul class="dashboard-layout">

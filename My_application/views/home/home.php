@@ -92,7 +92,7 @@
          <h1><?=html_entity_decode($cont4['cms_page_title'])?></h1>
          <?=html_entity_decode($cont4['cms_page_content'])?>
          <div class="space"><br><br></div>
-         <a href="<?= l('about-tutorial') ?>" class="btn-theme btn-hover">About Mind Cloud Tribe <span></span></a>
+         <a href="<?= l('about-us') ?>" class="btn-theme btn-hover">About Mind Cloud Tribe <span></span></a>
       </div>
    </div>
 </section>

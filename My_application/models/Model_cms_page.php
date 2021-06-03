@@ -29,7 +29,7 @@ class Model_cms_page extends MY_Model
           $this->pagination_params['where_string'] = 'cms_page_page > 1';
         }
 
-            $segment = array(20,23,45);
+            $segment = array(20,23);
         if (in_array($this->uri->segment(4), $segment)) {
             $this->heading = "hidden";
         }else
@@ -37,7 +37,7 @@ class Model_cms_page extends MY_Model
             $this->heading = "editor";
         }
 
-        $segment_d = array(45);
+        $segment_d = array();
         if (in_array($this->uri->segment(4), $segment_d)) {
             $this->description = "hidden";
         }else
@@ -46,7 +46,7 @@ class Model_cms_page extends MY_Model
         }
 
         
-      $segment_url = array(44,45, 47,29);
+      $segment_url = array(47,29);
         if (in_array($this->uri->segment(4), $segment_url)) {
             $this->cms_url = "text";
         }else
@@ -61,7 +61,7 @@ class Model_cms_page extends MY_Model
             $this->cms_duration = "hidden";
         }
 
-        $segment_video = array(10,12,13,14,15, 44,45, 47);
+        $segment_video = array(10,12,13,14,15,42 );
         if (in_array($this->uri->segment(4), $segment_video)) {
             $this->cms_video = "videoupload";
         }else

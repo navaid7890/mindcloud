@@ -88,6 +88,8 @@ $route['cookie-policy'] = "about_us/cookie";
 $route['learning-journey'] = "about_us/learning";
 $route['expert-tutorial'] = "about_us/expert";
 $route['about-us'] = "about_us/index";
+$route['become-an-expert'] = "about_us/become_expert";
+$route['enterprise-partners'] = "about_us/enterprise_partners";
 
 $route['cart'] = "cart/index";	
 $route['step-1'] = "account/profile/tools";

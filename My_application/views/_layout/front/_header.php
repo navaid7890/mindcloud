@@ -21,7 +21,7 @@
 							<li><a class="active" href="<?= l('expert-tutorial') ?>">Experts Tutorials</a></li>
 							<li><a href="<?= l('learning-journey') ?>">Learning Journey</a></li>
 							<li><a href="#">Consult with Experts</a></li>
-							<li><a href="about-tutorial">About us</a></li>
+							<li><a href="about-us">About us</a></li>
 							<li><a href="#">Enterprise Partners</a></li>
 							<li><a href="https://mindcloudacademy.com/">The Academy</a></li>
 							<?php if (isset($this->session->userdata['logged_in_front']) and array_filled($this->session->userdata['logged_in_front'])) : ?>
