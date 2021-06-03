@@ -78,7 +78,7 @@ Class Fileupload_helper {
         	$c_type = 'image/'.$Nname[1]; 
 
 	       
-			$s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
+			$s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/images/cms_image/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
 		
          
 		
