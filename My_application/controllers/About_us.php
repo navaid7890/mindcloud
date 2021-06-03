@@ -127,7 +127,25 @@ class About_us extends MY_Controller
 		$data['con9'] = $cont['child'][8];
 		$data['con10'] = $cont['child'][9];
 		$data['con11'] = $cont['child'][10];
-        // debug($data['con3']);
+
+        $data['con12'] = $cont['child'][11];
+        $data['con13'] = $cont['child'][12];
+        $data['con14'] = $cont['child'][13];
+        $data['con15'] = $cont['child'][14];
+        $data['con16'] = $cont['child'][15];
+        $data['con17'] = $cont['child'][16];
+        $data['con18'] = $cont['child'][17];
+        $data['con19'] = $cont['child'][18];
+
+        $data['con20'] = $cont['child'][19];
+        $data['con21'] = $cont['child'][20];
+        $data['con22'] = $cont['child'][21];
+        $data['con23'] = $cont['child'][22];
+        $data['con24'] = $cont['child'][23];
+        $data['con25'] = $cont['child'][24];
+        $data['con26'] = $cont['child'][25];
+        $data['con27'] = $cont['child'][26];
+        // debug($data['con21']);
 
         $this->load_view("enterprise_partners", $data);
     }
