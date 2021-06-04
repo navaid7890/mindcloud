@@ -69,8 +69,10 @@ class Model_faq extends MY_Model {
                     'type_filter_dt' => 'dropdown',
                     'list_data_key' => "faq_category" ,
                     'list_data' => array(
-                        1 => "Expert Tutorial",
-                        2 => "Learning Journey"
+                        1 => "Expert Tutorials",
+                        2 => "Learning Journey",
+                        3 => "General",
+                        4 => "Consult with an Expert",
                         ),
                     // 'default'   => '0',
                     'attributes'   => array(),
