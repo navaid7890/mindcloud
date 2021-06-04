@@ -149,6 +149,13 @@ class About_us extends MY_Controller
 
         $this->load_view("enterprise_partners", $data);
     }
+    public function consult_advisors()
+    {
+        $cont = array();
+        $cont = $this->model_cms_page->get_page(80);
+		$data['con1'] = $cont['child'][0];
+        $this->load_view("consult_advisors", $data);
+    }
     public function cart()
     {
         $this->load_view("cart-one", $data);

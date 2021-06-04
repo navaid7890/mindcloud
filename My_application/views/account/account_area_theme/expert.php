@@ -299,7 +299,7 @@
                                             <? if (isset($popular) and array_filled($popular)) : ?>
                                                 <? foreach ($popular as $key => $value) : ?>
                                                     <li>
-                                                        <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> <?= $value['category_name'] ?></p>
+                                                        <p><span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $value['category_image'] ?>"></span> <?= $value['category_name'] ?></p>
                                                     </li>
                                                 <? endforeach; ?>
                                             <? endif; ?>
