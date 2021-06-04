@@ -486,6 +486,44 @@ class About_us extends MY_Controller
         $ccategory['where_in']['category_id'] = $all1;
         $data['ct'] = $this->model_category->find_all_active($ccategory);
         //debug(  $data['ct']);
+<<<<<<< HEAD
+
         $this->load_view("course_detail", $data);
+    }
+
+    public function faq()
+    {
+        $data = array();
+        global $config;
+
+        $par1 = array();
+        $par1['where']['faq_category'] = 1;
+        $data['ex'] = $this->model_faq->find_all_active($par1);
+
+        $par2 = array();
+        $par2['where']['faq_category'] = 2;
+        $data['le'] = $this->model_faq->find_all_active($par2);
+
+        $par3 = array();
+        $par3['where']['faq_category'] = 3;
+        $data['gene'] = $this->model_faq->find_all_active($par3);
+
+        $par4 = array();
+        $par4['where']['faq_category'] = 4;
+        $data['cons'] = $this->model_faq->find_all_active($par4);
+
+
+        $contss = $this->model_cms_page->get_page(78);
+        $data['cont1'] = $contss['child'][0];
+
+
+        $data['inner'] = $this->model_inner_banner->find_by_pk(3);
+
+    
+    
+        $this->load_view("faq", $data);
+=======
+        $this->load_view("course_detail", $data);
+>>>>>>> QA
     }
 }

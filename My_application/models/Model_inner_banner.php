@@ -83,7 +83,7 @@ class Model_inner_banner extends MY_Model {
                      'name'   => 'tutor_id',
                      'label'   => 'Page',
                      // 'type'   => 'text',
-                     'type'   => 'readonly',
+                     'type'   => 'hidden',
                      'list_data'    => array() ,
                      'attributes'   => array(),
                      'js_rules'   => '',
@@ -116,7 +116,7 @@ class Model_inner_banner extends MY_Model {
                     'table'   => $this->_table,
                     'name'   => 'inner_banner_content1',
                     'label'   => 'Layer 2',
-                    'type'   => $this->layer,
+                    'type'   => 'editor',
                     'attributes'   => array(),
                     'js_rules'   => '',
                     'rules'   => 'trim|htmlentities'
