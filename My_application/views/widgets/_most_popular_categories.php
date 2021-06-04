@@ -6,7 +6,7 @@
     
     <ul class="cate-list">
         <? foreach ( $category as $value ) : ?>
-            <li><p><span><img src="<?=get_image($value['category_image'],$value['category_image_path'])?>"></span> <?= $value['category_name'] ?> (4)</p></li>
+            <li><p><span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $value['category_image'] ?>"></span> <?= $value['category_name'] ?> (4)</p></li>
         <? endforeach ?>
     </ul>
     

@@ -55,12 +55,13 @@ $menu_links = array(
         ),
     ),
 
-    array("title"=>"Learning Journey Management", "icon"=>" feather icon-image" ,"action" => array("learning_journey_category","learning_journey_content","learning_journey_content_review","startup") ,
+    array("title"=>"Learning Journey Management", "icon"=>" feather icon-image" ,"action" => array("learning_journey_category","learning_journey_content","learning_journey_content_review","startup","team") ,
     "additionals"=>array(
          array("link"=>"learning_journey_category","title"=>"Manage Learning Journey Category", "icon"=>" fa fa-angle-right"),
          array("link"=>"learning_journey_content","title"=>"Manage Learning Journey Content", "icon"=>" fa fa-angle-right"),
          array("link"=>"learning_journey_content_review","title"=>"Manage Content Reviews", "icon"=>" fa fa-angle-right"),
          array("link"=>"startup","title"=>"Manage My Startup", "icon"=>" fa fa-angle-right"),
+         array("link"=>"team","title"=>"Team Management", "icon"=>" fa fa-angle-right"),
     ),
 ),
 

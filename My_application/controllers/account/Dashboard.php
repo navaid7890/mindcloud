@@ -1,9 +1,10 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 //Include Admin Wrapper. Break down things abit
 include_once(APPPATH . "core/MY_Controller_Account.php");
 
-class Dashboard extends MY_Controller_Account {
+class Dashboard extends MY_Controller_Account
+{
 
 	/**
 	 * Reset_password Controller. - The deafult controller
@@ -17,27 +18,27 @@ class Dashboard extends MY_Controller_Account {
 	//protected $cms_page_id = 1;
 
 	public function __construct()
-    {
+	{
 		// Call the Model constructor latest_product
-        parent::__construct();
-        //$this->add_script(array("account.css"));
-        $this->layput_data['inner_banner'] = '';//$this->model_inner_banner->find_by_pk_active(7);
-    }
+		parent::__construct();
+		//$this->add_script(array("account.css"));
+		$this->layput_data['inner_banner'] = ''; //$this->model_inner_banner->find_by_pk_active(7);
+	}
 
 	public function index()
 	{
 		global $config;
 
-		
+
 
 		$data['inner_banner'] = $this->layput_data['inner_banner'];
-		$data['title']= 'Account Area';
+		$data['title'] = 'Account Area';
 
 
-		$data['country'] = $this->model_country->find_all_list_active(array('order'=>'country ASC'),"country");
+		$data['country'] = $this->model_country->find_all_list_active(array('order' => 'country ASC'), "country");
 
 		$data['user_data'] = $this->model_user->find_by_pk($this->session->userdata['logged_in_front']['id']);
-		
+
 		//$data['user_login_hisotry'] = $this->model_user->user_last_login_history($this->session->userdata['logged_in_front']['id'] , 3);
 
 		// $data['credit_hisotry'] = $this->model_user_credit->get_data(
@@ -74,12 +75,27 @@ class Dashboard extends MY_Controller_Account {
 		$data['con4'] = $contss['child'][3];
 		$data['con5'] = $contss['child'][4];
 
-		$this->load_view("dashboard",$data);
+
+
+		$yourt = array();
+		$yourt['where']['tutorial_free_status'] = '1';
+		$yourt['limit'] = 3;
+		$data['your_tut'] = $this->model_tutorial->find_all_active($yourt);
+
+		// debug($data['yourtutorial']);
+
+		$nexttut = array();
+		$nexttut['where']['tutorial_free_status'] = '0';
+		$nexttut['limit'] = 3;
+		$data['next_tut'] = $this->model_tutorial->find_all_active($nexttut);
+
+
+		$cat = array();
+		$data['art'] = $this->model_tutorial->find_all_active($cat);
+
+
+		$this->load_view("dashboard", $data);
 	}
-
-	
-
-
 }
 
 /* End of file welcome.php */

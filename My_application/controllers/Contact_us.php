@@ -1527,4 +1527,12 @@ class Contact_us extends MY_Controller {
         }
     }
 
+
+
+    public function chk_value()
+    {
+         echo 'sdfsf';
+    }
+ 
+
 }

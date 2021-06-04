@@ -190,21 +190,23 @@
       <? $this->load->view('widgets/_most_watched_tutorials'); ?>
 
 
-      <div class="mostcateSec">
+      <!-- <div class="mostcateSec">
          <div class="mostHead">
             <h2>Most Popular <strong> Categories </strong></h2>
          </div>
          <div class="space"><br><br></div>
          <ul class="cate-list">
-            <? if (isset($popular) and array_filled($popular)) : ?>
-               <? foreach ($popular as $key => $value) : ?>
+            <? //if (isset($popular) and array_filled($popular)) : ?>
+               <? //foreach ($popular as $key => $value) : ?>
                   <li>
                      <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> <?= $value['category_name'] ?></p>
                   </li>
-               <? endforeach; ?>
-            <? endif; ?>
+               <? //endforeach; ?>
+            <? //endif; ?>
          </ul>
-      </div>
+      </div> -->
+      <? $this->load->view('widgets/_most_popular_categories'); ?>
+
    </div>
 </section>
 <section class="expertsdash">

@@ -1,219 +1,250 @@
 <style>
    .joinSec {
-   background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(../images/banner/1.png);
-   text-align: center;
-   padding: 80px 0 90px;
-   background-size: cover;
-   background-position: center center;
+      background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(<?= g('db.admin.bucketimg') . "cms_image/" . $con4['cms_page_image'] ?>);
+   }
+
+   .InnerBanner {
+      background-image: url(<?= g('db.admin.bucketimg') . "cms_image/" . $con3['cms_page_image'] ?>);
+   }
+
+   .abt-col-content strong {
+      font-weight: 700;
+   }
+
+   .Philosophy h2 strong {
+      color: #fdbe41;
+      font-weight: 700;
+   }
+
+   .abtContent h3 span {
+      color: #7D8597;
+      font-weight: 700;
    }
 </style>
-<div class="mainBanner hding-1 para">
-   <div class="container">
-      <div class="row align-items-center">
-         <div class="col-lg-8 col-md-12">
-            <div>
-               <h1>Learning <strong>journey</strong></h1>
-               <div class="space"><br><br><br><br></div>
-               <p>We have designed a practical, step-by-step journey of video-tutorials and tool-builders to guide you through building your <strong>business plan</strong>, starting with your Business Model Canvas, all the way to your <strong>Investment Deck</strong>.</p>
-               <div class="space"><br><br></div>
-               <a href="#" class="btn-theme btn-hover">Start your Free Trial <span></span></a>
-            </div>
+<div class="abt-page">
+
+   <section class="InnerBanner hding-1 para">
+      <div class="container">
+         <div class="bannerContent text-center">
+            <h1><?= html_entity_decode($con3['cms_page_title']) ?></h1>
+            <div class="space"><br><br></div>
+
+            <p><?= html_entity_decode($con3['cms_page_content']) ?></p>
+            <div class="space"><br><br></div>
+
+            <a href="#" class="btn-theme btn-hover">Contact Us <span></span></a>
          </div>
-         <div class="col-lg-4 col-md-12">
-            <div class="video-card">
-               <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
-                  <div class="video-box">
-                     <img src="<?=i('')?>models/1.png" />
-                     <span><i class="fas fa-play"></i></span>
-                  </div>
-               </a>
-               <div class="video-content">
-                  <div>
-                     <span>2h 6min</span>
-                     <h5>Journey Includes:</h5>
-                     <ul>
-                        <li><i><img src="<?=i('')?>icons/1.png"></i> Professional Certification </li>
-                        <li><i><img src="<?=i('')?>icons/2.png"></i> 16 Video Tutorials </li>
-                        <li><i><img src="<?=i('')?>icons/3.png"></i> 16 Tool-Builders </li>
-                        <li><i><img src="<?=i('')?>icons/4.png"></i>  16 Downloadable Tools</li>
-                     </ul>
-                  </div>
+      </div>
+   </section>
+
+   <section class="abt-col hding-2 para pad-sec bg-white">
+      <div class="container">
+         <div class="row align-items-center pb-100">
+            <div class="col-lg-6 col-md-12">
+               <span>
+                  <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $con1['cms_page_image'] ?>">
+               </span>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+               <div class="abt-col-content">
+
+                  <h2><?= html_entity_decode($con1['cms_page_title']) ?></h2>
+                  <div class="space"><br></div>
+                  <p><?= html_entity_decode($con1['cms_page_content']) ?></p>
+                  <div class="space"><br></div>
+                  <a href="#" class="btn-theme btn-hover">Explore Experts Tutorials <span></span></a>
                </div>
             </div>
          </div>
-      </div>
-   </div>
-</div>
-<section class="jrnySec hding-2 pad-sec para">
-   <div class="container">
-      <div class="jr-top">
-         <div class="jrnyHead">
-            <h2>About this <strong>Tutorial</strong></h2>
-            <div class="sapace"><br><br></div>
-            <p>You will learn about Customer Experience (CX) and what is the measure of success.</p>
-            <div class="sapace"><br></div>
-            <p>How to weave CX and PURR into your business through the four<br> pillars; Brand, Segmentation, Insights and journeys</p>
-            <div class="sapace"><br></div>
-            <p> What is Voice of Customer (VOC) and what are its tools?</p>
+
+         <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12 order-2">
+               <div class="abt-col-content">
+                  <h2><?= html_entity_decode($con2['cms_page_title']) ?></h2>
+                  <div class="space"><br></div>
+                  <p><?= html_entity_decode($con2['cms_page_content']) ?></p>
+                  <div class="space"><br></div>
+                  <a href="#" class="btn-theme btn-hover">Explore Experts Tutorials <span></span></a>
+               </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 order-1">
+               <span>
+                  <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $con2['cms_page_image'] ?>">
+               </span>
+            </div>
          </div>
-         <div class="space"><br><br><br></div>
-         <div class="jrnyFaq">
-            <h2>Tutorial Content</h2>
-            <div class="sapace"><br><br></div>
-            <ul class="colasebar">
+      </div>
+   </section>
+
+   <section class="joinSec hding-2 para">
+      <div class="joinContent Philosophy">
+         <div class="container">
+            <h2><?= html_entity_decode($con4['cms_page_title']) ?></h2>
+            <div class="space"><br></div>
+            <p><?= html_entity_decode($con4['cms_page_content']) ?></p>
+         </div>
+      </div>
+   </section>
+
+   <section class="abt-col hding-2 para pad-sec bg-white">
+      <div class="container">
+
+
+         <div class="row align-items-center pb-100">
+            <div class="col-lg-6 col-md-12 order-2">
+               <div class="abt-col-content">
+                  <h2><?= html_entity_decode($con5['cms_page_title']) ?></h2>
+                  <div class="space"><br></div>
+                  <p><?= html_entity_decode($con5['cms_page_content']) ?></p>
+               </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 order-1">
+               <span>
+                  <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $con5['cms_page_image'] ?>">
+               </span>
+            </div>
+         </div>
+
+         <div class="row align-items-center pb-100">
+            <div class="col-lg-6 col-md-12">
+               <span>
+                  <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $con6['cms_page_image'] ?>">
+               </span>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+               <div class="abt-col-content">
+                  <h2><?= html_entity_decode($con6['cms_page_title']) ?></h2>
+                  <div class="space"><br></div>
+                  <p><?= html_entity_decode($con6['cms_page_content']) ?></p>
+               </div>
+            </div>
+         </div>
+
+         <div class="counterSec">
+            <ul>
                <li>
-                  <div class="faqBox">
-                     <span><i class="fas fa-lock"></i> Tutorial - 1 minute Intro</span>
-                     <div class="expandable">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                     </div>
+                  <div class="counterBox">
+                     <h6><span>130</span> Graduates</h6>
+                  </div>
+               </li>
+
+               <li>
+                  <div class="counterBox">
+                     <h6><span>11</span> Cohorts</h6>
+                  </div>
+               </li>
+
+               <li>
+                  <div class="counterBox">
+                     <h6><span>09</span> Demo Days</h6>
                   </div>
                </li>
                <li>
-                  <div class="faqBox">
-                     <span><i class="fas fa-lock"></i> Tutorial Description</span>
-                     <div class="expandable">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                     </div>
+                  <div class="counterBox">
+                     <h6><span>07</span> VC Firms-Jury</h6>
                   </div>
                </li>
-               <li>
-                  <div class="faqBox">
-                     <span><i class="fas fa-lock"></i> Tutorial - Video and Transcript</span>
-                     <div class="expandable">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-                     </div>
-                  </div>
-               </li>
+
             </ul>
          </div>
       </div>
-      <div class="jr-btm">
-         <div class="user-review">
-            <h2>User <strong> Reviews </strong></h2>
+   </section>
+
+   <section class="abtSec para pad-sec">
+      <div class="container">
+         <div class="abtBox">
+            <div class="row">
+               <div class="col-lg-6 col-md-12 flex-center">
+                  <div class="abtContent">
+                     <h3><?= html_entity_decode($con7['cms_page_title']) ?></h3>
+                     <?= html_entity_decode($con7['cms_page_content']) ?>
+                     <div class="space"><br></div>
+                     <a href="#">(read more)</a>
+                  </div>
+               </div>
+               <div class="col-lg-6 col-md-12 text-right">
+                  <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
+                     <div class="video-box">
+                        <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $con7['cms_page_image'] ?>">
+                        <span><i class="fas fa-play"></i></span>
+                     </div>
+                  </a>
+               </div>
+            </div>
          </div>
       </div>
-   </div>
-</section>
-<section class="joinSec hding-2 para">
-   <div class="joinContent">
-      <h2>Join <strong>Mind Cloud Tribe</strong> today!</h2>
-      <div class="space"><br></div>
-      <p>Get limited access to your <strong>7-day free trial.</strong></p>
-      <div class="space"><br><br></div>
-      <a href="#" class="btn-theme btn-hover">Start Free Trial <span></span></a>
-   </div>
-</section>
-<div class="space"><br><br><br><br></div>
-<section class="whoSec hding-2 para">
-   <div class="container">
-      <div class="whoHead">
-         <h2>Related <strong> Tutorials </strong></h2>
+   </section>
+
+   <section class="teamSec hding-2 para bg-white">
+      <div class="container">
+         <? if (!empty($advisory)) : ?>
+            <div class="ad-bord">
+               <h2>MInd Cloud Tribe <strong>Advisory Board</strong></h2>
+               <div class="space"><br><br></div>
+               <ul>
+                  <?php if (isset($advisory) && array_filled($advisory)) : ?>
+                     <?php foreach ($advisory as $key => $value) : ?>
+                        <li>
+                           <div class="userBox">
+                              <div class="useBox-profile">
+                                 <span><img src="<?= g('db.admin.bucketimg') . "team/" . $value['team_image'] ?>"></span>
+                                 <h5><?=$value['team_name']?></h5>
+                              </div>
+                              <div class="userBox-content">
+                                 <p><?=$value['team_description']?></p>
+                              </div>
+                           </div>
+
+                        </li>
+                     <?php endforeach; ?>
+                  <?php endif ?>
+               </ul>
+            </div>
+         <?php endif ?>
+         <div class="space"><br><br><br><br><br></div>
+         <? if (!empty($team)) : ?>
+         <div class="mng-bord">
+            <h2>MInd Cloud Tribe <strong> Management Team</strong></h2>
+            <div class="space"><br><br></div>
+            <ul>
+                  <?php if (isset($team) && array_filled($team)) : ?>
+                     <?php foreach ($team as $key => $value) : ?>
+                        <li>
+                           <div class="userBox">
+                              <div class="useBox-profile">
+                                 <span><img src="<?= g('db.admin.bucketimg') . "team/" . $value['team_image'] ?>"></span>
+                                 <h5><?=$value['team_name']?></h5>
+                              </div>
+                              <div class="userBox-content">
+                                 <p><?=$value['team_description']?></p>
+                              </div>
+                           </div>
+
+                        </li>
+                     <?php endforeach; ?>
+                  <?php endif ?>
+               </ul>
+         </div>
+         <?php endif ?>
       </div>
-      <div class="space"><br><br><br></div>
-      <ul class="who-list">
-         <li>
-            <div class="vid-box">
-               <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
-                  <div class="video-box">
-                     <img src="<?=i('')?>whoSec/1.png">
-                     <span><i class="fas fa-play"></i></span>
-                  </div>
-               </a>
-               <div class="vid-content">
-                  <h4>New Entrepreneurs</h4>
-                  <p>Looking to start a business and requiring direction</p>
-               </div>
-            </div>
-         </li>
-         <li>
-            <div class="vid-box">
-               <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
-                  <div class="video-box">
-                     <img src="<?=i('')?>whoSec/2.png">
-                     <span><i class="fas fa-play"></i></span>
-                  </div>
-               </a>
-               <div class="vid-content">
-                  <h4>Corporate entrepreneurs</h4>
-                  <p>Looking to start a business and requiring direction</p>
-               </div>
-            </div>
-         </li>
-         <li>
-            <div class="vid-box">
-               <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
-                  <div class="video-box">
-                     <img src="<?=i('')?>whoSec/3.png">
-                     <span><i class="fas fa-play"></i></span>
-                  </div>
-               </a>
-               <div class="vid-content">
-                  <h4>growth entrepreneurs</h4>
-                  <p>Looking to start a business and requiring direction</p>
-               </div>
-            </div>
-         </li>
-      </ul>
-   </div>
-</section>
-<section class="joinSec hding-2 para">
-   <div class="joinContent">
-      <h2>Join <strong>Mind Cloud Tribe</strong> today!</h2>
-      <div class="space"><br></div>
-      <p>Get limited access to your <strong>7-day free trial.</strong></p>
-      <div class="space"><br><br></div>
-      <a href="#" class="btn-theme btn-hover">Start Free Trial <span></span></a>
-   </div>
-</section>
-<section class="faqSec hding-2 para">
-   <div class="container">
-      <div class="faqHead">
-         <h2>FAQs about <strong>Learning Journey</strong></h2>
+   </section>
+
+   <section class="joinSec abt-joinSec hding-2 para">
+      <div class="joinContent">
+         <h2><?= html_entity_decode($con8['cms_page_title']) ?></h2>
+         <div class="space"><br></div>
+         <p><?= html_entity_decode($con8['cms_page_content']) ?></p>
+         <div class="space"><br><br></div>
+         <a href="#" class="btn-theme btn-hover">Contact Us <span></span></a>
       </div>
-      <ul class="colasebar">
-         <li>
-            <div class="faqBar">
-               <span>What type of businesses does Mind Cloud Tribe cater to? <i class="fal fa-angle-down"></i></span>
-               <div class="expandable">
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-               </div>
-            </div>
-         </li>
-         <li>
-            <div class="faqBar">
-               <span>Can Mind Cloud Tribe assist me with financial forecasts? <i class="fal fa-angle-down"></i></span>
-               <div class="expandable">
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-               </div>
-            </div>
-         </li>
-         <li>
-            <div class="faqBar">
-               <span>What do I get in the Learning Journey?<i class="fal fa-angle-down"></i></span>
-               <div class="expandable">
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-               </div>
-            </div>
-         </li>
-         <li>
-            <div class="faqBar">
-               <span>Will my data be kept confidential?<i class="fal fa-angle-down"></i></span>
-               <div class="expandable">
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, harum eius quas officia quo reprehenderit doloribus explicabo nulla. Necessitatibus perspiciatis, expedita dolore veritatis voluptates enim blanditiis debitis ea laboriosam numquam.</p>
-               </div>
-            </div>
-         </li>
-      </ul>
-      <a href="#">See more</a>
-   </div>
-</section>
-<section class="joinSec hding-2 para">
-   <div class="joinContent">
-      <h2>Join <strong>Mind Cloud Tribe</strong> today!</h2>
-      <div class="space"><br></div>
-      <p>Get limited access to your <strong>7-day free trial.</strong></p>
-      <div class="space"><br><br></div>
-      <a href="#" class="btn-theme btn-hover">Start Free Trial <span></span></a>
-   </div>
-</section>
+   </section>
+
+
+   <? $this->load->view('widgets/_clients'); ?>
+
+
+</div>
