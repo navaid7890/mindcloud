@@ -154,6 +154,13 @@ class About_us extends MY_Controller
         $cont = array();
         $cont = $this->model_cms_page->get_page(80);
 		$data['con1'] = $cont['child'][0];
+        $data['con2'] = $cont['child'][1];
+        $data['con3'] = $cont['child'][2];
+        $data['con4'] = $cont['child'][3];
+        $data['con5'] = $cont['child'][4];
+        $data['con6'] = $cont['child'][5];
+        $data['con7'] = $cont['child'][6];
+        
         $this->load_view("consult_advisors", $data);
     }
     public function cart()
