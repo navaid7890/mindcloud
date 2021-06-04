@@ -4,9 +4,9 @@
       line-height: normal;
       color: #fff;
    }
-
+  
    .joinSec {
-      background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url('<?= get_image($check['cms_page_image'], $check['cms_page_image_path']) ?>');
+      background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(' <?= g('db.admin.bucketimg') . "cms_image/" . $check['cms_page_image'] ?>');
       text-align: center;
       padding: 80px 0 90px;
       background-size: cover;
@@ -34,7 +34,7 @@
    }
 </style>
 
-<div class="mainBanner home-banner para" style="background-image:url('<?= get_image($cont1['cms_page_image'], $cont1['cms_page_image_path']) ?>');">
+<div class="mainBanner home-banner para" style="background-image:url('<?= g('db.admin.bucketimg') . "cms_image/" . $con1['cms_page_image'] ?>');">
    <div class="container">
       <div class="row align-items-center">
          <div class="col-lg-12 col-md-12">
