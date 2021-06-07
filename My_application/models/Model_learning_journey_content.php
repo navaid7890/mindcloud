@@ -104,7 +104,7 @@ class Model_learning_journey_content extends MY_Model {
                   'learning_journey_content_tags' => array(
                     'table'   => $this->_table,
                     'name'   => 'learning_journey_content_tags',
-                    'label'   => 'Video Tags',
+                    'label'   => 'Video Transcript',
                     'type'   => 'editor',
                     'attributes'   => array(),
                     'js_rules'   => '',
