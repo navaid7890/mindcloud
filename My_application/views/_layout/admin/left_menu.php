@@ -30,9 +30,10 @@ $menu_links = array(
     ),
     
 
-    array("title"=>"Manage Pages", "icon" => " feather icon-users" ,"action" => array("cms_page") ,
+    array("title"=>"Manage Pages", "icon" => " feather icon-users" ,"action" => array("cms_page","inquiry") ,
         "additionals"=>array(
-        array("link" => "cms_page", "title" => "Manage Pages", "icon" => " fa fa-angle-right"),        
+        array("link" => "cms_page", "title" => "Manage Pages", "icon" => " fa fa-angle-right"), 
+        array("link" => "inquiry", "title" => "Contact Inquiries", "icon" => " fa fa-comments"),       
         ),
     ),
 

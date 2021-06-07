@@ -154,7 +154,35 @@ class About_us extends MY_Controller
         $cont = array();
         $cont = $this->model_cms_page->get_page(80);
 		$data['con1'] = $cont['child'][0];
+        $data['con2'] = $cont['child'][1];
+        $data['con3'] = $cont['child'][2];
+        $data['con4'] = $cont['child'][3];
+        $data['con5'] = $cont['child'][4];
+        $data['con6'] = $cont['child'][5];
+        $data['con7'] = $cont['child'][6];
+
         $this->load_view("consult_advisors", $data);
+    }
+    public function innovate()
+    {
+        $cont = array();
+        $cont = $this->model_cms_page->get_page(88);
+		$data['con1'] = $cont['child'][0];
+        $data['con2'] = $cont['child'][1];
+        $data['con3'] = $cont['child'][2];
+        $data['con4'] = $cont['child'][3];
+        $data['con5'] = $cont['child'][4];
+        $data['con6'] = $cont['child'][5];
+        $data['con7'] = $cont['child'][6];
+        $data['con8'] = $cont['child'][7];
+        $data['con9'] = $cont['child'][8];
+        $data['con10'] = $cont['child'][9];
+        $data['con11'] = $cont['child'][10];
+        $data['con12'] = $cont['child'][11];
+        $data['con13'] = $cont['child'][12];
+
+
+        $this->load_view("innovate", $data);
     }
     public function cart()
     {
@@ -479,7 +507,6 @@ class About_us extends MY_Controller
         $ccategory['where_in']['category_id'] = $all1;
         $data['ct'] = $this->model_category->find_all_active($ccategory);
         //debug(  $data['ct']);
-<<<<<<< HEAD
 
         $this->load_view("course_detail", $data);
     }
@@ -515,10 +542,9 @@ class About_us extends MY_Controller
     
     
         $this->load_view("faq", $data);
-=======
-        $this->load_view("course_detail", $data);
->>>>>>> QA
     }
+
+    
 
     
 }
