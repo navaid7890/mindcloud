@@ -519,4 +519,6 @@ class About_us extends MY_Controller
         $this->load_view("course_detail", $data);
 >>>>>>> QA
     }
+
+    
 }
