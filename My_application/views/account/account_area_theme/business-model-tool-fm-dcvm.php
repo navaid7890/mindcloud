@@ -47,7 +47,7 @@
                                     <p>Complete these steps to build your <strong> Discounted Cash Flow Valuation. </strong></p>
                                 </div>
                                 <div class="col-lg-3 col-md-12 text-right">
-                                <a href="#"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                <a href="<?= base_url()?>quiz/cashflow"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>                                </div>
                                 </div>
                             </div>
                             </div>
@@ -60,7 +60,6 @@
                                     <ul class="form-tabing">
                                        <div class="fld-html">
                                           <p>Discounted Cash Flow Valuation</p>
-                                          <a href='<?= base_url() ?>quiz/cashflow'>Download Here</a>
                                        </div>
                                     </ul>      
 
