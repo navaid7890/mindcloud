@@ -37,13 +37,13 @@
 
                      <div class="tutorial-mid hding-4 hding-3 para">
                         <div class="tutorial-mid-content">
-                           <h4>Tutorial Contents:<?= $_GET['cat'] ?></h4>
+                           <h4>Tutorial Contents:</h4>
                         </div>
                         <div class="space"><br><br></div>
 
                         <ul class="tutorial-box-list">
                            <li>
-                              <a href="#" data-fancybox="media">
+                              <a href="#" >
                                  <div class="tutorial-list-box">
                                     <div class="tutorial-box-content">
                                        <span><img src="<?= i('') ?>dashboard/home/icons/2.svg"></span>
@@ -55,7 +55,7 @@
                            </li>
 
                            <li>
-                              <a href="#" data-fancybox="media">
+                              <a href="#">
                                  <div class="tutorial-list-box">
                                     <div class="tutorial-box-content">
                                        <span><img src="<?= i('') ?>dashboard/home/icons/1.svg"></span>
@@ -67,7 +67,7 @@
                            </li>
 
                            <li>
-                              <a href="#" data-fancybox="media">
+                              <a href="#" >
                                  <div class="tutorial-list-box">
                                     <div class="tutorial-box-content">
                                        <span><img src="<?= i('') ?>dashboard/home/icons/3.svg"></span>
@@ -104,7 +104,7 @@
                            </ul> -->
                         <div class="space"><br><br></div>
 
-                        <a href="#" class="btn-dashboard btn-hover">Next <span></span></a>
+                        <a href="video?cat=<?=$_GET['cat']?>" class="btn-dashboard btn-hover">Next <span></span></a>
                      </div>
                   </div>
                </div>
