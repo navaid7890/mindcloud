@@ -136,8 +136,8 @@ $footer = $this->model_config->find_all_active($footer);
 						<ul class="quick-links">
 							<li><a href="#">Mind Cloud Tribe for Enterprise</a></li>
 							<li><a href="#">About Us</a></li>
-							<li><a href="#">Community</a></li>
-							<li><a href="#">FAQs</a></li>
+							<li><a href="<?=l('newsfeed')?>">Newsfeed</a></li>
+							<li><a href="<?=l('faq')?>">FAQs</a></li>
 							<li><a href="#">Contact Us</a></li>
 						</ul>
 					</div>

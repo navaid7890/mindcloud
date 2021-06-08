@@ -143,7 +143,7 @@ class Model_post extends MY_Model
     public function find_post()
     {
         // Set fields
-        $params['fields'] = "post_id,post_user_id,post_page_type,post_page_id,post_type,post_other_action_id,post_description,post_file,post_file_path,
+        $params['fields'] = "post_id,post_title,post_user_id,post_page_type,post_page_id,post_type,post_other_action_id,post_description,post_file,post_file_path,
                             post_visibility,post_createdon,user_id,CONCAT(user_firstname, ' ', user_lastname) as name,
                             ui_profile_image as signup_profile_image,ui_profile_image_path as signup_profile_image_path";
                             
@@ -273,7 +273,17 @@ class Model_post extends MY_Model
                 'type' => 'text',
                 'attributes' => array(),
                 'js_rules' => '',
-                'rules' => '|required|trim|htmlentities'
+                'rules' => 'required|trim|htmlentities'
+            ),
+
+            'post_title' => array(
+                'table' => $this->_table,
+                'name' => 'post_title',
+                'label' => 'Post Title',
+                'type' => 'text',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'required|trim|htmlentities'
             ),
 
             // Pk id of other event

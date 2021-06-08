@@ -544,6 +544,322 @@ class About_us extends MY_Controller
         $this->load_view("faq", $data);
     }
 
+
+    public function newsfeed()
+    {
+   
+        global $config;
+        if($this->userid > 0){
+        $data = array();
+        $data['account_user'] = $this->layout_data['user_data'];
+
+      //  debug($data['account_user']);
+
+        $tab = isset($_GET['type']) ? $_GET['type'] : 'index';
+        switch ($tab) {
+            case 'message':
+                $active_tab = 3;
+                break;
+            case 'photo':
+                $active_tab = 4;
+                break;
+            case 'audio':
+                $active_tab = 5;
+                break;
+            case 'video':
+                $active_tab = 6;
+                break;
+            default:
+                $active_tab = 2;
+                break;
+        }
+        $data['active_tab'] = $active_tab;
+
+
+        $data['feeds'] = $feeds = $this->model_post->find_post();
+        
+
+        $this->load_view("newsfeed", $data);
+    }
+    else
+    { 
+     redirect(l('login?msgtype=error&msg='.urlencode('Please login first')) , true);
+
+
+    }
+    
+    }
+    
+    
+
+    public function ajax_post_like()
+    {
+        // Get user ID
+        $user_id = $this->userid;
+        // Get post Data
+        $post_id = $this->input->post('id');
+        
+        // Success
+        if((isset($user_id)) && (isset($post_id))){
+
+            // Set params
+            $post_params['where']['post_like_user_id'] = $user_id;
+            $post_params['where']['post_like_post_id'] = $post_id;
+            //$post_params['where']['post_like_post_type'] = $post_type;
+
+            // Query
+            $already_exits_data = $this->model_post_like->find_count($post_params);
+
+            // Found
+            if($already_exits_data > 0){
+                $this->json_param['status'] = false;
+                $this->json_param['txt'] = "Already like this post";
+            }
+            else{
+                // Set data
+                $data_post_like = array(
+                    'post_like_post_id'=>$post_id,
+                    'post_like_user_id'=> $user_id,
+                    //'post_like_post_type'=> $post_type,
+                    'post_like_status'=>STATUS_ACTIVE
+                );
+
+                // Set attributes and save
+                $this->model_post_like->set_attributes($data_post_like);
+
+                $likeid=$this->model_post_like->save();
+                // Success
+                if($likeid){
+
+                    $total_like = $this->model_post_like->total_like($post_id,$post_type);
+
+                    $this->json_param['status'] = true;
+                    $this->json_param['txt'] = "Post liked";
+                    $this->json_param['count'] = $total_like;
+                }
+                // Fail
+                else{
+                    $this->json_param['status'] = false;
+                    $this->json_param['txt'] = "Error found please try again";
+                }
+            }
+        }
+        // Error
+        else{
+            $this->json_param['status'] = false;
+            $this->json_param['txt'] = "Error found please try again";
+        }
+
+        echo json_encode($this->json_param);
+    }
+
+    public function ajax_save_comment()
+    {
+        // Get user ID
+        $user_id = $this->userid;
+        $post_id = $this->input->post('post_comment_post_id');
+        //$post_type =  $this->input->post('post_type');
+        $post_comment =  $this->input->post('post_comment_user_comment');
+
+        // Success
+        if((isset($user_id)) && (isset($post_id))){
+
+            // Set data
+            $data_post_comment = array(
+                'post_comment_post_id'=>$post_id,
+                //'post_comment_post_type'=> $post_type,
+                'post_comment_user_id'=> $user_id,
+                'post_comment_user_comment' => $post_comment,
+                'post_comment_status'=>STATUS_ACTIVE
+            );
+
+            // Set attributes and save
+            $this->model_post_comment->set_attributes($data_post_comment);
+
+            $commentid = $this->model_post_comment->save();
+            // Success
+            if($commentid){
+
+
+                // $total_comment = $this->model_post_comment->total_comment($post_id,$post_type);
+
+                // $decode_msg = nl2br(htmlspecialchars_decode($post_comment));
+                // $message = parse_smileys($decode_msg, g('base_url') . 'assets/global/smileys/');
+
+                $this->json_param['status'] = true;
+                $this->json_param['txt'] = "Comment Added";
+                //$this->json_param['post_total_comment'] =$total_comment;
+                $name = ucfirst($this->layout_data['user_data']['user_firstname'] . " " . $this->layout_data['user_data']['user_lastname']);
+                $image = get_image($this->layout_data['user_data']['ui_profile_image'],$this->layout_data['user_data']['ui_profile_image_path']);
+                $this->json_param['post_id'] =$post_id;
+                $this->json_param['new_comment'] = '<div class="public-comment">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="'.$image.'" class="media-object" style="border-radius: 50px;height: 50px;width: 50px;">
+                                </div>
+                                <div class="media-body">
+                                    <p> <strong class="active">'.$name.'</strong> 
+                                    :'.$post_comment.'</p>
+                                    <h5>Just Now</h5>
+                                </div>
+                                
+                            </div>
+                        </div>';
+            }
+            // Fail
+            else{
+                $this->json_param['status'] = false;
+                $this->json_param['txt'] = "Error Found";
+            }
+            echo json_encode($this->json_param);
+        }
+    }
+
+
+    public function ajax_save_post()
+    {
+
+        // Get User id
+        $user_id = $this->userid;
+        
+        // Success
+        if(($user_id!=null)){
+
+            // Get Post data
+            $data = $_POST['post'];
+            // Set mandatory data
+            $data['post_status'] = 1;
+            $data['post_user_id'] = $user_id;
+            // Set post type
+            $type=$data['post_type'];
+
+            // Text description
+            
+            if($type==1){
+
+                // Set rules for validation
+                $this->form_validation->set_rules('post[post_description]', 'Status', 'required|trim');
+
+                // Success
+                if ($this->form_validation->run() == TRUE)
+                {
+
+                    // Set attributes and save
+                    $this->model_post->set_attributes($data);
+                    // Pass index for file upload
+                    $postid =$this->model_post->save();
+                    
+                    if($postid){
+
+                        // save log starts
+                        $action_type = 1;
+                        $action_type_id = $postid;
+
+                        $this->json_param['status'] = true;
+                        $this->json_param['txt'] = "Posted";
+                    }
+                    else{
+                        $this->json_param['status'] = false;
+                        $this->json_param['txt'] = "Something Wrong please try again";
+                    }
+
+                }
+                // Validation error
+                else{
+                    $this->json_param['status'] = false;
+                    $this->json_param['txt'] = validation_errors();
+                }
+            }
+            // Photo / Video
+            else if(($type==2) || ($type==3)){
+
+                $error = array();
+                // Images
+                if($type==2){
+                    $file_ext_allow = array('jpeg','jpg','png');
+                    $file_ext = strtolower(pathinfo($_FILES['post']['name']['post_file'], PATHINFO_EXTENSION));
+                    if(!in_array($file_ext,$file_ext_allow)){
+                        $error[] = 'not allow to '.$file_ext.' file extension';
+                    }
+                }
+
+                // Audios
+                if($type==3){
+                    //$file_ext_allow = array('mp3','mp4','ogg');
+                    $file_ext_allow = array('mp3','mpeg');
+                    $file_ext = strtolower(pathinfo($_FILES['post']['name']['post_file'], PATHINFO_EXTENSION));
+                    if(!in_array($file_ext,$file_ext_allow)){
+                        $error[] = 'not allow to '.$file_ext.' file extension';
+                    }
+                }
+
+
+                if(isset($error) AND array_filled($error)){
+                    $this->json_param['status'] = false;
+                    $this->json_param['txt'] = implode("<br />", $error);
+                }
+                else{
+                    ini_set('upload_max_filesize', '10M');
+                    ini_set('post_max_size', '10M');
+                    ini_set('max_input_time', 300);
+                    ini_set('max_execution_time', 300);
+                    
+                    // Set file
+                    $data['post_file'] = $_FILES['post'];
+                    // Set attributes and save
+                    $this->model_post->set_attributes($data);
+                    // Pass index for file upload
+                    $postid = $this->model_post->save();
+
+                    if($postid){
+
+
+                        $this->json_param['status'] = true;
+                        $this->json_param['txt'] = "Posted";
+                    }
+                    else{
+                        $this->json_param['status'] = false;
+                        $this->json_param['txt'] = "Something Wrong please try again";
+                    }
+                }
+            }
+            else if($type==4){
+                // Set rules for validation
+                $this->form_validation->set_rules('post[post_file]', "Youtube URL", 'required|trim');
+
+                // Success
+                if ($this->form_validation->run() == TRUE)
+                {
+
+                    $insert_id = $this->model_post->insert_record($data);
+                    // Pass index for file upload
+                    if($insert_id > 0){
+
+                        $this->json_param['status'] = true;
+                        $this->json_param['txt'] = "Posted";
+                    }
+                    else{
+                        $this->json_param['status'] = false;
+                        $this->json_param['txt'] = "Something Wrong please try again";
+                    }
+                }
+                // Validation error
+                else{
+                    $this->json_param['status'] = false;
+                    $this->json_param['txt'] = validation_errors();
+                }
+            }
+
+        }
+        // Error
+        else{
+            $this->json_param['status'] = false;
+            $this->json_param['txt'] = lang('something_wrong');
+        }
+
+        echo json_encode($this->json_param);
+    }
+
     
 
     
