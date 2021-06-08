@@ -4,9 +4,9 @@
       line-height: normal;
       color: #fff;
    }
-
+  
    .joinSec {
-      background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url('<?= get_image($check['cms_page_image'], $check['cms_page_image_path']) ?>');
+      background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(' <?= g('db.admin.bucketimg') . "cms_image/" . $check['cms_page_image'] ?>');
       text-align: center;
       padding: 80px 0 90px;
       background-size: cover;
@@ -34,7 +34,7 @@
    }
 </style>
 
-<div class="mainBanner home-banner para" style="background-image:url('<?= get_image($cont1['cms_page_image'], $cont1['cms_page_image_path']) ?>');">
+<div class="mainBanner home-banner para" style="background-image:url('<?= g('db.admin.bucketimg') . "cms_image/" . $con1['cms_page_image'] ?>');">
    <div class="container">
       <div class="row align-items-center">
          <div class="col-lg-12 col-md-12">
@@ -80,7 +80,7 @@
                            <option>All Experts</option>
                            <? if (isset($ex) and array_filled($ex)) : ?>
                               <? foreach ($ex as $key => $value) : ?>
-                                 <option value="<?= $value['expert_id'] ?>" <?= $this->input->get('expert') == $id ? 'selected=""' : '' ?>>
+                                 <option value="<?= $value['expert_id'] ?>" <?= $this->input->get('expert') == $value['expert_id'] ? 'selected=""' : '' ?>>
                                     <?= $value['expert_name'] ?>
                                  </option>
                               <? endforeach; ?>
@@ -190,21 +190,23 @@
       <? $this->load->view('widgets/_most_watched_tutorials'); ?>
 
 
-      <div class="mostcateSec">
+      <!-- <div class="mostcateSec">
          <div class="mostHead">
             <h2>Most Popular <strong> Categories </strong></h2>
          </div>
          <div class="space"><br><br></div>
          <ul class="cate-list">
-            <? if (isset($popular) and array_filled($popular)) : ?>
-               <? foreach ($popular as $key => $value) : ?>
+            <? //if (isset($popular) and array_filled($popular)) : ?>
+               <? //foreach ($popular as $key => $value) : ?>
                   <li>
                      <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> <?= $value['category_name'] ?></p>
                   </li>
-               <? endforeach; ?>
-            <? endif; ?>
+               <? //endforeach; ?>
+            <? //endif; ?>
          </ul>
-      </div>
+      </div> -->
+      <? $this->load->view('widgets/_most_popular_categories'); ?>
+
    </div>
 </section>
 <section class="expertsdash">

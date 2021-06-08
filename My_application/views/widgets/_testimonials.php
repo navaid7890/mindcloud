@@ -8,7 +8,7 @@
                         <div class="col-md-4">
                             <div class="t-profile">
                                 <div class="t-image">
-                                    <img src="<?=get_image($value['testimonials_image'],$value['testimonials_image_path'])?>">
+                                    <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $value['testimonials_image'] ?>">
                                 </div>
                                 <div class="space"><br><br><br></div>
 

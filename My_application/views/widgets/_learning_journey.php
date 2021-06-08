@@ -26,7 +26,7 @@
                     <div class="video-card">
                     <a href="<?=get_image($cont8['tutorial_video'],$cont8['tutorial_video_path'])?>" data-fancybox="media">
                         <div class="video-box">
-                            <img src="<?=get_image($cont8['cms_page_image'],$cont8['cms_page_image_path'])?>" />
+                            <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont8['cms_page_image'] ?>" />
                             <span><i class="fas fa-play"></i></span>
                         </div>
                     </a>   

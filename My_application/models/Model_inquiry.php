@@ -117,16 +117,41 @@ class Model_inquiry extends MY_Model {
                      'rules'   => 'required|trim|htmlentities|min_length[5]|max_length[512]'
                   ),
 
-              // 'inquiry_business_name' => array(
-              //        'table'   => $this->_table,
-              //        'name'   => 'inquiry_business_name',
-              //        'label'   => 'Business name',
-              //        'type'   => 'text',
-              //        'attributes'   => array(),
-              //        'js_rules'   => '',
-              //        'rules'   => 'required|trim|htmlentities'
-              //     ),
-                  
+              'inquiry_hear_about_us' => array(
+                     'table'   => $this->_table,
+                     'name'   => 'inquiry_hear_about_us',
+                     'label'   => 'How did you hear about us',
+                     'type'   => 'text',
+                     'attributes'   => array(),
+                     'js_rules'   => '',
+                     'rules'   => 'required|trim|htmlentities'
+                  ),
+                  'inquiry_challenges' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'inquiry_challenges',
+                    'label'   => 'What are your challenges',
+                    'type'   => 'text',
+                    'attributes'   => array(),
+                    'js_rules'   => '',
+                    'rules'   => 'required|trim|htmlentities'
+                 ),
+                 'inquiry_terms' => array( 
+                    'table'   => $this->_table,
+                    'name'   => 'inquiry_terms',
+                    'label'   => 'Terms',
+                    'type'   => 'dropdown',
+                    'type_dt'   => 'dropdown',
+                    'type_filter_dt' => 'dropdown',
+                    'list_data_key' => "inquiry_terms" ,
+                    'list_data' => array(
+                        0 => "yes",
+                        1 => "no",
+                        ),
+                    // 'default'   => '0',
+                    'attributes'   => array(),
+                    'dt_attributes'   => array("width"=>"7%"),
+                    'rules'   => 'required|trim'
+                 ),
       
 
 

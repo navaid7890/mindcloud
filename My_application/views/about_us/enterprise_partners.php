@@ -159,32 +159,32 @@
               <div class="col-lg-4 col-md-12">
                 <div class="arrowmdl-box mt-100">
                   <div class="arrowmdl-content">
-                    <h6>Title goes here</h6>
+                    <h6><?= html_entity_decode($con12['cms_page_title']) ?></h6>
                     <div class="space"><br></div>
-                    <p>49.4% of startups have less than 6 months left runway left – Data, as of 20th May 2020 according to Wamda Survey of 300 Startups</p>
+                    <?= html_entity_decode($con12['cms_page_content']) ?>
                   </div>
                   <div class="space"><br><br></div>
 
                   <div class="arrowmdl-content">
-                    <h6>Title goes here</h6>
+                    <h6><?= html_entity_decode($con13['cms_page_title']) ?></h6>
                     <div class="space"><br></div>
-                    <p>49.4% of startups have less than 6 months left runway left – Data, as of 20th May 2020 according to Wamda Survey of 300 Startups</p>
-                  </div>
-                  <div class="space"><br><br></div>
-
-
-                  <div class="arrowmdl-content">
-                    <h6>Title goes here</h6>
-                    <div class="space"><br></div>
-                    <p>49.4% of startups have less than 6 months left runway left – Data, as of 20th May 2020 according to Wamda Survey of 300 Startups</p>
+                    <?= html_entity_decode($con13['cms_page_content']) ?>
                   </div>
                   <div class="space"><br><br></div>
 
 
                   <div class="arrowmdl-content">
-                    <h6>Title goes here</h6>
+                    <h6><?= html_entity_decode($con14['cms_page_title']) ?></h6>
                     <div class="space"><br></div>
-                    <p>49.4% of startups have less than 6 months left runway left – Data, as of 20th May 2020 according to Wamda Survey of 300 Startups</p>
+                    <?= html_entity_decode($con14['cms_page_content']) ?>
+                  </div>
+                  <div class="space"><br><br></div>
+
+
+                  <div class="arrowmdl-content">
+                    <h6><?= html_entity_decode($con15['cms_page_title']) ?></h6>
+                    <div class="space"><br></div>
+                    <?= html_entity_decode($con15['cms_page_content']) ?>
                   </div>
                 </div>
               </div>
@@ -194,32 +194,32 @@
               <div class="col-lg-4 col-md-12">
                 <div class="arrowmdl-box mt-60  ">
                   <div class="arrowmdl-content">
-                    <h6>Title goes here</h6>
+                    <h6><?= html_entity_decode($con16['cms_page_title']) ?></h6>
                     <div class="space"><br></div>
-                    <p>49.4% of startups have less than 6 months left runway left – Data, as of 20th May 2020 according to Wamda Survey of 300 Startups</p>
+                    <?= html_entity_decode($con16['cms_page_content']) ?>
                   </div>
                   <div class="space"><br><br></div>
 
                   <div class="arrowmdl-content">
-                    <h6>Title goes here</h6>
+                    <h6><?= html_entity_decode($con17['cms_page_title']) ?></h6>
                     <div class="space"><br></div>
-                    <p>49.4% of startups have less than 6 months left runway left – Data, as of 20th May 2020 according to Wamda Survey of 300 Startups</p>
-                  </div>
-                  <div class="space"><br><br></div>
-
-
-                  <div class="arrowmdl-content">
-                    <h6>Title goes here</h6>
-                    <div class="space"><br></div>
-                    <p>49.4% of startups have less than 6 months left runway left – Data, as of 20th May 2020 according to Wamda Survey of 300 Startups</p>
+                    <?= html_entity_decode($con17['cms_page_content']) ?>
                   </div>
                   <div class="space"><br><br></div>
 
 
                   <div class="arrowmdl-content">
-                    <h6>Title goes here</h6>
+                    <h6><?= html_entity_decode($con18['cms_page_title']) ?></h6>
                     <div class="space"><br></div>
-                    <p>49.4% of startups have less than 6 months left runway left – Data, as of 20th May 2020 according to Wamda Survey of 300 Startups</p>
+                    <?= html_entity_decode($con18['cms_page_content']) ?>
+                  </div>
+                  <div class="space"><br><br></div>
+
+
+                  <div class="arrowmdl-content">
+                    <h6><?= html_entity_decode($con19['cms_page_title']) ?></h6>
+                    <div class="space"><br></div>
+                    <?= html_entity_decode($con19['cms_page_content']) ?>
                   </div>
                 </div>
               </div>
@@ -233,37 +233,37 @@
               <div class="col-lg-6 col-md-6">
                 <div class="dubblbox-content">
                   <h1>Intrapreneur<strong>ship</strong></h1>
-                  <h6>PARTNERSHIP - OPTION</h6>
-                  <p>Giving employees the tools, skillset & mindset to innovate and gain competitive advantage.</p>
+                  <h6><?= html_entity_decode($con20['cms_page_title']) ?></h6>
+                  <?= html_entity_decode($con20['cms_page_content']) ?>
 
                   <ul>
                     <li>
                       <div class="dubble-box-inner">
-                        <span><img src="assets/images/rlcd.jpg"></span>
+                        <span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $con22['cms_page_image'] ?>"></span>
                         <div class="space"><br></div>
-                        <h5>Spark Innovation From Within</h5>
+                        <h5><?= html_entity_decode($con22['cms_page_title']) ?></h5>
                         <div class="space"><br><br></div>
-                        <p>Produce innovative ideas and new initiatives throughout your organization to spearhead growth.</p>
+                        <?= html_entity_decode($con22['cms_page_content']) ?>
                       </div>
                     </li>
 
                     <li>
                       <div class="dubble-box-inner">
-                        <span><img src="assets/images/rlcd.jpg"></span>
+                        <span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $con23['cms_page_image'] ?>"></span>
                         <div class="space"><br></div>
-                        <h5>Spark Innovation From Within</h5>
+                        <h5><?= html_entity_decode($con23['cms_page_title']) ?></h5>
                         <div class="space"><br><br></div>
-                        <p>Produce innovative ideas and new initiatives throughout your organization to spearhead growth.</p>
+                        <?= html_entity_decode($con23['cms_page_content']) ?>
                       </div>
                     </li>
 
                     <li>
                       <div class="dubble-box-inner">
-                        <span><img src="assets/images/rlcd.jpg"></span>
+                        <span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $con24['cms_page_image'] ?>"></span>
                         <div class="space"><br></div>
-                        <h5>Spark Innovation From Within</h5>
+                        <h5><?= html_entity_decode($con24['cms_page_title']) ?></h5>
                         <div class="space"><br><br></div>
-                        <p>Produce innovative ideas and new initiatives throughout your organization to spearhead growth.</p>
+                        <?= html_entity_decode($con24['cms_page_content']) ?>
                       </div>
                     </li>
                   </ul>
@@ -273,37 +273,36 @@
               <div class="col-lg-6 col-md-6">
                 <div class="dubblbox-content">
                   <h1>Entrepreneur<strong>ship</strong></h1>
-                  <h6>PARTNERSHIP - OPTION</h6>
-                  <p>Giving employees the tools, skillset & mindset to innovate and gain competitive advantage.</p>
-
+                  <h6><?= html_entity_decode($con21['cms_page_title']) ?></h6>
+                  <?= html_entity_decode($con21['cms_page_content']) ?>
                   <ul>
                     <li>
                       <div class="dubble-box-inner">
-                        <span><img src="assets/images/rlcd.jpg"></span>
+                        <span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $con25['cms_page_image'] ?>"></span>
                         <div class="space"><br></div>
-                        <h5>Spark Innovation From Within</h5>
+                        <h5><?= html_entity_decode($con25['cms_page_title']) ?></h5>
                         <div class="space"><br><br></div>
-                        <p>Produce innovative ideas and new initiatives throughout your organization to spearhead growth.</p>
+                        <?= html_entity_decode($con25['cms_page_content']) ?>
                       </div>
                     </li>
 
                     <li>
                       <div class="dubble-box-inner">
-                        <span><img src="assets/images/rlcd.jpg"></span>
+                        <span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $con26['cms_page_image'] ?>"></span>
                         <div class="space"><br></div>
-                        <h5>Spark Innovation From Within</h5>
+                        <h5><?= html_entity_decode($con26['cms_page_title']) ?></h5>
                         <div class="space"><br><br></div>
-                        <p>Produce innovative ideas and new initiatives throughout your organization to spearhead growth.</p>
+                        <?= html_entity_decode($con26['cms_page_content']) ?>
                       </div>
                     </li>
 
                     <li>
                       <div class="dubble-box-inner">
-                        <span><img src="assets/images/rlcd.jpg"></span>
+                        <span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $con27['cms_page_image'] ?>"></span>
                         <div class="space"><br></div>
-                        <h5>Spark Innovation From Within</h5>
+                        <h5><?= html_entity_decode($con27['cms_page_title']) ?></h5>
                         <div class="space"><br><br></div>
-                        <p>Produce innovative ideas and new initiatives throughout your organization to spearhead growth.</p>
+                        <?= html_entity_decode($con27['cms_page_content']) ?>
                       </div>
                     </li>
                   </ul>

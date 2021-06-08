@@ -43,12 +43,11 @@
                            <div class="row align-items-center">
                               <div class="col-lg-9 col-md-12">
                                  <h4>Tool and Tool Builder - Balance Sheet</h4>
-                                 <a href='<?= base_url() ?>quiz/balance'>Download Here</a>
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> Balance Sheet. </strong></p>
                               </div>
                               <div class="col-lg-3 col-md-12 text-right">
-                              <a href="#"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                              <a href="<?= base_url()?>quiz/balance"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
                               </div>
                            </div>
                         </div>
@@ -57,28 +56,20 @@
                      
                      <div class="tutorial-footer tool-footer vid-tran para">
                            <div class="tutorial-footer-content" style="padding: 0;">
-                                    
-
                                     <ul class="form-tabing">
                                        <div class="fld-html">
                                           <p>Make sure that the left side is equal to the right side: </p>
                                        </div>
                                     </ul>      
-
                                     <div class="box-1 showfirst" style="">      
-
                                           <div id="radio1" class="multi-fld">
-
                                              <div class="tab">
- 
                                                 <? 
                                                 $param = array();
                                                 $param['order'] = "tool_builder_id DESC";
                                                 $param['where']['tool_builder_user_id'] = $this->userid;
                                                 $tool = $this->model_tool_builder_fm_bss->find_one_active($param);
                                                 ?>
-
-                                                
                                                  <form id="form-bss" class="next-prevBtn">
                                                             <div class="fld-text">
                                                                 <input type="text" name="tool_builder_fm_bss[tool_builder_currency]" value="<?= $tool['tool_builder_currency'] ?>" placeholder="Currency">

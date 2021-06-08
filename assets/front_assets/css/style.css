@@ -75,7 +75,7 @@ button { background: transparent; border: none; border-radius: 0px; font-family:
 
 /*header css*/
 header {-webkit-transition: all 0.4s ease-In-out;-moz-transition: all 0.4s ease-In-out;-o-transition: all 0.4s ease-In-out;transition: all 0.4s ease-In-out;padding: 30px 12%;box-shadow: 0px 3px 6px #00000029;position: relative;background: #fff;}
-ul.login-btn {font-size: 0;padding-bottom: 20px;}
+ul.login-btn {font-size: 0;padding-bottom: 0;}
 ul.login-btn>li { display: inline-block; margin-right: 6px; vertical-align: middle; position: relative; }
 ul.login-btn>li>a { font-size: 16px; color: #1D90D9; }
 ul.login-btn>li>a:hover { color: #000; }
@@ -113,23 +113,31 @@ a.btn-theme>span { background: #2b2b2b; }
 .menu { font-size: 0px; display: inline-block; vertical-align: middle;text-align: center; }
 .menu li {display: inline-block;vertical-align: middle;margin-right: 16px;}
 .menu li.last { margin: 0; }
-.menu li a { text-transform: capitalize; display: block; font-size: 14px; color: #33415C; font-weight: 300; }
+.menu li a { text-transform: capitalize; display: block; font-size: 14px; color: #33415C; font-weight: 300; padding: 30px 0; position: relative; margin-right: 20px; }
 .menu li:nth-last-child(-n+2) a { display: none; }
 .menu li:hover a,
 .menu li.active a { font-weight: 400; }
 
 /* Drop Down Css */
 .dropdown-nav { position: relative; }
-.dropdownWrap { position: absolute; left: -20px; top: 18px; display: none; }
-ul.dropdown { width: 257px; border-radius: 8px; background-color: #ffffff; z-index: 1; padding: 20px 15px; text-align: left; margin-top: 40px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
+.dropdownWrap { position: absolute; left: -20px; top: 70px; display: none; }
+ul.dropdown { width: 257px; border-radius: 8px; background-color: #ffffff; z-index: 1; padding:0; text-align: left; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
 ul.dropdown li { width: 100%; display: block; margin-bottom: 5px; }
-ul.dropdown li a { font-size: 15px; letter-spacing: -0.1px; color: #636e72; padding: 12px 12px 12px 40px; position: relative; display: block; border-radius: 6px; line-height: normal; }
-ul.dropdown li a:before { content: "\f570"; position: absolute; left: 12px; top: 10px; font-family: "Font Awesome 5"; font-size: 18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height: 1.22; letter-spacing: normal; text-align: center; color: #2d3436; -webkit-transition: all 0.4s ease-in-out; -moz-transition: all 0.4s ease-in-out; -o-transition: all 0.4s ease-in-out; transition: all 0.4s ease-in-out; }
+ul.dropdown li a { font-size: 15px; letter-spacing: -0.1px; color: #636e72; padding: 12px 12px 12px 40px; position: relative; display: block; border-radius: 6px; line-height: normal; margin: 0; }
+/* ul.dropdown li a:before { content: "\f570"; position: absolute; left: 12px; top: 10px; font-family: "Font Awesome 5"; font-size: 18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height: 1.22; letter-spacing: normal; text-align: center; color: #2d3436; -webkit-transition: all 0.4s ease-in-out; -moz-transition: all 0.4s ease-in-out; -o-transition: all 0.4s ease-in-out; transition: all 0.4s ease-in-out; } */
 ul.dropdown li:hover a,
 ul.dropdown li.active a { background-color: #eef2f3; color: #6c5ce7; }
 ul.dropdown li:hover a:before,
 ul.dropdown li.active a:before { color: #6c5ce7; }
 ul.dropdown li.last { margin-bottom: 0px; }
+
+li.dropdown-nav a:after{ content: "\f107"; display: inline-block; font-family: "Font Awesome 5"; font-size: 18px; font-weight: 300; font-stretch: normal; font-style: normal; letter-spacing: normal; text-align: center; color: #2d3436; -webkit-transition: all 0.4s ease-in-out; -moz-transition: all 0.4s ease-in-out; -o-transition: all 0.4s ease-in-out; transition: all 0.4s ease-in-out; margin-left: 10px; position: absolute;}
+
+li.dropdown-nav:hover ul.dropdownWrap { display: block;}
+.menu .dropdownWrap li:nth-last-child(-n+2) a{ display: block;}
+ul.dropdown li a:after{ display: none;}
+
+
 
 /* Dropdown CSS*/
 @keyframes btotreverse {
@@ -371,7 +379,7 @@ ul.cate-list img {
 .abt-tut-page .jrnyFaq ul { margin: 0; }
 .jr-top { margin-bottom: 80px; padding-bottom: 80px; position: relative; }
 .jr-top:after { content: ""; width: 855px; background: #DCE7F0; height: 1px; position: absolute; bottom: 0; }
-.login-page header { box-shadow: 0px 3px 6px #00000029; background: #fff; padding: 30px 8%; position: relative; left: 0; right: 0; z-index: 1; }
+.login-page header { box-shadow: 0px 3px 6px #00000029; background: #fff; padding: 10px 8%; position: relative; left: 0; right: 0; z-index: 1; }
 .login-wrap { max-width: 565px; margin: auto; align-items: center; display: flex; justify-content: center; height: 900px; }
 .login-content h4 { color: #1D90D9; font-size: 34px; font-weight: 600; }
 .login-content p { color: #5C677D; font-size: 18px; }

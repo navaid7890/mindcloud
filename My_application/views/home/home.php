@@ -5,7 +5,7 @@
    background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(<?= g('db.admin.bucketimg') . "cms_image/" . $cont15['cms_page_image'] ?>);
    }
    .home-banner{
-   background-image:url('<?=get_image($banner['inner_banner_image'],$banner['inner_banner_image_path'])?>');
+   background-image:url('<?= g('db.admin.bucketimg') . "cms_image/" . $banner['inner_banner_image'] ?>');
    }
    .readySec strong {
     font-weight: 700;
@@ -58,7 +58,7 @@
       <div class="row">
          <div class="col-md-4">
             <div class="iconBox">
-               <span><img src="<?=get_image($cont1['cms_page_image'],$cont1['cms_page_image_path'])?>"></span>
+               <span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont1['cms_page_image'] ?>"></span>
                <div class="space"><br></div>
                <h3 class="home-h3"><?=html_entity_decode($cont1['cms_page_title'])?></h3>
                <div class="space"><br></div>
@@ -67,7 +67,7 @@
          </div>
          <div class="col-md-4">
             <div class="iconBox">
-               <span><img src="<?=get_image($cont2['cms_page_image'],$cont2['cms_page_image_path'])?>"></span>
+               <span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont2['cms_page_image'] ?>"></span>
                <div class="space"><br></div>
                <h3 class="home-h3"><?=html_entity_decode($cont2['cms_page_title'])?></h3>
                <div class="space"><br></div>
@@ -76,7 +76,7 @@
          </div>
          <div class="col-md-4">
             <div class="iconBox">
-               <span><img src="<?=get_image($cont3['cms_page_image'],$cont3['cms_page_image_path'])?>"></span>
+               <span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont3['cms_page_image'] ?>"></span>
                <div class="space"><br></div>
                <h3 class="home-h3"><?=html_entity_decode($cont3['cms_page_title'])?></h3>
                <div class="space"><br></div>
@@ -138,7 +138,7 @@
       <div class="space"><br><br><br><br></div>
       <a href="<?=get_image($cont13['tutorial_video'],$cont13['tutorial_video_path'])?>" data-fancybox="media">
          <div class="video-box">
-            <img src="<?=get_image($cont13['cms_page_image'],$cont13['cms_page_image_path'])?>" />
+            <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont13['cms_page_image'] ?>" />
             <span><i class="fas fa-play"></i></span>
          </div>
       </a>

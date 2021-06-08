@@ -57,14 +57,14 @@ class About_us extends MY_Controller
         //  debug($data['con8']) ;
         
         $param = array();
-        $param['order'] = "team_id ASC";
+        $param['order'] = "team_id DESC";
 		$param['where']['team_type'] = 1;
         $param['limit'] = 3;
 
 		$data['advisory'] = $this->model_team->find_all_active($param);
 
         $param = array();
-        $param['order'] = "team_id ASC";
+        $param['order'] = "team_id DESC";
 		$param['where']['team_type'] = 2;
         $param['limit'] = 3;
 
@@ -127,9 +127,62 @@ class About_us extends MY_Controller
 		$data['con9'] = $cont['child'][8];
 		$data['con10'] = $cont['child'][9];
 		$data['con11'] = $cont['child'][10];
-        // debug($data['con3']);
+
+        $data['con12'] = $cont['child'][11];
+        $data['con13'] = $cont['child'][12];
+        $data['con14'] = $cont['child'][13];
+        $data['con15'] = $cont['child'][14];
+        $data['con16'] = $cont['child'][15];
+        $data['con17'] = $cont['child'][16];
+        $data['con18'] = $cont['child'][17];
+        $data['con19'] = $cont['child'][18];
+
+        $data['con20'] = $cont['child'][19];
+        $data['con21'] = $cont['child'][20];
+        $data['con22'] = $cont['child'][21];
+        $data['con23'] = $cont['child'][22];
+        $data['con24'] = $cont['child'][23];
+        $data['con25'] = $cont['child'][24];
+        $data['con26'] = $cont['child'][25];
+        $data['con27'] = $cont['child'][26];
+        // debug($data['con21']);
 
         $this->load_view("enterprise_partners", $data);
+    }
+    public function consult_advisors()
+    {
+        $cont = array();
+        $cont = $this->model_cms_page->get_page(80);
+		$data['con1'] = $cont['child'][0];
+        $data['con2'] = $cont['child'][1];
+        $data['con3'] = $cont['child'][2];
+        $data['con4'] = $cont['child'][3];
+        $data['con5'] = $cont['child'][4];
+        $data['con6'] = $cont['child'][5];
+        $data['con7'] = $cont['child'][6];
+
+        $this->load_view("consult_advisors", $data);
+    }
+    public function innovate()
+    {
+        $cont = array();
+        $cont = $this->model_cms_page->get_page(88);
+		$data['con1'] = $cont['child'][0];
+        $data['con2'] = $cont['child'][1];
+        $data['con3'] = $cont['child'][2];
+        $data['con4'] = $cont['child'][3];
+        $data['con5'] = $cont['child'][4];
+        $data['con6'] = $cont['child'][5];
+        $data['con7'] = $cont['child'][6];
+        $data['con8'] = $cont['child'][7];
+        $data['con9'] = $cont['child'][8];
+        $data['con10'] = $cont['child'][9];
+        $data['con11'] = $cont['child'][10];
+        $data['con12'] = $cont['child'][11];
+        $data['con13'] = $cont['child'][12];
+
+
+        $this->load_view("innovate", $data);
     }
     public function cart()
     {
@@ -372,6 +425,11 @@ class About_us extends MY_Controller
         $fa['order'] = "faq_id ASC";
         $data['faq'] = $this->model_faq->find_all_active($fa);
 
+
+        $param = array();
+        $param['where']['category_featured'] = 1;
+        $data['category'] = $this->model_category->find_all_active($param); 
+
         $exp1 = $this->model_cms_page->get_page(26);
 
         $data['check'] = $exp1['child'][0];
@@ -449,6 +507,40 @@ class About_us extends MY_Controller
         $ccategory['where_in']['category_id'] = $all1;
         $data['ct'] = $this->model_category->find_all_active($ccategory);
         //debug(  $data['ct']);
+
         $this->load_view("course_detail", $data);
+    }
+
+    public function faq()
+    {
+        $data = array();
+        global $config;
+
+        $par1 = array();
+        $par1['where']['faq_category'] = 1;
+        $data['ex'] = $this->model_faq->find_all_active($par1);
+
+        $par2 = array();
+        $par2['where']['faq_category'] = 2;
+        $data['le'] = $this->model_faq->find_all_active($par2);
+
+        $par3 = array();
+        $par3['where']['faq_category'] = 3;
+        $data['gene'] = $this->model_faq->find_all_active($par3);
+
+        $par4 = array();
+        $par4['where']['faq_category'] = 4;
+        $data['cons'] = $this->model_faq->find_all_active($par4);
+
+
+        $contss = $this->model_cms_page->get_page(78);
+        $data['cont1'] = $contss['child'][0];
+
+
+        $data['inner'] = $this->model_inner_banner->find_by_pk(3);
+
+    
+    
+        $this->load_view("faq", $data);
     }
 }

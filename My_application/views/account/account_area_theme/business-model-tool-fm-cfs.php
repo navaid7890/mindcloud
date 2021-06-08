@@ -42,13 +42,12 @@
                         <div class="tutorial-mid-content">
                            <div class="row align-items-center">
                               <div class="col-lg-9 col-md-12">
-                                 <h4>Tool and Tool Builder - Cash Flow Statement</h4>
-                                 <a href='<?= base_url() ?>quiz/cash'>Download Here</a>  
+                                 <h4>Tool and Tool Builder - Cash Flow Statement</h4> 
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> Cash Flow Statement. </strong></p>
                               </div>
                               <div class="col-lg-3 col-md-12 text-right">
-                              <a href="#"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                              <a href="<?= base_url()?>quiz/cash"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
                               </div>
                            </div>
                         </div>
@@ -56,18 +55,13 @@
 
                      <div class="tutorial-footer tool-footer vid-tran para">
                            <div class="tutorial-footer-content" style="padding: 0;">
-                                    
-
                                     <ul class="form-tabing">
                                        <div class="fld-html">
                                           <p>Cash Flow Statement</p>
                                        </div>
                                     </ul>      
-
                                     <div class="box-1 showfirst" style="">      
-
                                           <div id="radio1" class="multi-fld">
-
                                              <div class="tab">
 
                                               <? 

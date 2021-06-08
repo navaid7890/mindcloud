@@ -1,4 +1,3 @@
-
 <div class="business-page">
    <section class="dashboard">
       <ul class="dashboard-layout">
@@ -65,28 +64,28 @@
                            </div>
                            <div class="col-md-7">
                               <div class="video-box">
-                                
-                                       <video width="100%" controls="true" id="video" height="100%" poster="<?= g('db.admin.bucket') .'images/learning_journey_content/'. $learn_content['0']['learning_journey_content_image']?>">
-                                          <source src="<?= g('db.admin.bucket') .'videos/content/'. $learn_content[0]['learning_journey_video'] ?>" type="video/mp4">
-                                          <source src="<?= g('db.admin.bucket') .'videos/content/'. $learn_content[0]['learning_journey_video'] ?>" type="video/ogg">
-                                          Your browser does not support the video tag.
-                                       </video>
-                      
+
+                                 <video width="100%" controls="true" id="video" height="100%" poster="<?= g('db.admin.bucket') . 'images/learning_journey_content/' . $learn_content['0']['learning_journey_content_image'] ?>">
+                                    <source src="<?= g('db.admin.bucket') . 'videos/content/' . $learn_content[0]['learning_journey_video'] ?>" type="video/mp4">
+                                    <source src="<?= g('db.admin.bucket') . 'videos/content/' . $learn_content[0]['learning_journey_video'] ?>" type="video/ogg">
+                                    Your browser does not support the video tag.
+                                 </video>
+
 
 
 
                               </div>
                               <!-- <div id="status" class="incomplete">
-<span>Play status: </span>
-<span class="status complete">COMPLETE</span>
-<span class="status incomplete">INCOMPLETE</span>
-<br />
-</div> -->
-<div>
-<span id="played">0</span> seconds out of 
-<span id="duration"></span> seconds. (only updates when the video pauses)
+                                 <span>Play status: </span>
+                                 <span class="status complete">COMPLETE</span>
+                                 <span class="status incomplete">INCOMPLETE</span>
+                                 <br />
+                              </div> -->
+                              <div>
+                                 <span id="played">0</span> seconds out of
+                                 <span id="duration"></span> seconds. (only updates when the video pauses)
 
-</div>
+                              </div>
 
                            </div>
                         </div>
@@ -292,80 +291,78 @@
 
 
 <script>
-var video = document.getElementById("video");
+   var video = document.getElementById("video");
 
-var timeStarted = -1;
-var timePlayed = 0;
-var duration = 0;
+   var timeStarted = -1;
+   var timePlayed = 0;
+   var duration = 0;
 
-if(video.readyState > 0)
-  getDuration.call(video);
+   if (video.readyState > 0)
+      getDuration.call(video);
 
-else
-{
-  video.addEventListener('loadedmetadata', getDuration);
-}
-// remember time user started the video
-function videoStartedPlaying() {
-  timeStarted = new Date().getTime()/1000;
-}
-function videoStoppedPlaying(event) {
-  
-  if(timeStarted>0) {
-    var playedFor = new Date().getTime()/1000 - timeStarted;
-    timeStarted = -1;
-    timePlayed+=playedFor;
-  }
-  document.getElementById("played").innerHTML = Math.round(timePlayed)+"";
+   else {
+      video.addEventListener('loadedmetadata', getDuration);
+   }
+   // remember time user started the video
+   function videoStartedPlaying() {
+      timeStarted = new Date().getTime() / 1000;
+   }
 
-  if(timePlayed>=duration && event.type=="ended") {
-    document.getElementById("status").className="complete";
-  }
-}
+   function videoStoppedPlaying(event) {
 
-function getDuration() {
-  duration = video.duration;
-  document.getElementById("duration").appendChild(new Text(Math.round(duration)+""));
-  console.log("Duration: ", duration);
-}
+      if (timeStarted > 0) {
+         var playedFor = new Date().getTime() / 1000 - timeStarted;
+         timeStarted = -1;
+         timePlayed += playedFor;
+      }
+      document.getElementById("played").innerHTML = Math.round(timePlayed) + "";
 
-video.addEventListener("play", videoStartedPlaying);
-video.addEventListener("playing", videoStartedPlaying);
+      if (timePlayed >= duration && event.type == "ended") {
+         document.getElementById("status").className = "complete";
+      }
+   }
 
-video.addEventListener("ended", videoStoppedPlaying);
-video.addEventListener("pause", videoStoppedPlaying);
+   function getDuration() {
+      duration = video.duration;
+      document.getElementById("duration").appendChild(new Text(Math.round(duration) + ""));
+      console.log("Duration: ", duration);
+   }
 
-$(function() {
-    var vid = $('#video'),
-        check,
-        reached25 = false,
-        reached50 = false,
-        reached75 = false;
+   video.addEventListener("play", videoStartedPlaying);
+   video.addEventListener("playing", videoStartedPlaying);
 
-    vid.bind("play", function(event) {
-        var duration = vid.get(0).duration;
+   video.addEventListener("ended", videoStoppedPlaying);
+   video.addEventListener("pause", videoStoppedPlaying);
 
-        check = setInterval(function() {
-                var current = vid.get(0).currentTime,
-                    perc = (current / duration * 100).toFixed(2);
+   $(function() {
+      var vid = $('#video'),
+         check,
+         reached25 = false,
+         reached50 = false,
+         reached75 = false;
+
+      vid.bind("play", function(event) {
+         var duration = vid.get(0).duration;
+
+         check = setInterval(function() {
+            var current = vid.get(0).currentTime,
+               perc = (current / duration * 100).toFixed(2);
 
 
-                if (Math.floor(perc) >= 25 &&! reached25) {
-                    console.log("25% reached");
-                    reached25 = true;
-                }
-                console.log(perc);
-                document.getElementById("played1").innerHTML = Math.round(perc)+"";
-           
-                document.getElementById("status").className=perc;
-        }, 1000);
-    });
+            if (Math.floor(perc) >= 25 && !reached25) {
+               console.log("25% reached");
+               reached25 = true;
+            }
+            console.log(perc);
+            document.getElementById("played1").innerHTML = Math.round(perc) + "";
 
-    vid.bind("ended pause", function(event) {
-        clearInterval(check);
-    });
+            document.getElementById("status").className = perc;
+         }, 1000);
+      });
 
-});
+      vid.bind("ended pause", function(event) {
+         clearInterval(check);
+      });
+
+   });
 </script>
-
-

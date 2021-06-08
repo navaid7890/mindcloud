@@ -610,11 +610,6 @@ class Profile extends MY_Controller_Account
 			 $startup['where']['startup_user_id'] =$this->userid;
 			$data['startup'] = $this->model_startup->find_all_active($startup);
 
-			
-
-
-
-
 		$this->load_view('learning', $data);
 	}
 
@@ -638,6 +633,27 @@ class Profile extends MY_Controller_Account
 
 
 		$this->load_view('startup', $data);
+	}
+	public function your_work()
+	{
+		global $config;
+		$user_id = $this->userid;
+
+		$data['title'] = 'My Profile';
+
+		$data['user_data'] = $this->layout_data['user_data'];
+
+		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
+		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+
+		
+		$startup = array();
+		$startup['where']['startup_user_id'] =$this->userid;
+	   $data['startup'] = $this->model_startup->find_all_active($startup);
+
+
+
+		$this->load_view('your_work', $data);
 	}
 
 
@@ -1234,6 +1250,26 @@ class Profile extends MY_Controller_Account
 		$data['learn_content'] = $this->model_learning_journey_content->find_all_active($param);
 		// $data['learn_video'] =
 		$this->load_view('video', $data);
+	}
+	public function description()
+	{
+		global $config;
+		$user_id = $this->userid;
+
+		$data['title'] = 'My Profile';
+
+		$data['user_data'] = $this->layout_data['user_data'];
+
+		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
+		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+
+		$param = array();
+		if (isset($_GET['cat']) and intval($_GET['cat']) > 0) {
+			$param['where']['learning_journey_content_id'] = intval($this->input->get('cat'));
+		}
+		$data['learn_content'] = $this->model_learning_journey_content->find_all_active($param);
+		// $data['learn_video'] =
+		$this->load_view('description', $data);
 	}
 
 	public function business()
