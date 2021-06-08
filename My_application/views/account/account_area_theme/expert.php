@@ -50,7 +50,7 @@
                                                     <option>All Experts</option>
                                                     <? if (isset($ex) and array_filled($ex)) : ?>
                                                         <? foreach ($ex as $key => $value) : ?>
-                                                            <option value="<?= $value['expert_id'] ?>" <?= $this->input->get('expert') == $id ? '' : 'selected=""' ?>>
+                                                            <option value="<?= $value['expert_id'] ?>" <?= $this->input->get('expert') == $value['expert_id'] ? 'selected=""' : '' ?>>
                                                                 <?= $value['expert_name'] ?>
                                                             </option>
                                                         <? endforeach; ?>

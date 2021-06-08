@@ -71,11 +71,11 @@ class Home extends MY_Controller {
       $data['firststate'] =$firststate['states_id'];
 
 
-      // $param = array();
-      // $param['order'] = "videos_views DESC"; 
-      // $param['limit'] = 3;
+      $param = array();
+      $param['order'] = "videos_views DESC"; 
+      $param['limit'] = 3;
 
-      // $data['videos'] = $this->model_videos->find_all_active($param);
+      $data['videos'] = $this->model_videos->find_all_active($param);
         
       // $data['config']=$config;
       //debug($data['config']);

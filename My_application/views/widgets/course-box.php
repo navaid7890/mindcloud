@@ -39,8 +39,30 @@
             <li style="text-align: left;"><a href="<?= l('account/profile/learning') ?>" class="active" style="font-size: 15px;color: #122B46;font-weight: 700;padding: 18px 15px;">Intro to Learning Journey </a></li>
         </ul>
         <?
-        $dt = array('tools', 'tools_vp', 'tools_swot', 'tools_pmmt', 'tools_smp', 'tools_cjdg', 'tools_mc', 'tools_osf', 'tools_lts','' , 'tools_fm_income', 'tools_fm_bss', 'tools_fm_cfs', 'tools_fm_beps', 'tools_fm_dcvm', 'tools_ids');
-        ?>
+            $dt = array(
+                'tools',
+                'tools_vp',
+                'tools_swot',
+                'tools_pmmt',
+                'tools_smp',
+                'tools_cjdg',
+                'tools_mc',
+                'tools_osf',
+                'tools_lts',
+                '',
+                'tools_fm_income',
+                'tools_fm_bss',
+                'tools_fm_cfs',
+                'tools_fm_beps',
+                'tools_fm_dcvm',
+                'tools_ids'
+            );
+            ?>
+        
+        <? //foreach ($dt as $toolbuilder => $value) : ?>
+            
+            <?//debug($toolbuilder)?>
+        <?// endforeach; ?>
         <div class="course-list">
             <ul class="course-scroll">
                 <!-- <li><a href="javascript:void(0)" class="active">Introduction <span><i class="far fa-check"></i></span> </a></li> -->
@@ -60,7 +82,7 @@
                                 // debug($value); 
                                 $a = $value['learning_journey_content_id'];
                             ?>
-                                <li class="dropdown-toggle b-child catLj<?=$a?>"><a href="#"><?= $value['learning_journey_content_name'] ?>
+                                <li class="dropdown-toggle b-child catLj<?=$a?>"><a  href="description?cat=<?= $a ?>"><?= $value['learning_journey_content_name'] ?>
 
                                         <div id="activeBorder" class="active-border">
                                             <div id="circle" class="circle">
@@ -76,10 +98,11 @@
                                         <!-- <li><a href="business-model-canvas.php"><i class="fad fa-video"></i>Intro<span><i class="far fa-check"></i></span></a></li> -->
                                         <li id="activeId-<?= $a ?>"><a href="<?= l('account/profile/video') ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Video & Transcript <span><i class="far fa-check"></i></span></a></li>
                                         <li><a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
+                                        <li><a href= "your_work?tool=<?=$dt_index?>"><i class="fad fa-video"></i> Your Work<span><i class="far fa-check"></i></span></a></li>
                                         <?php $dt_index = $dt_index + 1; ?>
 
 
-                                        <li><a href="<?= l('account/profile/startup') ?>"><i class="fad fa-video"></i> Your Work<span><i class="far fa-check"></i></span></a></li>
+                                        
                                     </ul>
                                 </li>
                             <? endforeach; ?>
@@ -90,3 +113,5 @@
         </div>
     </div>
 </div>
+
+<!--  -->

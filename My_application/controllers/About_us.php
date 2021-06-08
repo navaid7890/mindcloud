@@ -57,14 +57,14 @@ class About_us extends MY_Controller
         //  debug($data['con8']) ;
         
         $param = array();
-        $param['order'] = "team_id ASC";
+        $param['order'] = "team_id DESC";
 		$param['where']['team_type'] = 1;
         $param['limit'] = 3;
 
 		$data['advisory'] = $this->model_team->find_all_active($param);
 
         $param = array();
-        $param['order'] = "team_id ASC";
+        $param['order'] = "team_id DESC";
 		$param['where']['team_type'] = 2;
         $param['limit'] = 3;
 
