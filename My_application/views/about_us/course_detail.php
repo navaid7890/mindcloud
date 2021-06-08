@@ -175,7 +175,7 @@
       <div class="container">
          <div class="jr-top">
             <div class="jrnyHead">
-               <h2>About this <strong>Tutorial</strong></h2>
+               <h2>In This <strong>Tutorial</strong> You Will Learn</h2>
                <p><?= html_entity_decode($course[0]['tutorial_desc2']) ?></p>
             </div>
             <div class="space"><br><br><br></div>
