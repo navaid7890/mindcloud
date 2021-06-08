@@ -19,7 +19,12 @@
 					<div class="menuWrap">
 						<ul class="menu">
 							<li><a class="active" href="<?= l('expert-tutorial') ?>">Experts Tutorials</a></li>
-							<li><a href="<?= l('learning-journey') ?>">Learning Journey</a></li>
+							<li class="dropdown-nav"><a href="<?= l('learning-journey') ?>">Learning Journey</a>
+							<ul class="dropdownWrap dropdown ">
+								<li><a href="become-an-expert">Become An Expert</a></li>
+								<li><a href="innovate">Innovate</a></li>
+							</ul>
+						</li>
 							<li><a href="consult-advisors">Consult with Experts</a></li>
 							<li><a href="about-us">About us</a></li>
 							<li><a href="enterprise-partners">Enterprise Partners</a></li>

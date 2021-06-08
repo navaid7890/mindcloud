@@ -245,6 +245,112 @@
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
+                                            <h6>Income </br> Statement</h6>
+                                            <div class="work-prew">
+                                                <img src="<?= i('') ?>dashboard/work/1.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="work-footer">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-9">
+                                                <p>My Income Statement.</p>
+                                            </div>
+                                            <div class="col-md-3 text-right">
+                                            <a href="<?= base_url()?>quiz/income"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="work-box">
+                                        <div>
+                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
+                                            <h6>Balance </br> Sheet</h6>
+                                            <div class="work-prew">
+                                                <img src="<?= i('') ?>dashboard/work/1.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="work-footer">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-9">
+                                                <p>My Balance Sheet.</p>
+                                            </div>
+                                            <div class="col-md-3 text-right">
+                                            <a href="<?= base_url()?>quiz/balance"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="work-box">
+                                        <div>
+                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
+                                            <h6>Cash<br> Flow<br> Statement</h6>
+                                            <div class="work-prew">
+                                                <img src="<?= i('') ?>dashboard/work/1.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="work-footer">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-9">
+                                                <p>My Cash Flow Statement.</p>
+                                            </div>
+                                            <div class="col-md-3 text-right">
+                                            <a href="<?= base_url()?>quiz/cash"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="work-box">
+                                        <div>
+                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
+                                            <h6>Break-Event</br> Point</h6>
+                                            <div class="work-prew">
+                                                <img src="<?= i('') ?>dashboard/work/1.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="work-footer">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-9">
+                                                <p>My Break-Event Point.</p>
+                                            </div>
+                                            <div class="col-md-3 text-right">
+                                            <a href="<?= base_url()?>quiz/breaked"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="work-box">
+                                        <div>
+                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
+                                            <h6>Discounted<br> Cash Flow<br> Valuation</h6>
+                                            <div class="work-prew">
+                                                <img src="<?= i('') ?>dashboard/work/1.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="work-footer">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-9">
+                                                <p>Discounted Cash Flow Valuation.</p>
+                                            </div>
+                                            <div class="col-md-3 text-right">
+                                            <a href="<?= base_url()?>quiz/breaked"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li>
+                                    <div class="work-box">
+                                        <div>
+                                            <span><img src="<?= i('') ?>logo.png" alt=""></span>
                                             <h6>Investment<br> Deck<br> Slides</h6>
                                             <div class="work-prew">
                                                 <img src="<?= i('') ?>dashboard/work/1.png" alt="">
