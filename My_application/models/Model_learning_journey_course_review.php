@@ -26,7 +26,7 @@ class Model_learning_journey_course_review extends MY_Model {
     }
 
     public function get_avg_reating($cid){
-      $this->db->select('learning_journey_course_review_course_id,AVG(learning_journey_course_review_stars) AS Rating');
+      $this->db->select('learning_journey_course_review_course_id,AVG(learning_journey_course_review_stars) AS Rating,SUM(learning_journey_course_review_stars) AS starCount');
       $this->db->from('learning_journey_course_review');
       $this->db->where('learning_journey_course_review_course_id',$cid);
       $this->db->group_by(['learning_journey_course_review_course_id']);

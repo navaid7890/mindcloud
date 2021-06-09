@@ -42,6 +42,9 @@
       color: #fff;
       padding-top: 15px;
    }
+   .joinContent strong{
+      font-weight: 700;
+   }
 </style>
 <div class="abt-tut-page">
    <div class="mainBanner hding-1 para">
@@ -284,7 +287,7 @@
    </section>
    <section class="joinSec cloud-sec hding-2 para">
       <div class="joinContent">
-         <h2><?= $con1['cms_page_title'] ?></h2>
+         <h2><?= html_entity_decode($con1['cms_page_title']) ?></h2>
          <div class="space"><br></div>
          <?= html_entity_decode($con1['cms_page_content']) ?>
          <div class="space"><br><br></div>

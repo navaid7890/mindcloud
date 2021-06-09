@@ -42,11 +42,13 @@
                         $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
                         ?>
 
-                        <?// debug($rating[0]['Rating']) ?>
+                        
                         <h4><?= $value["tutorial_name"] ?></h4>
                         <div class="row align-items-center pt-70">
-                            <div class="col-md-9">
+                            <div class="col-md-9 coutArea">
+                            
                                 <ul class="rating">
+                                   
                                     <? if ($rating[0]['Rating'] == 0) { ?>
                                         <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
                                         <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
@@ -62,6 +64,9 @@
                                     <? }
                                     } ?>
                                 </ul>
+                                <? if (!empty($rating[0]['starCount'])) { ?>
+                                <div style="margin-left: 5px;">( <?= $rating[0]['starCount']?> )</div>
+                                <?}?>
                             </div>
 
                             <div class="col-md-3 text-right">
