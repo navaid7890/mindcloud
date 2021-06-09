@@ -1,4 +1,3 @@
-
 <div class="index-page">
     <section class="dashboard">
         <ul class="dashboard-layout">
@@ -238,8 +237,11 @@
                                                             <div class="col-md-8">
                                                                 <h4><?= $value['tutorial_name'] ?></h4>
                                                                 <ul class="rating">
+                                                                <?
+                                                                    $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
+                                                                    ?>
                                                                     <?php
-                                                                    for ($x = 1; $x <= $value['tutorial_rating']; $x++) { ?>
+                                                                    for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
                                                                         "
                                                                         <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                                                         ";
@@ -308,8 +310,11 @@
                                                             <div class="col-md-8">
                                                                 <h4><?= $value['tutorial_name'] ?></h4>
                                                                 <ul class="rating">
+                                                                    <?
+                                                                    $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
+                                                                    ?>
                                                                     <?php
-                                                                    for ($x = 1; $x <= $value['tutorial_rating']; $x++) { ?>
+                                                                    for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
                                                                         "
                                                                         <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                                                         ";
