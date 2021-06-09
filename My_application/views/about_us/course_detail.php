@@ -91,9 +91,13 @@
                   </ul>
 
                   <ul class="usr-rating">
+                     <?
+                     $rating = $this->model_learning_journey_course_review->get_avg_reating($course[0]['tutorial_id']);
+                     ?>
                      <?php
-                     for ($x = 1; $x <= $course[0]['tutorial_rating']; $x++) { ?>
-                        <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                        
+                     for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
+                        <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                      <? } ?>
                   </ul>
                </div>
@@ -260,7 +264,7 @@
                               <ul class="usr-rating">
                                  <?php
                                  for ($x = 1; $x <= $review[$key]['learning_journey_course_review_stars']; $x++) { ?>
-                                    <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                    <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                  <? } ?>
                               </ul>
                               <p><?= $review[$key]['learning_journey_course_review_createdon'] ?></p>
@@ -314,10 +318,13 @@
                               <div class="row align-items-center pt-70">
                                  <div class="col-md-8">
                                     <ul class="rating">
+                                       <?
+                                       $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
+                                       ?>
                                        <?php
-                                       for ($x = 1; $x <= $value['tutorial_rating']; $x++) { ?>
+                                       for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
                                           "
-                                          <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                          <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                           ";
                                        <? } ?>
                                     </ul>

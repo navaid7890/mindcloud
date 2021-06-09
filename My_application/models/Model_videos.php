@@ -77,15 +77,26 @@ class Model_videos extends MY_Model {
                   ),
 
               
-              'videos_slug'  => array(
+              'videos_views'  => array(
                   'table'   => $this->_table,
-                  'name'   => 'videos_slug',
-                  'label'   => 'Slug',
+                  'name'   => 'videos_views',
+                  'label'   => 'View',
                   'type'   => 'text',
                   'attributes'   => array(),
-                  'js_rules'   => array("is_slug" => array()),
-                  'rules'   => 'required|strtolower|htmlentities|is_unique['.$this->_table.'.'.$this->_field_prefix.'slug]|callback_is_slug'
+                  'js_rules'   => '',
+                  'rules'   => 'trim'
               ),
+              'videos_id' => array(
+                'table'   => $this->_table,
+                'name'   => 'videos_id',
+                'label'   => 'id #',
+                'type'   => 'hidden',
+                'type_dt'   => 'text',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width"=>"5%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+           ),
                   
                   /*'videos_price' => array(
                      'table'   => $this->_table,

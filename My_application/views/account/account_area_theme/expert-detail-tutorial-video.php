@@ -269,7 +269,9 @@
    }
 
    function plusOne(id) { 
+      
       id = Number(id) + 1; 
+      // alert(id);
       var hours = 1;
       var now = new Date().getTime();
       var setupTime = localStorage.getItem('count_time');
@@ -284,9 +286,6 @@
             window.history.pushState({path:newurl},'',newurl);
             
             localStorage.setItem('count_time', now);
-            
-            
-
 
 
          } else {
