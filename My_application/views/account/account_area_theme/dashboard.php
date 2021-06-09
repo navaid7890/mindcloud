@@ -241,7 +241,7 @@
                                                                     <?php
                                                                     for ($x = 1; $x <= $value['tutorial_rating']; $x++) { ?>
                                                                         "
-                                                                        <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                        <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                                                         ";
                                                                     <? } ?>
                                                                 </ul>
@@ -311,7 +311,7 @@
                                                                     <?php
                                                                     for ($x = 1; $x <= $value['tutorial_rating']; $x++) { ?>
                                                                         "
-                                                                        <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                        <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                                                         ";
                                                                     <? } ?>
                                                                 </ul>

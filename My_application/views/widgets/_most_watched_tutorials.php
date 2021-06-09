@@ -14,11 +14,14 @@
     <ul class="who-list tut-list pb-100">
         <?php foreach ($tut as $key => $value) : ?>
             <li>
+
                 <div class="vid-box">
                     <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
                         <div class="video-box">
                             <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
-                            <span><i class="fas fa-play"></i> </span>
+                            <span><i class="fas fa-play"></i>
+                                <p>Preview Course</p>
+                            </span>
                         </div>
                     </a>
                     <?
@@ -33,49 +36,36 @@
                     //  debug($cat_name);
                     ?>
                     <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
-                    <!-- <a href="javascript:;" class="cate-tag"><? //= $value['tutorial_level'] 
-                                                                    ?></a> -->
+
                     <div class="vid-content">
+                        <?
+                        $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
+                        ?>
 
-
-                        <div class="row align-items-center ">
-                            <div class="col-md-12">
-                                <a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;">
-                                    <h4><?= $value['tutorial_name'] ?></h4>
-                                </a>
+                        <?// debug($rating[0]['Rating']) ?>
+                        <h4><?= $value["tutorial_name"] ?></h4>
+                        <div class="row align-items-center pt-70">
+                            <div class="col-md-9">
                                 <ul class="rating">
-                                    <?php
-                                    for ($x = 1; $x <= $value['tutorial_rating']; $x++) { ?>
-                                        "
+                                    <? if ($rating[0]['Rating'] == 0) { ?>
                                         <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
-                                        ";
-                                    <? } ?>
+                                        <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                        <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                        <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                        <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                        <?php
+                                    } else {
+                                        for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
+                                            "
+                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                            ";
+                                    <? }
+                                    } ?>
                                 </ul>
                             </div>
-                            <!-- <div class="col-md-4 text-right">
-                                                                                <h6><? //= price($value['tutorial_price']) 
-                                                                                    ?></h6>
-                                                                            </div> -->
-                        </div>
-                        <div class="space"><br><br></div>
-                        <div class="row align-items-center">
-                            <div class="col-md-10">
-                                <?
-                                $exp_name = array();
-                                $exp_name['where']['expert_id'] = $value['tutorial_expert_id'];
-                                $exp_name = $this->model_expert->find_all_active($exp_name);
 
-                                // debug($exp_name);
-                                // debug($exp_name['expert_image']);
-
-
-                                ?>
-                                <ul class="login-btn">
-                                    <li class="first last"><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-2">
-                                <a href="javascript:;" class="arrow-links"><i class="far fa-arrow-right"></i></a>
+                            <div class="col-md-3 text-right">
+                                <h6>$<?= $value["tutorial_price"] ?></h6>
                             </div>
                         </div>
                     </div>

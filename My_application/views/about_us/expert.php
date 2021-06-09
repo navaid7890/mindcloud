@@ -153,10 +153,11 @@
                                              </div>
                                              <div class="col-md-8">
                                                 <ul class="rating">
+                                                <? $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']); ?>
                                                    <?php
-                                                   for ($x = 1; $x <= $value['tutorial_rating']; $x++) { ?>
+                                                   for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
                                                       "
-                                                      <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                      <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                                       ";
                                                    <? } ?>
                                                 </ul>

@@ -93,6 +93,12 @@ class Home extends MY_Controller
     $param['where_in']['tutorial_id'] = $all1;
     $data['tut'] = $this->model_tutorial->find_all_active($param);
     // debug($data['tut']);
+
+    
+    // $data['rate'] = $this->model_learning_journey_course_review->get_avg_reating($param);
+
+
+    // debug($data['rate']);
    
     // $param = array();
     // $param['where']['cp_tutorial_id'] = 1;

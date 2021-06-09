@@ -588,7 +588,27 @@ class Profile extends MY_Controller_Account
 		$data['check'] = $exp1['child'][0];
 
 		
-
+		$param = array();
+		$param['order'] = "videos_views DESC";
+		$param['limit'] = 3;
+	
+		$videos = $this->model_videos->find_all_active($param);
+		
+			foreach ($videos as $key => $value) {
+				$all[] = $value['videos_id'];
+			}
+		
+		$param = array();
+		$param['where_in']['cp_tutorial_id'] = $all;
+		$tut = $this->model_course_tutorial->find_all_active($param);
+	
+		foreach ($tut as $key => $value) {
+				$all1[] = $value['cp_course_id'];
+			}
+		
+		$param = array();
+		$param['where_in']['tutorial_id'] = $all1;
+		$data['tut'] = $this->model_tutorial->find_all_active($param);
 
 
 
