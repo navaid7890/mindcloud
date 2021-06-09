@@ -2194,8 +2194,7 @@ function countdown(minutes, stat) {
     setCookie("seconds", seconds, 10);
     var current_minutes = mins - 1;
     seconds--;
-    counter.innerHTML =
-      current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+    counter.innerHTML =current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
     //save the time in cookie
 
 
@@ -2424,6 +2423,258 @@ function readURL(input) {
 $("#profile-img").change(function () {
   readURL(this);
 });
+
+
+
+
+
+$("body").on('click','.like_post' , function(){
+  var id = $(this).attr('data-post_id');
+  var data = {id:id}
+  var url = base_url+"about_us/ajax_post_like";
+  response = AjaxRequest.fire(url, data) ; 
+  if(response.status) {
+      $(this).addClass("like_post_fill");
+      Toastr.success(response.txt);
+      location.reload();
+  }
+  else{
+      //$(this).removeClass("like_post_fill");
+      Toastr.error(response.txt);
+  }
+});
+
+$("body").on('click','.post_comment' , function(){
+  var data = $(this).closest('form').serialize();
+  var url = base_url+"about_us/ajax_save_comment";
+  response = AjaxRequest.fire(url, data) ; 
+  if(response.status) {
+      $("#add-comm-"+response.post_id).html(response.new_comment);
+      Toastr.success(response.txt);
+      location.reload();
+  }
+  else{
+      Toastr.error(response.txt);
+  }
+});
+
+$(function() {
+  var $form = $('#form-post-status');
+  $form.submit(function(event) {
+    event.preventDefault();
+    $.ajax({ 
+      url: $form.attr('action'),
+      type: 'POST',
+      data: $form.serialize(),
+      dataType: "json",
+
+      success: function (response)
+      {
+          $("form-post-status-btn").text("Public");
+          if(response.status)
+          {
+              Toastr.success(response.txt);
+              setTimeout(function(){
+                 location.reload(); 
+              },1000);
+          }
+          else {
+              Toastr.error(response.txt);
+          }
+      },
+      beforeSend: function(response)
+      {
+          $("form-post-status-btn").text('Loading....');
+      }
+     
+    });   
+
+
+    return false;
+  });
+});
+
+
+
+
+
+$(function() {
+  var $form = $('#form-img-post-status');
+  $form.submit(function(event) {
+      event.preventDefault();
+
+      var data = new FormData(document.getElementById('form-img-post-status'));
+
+      // Submit action
+      var response =FileUploadScript.fire($form.attr('action'), data, 'json') ;
+
+      if(response.status)
+      {
+          Toastr.success(response.txt);
+          setTimeout(function(){
+              location.reload(); 
+          },1000);
+      }
+      else {
+          Toastr.error(response.txt);
+      }
+
+    return false;
+  });
+});
+
+
+$(function() {
+  var $form = $('#form-audio-post-status');
+  $form.submit(function(event) {
+      event.preventDefault();
+
+      var data = new FormData(document.getElementById('form-audio-post-status'));
+
+      // Submit action
+      var response =FileUploadScript.fire($form.attr('action'), data, 'json') ;
+
+      if(response.status)
+      {
+          Toastr.success(response.txt);
+          setTimeout(function(){
+              location.reload(); 
+          },1000);
+      }
+      else {
+          Toastr.error(response.txt);
+      }
+
+    return false;
+  });
+});
+
+
+
+$(function() {
+  var $form = $('#form-video-post-status');
+  $form.submit(function(event) {
+      event.preventDefault();
+
+      var data = new FormData(document.getElementById('form-video-post-status'));
+
+      // Submit action
+      var response =FileUploadScript.fire($form.attr('action'), data, 'json') ;
+
+      if(response.status)
+      {
+          Toastr.success(response.txt);
+          setTimeout(function(){
+              location.reload(); 
+          },1000);
+      }
+      else {
+          Toastr.error(response.txt);
+      }
+
+    return false;
+  });
+});
+/*###########
+WEBSITE APP SCRIPT END
+###########*/
+
+
+
+$("body").on("focusout",'#form-control-yt',function(){
+
+var url = $(this).val();
+var urlNoProtocol = url.replace(/^https?\:\/\//i, "");
+$(this).val(urlNoProtocol);
+});
+
+
+
+
+
+
+function playVid() { 
+  var vid = document.getElementById("video_preview"); 
+  vid.play(); 
+}
+
+function pauseVid() { 
+  var vid = document.getElementById("video_preview"); 
+  vid.pause(); 
+}
+
+
+$("body").on('click','.view_this_video',function(){
+  var src = $(this).attr("data-video_src");
+  var title = $(this).attr("title");
+
+  //var html = '<video width="100%" controls>';
+  var html = '<video id="video_preview" width="100%" controls>';
+  html += '<source src="'+src+'" type="video/mp4">';
+  //html += '<source src="mov_bbb.ogg" type="video/ogg">';
+  html += 'Your browser does not support HTML5 video.';
+  html += '</video>';
+  
+  Modal.load(title,html);
+  playVid();
+});
+
+
+
+
+$('#myModal-custom').on('hidden.bs.modal', function () {
+if($('#video_preview').length > 0)
+  pauseVid();  
+});
+
+
+$("body").on('click','.action-upload_media',function(){
+  var data = {media_type:$(this).attr('data-media_type')};
+  var url = base_url+"expose/ajax_get_upload_media";
+  response = AjaxRequest.fire(url, data) ; 
+  if(response.status) {
+      $("#Perform-myModal").find('div.modal-body').html(response.html);
+  }
+  else{
+      Toastr.error("Error found please try again");
+  }
+});
+
+
+$("body").on('click','#action-upload_media_challenge',function(){
+  var media_type = $(this).attr('data-media_type');
+  var parent_id = $(this).attr('data-parent_id');
+  var data = {media_type:media_type,parent_id:parent_id};
+  var url = base_url+"expose/ajax_get_upload_media";
+  response = AjaxRequest.fire(url, data) ; 
+  if(response.status) {
+      $("#Perform-myModal").modal();
+      $("#Perform-myModal").find('h4.modal-title').html("Challenge Now");
+      $("#Perform-myModal").find('div.modal-body').html(response.html);
+  }
+  else{
+      Toastr.error("Error found please try again");
+  }
+});
+
+
+if($("#views_count").length > 0) {
+  var total = convert(Math.floor(Math.random() * 10000) + 1);    
+  $("#views_count").text(total);
+}
+
+function convert(value)
+{
+  if(value>=1000000)
+  {
+      value=(value/1000000).toFixed(1)+"M"
+  }
+  else if(value>=1000)
+  {
+      value=(value/1000).toFixed(1)+"K";
+  }
+  return value;
+}
 
 
 //***Image Change Function for about us END*/

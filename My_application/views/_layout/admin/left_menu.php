@@ -135,6 +135,13 @@ $menu_links = array(
     ),
 
 
+    array("title"=>" News Feed Management", "icon"=>" fa fa-book" ,"action" => array("post") ,
+    "additionals"=>array(
+        array("link"=>"post","title"=>"Manage News Feed", "icon"=>" fa fa-angle-right")            
+    ),
+),
+
+
 array("title"=>"Order Management", "icon"=>"basket" ,"action" => array("shop_order") ,
 "additionals"=>array(
     array("link"=>"shop_order","title"=>"Manage Orders", "icon"=>"bar-chart"),
