@@ -13,6 +13,10 @@
 
 <?php
 	$video_url = '';
+
+	if(empty($form_data['startup']['startup_video_corporate']))
+	 $form_data['startup']['startup_video_corporate']='file_example_MP4_480_1_5MG.mp4';
+
 	if(!empty($form_data['startup']['startup_video_corporate']))
  
 	

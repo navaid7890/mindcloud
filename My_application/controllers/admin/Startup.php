@@ -68,6 +68,15 @@ class Startup extends MY_Controller {
 
     // }
     public function add($id=0 , $data = array()) {
+       
+        //  if(!empty($_POST))
+        //  {
+           
+        //     // $_POST['startup_video_new']='assets/images/one.mp4';
+        //     // $_POST['startup_video_corporate']=
+        //     // $_POST['startup_video_growth']=
+
+        //  }
         $this->add_script(array( "jquery.validate.js" , "form-validation-script.js","plupload.full.min.js") , "js" );
         $this->register_plugins(array("datatables","jquery-file-upload"));
         
