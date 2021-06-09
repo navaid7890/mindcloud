@@ -20,7 +20,7 @@ class Post extends MY_Controller {
 		global $config;
 		
 		parent::__construct();
-        $this->dt_params['dt_headings'] = "post_id,post_name,post_slug,post_image,post_status";
+        $this->dt_params['dt_headings'] = "post_id,post_title,post_description,post_status";
         $this->dt_params['searchable'] = explode("," , $this->dt_params['dt_headings']);//array("post_id","post_name","post_is_featured","post_status");
         $this->dt_params['action'] = array(
                                         "hide" => false ,
@@ -54,7 +54,7 @@ class Post extends MY_Controller {
 		// Populating LISTDATA
 		$param = array();
 		//$param['where_string'] = 'category_parent_id > 0';
-		$this->_list_data['post_blog_id'] = $this->model_blog->find_all_list_active($param,"blog_name");
+		//$this->_list_data['post_blog_id'] = $this->model_blog->find_all_list_active($param,"blog_name");
 		//debug($this->_list_data['blog_id'] , 1);
 
 		

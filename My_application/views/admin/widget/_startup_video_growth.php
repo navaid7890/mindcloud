@@ -13,6 +13,9 @@
 
 <?php
 	$video_url = '';
+
+	if(empty($form_data['startup']['startup_video_growth']))
+	$form_data['startup']['startup_video_growth']='startupnew.mp4';
 	if(!empty($form_data['startup']['startup_video_growth']))
  
 	

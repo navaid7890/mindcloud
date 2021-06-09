@@ -42,11 +42,7 @@ class Model_post extends MY_Model
     public function user_post($user_id,$limit=0)
     {
         // Set fields
-        $params['fields'] = "post_id,post_user_id,post_type,post_other_action_id,post_description,post_file,post_file_path,
-                            post_visibility,post_createdon,signup_id,CONCAT(signup_firstname, ' ', signup_lastname) as name,
-                            signup_profile_image,signup_profile_image_path,(SELECT COUNT(post_like_post_id) FROM {pre}post_like
-                            WHERE post_like_post_id = post_id) AS post_like_count,(SELECT COUNT(post_comment_post_id) FROM {pre}post_comment
-                            WHERE post_comment_post_id = post_id) AS post_comment_count";
+        $params['fields'] = "post_id,post_title,post_description,post_status";
         // JOIN
         $params['joins'][] = array(
             "table"=>"user" ,
