@@ -518,18 +518,35 @@ class About_us extends MY_Controller
 
         $par1 = array();
         $par1['where']['faq_category'] = 1;
+        if(isset($_GET['search'])){
+     
+         $par1['where_like'][] = array('column'=>'faq_question','value'=>$_GET['search']);
+        }
+        
         $data['ex'] = $this->model_faq->find_all_active($par1);
 
         $par2 = array();
         $par2['where']['faq_category'] = 2;
+        if(isset($_GET['search'])){
+     
+            $par2['where_like'][] = array('column'=>'faq_question','value'=>$_GET['search']);
+        }
         $data['le'] = $this->model_faq->find_all_active($par2);
 
         $par3 = array();
         $par3['where']['faq_category'] = 3;
+        if(isset($_GET['search'])){
+     
+            $par3['where_like'][] = array('column'=>'faq_question','value'=>$_GET['search']);
+        }
         $data['gene'] = $this->model_faq->find_all_active($par3);
 
         $par4 = array();
         $par4['where']['faq_category'] = 4;
+        if(isset($_GET['search'])){
+     
+            $par4['where_like'][] = array('column'=>'faq_question','value'=>$_GET['search']);
+        }
         $data['cons'] = $this->model_faq->find_all_active($par4);
 
 
@@ -537,7 +554,11 @@ class About_us extends MY_Controller
         $data['cont1'] = $contss['child'][0];
 
 
-        $data['inner'] = $this->model_inner_banner->find_by_pk(3);
+        $contdata = $this->model_cms_page->get_page(102);
+        // debug($cont);
+        $data['contd'] = $contdata['child'][0];
+
+
 
     
     

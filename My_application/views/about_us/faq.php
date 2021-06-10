@@ -18,14 +18,16 @@
                     <h2>All FAQ</h2>
                 </div>
 
-                <!-- <div class="col-md-5">
+                <div class="col-md-5">
                    <div class="search-form">
+                   <form action="" method="GET">
                       <div class="fld-search">
-                        <input type="text" placeholder="Search">
+                        <input type="text" placeholder="Search" name="search">
                         <button type="submit"><i class="fal fa-search"></i></button>
-                      </div>      
+                      </div>  
+                   </form>
                    </div>     
-                </div> -->
+                </div>
             </div>
             <div class="space"><br><br><br><br></div>
 
