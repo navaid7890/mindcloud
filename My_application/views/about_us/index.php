@@ -183,7 +183,7 @@
       <div class="container">
          <? if (!empty($advisory)) : ?>
             <div class="ad-bord">
-               <h2>MInd Cloud Tribe <strong>Advisory Board</strong></h2>
+               <h2>Mind Cloud Tribe <strong>Advisory Board</strong></h2>
                <div class="space"><br><br></div>
                <ul>
                   <?php if (isset($advisory) && array_filled($advisory)) : ?>
@@ -208,7 +208,7 @@
          <div class="space"><br><br><br><br><br></div>
          <? if (!empty($team)) : ?>
          <div class="mng-bord">
-            <h2>MInd Cloud Tribe <strong> Management Team</strong></h2>
+            <h2>Mind Cloud Tribe <strong> Management Team</strong></h2>
             <div class="space"><br><br></div>
             <ul>
                   <?php if (isset($team) && array_filled($team)) : ?>

@@ -42,12 +42,12 @@
                   </div>
                 </div>
 
-                <!-- <div class="col-lg-4 col-md-8">
-                  <div class="submit-msg">
+                <div class="col-lg-4 col-md-8">
+                  <!-- <div class="submit-msg">
                     <h6><i class="fas fa-check-circle"></i> Congrats, Your email was sent successfully!</h6>
-                  </div>
+                  </div> -->
                   
-                </div> -->
+                </div>
 
                 <div class="col-lg-2 col-md-4">
                   <div class="fld-btn">
