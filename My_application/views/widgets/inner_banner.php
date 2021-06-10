@@ -7,7 +7,7 @@ color: #fff;
 
 </style>
 
-<div class="mainBanner home-banner para inner" style="background-image:url('assets/images/banner/2.png');">
+<div class="mainBanner home-banner para inner" style="background-image:url('<?=get_image($inner['inner_banner_image'],$inner['inner_banner_image_path'])?>');">
          <div class="container">
             <div class="row align-items-center">
                <div class="col-lg-12 col-md-12">
