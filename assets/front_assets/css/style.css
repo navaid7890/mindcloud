@@ -201,6 +201,9 @@ ul.learn-process { display: flex; justify-content: space-between; flex-wrap: wra
 }
 .who-list .vid-content {
     padding: 40px 75px 75px 40px;
+}
+.homeWho .vid-content {
+    padding: 40px 75px 75px 40px;
     min-height: 251px;
 }
 ul.who-list { display: flex; justify-content: space-between; flex-wrap: wrap; }

@@ -11,7 +11,7 @@
     </div>
     <div class="space"><br><br><br></div>
 
-    <ul class="who-list tut-list pb-100">
+    <ul class="who-list tut-list pb-100 homeWho">
         <?php foreach ($tut as $key => $value) : ?>
             <li>
 
