@@ -13,6 +13,9 @@
     .consult-left h2 strong {
         font-weight: 400;
     }
+    .vid-content h4 {
+    min-height: 56px;
+}
 </style>
 <div class="index-page">
     <section class="dashboard">
@@ -35,7 +38,7 @@
                                             <h4>What do you want to learn?</h4>
                                             <form action="" method="GET">
                                                 <div class="fld-search">
-                                                    <input type="text" name="search" placeholder="Search by Keyword">
+                                                    <input type="text" name="search" placeholder="Search Expert Tutorials">
                                                     <button type="submit"><i class="fal fa-search"></i></button>
                                                 </div>
                                             </form>
