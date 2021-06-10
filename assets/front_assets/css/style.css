@@ -185,10 +185,24 @@ ul.learn-process { display: flex; justify-content: space-between; flex-wrap: wra
 .learnContentBox:hover i { filter: brightness(100); }
 .whoSec { padding-bottom: 100px; }
 .vid-content { padding: 40px 75px 75px 40px; }
-.vid-content h4 { font-size: 20px; font-weight: 700; color: #33415C; text-transform: uppercase; padding-bottom: 15px; }
+.vid-content h4 { font-size: 20px; font-weight: 700; color: #33415C; text-transform: uppercase; padding-bottom: 15px;min-height: 56px; }
 .vid-content p { font-weight: 300; }
 .vid-box { max-width: 370px; border-radius: 15px; overflow: hidden; background: #fff; min-height: 507px; position: relative; }
-
+.who-list .vid-box {
+    max-width: 370px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    min-height: 507px;
+    position: relative;
+    box-shadow: 0px 2px 3px 2px rgb(238 238 238 / 75%);
+    -webkit-box-shadow: 0px 2px 3px 2px rgb(238 238 238 / 75%);
+    -moz-box-shadow: 0px 2px 3px 2px rgba(238,238,238,0.75);
+}
+.who-list .vid-content {
+    padding: 40px 75px 75px 40px;
+    min-height: 251px;
+}
 ul.who-list { display: flex; justify-content: space-between; flex-wrap: wrap; }
 .abtSec { background: #F8F9FA; }
 .abtBox { background: #fff; border-radius: 10px; overflow: hidden; }
@@ -362,7 +376,9 @@ ul.cate-list img {
 .expert-page-Sec ul.who-list>li a.cate-tag {top: 139px;}
 .expert-page-Sec a.btn-links { color: #1BA8E8; text-align: center; display: block; font-weight: 600; text-decoration: underline; }
 .expert-page-Sec a.btn-links:hover { color: #000; }
-.consult-content ul.cate-list>li { width: 45%; }
+.consult-content ul.cate-list>li {
+    width: 48%;
+}
 .consult-content ul.cate-list>li:nth-child(2n) { margin-right: 0; }
 .consult-content ul.cate-list>li:nth-child(3n) { margin-right: 0; }
 .consult-content ul.cate-list>li.last { margin-top: 30px; }
@@ -373,7 +389,15 @@ ul.cate-list img {
 .consult-content h2,
 .consult-left h2 { font-size: 26px; padding-bottom: 20px; line-height: normal; }
 .consult-content ul.cate-list>li:nth-child(3) { margin-right: 30px; }
-.consult-content ul.cate-list { margin-bottom: 0; height: 450px; overflow-y: auto; overflow-x: hidden; }
+.consult-content ul.cate-list {
+    margin-bottom: 0;
+    height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 .experts-page ul.cate-list { margin: 0; }
 .expertsdash { padding: 100px 0; background: #fff; }
 .side-bar.sticky-top { z-index: 0; }

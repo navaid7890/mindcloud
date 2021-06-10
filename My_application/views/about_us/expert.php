@@ -26,7 +26,13 @@
    .consult-left h2 strong {
     font-weight: 700;
 }
-
+.joinContent .hding-2 h2 {
+    font-size: 36px;
+    font-weight: 400;
+    color: #33415C;
+    text-transform: inherit;
+    line-height: normal;
+}
 
    .mainBanner h1 {
       border-bottom: 8px solid #F4C150;
@@ -103,7 +109,7 @@
                                  ?>
                                  <!-- ( <? //= $value['tutorials'] 
                                           ?> ) -->
-                                 <li><a href="<?= l('expert-tutorial') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?></a> ( <?= $value['tutorials'] ?> ) </li>
+                                 <li><a href="<?= l('expert-tutorial') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?> ( <?= $value['tutorials'] ?> )</a>  </li>
                               <? endforeach; ?>
                            <? endif; ?>
                         </ul>

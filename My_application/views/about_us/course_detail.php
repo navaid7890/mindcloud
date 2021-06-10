@@ -347,7 +347,7 @@
    </section>
    <section class="joinSec hding-2 para">
       <div class="joinContent">
-         <h2> <strong><?= $con2['cms_page_title'] ?></strong></h2>
+         <h2> <strong><?= html_entity_decode($con2['cms_page_title']) ?></strong></h2>
          <div class="space"><br></div>
          <?= html_entity_decode($con2['cms_page_content']) ?>
          <div class="space"><br><br></div>
