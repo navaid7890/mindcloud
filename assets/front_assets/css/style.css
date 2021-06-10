@@ -1073,6 +1073,7 @@ ul.login-btn .dropdown-box {background: #fff;position: absolute;left: 0;right: 0
     padding-bottom: 10px;
     position: relative;
     display: inline-block;
+    text-transform: inherit;
 }
 
 .advis-content h2:after {
