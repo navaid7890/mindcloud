@@ -35,7 +35,7 @@
                                             <h4>What do you want to learn?</h4>
                                             <form action="" method="GET">
                                                 <div class="fld-search">
-                                                    <input type="text" name="search" placeholder="Search Expert Tutorials">
+                                                    <input type="text" name="search" placeholder="Search by Keyword">
                                                     <button type="submit"><i class="fal fa-search"></i></button>
                                                 </div>
                                             </form>
@@ -124,8 +124,9 @@
                                                                                 <a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;">
                                                                                     <h4><?= $value['tutorial_name'] ?></h4>
                                                                                 </a>
+                                                                                <div class="coutArea">
                                                                                 <ul class="rating">
-                                                                                <? $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']); ?>
+                                                                                    <? $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']); ?>
                                                                                     <?php
                                                                                     for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
                                                                                         "
@@ -133,6 +134,10 @@
                                                                                         ";
                                                                                     <? } ?>
                                                                                 </ul>
+                                                                                <? if (!empty($rating[0]['starCount'])) { ?>
+                                                                                    <div style="margin-left: 5px;">( <?= $rating[0]['starCount'] ?> )</div>
+                                                                                <? } ?>
+                                                                                </div>
                                                                             </div>
                                                                             <!-- <div class="col-md-4 text-right">
                                                                                 <h6><? //= price($value['tutorial_price']) 
@@ -141,7 +146,7 @@
                                                                         </div>
                                                                         <div class="space"><br><br></div>
                                                                         <div class="row align-items-center">
-                                                                            <div class="col-md-10">
+                                                                            <div class="col-md-10 coutArea">
                                                                                 <?
                                                                                 $exp_name = array();
                                                                                 $exp_name['where']['expert_id'] = $value['tutorial_expert_id'];
@@ -182,7 +187,7 @@
                         <div class="tutorialSec">
                             <section class="whoSec hding-2 para pad-sec">
                                 <div class="container-fluid pad-zero">
-                                <? $this->load->view('widgets/_most_watched_tutorials'); ?> 
+                                    <? $this->load->view('widgets/_most_watched_tutorials'); ?>
                                 </div>
                             </section>
                         </div>

@@ -5,6 +5,7 @@
     color: #fff;
     text-shadow: none;
 }
+.coutArea{display: flex;}
 
  ::-webkit-scrollbar {
     width: 5px;

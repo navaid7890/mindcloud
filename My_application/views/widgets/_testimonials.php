@@ -12,7 +12,7 @@
                                 </div>
                                 <div class="space"><br><br><br></div>
 
-                                <h5><?=$value['testimonials_title']?></h5>
+                                <h5><?=$value['testimonials_title']?><span><?= $value['testimonials_position']?></span></h5>
                             </div>
                         </div>
 

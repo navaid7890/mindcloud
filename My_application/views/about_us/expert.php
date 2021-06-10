@@ -23,10 +23,10 @@
    .joinContent strong {
       font-weight: 700;
    }
-
    .consult-left h2 strong {
-      font-weight: 400;
-   }
+    font-weight: 700;
+}
+
 
    .mainBanner h1 {
       border-bottom: 8px solid #F4C150;
@@ -67,7 +67,7 @@
                      
                      <form action="" method="GET">
                         <div class="fld-search">
-                           <input type="text" name="search" placeholder="Search Expert Tutorials">
+                           <input type="text" name="search" placeholder="Search by Keyword">
                            <button type="submit"><i class="fal fa-search"></i></button>
                         </div>
                      </form>
@@ -151,7 +151,7 @@
                                                    <li><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $value['expert_image'] ?>"></span> <?= $value['expert_name'] ?> </a></li>
                                                 </ul>
                                              </div>
-                                             <div class="col-md-8">
+                                             <div class="col-md-8 coutArea">
                                                 <ul class="rating">
                                                 <? $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']); ?>
                                                    <?php
@@ -161,6 +161,9 @@
                                                       ";
                                                    <? } ?>
                                                 </ul>
+                                                <? if (!empty($rating[0]['starCount'])) { ?>
+                                                <div style="margin-left: 5px;">( <?= $rating[0]['starCount']?> )</div>
+                                                <?}?>
                                              </div>
                                              <div class="col-md-4 text-right">
                                                 <h6><?= price($value['tutorial_price']) ?></h6>
@@ -223,7 +226,7 @@
             <div class="col-lg-4 col-md-5 pad-zero">
                <div class="consult-left">
                   <div>
-                     <h2><strong><?= html_entity_decode($con1['cms_page_title']) ?></strong></h2>
+                  <h2>Select <strong> Expert <br>Category </strong></h2>
                      <ul class="consult-left-slide">
                         <li>
                            <div class="consult-left-content">

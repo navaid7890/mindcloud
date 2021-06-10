@@ -237,7 +237,7 @@
                                                             <div class="col-md-8">
                                                                 <h4><?= $value['tutorial_name'] ?></h4>
                                                                 <ul class="rating">
-                                                                <?
+                                                                    <?
                                                                     $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
                                                                     ?>
                                                                     <?php
@@ -262,8 +262,16 @@
                                                         <div class="space"><br><br><br><br></div>
                                                         <div class="row align-items-center">
                                                             <div class="col-md-10">
+                                                                <?
+                                                                $exp_name = array();
+                                                                $exp_name['where']['expert_id'] = $value['tutorial_expert_id'];
+                                                                $exp_name = $this->model_expert->find_all_active($exp_name);
+
+                                                                // debug($exp_name);
+                                                                // debug($exp_name['expert_image']);
+                                                                ?>
                                                                 <ul class="login-btn">
-                                                                    <li><a href="#"><span><img src="<?= i('') ?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                                    <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                             <div class="col-md-2">
@@ -335,8 +343,16 @@
                                                         <div class="space"><br><br><br><br></div>
                                                         <div class="row align-items-center">
                                                             <div class="col-md-10">
+                                                            <?
+                                                                $exp_name = array();
+                                                                $exp_name['where']['expert_id'] = $value['tutorial_expert_id'];
+                                                                $exp_name = $this->model_expert->find_all_active($exp_name);
+
+                                                                // debug($exp_name);
+                                                                // debug($exp_name['expert_image']);
+                                                                ?>
                                                                 <ul class="login-btn">
-                                                                    <li><a href="#"><span><img src="<?= i('') ?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                                    <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                             <div class="col-md-2">

@@ -12,8 +12,10 @@
 .joinContent strong {
     font-weight: 700;
 }
+.joinSec {
+   background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(<?= g('db.admin.bucketimg') . "cms_image/" . $cont3['cms_page_image'] ?>);
+   }
 </style>
-
 <section class="joinSec hding-2 para">
         <div class="joinContent">
             <?= html_entity_decode($cont3['cms_page_title'])?>
