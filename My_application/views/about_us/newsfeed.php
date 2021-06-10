@@ -179,13 +179,13 @@ div#add-comm-13 {
 
                                         <div class="news-feed-feedback">
                                             <div class="row align-items-center">
-                                                <div class="col-md-2">
+                                                <div class="col-md-1">
                                                     <div class="news-feed-like">
                                                         <a href="javascript:void(0);" class='like_post <?=($already_exits_data > 0) ? 'like_post_fill' : ''?>' data-post_id="<?=$value['post_id']?>"><i class="fal fa-heart"></i> Like </a>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-10">
+                                                <div class="col-md-11">
                                                     <div class="news-feed-time">
                                                         <h6><?=time_elapsed_string($v['post_comment_createdon'])?></h6>
                                                     </div>
