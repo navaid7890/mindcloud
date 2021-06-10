@@ -197,7 +197,7 @@
 
                                         <div class="progress-footer">
                                             <h6>My Certificate</h6>
-                                            <p>Complete your Learning<br> Journey to receive Certificate</p>
+                                            <p>Complete Expert Tutorials<br> to receive Certificate</p>
                                         </div>
                                     </div>
                                 </div>

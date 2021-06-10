@@ -10,6 +10,7 @@
                           <h4>Create an account</h4>
                           <div class="space"><br></div>
                           <p>Please enter your valid data to sign up.</p>
+                          <hr/>
                       </div>
                       <div class="space"><br><br></div>
 

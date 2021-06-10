@@ -18,6 +18,9 @@
    .joinContent strong {
     font-weight: 700;
 }
+.abtContent strong{
+   font-weight: 700;
+}
 </style>
 <div class="mainBanner hding-1 para">
    <div class="container">
@@ -34,7 +37,7 @@
          <div class="row">
             <div class="col-md-6 flex-center">
                <div class="abtContent">
-                  <h3><span><?=$contd['cms_page_title']?></span> </h3>
+                  <h3><span><?=html_entity_decode($contd['cms_page_title'])?></span> </h3>
                   <?=html_entity_decode($contd['cms_page_content'])?>
                   <div class="space"><br></div>
                </div>

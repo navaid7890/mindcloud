@@ -112,34 +112,34 @@
         <div class="space"><br><br></div>
         <ul class="cate-list">
           <li><a href="#">
-              <p><span><img src="assets/images/icons/category/1.svg"></span> Business Model (4)</p>
+              <p><span><img src="<?=l()?>assets/front_assets/images/icons/category/1.svg"></span> Business Model (4)</p>
             </a></li>
           <li><a href="#">
-              <p><span><img src="assets/images/icons/category/1.svg"></span> Digital marketing (12)</p>
+              <p><span><img src="<?=l()?>assets/front_assets/images/icons/category/1.svg"></span> Digital marketing (12)</p>
             </a></li>
           <li><a href="#">
-              <p><span><img src="assets/images/icons/category/1.svg"></span> Finance and Valuation (6)</p>
+              <p><span><img src="<?=l()?>assets/front_assets/images/icons/category/1.svg"></span> Finance and Valuation (6)</p>
             </a></li>
           <li><a href="#">
-              <p><span><img src="assets/images/icons/category/1.svg"></span> Leadership (9)</p>
+              <p><span><img src="<?=l()?>assets/front_assets/images/icons/category/1.svg"></span> Leadership (9)</p>
             </a></li>
           <li><a href="#">
-              <p><span><img src="assets/images/icons/category/1.svg"></span> Human resources (14)</p>
+              <p><span><img src="<?=l()?>assets/front_assets/images/icons/category/1.svg"></span> Human resources (14)</p>
             </a></li>
           <li><a href="#">
-              <p><span><img src="assets/images/icons/category/1.svg"></span> Customer Acquisition (12)</p>
+              <p><span><img src="<?=l()?>assets/front_assets/images/icons/category/1.svg"></span> Customer Acquisition (12)</p>
             </a></li>
           <li><a href="#">
-              <p><span><img src="assets/images/icons/category/1.svg"></span> Marketing & Sales (10)</p>
+              <p><span><img src="<?=l()?>assets/front_assets/images/icons/category/1.svg"></span> Marketing & Sales (10)</p>
             </a></li>
           <li><a href="#">
-              <p><span><img src="assets/images/icons/category/1.svg"></span> Branding (4)</p>
+              <p><span><img src="<?=l()?>assets/front_assets/images/icons/category/1.svg"></span> Branding (4)</p>
             </a></li>
           <li><a href="#">
-              <p><span><img src="assets/images/icons/category/1.svg"></span> Business Model (4)</p>
+              <p><span><img src="<?=l()?>assets/front_assets/images/icons/category/1.svg"></span> Business Model (4)</p>
             </a></li>
           <li><a href="#">
-              <p><span><img src="assets/images/icons/category/1.svg"></span> Marketing & Sales (10)</p>
+              <p><span><img src="<?=l()?>assets/front_assets/images/icons/category/1.svg"></span> Marketing & Sales (10)</p>
             </a></li>
         </ul>
 

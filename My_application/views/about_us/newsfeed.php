@@ -11,6 +11,7 @@ div#add-comm-13 {
     font-weight: 600;
     margin-top: 24px;
 }
+
 </style>
         <section class="createPostSec hding-3">
             <div class="container">
@@ -81,7 +82,7 @@ div#add-comm-13 {
 				?>
                     <li class="items">
                         <div class="news-feed-box">
-                        <h3>Recently Added</h3>
+                        <!-- <h3>Recently Added</h3> -->
                             <div class="news-feed-user">
                                 <div class="row align-items-center">
                                     <div class="col-md-6">
@@ -137,7 +138,7 @@ div#add-comm-13 {
                                             <div class="flde-comnt-user">
 
 							                    <input type="hidden" name="post_comment_post_id" value="<?=$value['post_id']?>">
-                                                <input type="text"  placeholder="Write your comment" name="post_comment_user_comment"> <a href="javascript:void(0);" class="comment-posted post_comment" style="float:right; position:absolute; margin-left:-27px;"><i class="fal fa-arrow-right"></i></a>
+                                                <input type="text"  placeholder="Write your comment" name="post_comment_user_comment"> <a href="javascript:void(0);" class="comment-posted post_comment" style="float:right;position:absolute;margin-left:-27px;top: -17%;"><i class="fal fa-arrow-right"></i></a>
                                             </div>
                                   
                                         </form>
@@ -178,13 +179,13 @@ div#add-comm-13 {
 
                                         <div class="news-feed-feedback">
                                             <div class="row align-items-center">
-                                                <div class="col-md-2">
+                                                <div class="col-md-1">
                                                     <div class="news-feed-like">
                                                         <a href="javascript:void(0);" class='like_post <?=($already_exits_data > 0) ? 'like_post_fill' : ''?>' data-post_id="<?=$value['post_id']?>"><i class="fal fa-heart"></i> Like </a>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-10">
+                                                <div class="col-md-11">
                                                     <div class="news-feed-time">
                                                         <h6><?=time_elapsed_string($v['post_comment_createdon'])?></h6>
                                                     </div>

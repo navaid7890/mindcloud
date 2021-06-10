@@ -10,6 +10,7 @@
                         <h4>Log in</h4>
                         <div class="space"><br></div>
                         <p>Log in with your data that your entered during your registration</p>
+                        <hr/>
                     </div>
                     <div class="space"><br><br></div>
 
@@ -35,7 +36,7 @@
                                         <label for="checkbox"><input type="checkbox" checked="checked" id="checkbox"> Keep me logged in</label>
                                     </div>
                                     <div class="col-md-6">
-                                      <a href="<?=l('forgot-password')?>"><input type="button" value="Forgot password?"></a>
+                                      <a href="<?=l('forgot-password')?>" style="width: 100%;"><input type="button" value="Forgot password?"></a>
                                     </div>
                                 </div>
 

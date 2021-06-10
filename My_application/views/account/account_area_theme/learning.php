@@ -99,7 +99,7 @@
                               <input type="text" name="startup[startup_name]" placeholder="Write Startup name here" required="">
                            </div>
                            <div class="fld-btn">
-                              <input type="submit" value="Submit Your Review" id="forms-startup-btn">
+                              <input type="submit" value="Confirm" id="forms-startup-btn">
                            </div>
                         </form>
                      </div>

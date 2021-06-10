@@ -13,6 +13,9 @@
     .consult-left h2 strong {
         font-weight: 400;
     }
+    .vid-content h4 {
+    min-height: 56px;
+}
 </style>
 <div class="index-page">
     <section class="dashboard">
@@ -35,7 +38,7 @@
                                             <h4>What do you want to learn?</h4>
                                             <form action="" method="GET">
                                                 <div class="fld-search">
-                                                    <input type="text" name="search" placeholder="Search by Keyword">
+                                                    <input type="text" name="search" placeholder="Search Expert Tutorials">
                                                     <button type="submit"><i class="fal fa-search"></i></button>
                                                 </div>
                                             </form>
@@ -75,7 +78,7 @@
                                                             ?>
                                                             <!-- (<? // = $value['tutorials'] 
                                                                     ?>) -->
-                                                            <li><a href="<?= l('account/profile/expert') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?></a> (<?= $value['tutorials'] ?>) </li>
+                                                            <li><a href="<?= l('account/profile/expert') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?> (<?= $value['tutorials'] ?>)</a> </li>
                                                         <? endforeach; ?>
                                                     <? endif; ?>
                                                 </ul>
