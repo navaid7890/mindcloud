@@ -695,9 +695,13 @@ i.fal.fa-comment-alt { color: #1BA8E8; }
 .news-feed-time h6 { font-size: 16px; color: #73A1C2; display: block; text-align: right; }
 .news-feed-comment-form .user-img { width: 40px; height: 40px; margin-right: 15px; }
 .user-comment-input { display: block; width: 100%; }
-.flde-comnt-user { border: 0.5px solid #E8EFF7; border-radius: 8px; height: 50px; }
+.flde-comnt-user { border: 0.5px solid #E8EFF7; border-radius: 8px; height: 50px;position: relative; }
 .flde-comnt-user input { width: 100%; height: 100%; padding: 0 15px; font-size: 14px; }
-.news-feed-feedback { margin-bottom: 34px; }
+.news-feed-feedback {
+    margin-bottom: 34px;
+    border-bottom: 1px solid #E8EFF7;
+    padding-bottom: 15px;
+}
 .user-img img { width: 100%; height: 100%; }
 .news-feed-comment-form a { margin-left: 55px; font-size: 16px; color: #1BA8E8; font-weight: 600; }
 .news-feed-comnt-post .user-img { width: 40px; height: 40px; }
