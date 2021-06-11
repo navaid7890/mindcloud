@@ -7,7 +7,7 @@ color: #fff;
 
 </style>
 
-<div class="mainBanner home-banner para inner" style="background-image:url('<?=get_image($contd['cms_page_image'],$contd['cms_page_image_path'])?>');">
+<div class="mainBanner home-banner para inner" style="background-image:url('<?= g('db.admin.bucketimg') . "cms_image/" . $contd['cms_page_image'] ?>');">
          <div class="container">
             <div class="row align-items-center">
                <div class="col-lg-12 col-md-12">

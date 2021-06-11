@@ -114,7 +114,7 @@ class Model_inquiry extends MY_Model {
                      'type'   => 'textarea',
                      'attributes'   => array(),
                      'js_rules'   => '',
-                     'rules'   => 'required|trim|htmlentities|min_length[5]|max_length[512]'
+                     'rules'   => 'trim|htmlentities|min_length[5]|max_length[512]'
                   ),
 
               'inquiry_hear_about_us' => array(
@@ -124,7 +124,7 @@ class Model_inquiry extends MY_Model {
                      'type'   => 'text',
                      'attributes'   => array(),
                      'js_rules'   => '',
-                     'rules'   => 'required|trim|htmlentities'
+                     'rules'   => 'trim|htmlentities'
                   ),
                   'inquiry_challenges' => array(
                     'table'   => $this->_table,
@@ -133,7 +133,7 @@ class Model_inquiry extends MY_Model {
                     'type'   => 'text',
                     'attributes'   => array(),
                     'js_rules'   => '',
-                    'rules'   => 'required|trim|htmlentities'
+                    'rules'   => 'trim|htmlentities'
                  ),
                  'inquiry_terms' => array( 
                     'table'   => $this->_table,
@@ -150,7 +150,17 @@ class Model_inquiry extends MY_Model {
                     // 'default'   => '0',
                     'attributes'   => array(),
                     'dt_attributes'   => array("width"=>"7%"),
-                    'rules'   => 'required|trim'
+                    'rules'   => 'trim'
+                 ),
+
+                 'inquiry_address' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'inquiry_address',
+                    'label'   => 'Address',
+                    'type'   => 'text',
+                    'attributes'   => array(),
+                    'js_rules'   => '',
+                    'rules'   => 'trim|htmlentities'
                  ),
       
 
@@ -197,24 +207,24 @@ class Model_inquiry extends MY_Model {
               //    'rules'   => ''
               // ), 
 
-               // 'inquiry_image' => array(
-               //                'table' => $this->_table,
-               //                'name' => 'inquiry_image',
-               //                'label' => 'Image',
-               //                'name_path' => 'inquiry_image_path',
-               //                'upload_config' => 'site_upload_inquiry',
-               //                'type' => 'fileupload',
-               //                'type_dt' => 'image',
-               //                'randomize' => true,
-               //                'preview' => 'true',
-               //                'attributes'   => array(
-               //                    // 'image_size_recommended'=>'1349px × 745px ',
-               //                    'allow_ext'=>'png|jpeg|jpg',
-               //                ),
-               //                'dt_attributes' => array("width" => "10%"),
-               //                'rules' => 'trim|htmlentities',
-               //                'js_rules'=>$is_required_image
-               //            ),
+               'inquiry_image' => array(
+                              'table' => $this->_table,
+                              'name' => 'inquiry_image',
+                              'label' => 'Image',
+                              'name_path' => 'inquiry_image_path',
+                              'upload_config' => 'site_upload_inquiry',
+                              'type' => 'customfileupload',
+                              'type_dt' => 'image',
+                              'randomize' => true,
+                              'preview' => 'true',
+                              'attributes'   => array(
+                                  // 'image_size_recommended'=>'1349px × 745px ',
+                                  'allow_ext'=>'doc|docx|pdf',
+                              ),
+                              'dt_attributes' => array("width" => "10%"),
+                              'rules' => 'trim|htmlentities',
+                 
+                          ),
 
 
 

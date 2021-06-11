@@ -881,6 +881,19 @@ class About_us extends MY_Controller
         echo json_encode($this->json_param);
     }
 
+    public function becomeexpert()
+    {
+        global $config;
+        $data = array();
+
+
+        $conts = $this->model_cms_page->get_page(104);
+        $data['con1'] = $conts['child'][0];
+
+
+        $this->load_view("becomeexpert", $data);
+    }
+
     
 
     

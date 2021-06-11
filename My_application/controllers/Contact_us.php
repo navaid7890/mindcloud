@@ -59,7 +59,7 @@ class Contact_us extends MY_Controller {
                 {
                     $data = $_POST['inquiry'];
                     $data['inquiry_status'] = 1;
-                    // $data['inquiry_image']  = $_FILES['inquiry']['name']['inquiry_image'];
+                  //  $data['inquiry_image']  = $_FILES['inquiry']['name']['inquiry_image'];
 
                     $this->model_inquiry->set_attributes($data);
                     $inserted_id = $this->model_inquiry->save();

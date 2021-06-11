@@ -154,6 +154,7 @@ class MY_Controller extends MY_Controller_Admin
             );
             $this->layout_data['js_files'] = array( 
                     "custom.js",
+                    "bootstrap.min.js"
             );
             //get featured stock
             $this->register_plugins(array("bootstrap-toastr","common_files","my_cart"));

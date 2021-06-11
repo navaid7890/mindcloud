@@ -2194,7 +2194,7 @@ function countdown(minutes, stat) {
     setCookie("seconds", seconds, 10);
     var current_minutes = mins - 1;
     seconds--;
-    counter.innerHTML =current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+    //counter.innerHTML =current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
     //save the time in cookie
 
 
