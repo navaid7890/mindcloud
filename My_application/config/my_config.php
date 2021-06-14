@@ -111,8 +111,8 @@ define("GOOGLE_MAP_API" , 'AIzaSyDWrjiqkT5yhtGtCnwf_5c6uzB6QzVDE28');  //CLIENTS
 // AIzaSyDa9MZajPrJAd34niHcVZpTtgRRHAz4M78
 
 //GOOGLE Captcha credential
-define("GOOGLE_CAPTCHA_SITE_KEY" , "6LdzYEwUAAAAAMwsWwFlo1NT5ctrggVL729aEYi0");
-define("GOOGLE_CAPTCHA_SECRET_KEY" , "6LdzYEwUAAAAABMaIqrenrEa2xLq_ttoyKvLj3pR");
+define("GOOGLE_CAPTCHA_SITE_KEY" , "6LcuYjAbAAAAAPoTp2Mge6c9ndftguIhZxQlciL-");
+define("GOOGLE_CAPTCHA_SECRET_KEY" , "6LcuYjAbAAAAAIalqTaVt-URqI_HjMsTTWGfOJDB");
 
 // YOUTUBE URLs MASK
 define("YOUTUBE_IMG_MASK" , "http://img.youtube.com/vi/%s/mqdefault.jpg");

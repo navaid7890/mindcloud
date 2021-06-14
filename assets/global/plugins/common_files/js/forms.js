@@ -97,7 +97,7 @@ var Form = function () {
         $("#forms-contact_us").find('input[type=text],input[type=email],textarea').val('');
         //FOR GOOGLE CAPTCHA RESET:
         grecaptcha.reset();
-        $(".openBtn").click();
+       // $(".openBtn").click();
         return false;
       }
       else {

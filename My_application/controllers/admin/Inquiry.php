@@ -54,6 +54,9 @@ class Inquiry extends MY_Controller {
 
 	public function add($id='', $data=array())
 	{
+		$this->add_script(array( "jquery.validate.js" , "form-validation-script.js") , "js" );
+        $this->register_plugins("jquery-file-upload");
+        $this->register_plugins("bootstrap-fileupload");
 		parent::add($id,$data);
 	}
 

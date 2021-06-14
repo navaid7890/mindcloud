@@ -1,9 +1,68 @@
-<style type="text/css">
-  select, input{
-  margin: 5px 0 5px 0;   
-  }
+<style>
+    .joinContent strong {
+        font-weight: 700;
+    }
+
+    .consult-left h2 strong span strong,
+    .consult-head strong,
+    .mainBanner strong,
+    .joinContent strong {
+        font-weight: 700;
+    }
+
+    .consult-left h2 strong {
+        font-weight: 400;
+    }
+    .vid-content h4 {
+    min-height: 56px;
+}
+
+.aboutForm h2 {
+    font-size: 25px;
+    color: #202020;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 35px;
+}
+
+textarea, select, input[type], textarea, select, button {
+    background: transparent;
+    border: none;
+    border-radius: 0px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    border: 1px solid #bfc2c5;
+    /* padding: 30px 0; */
+    margin-bottom: 30px;
+}
+
+
+#update-address_info-btn {
+    background-color: #e28f26;
+    color: #fff;
+    padding: 10px 30px;
+    border: 1px solid;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+}
 </style>
-<form role="form" id='update-address_info-form'>
+<div class="index-page">
+    <section class="dashboard">
+        <ul class="dashboard-layout">
+            <li>
+                <div class="front-dashboard">
+                    <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+                    <? $this->load->view("widgets/dashboard-menu-box"); ?>
+                </div>
+            </li>
+
+            <li>
+            <div class="aboutForm">
+
+<div class="col-md-12 col-xs-12 col-sm-12">
+
+<form  id='update-address_info-form'>
 	<h2>Address Info</h2>
   <input type="hidden" name="user_info[ui_user_id]" value="<?=$user_data['user_id']?>"> 
   <div class="row">
@@ -85,3 +144,14 @@
   </div>
   <button type="submit" id='update-address_info-btn'>Update Info</button>
 </form>
+</div>
+            </div>
+</div>
+            </div>
+
+
+            </li>
+        </ul>
+    </section>
+</div>
+

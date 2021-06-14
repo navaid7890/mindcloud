@@ -107,7 +107,7 @@ class Profile extends MY_Controller_Account
 
 		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
 
-		$this->load_view('address_info', $data);
+		$this->load_view('_address_info', $data);
 	}
 
 
@@ -122,7 +122,7 @@ class Profile extends MY_Controller_Account
 
 		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
 
-		$this->load_view('about_us', $data);
+		$this->load_view('_about_us', $data);
 	}
 
 

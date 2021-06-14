@@ -40,6 +40,33 @@
                   </ul>
                </div>
             </li>
+
+            <li>
+               <a href="<?=l('account-area/profile/edit')?>">
+                  <span><img src="<?=i('')?>dashboard/menu/1.svg" ></span>
+                  Personal Info
+               </a>
+            </li>
+
+            <li>
+               <a href="<?=l('account-area/change-password')?>">
+                  <span><img src="<?=i('')?>dashboard/menu/1.svg" ></span>
+                  Password Change
+               </a>
+            </li>
+            <li>
+               <a href="<?=l('account-area/address-info')?>">
+                  <span><img src="<?=i('')?>dashboard/menu/1.svg" ></span>
+                  Address Info
+               </a>
+            </li>
+
+            <li>
+               <a href="<?=l('account-area/change-profile')?>">
+                  <span><img src="<?=i('')?>dashboard/menu/1.svg" ></span>
+                  About
+               </a>
+            </li>
          </ul>
       </div>
    </div>
