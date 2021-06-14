@@ -219,12 +219,31 @@ class Model_inquiry extends MY_Model {
                               'preview' => 'true',
                               'attributes'   => array(
                                   // 'image_size_recommended'=>'1349px × 745px ',
-                                  'allow_ext'=>'doc|docx|pdf',
+                                  'allow_ext'=>'doc|docx|pdf|xls|xlsx',
                               ),
                               'dt_attributes' => array("width" => "10%"),
                               'rules' => 'trim|htmlentities',
                  
                           ),
+
+                          'inquiry_image' => array(
+                            'table' => $this->_table,
+                            'name' => 'inquiry_image',
+                            'label' => 'Image',
+                            'name_path' => 'inquiry_image_path',
+                            'upload_config' => 'site_upload_inquiry',
+                            'type' => 'fileupload',
+                            'type_dt' => 'image',
+                            'randomize' => true,
+                            'preview' => 'true',
+                            'attributes'   => array(
+                                'image_size_recommended'=>'1600px × 705px ',
+                                'allow_ext'=>'png|jpeg|jpg',
+                            ),
+                            'dt_attributes' => array("width" => "10%"),
+                            'rules' => 'trim|htmlentities',
+                           
+                        ),
 
 
 
