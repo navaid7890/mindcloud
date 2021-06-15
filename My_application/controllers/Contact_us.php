@@ -38,9 +38,7 @@ class Contact_us extends MY_Controller {
 
     public function send()
     {
-                    // debug($_POST);
-                    // // debug($_FILES);
-                    // exit;
+                   
         if(array_filled($_POST)) 
         {
             $i = false;
@@ -54,16 +52,14 @@ class Contact_us extends MY_Controller {
             else
             {
 
-                //$this->form_validation->set_rules('g-recaptcha-response', 'Captcha', 'required');
                 if($this->validate("model_inquiry"))
                 {
                     $data = $_POST['inquiry'];
                     $data['inquiry_status'] = 1;
-                  //  $data['inquiry_image']  = $_FILES['inquiry']['name']['inquiry_image'];
-
+          
                     $this->model_inquiry->set_attributes($data);
                     $inserted_id = $this->model_inquiry->save();
-                // debug( $inserted_id);
+             
 
                     $form_data = $this->model_inquiry->find_by_pk($inserted_id);
                     $this->model_email->contactInquiry($form_data);  
@@ -1532,6 +1528,52 @@ class Contact_us extends MY_Controller {
     public function chk_value()
     {
          echo 'sdfsf';
+    }
+
+    public function expert_send()
+    {        
+        if(array_filled($_POST)) 
+        {
+            $i = false;
+            if(isset($_POST['g-recaptcha-response']) && empty($_POST['g-recaptcha-response']))
+            {
+                
+                $this->json_param['status'] = false;
+                    $this->json_param['msg']['title'] = 'Recaptcha Redquired';
+                    $this->json_param['msg']['desc'] = 'Please prove you\'re not a robot';
+            } 
+            else
+            {
+
+                if($this->validate("model_inquiry"))
+                {
+                    $data = $_POST['inquiry'];
+                    $data['inquiry_image']=$_FILES['inquiry']['inquiry_image'];
+                    $data['inquiry_image_path']='assets/uploads/inquiry';
+                    $data['inquiry_status'] = 1;
+          
+                    $this->model_inquiry->set_attributes($data);
+                    $inserted_id = $this->model_inquiry->save();
+             
+
+                    $form_data = $this->model_inquiry->find_by_pk($inserted_id);
+                    $this->model_email->contactInquiry($form_data);  
+
+                    $this->json_param['status'] = true;
+                    $this->json_param['msg']['title'] = 'Inquiry Send';
+                    $this->json_param['msg']['desc'] = 'We appreciate that you’ve taken the time to write us. We\'ll get back to you very soon.';
+        
+                }
+                else
+                {
+                    $this->json_param['status'] = false;
+                    $this->json_param['msg']['title'] = 'Error Occurred';
+                    $this->json_param['msg']['desc'] = validation_errors();
+                }
+                
+            }
+                echo json_encode($this->json_param);
+        }
     }
  
 
