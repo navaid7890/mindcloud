@@ -894,6 +894,167 @@ class About_us extends MY_Controller
         $this->load_view("becomeexpert", $data);
     }
 
+    public function ajax_search_date()
+    {
+        $data['professional'] = $this->model_user->get_professional_list();
+
+        $this->json_param['status'] = true;
+        //$this->json_param['html'] = $this->load->view('appointment/_schedule',$data,true);
+        $this->json_param['html'] = $this->load->view('appointment/_date',$data,true);
+        echo json_encode($this->json_param);
+    }
+
+
+    public function ajax_get_date()
+    {
+        $this->json_param['status'] = true;
+        $this->json_param['html'] = $this->load->view('appointment/_date',$data,true);
+        echo json_encode($this->json_param);
+    }
+
+
+    public function ajax_get_timeslot()
+    {
+        
+        $date = $this->input->post('date');
+        $professional_id = $this->input->post('professional_id');
+
+        // if($this->model_vacation->is_professional_available($professional_id,$date))
+        // {
+            $data['open_time'] = strtotime("9:00");
+            $data['close_time'] = strtotime("22:00");
+
+            // $data['booked_slot'] = $this->model_book_appointment->get_already_booked_slot($professional_id,$date);
+            $data['booked_slot'] = $this->model_session_inquiry->get_already_booked_slot($professional_id,$date);
+            
+            $this->json_param['status'] = true;
+            $this->json_param['html'] = $this->load->view('appointment/_timesslot',$data,true);
+        // }
+        // else {
+        //     $this->json_param['status'] = false;
+        //     $this->json_param['txt'] = "Specialist Not Available at {$date} date Please select other one";
+        // }
+
+        echo json_encode($this->json_param);
+    }
+
+
+    public function ajax_get_timeslot2()
+    {
+        
+        $date = $this->input->post('date');
+        $professional_id = $this->input->post('professional_id');
+
+        // if($this->model_vacation->is_professional_available($professional_id,$date))
+        // {
+            $data['open_time'] = strtotime("9:00");
+            $data['close_time'] = strtotime("22:00");
+
+            // $data['booked_slot'] = $this->model_book_appointment->get_already_booked_slot($professional_id,$date);
+            $data['booked_slot'] = $this->model_session_inquiry->get_already_booked_slot($professional_id,$date);
+            
+            $this->json_param['status'] = true;
+            $this->json_param['html'] = $this->load->view('appointment/_timesslot2',$data,true);
+        // }
+        // else {
+        //     $this->json_param['status'] = false;
+        //     $this->json_param['txt'] = "Specialist Not Available at {$date} date Please select other one";
+        // }
+
+        echo json_encode($this->json_param);
+    }
+    public function ajax_get_timeslot_to()
+    {
+        $time = $this->input->post('time');
+        $open_time = strtotime($time);
+        $close_time = strtotime("22:00");
+        $now = time();
+        $output = "";
+
+        $var = '';//'<option value="">Select Time</option>';
+        $y=1;
+        for( $i=$open_time; $i<=$close_time; $i+=3600) {
+            $output = date("h:i A",$i);
+            $output2 = date("G:i",$i);
+            //if($y > 1)
+            if($y == 2)
+                $var .= "<option value='".$output2."'>$output</option>";
+            $y++;
+        }
+        
+        $this->json_param['status'] = true;
+        $this->json_param['html'] = $var;
+
+        echo json_encode($this->json_param);
+    }
+
+    public function save_order()
+    {
+        if($this->userid > 0)
+        {
+            $_POST['book_appointment']['ba_user_id'] = $this->userid;
+            if($this->validate("model_book_appointment"))
+            {
+                if ($_POST['book_appointment']['ba_package_id'] != 0) {
+
+                    $package_id = $_POST['book_appointment']['ba_package_id'];
+                    $pacakge_data = $this->model_package->find_by_pk($package_id);
+                }
+                else
+                {
+                    $service_id = $_POST['book_appointment']['ba_service_id'];
+                     $service_data = $this->model_service->find_by_pk($service_id);
+                    $pacakge_data['package_price'] = $service_data['service_price'];
+                }
+                $data = $_POST['book_appointment'];
+                            
+
+                $data['ba_amount'] = $pacakge_data['package_price'];
+                $data['ba_status'] = 1;
+                $data['ba_payment_status'] = 0;
+                $data['ba_appointment_status'] = 0;
+                
+
+                $this->model_book_appointment->set_attributes($data);
+                $inserted_id = $this->model_book_appointment->save();
+                
+                $this->json_param['status'] = true;
+                $this->json_param['id'] = $inserted_id;
+                $this->json_param['txt'] = 'We appreciate that you’ve taken the time to write us. We\'ll get back to you very soon.';
+            }
+            else
+            {
+                $this->json_param['status'] = false;
+                $this->json_param['txt'] = validation_errors();
+            }
+        }
+        else
+        {
+            $this->json_param['status'] = false;
+            $this->json_param['txt'] = "Please login first";
+        }
+
+        echo json_encode($this->json_param);
+    }
+
+
+
+
+
+
+    public function testmail()
+    {
+        global $config;
+        $data = array();
+
+
+        // $conts = $this->model_cms_page->get_page(104);
+        // $data['con1'] = $conts['child'][0];
+
+
+        $this->load_view("testmail", $data);
+    }
+
     
 
     

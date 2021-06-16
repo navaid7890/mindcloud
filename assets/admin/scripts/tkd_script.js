@@ -254,6 +254,15 @@ var FormScript = function () {
             $(".ddefault-date-picker").datepicker({format: 'yyyy-mm-dd hh:ii'});
         if($(".default-datetime-picker").length > 0)
             $(".default-datetime-picker").datetimepicker({format: 'yyyy-mm-dd hh:ii:ss'});
+
+        if($(".default-date-picker1").length > 0)
+            $(".default-date-picker1").datetimepicker({
+                format: 'Y-m-d',
+                timepicker:false,
+            });
+
+        if($(".default-datetime-picker1").length > 0)
+            $(".default-datetime-picker1").datetimepicker({format: 'Y-m-d H:i'});
     }
 
     var toggleElement = function () {
@@ -391,7 +400,7 @@ var FormFileUpload = function () {
             }
 
             // Load & display existing files:
-            // $('#fileupload').addClass('fileupload-processing');
+            $('#fileupload').addClass('fileupload-processing');
             $.ajax({
                 // Uncomment the following to send cross-domain cookies:
                 //xhrFields: {withCredentials: true},
@@ -399,7 +408,7 @@ var FormFileUpload = function () {
                 dataType: 'json',
                 context: $('#fileupload')[0]
             }).always(function () {
-                // $(this).removeClass('fileupload-processing');
+                $(this).removeClass('fileupload-processing');
             }).done(function (result) {
                 $(this).fileupload('option', 'done')
                 .call(this, $.Event('done'), {result: result});
@@ -445,3 +454,39 @@ function hide_preload2 () {
 function show_preload2 () {
     $('#preloader2').fadeIn(100);
 }
+
+
+$("body").on('change','#product_size-pc_qty',function(){
+    var qty = $(this).val();
+    var sold = $("#product_size-pc_sold").val();
+    var balance = qty-sold;
+
+    if(balance > 0) {
+        $("#product_size-pc_leftqty").val(balance);
+    }
+    else {
+        $("#product_size-pc_leftqty").val(0);
+    }
+
+});
+
+
+$(window).on('load',function(){
+    
+    if($('.is_copoun').length > 0)
+    {
+        if($('.is_copoun').val() == 0)
+        {
+            var url = $('.is_copoun').attr('data-url');
+
+            var data = '';
+            
+            var content = AjaxRequest.fire(url, data);
+
+
+            $('.is_copoun').val(content);
+        }
+    }
+
+
+});

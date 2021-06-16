@@ -10,67 +10,6 @@
 <div class="page-body">
 <div class="row">
 
-<!-- <div class="col-xl-3 col-md-6">
-<div class="card bg-c-yellow text-white">
-<div class="card-block">
-<div class="row align-items-center">
-<div class="col">
-<p class="m-b-5">Manage Collections</p>
-<h4 class="m-b-0"><?php echo $collection?></h4>
-</div>
-<div class="col col-auto text-right">
-<i class="feather icon-user f-50 text-c-yellow"></i>
-</div>
-</div>
-</div>
-</div>
-</div> -->
-<!-- <div class="col-xl-3 col-md-6">
-<div class="card bg-c-green text-white">
-<div class="card-block">
-<div class="row align-items-center">
-<div class="col">
-<p class="m-b-5">Manage Banners</p>
-<h4 class="m-b-0"><?php echo $banner?></h4>
-</div>
-<div class="col col-auto text-right">
-<i class="feather icon-credit-card f-50 text-c-green"></i>
-</div>
-</div>
-</div>
-</div>
-</div> -->
-<!-- <div class="col-xl-3 col-md-6">
-<div class="card bg-c-pink text-white">
-<div class="card-block">
-<div class="row align-items-center">
-<div class="col">
-<p class="m-b-5">Article Category</p>
-<h4 class="m-b-0"><?php echo $category?></h4>
-</div>
-<div class="col col-auto text-right">
-<i class="feather icon-book f-50 text-c-pink"></i>
-</div>
-</div>
-</div>
-</div>
-</div> -->
-<!-- <div class="col-xl-3 col-md-6">
-<div class="card bg-c-blue text-white">
-<div class="card-block">
-<div class="row align-items-center">
-<div class="col">
-<p class="m-b-5">Inquiries</p>
-<h4 class="m-b-0"><?php echo $inquiries?></h4>
-
-</div>
-<div class="col col-auto text-right">
-<i class="feather icon-shopping-cart f-50 text-c-blue"></i>
-</div>
- </div>
-</div>
-</div>
-</div> -->
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="    margin-top: 25px; margin-bottom: 20px;">
         <div class="text-center">
@@ -79,8 +18,38 @@
         </div>
     </div>
 
+    <div class="container">
+    <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+    
+    		<?$this->load->view("admin/home/calender")?>
+    </div>
+    </div>
+    </div>
+
 <!-- END DASHBOARD STATS -->
 <div class="clearfix">
+</div>
+
+
+<div id="myModal-custom" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+
+  </div>
 </div>
 <script>
 $(document).ready(function() {    
@@ -92,4 +61,113 @@ $(document).ready(function() {
    Index.initMiniCharts();
    Tasks.initDashboardWidget();
 });
+</script>
+
+
+<script>
+    $('.counterup').each(function () {
+        var $this = $(this);
+        jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+            duration: 1000,
+            easing: 'swing',
+            step: function () {
+                $this.text(Math.ceil(this.Counter));
+            }
+        });
+    });
+</script>
+
+
+
+<script type="text/javascript">
+
+var Modal = function () {
+    return {
+        //main function to initiate the module
+        init: function () {
+        
+        },
+
+        //main function to initiate the module
+        load: function (title,html) {
+            $("#myModal-custom .modal-title").text(title);
+            $("#myModal-custom .modal-body").html(html);
+            $("#myModal-custom").modal();
+        },
+
+        //Reset Modal and Modal Value
+        reset: function () {
+            $("#myModal-custom").modal("toggle");
+            $("#myModal-custom .modal-title").text('');
+            $("#myModal-custom .modal-body").html('');
+        },
+
+        
+     }; // End of class return
+}(); // End of Script
+
+
+$('body').on('click','#on_vacation',function(){
+    $.ajax({ 
+        url: "<?=la('home/ajax-on-vacation')?>",
+        type: 'POST',
+        data: '',
+        dataType: "json",
+
+        success: function (response)
+        {
+            //$("#preloader").hide();
+            if(response.status)
+            {
+                Modal.load("Fill Application",response.html);
+            }
+            else
+            {
+                AdminToastr.error(response.txt,'');
+            }
+        },
+        beforeSend: function(response)
+        {
+            //$("#preloader").show();
+        }
+    });
+});
+
+
+
+
+$('body').on('change','#ba_reserve_time2',function(){
+    var yourtime = $(this).val();
+
+    if(yourtime.length > 0) {
+        $.ajax({ 
+            url: "<?=la('home/ajax_get_timeslot_to')?>",
+            type: 'POST',
+            data: {time:yourtime},
+            dataType: "json",
+
+            success: function (response)
+            {
+                //$("#preloader").hide();
+                if(response.status)
+                {
+                    $("#ba_arrive_time").html(response.html);
+                    
+                }
+                else
+                {
+                    AdminToastr.error(response.txt,'');
+                }
+            },
+            beforeSend: function(response)
+            {
+                //$("#preloader").show();
+            }
+        });
+    }
+    else {
+        AdminToastr.error('Please select Time','');
+    }
+});
+
 </script>
