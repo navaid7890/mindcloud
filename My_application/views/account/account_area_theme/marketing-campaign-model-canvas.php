@@ -77,6 +77,7 @@
                                     ?>
                                     <form id="form-mcmc1">
                                     <input type="hidden" name="tool_builder_mc_mc[tool_builder_mc_mc_user_id]" value="<?= ($this->userid) ?>">
+                                    <input type="hidden" name="tool_builder_mc_mc[tool_builder_percent]" value="1">
                                        <div class="fld-textarea">
                                           <label for="">Prospect Personas <span>List the different segments of your target customers with their defined personas and archetypes (by gender, age, interests, occupation, social status, hangouts, education, etc.)</span></label>
                                           <div class="space"><br></div>

@@ -1,3 +1,8 @@
+<style>
+   .descPage ul.dropdown-box {
+      display: block !important;
+   }
+</style>
 <div class="business-page">
    <section class="dashboard">
       <ul class="dashboard-layout">
@@ -8,7 +13,9 @@
             </div>
          </li>
          <li>
+            <div class="descPage">
             <? $this->load->view("widgets/course-box"); ?>
+            </div>
          </li>
          <li>
             <div class="tutorial-box">
@@ -43,7 +50,7 @@
 
                         <ul class="tutorial-box-list">
                            <li>
-                              <a href="#" >
+                              <a href="#">
                                  <div class="tutorial-list-box">
                                     <div class="tutorial-box-content">
                                        <span><img src="<?= i('') ?>dashboard/home/icons/2.svg"></span>
@@ -67,7 +74,7 @@
                            </li>
 
                            <li>
-                              <a href="#" >
+                              <a href="#">
                                  <div class="tutorial-list-box">
                                     <div class="tutorial-box-content">
                                        <span><img src="<?= i('') ?>dashboard/home/icons/3.svg"></span>
@@ -104,7 +111,7 @@
                            </ul> -->
                         <div class="space"><br><br></div>
 
-                        <a href="video?cat=<?=$_GET['cat']?>" class="btn-dashboard btn-hover">Next <span></span></a>
+                        <a href="video?cat=<?= $_GET['cat'] ?>" class="btn-dashboard btn-hover">Next <span></span></a>
                      </div>
                   </div>
                </div>
@@ -167,69 +174,38 @@
    }
 </style>
 
-
 <script>
    $(document).ready(function() {
 
 
       // $(".catLj"+id).addClass('active');
-      url = new URL(window.location.href);
-      if (url.searchParams.get('cat')) {
-         var xyz = url.searchParams.get('cat');
-         var abc = "catLj"+xyz;
-         $("."+abc).addClass('active');
-         $("."+abc+" ul" ).attr("style", "display:block");
-      }
+      // url = new URL(window.location.href);
+      // if (url.searchParams.get('cat')) {
+      //    var xyz = url.searchParams.get('cat');
+      //    var abc = "catLj" + xyz;
+      //    $("." + abc).addClass('active');
+      //    $("." + abc + " ul").attr("style", "display:block");
+      //    <? //if ($tool['tool_builder_percent'] == 1) : ?>
+      //       if ("toolbuilder-11") {
+      //          var tool = "toolbuilder-11";
+      //          $("." + tool).addClass('active');
+      //       }
+      //    <?// endif; ?>
+      //    
+      // }
+
+
+      // $(".catLj"+id).addClass('active');
+      //   urlb = new URL(window.location.href);
+      // if (urlb.searchParams.get('cat')) {
+      //    var toolb = url.searchParams.get('cat');
+      //    var tool = "activeId-"+toolb;
+      //    $("."+tool).addClass('active');
+      // }
 
 
 
-      /* 1. Visualizing things on Hover - See next part for action on click */
-      $('#stars li').on('mouseover', function() {
-         var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
 
-         // Now highlight all the stars that's not after the current hovered star
-         $(this).parent().children('li.star').each(function(e) {
-            if (e < onStar) {
-               $(this).addClass('hover');
-            } else {
-               $(this).removeClass('hover');
-            }
-         });
-
-      }).on('mouseout', function() {
-         $(this).parent().children('li.star').each(function(e) {
-            $(this).removeClass('hover');
-         });
-      });
-
-
-      /* 2. Action to perform on click */
-      $('#stars li').on('click', function() {
-         var onStar = parseInt($(this).data('value'), 10); // The star currently selected
-         var stars = $(this).parent().children('li.star');
-
-         for (i = 0; i < stars.length; i++) {
-            $(stars[i]).removeClass('selected');
-         }
-
-         for (i = 0; i < onStar; i++) {
-            $(stars[i]).addClass('selected');
-         }
-
-         // JUST RESPONSE (Not needed)
-
-         var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
-         var msg = "";
-         if (ratingValue > 0) {
-            msg = parseInt(ratingValue);
-
-            $('#reviewId').val(msg)
-         } else {
-            msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
-         }
-         responseMessage(msg);
-
-      });
 
 
    });

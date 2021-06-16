@@ -626,7 +626,7 @@ if(is_array($additional_tools) && count($additional_tools))
 
 <!-- BEGIN BODY -->
 
-<body class="customeAccountList" id="top">
+<body class="customeAccountList business-page" id="top">
 
 
 

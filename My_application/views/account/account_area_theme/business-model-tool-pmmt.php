@@ -79,6 +79,8 @@
                                     ?>
 
                                     <form id="form-pmmt1">
+                                    <input type="hidden" name="tool_builder_pmmt[tool_builder_user_id]" value="<?= ($this->userid) ?>">
+                                    <input type="hidden" name="tool_builder_pmmt[tool_builder_percent]" value="1">
                                        <div class="fld-textarea">
                                           <label for="">1. Who/where are your Target Customers? </label>
                                           <div class="space"><br></div>

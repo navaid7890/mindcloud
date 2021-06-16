@@ -78,6 +78,7 @@
                                     ?>
                                     <form id="form-smp">
                                        <input type="hidden" name="tool_builder_strg_mkt[tool_builder_strg_mkt_user_id]" value="<?= ($this->userid) ?>">
+                                       <input type="hidden" name="tool_builder_strg_mkt[tool_builder_percent]" value="1">
                                        <div class="fld-textarea">
                                           <label for="">1. Situational Analysis <span>List all your internal strengths/weaknesses, and your external opportunities/threats.</span></label>
                                           <div class="space"><br></div>

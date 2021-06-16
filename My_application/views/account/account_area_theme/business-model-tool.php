@@ -1,3 +1,8 @@
+<style>
+   .toolBuild1 ul.dropdown-box {
+      display: block !important;
+   }
+</style>
 <div class="business-page">
    <section class="dashboard">
 
@@ -10,7 +15,9 @@
          </li>
 
          <li>
-            <? $this->load->view("widgets/course-box"); ?>
+            <div class="toolBuild1">
+               <? $this->load->view("widgets/course-box"); ?>
+            </div>
          </li>
          <li>
             <div class="tutorial-box">
@@ -47,8 +54,8 @@
                                  <p>Complete these steps to build your <strong> Business Model Canvas. </strong></p>
                               </div>
                               <div class="col-lg-3 col-md-12 text-right">
-                              <a href="<?= base_url()?>account/profile/dl_tools"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                              <a href="<?= base_url()?>account/profile/dl_tools_multi"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 <a href="<?= base_url() ?>account/profile/dl_tools"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 <a href="<?= base_url() ?>account/profile/dl_tools_multi"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
                               </div>
                            </div>
                         </div>
@@ -116,6 +123,7 @@
 
                                     <form id="form-send_us1">
                                        <input type="hidden" name="tool_builder[tool_builder_user_id]" value="<?= ($this->userid) ?>">
+                                       <input type="hidden" name="tool_builder[tool_builder_percent]" value="1">
 
 
 

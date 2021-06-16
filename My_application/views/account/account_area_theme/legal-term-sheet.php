@@ -77,6 +77,8 @@
 
                                     ?>
                                     <form id="form-lts1" class="next-prevBtn">
+                                       <input type="hidden" name="tool_builder_lts[tool_builder_lts_user_id]" value="<?= ($this->userid) ?>">
+                                       <input type="hidden" name="tool_builder_lts[tool_builder_percent]" value="1">
                                        <div class="fld-textarea">
                                           <label for="">Items For Consideration For Draft Term Sheet <span>In your Tools, you have a Draft MOU of International JV (for a new partnership or a new company). Please find below the related list of items for consideration in the corresponding Draft Term Sheet.</span></label>
                                        </div>

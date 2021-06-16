@@ -78,6 +78,7 @@
                                     ?>
                                     <form id="form-osf">
                                     <input type="hidden" name="tool_builder_osf[tool_builder_osf_user_id]" value="<?= ($this->userid) ?>">
+                                    <input type="hidden" name="tool_builder_osf[tool_builder_percent]" value="1">
                                        <div class="fld-textarea">
                                           <label for="">Stage 1: Brand Awareness <span>List your best channels to use for awareness and reaching your target customers. (Decide on the corresponding messaging accordingly) Examples are: Websites / Landing Pages, Social Media posts, Blog with informative articles or videos, Ads (magazines, road billboards, Google Adwords, Facebook/Instagram Ads)</span></label>
                                           <div class="space"><br></div>

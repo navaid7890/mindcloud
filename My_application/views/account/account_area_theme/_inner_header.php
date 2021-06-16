@@ -21,7 +21,7 @@
 					<div class="menuWrap">
 					<ul class="menu">
 						<li><a class="active" href="<?=l('expert-tutorial')?>">Experts Tutorials</a></li>
-						<li><a href="<?=l('learning-journey')?>">Learning Journey</a></li>
+						<li><a href="<?=l('account/learing-journey')?>">Learning Journey</a></li>
 						<li><a href="#">Consult with Experts</a></li>
 						<li><a href="#"> Community</a></li>
 						<li><a href="https://mindcloudacademy.com/">The Academy</a></li>
