@@ -38,7 +38,7 @@
                 <? // print_r($this->session->userdata); 
                 ?>
                 <ul class="login-btn">
-                    <li><a href="#"><span><img src="<?= i('') ?><?= $this->session_data['profile_image'] ?>"></span> <?= $this->session_data['username'] ?> </a></li>
+                    <li><a href="#"><span><img src="<?=get_image($this->layout_data['user_data']['ui_profile_image'],$this->layout_data['user_data']['ui_profile_image_path'])?>"></span> <?= $this->session_data['username'] ?> </a></li>
                 </ul>
             </div>
         </div>

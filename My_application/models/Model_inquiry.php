@@ -22,7 +22,7 @@ class Model_inquiry extends MY_Model {
     function __construct()
     {
         // Call the Model constructor
-        $this->pagination_params['fields'] = "inquiry_id,inquiry_name,inquiry_email,inquiry_status";
+        $this->pagination_params['fields'] = "inquiry_id,inquiry_type,inquiry_name,inquiry_email,inquiry_status";
         parent::__construct();
     }
 
@@ -54,6 +54,23 @@ class Model_inquiry extends MY_Model {
                      'js_rules'   => '',
                      'rules'   => 'trim'
                 ),
+                'inquiry_type' => array( 
+                    'table'   => $this->_table,
+                    'name'   => 'inquiry_type',
+                    'label'   => 'Type',
+                    'type'   => 'dropdown',
+                    'type_dt'   => 'dropdown',
+                    'type_filter_dt' => 'dropdown',
+                    'list_data_key' => "inquiry_type" ,
+                    'list_data' => array(
+                        1 => "Contact Inquiry",
+                        2 => "Become an Expert Journey",
+                        ),
+                    // 'default'   => '0',
+                    'attributes'   => array(),
+                    'dt_attributes'   => array("width"=>"7%"),
+                    'rules'   => 'required|trim'
+                 ),
 
               // 'inquiry_type' => array(
               //        'table'   => $this->_table,
