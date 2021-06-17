@@ -26,7 +26,7 @@
                 <div class="col-md-4 text-right">
                     <div id="activeBorder" class="active-border">
                         <div id="circle" class="circle">
-                            <span class="prec allpercent">10</span>
+                            <span class="prec allpercent">0</span>
                             <span id="startDeg" class="180"></span>
                         </div>
                     </div>
