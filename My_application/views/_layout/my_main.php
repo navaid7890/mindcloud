@@ -344,22 +344,16 @@ if(array_filled($additional_tools))
   
 
 
-    
-<?php
-/*
-  <!-- [Recaptcha Start] -->
-  <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer></script>
-  <!-- [Recaptcha END] -->
-  <script type="text/javascript">
-  var CaptchaCallback = function() {
-    grecaptcha.render('RecaptchaField1', {'sitekey' : '<?=g('google_captcha.0')?>'});
-   // grecaptcha.render('RecaptchaField2', {'sitekey' : '6Ld0rDUUAAAAAAiLxRygnLpkSHEag8D_KGRrxPmP'});
-    // grecaptcha.render('RecaptchaField3', {'sitekey' : '6LctgiYUAAAAAPIJ1Dek4QWVvIDVXlQhqFqluxyY'});
-  };
-  </script>
+<script>
+new WOW().init();
+var theDate = new Date();
+$(".datepicker").datetimepicker({
+    format: 'Y-m-d',
+    minDate: theDate,
+    timepicker:false,
+});
+</script>  
 
-*/
-?>
 
 
   </div>

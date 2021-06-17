@@ -24,6 +24,7 @@ var Form = function () {
     // General Method
     newsletter: base_url + "newsletter",
     contact_us: base_url + "contact_us/send",
+    expert_us: base_url + "contact_us/expert_send",
 
     //custom to site reqquirement
     advertisment: base_url + "advertisment/post_ads",
@@ -694,6 +695,30 @@ var Form = function () {
   },
 
 
+  expert_us: function(form){
+            
+    var data = new FormData(document.getElementById('form-expert_us'));
+
+    var response =FileUploadScript.fire(urls.expert_us, data, 'json') ;
+    
+    // return false;
+             
+    if( response.status ) {
+        Toastr.success(response.msg.desc ,response.msg.title, 'toast-bottom-right');
+
+        // Reload After 3sec
+        setTimeout(function(){ location.reload(); }, 5000);
+
+        $('#exampleModal1').modal().hide();
+        
+        return false;
+    }
+    else {
+       Toastr.error(response.msg.desc ,response.msg.title, 'toast-bottom-right');
+       return false;
+    }
+},
+
 
     evaluation: function (form) {
       // Disable the submit button to prevent repeated clicks:
@@ -1252,6 +1277,14 @@ $(function () {
   });
 });
 
+
+$(function() {
+  var $form = $('#form-expert_us');
+  $form.submit(function(event) {
+    Form.expert_us($form);
+    return false;
+  });
+});
 
 //   for bms multi form end 
 

@@ -238,7 +238,7 @@ class Model_inquiry extends MY_Model {
                             'preview' => 'true',
                             'attributes'   => array(
                                 'image_size_recommended'=>'1600px × 705px ',
-                                'allow_ext'=>'png|jpeg|jpg',
+                                'allow_ext'=>'png|jpeg|jpg|doc|docx|pdf|xls|xlsx',
                             ),
                             'dt_attributes' => array("width" => "10%"),
                             'rules' => 'trim|htmlentities',

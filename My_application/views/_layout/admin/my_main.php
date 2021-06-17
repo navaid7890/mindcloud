@@ -414,9 +414,65 @@ if(is_array($additional_tools) && count($additional_tools))
 			<?}?>
 
 		});
+
+		var theDate = new Date();
+                    $(".datepicker").datetimepicker({
+                        format: 'Y-m-d',
+                        minDate: theDate,
+                        timepicker:false,
+                    });
 	</script>
-<!-- END PAGE LEVEL PLUGINS -->
-<!-- END JAVASCRIPTS -->
+
+
+<link rel="stylesheet"  href="<?=l('assets/front_assets/css/')?>fullcalendar.min.css">
+<link rel='stylesheet' media='print' href="<?=l('assets/front_assets/css/')?>fullcalendar.print.min.css">
+<script src="<?=l('assets/front_assets/js/')?>moment.min.js"></script>
+<script src="<?=l('assets/front_assets/js/')?>fullcalendar.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,'
+      },
+      timezone: 'EST',
+      navLinks: false, // can click day/week names to navigate views
+      editable: false,
+      eventStartEditable: false,
+    
+      events: [
+        <?=$json_data?>
+      ],
+      eventClick: function(calEvent, jsEvent, view) {
+        var eventId = calEvent.id;
+        if (eventId) {
+          $.ajax({ 
+            url: 'https://www.equallibrium.ca/appointment/get_event',
+            type: 'POST',
+            data: {eventId:eventId},
+            dataType: "json",
+            success: function (response) {
+                   // console.log(response);
+                   // return false;
+                    if (response.status==1) {
+                        $('#showDetail').html(response.html);
+                        $('#eventModal').modal('show');
+                    }
+                    
+                },
+          });
+        }
+        else
+        {
+            
+        }
+      }
+    });
+  });
+  </script>
+
 </body>
 <!-- END BODY -->
 </html>
