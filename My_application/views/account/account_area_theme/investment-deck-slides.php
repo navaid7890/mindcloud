@@ -78,7 +78,7 @@
                                     ?>
 
                                     <form id="form-ids1" class="next-prevBtn">
-
+                                    <input type="hidden" name="tool_builder_ids[tool_builder_percent]" value="1">
                                        <div class="fld-textarea">
                                           <label for="">Slide One: Value Proposition <span>Tell what you are doing
                                                 <br>

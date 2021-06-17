@@ -156,6 +156,26 @@ $param = array();
 $param['order'] = "tool_builder_id DESC";
 $param['where']['tool_builder_user_id'] = $this->userid;
 $tool_fm_income = $this->model_tool_builder_fm_income->find_one_active($param);
+$param = array();
+$param['order'] = "tool_builder_id DESC";
+$param['where']['tool_builder_user_id'] = $this->userid;
+$tool_fm_bss = $this->model_tool_builder_fm_bss->find_one_active($param);
+$param = array();
+$param['order'] = "tool_builder_id DESC";
+$param['where']['tool_builder_user_id'] = $this->userid;
+$tool_fm_cfs = $this->model_tool_builder_fm_cfs->find_one_active($param);
+$param = array();
+$param['order'] = "tool_builder_id DESC";
+$param['where']['tool_builder_user_id'] = $this->userid;
+$tool_fm_beps = $this->model_tool_builder_fm_beps->find_one_active($param);
+$param = array();
+$param['order'] = "tool_builder_id DESC";
+$param['where']['tool_builder_user_id'] = $this->userid;
+$tool_fm_dcvm = $this->model_tool_builder_fm_dcvm->find_one_active($param);
+$param = array();
+$param['order'] = "tool_builder_ids_id DESC";
+$param['where']['tool_builder_ids_user_id'] = $this->userid;
+$tool_ids = $this->model_tool_builder_ids->find_one_active($param);
 ?>
 
 <script>
@@ -217,6 +237,31 @@ $tool_fm_income = $this->model_tool_builder_fm_income->find_one_active($param);
             $(".toolbuilder-20").addClass('active');
             $(".mywork-20").addClass('active');
             $(".catLj20 #played20").html('66');
+        <? endif; ?>
+        <? if ($tool_fm_bss['tool_builder_percent'] == 1) : ?>
+            $(".toolbuilder-21").addClass('active');
+            $(".mywork-21").addClass('active');
+            $(".catLj21 #played21").html('66');
+        <? endif; ?>
+        <? if ($tool_fm_cfs['tool_builder_percent'] == 1) : ?>
+            $(".toolbuilder-22").addClass('active');
+            $(".mywork-22").addClass('active');
+            $(".catLj22 #played22").html('66');
+        <? endif; ?>
+        <? if ($tool_fm_beps['tool_builder_percent'] == 1) : ?>
+            $(".toolbuilder-23").addClass('active');
+            $(".mywork-23").addClass('active');
+            $(".catLj23 #played23").html('66');
+        <? endif; ?>
+        <? if ($tool_fm_dcvm['tool_builder_percent'] == 1) : ?>
+            $(".toolbuilder-24").addClass('active');
+            $(".mywork-24").addClass('active');
+            $(".catLj24 #played24").html('66');
+        <? endif; ?>
+        <? if ($tool_ids['tool_builder_percent'] == 1) : ?>
+            $(".toolbuilder-26").addClass('active');
+            $(".mywork-26").addClass('active');
+            $(".catLj26 #played26").html('66');
         <? endif; ?>
 
 
