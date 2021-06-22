@@ -1,3 +1,10 @@
+<style>
+   div#video_text p {
+      color: #A3A5A9;
+      font-size: 13px;
+      font-weight: 500;
+   }
+</style>
 <div class="business-page">
    <section class="dashboard">
 
@@ -46,27 +53,55 @@
                                  <h4>Tutorial and Transcript</h4>
                                  <div class="space"><br></div>
                                  <div class="video-caption">
-                                    <p>00:00:00</p>
-                                    <div class="space"><br></div>
-                                    <?= html_entity_decode($tutorial_detail['videos_transcript']) ?>
-                                    <div class="space"><br><br></div>
 
-                                    <p>00:01:16</p>
+                                    <p>
+                                    <div id="video_text"><?=html_entity_decode($tutorial_detail['videos_transcript']);?></div>
+                                    </p>
+                                    <?php
+                                    $arr[] = html_entity_decode($tutorial_detail['videos_transcript']);
+                                    ?>
+                                    <?php
+                                    $text_time_arr = [];
+                                    foreach ($arr as $result) {
+                                       //  echo $result['v_text'];
+                                       $v_text = explode("|", html_entity_decode($tutorial_detail['videos_transcript']));
+                                       for ($i = 0; $i < sizeof($v_text); $i++) {
+                                          $v_wait = explode("~", html_entity_decode($v_text[$i]));
+                                          $video_time = new \stdClass();
+                                          $video_time->text = $v_wait[0];
+                                          $video_time->time = $v_wait[1];
+                                          $text_text_arr[] = $video_time;
+                                          $timeConvert = explode(":", $v_wait[1]);
+                                          $secondtime = $timeConvert[0] * 60;
+                                          $minutetime = $timeConvert[1];
+                                          $requiredtime = $secondtime + $minutetime;
+
+                                          $text_time_arr[] = $requiredtime;
+                                       }
+                                    }
+                                    ?>
+                                    <!-- <p>00:00:00</p>
+                                    <div class="space"><br></div> -->
+                                    <? //= html_entity_decode($tutorial_detail['videos_transcript']) 
+                                    ?>
+                                    <!-- <div class="space"><br><br></div>
+
+                                    <p>00:01:16</p> -->
                                     <div class="space"><br></div>
-                                    <p>We will learn - What is CX and what is</p>
+                                    <!-- <p>We will learn - What is CX and what is</p> -->
                                  </div>
                               </div>
                            </div>
                            <div class="col-md-7">
-                              <div class="video-box"> 
-                                 <?php 
-                                       // $param = array();
-                                       // $param['order'] = "tool_builder_id DESC";
-                                       // $param['where']['tool_builder_user_id'] = $this->userid;
-                                       // $tool = $this->model_tool_builder_fm_cfs->find_one_active($param); 
+                              <div class="video-box">
+                                 <?php
+                                 // $param = array();
+                                 // $param['order'] = "tool_builder_id DESC";
+                                 // $param['where']['tool_builder_user_id'] = $this->userid;
+                                 // $tool = $this->model_tool_builder_fm_cfs->find_one_active($param); 
                                  ?>
-                                 
-                                 <video onclick="plusOne(<?= $tutorial_detail['videos_views']; ?>)" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
+
+                                 <video onclick="plusOne(<?= $tutorial_detail['videos_views']; ?>)" ontimeupdate="myFunction(this)" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
                                     <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/mp4">
                                     <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/ogg">
                                     Your browser does not support the video tag.
@@ -93,7 +128,7 @@
                            <form id="forms-tutorial-review_us">
                               <div class="fld-textarea">
 
-                                 <input type="hidden" name="expert_tutorial_review[tutorial_review_user_id]" value="<?= $this->session_data['id'] ?>">
+                                 <input type="hidden" name="expert_tutorial_review[tutorial_review_user_id]" value="<?= ($this->userid) ?>">
                                  <input type="hidden" name="expert_tutorial_review[tutorial_review_course_id]" value="<?= $courseid ?>">
                                  <input type="hidden" name="expert_tutorial_review[tutorial_review_tutorial_id]" value="<?= $_GET['tutorialid'] ?>">
                                  <input type="hidden" name="expert_tutorial_review[tutorial_review_stars]" id="reviewId" value="">
@@ -208,7 +243,30 @@
    }
 </style>
 
+<script>
+   var v = <?php echo json_encode($text_text_arr, TRUE); ?>;
+   var w = <?php echo json_encode($text_time_arr, TRUE); ?>;
 
+
+   console.log(v);
+   console.log(w);
+
+   function myFunction(e) {
+      var currentTime = e.currentTime;
+      console.log('current time ', e.currentTime);
+      for (var i = 0; i < w.length; i++) {
+         if (i < (w.length - 1)) {
+            if (w[i] < currentTime && w[i + 1] > currentTime) {
+               $('#video_text').html(v[i].text);
+            }
+         } else {
+            if (w[i] < currentTime && w[i - 1] < currentTime) {
+               $('#video_text').html(v[i].text);
+            }
+         }
+      }
+   }
+</script>
 <script>
    $(document).ready(function() {
 
@@ -259,7 +317,7 @@
          responseMessage(msg);
 
       });
- 
+
    });
 
 
@@ -268,34 +326,34 @@
       $('.success-box div.text-message').html("<span>" + msg + "</span>");
    }
 
-   function plusOne(id) { 
-      
-      id = Number(id) + 1; 
+   function plusOne(id) {
+
+      id = Number(id) + 1;
       // alert(id);
       var hours = 1;
       var now = new Date().getTime();
       var setupTime = localStorage.getItem('count_time');
-       
-      
+
+
       var x = localStorage.getItem("count_id");
-      if(x !== '1'){
+      if (x !== '1') {
          if (setupTime == null) {
             localStorage.setItem("count_id", "1");
-         
-            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.search + '&count_id='+id;
-            window.history.pushState({path:newurl},'',newurl);
-            
+
+            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.search + '&count_id=' + id;
+            window.history.pushState({
+               path: newurl
+            }, '', newurl);
+
             localStorage.setItem('count_time', now);
 
 
          } else {
-            if(now-setupTime > hours*60*1) {
+            if (now - setupTime > hours * 60 * 1) {
                localStorage.clear()
                localStorage.setItem('count_time', now);
             }
-         } 
-      }
-      else{} 
-   } 
-
+         }
+      } else {}
+   }
 </script>

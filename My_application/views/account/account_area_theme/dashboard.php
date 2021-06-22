@@ -113,7 +113,7 @@
                                             <div class="space"><br><br></div>
                                             <div id="activeBorder1" class="active-border">
                                                 <div id="circle1" class="circle">
-                                                    <span class="prec">8</span>
+                                                    <span class="prec allpercent">0</span>
                                                     <span id="startDeg1" class="8"></span>
                                                 </div>
                                             </div>
@@ -440,3 +440,13 @@
         </ul>
     </section>
 </div>
+
+
+<script>
+    $(document).ready(function() {
+
+
+        // alert( localStorage.getItem("learingPercent"));
+        $(".allpercent").text(localStorage.getItem("learingPercent"));
+    });
+</script>

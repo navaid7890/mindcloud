@@ -2,6 +2,20 @@
    .videoPage ul.dropdown-box {
       display: block !important;
    }
+   input#forms-mark-complete-btn {
+    padding: 13px 26px;
+    background: #FDBE41;
+    font-size: 14px;
+    font-weight: 700;
+    color: #F8F9FA;
+    text-transform: uppercase;
+    border-radius: 25px;
+}
+input#forms-mark-complete-btn:hover {
+    position: static;
+    display: block;
+    background-color: #e28f26;
+}
 </style>
 <div class="business-page">
    <section class="dashboard">
@@ -43,44 +57,49 @@
                            </div>
                         </div>
                      </div>
-
                      <div class="tutorial-mid hding-4 hding-3 para">
                         <div class="row">
                            <div class="col-md-5">
                               <div class="tutorial-mid-content">
-
                                  <h4>Tutorial and Transcript</h4>
                                  <div class="space"><br></div>
                                  <div class="video-caption">
-                                    <p>00:00:00</p>
+                                    <!-- <p>00:00:00</p> -->
                                     <div class="space"><br></div>
-
-                                    <? if (isset($learn_content) and array_filled($learn_content)) : ?>
-                                       <? foreach ($learn_content as $key => $value) : ?>
-                                          <?  //debug($learn_Content); 
-                                          ?>
-                                          <p><?= html_entity_decode($value['learning_journey_content_tags']) ?></p>
-                                       <? endforeach; ?>
-                                    <? endif; ?>
+                                    <p>
+                                    <div id="video_text"></div>
+                                    </p>
+                                    <?php
+                                    $arr[] = html_entity_decode($learn_content[0]['learning_journey_content_tags']);
+                                    ?>
+                                    <?php
+                                    $text_time_arr = [];
+                                    foreach ($arr as $result) {
+                                       //  echo $result['v_text'];
+                                       $v_text = explode("|", html_entity_decode($learn_content[0]['learning_journey_content_tags']));
+                                       for ($i = 0; $i < sizeof($v_text); $i++) {
+                                          $v_wait = explode(":", $v_text[$i]);
+                                          $video_time = new \stdClass();
+                                          $video_time->text = $v_wait[0];
+                                          $video_time->time = $v_wait[1];
+                                          $text_time_arr[] = $video_time;
+                                       }
+                                    }
+                                    ?>
                                     <div class="space"><br><br></div>
-                                    <p>00:01:16</p>
+                                    <!-- <p><span id="duration"></span> seconds.</p> -->
                                     <div class="space"><br></div>
-                                    <p>We will learn - What is CX and what is</p>
+                                    <!-- <p>We will learn - What is CX and what is</p> -->
                                  </div>
                               </div>
                            </div>
                            <div class="col-md-7">
                               <div class="video-box">
-
-                                 <video width="100%" controls="true" id="video" height="100%" poster="<?= g('db.admin.bucket') . 'images/learning_journey_content/' . $learn_content['0']['learning_journey_content_image'] ?>">
+                                 <video width="100%" ontimeupdate="myFunction(this)" controls="true" id="video" height="100%" poster="<?= g('db.admin.bucket') . 'images/learning_journey_content/' . $learn_content['0']['learning_journey_content_image'] ?>">
                                     <source src="<?= g('db.admin.bucket') . 'videos/content/' . $learn_content[0]['learning_journey_video'] ?>" type="video/mp4">
                                     <source src="<?= g('db.admin.bucket') . 'videos/content/' . $learn_content[0]['learning_journey_video'] ?>" type="video/ogg">
                                     Your browser does not support the video tag.
                                  </video>
-
-
-
-
                               </div>
                               <!-- <div id="status" class="incomplete">
                                  <span>Play status: </span>
@@ -89,34 +108,31 @@
                                  <br />
                               </div> -->
                               <div>
-                                 <span id="played">0</span> seconds out of
-                                 <span id="duration"></span> seconds. (only updates when the video pauses)
-
+                                 <!-- <span id="played">0</span> seconds out of
+                                 <span id="duration"></span> seconds. (only updates when the video pauses) -->
                               </div>
-
                            </div>
                         </div>
                         <div class="space"><br><br></div>
                         <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p>
                      </div>
-
+                     <?//= debug($learn_content) ?>
                      <div class="tutorial-footer vid-tran para">
                         <div class="tutorial-footer-content">
-                           <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
-                           <? //ucfirst($this->session_data['username']);
-                           ?>
-                           <? //print_r($this->session->userdata); 
-                           ?>
-                           <? //print_r($this->session_data['id']); 
-                           ?>
-                           <? //print_r($this->session_data['username']); 
-                           ?>
+                           <form id="forms-mark-complete">
+                           <input type="hidden" name="learning_journey_transcript[learning_journey_transcript_user_id]" value="<?= ($this->userid) ?>">
+                           <input type="hidden" name="learning_journey_transcript[learning_journey_transcript_content_id]" value="<?= $_GET['cat'] ?>">
+                           <input type="hidden" name="learning_journey_transcript[learning_journey_transcript_percent]" value="1">
 
+                           <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-mark-complete-btn">
+                           </form>
+                           <div classs="space"><br><br></div>
+                           <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
                            <div classs="space"><br><br></div>
                            <form id="forms-content-review_us">
                               <div class="fld-textarea">
 
-                                 <input type="hidden" name="learning_journey_content_review[learning_journey_content_review_user_id]" value="<?= $this->session_data['id'] ?>">
+                                 <input type="hidden" name="learning_journey_content_review[learning_journey_content_review_user_id]" value="<?= ($this->userid) ?>">
 
                                  <input type="hidden" name="learning_journey_content_review[learning_journey_content_review_content_id]" value="<?= $_GET['cat'] ?>">
                                  <input type="hidden" name="learning_journey_content_review[learning_journey_content_review_stars]" id="reviewId" value="">
@@ -231,8 +247,28 @@
       color: #FF912C;
    }
 </style>
+<script>
+   var v = <?php echo json_encode($text_time_arr, TRUE); ?>;
 
 
+   console.log(v);
+
+   function myFunction(e) {
+      var currentTime = e.currentTime;
+      console.log('current time ', e.currentTime);
+      for (var i = 0; i < v.length; i++) {
+         if (i < (v.length - 1)) {
+            if (v[i].time < currentTime && v[i + 1].time > currentTime) {
+               $('#video_text').html(v[i].text);
+            }
+         } else {
+            if (v[i].time < currentTime && v[i - 1].time < currentTime) {
+               $('#video_text').html(v[i].text);
+            }
+         }
+      }
+   }
+</script>
 <script>
    $(document).ready(function() {
 
@@ -333,6 +369,9 @@
       duration = video.duration;
       document.getElementById("duration").appendChild(new Text(Math.round(duration) + ""));
       console.log("Duration: ", duration);
+
+      console.log(time_convert(duration));
+
    }
 
    video.addEventListener("play", videoStartedPlaying);
@@ -372,4 +411,12 @@
       });
 
    });
+   // var red =128;
+   function time_convert(num) {
+      var hours = Math.floor(num / 60);
+      var minutes = num % 60;
+      return hours + ":" + minutes;
+   }
+
+   // console.log(time_convert(red));
 </script>

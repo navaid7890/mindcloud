@@ -105,7 +105,7 @@
                                     <form id="forms-review_us">
                                         <div class="fld-textarea">
 
-                                            <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_user_id]" value="<?= $this->session_data['id'] ?>">
+                                            <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_user_id]" value="<?= ($this->userid) ?>">
 
                                             <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_course_id]" value="<?= $_GET['courseid'] ?>">
                                             <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_stars]" id="reviewId" value="">

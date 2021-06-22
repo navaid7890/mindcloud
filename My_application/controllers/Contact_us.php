@@ -360,6 +360,42 @@ class Contact_us extends MY_Controller {
                 echo json_encode($this->json_param);
         }
     }
+    public function learing_transcript()
+    {
+        if(array_filled($_POST)) 
+        {
+        
+
+                //$this->form_validation->set_rules('g-recaptcha-response', 'Captcha', 'required');
+                if($this->validate("model_learning_journey_transcript"))
+                {
+                    $data = $_POST['learning_journey_transcript'];
+                    $data['learning_journey_transcript_status'] = 1;
+                
+
+                    $this->model_learning_journey_transcript->set_attributes($data);
+                    $inserted_id = $this->model_learning_journey_transcript->save();
+               
+
+                    $form_data = $this->model_learning_journey_transcript->find_by_pk($inserted_id);
+                   // $this->model_email->contactInquiry($form_data);  
+
+                    $this->json_param['status'] = true;
+                    $this->json_param['msg']['title'] = 'Makrked Complete';
+                    $this->json_param['msg']['desc'] = '';
+        
+                }
+                else
+                {
+                    $this->json_param['status'] = false;
+                    $this->json_param['msg']['title'] = 'Error Occurred';
+                    $this->json_param['msg']['desc'] = validation_errors();
+                }
+                
+            
+                echo json_encode($this->json_param);
+        }
+    }
     
 
 

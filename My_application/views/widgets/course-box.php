@@ -22,6 +22,7 @@
             <div class="row align-items-center">
                 <div class="col-md-8">
                     <h3>Learning Journey</h3>
+                    
                 </div>
                 <div class="col-md-4 text-right">
                     <div id="activeBorder" class="active-border">
@@ -98,7 +99,7 @@
                                     </a>
                                     <ul class="dropdown-box" style="display: none;">
                                         <li><a href="description?cat=<?= $a ?>"><i class="fad fa-video"></i>Intro<span><i class="far fa-check"></i></span></a></li>
-                                        <li><a href="<?= l('account/profile/video') ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Tutorial Video & Transcript <span><i class="far fa-check"></i></span></a></li>
+                                        <li class="videoScript-<?= $a ?>"><a href="<?= l('account/profile/video') ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Tutorial Video & Transcript <span><i class="far fa-check"></i></span></a></li>
                                         <li class="toolbuilder-<?= $a ?>"><a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
                                         <li class="mywork-<?= $a ?>"><a href="your_work?tool=<?= $dt_index ?>"><i class="fad fa-video"></i> My Work<span><i class="far fa-check"></i></span></a></li>
                                         <?php $dt_index = $dt_index + 1; ?>
@@ -176,7 +177,16 @@ $param = array();
 $param['order'] = "tool_builder_ids_id DESC";
 $param['where']['tool_builder_ids_user_id'] = $this->userid;
 $tool_ids = $this->model_tool_builder_ids->find_one_active($param);
+
+
+$param = array();
+$param['order'] = "learning_journey_transcript_id DESC";
+$param['where']['learning_journey_transcript_user_id'] = $this->userid;
+$videoTranscript = $this->model_learning_journey_transcript->find_one_active($param);
 ?>
+
+<?=debug($videoTranscript)?>
+<?= $_GET['cat']?>
 
 <script>
     $(document).ready(function() {
@@ -264,6 +274,11 @@ $tool_ids = $this->model_tool_builder_ids->find_one_active($param);
             $(".catLj26 #played26").html('66');
         <? endif; ?>
 
+        <? if ($videoTranscript['learning_journey_transcript_percent'] == 1) : ?>
+            $(".videoScript-<?$a?>").addClass('active');
+            $(".catLj<?$a?> #played<?$a?>").html('100');
+        <? endif; ?>
+
 
 
         var sum = 0;
@@ -273,6 +288,7 @@ $tool_ids = $this->model_tool_builder_ids->find_one_active($param);
         var total = Math.round((sum / 1500) * 100);
 
         $(".allpercent").text(total);
+        localStorage.setItem("learingPercent",$(".allpercent").text());
         //    
         // }
 

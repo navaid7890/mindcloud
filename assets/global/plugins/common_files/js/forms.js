@@ -47,6 +47,7 @@ var Form = function () {
     course_review: base_url + "contact_us/review",
     content_review: base_url + "contact_us/content_review",
     learing_startup: base_url + "contact_us/learing_startup",
+    learing_transcript: base_url + "contact_us/learing_transcript",
     tutorial_review: base_url + "contact_us/tutorial_review",
     form_cto: base_url + "contact_us/ajax_formsend",
     tool_business_multi: base_url + "contact_us/tool_business_multi_formsend",
@@ -170,6 +171,30 @@ var Form = function () {
 
         Toastr.success(response.msg.desc, 'Success');
         $("#forms-content-statup").find('input[type=text],input[type=email],textarea').val('');
+        //FOR GOOGLE CAPTCHA RESET:
+        // grecaptcha.reset();
+        //  $(".openBtn").click();
+        // return false;
+      }
+      else {
+        Toastr.error(response.msg.desc, 'Error');
+        //Toastr.error('Error Found please try again','Error');
+        return false;
+      }
+      return false;
+    },
+    learing_transcript: function (form) {
+      // Disable the submit button to prevent repeated clicks:
+      $('#forms-mark-complete-btn').prop('disabled', true);
+      var data = form.serialize();
+      response = AjaxRequest.fire(urls.learing_transcript, data);
+      // return false;  
+      $('#forms-mark-complete-btn').prop('disabled', false);
+
+      if (response.status) {
+
+        Toastr.success(response.msg.desc, 'Success');
+        $("#forms-mark-complete").find('input[type=text],input[type=email],textarea').val('');
         //FOR GOOGLE CAPTCHA RESET:
         // grecaptcha.reset();
         //  $(".openBtn").click();
@@ -1764,6 +1789,13 @@ $(function () {
   var $form = $('#forms-content-statup');
   $form.submit(function (event) {
     Form.learing_startup($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#forms-mark-complete');
+  $form.submit(function (event) {
+    Form.learing_transcript($form);
     return false;
   });
 });
