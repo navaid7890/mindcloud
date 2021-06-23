@@ -11,6 +11,7 @@
 <div class="col-md-12 col-xs-12 col-sm-12 center contactFormSec portlet-body form">
 <?
  $vacation_data = $this->model_expert->find_all_active();
+ $category = $this->model_category->find_all_active();
 
 ?>
     <form action="<?=la('home/ajax-save-on-vacation')?>" class='cmxform form-horizontal tasi-form' id='on_vacation_form'>
@@ -36,6 +37,21 @@
         </div>
 
         <div class="col-md-4 col-xs-12 col-sm-4">
+          <select name="vacation[v_cat_id]" class="form-control" required>
+            <option value="">Select Category</option>
+    
+        <? if(isset($category) AND array_filled($category)) { ?>
+        <? foreach($category as $id=>$value){?>
+
+
+          <option value="<?=$value['category_id']?>"><?=$value['category_name']?></option>
+       <? } ?>
+       <? } ?>
+
+          </select>
+        </div>
+
+        <div class="col-md-4 col-xs-12 col-sm-4">
           <select id="ba_reserve_time2" name="vacation[v_start_time]" class="form-control" required>
             <option value="">Select Reserve Time</option>
             <? for( $i=$open_time; $i<$close_time; $i+=3600):
@@ -47,7 +63,6 @@
           </select>
         </div>
 
-        <div class="clearfix"></div>
 
         <div class="col-md-4 col-xs-12 col-sm-4">
           <select id="ba_arrive_time"  name="vacation[v_end_time]" class="form-control">
@@ -120,10 +135,11 @@
                     Modal.reset();
                     $("#preloader").hide();
                     if(response.status) {
-                    
-                     toastr.success('Vacations Added');
+                     
+                      alert("Vacations Added");
+                    // toastr.success('Vacations Added');
                      // return false;
-                        setTimeout(function(){ location.reload(); }, 3000);
+                        setTimeout(function(){ location.reload(); }, 1000);
                     }
                     else {
                         toastr.error('Error Found Please try again');

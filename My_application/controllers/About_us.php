@@ -1055,6 +1055,23 @@ class About_us extends MY_Controller
         $this->load_view("testmail", $data);
     }
 
+
+    public function member()
+    {
+        global $config;
+        $data = array();
+
+        //TAB TITLE
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+
+        //INNER BANNER
+       
+        $data['exp'] = $this->model_user->find_all();
+
+        $this->load_view("member",$data);
+    }
+
     
 
     
