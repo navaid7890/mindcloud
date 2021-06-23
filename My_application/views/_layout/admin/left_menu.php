@@ -359,11 +359,11 @@ array("title"=>"Order Management", "icon"=>"basket" ,"action" => array("shop_ord
     ), */
 
 
-    // array("title"=>"User Management", "icon"=>" fa fa-users" ,"action" => "user" ,
-    //     "additionals"=>array(
-    //         array("link"=>"user","title"=>"Manage User's", "icon"=>" fa fa-users"),
-    //     ),
-    // ),
+    array("title"=>"User Management", "icon"=>" fa fa-users" ,"action" => "user" ,
+        "additionals"=>array(
+            array("link"=>"user","title"=>"Manage User's", "icon"=>" fa fa-users"),
+        ),
+    ),
 
     // array("title" => "Administrators", "icon" => " feather icon-users", "action" => "admins",
     //     "additionals" => array(

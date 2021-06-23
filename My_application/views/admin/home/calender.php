@@ -23,16 +23,16 @@
                         </select>
 
 
-                        <select id='forum_categorys'>
+                        <!-- <select id='forum_categorys'>
                            <option>All Category</option>
-                           <? if (isset($ct) and array_filled($ct)) : ?>
-                              <? foreach ($ct as $key => $value) : ?>
+                           <?//if (isset($ct) and array_filled($ct)) : //?>
+                              <?// foreach ($ct as $key => $value) :// ?>
                                  <option value="<?= $value['category_id'] ?>" <?= $this->input->get('category') == $value['category_id'] ? 'selected=""' : '' ?>>
-                                    <?= $value['category_name'] ?>
+                                    <?//= $value['category_name']// ?>
                                  </option>
-                              <? endforeach; ?>
-                           <? endif; ?>
-                        </select>
+                              <?// endforeach; ?>
+                           <?// endif; ?>
+                        </select> -->
 <a id='on_vacation' class="btn btn-primary pull-right" href="javascript:void(0);">Book Slots</a>
 	<div class="clearfix"></div>
 		<h2>Your Schedule </h2>
@@ -46,8 +46,9 @@
    $("body").on('change', '#forum_category', function() {
       var id = $(this).val();
       var sel = $("#forum_categorys").val();
-      if (id > 0 && sel>0) {
-		window.location="<?=la('')?>?expert="+id+"&category="+sel;
+      if (id > 0) {
+		//window.location="<?=la('')?>?expert="+id+"&category="+sel;
+      window.location="<?=la('')?>?expert="+id;
          //window.location.href = base_url + "admin?expert=" + id;
       } else {
 		window.location="<?=la('')?>";

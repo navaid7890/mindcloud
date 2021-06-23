@@ -1072,6 +1072,27 @@ class About_us extends MY_Controller
         $this->load_view("member",$data);
     }
 
+
+    public function userprofile($id='')
+    {
+        global $config;
+        $data = array();
+
+        //TAB TITLE
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+
+        //INNER BANNER
+       
+        $par=array();
+        $par['where']['user_id']=$id;
+        $data['exp'] = $this->model_user->find_one_active($par);
+
+        $this->load_view("userprofile",$data);
+    }
+
+
+
     
 
     

@@ -16,7 +16,7 @@ class Model_user extends MY_Model {
 
        // IF GET IS_ADMIN THAN IS ADMIN
         if(isset($_GET['is_admin'])) {
-            $this->pagination_params['fields'] = "user_id,user_firstname,user_lastname,user_email,user_status";
+            $this->pagination_params['fields'] = "user_id,user_firstname,user_lastname,user_type,user_email,user_status";
 
             //$this->pagination_params['joins'][] = $this->join_user_info("LEFT");
             $this->pagination_params['where']['user_is_admin'] = 1;
@@ -25,7 +25,7 @@ class Model_user extends MY_Model {
         else
         {
             // $this->pagination_params['fields'] = "user_id,user_firstname,user_lastname,user_email,user_type,user_status,user_email_verified_status";
-            $this->pagination_params['fields'] = "user_id,user_firstname,user_lastname,user_email,user_status";
+            $this->pagination_params['fields'] = "user_id,user_firstname,user_lastname,user_type,user_email,user_status";
             
             $this->pagination_params['where']['user_is_admin'] = 0;
             //$this->pagination_params['where']['user_type'] = $_GET['type'];
@@ -651,7 +651,7 @@ class Model_user extends MY_Model {
                     'table'   => $this->_table,
                     'name'   => 'user_type',
                     'label'   => 'User Type',
-                    'type'   => 'hidden',
+                    'type'   => 'dropdown',
                     'type_dt'   => 'dropdown',
                     'list_data'    => array(
                                     CONSUMERS_USER => "<span class=\"label label-primary\">Consumer</span>" ,  
