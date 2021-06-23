@@ -16,13 +16,14 @@
         display: none;
     }
 </style>
+
 <div class="course-box hding-3">
     <div class="course-box-content">
         <div class="course-box-head">
             <div class="row align-items-center">
                 <div class="col-md-8">
                     <h3>Learning Journey</h3>
-                    
+
                 </div>
                 <div class="col-md-4 text-right">
                     <div id="activeBorder" class="active-border">
@@ -39,7 +40,7 @@
                 <? // print_r($this->session->userdata); 
                 ?>
                 <ul class="login-btn">
-                    <li><a href="#"><span><img src="<?=get_image($this->layout_data['user_data']['ui_profile_image'],$this->layout_data['user_data']['ui_profile_image_path'])?>"></span> <?= $this->session_data['username'] ?> </a></li>
+                    <li><a href="#"><span><img src="<?= get_image($this->layout_data['user_data']['ui_profile_image'], $this->layout_data['user_data']['ui_profile_image_path']) ?>"></span> <?= $this->session_data['username'] ?> </a></li>
                 </ul>
             </div>
         </div>
@@ -114,6 +115,9 @@
     </div>
 </div>
 
+
+
+
 <!--  -->
 <?
 
@@ -180,13 +184,13 @@ $tool_ids = $this->model_tool_builder_ids->find_one_active($param);
 
 
 $param = array();
-$param['order'] = "learning_journey_transcript_id DESC";
+// $param['order'] = "learning_journey_transcript_id DESC";
 $param['where']['learning_journey_transcript_user_id'] = $this->userid;
-$videoTranscript = $this->model_learning_journey_transcript->find_one_active($param);
+$param['where']['learning_journey_transcript_percent'] = 1;
+// $param['where']['learning_journey_transcript_content_id'] = $_GET['cat'];
+$videoTranscript = $this->model_learning_journey_transcript->find_all_active($param);
 ?>
 
-<?=debug($videoTranscript)?>
-<?= $_GET['cat']?>
 
 <script>
     $(document).ready(function() {
@@ -274,10 +278,15 @@ $videoTranscript = $this->model_learning_journey_transcript->find_one_active($pa
             $(".catLj26 #played26").html('66');
         <? endif; ?>
 
-        <? if ($videoTranscript['learning_journey_transcript_percent'] == 1) : ?>
-            $(".videoScript-<?$a?>").addClass('active');
-            $(".catLj<?$a?> #played<?$a?>").html('100');
-        <? endif; ?>
+        <? foreach ($videoTranscript as $vt => $value) : ?>
+
+            <? $a = $value['learning_journey_transcript_content_id'] ?>
+            $(".videoScript-<?=$a ?>").addClass('active');
+            $(".catLj<?= $a ?> #played<?= $a ?>").html('100');
+            console.log("cat value", <?= $a ?>);
+
+        <? endforeach; ?>
+
 
 
 
@@ -288,7 +297,7 @@ $videoTranscript = $this->model_learning_journey_transcript->find_one_active($pa
         var total = Math.round((sum / 1500) * 100);
 
         $(".allpercent").text(total);
-        localStorage.setItem("learingPercent",$(".allpercent").text());
+        localStorage.setItem("learingPercent", $(".allpercent").text());
         //    
         // }
 
