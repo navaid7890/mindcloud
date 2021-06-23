@@ -94,6 +94,7 @@
                                     ?>
                                     <form id="form-cjdg1" class="next-prevBtn">
                                     <input type="hidden" name="tool_builder_cj_dg[tool_builder_cj_dg_user_id]" value="<?= ($this->userid) ?>">
+                                    <input type="hidden" name="tool_builder_cj_dg[tool_builder_percent]" value="1">
                                        <div class="fld-textarea">
                                           <label for="">1. Awareness & Knowledge Phase <span>How will you attract attention, gain visibility, and show customers how you can help them reach their goals and get what they want and need? Examples are SEO, Interesting Content, YouTube Videos, FB Ads, Influencers Campaigns, Events.</span></label>
                                           <div class="space"><br></div>

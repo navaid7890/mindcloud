@@ -1,3 +1,8 @@
+<style>
+   .videoPage ul.dropdown-box {
+      display: block !important;
+   }
+</style>
 <div class="business-page">
    <section class="dashboard">
       <ul class="dashboard-layout">
@@ -8,7 +13,9 @@
             </div>
          </li>
          <li>
-            <? $this->load->view("widgets/course-box"); ?>
+            <div class="videoPage">
+               <? $this->load->view("widgets/course-box"); ?>
+            </div>
          </li>
          <li>
             <div class="tutorial-box">

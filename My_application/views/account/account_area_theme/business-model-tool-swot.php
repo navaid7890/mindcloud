@@ -85,6 +85,7 @@
 
                                     <form id="form-send_swot1">
                                        <input type="hidden" name="tool_builder_swot[tool_builder_user_id]" value="<?= ($this->userid) ?>">
+                                       <input type="hidden" name="tool_builder_swot[tool_builder_percent]" value="1">
                                        <div class="fld-textarea">
                                           <label for="">Strengths <span>List your internal attributes that may make your business more likely to succeed</span></label>
                                           <div class="space"><br></div>

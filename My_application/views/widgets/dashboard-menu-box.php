@@ -4,68 +4,72 @@
       <div class="dashboard-links">
          <ul class="dashboard-nav">
             <li>
-               <a href="<?=l('account-area')?>" class="active">
-                  <span><img src="<?=i('')?>dashboard/menu/1.svg" ></span>
+               <a href="<?= l('account-area') ?>" class="active">
+                  <span><img src="<?= i('') ?>dashboard/menu/1.svg"></span>
                   Dashboard
                </a>
             </li>
             <li>
-               <a href="<?=l('account/profile/expert')?>">
-                  <span><img src="<?=i('')?>dashboard/menu/2.svg" ></span>
-                  My Experts Tutorials 
+               <a href="<?= l('account/profile/expert') ?>">
+                  <span><img src="<?= i('') ?>dashboard/menu/2.svg"></span>
+                  My Experts Tutorials
                </a>
             </li>
             <li>
                <a href="#">
-                  <span><img src="<?=i('')?>dashboard/menu/1.svg" ></span>
-                  Consult with Experts 
+                  <span><img src="<?= i('') ?>dashboard/menu/1.svg"></span>
+                  Consult with Experts
                </a>
             </li>
             <li>
                <a href="#">
-                  <span><img src="<?=i('')?>dashboard/menu/2.svg" ></span>
+                  <span><img src="<?= i('') ?>dashboard/menu/2.svg"></span>
                   Advisory
                </a>
             </li>
             <li class="dropdown-toggle">
-               <a href="<?=l('account/profile/learning')?>">
-                  <span><img src="<?=i('')?>dashboard/menu/1.svg" ></span>
-                  My Learning Journey 
+               <a href="<?= l('account/profile/learning') ?>">
+                  <span><img src="<?= i('') ?>dashboard/menu/1.svg"></span>
+                  My Learning Journey
                </a>
 
                <div class="dashboard-child-links">
                   <ul>
-                     <li><a href="<?=l('account/profile/startup')?>"> <span><img src="<?=i('')?>dashboard/menu/3.svg" ></span> My Startup: App Monster</a></li>
-                     <li><a href="#"> <span><img src="<?=i('')?>dashboard/menu/3.svg" ></span> New Startup</a></li>
+                     <li><a href="<?= l('account/profile/startup') ?>"> <span><img src="<?= i('') ?>dashboard/menu/3.svg"></span> My Startup: App Monster</a></li>
+                     <li><a href="#"> <span><img src="<?= i('') ?>dashboard/menu/3.svg"></span> New Startup</a></li>
                   </ul>
                </div>
             </li>
 
-            <li>
-               <a href="<?=l('account-area/profile/edit')?>">
-                  <span><img src="<?=i('')?>dashboard/menu/1.svg" ></span>
-                  Personal Info
+            <li class="dropdown-toggle">
+               <a href="<?= l('account-area/profile/edit') ?>">
+                  <span><img src="<?= i('') ?>dashboard/menu/1.svg"></span>
+                  My Profile
                </a>
-            </li>
 
-            <li>
-               <a href="<?=l('account-area/change-password')?>">
-                  <span><img src="<?=i('')?>dashboard/menu/1.svg" ></span>
-                  Password Change
-               </a>
-            </li>
-            <li>
-               <a href="<?=l('account-area/address-info')?>">
-                  <span><img src="<?=i('')?>dashboard/menu/1.svg" ></span>
-                  Address Info
-               </a>
-            </li>
+               <div class="dashboard-child-links">
+                  <ul>
+                     <li>
+                        <a href="<?= l('account-area/change-password') ?>">
+                           <span><img src="<?= i('') ?>dashboard/menu/1.svg"></span>
+                           Password Change
+                        </a>
+                     </li>
+                     <li>
+                        <a href="<?= l('account-area/address-info') ?>">
+                           <span><img src="<?= i('') ?>dashboard/menu/1.svg"></span>
+                           Address Info
+                        </a>
+                     </li>
 
-            <li>
-               <a href="<?=l('account-area/change-profile')?>">
-                  <span><img src="<?=i('')?>dashboard/menu/1.svg" ></span>
-                  About
-               </a>
+                     <li>
+                        <a href="<?= l('account-area/change-profile') ?>">
+                           <span><img src="<?= i('') ?>dashboard/menu/1.svg"></span>
+                           About
+                        </a>
+                     </li>
+                  </ul>
+               </div>
             </li>
          </ul>
       </div>

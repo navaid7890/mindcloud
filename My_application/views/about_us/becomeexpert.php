@@ -1,9 +1,9 @@
 <style>
-.joinContents {
+  .joinContents {
     padding: 5% 3%;
-}
+  }
 
-.joinContents h2 {
+  .joinContents h2 {
     border-bottom: 8px solid #F4C150;
     display: inline;
     padding-bottom: 12px;
@@ -11,25 +11,23 @@
     margin-bottom: 33px;
     display: inline-block;
     font-size: 50px;
-}
+  }
 
- 
-.joinContents p {
+
+  .joinContents p {
     font-size: 15px;
     line-height: 30px;
-}
+  }
 
-input[type=text] {
+  input[type=text] {
     background: #ffffff00;
     /* border: none; */
     border-radius: 0px;
     font-family: 'Open Sans';
     font-weight: 400;
     color: #000;
-    border: 1px solid rgba(0,0,0,.15);
-}
-
-
+    border: 1px solid rgba(0, 0, 0, .15);
+  }
 </style>
 
 
@@ -41,7 +39,7 @@ input[type=text] {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form id="form-expert_us">
-      <div class="modal-body">
+        <div class="modal-body">
 
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Your Full Name (Required):</label>
@@ -61,37 +59,46 @@ input[type=text] {
             <label for="message-text" class="col-form-label">Your Address:</label>
             <textarea class="form-control" id="message-text" name="inquiry[inquiry_address]" required=""></textarea>
           </div>
-      
+
 
 
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Upload Expert Agreement:</label>
-            <input type="file" class="form-control" id="recipient-name" name="inquiry[inquiry_image]" required=""> 
+            <input type="file" class="form-control" id="recipient-name" name="inquiry[inquiry_image]" required="">
           </div>
           <div class="mb-3">
-          <?$this->load->view("widgets/google_captcha")?>
+            <? $this->load->view("widgets/google_captcha") ?>
           </div>
-      
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" id="forms-contact_us-btn">Send</button>
-      </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" id="forms-contact_us-btn">Send</button>
+        </div>
       </form>
     </div>
   </div>
 </div>
-<section class="myjoin">
-   <div class="joinContents">
-   <?=html_entity_decode($con1['cms_page_title'])?>
-      <div class="space"><br></div>
-      <?=html_entity_decode($con1['cms_page_content'])?>
+<section class="InnerBanner hding-1 para">
+  <div class="container">
+    <div class="bannerContent" style="text-align: center;">
+      <h1></h1>
+      <h1><span style="font-size: 79px;text-align: center;font-weight: 700;">Become An Expert</span></h1>
       <div class="space"><br><br></div>
+    </div>
+  </div>
+</section>
+<section class="advisSec advisSec-1 hding-2 para">
+  <div class="container">
+  <div class="joinContents">
+    <?= html_entity_decode($con1['cms_page_title']) ?>
+    <div class="space"><br></div>
+    <?= html_entity_decode($con1['cms_page_content']) ?>
+    <div class="space"><br><br></div>
 
-      <a href="#" class="btn-theme btn-hover"  data-toggle="modal" data-target="#exampleModal1">Join Now</a>
-   </div>
+    <a href="#" class="btn-theme btn-hover" data-toggle="modal" data-target="#exampleModal1">Join Now</a>
+  </div>
+  </div>
 </section>
 
 <? $this->load->view('widgets/_clients'); ?>
-
-

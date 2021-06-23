@@ -1552,6 +1552,71 @@ class Profile extends MY_Controller_Account
 		//    debug($tutorial_detail);
 		$this->load_view('expert-detail-tutorial-video', $data);
 	}
+	public function learing_journey()
+	{
+		$data = array();
+        global $config;
+
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+
+
+        $data['professions'] = $this->model_profession->find_all_active();
+        $data['states'] = $this->model_states->find_all_active();
+
+        $param = array();
+        $param['where']['tutorial_featured'] = 1;
+        $data['course'] = $this->model_tutorial->find_all_active($param);
+
+
+        $cont = $this->model_cms_page->get_page(2);
+        // debug($cont);
+        $data['cont1'] = $cont['child'][0];
+        $data['cont2'] = $cont['child'][1];
+        $data['cont3'] = $cont['child'][2];
+        $data['cont4'] = $cont['child'][3];
+        $data['cont5'] = $cont['child'][4];
+        $data['cont6'] = $cont['child'][5];
+        $data['cont7'] = $cont['child'][6];
+        $data['cont8'] = $cont['child'][7];
+        $data['cont9'] = $cont['child'][8];
+        $data['cont10'] = $cont['child'][9];
+        $data['cont11'] = $cont['child'][10];
+        $data['cont12'] = $cont['child'][11];
+        $data['cont13'] = $cont['child'][12];
+        $data['cont14'] = $cont['child'][13];
+
+        $data['banner'] = $this->model_inner_banner->find_by_pk(1);
+
+        $data['learning'] = $this->model_learning->find_all_active();
+        $data['testimonial'] = $this->model_testimonials->find_all_active();
+
+        $param = array();
+        $param['where']['category_featured'] = 1;
+        $data['category'] = $this->model_category->find_all_active($param);
+
+        $data['testi'] = $this->model_testimonials->find_all_active();
+        $firststate = $this->model_states->find_one_active();
+        $data['firststate'] = $firststate['states_id'];
+
+        $exp1 = $this->model_cms_page->get_page(26);
+
+        $data['check'] = $exp1['child'][0];
+
+        $fa = array();
+        $fa['where']['faq_category'] = 2;
+        $fa['order'] = "faq_id ASC";
+        $data['faq'] = $this->model_faq->find_all_active($fa);
+
+        $contdata = $this->model_cms_page->get_page(28);
+        // debug($cont);
+        $data['contd'] = $contdata['child'][0];
+
+        $data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+
+        //  debug($data['learn_cat']);
+		$this->load_view('learing_journey', $data);
+	}
 
 	public function get_sidebar_data()
 	{

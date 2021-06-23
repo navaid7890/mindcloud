@@ -20,8 +20,8 @@ class Inquiry extends MY_Controller {
 		global $config;
 		
 		parent::__construct();
-        $this->dt_params['dt_headings'] = "inquiry_id,inquiry_name,inquiry_email,inquiry_status";
-        $this->dt_params['searchable'] = array("inquiry_id","inquiry_name","inquiry_email","inquiry_status");
+        $this->dt_params['dt_headings'] = "inquiry_id,inquiry_type,inquiry_name,inquiry_email,inquiry_status";
+        $this->dt_params['searchable'] = array("inquiry_id,inquiry_type,inquiry_name,inquiry_email,inquiry_status");
         // $this->dt_params['action'] = array(
 								// 		"hide_add_button" => true ,
         //                                 "hide" => false ,

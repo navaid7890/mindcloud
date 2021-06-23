@@ -19,7 +19,7 @@ $(document).ready(function() {
 
     $('ul.course-scroll .dropdown-toggle > a').click(function() {
         $(this).parent('li').find('.dropdown-toggle').addClass('open');
-        $(this).parent('li').addClass('active');
+        // $(this).parent('li').addClass('active');
         $(this).parent('li').siblings().find('.dropdown-toggle').removeClass('open');
         $(this).parent('li').siblings().removeClass('active');
         $(this).parent('li').find('.dropdown-box').slideDown();
@@ -228,9 +228,9 @@ $(function drawSector() {
         prec = 100;
     var deg = prec * 3.6;
     if (deg <= 180) {
-        activeBorder.css('background-image', 'linear-gradient(' + (90 + deg) + 'deg, transparent 50%, #FDBE41 50%),linear-gradient(90deg, #FDBE41 50%, transparent 50%)');
+        activeBorder.css('background-image', 'linear-gradient(' + (deg - 90) + 'deg, transparent 50%, #FDBE41 50%),linear-gradient(90deg, #FDBE41 50%, transparent 50%)');
     } else {
-        activeBorder.css('background-image', 'linear-gradient(' + (deg - 90) + 'deg, transparent 50%, #fff 50%),linear-gradient(90deg, #FDBE41 50%, transparent 50%)');
+        activeBorder.css('background-image', 'linear-gradient(' + (90 + deg)   + 'deg, transparent 50%, #fff 50%),linear-gradient(90deg, #FDBE41 50%, transparent 50%)');
     }
 
     var startDeg = $("#startDeg").attr("class");

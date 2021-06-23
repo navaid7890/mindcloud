@@ -1,10 +1,15 @@
 <style>
     ul.work-list>li {
-    width: 50.7%;
-}
-.work-box {
-    height: 250px;
-}
+        width: 50.7%;
+    }
+
+    .work-box {
+        height: 250px;
+    }
+
+    .yourWork ul.dropdown-box {
+        display: block !important;
+    }
 </style>
 <section class="dashboard">
 
@@ -17,7 +22,9 @@
         </li>
 
         <li>
-            <? $this->load->view("widgets/course-box"); ?>
+            <div class="yourWork">
+                <? $this->load->view("widgets/course-box"); ?>
+            </div>
         </li>
 
         <li>
@@ -70,7 +77,8 @@
 
 
             <? endforeach; ?>
-            <?// debug($dt[$_GET['tool']]) ?>
+            <? // debug($dt[$_GET['tool']]) 
+            ?>
             <div class="tutorial-box">
                 <div class="tutorial-scroll-content">
                     <div class="tutorial-content">
@@ -98,7 +106,6 @@
 
                         <div class="tutorial-mid hding-4 hding-3 para">
                             <div class="tutorial-mid-content">
-
                                 <h4>My <strong>Startup: <?= $startup[0]['startup_name'] ?></strong></h4>
                             </div>
                             <div class="space"><br><br></div>
@@ -107,7 +114,7 @@
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
-                                            <h6><?=$toolName[$_GET['tool']]?></h6>
+                                            <h6><?= $toolName[$_GET['tool']] ?></h6>
                                             <div class="work-prew">
                                                 <img src="<?= i('') ?>dashboard/work/1.png" alt="">
                                             </div>
@@ -116,12 +123,19 @@
                                     <div class="work-footer">
                                         <div class="row align-items-center">
                                             <div class="col-md-9">
-                                                <p>My <?=$toolName[$_GET['tool']]?>.</p>
+                                                <p>My <?= $toolName[$_GET['tool']] ?>.</p>
                                             </div>
                                             <div class="col-md-3 text-right">
                                                 <a href="<?= base_url() ?><?= $dt[$_GET['tool']] ?>"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
                                             </div>
+                                            
                                         </div>
+                                    </div>
+                                    <div class="">
+                                    <!-- <form id="form-percent">
+                                            <input type="hidden" name="tool_builder[tool_builder_percent_work]" value="1">
+                                            <button type="submit" class="btn btn-primary mt-5" id="forms-tool_builder-btn1">Complete</button>
+                                    </form> -->
                                     </div>
                                 </li>
                             </ul>
