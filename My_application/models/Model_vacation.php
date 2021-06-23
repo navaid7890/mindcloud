@@ -71,13 +71,24 @@ class Model_vacation extends MY_Model
             'v_user_id' => array(
                      'table'   => $this->_table,
                      'name'   => 'v_user_id',
-                     'label'   => 'Category',
+                     'label'   => 'Expert',
                      'type'   => 'dropdown',
                      'type_dt'   => 'text',
                      'type_filter_dt'   => 'dropdown',
                      'js_rules'   => 'required',
                      'rules'   => 'required|trim',
                 ),
+
+                'v_cat_id' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'v_cat_id',
+                    'label'   => 'Category',
+                    'type'   => 'dropdown',
+                    'type_dt'   => 'text',
+                    'type_filter_dt'   => 'dropdown',
+                    'js_rules'   => 'required',
+                    'rules'   => 'required|trim',
+               ),
 
             'v_date' => array(
                 'table' => $this->_table,

@@ -34,8 +34,9 @@ class Home extends MY_Controller {
 				)
 		);  
         $data['ex'] = $this->model_expert->find_all_active();
-		$data[ 'category' ] = $this->model_category->find_count_active();
-		$data[ 'inquiries' ] = $this->model_inquiry->find_count_active();
+		$data['category' ] = $this->model_category->find_count_active();
+		$data['inquiries' ] = $this->model_inquiry->find_count_active();
+        $data['ct'] = $this->model_category->find_all_active();
 
 		$param = array();
         $param['where_string'] = 'si_status != 2';
@@ -77,9 +78,10 @@ class Home extends MY_Controller {
 
             $param = array();
             $param['where']['v_user_id'] = $_GET['expert'];
+            $param['where']['v_cat_id'] = $_GET['category'];
             $param['group'] = 'v_date';
             $vacation_data = $this->model_vacation->find_all($param);
-            //debug($vacation_data,1);
+      
             if(isset($vacation_data) AND array_filled($vacation_data)):
                 foreach($vacation_data as $value):
                     $json_data .= '{title:"Not Available",
@@ -162,6 +164,7 @@ class Home extends MY_Controller {
         $end_time = date("H:i", strtotime($post['v_end_time']));
         $desc = $post['v_description'];
         $uid = $post['v_user_id'];
+        $ct = $post['v_cat_id'];
 
         $date_time = array();
         $open_time = strtotime($start_time);
@@ -176,7 +179,8 @@ class Home extends MY_Controller {
         if(isset($date_time) AND array_filled($date_time)) {
             foreach($date_time as $value) {
                 $param = array();
-                $param['v_user_id'] = $uid;
+                $param['v_user_id'] =$uid;
+                $param['v_cat_id'] = $ct;
                 $param['v_date'] = $value;
                 $param['v_desc'] = $desc;
 
