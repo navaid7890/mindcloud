@@ -18,22 +18,25 @@
 				<div class="col-md-7">
 					<div class="menuWrap">
 						<ul class="menu">
-							
+
 							<li class="dropdown-nav"><a href="<?= l('expert-tutorial') ?>">Experts Tutorials</a>
-							<ul class="dropdownWrap dropdown ">
-								<li><a href="become-an-expert">Become An Expert</a></li>
-								<li><a href="innovate">Innovate</a></li>
-							</ul>
-						</li>
-						<li><a class="active" href="<?= l('learning-journey') ?>">Learning Journey</a></li>
+								<ul class="dropdownWrap dropdown ">
+									<li><a href="become-an-expert">Become An Expert</a></li>
+									<li><a href="enterprise-partners">Enterprise Partners</a></li>
+									<li><a href="innovate">Innovate</a></li>
+								</ul>
+							</li>
+							<li><a class="active" href="<?= l('learning-journey') ?>">Learning Journey</a></li>
 							<li><a href="consult-advisors">Consult with Experts</a></li>
-							<li class="dropdown-nav"><a href="about-us">About us</a>
-							<ul class="dropdownWrap dropdown ">
-								<li><a href="faq">FAQs</a></li>
-								<li><a href="newsfeed">News feed</a></li>
-							</ul>
-						</li>
-							<li><a href="enterprise-partners">Enterprise Partners</a></li>
+							<li class="dropdown-nav"><a href="#">Community</a>
+								<ul class="dropdownWrap dropdown ">
+									<li><a href="about-us">About us</a></li>
+									<li><a href="member">Members</a></li>
+									<li><a href="faq">FAQs</a></li>
+									<li><a href="newsfeed">News feed</a></li>
+								</ul>
+							</li>
+							
 							<li><a href="https://mindcloudacademy.com/">The Academy</a></li>
 							<?php if (isset($this->session->userdata['logged_in_front']) and array_filled($this->session->userdata['logged_in_front'])) : ?>
 								<li><a href="<?= l('account-area') ?>"> <i class="fal fa-user-circle"></i> My Account</a></li>
@@ -49,7 +52,7 @@
 					<ul class="login-btn">
 						<li><a href="<?= l('cart') ?>" class="cart-icon"><i class="fas fa-shopping-cart"><sup class="cart_body">0</sup></i> </a></li>
 						<?php if (isset($this->session->userdata['logged_in_front']) and array_filled($this->session->userdata['logged_in_front'])) : ?>
-							<li class="dropdown-toggle"><a href="#"><span><img src="<?=get_image($this->layout_data['user_data']['ui_profile_image'],$this->layout_data['user_data']['ui_profile_image_path'])?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a>
+							<li class="dropdown-toggle"><a href="#"><span><img src="<?= get_image($this->layout_data['user_data']['ui_profile_image'], $this->layout_data['user_data']['ui_profile_image_path']) ?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a>
 								<div class="dropdown-box">
 									<ul class="user-links">
 										<li><a href="<?= l('account-area') ?>"> <i class="fal fa-user-circle"></i> My Account</a></li>

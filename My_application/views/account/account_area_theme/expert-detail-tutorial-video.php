@@ -248,12 +248,12 @@
    var w = <?php echo json_encode($text_time_arr, TRUE); ?>;
 
 
-   console.log(v);
-   console.log(w);
+   // console.log(v);
+   // console.log(w);
 
    function myFunction(e) {
       var currentTime = e.currentTime;
-      console.log('current time ', e.currentTime);
+      // console.log('current time ', e.currentTime);
       for (var i = 0; i < w.length; i++) {
          if (i < (w.length - 1)) {
             if (w[i] < currentTime && w[i + 1] > currentTime) {

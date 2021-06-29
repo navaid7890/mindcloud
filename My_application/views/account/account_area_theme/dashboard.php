@@ -1,3 +1,9 @@
+<style>
+    .progres-dark {
+        width: 10%;
+    }
+</style>
+
 <div class="index-page">
     <section class="dashboard">
         <ul class="dashboard-layout">
@@ -18,20 +24,19 @@
                                     <div class="progress-box">
                                         <h2>My <strong> Learning Journey </strong></h2>
                                         <div class="space"><br><br><br></div>
-                                        <div class="progres-bar">
+                                        <div class="progres-bar" id="LearingJourney">
                                             <div class="progres-text">
                                                 <p>Intro to Learning Journey</p>
                                             </div>
                                             <div class="progres-gray">
                                                 <div class="progres-dark"></div>
                                             </div>
-
                                             <div class="progres-percentage">
                                                 <span>100%</span>
                                             </div>
                                         </div>
                                         <div class="space"><br><br></div>
-                                        <div class="progres-bar">
+                                        <div class="progres-bar" id="businessCalculate">
                                             <div class="progres-text">
                                                 <p>Business Model Canvas</p>
                                             </div>
@@ -39,19 +44,18 @@
                                             <div class="progres-gray">
                                                 <div class="progres-dark"></div>
                                             </div>
-
                                             <div class="progres-percentage">
-                                                <span>100%</span>
+                                                <span></span>
                                             </div>
                                         </div>
                                         <div class="space"><br><br></div>
-                                        <div class="progres-bar">
+                                        <div class="progres-bar" id="Goto_market_strategies">
                                             <div class="progres-text">
                                                 <p>Go-to market strategies</p>
                                             </div>
 
                                             <div class="progres-gray">
-                                                <div class="progres-dark per-70"></div>
+                                                <div class="progres-dark"></div>
                                             </div>
 
                                             <div class="progres-percentage">
@@ -59,13 +63,13 @@
                                             </div>
                                         </div>
                                         <div class="space"><br><br></div>
-                                        <div class="progres-bar">
+                                        <div class="progres-bar" id="Financ_management">
                                             <div class="progres-text">
                                                 <p>Financial management</p>
                                             </div>
 
                                             <div class="progres-gray">
-
+                                                <div class="progres-dark"></div>
                                             </div>
 
                                             <div class="progres-percentage">
@@ -73,13 +77,13 @@
                                             </div>
                                         </div>
                                         <div class="space"><br><br></div>
-                                        <div class="progres-bar">
+                                        <div class="progres-bar" id="L_Structure">
                                             <div class="progres-text">
                                                 <p>Legal Structure</p>
                                             </div>
 
                                             <div class="progres-gray">
-
+                                                <div class="progres-dark"></div>
                                             </div>
 
                                             <div class="progres-percentage">
@@ -87,13 +91,13 @@
                                             </div>
                                         </div>
                                         <div class="space"><br><br></div>
-                                        <div class="progres-bar">
+                                        <div class="progres-bar" id="Invest_Deck">
                                             <div class="progres-text">
                                                 <p>Investment Deck</p>
                                             </div>
 
                                             <div class="progres-gray">
-
+                                                <div class="progres-dark"></div>
                                             </div>
 
                                             <div class="progres-percentage">
@@ -122,7 +126,12 @@
 
                                         <div class="progress-footer">
                                             <h6>My Certificate</h6>
-                                            <p>Complete your Learning<br> Journey to receive Certificate</p>
+                                            <div id="certificateBtn" style="display: none;">
+                                                <a href="">Download Learing Journey Certificate</a>
+                                            </div>
+                                            <div id="certificateNotComplete" style="display: block;">
+                                                <p>Complete your Learning<br> Journey to receive Certificate</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -343,7 +352,7 @@
                                                         <div class="space"><br><br><br><br></div>
                                                         <div class="row align-items-center">
                                                             <div class="col-md-10">
-                                                            <?
+                                                                <?
                                                                 $exp_name = array();
                                                                 $exp_name['where']['expert_id'] = $value['tutorial_expert_id'];
                                                                 $exp_name = $this->model_expert->find_all_active($exp_name);
@@ -444,9 +453,48 @@
 
 <script>
     $(document).ready(function() {
+        // Learing Journey Percentage
+        $("#LearingJourney .progres-dark").css("width", "100%");
+        $("#LearingJourney .progres-percentage span").text("100%");
+
+        // BUSINESS MODEL CANVAS Percentage
+        var percent = localStorage.getItem("businessPercent") + "%";
+        $("#businessCalculate .progres-dark").css("width", percent);
+        $("#businessCalculate .progres-percentage span").text(localStorage.getItem("businessPercent") + "%");
+
+        // GO-TO MARKET STRATEGIES Percentage
+        var gtmspercent = localStorage.getItem("GO_TO_MARKET_STRATEGIES") + "%";
+        $("#Goto_market_strategies .progres-dark").css("width", gtmspercent);
+        $("#Goto_market_strategies .progres-percentage span").text(localStorage.getItem("GO_TO_MARKET_STRATEGIES") + "%");
+
+        // Financial management Percentage
+        var fmpercent = localStorage.getItem("Financial_management") + "%";
+        $("#Financ_management .progres-dark").css("width", fmpercent);
+        $("#Financ_management .progres-percentage span").text(localStorage.getItem("Financial_management") + "%");
 
 
-        // alert( localStorage.getItem("learingPercent"));
+        // Legal Structure Percentage
+        var lspercent = localStorage.getItem("Legal_Structure") + "%";
+        $("#L_Structure .progres-dark").css("width", lspercent);
+        $("#L_Structure .progres-percentage span").text(localStorage.getItem("Legal_Structure") + "%");
+
+
+        // Investment / Pitch Deck Percentage
+        var ideskpercent = localStorage.getItem("Investment_Desk") + "%";
+        $("#Invest_Deck .progres-dark").css("width", ideskpercent);
+        $("#Invest_Deck .progres-percentage span").text(localStorage.getItem("Investment_Desk") + "%");
+
+
+
+        if (localStorage.getItem("learingPercent") < "100") {
+            $("#certificateBtn").css("display", "block");
+            $("#certificateNotComplete").css("display", "none");
+        } else {
+           
+            $("#certificateBtn").css("display", "none");
+            $("#certificateNotComplete").css("display", "block");
+        }
+
         $(".allpercent").text(localStorage.getItem("learingPercent"));
     });
 </script>

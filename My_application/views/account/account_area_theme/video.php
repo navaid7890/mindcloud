@@ -2,20 +2,28 @@
    .videoPage ul.dropdown-box {
       display: block !important;
    }
+
    input#forms-mark-complete-btn {
-    padding: 13px 26px;
-    background: #FDBE41;
-    font-size: 14px;
-    font-weight: 700;
-    color: #F8F9FA;
-    text-transform: uppercase;
-    border-radius: 25px;
-}
-input#forms-mark-complete-btn:hover {
-    position: static;
-    display: block;
-    background-color: #e28f26;
-}
+      padding: 13px 26px;
+      background: #FDBE41;
+      font-size: 14px;
+      font-weight: 700;
+      color: #F8F9FA;
+      text-transform: uppercase;
+      border-radius: 25px;
+   }
+
+   input#forms-mark-complete-btn:hover {
+      position: static;
+      display: block;
+      background-color: #e28f26;
+   }
+
+   div#video_text p {
+      color: #A3A5A9;
+      font-size: 13px;
+      font-weight: 500;
+   }
 </style>
 <div class="business-page">
    <section class="dashboard">
@@ -67,7 +75,11 @@ input#forms-mark-complete-btn:hover {
                                     <!-- <p>00:00:00</p> -->
                                     <div class="space"><br></div>
                                     <p>
-                                    <div id="video_text"></div>
+                                    <div id="video_text">
+
+                                       <?= html_entity_decode($learn_content[0]['learning_journey_content_tags']) ?>
+
+                                    </div>
                                     </p>
                                     <?php
                                     $arr[] = html_entity_decode($learn_content[0]['learning_journey_content_tags']);
@@ -78,11 +90,17 @@ input#forms-mark-complete-btn:hover {
                                        //  echo $result['v_text'];
                                        $v_text = explode("|", html_entity_decode($learn_content[0]['learning_journey_content_tags']));
                                        for ($i = 0; $i < sizeof($v_text); $i++) {
-                                          $v_wait = explode(":", $v_text[$i]);
+                                          $v_wait = explode("~", html_entity_decode($v_text[$i]));
                                           $video_time = new \stdClass();
                                           $video_time->text = $v_wait[0];
                                           $video_time->time = $v_wait[1];
-                                          $text_time_arr[] = $video_time;
+                                          $text_text_arr[] = $video_time;
+                                          $timeConvert = explode(":", $v_wait[1]);
+                                          $secondtime = $timeConvert[0] * 60;
+                                          $minutetime = $timeConvert[1];
+                                          $requiredtime = $secondtime + $minutetime;
+
+                                          $text_time_arr[] = $requiredtime;
                                        }
                                     }
                                     ?>
@@ -116,15 +134,17 @@ input#forms-mark-complete-btn:hover {
                         <div class="space"><br><br></div>
                         <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p>
                      </div>
-                     <?//= debug($learn_content) ?>
+                     <? //= debug($learn_content) 
+                     ?>
                      <div class="tutorial-footer vid-tran para">
                         <div class="tutorial-footer-content">
                            <form id="forms-mark-complete">
-                           <input type="hidden" name="learning_journey_transcript[learning_journey_transcript_user_id]" value="<?= ($this->userid) ?>">
-                           <input type="hidden" name="learning_journey_transcript[learning_journey_transcript_content_id]" value="<?= $_GET['cat'] ?>">
-                           <input type="hidden" name="learning_journey_transcript[learning_journey_transcript_percent]" value="1">
+                              <input type="hidden" name="learning_journey_transcript[learning_journey_transcript_user_id]" value="<?= ($this->userid) ?>">
+                              <input type="hidden" name="learning_journey_transcript[learning_journey_transcript_content_id]" value="<?= $_GET['cat'] ?>">
+                              <input type="hidden" name="learning_journey_transcript[learning_journey_transcript_percent]" value="1">
 
-                           <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-mark-complete-btn">
+                              <input type="submit" class="btn-round btn-hover" disabled value="Mark As Complete" id="forms-mark-complete-btn">
+
                            </form>
                            <div classs="space"><br><br></div>
                            <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
@@ -248,21 +268,23 @@ input#forms-mark-complete-btn:hover {
    }
 </style>
 <script>
-   var v = <?php echo json_encode($text_time_arr, TRUE); ?>;
+   var v = <?php echo json_encode($text_text_arr, TRUE); ?>;
+   var w = <?php echo json_encode($text_time_arr, TRUE); ?>;
 
 
-   console.log(v);
+   // console.log(v);
+   // console.log(w);
 
    function myFunction(e) {
       var currentTime = e.currentTime;
-      console.log('current time ', e.currentTime);
-      for (var i = 0; i < v.length; i++) {
-         if (i < (v.length - 1)) {
-            if (v[i].time < currentTime && v[i + 1].time > currentTime) {
+      // console.log('current time ', e.currentTime);
+      for (var i = 0; i < w.length; i++) {
+         if (i < (w.length - 1)) {
+            if (w[i] < currentTime && w[i + 1] > currentTime) {
                $('#video_text').html(v[i].text);
             }
          } else {
-            if (v[i].time < currentTime && v[i - 1].time < currentTime) {
+            if (w[i] < currentTime && w[i - 1] < currentTime) {
                $('#video_text').html(v[i].text);
             }
          }
@@ -334,89 +356,89 @@ input#forms-mark-complete-btn:hover {
 
 
 <script>
-   var video = document.getElementById("video");
+   // var video = document.getElementById("video");
 
-   var timeStarted = -1;
-   var timePlayed = 0;
-   var duration = 0;
+   // var timeStarted = -1;
+   // var timePlayed = 0;
+   // var duration = 0;
 
-   if (video.readyState > 0)
-      getDuration.call(video);
+   // if (video.readyState > 0)
+   //    getDuration.call(video);
 
-   else {
-      video.addEventListener('loadedmetadata', getDuration);
-   }
-   // remember time user started the video
-   function videoStartedPlaying() {
-      timeStarted = new Date().getTime() / 1000;
-   }
+   // else {
+   //    video.addEventListener('loadedmetadata', getDuration);
+   // }
+   // // remember time user started the video
+   // function videoStartedPlaying() {
+   //    timeStarted = new Date().getTime() / 1000;
+   // }
 
-   function videoStoppedPlaying(event) {
+   // function videoStoppedPlaying(event) {
 
-      if (timeStarted > 0) {
-         var playedFor = new Date().getTime() / 1000 - timeStarted;
-         timeStarted = -1;
-         timePlayed += playedFor;
-      }
-      document.getElementById("played").innerHTML = Math.round(timePlayed) + "";
+   //    if (timeStarted > 0) {
+   //       var playedFor = new Date().getTime() / 1000 - timeStarted;
+   //       timeStarted = -1;
+   //       timePlayed += playedFor;
+   //    }
+   //    document.getElementById("played").innerHTML = Math.round(timePlayed) + "";
 
-      if (timePlayed >= duration && event.type == "ended") {
-         document.getElementById("status").className = "complete";
-      }
-   }
+   //    if (timePlayed >= duration && event.type == "ended") {
+   //       document.getElementById("status").className = "complete";
+   //    }
+   // }
 
-   function getDuration() {
-      duration = video.duration;
-      document.getElementById("duration").appendChild(new Text(Math.round(duration) + ""));
-      console.log("Duration: ", duration);
+   // function getDuration() {
+   //    duration = video.duration;
+   //    document.getElementById("duration").appendChild(new Text(Math.round(duration) + ""));
+   //    console.log("Duration: ", duration);
 
-      console.log(time_convert(duration));
+   //    console.log(time_convert(duration));
 
-   }
+   // }
 
-   video.addEventListener("play", videoStartedPlaying);
-   video.addEventListener("playing", videoStartedPlaying);
+   // video.addEventListener("play", videoStartedPlaying);
+   // video.addEventListener("playing", videoStartedPlaying);
 
-   video.addEventListener("ended", videoStoppedPlaying);
-   video.addEventListener("pause", videoStoppedPlaying);
+   // video.addEventListener("ended", videoStoppedPlaying);
+   // video.addEventListener("pause", videoStoppedPlaying);
 
-   $(function() {
-      var vid = $('#video'),
-         check,
-         reached25 = false,
-         reached50 = false,
-         reached75 = false;
+   // $(function() {
+   //    var vid = $('#video'),
+   //       check,
+   //       reached25 = false,
+   //       reached50 = false,
+   //       reached75 = false;
 
-      vid.bind("play", function(event) {
-         var duration = vid.get(0).duration;
+   //    vid.bind("play", function(event) {
+   //       var duration = vid.get(0).duration;
 
-         check = setInterval(function() {
-            var current = vid.get(0).currentTime,
-               perc = (current / duration * 100).toFixed(2);
+   //       check = setInterval(function() {
+   //          var current = vid.get(0).currentTime,
+   //             perc = (current / duration * 100).toFixed(2);
 
 
-            if (Math.floor(perc) >= 25 && !reached25) {
-               console.log("25% reached");
-               reached25 = true;
-            }
-            console.log(perc);
-            document.getElementById("played1").innerHTML = Math.round(perc) + "";
+   //          if (Math.floor(perc) >= 25 && !reached25) {
+   //             console.log("25% reached");
+   //             reached25 = true;
+   //          }
+   //          console.log(perc);
+   //          document.getElementById("played1").innerHTML = Math.round(perc) + "";
 
-            document.getElementById("status").className = perc;
-         }, 1000);
-      });
+   //          document.getElementById("status").className = perc;
+   //       }, 1000);
+   //    });
 
-      vid.bind("ended pause", function(event) {
-         clearInterval(check);
-      });
+   //    vid.bind("ended pause", function(event) {
+   //       clearInterval(check);
+   //    });
 
-   });
+   // });
    // var red =128;
-   function time_convert(num) {
-      var hours = Math.floor(num / 60);
-      var minutes = num % 60;
-      return hours + ":" + minutes;
-   }
+   // function time_convert(num) {
+   //    var hours = Math.floor(num / 60);
+   //    var minutes = num % 60;
+   //    return hours + ":" + minutes;
+   // }
 
    // console.log(time_convert(red));
 </script>
