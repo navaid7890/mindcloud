@@ -101,8 +101,8 @@
                                     <ul class="dropdown-box" style="display: none;">
                                         <li><a href="description?cat=<?= $a ?>"><i class="fad fa-video"></i>Intro<span><i class="far fa-check"></i></span></a></li>
                                         <li class="videoScript-<?= $a ?>"><a href="<?= l('account/profile/video') ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Tutorial Video & Transcript <span><i class="far fa-check"></i></span></a></li>
-                                        <li class="toolbuilder-<?= $a ?>"><a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <li class="mywork-<?= $a ?>"><a href="your_work?tool=<?= $dt_index ?>"><i class="fad fa-video"></i> My Work<span><i class="far fa-check"></i></span></a></li>
+                                        <li class="toolbuilder-<?= $a ?>"><a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
+                                        <li class="mywork-<?= $a ?>"><a href="your_work?tool=<?= $dt_index ?>&cat=<?= $a ?>"><i class="fad fa-video"></i> My Work<span><i class="far fa-check"></i></span></a></li>
                                         <?php $dt_index = $dt_index + 1; ?>
                                     </ul>
                                 </li>
@@ -282,9 +282,16 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             <? // if ($value['learning_journey_transcript_content_id'] == 1) : 
             ?>
             <? $a = $value['learning_journey_transcript_content_id'] ?>
-            $(".videoScript-<?= $a ?>").addClass('active');
-            var transcriptTotal = parseInt($(".catLj<?= $a ?> #played<?= $a ?>").html()) + 34
-            $(".catLj<?= $a ?> #played<?= $a ?>").html(transcriptTotal);
+            var transcriptTotalcheck = parseInt($(".catLj<?= $a ?> #played<?= $a ?>").html());
+            if (transcriptTotalcheck < 100) {
+                $(".videoScript-<?= $a ?>").addClass('active');
+                var transcriptTotal = parseInt($(".catLj<?= $a ?> #played<?= $a ?>").html()) + 34;
+                $(".catLj<?= $a ?> #played<?= $a ?>").html(transcriptTotal);
+            }
+            // else {
+            //     $("#forms-mark-complete-btn").attr("disabled", "disabled");
+            // }
+
             <? //endif; 
             ?>
         <? endforeach; ?>

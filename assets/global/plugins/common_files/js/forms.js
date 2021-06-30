@@ -65,6 +65,7 @@ var Form = function () {
     tool_fm_cfs : base_url + "contact_us/tool_cfs_formsend",
     tool_fm_beps : base_url + "contact_us/tool_beps_formsend",
     tool_fm_dcvm : base_url + "contact_us/tool_dcvm_formsend",
+    get_transcript_percent : base_url + "contact_us/get_transcript_percent",
     //account_activate_process : base_url + "account/active_account/process",
     //review : base_url + "customer_review",
   };
@@ -183,6 +184,7 @@ var Form = function () {
       }
       return false;
     },
+    
     learing_transcript: function (form) {
       // Disable the submit button to prevent repeated clicks:
       $('#forms-mark-complete-btn').prop('disabled', true);
@@ -190,6 +192,18 @@ var Form = function () {
       response = AjaxRequest.fire(urls.learing_transcript, data);
       // return false;  
       $('#forms-mark-complete-btn').prop('disabled', false);
+      console.log('urls.get_transcript_percent',urls.get_transcript_percent)
+      $.ajax({
+        url:urls.get_transcript_percent,
+        method:'POST',
+        data:data,
+        async:true,
+        success:function(res){
+          console.log('ressssss',res)
+        }
+      })
+      // alert('eorks')
+      
 
       if (response.status) {
 
