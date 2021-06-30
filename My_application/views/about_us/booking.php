@@ -1341,70 +1341,32 @@
                     <h4>Select Expert</h4>
                     <h4>Select Date & Time</h4>
                     <h4>Enter Information</h4>
+                    <? debug($experts['tutorial_expert_id']) ?>
+                    <? debug(count($experts)) ?>
 
-                  
-
+                    <? for ($x = 0; $x <= count($experts); $x++) { ?>
+                        <? debug($experts[$x]['tutorial_expert_id']) ?>
+                    <? } ?>
                     <div id="topics">
-                        
+
                         <ul class="tSelectBtn">
                             <? if (isset($category) and array_filled($category)) : ?>
                                 <? foreach ($category as $key => $value) : ?>
-                                    <li class="selectTopicBtn"><span><?= $value['category_name'] ?></span></li>
+                                    <li class="selectTopicBtn" id="<?= $value['category_id'] ?>"><span><?= $value['category_name'] ?></span></li>
                                 <? endforeach; ?>
                             <? endif; ?>
                         </ul>
                     </div>
-
                     <div id="experts">
                         <ul class="tSelectBtn">
-                            <li class="selectTopicBtn" data-price="AED 300">
-                                <img src="assets/images/expert-1.jpg" alt="">
-                                <span>Genny Ghanimeh</span>
-                            </li>
-                            <li class="selectTopicBtn" data-price="AED 300">
-                                <img src="assets/images/expert-2.jpg" alt="">
-                                <span>Amareesh K.</span>
-                            </li>
-
-                            <li class="selectTopicBtn" data-price="AED 300">
-                                <img src="assets/images/expert-3.jpg" alt="">
-                                <span>Desma Dsouza</span>
-                            </li>
-
-                            <li class="selectTopicBtn" data-price="AED 300">
-                                <img src="assets/images/expert-4.jpg" alt="">
-                                <span>Ahmed Ismail</span>
-                            </li>
-
-                            <li class="selectTopicBtn" data-price="AED 300">
-                                <img src="assets/images/expert-5.jpg" alt="">
-                                <span>Dariush Soudi</span>
-                            </li>
-
-                            <li class="selectTopicBtn" data-price="AED 300">
-                                <img src="assets/images/expert-6.jpg" alt="">
-                                <span>Ayman Itani</span>
-                            </li>
-
-                            <li class="selectTopicBtn" data-price="AED 300">
-                                <img src="assets/images/expert-7.jpg" alt="">
-                                <span>Ramzi Ghurani</span>
-                            </li>
-
-                            <li class="selectTopicBtn" data-price="AED 300">
-                                <img src="assets/images/expert-8.jpg" alt="">
-                                <span>Hanane Benkhallouk</span>
-                            </li>
-
-                            <li class="selectTopicBtn" data-price="AED 300">
-                                <img src="assets/images/expert-9.jpg" alt="">
-                                <span>Kenneth Wong</span>
-                            </li>
-
-                            <li class="selectTopicBtn" data-price="AED 300">
-                                <img src="assets/images/expert-10.jpg" alt="">
-                                <span>Hussein Abdallah</span>
-                            </li>
+                            <? if (isset($experts) and array_filled($experts)) : ?>
+                                <? foreach ($experts as $key => $value) : ?>
+                                    <li class="selectTopicBtn" data-price="AED 300" id=<?= $value["expert_id"] ?>>
+                                        <img src="<?= g('db.admin.bucketimg') . $value['expert_image'] ?>" alt="">
+                                        <span><?= $value['expert_name'] ?></span>
+                                    </li>
+                                <? endforeach; ?>
+                            <? endif; ?>
                         </ul>
                         <div class="bbtn backBtn_1">
                             <p><i class="fal fa-long-arrow-left"></i> Back </p>

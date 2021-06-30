@@ -1055,6 +1055,18 @@ class About_us extends MY_Controller
         $ccategory = array();
 		$data['category'] = $this->model_category->find_all_active($ccategory);
 
+
+        // $experts = array();
+		// $data['experts'] = $this->model_expert->find_all_active($experts);
+
+
+        $experts = array();
+        $experts['where']['tutorial_category_id'] = 14;
+		$data['experts'] = $this->model_tutorial->find_all_active($experts);
+
+
+        // debug($data['experts']);
+
         $this->load_view("booking",$data);
     }
 

@@ -310,17 +310,17 @@ class Model_tutorial extends MY_Model
 
 
 
-            // 'course_category_id' => array(
-            //          'table'   => $this->_table,
-            //          'name'   => 'course_category_id',
-            //          'label'   => 'category',
-            //          'type'   => 'dropdown',
-            //          'type_dt'   => 'text',
-            //          'attributes'   => array(),
-            //          'dt_attributes'   => array("width"=>"5%"),
-            //          'js_rules'   => 'required',
-            //          'rules'   => 'required|trim|htmlentities'
-            //     ),  
+            'tutorial_category_id' => array(
+                     'table'   => $this->_table,
+                     'name'   => 'tutorial_category_id',
+                     'label'   => 'category',
+                     'type'   => 'text',
+                     'type_dt'   => 'text',
+                     'attributes'   => array(),
+                     'dt_attributes'   => array("width"=>"5%"),
+                     'js_rules'   => 'required',
+                     'rules'   => 'required|trim|htmlentities'
+                ),  
 
 
 
