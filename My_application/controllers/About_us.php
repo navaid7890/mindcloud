@@ -1038,8 +1038,25 @@ class About_us extends MY_Controller
     }
 
 
+    public function booking()
+    {
+        global $config;
+        $data = array();
+
+        //TAB TITLE
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+
+        //INNER BANNER
+       
+        $data['exp'] = $this->model_user->find_all();
 
 
+        $ccategory = array();
+		$data['category'] = $this->model_category->find_all_active($ccategory);
+
+        $this->load_view("booking",$data);
+    }
 
 
     public function testmail()
