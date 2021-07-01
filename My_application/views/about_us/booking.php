@@ -34,185 +34,9 @@
         display: block
     }
 
-    html {
-        scroll-behavior: smooth;
-    }
 
-    body {
-        font-family: 'Open Sans', sans-serif;
-        overflow-x: hidden;
-        font-size: 16px;
-        line-height: 1;
-        color: #000000;
-        background: #FAFBFD;
-    }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        display: block;
-        font-weight: normal;
-    }
 
-    *:hover,
-    *:focus,
-    * {
-        outline: none !important;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    a,
-    input[type="submit"] {
-        -webkit-transition: all 0.4s ease-In-out;
-        -moz-transition: all 0.4s ease-In-out;
-        -o-transition: all 0.4s ease-In-out;
-        transition: all 0.4s ease-In-out;
-        display: inline-block;
-        cursor: pointer;
-    }
-
-    a:hover {
-        color: #e18e25;
-    }
-
-    span {
-        display: inline-block;
-    }
-
-    textarea,
-    select,
-    input[type],
-    textarea,
-    select,
-    button {
-        background: transparent;
-        border: none;
-        border-radius: 0px;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 400;
-    }
-
-    ::-webkit-input-placeholder {
-        color: #a3a3a3;
-        font-weight: 400;
-    }
-
-    ::-moz-placeholder {
-        color: #a3a3a3;
-        font-weight: 400;
-    }
-
-    :-ms-input-placeholder {
-        color: #a3a3a3;
-        font-weight: 400;
-    }
-
-    :-moz-placeholder {
-        color: #a3a3a3;
-        font-weight: 400;
-    }
-
-    /* Padding Classes */
-    .pad-sec {
-        padding: 100px 0;
-    }
-
-    .pad-zero {
-        padding: 0px;
-    }
-
-    .pad-l-zero {
-        padding-left: 0px;
-    }
-
-    .pad-r-zero {
-        padding-right: 0px;
-    }
-
-    .pad-b-140 {
-        padding-bottom: 140px;
-    }
-
-    .pb-75 {
-        padding-bottom: 75px;
-    }
-
-    .pb-100 {
-        padding-bottom: 100px;
-    }
-
-    .w-1200 {
-        max-width: 100%;
-        width: 1200px;
-    }
-
-    .ovr-hiddn {
-        overflow: hidden;
-    }
-
-    .overlay:after {
-        content: "";
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        background: rgba(0, 0, 0, 0.60);
-        z-index: 1;
-    }
-
-    .overlay {
-        display: none;
-    }
-
-    .overlay.active {
-        display: block;
-    }
-
-    /* Heading Classes */
-    .hding-1 h1 {
-        font-size: 75px;
-        font-weight: 700;
-        line-height: 75px;
-    }
-
-    .hding-2 h2 {
-        font-size: 45px;
-        font-weight: 700;
-        color: #271907;
-        line-height: 48px;
-    }
-
-    .hding-3 h3 {
-        font-size: 24px;
-        color: #271907;
-        font-weight: 600;
-    }
-
-    .hding-4 h4 {}
-
-    .hding-5 h5 {}
-
-    .hding-6 h6 {}
-
-    .para p {
-        font-size: 18px;
-        line-height: 23px;
-        color: #897c68;
-    }
-
-    .para-sm p {
-        font-size: 15px;
-        line-height: 23px;
-        color: #897c68;
-    }
 
 
     /* Custom Slick Css */
@@ -269,239 +93,7 @@
         height: 11px;
     }
 
-    /*header css*/
-    header {
-        -webkit-transition: all 0.4s ease-In-out;
-        -moz-transition: all 0.4s ease-In-out;
-        -o-transition: all 0.4s ease-In-out;
-        transition: all 0.4s ease-In-out;
-    }
 
-    .logo {
-        display: inline-block;
-    }
-
-    .logo img {
-        display: block;
-    }
-
-    .btn-hover {
-        position: relative;
-        overflow: hidden;
-        z-index: 0;
-    }
-
-    .btn-hover span {
-        position: absolute;
-        display: block;
-        width: 0;
-        height: 0;
-        border-radius: 50%;
-        background-color: #e28f26;
-        -webkit-transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-        transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        z-index: -1;
-    }
-
-    .btn-hover:hover {
-        color: #ffffff;
-    }
-
-    .btn-hover:hover span,
-    ul.portfolio-menu>li.current>a span {
-        width: 225%;
-        height: 562.5px;
-    }
-
-
-    /* Hamburger Menu */
-    .menu-Bar {
-        width: 30px;
-        height: 20px;
-        cursor: pointer;
-        position: absolute;
-        right: 15px;
-        top: 0;
-        bottom: 0px;
-        margin: auto;
-        z-index: 22;
-        display: none;
-    }
-
-    .menu-Bar span {
-        display: block;
-        height: 4px;
-        width: 100%;
-        background: #0f4c97;
-        position: absolute;
-        transition: .6s all;
-        border-radius: 100px;
-    }
-
-    .menu-Bar span:nth-child(1) {
-        top: 0;
-    }
-
-    .menu-Bar span:nth-child(2) {
-        top: 8px;
-        transform-origin: left;
-    }
-
-    .menu-Bar span:nth-child(3) {
-        top: 16px;
-    }
-
-    .menu-Bar.open span {
-        background: #b70404;
-    }
-
-    .menu-Bar.open span:nth-child(1) {
-        transform: rotate(45deg);
-        top: 12px;
-        transform-origin: right-center;
-    }
-
-    .menu-Bar.open span:nth-child(2) {
-        width: 0;
-        opacity: 0;
-    }
-
-    .menu-Bar.open span:nth-child(3) {
-        transform: rotate(-45deg);
-        top: 12px;
-        transform-origin: right-center;
-    }
-
-    /* Menu Css */
-    .menu {
-        font-size: 0px;
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    .menu li {
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 55px;
-    }
-
-    .menu li.last {
-        margin: 0;
-    }
-
-    .menu li a {
-        display: block;
-        font-size: 15px;
-        color: #000;
-        font-weight: 400;
-    }
-
-    .menu li:hover a,
-    .menu li.active a {
-        color: #e18e25;
-    }
-
-    /* Drop Down Css */
-    .dropdown-nav {
-        position: relative;
-    }
-
-    .dropdownWrap {
-        position: absolute;
-        left: -20px;
-        top: 18px;
-        display: none;
-    }
-
-    ul.dropdown {
-        width: 257px;
-        border-radius: 8px;
-        background-color: #ffffff;
-        z-index: 1;
-        padding: 20px 15px;
-        text-align: left;
-        margin-top: 40px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
-
-    ul.dropdown li {
-        width: 100%;
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    ul.dropdown li a {
-        font-size: 15px;
-        letter-spacing: -0.1px;
-        color: #636e72;
-        padding: 12px 12px 12px 40px;
-        position: relative;
-        display: block;
-        border-radius: 6px;
-        line-height: normal;
-    }
-
-    ul.dropdown li a:before {
-        content: "\f570";
-        position: absolute;
-        left: 12px;
-        top: 10px;
-        font-family: "Font Awesome 5";
-        font-size: 18px;
-        font-weight: 300;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.22;
-        letter-spacing: normal;
-        text-align: center;
-        color: #2d3436;
-        -webkit-transition: all 0.4s ease-in-out;
-        -moz-transition: all 0.4s ease-in-out;
-        -o-transition: all 0.4s ease-in-out;
-        transition: all 0.4s ease-in-out;
-    }
-
-    ul.dropdown li:hover a,
-    ul.dropdown li.active a {
-        background-color: #eef2f3;
-        color: #6c5ce7;
-    }
-
-    ul.dropdown li:hover a:before,
-    ul.dropdown li.active a:before {
-        color: #6c5ce7;
-    }
-
-    ul.dropdown li.last {
-        margin-bottom: 0px;
-    }
-
-    /* Dropdown CSS*/
-    @keyframes btotreverse {
-        0% {
-            top: 75px;
-            opacity: 1;
-        }
-
-        100% {
-            top: 115px;
-            opacity: 0;
-        }
-    }
-
-    @keyframes btot {
-        0% {
-            top: 115px;
-            opacity: 0;
-        }
-
-        100% {
-            top: 40px;
-            opacity: 1;
-        }
-    }
 
     /* Main Banner CSS */
 
@@ -1195,79 +787,7 @@
 
 
 
-    @media (max-width: 1200px) {
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .menu-Bar {
-            display: block;
-            top: 0px;
-        }
-
-        .menuWrap.open {
-            display: flex;
-            left: 0px;
-        }
-
-        .menuWrap {
-            position: fixed;
-            left: -210%;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            background: #0f4c97;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-flow: column;
-            transition: all 0.4s ease;
-            z-index: 3;
-            width: 100vw;
-        }
-
-        ul.menu li {
-            display: block;
-        }
-
-        ul.menu li a {
-            margin-bottom: 10px;
-            padding: 0;
-            display: block;
-            text-align: center;
-            margin-bottom: 15px;
-            padding-right: 0px;
-            margin-right: 0px;
-            color: #fff;
-            font-size: 15px;
-            text-transform: capitalize;
-        }
-
-        .logo img {
-            max-width: 50%;
-        }
-
-        .container {
-            position: relative;
-        }
-
-        header .main-header ul.menu>li {
-            display: block;
-            margin: 0px;
-            padding: 0;
-        }
-
-        header .main-header ul.menu>li a {
-            color: #fff;
-        }
-
-        header .main-header ul.menu>li a:before {
-            display: none;
-        }
-    }
+    @media (max-width: 1200px) {}
 
     @media (max-width: 1440px) {}
 
@@ -1341,32 +861,18 @@
                     <h4>Select Expert</h4>
                     <h4>Select Date & Time</h4>
                     <h4>Enter Information</h4>
-                    <? debug($experts['tutorial_expert_id']) ?>
-                    <? debug(count($experts)) ?>
-
-                    <? for ($x = 0; $x <= count($experts); $x++) { ?>
-                        <? debug($experts[$x]['tutorial_expert_id']) ?>
-                    <? } ?>
                     <div id="topics">
-
                         <ul class="tSelectBtn">
                             <? if (isset($category) and array_filled($category)) : ?>
                                 <? foreach ($category as $key => $value) : ?>
-                                    <li class="selectTopicBtn" id="<?= $value['category_id'] ?>"><span><?= $value['category_name'] ?></span></li>
+                                    <li class="selectTopicBtn" onclick="get_expert('<?= $value['category_id'] ?>')"><span><?= $value['category_name'] ?></span></li>
                                 <? endforeach; ?>
                             <? endif; ?>
                         </ul>
                     </div>
                     <div id="experts">
-                        <ul class="tSelectBtn">
-                            <? if (isset($experts) and array_filled($experts)) : ?>
-                                <? foreach ($experts as $key => $value) : ?>
-                                    <li class="selectTopicBtn" data-price="AED 300" id=<?= $value["expert_id"] ?>>
-                                        <img src="<?= g('db.admin.bucketimg') . $value['expert_image'] ?>" alt="">
-                                        <span><?= $value['expert_name'] ?></span>
-                                    </li>
-                                <? endforeach; ?>
-                            <? endif; ?>
+                        <ul class="expertlist tSelectBtn">
+
                         </ul>
                         <div class="bbtn backBtn_1">
                             <p><i class="fal fa-long-arrow-left"></i> Back </p>
@@ -1657,6 +1163,92 @@
 </section>
 
 <? $this->load->view('widgets/_clients'); ?>
+
+
+
+<script type="text/javascript">
+    function getName(id) {
+        document.getElementById('firstName').innerHTML = id;
+        document.getElementById('firstName2').innerHTML = id;
+    }
+
+    function getLastName(id) {
+        document.getElementById('lastName').innerHTML = id;
+        document.getElementById('lastName2').innerHTML = id;
+    }
+
+    function getPhone(id) {
+        document.getElementById('phoneNumber').innerHTML = id;
+    }
+
+    function getEmail(id) {
+        document.getElementById('emailAdress').innerHTML = id;
+    }
+
+    function get_expert(category_id) {
+        var my_url = base_url + "about_us/get_experts_by_category_id/" + category_id
+        // console.log('url', my_url)
+        $.ajax({
+            url: my_url,
+            method: 'get',
+            success: function(res) {
+                var experts = '';
+                res = $.parseJSON(res);
+                for (var i = 0; i < res.length; i++) {
+                    // console.log('res', res[i])
+                    experts = experts + get_expert_html(res[i]);
+                }
+                // console.log('res', experts)
+                // console.log('res', experts)
+                $('.expertlist').html(experts);
+            }
+        })
+    }
+
+
+    function show_detail(expert_name,category_name) {
+        // expert = JSON.parse(expert);
+        // console.log('expert',expert)
+        $('h4:nth-child(1)').hide();
+        $('h4:nth-child(2)').hide();
+        $('h4:nth-child(3)').show();
+
+        $('.fResult ul li:nth-child(2)').show();
+        $('.fResult ul li:nth-child(6)').show();
+
+        $('#experts').slideUp();
+        $('#selectT_D').slideDown();
+
+        $('.navigator ul li:nth-child(3)').addClass('active');
+
+        var target_price = $(this).attr('data-price');
+        $('span.price').text(target_price);
+
+        $('.expertTopic ul li:nth-child(2)').hide();
+        $('.expertTopic ul li:nth-child(3)').show();
+
+        $('.serv').html(category_name);
+        $('.agentName').html(expert_name);
+
+
+
+    };
+
+    var path = '<?= g('db.admin.bucketimg') ?>'
+//category_name
+    function get_expert_html(expert) {
+        var s_e = JSON.stringify(expert);
+        console.log('s_e',s_e);
+        return `
+        <li class="selectTopicBtn" data-price="AED 300" onclick="show_detail('`+expert.expert_name+`','`+expert.category_name+`')" id=` 
+        + expert.expert_id + `>
+            <img src="` + path + expert.expert_image + `" alt="">
+            <span>` + expert.expert_name + `</span>
+        </li>
+        `;
+    }
+</script>
+
 
 <script src="<?= l('') ?>assets/front_assets/js/account/slick.js"></script>
 <script src="<?= l('') ?>assets/front_assets/js/account/custombooking.js"></script>

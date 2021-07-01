@@ -65,6 +65,24 @@ class Model_tutorial extends MY_Model
         return $this->prep_join("language", $joint, $type);
     }
 
+    public function get_experts_by_category($cat_id){
+        $this->db->select('expert.*,course_category.*,category.category_name');
+		$this->db->from('course_category');
+		$this->db->join('tutorial', 'tutorial.tutorial_id = course_category.cp_course_id');
+		$this->db->join('category', 'category.category_id = course_category.cp_category_id');
+		$this->db->join('expert', 'tutorial.tutorial_expert_id = expert.expert_id');
+        $this->db->where('course_category.cp_category_id',$cat_id);
+        $this->db->where('expert.expert_status','1');
+		 $this->db->group_by(['expert.expert_id']);
+        // debug();
+		$query = $this->db->get();
+        // debug($this->db->last_query());die();
+		return $query->result_array() ;
+
+
+
+    }
+
     function course_by_slug($slug = '', $params = array())
     {
 
