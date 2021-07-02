@@ -475,15 +475,6 @@ class Profile extends MY_Controller_Account
 			echo json_encode($this->json_param);
 		}
 	}
-	
-	
-
-	
-
-
-	
-
-	
 
 	*/
 
@@ -513,20 +504,20 @@ class Profile extends MY_Controller_Account
 		// $par = array();
 		// $par['order'] = "category_id ASC";
 		// $par['group'] = "category_id";
-		
-		// $par['joins'][] = array(
-        //     "table" => "course_category",
-        //     "joint" => "category.category_id = course_category.cp_category_id"
-        // );
 
-		
 		// $par['joins'][] = array(
-        //     "table" => "tutorial",
-        //     "joint" => "tutorial.tutorial_id = course_category.cp_course_id"
-        // );
+		//     "table" => "course_category",
+		//     "joint" => "category.category_id = course_category.cp_category_id"
+		// );
+
+
+		// $par['joins'][] = array(
+		//     "table" => "tutorial",
+		//     "joint" => "tutorial.tutorial_id = course_category.cp_course_id"
+		// );
 
 		$categories = $this->model_category->get_category_tutorials();
-		$data['main_categories'] = $categories ;
+		$data['main_categories'] = $categories;
 
 		// $data['main_categories'] = $this->model_category->find_all_active($par);
 
@@ -534,49 +525,62 @@ class Profile extends MY_Controller_Account
 		$par2['order'] = "expert_id ASC";
 		$data['ex'] = $this->model_expert->find_all_active($par2);
 
-		$coursecat=array();
-        $coursecat['where']['cp_category_id']=intval($this->input->get('cat'));
-        $cate = $this->model_course_category->find_all_active($coursecat);
+		$coursecat = array();
+		$coursecat['where']['cp_category_id'] = intval($this->input->get('cat'));
+		$cate = $this->model_course_category->find_all_active($coursecat);
 
-    //    debug($cate);
-  
-        foreach($cate as $key => $value)
-        {
-         $all[]=$value['cp_course_id'];
-        }
-		
+		//    debug($cate);
+
+		foreach ($cate as $key => $value) {
+			$all[] = $value['cp_course_id'];
+		}
+
 		// $newone=count($all);
-        
+
 		//debug($data['main_categories']);
 
-		
+
 		// debug($categories);
 		// die();
 		$param = array();
 		if (isset($_GET['expert']) and intval($_GET['expert']) > 0) {
 			$param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
 		}
-		if(isset($_GET['search'])){
-            // debug($_GET['search']);
-         $param['where_like'][] = array('column'=>'tutorial_name','value'=>$_GET['search']);
-        }
+		if (isset($_GET['search'])) {
+			// debug($_GET['search']);
+			$param['where_like'][] = array('column' => 'tutorial_name', 'value' => $_GET['search']);
+		}
+
+		$upaid = array();
+		$upaid['where']['user_id'] = $this->userid;
+		$upaid['where']['user_paid'] = 1;
+		$datapaid = $this->model_user->find_all_active($upaid);
+
+		// debug($datapaid[0]['user_paid']);
 
 
+		if ($datapaid[0]['user_paid'] == 1) {
 
-		$param['order'] = "tutorial_id ASC";
-		$param['where']['tutorial_free_status'] = 1;
-		$param['where_in']['tutorial_id']=$all;
+			$param['order'] = "tutorial_id ASC";
+			$param['where']['tutorial_free_status'] = 1;
+			$param['where']['tutorial_free_status'] = 0;
+			$param['where_in']['tutorial_id'] = $all;
 
-		$data['art'] = $this->model_tutorial->find_all_active($param);
+			$data['art'] = $this->model_tutorial->find_all_active($param);
+			// debug("user is paid");
+		} else {
+			$param['order'] = "tutorial_id ASC";
+			$param['where']['tutorial_free_status'] = 1;
+			$param['where_in']['tutorial_id'] = $all;
 
-
-
+			$data['art'] = $this->model_tutorial->find_all_active($param);
+			// debug("user is Not paid");
+		}
 
 		$pop = array();
 		$pop['where']['category_featured'] = 1;
 		$data['popular'] = $this->model_category->find_all_active($pop);
 		//  debug($data['art']);
-
 
 		$fa = array();
 		$fa['where']['faq_category'] = 1;
@@ -587,29 +591,27 @@ class Profile extends MY_Controller_Account
 
 		$data['check'] = $exp1['child'][0];
 
-		
 		$param = array();
 		$param['order'] = "videos_views DESC";
 		$param['limit'] = 3;
-	
+
 		$videos = $this->model_videos->find_all_active($param);
-		
-			foreach ($videos as $key => $value) {
-				$all[] = $value['videos_id'];
-			}
-		
+
+		foreach ($videos as $key => $value) {
+			$all[] = $value['videos_id'];
+		}
+
 		$param = array();
 		$param['where_in']['cp_tutorial_id'] = $all;
 		$tut = $this->model_course_tutorial->find_all_active($param);
-	
+
 		foreach ($tut as $key => $value) {
-				$all1[] = $value['cp_course_id'];
-			}
-		
+			$all1[] = $value['cp_course_id'];
+		}
+
 		$param = array();
 		$param['where_in']['tutorial_id'] = $all1;
 		$data['tut'] = $this->model_tutorial->find_all_active($param);
-
 
 
 		$this->load_view('expert', $data);
@@ -626,9 +628,9 @@ class Profile extends MY_Controller_Account
 		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
 
-			$startup = array();
-			 $startup['where']['startup_user_id'] =$this->userid;
-			$data['startup'] = $this->model_startup->find_all_active($startup);
+		$startup = array();
+		$startup['where']['startup_user_id'] = $this->userid;
+		$data['startup'] = $this->model_startup->find_all_active($startup);
 
 		$this->load_view('learning', $data);
 	}
@@ -645,10 +647,10 @@ class Profile extends MY_Controller_Account
 		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
 
-		
+
 		$startup = array();
-		$startup['where']['startup_user_id'] =$this->userid;
-	   $data['startup'] = $this->model_startup->find_all_active($startup);
+		$startup['where']['startup_user_id'] = $this->userid;
+		$data['startup'] = $this->model_startup->find_all_active($startup);
 
 
 
@@ -666,10 +668,10 @@ class Profile extends MY_Controller_Account
 		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
 
-		
+
 		$startup = array();
-		$startup['where']['startup_user_id'] =$this->userid;
-	   $data['startup'] = $this->model_startup->find_all_active($startup);
+		$startup['where']['startup_user_id'] = $this->userid;
+		$data['startup'] = $this->model_startup->find_all_active($startup);
 
 
 
@@ -693,18 +695,17 @@ class Profile extends MY_Controller_Account
 	public function dl_tools()
 	{
 		// $this->load->library('phpword');
-			$vp = array();
-			$vp['where']['tool_builder_user_id'] =$this->userid;
-			$data['tootl'] = $this->model_tool_builder->find_all_active($vp);
-			$tootl = $data['tootl'];
-			// debug( $tootl);
-			// die;
+		$vp = array();
+		$vp['where']['tool_builder_user_id'] = $this->userid;
+		$data['tootl'] = $this->model_tool_builder->find_all_active($vp);
+		$tootl = $data['tootl'];
+		// debug( $tootl);
+		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/business_model_canvus.docx');
 		// debug($tootl);
 		// die();
-		foreach($tootl[0] as $column_name =>$value){
+		foreach ($tootl[0] as $column_name => $value) {
 			$templateProcessor->setValue($column_name, $value);
-
 		}
 		$filename = 'Business Model Canvas.docx';
 		$templateProcessor->saveAs($filename);
@@ -729,18 +730,17 @@ class Profile extends MY_Controller_Account
 	public function dl_tools_multi()
 	{
 		// $this->load->library('phpword');
-			$vp = array();
-			$vp['where']['tool_builder_user_id'] =$this->userid;
-			$data['tootl'] = $this->model_tool_builder_bmc_multi->find_all_active($vp);
-			$tootl = $data['tootl'];
-			// debug( $tootl);
-			// die;
+		$vp = array();
+		$vp['where']['tool_builder_user_id'] = $this->userid;
+		$data['tootl'] = $this->model_tool_builder_bmc_multi->find_all_active($vp);
+		$tootl = $data['tootl'];
+		// debug( $tootl);
+		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/business_model_canvus_multi.docx');
 		// debug($tootl);
 		// die();
-		foreach($tootl[0] as $column_name =>$value){
+		foreach ($tootl[0] as $column_name => $value) {
 			$templateProcessor->setValue($column_name, $value);
-
 		}
 		$filename = 'Business Model Canvas.docx';
 		$templateProcessor->saveAs($filename);
@@ -783,17 +783,16 @@ class Profile extends MY_Controller_Account
 	public function dl_tools_vp()
 	{
 		// $this->load->library('phpword');
-			$vp = array();
-			$vp['where']['tool_builder_vp_user_id'] = $this->userid;
-			$data['tootl_vp'] = $this->model_tool_builder_vp->find_all_active($vp);
-			$tootl_vp = $data['tootl_vp'];
-			// debug( $tootl_vp);
-			// die;
+		$vp = array();
+		$vp['where']['tool_builder_vp_user_id'] = $this->userid;
+		$data['tootl_vp'] = $this->model_tool_builder_vp->find_all_active($vp);
+		$tootl_vp = $data['tootl_vp'];
+		// debug( $tootl_vp);
+		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/value_proposition_canvas.docx');
 
-		foreach($tootl_vp[0] as $column_name =>$value){
+		foreach ($tootl_vp[0] as $column_name => $value) {
 			$templateProcessor->setValue($column_name, $value);
-
 		}
 
 		$filename = 'Value Proposition Canvas.docx';
@@ -834,16 +833,15 @@ class Profile extends MY_Controller_Account
 	public function dl_tools_swot()
 	{
 		// $this->load->library('phpword');
-			$vp = array();
-			$vp['where']['tool_builder_user_id'] = $this->userid;
-			$data['tootl'] = $this->model_tool_builder_swot->find_all_active($vp);
-			$tootl = $data['tootl'];
-			// debug( $tootl);
-			// die;
+		$vp = array();
+		$vp['where']['tool_builder_user_id'] = $this->userid;
+		$data['tootl'] = $this->model_tool_builder_swot->find_all_active($vp);
+		$tootl = $data['tootl'];
+		// debug( $tootl);
+		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/swot_analysis.docx');
-		foreach($tootl[0] as $column_name =>$value){
+		foreach ($tootl[0] as $column_name => $value) {
 			$templateProcessor->setValue($column_name, $value);
-
 		}
 
 		$filename = 'SWOT Analysis.docx';
@@ -883,16 +881,15 @@ class Profile extends MY_Controller_Account
 	public function dl_tools_pmmt()
 	{
 		// $this->load->library('phpword');
-			$vp = array();
-			$vp['where']['tool_builder_user_id'] = $this->userid;
-			$data['tootl'] = $this->model_tool_builder_pmmt->find_all_active($vp);
-			$tootl = $data['tootl'];
-			// debug( $tootl);
-			// die;
+		$vp = array();
+		$vp['where']['tool_builder_user_id'] = $this->userid;
+		$data['tootl'] = $this->model_tool_builder_pmmt->find_all_active($vp);
+		$tootl = $data['tootl'];
+		// debug( $tootl);
+		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/positioning_marketing_mix.docx');
-		foreach($tootl[0] as $column_name =>$value){
+		foreach ($tootl[0] as $column_name => $value) {
 			$templateProcessor->setValue($column_name, $value);
-
 		}
 
 		$filename = 'Positioning and Marketing Mix.docx';
@@ -929,16 +926,15 @@ class Profile extends MY_Controller_Account
 	public function dl_tools_smp()
 	{
 		// $this->load->library('phpword');
-			$vp = array();
-			$vp['where']['tool_builder_strg_mkt_user_id'] = $this->userid;
-			$data['tootl'] = $this->model_tool_builder_strg_mkt->find_all_active($vp);
-			$tootl = $data['tootl'];
-			// debug( $tootl);
-			// die;
+		$vp = array();
+		$vp['where']['tool_builder_strg_mkt_user_id'] = $this->userid;
+		$data['tootl'] = $this->model_tool_builder_strg_mkt->find_all_active($vp);
+		$tootl = $data['tootl'];
+		// debug( $tootl);
+		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/strategic_marketing_plan.docx');
-		foreach($tootl[0] as $column_name =>$value){
+		foreach ($tootl[0] as $column_name => $value) {
 			$templateProcessor->setValue($column_name, $value);
-
 		}
 
 		$filename = 'Strategic Marketing Plan.docx';
@@ -974,16 +970,15 @@ class Profile extends MY_Controller_Account
 	public function dl_tools_cjdg()
 	{
 		// $this->load->library('phpword');
-			$vp = array();
-			$vp['where']['tool_builder_cj_dg_user_id'] = $this->userid;
-			$data['tootl'] = $this->model_tool_builder_cj_dg->find_all_active($vp);
-			$tootl = $data['tootl'];
-			// debug( $tootl);
-			// die;
+		$vp = array();
+		$vp['where']['tool_builder_cj_dg_user_id'] = $this->userid;
+		$data['tootl'] = $this->model_tool_builder_cj_dg->find_all_active($vp);
+		$tootl = $data['tootl'];
+		// debug( $tootl);
+		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/customer_journey_demand_generation.docx');
-		foreach($tootl[0] as $column_name =>$value){
+		foreach ($tootl[0] as $column_name => $value) {
 			$templateProcessor->setValue($column_name, $value);
-
 		}
 
 		$filename = 'Customer Journey Demand Generation.docx';
@@ -1019,16 +1014,15 @@ class Profile extends MY_Controller_Account
 	public function dl_tools_mc()
 	{
 		// $this->load->library('phpword');
-			$vp = array();
-			$vp['where']['tool_builder_mc_mc_user_id'] = $this->userid;
-			$data['tootl'] = $this->model_tool_builder_mc_mc->find_all_active($vp);
-			$tootl = $data['tootl'];
-			// debug( $tootl);
-			// die;
+		$vp = array();
+		$vp['where']['tool_builder_mc_mc_user_id'] = $this->userid;
+		$data['tootl'] = $this->model_tool_builder_mc_mc->find_all_active($vp);
+		$tootl = $data['tootl'];
+		// debug( $tootl);
+		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/marketing_campaign_model_canvas.docx');
-		foreach($tootl[0] as $column_name =>$value){
+		foreach ($tootl[0] as $column_name => $value) {
 			$templateProcessor->setValue($column_name, $value);
-
 		}
 
 
@@ -1065,16 +1059,15 @@ class Profile extends MY_Controller_Account
 	public function dl_tools_osf()
 	{
 		// $this->load->library('phpword');
-			$vp = array();
-			$vp['where']['tool_builder_osf_user_id'] = $this->userid;
-			$data['tootl'] = $this->model_tool_builder_osf->find_all_active($vp);
-			$tootl = $data['tootl'];
-			// debug( $tootl);
-			// die;
+		$vp = array();
+		$vp['where']['tool_builder_osf_user_id'] = $this->userid;
+		$data['tootl'] = $this->model_tool_builder_osf->find_all_active($vp);
+		$tootl = $data['tootl'];
+		// debug( $tootl);
+		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/online_sales_funnel.docx');
-		foreach($tootl[0] as $column_name =>$value){
+		foreach ($tootl[0] as $column_name => $value) {
 			$templateProcessor->setValue($column_name, $value);
-
 		}
 
 		$filename = 'Online Sales Funnel.docx';
@@ -1111,19 +1104,18 @@ class Profile extends MY_Controller_Account
 	{
 
 		$vp = array();
-			$vp['where']['tool_builder_lts_user_id'] = $this->userid;
-			$data['tootl'] = $this->model_tool_builder_lts->find_all_active($vp);
-			$tootl = $data['tootl'];
-			// debug( $tootl[0]['tool_builder_lts_structure_settingup_jv_company']);
-			// die;
-			// html_entity_decode();
+		$vp['where']['tool_builder_lts_user_id'] = $this->userid;
+		$data['tootl'] = $this->model_tool_builder_lts->find_all_active($vp);
+		$tootl = $data['tootl'];
+		// debug( $tootl[0]['tool_builder_lts_structure_settingup_jv_company']);
+		// die;
+		// html_entity_decode();
 
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/legal_term_sheet.docx');
-		foreach($tootl[0] as $column_name =>$value){
+		foreach ($tootl[0] as $column_name => $value) {
 			$templateProcessor->setValue($column_name, $value);
-
 		}
-		
+
 		$filename = 'Legal Term Sheet.docx';
 		$templateProcessor->saveAs($filename);
 		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
@@ -1169,19 +1161,19 @@ class Profile extends MY_Controller_Account
 	{
 
 		$vp = array();
-			$vp['where']['tool_builder_ids_user_id'] = $this->userid;
-			$data['tootl'] = $this->model_tool_builder_ids->find_all_active($vp);
-			$tootl = $data['tootl'];
-			// debug( $tootl[0]['tool_builder_lts_structure_settingup_jv_company']);
-			// die;
-			// html_entity_decode();
+		$vp['where']['tool_builder_ids_user_id'] = $this->userid;
+		$data['tootl'] = $this->model_tool_builder_ids->find_all_active($vp);
+		$tootl = $data['tootl'];
+		// debug( $tootl[0]['tool_builder_lts_structure_settingup_jv_company']);
+		// die;
+		// html_entity_decode();
 
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/investment_deck_slides.docx');
 
-		foreach($tootl[0] as $column_name =>$value){
+		foreach ($tootl[0] as $column_name => $value) {
 			$templateProcessor->setValue($column_name, $value);
 		}
-		
+
 		$filename = 'Investment Deck Slides.docx';
 		$templateProcessor->saveAs($filename);
 		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
@@ -1246,9 +1238,9 @@ class Profile extends MY_Controller_Account
 		$user_id = $this->userid;
 		$data['title'] = 'My Profile';
 		$data['user_data'] = $this->layout_data['user_data'];
-		$data['country'] = $this->model_country->find_all_list(array('order'=>'country ASC') , 'country');
+		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
 		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
-		$this->load_view('business-model-tool-fm-dcvm' , $data);
+		$this->load_view('business-model-tool-fm-dcvm', $data);
 	}
 
 	public function video()
@@ -1371,11 +1363,11 @@ class Profile extends MY_Controller_Account
 		$data['ct'] = $this->model_category->find_all_active($ccategory);
 
 		//   debug($course_review_data[0]['learning_journey_course_review_course_id']);
-		 $review = array();
-		 $review['where']['learning_journey_course_review_course_id'] = $coursecat[0]['cp_course_id'];
-		 $review_data = $this->model_learning_journey_course_review->find_all_active($review);
+		$review = array();
+		$review['where']['learning_journey_course_review_course_id'] = $coursecat[0]['cp_course_id'];
+		$review_data = $this->model_learning_journey_course_review->find_all_active($review);
 
-		 $data['review'] = $review_data;
+		$data['review'] = $review_data;
 
 		//  debug($coursecat[0]['cp_course_id']);
 		//  debug($review_data);
@@ -1403,24 +1395,24 @@ class Profile extends MY_Controller_Account
 		$this->load_view('expert_detail_tutorial', $data);
 	}
 
-	public function pdf_convert($tutorialid='',$view=0)
+	public function pdf_convert($tutorialid = '', $view = 0)
 	{
-		$tutorialid=$_GET['courseid'];
-		$view =1;
-		
-		$this->layout_data['template_config']['show_toolbar'] = false ;
-		
+		$tutorialid = $_GET['courseid'];
+		$view = 1;
+
+		$this->layout_data['template_config']['show_toolbar'] = false;
+
 		$logodata = $this->model_logo->find_by_pk(1);
-		$logo = Links::img($logodata['logo_image_path'],$logodata['logo_image']);
+		$logo = Links::img($logodata['logo_image_path'], $logodata['logo_image']);
 		// $data['logo'] = g('dirname').$logodata['logo_image_path'].$logodata['logo_image'];
-	
-	  //   $quiz = $this->model_quiz->find_by_pk($tutorialid);
+
+		//   $quiz = $this->model_quiz->find_by_pk($tutorialid);
 		$course = $this->model_tutorial->find_by_pk($tutorialid);
-	
+
 		$pu = array();
 		$pu['fields'] = "user_firstname,user_lastname";
-		$user_data = $this->model_user->find_by_pk($this->userid,false,$pu);
-		
+		$user_data = $this->model_user->find_by_pk($this->userid, false, $pu);
+
 
 		$al = array();
 		$al['where']['expert_id'] = $course['tutorial_expert_id'];
@@ -1431,36 +1423,36 @@ class Profile extends MY_Controller_Account
 		// die;
 
 		//CERTIFICATE VARIABLES
-		  // $data['completion_date'] = csl_date($quiz['quiz_createdon'],'d-m-Y');
-		  // $data['certificate_number']  = $quiz['quiz_certificate_number'];
-		  $data['course_title'] = $course['tutorial_name'];
-		  $data['expert_name'] = $expert[0]['expert_name'];
-		  $data['course_tracking_number'] = $course['tutorial_identity'];
-		  $data['username'] = $user_data['user_firstname'].' '.$user_data['user_lastname'];
-		  $data['ce_provider'] = '110221021';
-		  
-		  $data['logo'] = g('dirname').'assets/front_assets/images/logo.png';    //for PDF
-		  $data['certificate'] = g('dirname').'assets/front_assets/images/certificate.png';    //for PDF
-		  $data['signature'] = g('dirname').'assets/front_assets/images/signature.jpg';    //for PDF
-	
-		  // $data['certificate'] = l('').'assets/front_assets/images/certificate_pdf.jpg';
-		  $filename = "Certificate";
-	  
-	  $this->load->view("widgets/pdf_certificate",$data);
-	
-		  // // Get output html
-	   $html = $this->output->get_output();
-	   // debug($html , 1);
-	
+		// $data['completion_date'] = csl_date($quiz['quiz_createdon'],'d-m-Y');
+		// $data['certificate_number']  = $quiz['quiz_certificate_number'];
+		$data['course_title'] = $course['tutorial_name'];
+		$data['expert_name'] = $expert[0]['expert_name'];
+		$data['course_tracking_number'] = $course['tutorial_identity'];
+		$data['username'] = $user_data['user_firstname'] . ' ' . $user_data['user_lastname'];
+		$data['ce_provider'] = '110221021';
+
+		$data['logo'] = g('dirname') . 'assets/front_assets/images/logo.png';    //for PDF
+		$data['certificate'] = g('dirname') . 'assets/front_assets/images/certificate.png';    //for PDF
+		$data['signature'] = g('dirname') . 'assets/front_assets/images/signature.jpg';    //for PDF
+
+		// $data['certificate'] = l('').'assets/front_assets/images/certificate_pdf.jpg';
+		$filename = "Certificate";
+
+		$this->load->view("widgets/pdf_certificate", $data);
+
+		// // Get output html
+		$html = $this->output->get_output();
+		// debug($html , 1);
+
 		// Load library
 		$this->load->library('dompdf_gen');
-	  
+
 		// $dompdf = new Dompdf();
 		//     $options = $dompdf->getOptions();
 		//     $options->set(array('isRemoteEnabled' => true));
 		//     $dompdf->setOptions($options);
 		//     $dompdf->loadHtml($html);
-			
+
 		// Convert to PDF
 		$this->dompdf->load_html($html);
 		//$paper_size = array(0,0,1050.72,800);
@@ -1468,17 +1460,15 @@ class Profile extends MY_Controller_Account
 		//$this->dompdf->set_paper($paper_size);
 		$this->dompdf->set_paper('A4', 'portrait');
 		$this->dompdf->render();
-	
+
 		// if(isset($_GET['view']) AND ($_GET['view'] == 1)) { // just view certificates
-		if(isset($view) AND ($view == 1)) { // just view certificates
-		  $this->dompdf->stream("{$filename}.pdf", array("Attachment" => false));
-		  exit(0);
+		if (isset($view) and ($view == 1)) { // just view certificates
+			$this->dompdf->stream("{$filename}.pdf", array("Attachment" => false));
+			exit(0);
+		} else { // download certificates
+			$this->dompdf->stream("{$filename}.pdf");
 		}
-		else{ // download certificates
-		  $this->dompdf->stream("{$filename}.pdf");
-		}
-  
-	  }
+	}
 
 
 
@@ -1525,8 +1515,8 @@ class Profile extends MY_Controller_Account
 	public function expert_detail_tutorial_video()
 	{
 		global $config;
-		
-		
+
+
 		$user_id = $this->userid;
 
 		$data = $this->get_sidebar_data();
@@ -1540,11 +1530,10 @@ class Profile extends MY_Controller_Account
 		$tutorial_detail = $tutorial_detail_arr[0];
 		$data['tutorial_detail'] = $tutorial_detail;
 
-		$count_tutorial=$this->model_videos->find_by_pk($_GET['tutorialid']);
+		$count_tutorial = $this->model_videos->find_by_pk($_GET['tutorialid']);
 		if (isset($_GET['count_id']) and intval($_GET['count_id']) > 0) {
-		  $count_tutorial['videos_views']=$_GET['count_id']; 
-		  $count_up=$this->model_videos->update_by_pk($_GET['tutorialid'],$count_tutorial);	 
-
+			$count_tutorial['videos_views'] = $_GET['count_id'];
+			$count_up = $this->model_videos->update_by_pk($_GET['tutorialid'], $count_tutorial);
 		}
 
 		// debug($count_up,1);		
@@ -1555,66 +1544,66 @@ class Profile extends MY_Controller_Account
 	public function learing_journey()
 	{
 		$data = array();
-        global $config;
+		global $config;
 
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
-
-
-        $data['professions'] = $this->model_profession->find_all_active();
-        $data['states'] = $this->model_states->find_all_active();
-
-        $param = array();
-        $param['where']['tutorial_featured'] = 1;
-        $data['course'] = $this->model_tutorial->find_all_active($param);
+		$method_title = ucwords($this->uri->segment(1));
+		$this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
 
 
-        $cont = $this->model_cms_page->get_page(2);
-        // debug($cont);
-        $data['cont1'] = $cont['child'][0];
-        $data['cont2'] = $cont['child'][1];
-        $data['cont3'] = $cont['child'][2];
-        $data['cont4'] = $cont['child'][3];
-        $data['cont5'] = $cont['child'][4];
-        $data['cont6'] = $cont['child'][5];
-        $data['cont7'] = $cont['child'][6];
-        $data['cont8'] = $cont['child'][7];
-        $data['cont9'] = $cont['child'][8];
-        $data['cont10'] = $cont['child'][9];
-        $data['cont11'] = $cont['child'][10];
-        $data['cont12'] = $cont['child'][11];
-        $data['cont13'] = $cont['child'][12];
-        $data['cont14'] = $cont['child'][13];
+		$data['professions'] = $this->model_profession->find_all_active();
+		$data['states'] = $this->model_states->find_all_active();
 
-        $data['banner'] = $this->model_inner_banner->find_by_pk(1);
+		$param = array();
+		$param['where']['tutorial_featured'] = 1;
+		$data['course'] = $this->model_tutorial->find_all_active($param);
 
-        $data['learning'] = $this->model_learning->find_all_active();
-        $data['testimonial'] = $this->model_testimonials->find_all_active();
 
-        $param = array();
-        $param['where']['category_featured'] = 1;
-        $data['category'] = $this->model_category->find_all_active($param);
+		$cont = $this->model_cms_page->get_page(2);
+		// debug($cont);
+		$data['cont1'] = $cont['child'][0];
+		$data['cont2'] = $cont['child'][1];
+		$data['cont3'] = $cont['child'][2];
+		$data['cont4'] = $cont['child'][3];
+		$data['cont5'] = $cont['child'][4];
+		$data['cont6'] = $cont['child'][5];
+		$data['cont7'] = $cont['child'][6];
+		$data['cont8'] = $cont['child'][7];
+		$data['cont9'] = $cont['child'][8];
+		$data['cont10'] = $cont['child'][9];
+		$data['cont11'] = $cont['child'][10];
+		$data['cont12'] = $cont['child'][11];
+		$data['cont13'] = $cont['child'][12];
+		$data['cont14'] = $cont['child'][13];
 
-        $data['testi'] = $this->model_testimonials->find_all_active();
-        $firststate = $this->model_states->find_one_active();
-        $data['firststate'] = $firststate['states_id'];
+		$data['banner'] = $this->model_inner_banner->find_by_pk(1);
 
-        $exp1 = $this->model_cms_page->get_page(26);
+		$data['learning'] = $this->model_learning->find_all_active();
+		$data['testimonial'] = $this->model_testimonials->find_all_active();
 
-        $data['check'] = $exp1['child'][0];
+		$param = array();
+		$param['where']['category_featured'] = 1;
+		$data['category'] = $this->model_category->find_all_active($param);
 
-        $fa = array();
-        $fa['where']['faq_category'] = 2;
-        $fa['order'] = "faq_id ASC";
-        $data['faq'] = $this->model_faq->find_all_active($fa);
+		$data['testi'] = $this->model_testimonials->find_all_active();
+		$firststate = $this->model_states->find_one_active();
+		$data['firststate'] = $firststate['states_id'];
 
-        $contdata = $this->model_cms_page->get_page(28);
-        // debug($cont);
-        $data['contd'] = $contdata['child'][0];
+		$exp1 = $this->model_cms_page->get_page(26);
 
-        $data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+		$data['check'] = $exp1['child'][0];
 
-        //  debug($data['learn_cat']);
+		$fa = array();
+		$fa['where']['faq_category'] = 2;
+		$fa['order'] = "faq_id ASC";
+		$data['faq'] = $this->model_faq->find_all_active($fa);
+
+		$contdata = $this->model_cms_page->get_page(28);
+		// debug($cont);
+		$data['contd'] = $contdata['child'][0];
+
+		$data['learn_cat'] = $this->model_learning_journey_category->find_all_active();
+
+		//  debug($data['learn_cat']);
 		$this->load_view('learing_journey', $data);
 	}
 

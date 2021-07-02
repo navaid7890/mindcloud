@@ -47,6 +47,7 @@ var Form = function () {
     course_review: base_url + "contact_us/review",
     content_review: base_url + "contact_us/content_review",
     learing_startup: base_url + "contact_us/learing_startup",
+    exp_tutorial_vid_percent: base_url + "contact_us/exp_tutorial_vid_percent",
     learing_transcript: base_url + "contact_us/learing_transcript",
     tutorial_review: base_url + "contact_us/tutorial_review",
     form_cto: base_url + "contact_us/ajax_formsend",
@@ -172,6 +173,31 @@ var Form = function () {
 
         Toastr.success(response.msg.desc, 'Success');
         $("#forms-content-statup").find('input[type=text],input[type=email],textarea').val('');
+        //FOR GOOGLE CAPTCHA RESET:
+        // grecaptcha.reset();
+        //  $(".openBtn").click();
+        // return false;
+      }
+      else {
+        Toastr.error(response.msg.desc, 'Error');
+        //Toastr.error('Error Found please try again','Error');
+        return false;
+      }
+      return false;
+    },
+
+    exp_tutorial_vid_percent: function (form) {
+      // Disable the submit button to prevent repeated clicks:
+      $('#forms-expert-tutorial-video-btn').prop('disabled', true);
+      var data = form.serialize();
+      response = AjaxRequest.fire(urls.exp_tutorial_vid_percent, data);
+      // return false;  
+      $('#forms-expert-tutorial-video-btn').prop('disabled', false);
+
+      if (response.status) {
+
+        Toastr.success(response.msg.desc, 'Success');
+        $("#forms-expert-tutorial-video").find('input[type=text],input[type=email],textarea').val('');
         //FOR GOOGLE CAPTCHA RESET:
         // grecaptcha.reset();
         //  $(".openBtn").click();
@@ -1803,6 +1829,13 @@ $(function () {
   var $form = $('#forms-content-statup');
   $form.submit(function (event) {
     Form.learing_startup($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#forms-expert-tutorial-video');
+  $form.submit(function (event) {
+    Form.exp_tutorial_vid_percent($form);
     return false;
   });
 });

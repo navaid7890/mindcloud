@@ -2,6 +2,24 @@
     .progres-dark {
         width: 10%;
     }
+
+    #expertGraph .expertCount {
+        font-size: 36px;
+        color: #33415C;
+        font-weight: 800;
+        line-height: 122px;
+        position: absolute;
+        top: 80px;
+        right: 30%;
+    }
+
+    #expertGraph .progres-circle-box {
+        position: relative;
+    }
+
+    #expertGraph span.prec {
+        display: none;
+    }
 </style>
 
 <div class="index-page">
@@ -138,53 +156,28 @@
                             </div>
                         </div>
                         <div class="space"><br><br></div>
-                        <div class="index-graph-box">
+                        <div class="index-graph-box" id="expertGraph">
                             <div class="row graph-box-2">
                                 <div class="col-lg-7 col-md-12">
                                     <div class="progress-box">
                                         <h2>My <strong> Experts Tutorials </strong></h2>
-                                        <div class="space"><br><br><br></div>
-                                        <div class="progres-bar">
-                                            <div class="progres-text">
-                                                <p>Intro to Learning Journey</p>
-                                            </div>
+                                        <?php if (isset($art) && array_filled($art)) : ?>
+                                            <?php foreach ($art as $key => $value) : ?>
+                                                <div class="space"><br><br></div>
+                                                <div class="progres-bar">
+                                                    <div class="progres-text">
+                                                        <p><?= $value['tutorial_name'] ?></p>
+                                                    </div>
+                                                    <div class="progres-gray">
+                                                        <div class="progres-dark per-70"></div>
+                                                    </div>
 
-                                            <div class="progres-gray">
-                                                <div class="progres-dark"></div>
-                                            </div>
-
-                                            <div class="progres-percentage">
-                                                <span>100%</span>
-                                            </div>
-                                        </div>
-                                        <div class="space"><br><br></div>
-                                        <div class="progres-bar">
-                                            <div class="progres-text">
-                                                <p>Business Model Canvas</p>
-                                            </div>
-
-                                            <div class="progres-gray">
-                                                <div class="progres-dark"></div>
-                                            </div>
-
-                                            <div class="progres-percentage">
-                                                <span>100%</span>
-                                            </div>
-                                        </div>
-                                        <div class="space"><br><br></div>
-                                        <div class="progres-bar">
-                                            <div class="progres-text">
-                                                <p>Go-to market strategies</p>
-                                            </div>
-
-                                            <div class="progres-gray">
-                                                <div class="progres-dark per-70"></div>
-                                            </div>
-
-                                            <div class="progres-percentage">
-                                                <span>12%</span>
-                                            </div>
-                                        </div>
+                                                    <div class="progres-percentage">
+                                                        <span>12%</span>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="progress-btn btn-group">
                                         <a href="<?= l('account/profile/expert') ?>" class="btn-theme btn-hover">Continue Experts Tutorials <span></span></a>
@@ -201,6 +194,7 @@
                                                     <span id="startDeg2" class="8"></span>
                                                 </div>
                                             </div>
+                                            <div class="expertCount">4/<?= count($art) ?></div>
 
                                         </div>
 
@@ -490,7 +484,7 @@
             $("#certificateBtn").css("display", "block");
             $("#certificateNotComplete").css("display", "none");
         } else {
-           
+
             $("#certificateBtn").css("display", "none");
             $("#certificateNotComplete").css("display", "block");
         }

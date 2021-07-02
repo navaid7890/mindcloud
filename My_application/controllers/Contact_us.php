@@ -310,6 +310,37 @@ class Contact_us extends MY_Controller
             echo json_encode($this->json_param);
         }
     }
+    public function exp_tutorial_vid_percent()
+    {
+        if (array_filled($_POST)) {
+
+
+            //$this->form_validation->set_rules('g-recaptcha-response', 'Captcha', 'required');
+            if ($this->validate("model_mytutorial")) {
+                $data = $_POST['mytutorial'];
+                $data['mytutorial_status'] = 1;
+
+
+                $this->model_mytutorial->set_attributes($data);
+                $inserted_id = $this->model_mytutorial->save();
+
+
+                $form_data = $this->model_mytutorial->find_by_pk($inserted_id);
+                // $this->model_email->contactInquiry($form_data);  
+
+                $this->json_param['status'] = true;
+                $this->json_param['msg']['title'] = 'Marked As Completed';
+                $this->json_param['msg']['desc'] = 'Marked As Completed';
+            } else {
+                $this->json_param['status'] = false;
+                $this->json_param['msg']['title'] = 'Error Occurred';
+                $this->json_param['msg']['desc'] = validation_errors();
+            }
+
+
+            echo json_encode($this->json_param);
+        }
+    }
     public function learing_transcript()
     {
         if (array_filled($_POST)) {
@@ -367,7 +398,7 @@ class Contact_us extends MY_Controller
         }
         echo json_encode($this->json_param);
     }
-    
+
     public function get_toolbuilder_percent()
     {
         $data = $_POST['learning_journey_transcript'];
