@@ -1,3 +1,22 @@
+<style>
+    input#forms-expert-tutorial-video-btn {
+        padding: 13px 26px;
+        background: #FDBE41;
+        font-size: 14px;
+        font-weight: 700;
+        color: #F8F9FA;
+        text-transform: uppercase;
+        border-radius: 25px;    }
+
+    input#forms-expert-tutorial-video-btn:hover {
+        position: static;
+        display: block;
+        background-color: #e28f26;
+    }
+    .btnArea {
+    display: flex;
+}
+</style>
 <div class="business-page">
     <section class="dashboard">
 
@@ -60,19 +79,9 @@
                                         <h5><?= html_entity_decode($value['tutorial_desc2']) ?></h5>
                                     <? endforeach; ?>
                                 <? endif; ?>
-                                <!-- <ul class="mid-list">
-                                    <li>What is CX and what is the measure of Cx Success? PURR</li>
-                                    <li>How to weave CX & PURR into your business through the Four Pillars; Brand, Segmentation, Insights and Journeys</li>
-                                    <li>What is Voice of Customer (VOC) and VOC Tools?</li>
-                                </ul> -->
                                 <div class="space"><br><br></div>
-
-                                <a href="javascript:;" data-fancybox data-src="#popup-down" class="btn-dashboard btn-hover">Mark Complete <span></span></a>
-
+                                <!-- <a href="javascript:;" data-fancybox data-src="#popup-down" class="btn-dashboard btn-hover">Certificate <span></span></a> -->
                                 <!-- <a data-fancybox data-src="#popup-down" href="javascript:;"><img src="assets/images/dashboard/home/icons/4.svg" alt=""></a> -->
-
-                                
-
                                 <?
                                 $al = array();
                                 $al['where']['expert_id'] = $expert_course[0]['tutorial_expert_id'];
@@ -80,10 +89,15 @@
                                 $expert = $this->model_expert->find_all_active($al);
                                 //   debug($expert[0]['expert_name']);
                                 ?>
-
-
-
-
+                                <form id="forms-expert-tutorial-video">
+                                    <input type="hidden" name="mytutorial[mytutorial_user_id]" value="<?= ($this->userid) ?>">
+                                    <input type="hidden" name="mytutorial[mytutorial_tutorial_id]" value="<?= $_GET['courseid'] ?>">
+                                    <input type="hidden" name="mytutorial[mytutorial_desc_percent]" value="1">
+                                    <div class="btnArea">
+                                        <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-expert-tutorial-video-btn">
+                                        <a href="javascript:;" data-fancybox data-src="#popup-down" class="btn-dashboard btn-hover">Certificate <span></span></a>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -126,7 +140,7 @@
                     </div>
 
                     <div class="col-md-4 text-left">
-                    <img src="<?= base_url() ?>assets/front_assets/images/signature.jpg" alt="" style="text-align: left; mix-blend-mode: darken;">
+                        <img src="<?= base_url() ?>assets/front_assets/images/signature.jpg" alt="" style="text-align: left; mix-blend-mode: darken;">
                         <h6>genny ghanimeh</h6>
                         <p>founder mind cloud tribe</p>
                     </div>
@@ -151,10 +165,11 @@
             </div>
             <div class="col-md-6">
                 <div class="popup-col">
-                   
-                    <a href="<?= base_url()?>account/profile/pdf_convert?courseid=<?=$_GET['courseid']?>" target="_blank"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+
+                    <a href="<?= base_url() ?>account/profile/pdf_convert?courseid=<?= $_GET['courseid'] ?>" target="_blank"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+

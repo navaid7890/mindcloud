@@ -312,25 +312,73 @@ class Contact_us extends MY_Controller
     }
     public function exp_tutorial_vid_percent()
     {
+        
+        
         if (array_filled($_POST)) {
 
-
+// debug($_POST);
             //$this->form_validation->set_rules('g-recaptcha-response', 'Captcha', 'required');
+            // if ($this->validate("model_mytutorial")) {
+            //     $data = $_POST['mytutorial'];
+            //     $data['mytutorial_status'] = 1;
+
+            //     $this->model_mytutorial->set_attributes($data);
+            //     $inserted_id = $this->model_mytutorial->save();
+
+            //     $form_data = $this->model_mytutorial->find_by_pk($inserted_id);
+
+            //     $this->json_param['status'] = true;
+            //     $this->json_param['msg']['title'] = 'Marked As Completed';
+            //     $this->json_param['msg']['desc'] = 'Marked As Completed';
+            // } else {
+            //     $this->json_param['status'] = false;
+            //     $this->json_param['msg']['title'] = 'Error Occurred';
+            //     $this->json_param['msg']['desc'] = validation_errors();
+            // }
+
+            $param = array();
+            // $param['order'] = "mytutorial_id DESC";
+            $param['where']['mytutorial_user_id'] = $this->userid;
+            $param['where']['mytutorial_tutorial_id'] = $_POST['courseid'];
+            // debug($param['where']['mytutorial_tutorial_id']);
+            $mytutorial = $this->model_mytutorial->find_one_active($param);
+
             if ($this->validate("model_mytutorial")) {
-                $data = $_POST['mytutorial'];
-                $data['mytutorial_status'] = 1;
+
+                // debug("there");
+                if (!empty($mytutorial)) {
+
+                //    debug($mytutorial);
+
+                    $id = $mytutorial['mytutorial_id'];
+
+                    $data = array();
+                    $data = $_POST['mytutorial'];
+
+                    $data['mytutorial_total_percent'] = $mytutorial['mytutorial_total_percent'] + 1;
+                    $this->model_mytutorial->update_by_pk($id, $data);
+
+                    $this->json_param['status'] = true;
+                    $this->json_param['msg']['title'] = 'Proceeding...';
+                    $this->json_param['msg']['desc'] = 'Go to Next Step';
+                } else {
+
+                    //    debug($_POST['tool_builder_vp_step_id']);
+                    $data = $_POST['mytutorial'];
+                    $data['mytutorial_status'] = 1;
 
 
-                $this->model_mytutorial->set_attributes($data);
-                $inserted_id = $this->model_mytutorial->save();
+                    $data['mytutorial_user_id'] = $this->userid;
+                    $data['mytutorial_total_percent'] = 1;
+
+                    $this->model_mytutorial->set_attributes($data);
+                    $inserted_id = $this->model_mytutorial->save();
 
 
-                $form_data = $this->model_mytutorial->find_by_pk($inserted_id);
-                // $this->model_email->contactInquiry($form_data);  
-
-                $this->json_param['status'] = true;
-                $this->json_param['msg']['title'] = 'Marked As Completed';
-                $this->json_param['msg']['desc'] = 'Marked As Completed';
+                    $this->json_param['status'] = true;
+                    $this->json_param['msg']['title'] = 'Saved';
+                    $this->json_param['msg']['desc'] = 'Go to Next Step';
+                }
             } else {
                 $this->json_param['status'] = false;
                 $this->json_param['msg']['title'] = 'Error Occurred';

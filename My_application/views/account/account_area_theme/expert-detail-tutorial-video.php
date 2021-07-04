@@ -4,6 +4,7 @@
       font-size: 13px;
       font-weight: 500;
    }
+
    input#forms-expert-tutorial-video-btn {
       padding: 13px 26px;
       background: #FDBE41;
@@ -71,7 +72,7 @@
                                  <div class="video-caption">
 
                                     <p>
-                                    <div id="video_text"><?=html_entity_decode($tutorial_detail['videos_transcript']);?></div>
+                                    <div id="video_text"><?= html_entity_decode($tutorial_detail['videos_transcript']); ?></div>
                                     </p>
                                     <?php
                                     $arr[] = html_entity_decode($tutorial_detail['videos_transcript']);
@@ -130,14 +131,11 @@
                      </div>
                      <div class="tutorial-footer vid-tran para">
                         <div class="tutorial-footer-content">
-                        <form id="forms-expert-tutorial-video">
+                           <form id="forms-expert-tutorial-video">
                               <input type="hidden" name="mytutorial[mytutorial_user_id]" value="<?= ($this->userid) ?>">
                               <input type="hidden" name="mytutorial[mytutorial_tutorial_id]" value="<?= $_GET['courseid'] ?>">
                               <input type="hidden" name="mytutorial[mytutorial_video_percent]" value="1">
-
                               <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-expert-tutorial-video-btn">
-
-
                            </form>
                            <p>Complete this tutorials to receive Certificate.</p>
                            <div classs="space"><br><br></div>
