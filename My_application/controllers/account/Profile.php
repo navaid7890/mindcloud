@@ -562,16 +562,14 @@ class Profile extends MY_Controller_Account
 		if ($datapaid[0]['user_paid'] == 1) {
 
 			$param['order'] = "tutorial_id ASC";
-			$param['where']['tutorial_free_status'] = 1;
-			$param['where']['tutorial_free_status'] = 0;
-			$param['where_in']['tutorial_id'] = $all;
+			// $param['where_in']['tutorial_id'] = $all;
 
 			$data['art'] = $this->model_tutorial->find_all_active($param);
 			// debug("user is paid");
 		} else {
 			$param['order'] = "tutorial_id ASC";
 			$param['where']['tutorial_free_status'] = 1;
-			$param['where_in']['tutorial_id'] = $all;
+			// $param['where_in']['tutorial_id'] = $all;
 
 			$data['art'] = $this->model_tutorial->find_all_active($param);
 			// debug("user is Not paid");
