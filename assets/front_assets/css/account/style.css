@@ -516,8 +516,10 @@ a.btn-theme>span {
 
 .menu li:hover a,
 .menu li.active a {
-    font-weight: 400;
+    /* font-weight: 400; */
+    text-shadow: 0 0 0.65px #333, 0 0 0.65px #333 !important;
 }
+.menu li a.active{ text-shadow: 0 0 0.65px #333, 0 0 0.65px #333 !important; }
 
 
 /* Drop Down Css */
@@ -781,6 +783,7 @@ ul.dashboard-layout {
     padding: 15px 0;
     background: #33415C;
     height: 100%;
+    width: 16%;
 }
 
 .dashboard-links ul>li {
@@ -954,7 +957,6 @@ ul.course-scroll h5 {
     opacity: 0;
 }
 
-
 /* .course-list ul {
     counter-reset: my-sec-counter;
 } */
@@ -984,7 +986,7 @@ ul.course-scroll h5 {
 } */
 
 .course-box {
-    padding: 40px 0;
+    padding: 40px 0 100px;
     background: #F3F7FB;
     height: 100vh;
 }
@@ -1151,7 +1153,8 @@ ul.tutorial-box-list>li:nth-child(3) {
 }
 
 ul.dashboard-layout>li:nth-child(1) {
-    width: 16.62%;
+    width: 16%;
+    position: relative;
 }
 
 ul.dashboard-layout>li:nth-child(2) {
@@ -1377,9 +1380,9 @@ ul.rating {
     border-radius: 8px;
 }
 
-.business-page .b-child ul.dropdown-box {
+/* .business-page .b-child ul.dropdown-box {
     display: block;
-}
+} */
 
 .tool-mid {
     border-bottom: 0;
@@ -2518,7 +2521,8 @@ ul.cate-list {
 }
 
 .xpert-content a.cate-tag {
-    top: 51%;
+    top: auto;
+    bottom: 15px;
 }
 
 a.btn-links {
@@ -2550,8 +2554,8 @@ video-card {
 
 .video-box {
     position: relative;
-    width: 370px;
-    height: 280px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -3350,6 +3354,8 @@ ul.dashboard-layout>li:nth-child(2).open {
     }
 }
 
+
+
 @media (max-width: 1440px) {
     ul.dashboard-layout>li:nth-child(3) {
     width: 68%;
@@ -4062,3 +4068,53 @@ ul.dashboard-layout>li:nth-child(2) {
         margin: auto;
     }
 }
+
+body.page11 li.dropdown-toggle.catLj11 .dropdown-box{ display:block;}
+body.page12 li.dropdown-toggle.catLj12 .dropdown-box{ display:block;}
+body.page13 li.dropdown-toggle.catLj13 .dropdown-box{ display:block;}
+body.page14 li.dropdown-toggle.catLj14 .dropdown-box{ display:block;}
+body.page15 li.dropdown-toggle.catLj15 .dropdown-box{ display:block;}
+body.page16 li.dropdown-toggle.catLj16 .dropdown-box{ display:block;}
+body.page17 li.dropdown-toggle.catLj17 .dropdown-box{ display:block;}
+body.page18 li.dropdown-toggle.catLj18 .dropdown-box{ display:block;}
+body.page25 li.dropdown-toggle.catLj25 .dropdown-box{ display:block;}
+body.page19 li.dropdown-toggle.catLj19 .dropdown-box{ display:block;}
+body.page20 li.dropdown-toggle.catLj20 .dropdown-box{ display:block;}
+body.page21 li.dropdown-toggle.catLj21 .dropdown-box{ display:block;}
+body.page22 li.dropdown-toggle.catLj22 .dropdown-box{ display:block;}
+body.page23 li.dropdown-toggle.catLj23 .dropdown-box{ display:block;}
+body.page24 li.dropdown-toggle.catLj24 .dropdown-box{ display:block;}
+body.page26 li.dropdown-toggle.catLj26  .dropdown-box{ display:block;}
+
+/* body.page11 li.dropdown-toggle.catLj11 > a{ background: #33415C; color: #fff;}
+body.page12 li.dropdown-toggle.catLj12 > a{ background: #33415C; color: #fff;}
+body.page13 li.dropdown-toggle.catLj13 > a{ background: #33415C; color: #fff;}
+body.page14 li.dropdown-toggle.catLj14 > a{ background: #33415C; color: #fff;}
+body.page15 li.dropdown-toggle.catLj15 > a{ background: #33415C; color: #fff;}
+body.page16 li.dropdown-toggle.catLj16 > a{ background: #33415C; color: #fff;}
+body.page17 li.dropdown-toggle.catLj17 > a{ background: #33415C; color: #fff;}
+body.page18 li.dropdown-toggle.catLj18 > a{ background: #33415C; color: #fff;}
+body.page25 li.dropdown-toggle.catLj25 > a{ background: #33415C; color: #fff;}
+body.page19 li.dropdown-toggle.catLj19 > a{ background: #33415C; color: #fff;}
+body.page20 li.dropdown-toggle.catLj20 > a{ background: #33415C; color: #fff;}
+body.page21 li.dropdown-toggle.catLj21 > a{ background: #33415C; color: #fff;}
+body.page22 li.dropdown-toggle.catLj22 > a{ background: #33415C; color: #fff;}
+body.page23 li.dropdown-toggle.catLj23 > a{ background: #33415C; color: #fff;}
+body.page24 li.dropdown-toggle.catLj24 > a{ background: #33415C; color: #fff;}
+body.page26 li.dropdown-toggle.catLj26 > a{ background: #33415C; color: #fff;} */
+
+
+
+.percent{
+	width:26px;
+	height:26px;
+    margin-right: 20px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+.percent svg{
+	stroke-linecap:round;
+}
+
+.topCircle .percent2{ width: 70px; height: 70px; margin-right: 0; margin-left: auto;}

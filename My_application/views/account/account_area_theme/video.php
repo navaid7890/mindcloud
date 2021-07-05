@@ -1,7 +1,7 @@
 <style>
-   .videoPage ul.dropdown-box {
+   /* .videoPage ul.dropdown-box {
       display: block !important;
-   }
+   } */
 
    input#forms-mark-complete-btn {
       padding: 13px 26px;
