@@ -156,15 +156,13 @@
                             </div>
                         </div>
                         <div class="space"><br><br></div>
-                        <div class="index-graph-box" id="expertGraph">
-                            <div class="row graph-box-2">
+                        <div class="index-graph-box">
+                            <div class="row graph-box-2" id="expertGraph">
                                 <div class="col-lg-7 col-md-12">
                                     <div class="progress-box">
                                         <h2>My <strong> Experts Tutorials </strong></h2>
                                         <?php if (isset($art) && array_filled($art)) : ?>
                                             <?php foreach ($art as $key => $value) : ?>
-
-
                                                 <?
                                                 $param = array();
                                                 $param['where']['mytutorial_user_id'] = $this->userid;
@@ -202,7 +200,7 @@
                                                             $(".tutPer<?= $value['tutorial_id'] ?>").html(totalPercent);
                                                             var totalPercentSign = totalPercent + "%"
                                                             $(".progres-dark.percentCss<?= $value['tutorial_id'] ?>").css("width", totalPercentSign);
-                                                            
+
                                                         });
                                                     </script>
                                                     <div class="progres-percentage tutPer<?= $value['tutorial_id'] ?>" id="tuztPer">
@@ -218,7 +216,7 @@
                                 </div>
                                 <div class="col-lg-5 col-md-12">
                                     <div class="progress-wrap">
-                                        <div class="progres-circle-box" id="circlePercent"> 
+                                        <div class="progres-circle-box" id="circlePercent">
                                             <p>Journey completion</p>
                                             <div class="space"><br><br></div>
                                             <div id="activeBorder2" class="active-border">
@@ -407,6 +405,77 @@
                         </div>
                         <div class="space"><br><br></div>
                         <div class="index-graph-box">
+                            <div class="certificate-box">
+                                <h2>My <strong>Certificates</strong></h2>
+                                <div class="space"><br><br></div>
+                                <? //= debug($mytutorial) 
+                                ?>
+                                
+
+                                <ul class="certificate-slide">
+                                <?php if (isset($mytutorial) && array_filled($mytutorial)) : ?>
+                                    <?php foreach ($mytutorial as $key => $value) : ?>
+                                        <?= $value['mytutorial_tutorial_id'] ?>
+                                        <?
+                                        $cer = array();
+                                        $cer['order'] = "tutorial_id ASC";
+                                        $cer['where']['tutorial_id'] = $value['mytutorial_tutorial_id'];
+                                        $cer['where']['tutorial_status'] = 1;
+                                        // $param['where_in']['tutorial_id'] = $all;
+                                        $certificate = $this->model_tutorial->find_all_active($cer);
+                                        ?>
+                                        
+                                        <?
+                                        $al = array();
+                                        $al['where']['expert_id'] = $certificate[0]['tutorial_expert_id'];
+                                        $expert = $this->model_expert->find_all_active($al);
+                                        ?>
+                                    <li>
+                                        <div style="text-align: center;">
+                                            <div style="padding: 20px 20px 35px;margin-bottom: 15px;text-align: center;background: #f3f7fb;border: 10px solid #71c2fd;">
+                                                <div>
+                                                    <h2 style="font-size: 26px;color: #4b647a;font-weight: 400;text-transform: uppercase;">certificate of completion</h2>
+                                                    <div class="space"><br><br></div>
+                                                    <h3 style="color: #425c73; font-weight: 700;text-transform: capitalize;font-size: 32px;"><?= $this->session_data['username'] ?></h3>
+                                                    <div class="space"><br></div>
+                                                    <p style="font-size: 14px;color: #4b647a;">has successfully completed on the <?= date("jS \of F Y") ?> the tutorial</p>
+                                                    <div class="space"><br></div>
+                                                    <h3 style="color: #425c73; font-weight: 700;text-transform: capitalize;font-size: 32px;">"<?=$certificate[0]['tutorial_name'] ?>"</h3>
+                                                    <div class="space"><br></div>
+                                                    <h6 style="font-style: italic;font-size: 18px;color: #4b647a;">by Expert <span> <?= $expert[0]['expert_name'] ?></span></h6>
+                                                    <div class="space"><br><br></div>
+                                                    <div class="space"><br><br></div>
+
+                                                    <div style="display: flex;justify-content: space-between; align-items: center;">
+                                                        <div>
+                                                            <span><img src="<?= base_url() ?>assets/front_assets/images/logo.png" alt=""></span>
+                                                        </div>
+
+                                                        <div>
+                                                            <span><img src="<?= base_url() ?>assets/front_assets/images/certificate.png" alt=""></span>
+                                                        </div>
+
+                                                        <div>
+                                                            <img src="<?= base_url() ?>assets/front_assets/images/signature.jpg" alt="" style="text-align: left; mix-blend-mode: darken;">
+                                                            <h6 style="font-weight: 600;padding-bottom: 4px;text-transform: capitalize;font-size: 16px;">genny ghanimeh</h6>
+                                                            <p style="font-style: italic;text-transform: capitalize;font-size: 13px;font-weight: 300;">founder mind cloud tribe</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <h6 style="font-size: 18px;font-weight: 700;color: #425C73;"><?=$certificate[0]['tutorial_name'] ?></h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <?php endforeach; ?>
+                                <?php endif ?>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="index-graph-box">
                             <div class="consult-sec hding-2 para">
                                 <div class="consult-head">
                                     <h2>Consult with <strong>Experts</strong></h2>
@@ -532,11 +601,11 @@
         var countTutorials = <?= count($art) ?> * 100;
         var ExptotalPerc = Math.round((ExpAllsum / countTutorials) * 100);
 
-        
+
 
         $("#circlePercent .prec").html(ExptotalPerc);
 
-        console.log("all sum",ExptotalPerc);
+        console.log("all sum", ExptotalPerc);
 
     });
 </script>

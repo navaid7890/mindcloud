@@ -93,6 +93,7 @@
                                     <input type="hidden" name="mytutorial[mytutorial_user_id]" value="<?= ($this->userid) ?>">
                                     <input type="hidden" name="mytutorial[mytutorial_tutorial_id]" value="<?= $_GET['courseid'] ?>">
                                     <input type="hidden" name="mytutorial[mytutorial_desc_percent]" value="1">
+                                    <input type="hidden" name="mytutorial[mytutorial_certificate]" value="1">
                                     <div class="btnArea">
                                         <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-expert-tutorial-video-btn">
                                         <a href="javascript:;" data-fancybox data-src="#popup-down" class="btn-dashboard btn-hover">Certificate <span></span></a>
