@@ -97,27 +97,12 @@
                                        }
                                     }
                                     ?>
-                                    <!-- <p>00:00:00</p>
-                                    <div class="space"><br></div> -->
-                                    <? //= html_entity_decode($tutorial_detail['videos_transcript']) 
-                                    ?>
-                                    <!-- <div class="space"><br><br></div>
-
-                                    <p>00:01:16</p> -->
                                     <div class="space"><br></div>
-                                    <!-- <p>We will learn - What is CX and what is</p> -->
                                  </div>
                               </div>
                            </div>
                            <div class="col-md-7">
                               <div class="video-box">
-                                 <?php
-                                 // $param = array();
-                                 // $param['order'] = "tool_builder_id DESC";
-                                 // $param['where']['tool_builder_user_id'] = $this->userid;
-                                 // $tool = $this->model_tool_builder_fm_cfs->find_one_active($param); 
-                                 ?>
-
                                  <video onclick="plusOne(<?= $tutorial_detail['videos_views']; ?>)" ontimeupdate="myFunction(this)" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
                                     <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/mp4">
                                     <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/ogg">

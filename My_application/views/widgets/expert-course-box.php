@@ -5,7 +5,7 @@
                 <div class="col-md-8">
                     <h3><?= $course_name ?></h3>
                 </div>
-                <div class="col-md-4 text-right">
+                <div class="col-md-4 text-right" id="expTotalPercentage">
                     <div id="activeBorder" class="active-border">
                         <div id="circle" class="circle">
                             <span class="prec">0</span>
@@ -24,32 +24,34 @@
         <div class="course-list">
             <ul class="course-scroll tut-menu-inner">
                 <h5><?= $course_name ?></h5>
-                <li><a href="<?= l('account/profile/expert-detail-tutorial') ?>?courseid=<?= $courseid ?>" class="active">Tutorial Description
+                <li id="tutorialDescription">
+                    <a href="<?= l('account/profile/expert-detail-tutorial') ?>?courseid=<?= $courseid ?>" class="active">Tutorial Description
                         <div id="activeBorder" class="active-border">
                             <div id="circle" class="circle">
-                                <span class="prec percTD">100</span>
+                                <span class="prec">0</span>
                                 <span id="startDeg" class="90"></span>
                             </div>
                         </div>
                     </a>
                 </li>
-                <li><a href="<?= l('account/profile/expert-detail-tutorial-intro-video') ?>?courseid=<?= $courseid ?>">Tutorial - 1 minute introduction
+                <li id="tutorialIntro">
+                    <a href="<?= l('account/profile/expert-detail-tutorial-intro-video') ?>?courseid=<?= $courseid ?>">Tutorial - 1 minute introduction
                         <div id="activeBorder" class="active-border">
                             <div id="circle" class="circle">
-                                <span class="prec percIntro">66</span>
+                                <span class="prec">0</span>
                                 <span id="startDeg" class="90"></span>
                             </div>
                         </div>
                     </a>
                 </li>
-                <li class="subVideos">
+                <li id="tutorialVideo" class="subVideos">
                     <? if (isset($tutorial_course) and array_filled($tutorial_course)) : ?>
                         <? foreach ($tutorial_course as $key => $tutor) : ?>
                             <ul>
                                 <li><a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $courseid ?>&tutorialid=<?= $tutor['videos_id'] ?>">Video and Transcript
                                         <div id="activeBorder" class="active-border">
                                             <div id="circle" class="circle">
-                                                <span class="prec percVideo">0</span>
+                                                <span class="prec">0</span>
                                                 <span id="startDeg" class="90"></span>
                                             </div>
                                         </div>
@@ -65,19 +67,6 @@
                 $param['where']['mytutorial_user_id'] = $this->userid;
                 $param['where']['mytutorial_tutorial_id'] =  $_GET['courseid'];
                 $mypercentage = $this->model_mytutorial->find_one_active($param);
-
-
-                // debug($mypercentage);
-                // [mytutorial_id] => 4
-                //     [mytutorial_user_id] => 41
-                //     [mytutorial_tutorial_id] => 75
-                //     [mytutorial_desc_percent] => 1
-                //     [mytutorial_intro_percent] => 0
-                //     [mytutorial_video_percent] => 0
-                //     [mytutorial_total_percent] => 0
-                //     [mytutorial_certificate] => 0
-                //     [mytutorial_status] => 1
-                //     [mytutorial_createdon] 
                 ?>
                 <!-- </li> -->
             </ul>
@@ -88,11 +77,27 @@
 <script>
     $(document).ready(function() {
 
-        <? //if ($mypercentage['mytutorial_video_percent'] == 1) : 
-        ?>
-        // $(".percVideo").html('88');
-        <? // endif; 
-        ?>
+        <? if ($mypercentage['mytutorial_desc_percent'] == 1) : ?>
+            $("#tutorialDescription .prec").html('100');
+        <? endif; ?>
+
+        <? if ($mypercentage['mytutorial_intro_percent'] == 1) : ?>
+            $("#tutorialIntro .prec").html('100');
+        <? endif; ?>
+
+        <? if ($mypercentage['mytutorial_video_percent'] == 1) : ?>
+            $("#tutorialVideo .prec").html('100');
+        <? endif; ?>
+
+        // parseInt
+        var totalDesc = parseInt($("#tutorialDescription .prec").html());
+        var totalIntro = parseInt($("#tutorialIntro .prec").html());
+        var totalVideo = parseInt($("#tutorialVideo .prec").html());
+        TotalSum = totalDesc + totalIntro + totalVideo
+        var totalPercent = Math.round((TotalSum / 300) * 100);
+        $("#expTotalPercentage .prec").html(totalPercent);
+
+        // $("#expTotalPercentage .prec").html('200');
 
         // url = new URL(window.location.href);
         // var tech = getUrlParameter('courseid');
@@ -103,7 +108,5 @@
         // console.log($.urlParam('courseid'));
         // var params = new window.URLSearchParams(window.location.search);
         // console.log("courseid",params.get('courseid'));
-
-
     });
 </script>

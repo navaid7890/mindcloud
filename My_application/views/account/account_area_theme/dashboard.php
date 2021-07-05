@@ -10,7 +10,7 @@
         line-height: 122px;
         position: absolute;
         top: 80px;
-        right: 30%;
+        right: 35%;
     }
 
     #expertGraph .progres-circle-box {
@@ -163,17 +163,50 @@
                                         <h2>My <strong> Experts Tutorials </strong></h2>
                                         <?php if (isset($art) && array_filled($art)) : ?>
                                             <?php foreach ($art as $key => $value) : ?>
+
+
+                                                <?
+                                                $param = array();
+                                                $param['where']['mytutorial_user_id'] = $this->userid;
+                                                $param['where']['mytutorial_tutorial_id'] =  $value['tutorial_id'];
+                                                $mypercentage = $this->model_mytutorial->find_one_active($param);
+                                                ?>
                                                 <div class="space"><br><br></div>
                                                 <div class="progres-bar">
                                                     <div class="progres-text">
                                                         <p><?= $value['tutorial_name'] ?></p>
                                                     </div>
                                                     <div class="progres-gray">
-                                                        <div class="progres-dark per-70"></div>
+                                                        <div class="progres-dark forSumAll percentCss<?= $value['tutorial_id'] ?>"></div>
                                                     </div>
+                                                    <script>
+                                                        $(document).ready(function() {
+                                                            var totalDesc = 0
+                                                            var totalIntro = 0
+                                                            var totalVideo = 0
+                                                            <? if ($mypercentage['mytutorial_desc_percent'] == 1) : ?>
+                                                                $(".tutPer<?= $value['tutorial_id'] ?>").html('100');
+                                                                var totalDesc = parseInt($(".tutPer<?= $value['tutorial_id'] ?>").html());
+                                                            <? endif; ?>
+                                                            <? if ($mypercentage['mytutorial_intro_percent'] == 1) : ?>
+                                                                $(".tutPer<?= $value['tutorial_id'] ?>").html('100');
+                                                                var totalIntro = parseInt($(".tutPer<?= $value['tutorial_id'] ?>").html());
+                                                            <? endif; ?>
+                                                            <? if ($mypercentage['mytutorial_video_percent'] == 1) : ?>
+                                                                $(".tutPer<?= $value['tutorial_id'] ?>").html('100');
+                                                                var totalVideo = parseInt($(".tutPer<?= $value['tutorial_id'] ?>").html());
+                                                            <? endif; ?>
 
-                                                    <div class="progres-percentage">
-                                                        <span>12%</span>
+                                                            TotalSum = totalDesc + totalIntro + totalVideo
+                                                            var totalPercent = Math.round((TotalSum / 300) * 100);
+                                                            $(".tutPer<?= $value['tutorial_id'] ?>").html(totalPercent);
+                                                            var totalPercentSign = totalPercent + "%"
+                                                            $(".progres-dark.percentCss<?= $value['tutorial_id'] ?>").css("width", totalPercentSign);
+                                                            
+                                                        });
+                                                    </script>
+                                                    <div class="progres-percentage tutPer<?= $value['tutorial_id'] ?>" id="tuztPer">
+                                                        <span>0</span>
                                                     </div>
                                                 </div>
                                             <?php endforeach; ?>
@@ -185,7 +218,7 @@
                                 </div>
                                 <div class="col-lg-5 col-md-12">
                                     <div class="progress-wrap">
-                                        <div class="progres-circle-box">
+                                        <div class="progres-circle-box" id="circlePercent"> 
                                             <p>Journey completion</p>
                                             <div class="space"><br><br></div>
                                             <div id="activeBorder2" class="active-border">
@@ -490,5 +523,20 @@
         }
 
         $(".allpercent").text(localStorage.getItem("learingPercent"));
+
+
+        var ExpAllsum = 0;
+        $('#expertGraph .progres-percentage').each(function() {
+            ExpAllsum += +$(this).text() || 0;
+        });
+        var countTutorials = <?= count($art) ?> * 100;
+        var ExptotalPerc = Math.round((ExpAllsum / countTutorials) * 100);
+
+        
+
+        $("#circlePercent .prec").html(ExptotalPerc);
+
+        console.log("all sum",ExptotalPerc);
+
     });
 </script>
