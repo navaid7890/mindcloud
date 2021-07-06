@@ -18,22 +18,23 @@
 
 							<li class="dropdown-nav"><a href="<?= l('expert-tutorial') ?>">Experts Tutorials</a>
 								<ul class="dropdownWrap dropdown ">
-									<li><a href="become-an-expert">Become An Expert</a></li>
-									<li><a href="enterprise-partners">Enterprise Partners</a></li>
-									<li><a href="innovate">Innovate</a></li>
+									<li><a href="<?= l('booking') ?>">Booking</a></li><?= l('') ?>
+									<li><a href="<?= l('become-an-expert') ?>">Become An Expert</a></li>
+									<li><a href="<?= l('enterprise-partners') ?>">Enterprise Partners</a></li>
+									<li><a href="<?= l('innovate') ?>">Innovate</a></li>
 								</ul>
 							</li>
 							<li><a href="<?= l('learning-journey') ?>">Learning Journey</a></li>
 							<li><a href="consult-advisors">Consult with Experts</a></li>
 							<li class="dropdown-nav"><a href="#">Community</a>
 								<ul class="dropdownWrap dropdown ">
-									<li><a href="about-us">About us</a></li>
-									<li><a href="member">Members</a></li>
-									<li><a href="faq">FAQs</a></li>
-									<li><a href="newsfeed">News feed</a></li>
+									<li><a href="<?= l('about-us') ?>">About us</a></li>
+									<li><a href="<?= l('member') ?>">Members</a></li>
+									<li><a href="<?= l('faq') ?>">FAQs</a></li>
+									<li><a href="<?= l('newsfeed') ?>">News feed</a></li>
 								</ul>
 							</li>
-							
+
 							<li><a href="https://mindcloudacademy.com/">The Academy</a></li>
 							<?php if (isset($this->session->userdata['logged_in_front']) and array_filled($this->session->userdata['logged_in_front'])) : ?>
 								<li><a href="<?= l('account-area') ?>"> <i class="fal fa-user-circle"></i> My Account</a></li>

@@ -667,6 +667,21 @@ class Model_user extends MY_Model {
                     'rules'   => 'trim'
                 );
 
+                $fields[ 'user_paid' ] = array(
+                    'table'   => $this->_table,
+                    'name'   => 'user_paid',
+                    'label'   => 'User Subscribed',
+                    'type'   => 'dropdown',
+                    'type_dt'   => 'dropdown',
+                    'list_data' => array(
+                        0 => "No",
+                        1 => "Yes",
+                        ),
+                    'default'   => 0,
+                    'attributes'   => array(),
+                    'rules'   => 'trim'
+                );
+
         
             $fields[ 'user_email_verified_status' ] = array(
                     'table'   => $this->_table,

@@ -93,6 +93,33 @@ class Dashboard extends MY_Controller_Account
 		$cat = array();
 		$data['art'] = $this->model_tutorial->find_all_active($cat);
 
+		$upaid = array();
+		$upaid['where']['user_id'] = $this->userid;
+		$upaid['where']['user_paid'] = 1;
+		$datapaid = $this->model_user->find_all_active($upaid);
+
+
+		if ($datapaid[0]['user_paid'] == 1) {
+
+			$param['order'] = "tutorial_id ASC";
+			$param['where']['tutorial_free_status'] = 1;
+			$param['where']['tutorial_free_status'] = 0;
+			// $param['where_in']['tutorial_id'] = $all;
+			$data['art'] = $this->model_tutorial->find_all_active($param);
+			// debug("user is paid");
+		} else {
+			$param['order'] = "tutorial_id ASC";
+			$param['where']['tutorial_free_status'] = 1;
+			// $param['where_in']['tutorial_id'] = $all;
+			$data['art'] = $this->model_tutorial->find_all_active($param);
+			// debug("user is Not paid");
+		}
+
+		$mytut = array();
+		$mytut['where']['mytutorial_user_id'] = $this->userid;
+		$mytut['where']['mytutorial_certificate'] = 1;
+		$data['mytutorial'] = $this->model_mytutorial->find_all_active($mytut);
+
 
 		$this->load_view("dashboard", $data);
 	}

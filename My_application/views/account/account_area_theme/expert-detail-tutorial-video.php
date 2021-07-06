@@ -4,6 +4,23 @@
       font-size: 13px;
       font-weight: 500;
    }
+
+   input#forms-expert-tutorial-video-btn {
+      padding: 13px 26px;
+      background: #FDBE41;
+      font-size: 14px;
+      font-weight: 700;
+      color: #F8F9FA;
+      text-transform: uppercase;
+      border-radius: 25px;
+      margin-bottom: 30px;
+   }
+
+   input#forms-expert-tutorial-video-btn:hover {
+      position: static;
+      display: block;
+      background-color: #e28f26;
+   }
 </style>
 <div class="business-page">
    <section class="dashboard">
@@ -55,7 +72,7 @@
                                  <div class="video-caption">
 
                                     <p>
-                                    <div id="video_text"><?=html_entity_decode($tutorial_detail['videos_transcript']);?></div>
+                                    <div id="video_text"><?= html_entity_decode($tutorial_detail['videos_transcript']); ?></div>
                                     </p>
                                     <?php
                                     $arr[] = html_entity_decode($tutorial_detail['videos_transcript']);
@@ -80,27 +97,12 @@
                                        }
                                     }
                                     ?>
-                                    <!-- <p>00:00:00</p>
-                                    <div class="space"><br></div> -->
-                                    <? //= html_entity_decode($tutorial_detail['videos_transcript']) 
-                                    ?>
-                                    <!-- <div class="space"><br><br></div>
-
-                                    <p>00:01:16</p> -->
                                     <div class="space"><br></div>
-                                    <!-- <p>We will learn - What is CX and what is</p> -->
                                  </div>
                               </div>
                            </div>
                            <div class="col-md-7">
                               <div class="video-box">
-                                 <?php
-                                 // $param = array();
-                                 // $param['order'] = "tool_builder_id DESC";
-                                 // $param['where']['tool_builder_user_id'] = $this->userid;
-                                 // $tool = $this->model_tool_builder_fm_cfs->find_one_active($param); 
-                                 ?>
-
                                  <video onclick="plusOne(<?= $tutorial_detail['videos_views']; ?>)" ontimeupdate="myFunction(this)" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
                                     <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/mp4">
                                     <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/ogg">
@@ -114,16 +116,13 @@
                      </div>
                      <div class="tutorial-footer vid-tran para">
                         <div class="tutorial-footer-content">
+                           <form id="forms-expert-tutorial-video">
+                              <input type="hidden" name="mytutorial[mytutorial_user_id]" value="<?= ($this->userid) ?>">
+                              <input type="hidden" name="mytutorial[mytutorial_tutorial_id]" value="<?= $_GET['courseid'] ?>">
+                              <input type="hidden" name="mytutorial[mytutorial_video_percent]" value="1">
+                              <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-expert-tutorial-video-btn">
+                           </form>
                            <p>Complete this tutorials to receive Certificate.</p>
-                           <? //ucfirst($this->session_data['username']);
-                           ?>
-                           <? //print_r($this->session->userdata); 
-                           ?>
-                           <? //print_r($this->session_data['id']); 
-                           ?>
-                           <? //print_r($this->session_data['username']); 
-                           ?>
-
                            <div classs="space"><br><br></div>
                            <form id="forms-tutorial-review_us">
                               <div class="fld-textarea">

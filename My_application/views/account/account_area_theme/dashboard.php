@@ -2,6 +2,24 @@
     .progres-dark {
         width: 10%;
     }
+
+    #expertGraph .expertCount {
+        font-size: 36px;
+        color: #33415C;
+        font-weight: 800;
+        line-height: 122px;
+        position: absolute;
+        top: 80px;
+        right: 35%;
+    }
+
+    #expertGraph .progres-circle-box {
+        position: relative;
+    }
+
+    #expertGraph span.prec {
+        display: none;
+    }
 </style>
 
 <div class="index-page">
@@ -139,52 +157,58 @@
                         </div>
                         <div class="space"><br><br></div>
                         <div class="index-graph-box">
-                            <div class="row graph-box-2">
+                            <div class="row graph-box-2" id="expertGraph">
                                 <div class="col-lg-7 col-md-12">
                                     <div class="progress-box">
                                         <h2>My <strong> Experts Tutorials </strong></h2>
-                                        <div class="space"><br><br><br></div>
-                                        <div class="progres-bar">
-                                            <div class="progres-text">
-                                                <p>Intro to Learning Journey</p>
-                                            </div>
+                                        <?php if (isset($art) && array_filled($art)) : ?>
+                                            <?php foreach ($art as $key => $value) : ?>
+                                                <?
+                                                $param = array();
+                                                $param['where']['mytutorial_user_id'] = $this->userid;
+                                                $param['where']['mytutorial_tutorial_id'] =  $value['tutorial_id'];
+                                                $mypercentage = $this->model_mytutorial->find_one_active($param);
+                                                ?>
+                                                <div class="space"><br><br></div>
+                                                <div class="progres-bar">
+                                                    <div class="progres-text">
+                                                        <p><?= $value['tutorial_name'] ?></p>
+                                                    </div>
+                                                    <div class="progres-gray">
+                                                        <div class="progres-dark forSumAll percentCss<?= $value['tutorial_id'] ?>"></div>
+                                                    </div>
+                                                    <script>
+                                                        $(document).ready(function() {
+                                                            var totalDesc = 0
+                                                            var totalIntro = 0
+                                                            var totalVideo = 0
+                                                            <? if ($mypercentage['mytutorial_desc_percent'] == 1) : ?>
+                                                                $(".tutPer<?= $value['tutorial_id'] ?>").html('100');
+                                                                var totalDesc = parseInt($(".tutPer<?= $value['tutorial_id'] ?>").html());
+                                                            <? endif; ?>
+                                                            <? if ($mypercentage['mytutorial_intro_percent'] == 1) : ?>
+                                                                $(".tutPer<?= $value['tutorial_id'] ?>").html('100');
+                                                                var totalIntro = parseInt($(".tutPer<?= $value['tutorial_id'] ?>").html());
+                                                            <? endif; ?>
+                                                            <? if ($mypercentage['mytutorial_video_percent'] == 1) : ?>
+                                                                $(".tutPer<?= $value['tutorial_id'] ?>").html('100');
+                                                                var totalVideo = parseInt($(".tutPer<?= $value['tutorial_id'] ?>").html());
+                                                            <? endif; ?>
 
-                                            <div class="progres-gray">
-                                                <div class="progres-dark"></div>
-                                            </div>
+                                                            TotalSum = totalDesc + totalIntro + totalVideo
+                                                            var totalPercent = Math.round((TotalSum / 300) * 100);
+                                                            $(".tutPer<?= $value['tutorial_id'] ?>").html(totalPercent);
+                                                            var totalPercentSign = totalPercent + "%"
+                                                            $(".progres-dark.percentCss<?= $value['tutorial_id'] ?>").css("width", totalPercentSign);
 
-                                            <div class="progres-percentage">
-                                                <span>100%</span>
-                                            </div>
-                                        </div>
-                                        <div class="space"><br><br></div>
-                                        <div class="progres-bar">
-                                            <div class="progres-text">
-                                                <p>Business Model Canvas</p>
-                                            </div>
-
-                                            <div class="progres-gray">
-                                                <div class="progres-dark"></div>
-                                            </div>
-
-                                            <div class="progres-percentage">
-                                                <span>100%</span>
-                                            </div>
-                                        </div>
-                                        <div class="space"><br><br></div>
-                                        <div class="progres-bar">
-                                            <div class="progres-text">
-                                                <p>Go-to market strategies</p>
-                                            </div>
-
-                                            <div class="progres-gray">
-                                                <div class="progres-dark per-70"></div>
-                                            </div>
-
-                                            <div class="progres-percentage">
-                                                <span>12%</span>
-                                            </div>
-                                        </div>
+                                                        });
+                                                    </script>
+                                                    <div class="progres-percentage tutPer<?= $value['tutorial_id'] ?>" id="tuztPer">
+                                                        <span>0</span>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="progress-btn btn-group">
                                         <a href="<?= l('account/profile/expert') ?>" class="btn-theme btn-hover">Continue Experts Tutorials <span></span></a>
@@ -192,7 +216,7 @@
                                 </div>
                                 <div class="col-lg-5 col-md-12">
                                     <div class="progress-wrap">
-                                        <div class="progres-circle-box">
+                                        <div class="progres-circle-box" id="circlePercent">
                                             <p>Journey completion</p>
                                             <div class="space"><br><br></div>
                                             <div id="activeBorder2" class="active-border">
@@ -201,6 +225,7 @@
                                                     <span id="startDeg2" class="8"></span>
                                                 </div>
                                             </div>
+                                            <div class="expertCount">4/<?= count($art) ?></div>
 
                                         </div>
 
@@ -380,6 +405,77 @@
                         </div>
                         <div class="space"><br><br></div>
                         <div class="index-graph-box">
+                            <div class="certificate-box">
+                                <h2>My <strong>Certificates</strong></h2>
+                                <div class="space"><br><br></div>
+                                <? //= debug($mytutorial) 
+                                ?>
+                                
+
+                                <ul class="certificate-slide">
+                                <?php if (isset($mytutorial) && array_filled($mytutorial)) : ?>
+                                    <?php foreach ($mytutorial as $key => $value) : ?>
+                                        <?= $value['mytutorial_tutorial_id'] ?>
+                                        <?
+                                        $cer = array();
+                                        $cer['order'] = "tutorial_id ASC";
+                                        $cer['where']['tutorial_id'] = $value['mytutorial_tutorial_id'];
+                                        $cer['where']['tutorial_status'] = 1;
+                                        // $param['where_in']['tutorial_id'] = $all;
+                                        $certificate = $this->model_tutorial->find_all_active($cer);
+                                        ?>
+                                        
+                                        <?
+                                        $al = array();
+                                        $al['where']['expert_id'] = $certificate[0]['tutorial_expert_id'];
+                                        $expert = $this->model_expert->find_all_active($al);
+                                        ?>
+                                    <li>
+                                        <div style="text-align: center;">
+                                            <div style="padding: 20px 20px 35px;margin-bottom: 15px;text-align: center;background: #f3f7fb;border: 10px solid #71c2fd;">
+                                                <div>
+                                                    <h2 style="font-size: 26px;color: #4b647a;font-weight: 400;text-transform: uppercase;">certificate of completion</h2>
+                                                    <div class="space"><br><br></div>
+                                                    <h3 style="color: #425c73; font-weight: 700;text-transform: capitalize;font-size: 32px;"><?= $this->session_data['username'] ?></h3>
+                                                    <div class="space"><br></div>
+                                                    <p style="font-size: 14px;color: #4b647a;">has successfully completed on the <?= date("jS \of F Y") ?> the tutorial</p>
+                                                    <div class="space"><br></div>
+                                                    <h3 style="color: #425c73; font-weight: 700;text-transform: capitalize;font-size: 32px;">"<?=$certificate[0]['tutorial_name'] ?>"</h3>
+                                                    <div class="space"><br></div>
+                                                    <h6 style="font-style: italic;font-size: 18px;color: #4b647a;">by Expert <span> <?= $expert[0]['expert_name'] ?></span></h6>
+                                                    <div class="space"><br><br></div>
+                                                    <div class="space"><br><br></div>
+
+                                                    <div style="display: flex;justify-content: space-between; align-items: center;">
+                                                        <div>
+                                                            <span><img src="<?= base_url() ?>assets/front_assets/images/logo.png" alt=""></span>
+                                                        </div>
+
+                                                        <div>
+                                                            <span><img src="<?= base_url() ?>assets/front_assets/images/certificate.png" alt=""></span>
+                                                        </div>
+
+                                                        <div>
+                                                            <img src="<?= base_url() ?>assets/front_assets/images/signature.jpg" alt="" style="text-align: left; mix-blend-mode: darken;">
+                                                            <h6 style="font-weight: 600;padding-bottom: 4px;text-transform: capitalize;font-size: 16px;">genny ghanimeh</h6>
+                                                            <p style="font-style: italic;text-transform: capitalize;font-size: 13px;font-weight: 300;">founder mind cloud tribe</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <h6 style="font-size: 18px;font-weight: 700;color: #425C73;"><?=$certificate[0]['tutorial_name'] ?></h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <?php endforeach; ?>
+                                <?php endif ?>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="index-graph-box">
                             <div class="consult-sec hding-2 para">
                                 <div class="consult-head">
                                     <h2>Consult with <strong>Experts</strong></h2>
@@ -490,11 +586,26 @@
             $("#certificateBtn").css("display", "block");
             $("#certificateNotComplete").css("display", "none");
         } else {
-           
+
             $("#certificateBtn").css("display", "none");
             $("#certificateNotComplete").css("display", "block");
         }
 
         $(".allpercent").text(localStorage.getItem("learingPercent"));
+
+
+        var ExpAllsum = 0;
+        $('#expertGraph .progres-percentage').each(function() {
+            ExpAllsum += +$(this).text() || 0;
+        });
+        var countTutorials = <?= count($art) ?> * 100;
+        var ExptotalPerc = Math.round((ExpAllsum / countTutorials) * 100);
+
+
+
+        $("#circlePercent .prec").html(ExptotalPerc);
+
+        console.log("all sum", ExptotalPerc);
+
     });
 </script>

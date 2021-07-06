@@ -5,6 +5,23 @@
         height: 450px;
         overflow: hidden;
     }
+
+    input#forms-expert-tutorial-video-btn {
+        padding: 13px 26px;
+        background: #FDBE41;
+        font-size: 14px;
+        font-weight: 700;
+        color: #F8F9FA;
+        text-transform: uppercase;
+        border-radius: 25px;
+        margin-bottom: 30px;
+    }
+
+    input#forms-expert-tutorial-video-btn:hover {
+        position: static;
+        display: block;
+        background-color: #e28f26;
+    }
 </style>
 <div class="business-page">
     <section class="dashboard">
@@ -100,8 +117,15 @@
 
                             <div class="tutorial-footer vid-tran para">
                                 <div class="tutorial-footer-content">
-                                    <!-- <p>Complete all tutorials of Learning Journey to receive Certificate.</p> -->
+                                <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
                                     <div classs="space"><br><br></div>
+                                    <form id="forms-expert-tutorial-video">
+                                        <input type="hidden" name="mytutorial[mytutorial_user_id]" value="<?= ($this->userid) ?>">
+                                        <input type="hidden" name="mytutorial[mytutorial_tutorial_id]" value="<?= $_GET['courseid'] ?>">
+                                        <input type="hidden" name="mytutorial[mytutorial_intro_percent]" value="1">
+                                        <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-expert-tutorial-video-btn">
+                                    </form>
+                                    
                                     <form id="forms-review_us">
                                         <div class="fld-textarea">
 
