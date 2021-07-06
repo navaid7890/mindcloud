@@ -1084,8 +1084,8 @@ class About_us extends MY_Controller
       'smtp_user' => 'm.fazal@manageglobally.io', // change it to yours
       'smtp_pass' => 'Fazal786', // change it to yours
       'mailtype' => 'html',
-      'MAIL_TLS' => False,
-      'MAIL_SSL' => True,
+    //   'MAIL_TLS' => False,
+    //   'MAIL_SSL' => True,
       'charset' => 'iso-8859-1',
       'wordwrap' => TRUE
     );
