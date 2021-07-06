@@ -7,9 +7,7 @@
         height: 250px;
     }
 
-    .yourWork ul.dropdown-box {
-        display: block !important;
-    }
+   
 </style>
 <section class="dashboard">
 

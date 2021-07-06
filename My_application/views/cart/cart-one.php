@@ -1,6 +1,8 @@
 <section class="cartSec hding-2 para">
+
    <div class="container">
-      <div class="cartHead">
+      <div class="cartSecInner">
+         <div class="cartHead">
          <h2>Shopping <strong> Cart </strong></h2>
       </div>
       <div class="sapce"><br><br></div>
@@ -30,7 +32,7 @@
                       
                   </div>     
                   <div class="row-box">
-               <div class="row">
+               <div class="row align-items-center">
                   <?php foreach ($data as $key => $value): 
                      //  debug($data);  ?>
                   <div class="col-lg-9 col-md-12 pad-zero">
@@ -100,6 +102,7 @@
                </div>
             </div>
 
+      </div>
       </div>
    </div>
 </section>

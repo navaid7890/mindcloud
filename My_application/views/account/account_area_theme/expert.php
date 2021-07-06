@@ -103,9 +103,8 @@
                                                                         <div class="video-box">
                                                                             <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
                                                                             <span><i class="fas fa-play"></i> </span>
-                                                                        </div>
-                                                                    </a>
-                                                                    <?
+
+                                                                            <?
                                                                     // debug($value);
                                                                     $coursecat = array();
                                                                     $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
@@ -117,6 +116,10 @@
                                                                     //  debug($cat_name);
                                                                     ?>
                                                                     <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+
+                                                                        </div>
+                                                                    </a>
+                                                                    
                                                                     <!-- <a href="javascript:;" class="cate-tag"><? //= $value['tutorial_level'] 
                                                                                                                     ?></a> -->
                                                                     <div class="vid-content">

@@ -5,26 +5,62 @@ $(document).ready(function() {
 
     $('[href="#"]').attr("href", "javascript:;");
 
-    
+  
+
 
    
 
-    $("ul.login-btn .dropdown-toggle > a").click(function(e) {
-        $(this).toggleClass('open');
-        $('body').toggleClass('open');
-        $(".dropdown-box").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
-            e.stopPropagation()
-    })
+    // $("ul.login-btn .dropdown-toggle > a").click(function(e) {
+    //     $(this).toggleClass('open');
+    //     $('body').toggleClass('open');
+    //     $(".dropdown-box").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
+    //         e.stopPropagation()
+    // })
 
 
-    $('ul.course-scroll .dropdown-toggle > a').click(function() {
-        $(this).parent('li').find('.dropdown-toggle').addClass('open');
-        // $(this).parent('li').addClass('active');
-        $(this).parent('li').siblings().find('.dropdown-toggle').removeClass('open');
-        $(this).parent('li').siblings().removeClass('active');
-        $(this).parent('li').find('.dropdown-box').slideDown();
-        $(this).parent('li').siblings().find('.dropdown-box').slideUp();
-    });
+    // $('ul.course-scroll .dropdown-toggle > a').click(function() {
+    //     $(this).parent('li').find('.dropdown-toggle').addClass('open');
+    //     // $(this).parent('li').addClass('active');
+    //     $(this).parent('li').siblings().find('.dropdown-toggle').removeClass('open');
+    //     $(this).parent('li').siblings().removeClass('active');
+    //     $(this).parent('li').find('.dropdown-box').slideDown();
+    //     $(this).parent('li').siblings().find('.dropdown-box').slideUp();
+    // });
+
+    $(function() {
+        $('.dropdown-toggle > a').click(function() {
+          var dropDown = $(this).closest('.dropdown-toggle').find('.dropdown-box');
+          $(this).closest('.mCSB_container').find('ul.dropdown-box').not(dropDown).slideUp();
+          
+          if ($(this).hasClass('tCurrent')) {
+            $(this).removeClass('tCurrent');
+          } else {
+            $(this).closest('.mCSB_container').find('.tCurrent').removeClass('tCurrent');
+            $(this).addClass('tCurrent');
+          }
+          
+          dropDown.stop(false, true).slideToggle();
+       
+        });
+      });
+
+      var para = (window.location.search);
+      $('.dropdown-toggle').click(function(j) {
+         console.log('i am in', para);
+   });
+  
+   url = new URL(window.location.href);
+   var toolb = url.searchParams.get('cat');
+          if (url.searchParams.get('cat')) {
+             var toolb = url.searchParams.get('cat');
+             var tool = "activeId-"+toolb;
+             $("."+tool).addClass('testing');
+             $('.dropdown-toggle').addClass('testing');
+          }
+  
+         $('body').addClass("page"+toolb);
+          console.log('i am inn', toolb);
+
 
 
 
@@ -307,3 +343,27 @@ if ($(window).width() < 824) {
 
 
 }
+
+$(document).ready(function() {
+
+    !function(a){a.fn.percentageLoader=function(b){this.each(function(){function q(){p.customAttributes.arc=function(a,b,c){var h,d=360/b*a,e=(90-d)*Math.PI/180,f=j+c*Math.cos(e),g=k-c*Math.sin(e);return h=b==a?[["M",j,k-c],["A",c,c,0,1,1,j-.01,k-c]]:[["M",j,k-c],["A",c,c,0,+(d>180),1,f,g]],{path:h}},p.path().attr({arc:[100,100,l],"stroke-width":d.strokeWidth,stroke:d.bgColor}),e&&(m=p.path().attr({arc:[.01,100,l],"stroke-width":d.strokeWidth,stroke:d.ringColor,cursor:"pointer"}),r(e,100,l,m,2)),n=p.text(j,k,e+"%").attr({font:d.fontWeight+" "+d.fontSize+" Arial",fill:d.textColor})}function r(a,b,c,d){f?d.animate({arc:[a,b,c]},900,">"):a&&a!=b?d.animate({arc:[a,b,c]},750,"elastic"):(a=b,d.animate({arc:[a,b,c]},750,"bounce",function(){d.attr({arc:[0,b,c]})}))}var c=a(this),d=a.extend({},a.fn.percentageLoader.defaultConfig,b),e=parseInt(c.children(d.valElement).text()),f=!0,h=parseInt(c.css("width")),i=parseInt(c.css("height")),j=h/2,k=i/2,l=j-d.strokeWidth/2,m=null,n=null,p=Raphael(this,h,i);q()})},a.fn.percentageLoader.defaultConfig={valElement:"p",strokeWidth:20,bgColor:"#d9d9d9",ringColor:"#d53f3f",textColor:"#9a9a9a",fontSize:"12px",fontWeight:"normal"}}(jQuery);
+
+    $('.percent').percentageLoader({
+        bgColor: 'rgba(0,0,0,.2)',
+        ringColor: '#FDBE41',
+        textColor: '#33415C',
+        fontSize: '8px',
+        strokeWidth: 2
+    });
+
+    $('.percent2').percentageLoader({
+        bgColor: 'rgba(255,255,255,1)',
+        ringColor: '#FDBE41',
+        textColor: '#33415C',
+        fontSize: '20px',
+        strokeWidth: 3
+    });
+
+
+
+});

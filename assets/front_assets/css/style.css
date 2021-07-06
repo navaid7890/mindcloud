@@ -117,6 +117,7 @@ a.btn-theme>span { background: #2b2b2b; }
 .menu li:nth-last-child(-n+2) a { display: none; }
 .menu li:hover a,
 .menu li.active a { text-shadow: 0 0 .65px #333, 0 0 .65px #333; }
+.menu li a.active { text-shadow: 0 0 0.65px #333, 0 0 0.65px #333 !important;}
 
 /* Drop Down Css */
 .dropdown-nav { position: relative; }
@@ -200,7 +201,7 @@ ul.learn-process { display: flex; justify-content: space-between; flex-wrap: wra
     -moz-box-shadow: 0px 2px 3px 2px rgba(238,238,238,0.75);
 }
 .who-list .vid-content {
-    padding: 40px 75px 75px 40px;
+    padding: 40px 75px 35px 40px;
 }
 .homeWho .vid-content {
     padding: 40px 75px 75px 40px;
@@ -316,7 +317,7 @@ ul.rating>li p { font-size: 12px; vertical-align: middle; color: #7D8597; paddin
 ul.tut-list h6 { font-size: 26px; color: #33415C; font-weight: 700; }
 ul.cate-list p, ul.cate-list a {font-size: 17px;vertical-align: middle;color: #000;display: block;}
 ul.cate-list p>span { vertical-align: middle; margin-right: 15px; }
-ul.cate-list>li { width: 31.3%; padding: 18px 15px; justify-content: flex-start; background: #fff; border-radius: 12px; display: inline-flex; margin-bottom: 30px; margin-right:0px; text-align: left; padding-left: 40px; }
+ul.cate-list>li { width: 31.3%; padding: 18px 15px; justify-content: flex-start; align-items: center; background: #fff; border-radius: 12px; display: inline-flex; margin-bottom: 30px; margin-right:0px; text-align: left; padding-left: 40px; }
 ul.cate-list>li:nth-child(3n) { margin-right: 0; }
 ul.cate-list>li:nth-last-child(-n+3) { margin-bottom: 0; }
 ul.cate-list { margin-bottom: 78px; }
@@ -391,7 +392,7 @@ ul.cate-list img {
 .border-box { box-shadow: 0px 3px 12px #3130340A; border-radius: 15px; }
 .consult-content h2,
 .consult-left h2 { font-size: 26px; padding-bottom: 20px; line-height: normal; }
-.consult-content ul.cate-list>li:nth-child(3) { margin-right: 30px; }
+.consult-content ul.cate-list>li:nth-child(3) { margin-right: 0; }
 .consult-content ul.cate-list {
     margin-bottom: 0;
     height: 450px;
@@ -428,7 +429,7 @@ ul.cate-list img {
 .login-mdl { position: absolute; right: 0; left: 0; top: 0; bottom: 0; display: block; height: 900px; }
 a.white-logo { position: absolute; bottom: 0; top: 0; left: 0; right: 0; width: 50%; margin: auto; align-items: center; display: flex; z-index: 1; height: 100%; }
 .signup-form .fld-html label { color: #2590d9; }
-.profile-img { border-radius: 100px; overflow: hidden; width: 70px; height: 70px; }
+.profile-img { border-radius: 100px; overflow: hidden; width: 70px; height: auto; }
 .profile-img img { width: 100%; height: 100%; }
 .usr-review h3 { color: #5C677D; font-size: 20px; font-weight: 600; }
 ul.usr-rating { display: inline-block; vertical-align: middle; }
@@ -606,10 +607,13 @@ button.cart-trim:hover { color: #000; }
 .row-box3 button { width: 100%; height: 65px; background: #1D90D9 0% 0% no-repeat padding-box; box-shadow: 0px 12px 24px #1D90D942; border-radius: 12px; font-size: 20px; color: #fff; font-weight: 600; transition: 0.4s; cursor: pointer; }
 .row-box3 button:hover { background: #000; box-shadow: 0px 12px 24px #00233a42; }
 .cart-content { padding: 45px; background: #fff; }
-.cartSec { padding-top: 50px; }
+.cartSec { padding-top: 50px; padding-bottom: 50px; }
 .doxSec .col-md-6 { display: flex; justify-content: center; }
 .doxSec .col-md-6:after { content: ""; position: absolute; top: 0; bottom: 0; width: 2px; background: #efefef; right: 0; }
 .doxSec .col-md-6:last-child:after { display: none; }
+
+.cart-product-dtl a.remove_this_item{ font-size: 25px; color: #FDBE41;}
+.cartSecInner{ background: #fff; padding: 50px;}
 
 /**/
 .place-noty p { font-size: 17px; }
@@ -1747,6 +1751,8 @@ ul.login-btn>li>a>span {
     .form-card {
     position: relative;
     right: 45%;}
+
+    ul.login-btn .dropdown-box{ left: -120px;}
 }
 @media (max-width:824px) {
     .advisory-page .bannerContent h1 {font-size: 32px;}
@@ -2012,6 +2018,16 @@ ul.login-btn>li>a>span {
     .doxSec .col-md-6:after { display: none; }
 }
 
+.percent{
+	width:26px;
+	height:26px;
+    margin-right: 20px;
+}
+.percent svg{
+	stroke-linecap:round;
+}
+
+.topCircle .percent2{ width: 70px; height: 70px; margin-right: 0; margin-left: auto;}
 
 section.myjoin {
     margin-top: 100px;
