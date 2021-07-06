@@ -61,9 +61,9 @@ class Myemail{
 
 		if(ENVIRONMENT == 'development') {
 			$config['protocol'] = 'smtp';
-			$config['smtp_host'] = 'dev.tradekey.com.pk';
-			$config['smtp_user'] = 'babar.hussaini@dev.tradekey.com.pk';
-			$config['smtp_pass'] = 'Passwordhai';
+			$config['smtp_host'] = '';
+			$config['smtp_user'] = '';
+			$config['smtp_pass'] = '';
 			$config['smtp_port'] = 25;
 		}
 		else{
@@ -260,9 +260,9 @@ class Myemail{
 
 		if(ENVIRONMENT == 'development') {
 			$config['protocol'] = 'smtp';
-			$config['smtp_host'] = 'dev.tradekey.com.pk';
-			$config['smtp_user'] = 'babar.hussaini@dev.tradekey.com.pk';
-			$config['smtp_pass'] = 'Passwordhai';
+			$config['smtp_host'] = '';
+			$config['smtp_user'] = '';
+			$config['smtp_pass'] = '';
 			$config['smtp_port'] = 25;
 		}
 		else {

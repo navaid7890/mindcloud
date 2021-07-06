@@ -150,9 +150,6 @@
                               <input type="hidden" name="learning_journey_transcript[learning_journey_transcript_percent]" value="1">
 
                               <input type="submit" class="btn-round btn-hover"  value="Mark As Complete" id="forms-mark-complete-btn">
-
-                              
-
                            </form>
                            <div classs="space"><br><br></div>
                            <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
