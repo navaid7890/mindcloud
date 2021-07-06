@@ -1094,9 +1094,9 @@ class About_us extends MY_Controller
         'protocol' => 'smtp', // 'mail', 'sendmail', or 'smtp'
         'smtp_host' => 'smtp.gmail.com', 
         'smtp_port' => 465,
-        'smtp_user' => 'm.fazal@manageglobally.io',
-        'smtp_pass' => 'Fazal786',
-        'smtp_crypto' => '', //can be 'ssl' or 'tls' for example
+        'smtp_user' => 'zoozledb@gmail.com',
+        'smtp_pass' => 'admin@zoozledb',
+        'smtp_crypto' => 'tls', //can be 'ssl' or 'tls' for example
         'mailtype' => 'text', //plaintext 'text' mails or 'html'
         'smtp_timeout' => '4', //in seconds
         'charset' => 'iso-8859-1',
