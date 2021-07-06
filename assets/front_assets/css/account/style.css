@@ -4086,7 +4086,7 @@ body.page23 li.dropdown-toggle.catLj23 .dropdown-box{ display:block;}
 body.page24 li.dropdown-toggle.catLj24 .dropdown-box{ display:block;}
 body.page26 li.dropdown-toggle.catLj26  .dropdown-box{ display:block;}
 
-/* body.page11 li.dropdown-toggle.catLj11 > a{ background: #33415C; color: #fff;}
+body.page11 li.dropdown-toggle.catLj11 > a{ background: #33415C; color: #fff;}
 body.page12 li.dropdown-toggle.catLj12 > a{ background: #33415C; color: #fff;}
 body.page13 li.dropdown-toggle.catLj13 > a{ background: #33415C; color: #fff;}
 body.page14 li.dropdown-toggle.catLj14 > a{ background: #33415C; color: #fff;}
@@ -4101,7 +4101,24 @@ body.page21 li.dropdown-toggle.catLj21 > a{ background: #33415C; color: #fff;}
 body.page22 li.dropdown-toggle.catLj22 > a{ background: #33415C; color: #fff;}
 body.page23 li.dropdown-toggle.catLj23 > a{ background: #33415C; color: #fff;}
 body.page24 li.dropdown-toggle.catLj24 > a{ background: #33415C; color: #fff;}
-body.page26 li.dropdown-toggle.catLj26 > a{ background: #33415C; color: #fff;} */
+body.page26 li.dropdown-toggle.catLj26 > a{ background: #33415C; color: #fff;}
+
+body.page11 li.dropdown-toggle.catLj11 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page12 li.dropdown-toggle.catLj12 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page13 li.dropdown-toggle.catLj13 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page14 li.dropdown-toggle.catLj14 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page15 li.dropdown-toggle.catLj15 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page16 li.dropdown-toggle.catLj16 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page17 li.dropdown-toggle.catLj17 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page18 li.dropdown-toggle.catLj18 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page25 li.dropdown-toggle.catLj25 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page19 li.dropdown-toggle.catLj19 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page20 li.dropdown-toggle.catLj20 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page21 li.dropdown-toggle.catLj21 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page22 li.dropdown-toggle.catLj22 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page23 li.dropdown-toggle.catLj23 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page24 li.dropdown-toggle.catLj24 > a .percent svg text tspan{ fill: #ffffff !important;}
+body.page26 li.dropdown-toggle.catLj26 > a .percent svg text tspan{ fill: #ffffff !important;}
 
 
 

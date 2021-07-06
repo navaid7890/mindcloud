@@ -28,7 +28,7 @@ $(document).ready(function() {
     // });
 
     $(function() {
-        $('.dropdown-toggle > a').click(function(j) {
+        $('.dropdown-toggle > a').click(function() {
           var dropDown = $(this).closest('.dropdown-toggle').find('.dropdown-box');
           $(this).closest('.mCSB_container').find('ul.dropdown-box').not(dropDown).slideUp();
           
@@ -40,7 +40,7 @@ $(document).ready(function() {
           }
           
           dropDown.stop(false, true).slideToggle();
-          j.preventDefault();
+       
         });
       });
 
