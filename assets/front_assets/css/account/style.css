@@ -4120,7 +4120,29 @@ body.page23 li.dropdown-toggle.catLj23 > a .percent svg text tspan{ fill: #fffff
 body.page24 li.dropdown-toggle.catLj24 > a .percent svg text tspan{ fill: #ffffff !important;}
 body.page26 li.dropdown-toggle.catLj26 > a .percent svg text tspan{ fill: #ffffff !important;}
 
+a.tCurrent{ background: #33415C !important; color: #fff !important;}
+a.tCurrent .percent svg text tspan{ fill: #ffffff !important;}
 
+
+
+body.page11 li.dropdown-toggle.catLj11 > a:after{ transform: rotate(90deg);}
+body.page12 li.dropdown-toggle.catLj12 > a:after{ transform: rotate(90deg);}
+body.page13 li.dropdown-toggle.catLj13 > a:after{ transform: rotate(90deg);}
+body.page14 li.dropdown-toggle.catLj14 > a:after{ transform: rotate(90deg);}
+body.page15 li.dropdown-toggle.catLj15 > a:after{ transform: rotate(90deg);}
+body.page16 li.dropdown-toggle.catLj16 > a:after{ transform: rotate(90deg);}
+body.page17 li.dropdown-toggle.catLj17 > a:after{ transform: rotate(90deg);}
+body.page18 li.dropdown-toggle.catLj18 > a:after{ transform: rotate(90deg);}
+body.page25 li.dropdown-toggle.catLj25 > a:after{ transform: rotate(90deg);}
+body.page19 li.dropdown-toggle.catLj19 > a:after{ transform: rotate(90deg);}
+body.page20 li.dropdown-toggle.catLj20 > a:after{ transform: rotate(90deg);}
+body.page21 li.dropdown-toggle.catLj21 > a:after{ transform: rotate(90deg);}
+body.page22 li.dropdown-toggle.catLj22 > a:after{ transform: rotate(90deg);}
+body.page23 li.dropdown-toggle.catLj23 > a:after{ transform: rotate(90deg);}
+body.page24 li.dropdown-toggle.catLj24 > a:after{ transform: rotate(90deg);}
+body.page26 li.dropdown-toggle.catLj26 > a:after{ transform: rotate(90deg);}
+
+.course-list ul li.dropdown-toggle>a.tCurrent:after{ transform: rotate(90deg) !important;}
 
 .percent{
 	width:26px;

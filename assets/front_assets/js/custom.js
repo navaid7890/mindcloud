@@ -32,11 +32,11 @@ $(document).ready(function() {
           var dropDown = $(this).closest('.dropdown-toggle').find('.dropdown-box');
           $(this).closest('.mCSB_container').find('ul.dropdown-box').not(dropDown).slideUp();
           
-          if ($(this).hasClass('cur')) {
-            $(this).removeClass('cur');
+          if ($(this).hasClass('tCurrent')) {
+            $(this).removeClass('tCurrent');
           } else {
-            $(this).closest('.mCSB_container').find('.cur').removeClass('cur');
-            $(this).addClass('cur');
+            $(this).closest('.mCSB_container').find('.tCurrent').removeClass('tCurrent');
+            $(this).addClass('tCurrent');
           }
           
           dropDown.stop(false, true).slideToggle();
