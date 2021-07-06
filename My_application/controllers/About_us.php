@@ -1080,12 +1080,12 @@ class About_us extends MY_Controller
         $config = Array(
       'protocol' => 'smtp',
       'smtp_host' => 'smtp.gmail.com',
-      'smtp_port' => 25,
+      'smtp_port' => 465,
       'smtp_user' => 'm.fazal@manageglobally.io', // change it to yours
       'smtp_pass' => 'Fazal786', // change it to yours
-      'mailtype' => 'html',
-      'MAIL_TLS' => False,
-      'MAIL_SSL' => True,
+      'mailtype' => 'txt',
+      'MAIL_TLS' => TRUE,
+      'MAIL_SSL' => FALSE,
       'charset' => 'iso-8859-1',
       'wordwrap' => TRUE
     );
