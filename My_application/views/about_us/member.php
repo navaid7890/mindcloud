@@ -67,6 +67,7 @@ p.pro-name {
 }
 .pad-sec {
     padding: 0px;
+    
 }
 </style>
 

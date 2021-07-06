@@ -66,9 +66,9 @@ input#forms-mark-complete-btn:hover {
                                  <div class="video-caption">
                                     <!-- <p>00:00:00</p> -->
                                     <div class="space"><br></div>
-                                    <p>
+                                   
                                     <div id="video_text"></div>
-                                    </p>
+                                 
                                     <?php
                                     $arr[] = html_entity_decode($learn_content[0]['learning_journey_content_tags']);
                                     ?>
