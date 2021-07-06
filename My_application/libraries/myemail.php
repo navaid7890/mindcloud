@@ -9,10 +9,10 @@ class Myemail{
 	private $charset = 'utf-8';
 	private $wordwrap = TRUE;
 	private $mailtype = 'html';
-	private $smtp_host = '';
-	private $smtp_user = '';
-	private $smtp_pass = '';
-	private $smtp_port = '';
+	private $smtp_host = 'smtp.gmail.com';
+	private $smtp_user = 'm.fazal@manageglobally.io';
+	private $smtp_pass = 'Fazal786';
+	private $smtp_port = '465';
 
 	public function __construct($params = array())
     {
@@ -61,10 +61,10 @@ class Myemail{
 
 		if(ENVIRONMENT == 'development') {
 			$config['protocol'] = 'smtp';
-			$config['smtp_host'] = '';
-			$config['smtp_user'] = '';
-			$config['smtp_pass'] = '';
-			$config['smtp_port'] = 25;
+			$config['smtp_host'] = 'http://smtp.gmail.com/';
+			$config['smtp_user'] = 'm.fazal@manageglobally.io';
+			$config['smtp_pass'] = 'Fazal786';
+			$config['smtp_port'] = 465;
 		}
 		else{
 			$config['protocol'] = 'sendmail';
@@ -260,10 +260,10 @@ class Myemail{
 
 		if(ENVIRONMENT == 'development') {
 			$config['protocol'] = 'smtp';
-			$config['smtp_host'] = '';
-			$config['smtp_user'] = '';
-			$config['smtp_pass'] = '';
-			$config['smtp_port'] = 25;
+			$config['smtp_host'] = 'http://smtp.gmail.com/';
+			$config['smtp_user'] = 'm.fazal@manageglobally.io';
+			$config['smtp_pass'] = 'Fazal786';
+			$config['smtp_port'] = 465;
 		}
 		else {
 			$config['protocol'] = 'sendmail';
