@@ -41,11 +41,11 @@ class About_us extends MY_Controller
         // $data_cont = $this->model_cms_page->get_page(36);
         // $data1['cont1'] = $cont['child'][0];
         // $data1['cont2'] = $cont['child'][1];
- 
+
         // debug($data);
         $cont = array();
         $cont = $this->model_cms_page->get_page(35);
-		$data['con1'] = $cont['child'][0];
+        $data['con1'] = $cont['child'][0];
         $data['con2'] = $cont['child'][1];
         $data['con3'] = $cont['child'][2];
         $data['con4'] = $cont['child'][3];
@@ -55,20 +55,20 @@ class About_us extends MY_Controller
         $data['con8'] = $cont['child'][7];
 
         //  debug($data['con8']) ;
-        
-        $param = array();
-        $param['order'] = "team_id DESC";
-		$param['where']['team_type'] = 1;
-        $param['limit'] = 3;
-
-		$data['advisory'] = $this->model_team->find_all_active($param);
 
         $param = array();
         $param['order'] = "team_id DESC";
-		$param['where']['team_type'] = 2;
+        $param['where']['team_type'] = 1;
         $param['limit'] = 3;
 
-		$data['team'] = $this->model_team->find_all_active($param);
+        $data['advisory'] = $this->model_team->find_all_active($param);
+
+        $param = array();
+        $param['order'] = "team_id DESC";
+        $param['where']['team_type'] = 2;
+        $param['limit'] = 3;
+
+        $data['team'] = $this->model_team->find_all_active($param);
         // debug($data['advisory']);
 
         $this->load_view("index", $data);
@@ -97,16 +97,16 @@ class About_us extends MY_Controller
 
         $this->load_view("terms", $data);
     }
-    
+
     public function become_expert()
     {
         $cont = array();
         $cont = $this->model_cms_page->get_page(44);
-		$data['con1'] = $cont['child'][0];
-		$data['con2'] = $cont['child'][1];
-		$data['con3'] = $cont['child'][2];
-		$data['con4'] = $cont['child'][3];
-		$data['con5'] = $cont['child'][4];
+        $data['con1'] = $cont['child'][0];
+        $data['con2'] = $cont['child'][1];
+        $data['con3'] = $cont['child'][2];
+        $data['con4'] = $cont['child'][3];
+        $data['con5'] = $cont['child'][4];
         // debug($data['con2']);
 
         $this->load_view("become_expert", $data);
@@ -115,18 +115,18 @@ class About_us extends MY_Controller
     {
         $cont = array();
         $cont = $this->model_cms_page->get_page(50);
-		$data['con1'] = $cont['child'][0];
-		$data['con2'] = $cont['child'][1];
-		$data['con3'] = $cont['child'][2];
+        $data['con1'] = $cont['child'][0];
+        $data['con2'] = $cont['child'][1];
+        $data['con3'] = $cont['child'][2];
 
-		$data['con4'] = $cont['child'][3];
-		$data['con5'] = $cont['child'][4];
-		$data['con6'] = $cont['child'][5];
-		$data['con7'] = $cont['child'][6];
-		$data['con8'] = $cont['child'][7];
-		$data['con9'] = $cont['child'][8];
-		$data['con10'] = $cont['child'][9];
-		$data['con11'] = $cont['child'][10];
+        $data['con4'] = $cont['child'][3];
+        $data['con5'] = $cont['child'][4];
+        $data['con6'] = $cont['child'][5];
+        $data['con7'] = $cont['child'][6];
+        $data['con8'] = $cont['child'][7];
+        $data['con9'] = $cont['child'][8];
+        $data['con10'] = $cont['child'][9];
+        $data['con11'] = $cont['child'][10];
 
         $data['con12'] = $cont['child'][11];
         $data['con13'] = $cont['child'][12];
@@ -153,7 +153,7 @@ class About_us extends MY_Controller
     {
         $cont = array();
         $cont = $this->model_cms_page->get_page(80);
-		$data['con1'] = $cont['child'][0];
+        $data['con1'] = $cont['child'][0];
         $data['con2'] = $cont['child'][1];
         $data['con3'] = $cont['child'][2];
         $data['con4'] = $cont['child'][3];
@@ -167,7 +167,7 @@ class About_us extends MY_Controller
     {
         $cont = array();
         $cont = $this->model_cms_page->get_page(88);
-		$data['con1'] = $cont['child'][0];
+        $data['con1'] = $cont['child'][0];
         $data['con2'] = $cont['child'][1];
         $data['con3'] = $cont['child'][2];
         $data['con4'] = $cont['child'][3];
@@ -400,16 +400,16 @@ class About_us extends MY_Controller
         $par2['order'] = "expert_id ASC";
         $data['ex'] = $this->model_expert->find_all_active($par2);
         //debug($data['main_categories']);
-        
+
         $param = array();
         if (isset($_GET['expert']) and intval($_GET['expert']) > 0) {
             $param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
         }
-        if(isset($_GET['search'])){
+        if (isset($_GET['search'])) {
             // debug($_GET['search']);
-         $param['where_like'][] = array('column'=>'tutorial_name','value'=>$_GET['search']);
+            $param['where_like'][] = array('column' => 'tutorial_name', 'value' => $_GET['search']);
         }
-        
+
         $param['order'] = "tutorial_id ASC";
         $param['where_in']['tutorial_id'] = $all;
 
@@ -428,7 +428,7 @@ class About_us extends MY_Controller
 
         $param = array();
         $param['where']['category_featured'] = 1;
-        $data['category'] = $this->model_category->find_all_active($param); 
+        $data['category'] = $this->model_category->find_all_active($param);
 
         $exp1 = $this->model_cms_page->get_page(26);
 
@@ -518,34 +518,34 @@ class About_us extends MY_Controller
 
         $par1 = array();
         $par1['where']['faq_category'] = 1;
-        if(isset($_GET['search'])){
-     
-         $par1['where_like'][] = array('column'=>'faq_question','value'=>$_GET['search']);
+        if (isset($_GET['search'])) {
+
+            $par1['where_like'][] = array('column' => 'faq_question', 'value' => $_GET['search']);
         }
-        
+
         $data['ex'] = $this->model_faq->find_all_active($par1);
 
         $par2 = array();
         $par2['where']['faq_category'] = 2;
-        if(isset($_GET['search'])){
-     
-            $par2['where_like'][] = array('column'=>'faq_question','value'=>$_GET['search']);
+        if (isset($_GET['search'])) {
+
+            $par2['where_like'][] = array('column' => 'faq_question', 'value' => $_GET['search']);
         }
         $data['le'] = $this->model_faq->find_all_active($par2);
 
         $par3 = array();
         $par3['where']['faq_category'] = 3;
-        if(isset($_GET['search'])){
-     
-            $par3['where_like'][] = array('column'=>'faq_question','value'=>$_GET['search']);
+        if (isset($_GET['search'])) {
+
+            $par3['where_like'][] = array('column' => 'faq_question', 'value' => $_GET['search']);
         }
         $data['gene'] = $this->model_faq->find_all_active($par3);
 
         $par4 = array();
         $par4['where']['faq_category'] = 4;
-        if(isset($_GET['search'])){
-     
-            $par4['where_like'][] = array('column'=>'faq_question','value'=>$_GET['search']);
+        if (isset($_GET['search'])) {
+
+            $par4['where_like'][] = array('column' => 'faq_question', 'value' => $_GET['search']);
         }
         $data['cons'] = $this->model_faq->find_all_active($par4);
 
@@ -560,58 +560,53 @@ class About_us extends MY_Controller
 
 
 
-    
-    
+
+
         $this->load_view("faq", $data);
     }
 
 
     public function newsfeed()
     {
-   
+
         global $config;
-        if($this->userid > 0){
-        $data = array();
-        $data['account_user'] = $this->layout_data['user_data'];
+        if ($this->userid > 0) {
+            $data = array();
+            $data['account_user'] = $this->layout_data['user_data'];
 
-      //  debug($data['account_user']);
+            //  debug($data['account_user']);
 
-        $tab = isset($_GET['type']) ? $_GET['type'] : 'index';
-        switch ($tab) {
-            case 'message':
-                $active_tab = 3;
-                break;
-            case 'photo':
-                $active_tab = 4;
-                break;
-            case 'audio':
-                $active_tab = 5;
-                break;
-            case 'video':
-                $active_tab = 6;
-                break;
-            default:
-                $active_tab = 2;
-                break;
+            $tab = isset($_GET['type']) ? $_GET['type'] : 'index';
+            switch ($tab) {
+                case 'message':
+                    $active_tab = 3;
+                    break;
+                case 'photo':
+                    $active_tab = 4;
+                    break;
+                case 'audio':
+                    $active_tab = 5;
+                    break;
+                case 'video':
+                    $active_tab = 6;
+                    break;
+                default:
+                    $active_tab = 2;
+                    break;
+            }
+            $data['active_tab'] = $active_tab;
+
+
+            $data['feeds'] = $feeds = $this->model_post->find_post();
+
+
+            $this->load_view("newsfeed", $data);
+        } else {
+            redirect(l('login?msgtype=error&msg=' . urlencode('Please login first')), true);
         }
-        $data['active_tab'] = $active_tab;
-
-
-        $data['feeds'] = $feeds = $this->model_post->find_post();
-        
-
-        $this->load_view("newsfeed", $data);
     }
-    else
-    { 
-     redirect(l('login?msgtype=error&msg='.urlencode('Please login first')) , true);
 
 
-    }
-    
-    }
-    
-    
 
     public function ajax_post_like()
     {
@@ -619,9 +614,9 @@ class About_us extends MY_Controller
         $user_id = $this->userid;
         // Get post Data
         $post_id = $this->input->post('id');
-        
+
         // Success
-        if((isset($user_id)) && (isset($post_id))){
+        if ((isset($user_id)) && (isset($post_id))) {
 
             // Set params
             $post_params['where']['post_like_user_id'] = $user_id;
@@ -632,41 +627,40 @@ class About_us extends MY_Controller
             $already_exits_data = $this->model_post_like->find_count($post_params);
 
             // Found
-            if($already_exits_data > 0){
+            if ($already_exits_data > 0) {
                 $this->json_param['status'] = false;
                 $this->json_param['txt'] = "Already like this post";
-            }
-            else{
+            } else {
                 // Set data
                 $data_post_like = array(
-                    'post_like_post_id'=>$post_id,
-                    'post_like_user_id'=> $user_id,
+                    'post_like_post_id' => $post_id,
+                    'post_like_user_id' => $user_id,
                     //'post_like_post_type'=> $post_type,
-                    'post_like_status'=>STATUS_ACTIVE
+                    'post_like_status' => STATUS_ACTIVE
                 );
 
                 // Set attributes and save
                 $this->model_post_like->set_attributes($data_post_like);
 
-                $likeid=$this->model_post_like->save();
+                $likeid = $this->model_post_like->save();
                 // Success
-                if($likeid){
+                if ($likeid) {
 
-                    $total_like = $this->model_post_like->total_like($post_id,$post_type);
+                    $total_like = $this->model_post_like->total_like($post_id, $post_type);
 
                     $this->json_param['status'] = true;
                     $this->json_param['txt'] = "Post liked";
                     $this->json_param['count'] = $total_like;
                 }
                 // Fail
-                else{
+                else {
                     $this->json_param['status'] = false;
                     $this->json_param['txt'] = "Error found please try again";
                 }
             }
         }
         // Error
-        else{
+        else {
             $this->json_param['status'] = false;
             $this->json_param['txt'] = "Error found please try again";
         }
@@ -683,15 +677,15 @@ class About_us extends MY_Controller
         $post_comment =  $this->input->post('post_comment_user_comment');
 
         // Success
-        if((isset($user_id)) && (isset($post_id))){
+        if ((isset($user_id)) && (isset($post_id))) {
 
             // Set data
             $data_post_comment = array(
-                'post_comment_post_id'=>$post_id,
+                'post_comment_post_id' => $post_id,
                 //'post_comment_post_type'=> $post_type,
-                'post_comment_user_id'=> $user_id,
+                'post_comment_user_id' => $user_id,
                 'post_comment_user_comment' => $post_comment,
-                'post_comment_status'=>STATUS_ACTIVE
+                'post_comment_status' => STATUS_ACTIVE
             );
 
             // Set attributes and save
@@ -699,7 +693,7 @@ class About_us extends MY_Controller
 
             $commentid = $this->model_post_comment->save();
             // Success
-            if($commentid){
+            if ($commentid) {
 
 
                 // $total_comment = $this->model_post_comment->total_comment($post_id,$post_type);
@@ -711,16 +705,16 @@ class About_us extends MY_Controller
                 $this->json_param['txt'] = "Comment Added";
                 //$this->json_param['post_total_comment'] =$total_comment;
                 $name = ucfirst($this->layout_data['user_data']['user_firstname'] . " " . $this->layout_data['user_data']['user_lastname']);
-                $image = get_image($this->layout_data['user_data']['ui_profile_image'],$this->layout_data['user_data']['ui_profile_image_path']);
-                $this->json_param['post_id'] =$post_id;
+                $image = get_image($this->layout_data['user_data']['ui_profile_image'], $this->layout_data['user_data']['ui_profile_image_path']);
+                $this->json_param['post_id'] = $post_id;
                 $this->json_param['new_comment'] = '<div class="public-comment">
                             <div class="media">
                                 <div class="media-left">
-                                    <img src="'.$image.'" class="media-object" style="border-radius: 50px;height: 50px;width: 50px;">
+                                    <img src="' . $image . '" class="media-object" style="border-radius: 50px;height: 50px;width: 50px;">
                                 </div>
                                 <div class="media-body">
-                                    <p> <strong class="active">'.$name.'</strong> 
-                                    :'.$post_comment.'</p>
+                                    <p> <strong class="active">' . $name . '</strong> 
+                                    :' . $post_comment . '</p>
                                     <h5>Just Now</h5>
                                 </div>
                                 
@@ -728,7 +722,7 @@ class About_us extends MY_Controller
                         </div>';
             }
             // Fail
-            else{
+            else {
                 $this->json_param['status'] = false;
                 $this->json_param['txt'] = "Error Found";
             }
@@ -742,9 +736,9 @@ class About_us extends MY_Controller
 
         // Get User id
         $user_id = $this->userid;
-        
+
         // Success
-        if(($user_id!=null)){
+        if (($user_id != null)) {
 
             // Get Post data
             $data = $_POST['post'];
@@ -752,25 +746,24 @@ class About_us extends MY_Controller
             $data['post_status'] = 1;
             $data['post_user_id'] = $user_id;
             // Set post type
-            $type=$data['post_type'];
+            $type = $data['post_type'];
 
             // Text description
-            
-            if($type==1){
+
+            if ($type == 1) {
 
                 // Set rules for validation
                 $this->form_validation->set_rules('post[post_description]', 'Status', 'required|trim');
 
                 // Success
-                if ($this->form_validation->run() == TRUE)
-                {
+                if ($this->form_validation->run() == TRUE) {
 
                     // Set attributes and save
                     $this->model_post->set_attributes($data);
                     // Pass index for file upload
-                    $postid =$this->model_post->save();
-                    
-                    if($postid){
+                    $postid = $this->model_post->save();
+
+                    if ($postid) {
 
                         // save log starts
                         $action_type = 1;
@@ -778,53 +771,50 @@ class About_us extends MY_Controller
 
                         $this->json_param['status'] = true;
                         $this->json_param['txt'] = "Posted";
-                    }
-                    else{
+                    } else {
                         $this->json_param['status'] = false;
                         $this->json_param['txt'] = "Something Wrong please try again";
                     }
-
                 }
                 // Validation error
-                else{
+                else {
                     $this->json_param['status'] = false;
                     $this->json_param['txt'] = validation_errors();
                 }
             }
             // Photo / Video
-            else if(($type==2) || ($type==3)){
+            else if (($type == 2) || ($type == 3)) {
 
                 $error = array();
                 // Images
-                if($type==2){
-                    $file_ext_allow = array('jpeg','jpg','png');
+                if ($type == 2) {
+                    $file_ext_allow = array('jpeg', 'jpg', 'png');
                     $file_ext = strtolower(pathinfo($_FILES['post']['name']['post_file'], PATHINFO_EXTENSION));
-                    if(!in_array($file_ext,$file_ext_allow)){
-                        $error[] = 'not allow to '.$file_ext.' file extension';
+                    if (!in_array($file_ext, $file_ext_allow)) {
+                        $error[] = 'not allow to ' . $file_ext . ' file extension';
                     }
                 }
 
                 // Audios
-                if($type==3){
+                if ($type == 3) {
                     //$file_ext_allow = array('mp3','mp4','ogg');
-                    $file_ext_allow = array('mp3','mpeg');
+                    $file_ext_allow = array('mp3', 'mpeg');
                     $file_ext = strtolower(pathinfo($_FILES['post']['name']['post_file'], PATHINFO_EXTENSION));
-                    if(!in_array($file_ext,$file_ext_allow)){
-                        $error[] = 'not allow to '.$file_ext.' file extension';
+                    if (!in_array($file_ext, $file_ext_allow)) {
+                        $error[] = 'not allow to ' . $file_ext . ' file extension';
                     }
                 }
 
 
-                if(isset($error) AND array_filled($error)){
+                if (isset($error) and array_filled($error)) {
                     $this->json_param['status'] = false;
                     $this->json_param['txt'] = implode("<br />", $error);
-                }
-                else{
+                } else {
                     ini_set('upload_max_filesize', '10M');
                     ini_set('post_max_size', '10M');
                     ini_set('max_input_time', 300);
                     ini_set('max_execution_time', 300);
-                    
+
                     // Set file
                     $data['post_file'] = $_FILES['post'];
                     // Set attributes and save
@@ -832,48 +822,43 @@ class About_us extends MY_Controller
                     // Pass index for file upload
                     $postid = $this->model_post->save();
 
-                    if($postid){
+                    if ($postid) {
 
 
                         $this->json_param['status'] = true;
                         $this->json_param['txt'] = "Posted";
-                    }
-                    else{
+                    } else {
                         $this->json_param['status'] = false;
                         $this->json_param['txt'] = "Something Wrong please try again";
                     }
                 }
-            }
-            else if($type==4){
+            } else if ($type == 4) {
                 // Set rules for validation
                 $this->form_validation->set_rules('post[post_file]', "Youtube URL", 'required|trim');
 
                 // Success
-                if ($this->form_validation->run() == TRUE)
-                {
+                if ($this->form_validation->run() == TRUE) {
 
                     $insert_id = $this->model_post->insert_record($data);
                     // Pass index for file upload
-                    if($insert_id > 0){
+                    if ($insert_id > 0) {
 
                         $this->json_param['status'] = true;
                         $this->json_param['txt'] = "Posted";
-                    }
-                    else{
+                    } else {
                         $this->json_param['status'] = false;
                         $this->json_param['txt'] = "Something Wrong please try again";
                     }
                 }
                 // Validation error
-                else{
+                else {
                     $this->json_param['status'] = false;
                     $this->json_param['txt'] = validation_errors();
                 }
             }
-
         }
         // Error
-        else{
+        else {
             $this->json_param['status'] = false;
             $this->json_param['txt'] = lang('something_wrong');
         }
@@ -900,7 +885,7 @@ class About_us extends MY_Controller
 
         $this->json_param['status'] = true;
         //$this->json_param['html'] = $this->load->view('appointment/_schedule',$data,true);
-        $this->json_param['html'] = $this->load->view('appointment/_date',$data,true);
+        $this->json_param['html'] = $this->load->view('appointment/_date', $data, true);
         echo json_encode($this->json_param);
     }
 
@@ -908,27 +893,27 @@ class About_us extends MY_Controller
     public function ajax_get_date()
     {
         $this->json_param['status'] = true;
-        $this->json_param['html'] = $this->load->view('appointment/_date',$data,true);
+        $this->json_param['html'] = $this->load->view('appointment/_date', $data, true);
         echo json_encode($this->json_param);
     }
 
 
     public function ajax_get_timeslot()
     {
-        
+
         $date = $this->input->post('date');
         $professional_id = $this->input->post('professional_id');
 
         // if($this->model_vacation->is_professional_available($professional_id,$date))
         // {
-            $data['open_time'] = strtotime("9:00");
-            $data['close_time'] = strtotime("22:00");
+        $data['open_time'] = strtotime("9:00");
+        $data['close_time'] = strtotime("22:00");
 
-            // $data['booked_slot'] = $this->model_book_appointment->get_already_booked_slot($professional_id,$date);
-            $data['booked_slot'] = $this->model_session_inquiry->get_already_booked_slot($professional_id,$date);
-            
-            $this->json_param['status'] = true;
-            $this->json_param['html'] = $this->load->view('appointment/_timesslot',$data,true);
+        // $data['booked_slot'] = $this->model_book_appointment->get_already_booked_slot($professional_id,$date);
+        $data['booked_slot'] = $this->model_session_inquiry->get_already_booked_slot($professional_id, $date);
+
+        $this->json_param['status'] = true;
+        $this->json_param['html'] = $this->load->view('appointment/_timesslot', $data, true);
         // }
         // else {
         //     $this->json_param['status'] = false;
@@ -941,20 +926,20 @@ class About_us extends MY_Controller
 
     public function ajax_get_timeslot2()
     {
-        
+
         $date = $this->input->post('date');
         $professional_id = $this->input->post('professional_id');
 
         // if($this->model_vacation->is_professional_available($professional_id,$date))
         // {
-            $data['open_time'] = strtotime("9:00");
-            $data['close_time'] = strtotime("22:00");
+        $data['open_time'] = strtotime("9:00");
+        $data['close_time'] = strtotime("22:00");
 
-            // $data['booked_slot'] = $this->model_book_appointment->get_already_booked_slot($professional_id,$date);
-            $data['booked_slot'] = $this->model_session_inquiry->get_already_booked_slot($professional_id,$date);
-            
-            $this->json_param['status'] = true;
-            $this->json_param['html'] = $this->load->view('appointment/_timesslot2',$data,true);
+        // $data['booked_slot'] = $this->model_book_appointment->get_already_booked_slot($professional_id,$date);
+        $data['booked_slot'] = $this->model_session_inquiry->get_already_booked_slot($professional_id, $date);
+
+        $this->json_param['status'] = true;
+        $this->json_param['html'] = $this->load->view('appointment/_timesslot2', $data, true);
         // }
         // else {
         //     $this->json_param['status'] = false;
@@ -971,17 +956,17 @@ class About_us extends MY_Controller
         $now = time();
         $output = "";
 
-        $var = '';//'<option value="">Select Time</option>';
-        $y=1;
-        for( $i=$open_time; $i<=$close_time; $i+=3600) {
-            $output = date("h:i A",$i);
-            $output2 = date("G:i",$i);
+        $var = ''; //'<option value="">Select Time</option>';
+        $y = 1;
+        for ($i = $open_time; $i <= $close_time; $i += 3600) {
+            $output = date("h:i A", $i);
+            $output2 = date("G:i", $i);
             //if($y > 1)
-            if($y == 2)
-                $var .= "<option value='".$output2."'>$output</option>";
+            if ($y == 2)
+                $var .= "<option value='" . $output2 . "'>$output</option>";
             $y++;
         }
-        
+
         $this->json_param['status'] = true;
         $this->json_param['html'] = $var;
 
@@ -990,46 +975,38 @@ class About_us extends MY_Controller
 
     public function save_order()
     {
-        if($this->userid > 0)
-        {
+        if ($this->userid > 0) {
             $_POST['book_appointment']['ba_user_id'] = $this->userid;
-            if($this->validate("model_book_appointment"))
-            {
+            if ($this->validate("model_book_appointment")) {
                 if ($_POST['book_appointment']['ba_package_id'] != 0) {
 
                     $package_id = $_POST['book_appointment']['ba_package_id'];
                     $pacakge_data = $this->model_package->find_by_pk($package_id);
-                }
-                else
-                {
+                } else {
                     $service_id = $_POST['book_appointment']['ba_service_id'];
-                     $service_data = $this->model_service->find_by_pk($service_id);
+                    $service_data = $this->model_service->find_by_pk($service_id);
                     $pacakge_data['package_price'] = $service_data['service_price'];
                 }
                 $data = $_POST['book_appointment'];
-                            
+
 
                 $data['ba_amount'] = $pacakge_data['package_price'];
                 $data['ba_status'] = 1;
                 $data['ba_payment_status'] = 0;
                 $data['ba_appointment_status'] = 0;
-                
+
 
                 $this->model_book_appointment->set_attributes($data);
                 $inserted_id = $this->model_book_appointment->save();
-                
+
                 $this->json_param['status'] = true;
                 $this->json_param['id'] = $inserted_id;
                 $this->json_param['txt'] = 'We appreciate that you’ve taken the time to write us. We\'ll get back to you very soon.';
-            }
-            else
-            {
+            } else {
                 $this->json_param['status'] = false;
                 $this->json_param['txt'] = validation_errors();
             }
-        }
-        else
-        {
+        } else {
             $this->json_param['status'] = false;
             $this->json_param['txt'] = "Please login first";
         }
@@ -1037,6 +1014,49 @@ class About_us extends MY_Controller
         echo json_encode($this->json_param);
     }
 
+
+    public function booking()
+    {
+        global $config;
+        $data = array();
+
+        //TAB TITLE
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+
+        //INNER BANNER
+
+        $data['exp'] = $this->model_user->find_all();
+
+
+        $ccategory = array();
+        $data['category'] = $this->model_category->find_all_active($ccategory);
+
+        // $experts = array();
+        // $data['experts'] = $this->model_expert->find_all_active($experts);
+
+
+        $experts = array();
+        $experts['where']['tutorial_category_id'] = 14;
+        $data['experts'] = $this->model_tutorial->find_all_active($experts);
+
+
+        // debug($data['experts']);
+
+        $this->load_view("booking", $data);
+    }
+
+    function get_experts_by_category_id($category_id)
+    {
+
+        $experts =  $this->model_tutorial->get_experts_by_category($category_id);
+
+        echo json_encode($experts);
+
+        // debug($experts);
+
+
+    }
 
 
 
@@ -1063,16 +1083,31 @@ class About_us extends MY_Controller
 
         //TAB TITLE
         $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
 
         //INNER BANNER
-       
+
         $data['exp'] = $this->model_user->find_all();
 
-        $this->load_view("member",$data);
+        $this->load_view("member", $data);
     }
 
-    
 
-    
+    public function userprofile($id = '')
+    {
+        global $config;
+        $data = array();
+
+        //TAB TITLE
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+
+        //INNER BANNER
+
+        $par = array();
+        $par['where']['user_id'] = $id;
+        $data['profile'] = $this->model_user->find_one_active($par);
+
+        $this->load_view("userprofile", $data);
+    }
 }

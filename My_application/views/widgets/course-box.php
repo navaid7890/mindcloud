@@ -101,8 +101,8 @@
                                     <ul class="dropdown-box" style="display: none;">
                                         <li><a href="description?cat=<?= $a ?>"><i class="fad fa-video"></i>Intro<span><i class="far fa-check"></i></span></a></li>
                                         <li class="videoScript-<?= $a ?>"><a href="<?= l('account/profile/video') ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Tutorial Video & Transcript <span><i class="far fa-check"></i></span></a></li>
-                                        <li class="toolbuilder-<?= $a ?>"><a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <li class="mywork-<?= $a ?>"><a href="your_work?tool=<?= $dt_index ?>"><i class="fad fa-video"></i> My Work<span><i class="far fa-check"></i></span></a></li>
+                                        <li class="toolbuilder-<?= $a ?>"><a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
+                                        <li class="mywork-<?= $a ?>"><a href="your_work?tool=<?= $dt_index ?>&cat=<?= $a ?>"><i class="fad fa-video"></i> My Work<span><i class="far fa-check"></i></span></a></li>
                                         <?php $dt_index = $dt_index + 1; ?>
                                     </ul>
                                 </li>
@@ -279,12 +279,21 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
         <? endif; ?>
 
         <? foreach ($videoTranscript as $vt => $value) : ?>
-
+            <? // if ($value['learning_journey_transcript_content_id'] == 1) : 
+            ?>
             <? $a = $value['learning_journey_transcript_content_id'] ?>
-            $(".videoScript-<?=$a ?>").addClass('active');
-            $(".catLj<?= $a ?> #played<?= $a ?>").html('100');
-            console.log("cat value", <?= $a ?>);
+            var transcriptTotalcheck = parseInt($(".catLj<?= $a ?> #played<?= $a ?>").html());
+            if (transcriptTotalcheck < 100) {
+                $(".videoScript-<?= $a ?>").addClass('active');
+                var transcriptTotal = parseInt($(".catLj<?= $a ?> #played<?= $a ?>").html()) + 34;
+                $(".catLj<?= $a ?> #played<?= $a ?>").html(transcriptTotal);
+            }
+            // else {
+            //     $("#forms-mark-complete-btn").attr("disabled", "disabled");
+            // }
 
+            <? //endif; 
+            ?>
         <? endforeach; ?>
 
 
@@ -310,7 +319,47 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
         //    $("."+tool).addClass('active');
         // }
 
+        // BUSINESS MODEL CANVAS Percentage
+        var businessPercent = $("#played11").html();
+        var businessPercent1 = $("#played12").html();
+        var businessTotal = parseInt(businessPercent) + parseInt(businessPercent1)
+        var TotalbusinessPercent = Math.round((businessTotal / 200) * 100);
+        localStorage.setItem("businessPercent", TotalbusinessPercent);
 
+        // GO-TO MARKET STRATEGIES
+        var gtms1 = $("#played13").html();
+        var gtms2 = $("#played14").html();
+        var gtms3 = $("#played15").html();
+        var gtms4 = $("#played16").html();
+        var gtms5 = $("#played17").html();
+        var gtms6 = $("#played18").html();
+        var gtmsTotal = parseInt(gtms1) + parseInt(gtms2) + parseInt(gtms3) + parseInt(gtms4) + parseInt(gtms5) + parseInt(gtms6);
+        var TotalgtmsPercent = Math.round((gtmsTotal / 600) * 100);
+        localStorage.setItem("GO_TO_MARKET_STRATEGIES", TotalgtmsPercent);
+
+
+        // Financial management
+
+        var fm2 = $("#played20").html();
+        var fm3 = $("#played21").html();
+        var fm4 = $("#played22").html();
+        var fm5 = $("#played23").html();
+        var fm6 = $("#played24").html();
+        var fmTotal = parseInt(fm2) + parseInt(fm3) + parseInt(fm4) + parseInt(fm5) + parseInt(fm6);
+        var TotalfmPercent = Math.round((fmTotal / 500) * 100);
+        localStorage.setItem("Financial_management", TotalfmPercent);
+        // console.log("Financial management", TotalfmPercent );
+
+
+        // Legal Structure
+        var ls = $("#played25").html();
+        var lsTotal = parseInt(ls);
+        localStorage.setItem("Legal_Structure", lsTotal);
+
+        // Investment / Pitch Deck
+        var Idesk = $("#played26").html();
+        var IdeskTotal = parseInt(Idesk);
+        localStorage.setItem("Investment_Desk", IdeskTotal);
 
 
 

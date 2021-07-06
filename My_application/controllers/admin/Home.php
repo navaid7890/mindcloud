@@ -78,13 +78,14 @@ class Home extends MY_Controller {
 
             $param = array();
             $param['where']['v_user_id'] = $_GET['expert'];
-            $param['where']['v_cat_id'] = $_GET['category'];
+          //  $param['where']['v_cat_id'] = $_GET['category'];
             $param['group'] = 'v_date';
             $vacation_data = $this->model_vacation->find_all($param);
       
             if(isset($vacation_data) AND array_filled($vacation_data)):
                 foreach($vacation_data as $value):
-                    $json_data .= '{title:"Not Available",
+                    $cat=$this->model_category->find_by_pk($value['v_cat_id']);
+                    $json_data .= '{title:"'.$cat['category_name'].'",
                         start:"'.$value['v_date'].'",
                         end:"'.$value['v_date'].'"},';
                 endforeach;

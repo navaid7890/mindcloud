@@ -60,7 +60,8 @@ $menu_links = array(
     "additionals"=>array(
          array("link"=>"learning_journey_category","title"=>"Manage Learning Journey Category", "icon"=>" fa fa-angle-right"),
          array("link"=>"learning_journey_content","title"=>"Manage Learning Journey Content", "icon"=>" fa fa-angle-right"),
-         array("link"=>"learning_journey_transcript","title"=>"Manage learning journey transcript", "icon"=>" fa fa-angle-right"),
+        //  array("link"=>"learning_journey_transcript","title"=>"Manage learning journey transcript", "icon"=>" fa fa-angle-right"),
+         array("link"=>"mytutorial","title"=>"mytutorial", "icon"=>" fa fa-angle-right"),
          array("link"=>"learning_journey_content_review","title"=>"Manage Content Reviews", "icon"=>" fa fa-angle-right"),
          array("link"=>"startup","title"=>"Manage My Startup", "icon"=>" fa fa-angle-right"),
          array("link"=>"team","title"=>"Team Management", "icon"=>" fa fa-angle-right"),
@@ -359,11 +360,11 @@ array("title"=>"Order Management", "icon"=>"basket" ,"action" => array("shop_ord
     ), */
 
 
-    // array("title"=>"User Management", "icon"=>" fa fa-users" ,"action" => "user" ,
-    //     "additionals"=>array(
-    //         array("link"=>"user","title"=>"Manage User's", "icon"=>" fa fa-users"),
-    //     ),
-    // ),
+    array("title"=>"User Management", "icon"=>" fa fa-users" ,"action" => "user" ,
+        "additionals"=>array(
+            array("link"=>"user","title"=>"Manage User's", "icon"=>" fa fa-users"),
+        ),
+    ),
 
     // array("title" => "Administrators", "icon" => " feather icon-users", "action" => "admins",
     //     "additionals" => array(

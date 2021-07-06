@@ -99,6 +99,10 @@ $route['step-1'] = "account/profile/tools";
 $route['faq'] = "about_us/faq";
 $route['newsfeed'] = "about_us/newsfeed";
 $route['member'] = "about_us/member";
+$route['booking'] = "about_us/booking";
+$route['user-detail/(:any)'] = "about_us/userprofile/$1";
+
+
 
 //PACKAGE
 // $route['package-payment-step-1'] = "package/order_view";

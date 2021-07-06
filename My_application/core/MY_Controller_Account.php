@@ -42,6 +42,9 @@ class MY_Controller_Account extends MY_Controller
         $country_code = empty($this->layout_data['user_data']['ui_country_id']) ? 223 : $this->layout_data['user_data']['ui_country_id'];
         $this->layout_data['country'] = $this->model_country->get_country_name($country_code);
 
+        // $this->layout_data['js_files'] ;
+        // debug($this->layout_data);
+
 
     }
 
