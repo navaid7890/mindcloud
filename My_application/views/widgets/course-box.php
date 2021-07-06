@@ -367,6 +367,7 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             if (transcriptTotalcheck < 100) {
               
                 $(".videoScript-<?= $a ?>").addClass('active');
+                var transcriptTotal = 0;
                 var transcriptTotal = parseInt($(".catLj<?= $a ?> #played<?= $a ?> p").html()) + 34;
                 $("#played<?= $a ?> p").html(transcriptTotal);
                  

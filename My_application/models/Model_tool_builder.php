@@ -137,6 +137,18 @@ class Model_tool_builder extends MY_Model {
                      'rules'   => 'trim'
                 ),
 
+                'tool_builder_percent' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'tool_builder_percent',
+                    'label'   => 'id #',
+                    'type'   => 'hidden',
+                    'type_dt'   => 'text',
+                    'attributes'   => array(),
+                    'dt_attributes'   => array("width"=>"5%"),
+                    'js_rules'   => '',
+                    'rules'   => 'trim'
+               ),
+
               'tool_builder_customer_segments' => array(
                      'table'   => $this->_table,
                      'name'   => 'tool_builder_customer_segments',

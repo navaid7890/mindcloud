@@ -538,6 +538,7 @@ class Contact_us extends MY_Controller
                         $data = $_POST['tool_builder'];
 
                         $data['tool_builder_step_id'] = $tool['tool_builder_step_id'] + 1;
+                        // $data['tool_builder_percent'] = 1;
                         $this->model_tool_builder->update_by_pk($id, $data);
 
                         $this->json_param['status'] = true;
@@ -551,6 +552,7 @@ class Contact_us extends MY_Controller
 
                         $data['tool_builder_user_id'] = $this->userid;
                         $data['tool_builder_step_id'] = 1;
+                        
 
                         $this->model_tool_builder->set_attributes($data);
                         $inserted_id = $this->model_tool_builder->save();

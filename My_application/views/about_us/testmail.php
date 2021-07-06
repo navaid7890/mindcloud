@@ -7,14 +7,14 @@
    <body>
       
       <?php
-         $to = "madiha@alphacandy.com";
+         $to = "m.fazal@manageglobally.io";
          $subject = "This is subject";
          
          $message = "<b>This is HTML message.</b>";
          $message .= "<h1>This is headline.</h1>";
          
-         $header = "From:madiha@alphacandy.com \r\n";
-         $header .= "Cc:afgh@somedomain.com \r\n";
+         $header = "From:m.fazal@manageglobally.io \r\n";
+         $header .= "Cc:madiha@alphacandy.com \r\n";
          $header .= "MIME-Version: 1.0\r\n";
          $header .= "Content-type: text/html\r\n";
          
