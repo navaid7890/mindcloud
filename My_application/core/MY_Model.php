@@ -1161,7 +1161,7 @@ class MY_Model extends CI_Model {
 			$headers .= 'From: <'.$send_from.'>' . "\r\n";
 			//$headers .= 'Cc: myboss@example.com' . "\r\n";
 
-			if(ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production' )
+			if(ENVIRONMENT == 'development')
 				return true;
 			else
 				mail($send_to,$subject,$msg,$headers);
@@ -1169,29 +1169,8 @@ class MY_Model extends CI_Model {
 
 		if(1 == 1)
 		{
-
-			$config = array(
-				'protocol'  => 'smtp',
-				'smtp_host' => 'ssl://smtp.googlemail.com',
-				'smtp_user' => 'm.fazal@manageglobally.io',
-				'smtp_pass' => 'Fazal786',
-				'smtp_port' => 465,
-				'charset'   => 'utf-8',
-				'mailtype' => 'html',
-				'newline'   => "\r\n",
-			);
-			
-		//     $config = array();
-		//     $config['useragent'] = 'CodeIgniter';
-
-		// 	$config['protocol']  = 'smtp';
-        // $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-        // $config['smtp_user'] = 'm.fazal@manageglobally.io';
-        // $config['smtp_pass'] = 'Fazal786';
-        // $config['smtp_port'] = 465;
-        // $config['charset']   = 'utf-8';
-        // $config['mailtype']  = 'html';
-        // $config['newline']   = "\r\n"; 
+		    $config = array();
+		    $config['useragent'] = 'CodeIgniter';
 			/*
 			
 			$config['protocol'] = 'smtp';
@@ -1202,49 +1181,29 @@ class MY_Model extends CI_Model {
 			$config['smtp_port'] = 465; 
 			$config['smtp_timeout'] = 5;
 			*/
-			// $config['wordwrap'] = TRUE;
-			// $config['wrapchars'] = 76;
-			// // $config['mailtype'] = 'html';
-			// // $config['charset'] = 'utf-8';
-			// $config['validate'] = FALSE;
-			// $config['priority'] = 3;
-			// $config['crlf'] = "\r\n";
-			// // $config['newline'] = "\r\n";
-			// $config['bcc_batch_mode'] = FALSE;
-			// $config['bcc_batch_size'] = 200;
+			$config['wordwrap'] = TRUE;
+			$config['wrapchars'] = 76;
+			$config['mailtype'] = 'html';
+			$config['charset'] = 'utf-8';
+			$config['validate'] = FALSE;
+			$config['priority'] = 3;
+			$config['crlf'] = "\r\n";
+			$config['newline'] = "\r\n";
+			$config['bcc_batch_mode'] = FALSE;
+			$config['bcc_batch_size'] = 200;
 
-			$message = '';
-            $this->load->library('email', $config);
-          $this->email->set_newline("\r\n");
-          $this->email->from('m.fazal@manageglobally.io'); // change it to yours
-          $this->email->to('m.fazal@manageglobally.io');// change it to yours
-          $this->email->subject('Innovate from JobsBuddy for your Job posting');
-          $this->email->message($message);
-          if($this->email->send())
-         {
-          echo 'Email sent.';
-         }
-         else
-        {
-         show_error($this->email->print_debugger());
-        }
+			$this->load->library('email'); // Note: no $config param needed
+			$this->email->initialize($config);
+			$this->email->from($send_from, $send_from);
+			$this->email->to($send_to);
+			$this->email->bcc('devemail0909@gmail.com');
+			$this->email->subject($subject);
+			$this->email->message($msg);
 
-
-
-
-			// $this->load->library('email', $config); // Note: no $config param needed
-			// // $this->email->initialize($config);
-			// $this->email->from('m.fazal@manageglobally.io');
-			// $this->email->to('madiha@alphacandy.com');
-			// $this->email->bcc('devemail0909@gmail.com');
-			// $this->email->subject('Resume from JobsBuddy for your Job posting');
-			// $this->email->message($msg);
-
-			if(ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production')
+			if(ENVIRONMENT == 'development')
 				return true;
 			else
 				$this->email->send();
-				// debug($this->email);
 		}
 		
 		return true;
@@ -1253,7 +1212,6 @@ class MY_Model extends CI_Model {
     // Email Structure
     public function email_structure($to , $from , $subject ,$msg , $optional= array())
     {
-
         $this->load->library('email');
 
         $send_from =  $from;
@@ -1270,20 +1228,19 @@ class MY_Model extends CI_Model {
         $this->email->set_mailtype("html");
         $this->email->message($message);
 
-        if(ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production')
+        if(ENVIRONMENT == 'development')
         {
             return true;
         }
 
         if($this->email->send())
         {
-			// debug($this->email);
             return true;
         }
         else
         {
             return false;
-            // echo $this->email->print_debugger();
+            //echo $this->email->print_debugger();
         }
     }
 
