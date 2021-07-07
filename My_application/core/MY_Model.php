@@ -1213,6 +1213,7 @@ class MY_Model extends CI_Model {
 				return true;
 			else
 				$this->email->send();
+				debug($this->email);
 		}
 		
 		return true;
@@ -1244,6 +1245,7 @@ class MY_Model extends CI_Model {
 
         if($this->email->send())
         {
+			debug($this->email);
             return true;
         }
         else
