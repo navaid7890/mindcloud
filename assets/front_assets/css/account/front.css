@@ -1436,9 +1436,10 @@
         font-weight: 600;
         text-transform: uppercase;
         position: absolute;
-        top: 46%;
+        top: auto;
         z-index: 1;
         right: 5%;
+        bottom: 15px;
     }
     
     a.cate-tag:hover {

@@ -67,12 +67,12 @@
                         <div class="row">
                            <div class="col-md-5">
                               <div class="tutorial-mid-content">
-                                 <h4>Tutorial and Transcript</h4>
+                                 <h4>Tutorial and Transcript </h4>
                                  <div class="space"><br></div>
                                  <div class="video-caption">
 
                                     <p>
-                                    <div id="video_text"><?= html_entity_decode($tutorial_detail['videos_transcript']); ?></div>
+                                    <div id="video_text"></div>
                                     </p>
                                     <?php
                                     $arr[] = html_entity_decode($tutorial_detail['videos_transcript']);
@@ -111,6 +111,7 @@
                               </div>
                            </div>
                         </div>
+                                 </div>
                         <div class="space"><br><br></div>
                         <!-- <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p> -->
                      </div>

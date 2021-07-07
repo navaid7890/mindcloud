@@ -221,6 +221,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj11 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj11 #played11 p").html('0');
         <? endif; ?>
         <? if ($toolvp['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-12").addClass('active');
@@ -230,6 +232,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj12 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj12 #played12 p").html('0');
         <? endif; ?>
         <? if ($toolswot['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-13").addClass('active');
@@ -239,6 +243,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj13 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj13 #played13 p").html('0');
         <? endif; ?>
         <? if ($toolpmmt['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-14").addClass('active');
@@ -248,6 +254,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj14 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj14 #played14 p").html('0');
         <? endif; ?>
         <? if ($tool_strg_mkt['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-15").addClass('active');
@@ -257,6 +265,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj15 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj15 #played15 p").html('0');
         <? endif; ?>
         <? if ($tool_cj_dg['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-16").addClass('active');
@@ -266,6 +276,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj16 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj16 #played16 p").html('0');
         <? endif; ?>
         <? if ($tool_mc_mc['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-17").addClass('active');
@@ -275,6 +287,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj17 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj17 #played17 p").html('0');
         <? endif; ?>
         <? if ($tool_osf['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-18").addClass('active');
@@ -284,6 +298,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj18 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj18 #played18 p").html('0');
         <? endif; ?>
         <? if ($tool_osf['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-19").addClass('active');
@@ -293,6 +309,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj19 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj19 #played19 p").html('0');
         <? endif; ?>
         <? if ($tool_lts['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-25").addClass('active');
@@ -302,6 +320,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj25 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj25 #played25 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_income['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-20").addClass('active');
@@ -311,6 +331,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj20 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj20 #played20 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_bss['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-21").addClass('active');
@@ -320,6 +342,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj21 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj21 #played21 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_cfs['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-22").addClass('active');
@@ -329,6 +353,9 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj22 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+           
+        <?else :?>
+            $(".catLj22 #played22 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_beps['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-23").addClass('active');
@@ -338,6 +365,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj23 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj23 #played23 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_dcvm['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-24").addClass('active');
@@ -347,6 +376,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj24 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj24 #played24 p").html('0');
         <? endif; ?>
         <? if ($tool_ids['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-26").addClass('active');
@@ -356,6 +387,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".catLj26 .percent p").html(percVal); 
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj26 #played26 p").html('0');
         <? endif; ?>
 
 
@@ -392,7 +425,7 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
         $('.allpercent').text(total);
 
         
-      //  localStorage.setItem("learingPercent", $(".allpercent").text());
+          localStorage.setItem("learingPercent", $(".allpercent").text());
         //    
         // }
 
@@ -410,42 +443,48 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
         var businessPercent1 = $("#played12").html();
         var businessTotal = parseInt(businessPercent) + parseInt(businessPercent1)
         var TotalbusinessPercent = Math.round((businessTotal / 200) * 100);
-        localStorage.setItem("businessPercent", TotalbusinessPercent);
+
+        //console.log("businessPercent", parseInt($(".catLj11 .percent p").html()));
+
+        localStorage.setItem("businessPercent", parseInt($(".catLj11 .percent p").html()));
 
         // GO-TO MARKET STRATEGIES
-        var gtms1 = $("#played13").html();
-        var gtms2 = $("#played14").html();
-        var gtms3 = $("#played15").html();
-        var gtms4 = $("#played16").html();
-        var gtms5 = $("#played17").html();
-        var gtms6 = $("#played18").html();
+        var gtms1 = $("#played13 p").html();
+        var gtms2 = $("#played14 p").html();
+        var gtms3 = $("#played15 p").html();
+        var gtms4 = $("#played16 p").html();
+        var gtms5 = $("#played17 p").html();
+        var gtms6 = $("#played18 p").html();
         var gtmsTotal = parseInt(gtms1) + parseInt(gtms2) + parseInt(gtms3) + parseInt(gtms4) + parseInt(gtms5) + parseInt(gtms6);
         var TotalgtmsPercent = Math.round((gtmsTotal / 600) * 100);
-        localStorage.setItem("GO_TO_MARKET_STRATEGIES", TotalgtmsPercent);
+        localStorage.setItem("GO_TO_MARKET_STRATEGIES", parseInt(TotalgtmsPercent));
+
+        console.log("This is test", parseInt(TotalgtmsPercent));
 
 
         // Financial management
-
-        var fm2 = $("#played20").html();
-        var fm3 = $("#played21").html();
-        var fm4 = $("#played22").html();
-        var fm5 = $("#played23").html();
-        var fm6 = $("#played24").html();
+        var fm2 = $("#played20 p").html();
+        var fm3 = $("#played21 p").html();
+        var fm4 = $("#played22 p").html();
+        var fm5 = $("#played23 p").html();
+        var fm6 = $("#played24 p").html();
         var fmTotal = parseInt(fm2) + parseInt(fm3) + parseInt(fm4) + parseInt(fm5) + parseInt(fm6);
+        // var fmTotal = fm2 + fm3 + fm4 + fm5 + fm6;
         var TotalfmPercent = Math.round((fmTotal / 500) * 100);
-        localStorage.setItem("Financial_management", TotalfmPercent);
-        // console.log("Financial management", TotalfmPercent );
+        localStorage.setItem("Financial_management", parseInt(TotalfmPercent));
+        
+       //  console.log("Financial management", parseInt(TotalfmPercent));
 
 
         // Legal Structure
-        var ls = $("#played25").html();
+        var ls = $("#played25 p").html();
         var lsTotal = parseInt(ls);
-        localStorage.setItem("Legal_Structure", lsTotal);
+        localStorage.setItem("Legal_Structure", parseInt(lsTotal));
 
         // Investment / Pitch Deck
-        var Idesk = $("#played26").html();
+        var Idesk = $("#played26 p").html();
         var IdeskTotal = parseInt(Idesk);
-        localStorage.setItem("Investment_Desk", IdeskTotal);
+        localStorage.setItem("Investment_Desk", parseInt(IdeskTotal));
 
 
 

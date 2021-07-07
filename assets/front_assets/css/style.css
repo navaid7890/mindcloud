@@ -186,7 +186,18 @@ ul.learn-process { display: flex; justify-content: space-between; flex-wrap: wra
 .learnContentBox:hover i { filter: brightness(100); }
 .whoSec { padding-bottom: 100px; }
 .vid-content { padding: 40px 75px 75px 40px; }
-.vid-content h4 { font-size: 20px; font-weight: 700; color: #33415C; text-transform: uppercase; padding-bottom: 15px;min-height: 56px; }
+.vid-content h4 { font-size: 20px;
+    font-weight: 700;
+    color: #33415C;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    height: 60px;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    min-height: auto; }
 .vid-content p { font-weight: 300; }
 .vid-box { max-width: 370px; border-radius: 15px; overflow: hidden; background: #fff; min-height: 507px; position: relative; }
 .who-list .vid-box {
@@ -206,6 +217,8 @@ ul.learn-process { display: flex; justify-content: space-between; flex-wrap: wra
 .homeWho .vid-content {
     padding: 40px 75px 75px 40px;
     min-height: 251px;
+    display: flex;
+    flex-wrap: wrap;
 }
 ul.who-list { display: flex; justify-content: space-between; flex-wrap: wrap; }
 .abtSec { background: #F8F9FA; }
@@ -307,7 +320,7 @@ a.btn-links i { font-size: 32px; vertical-align: middle; margin-right: 8px; colo
 .expertHead h1:after { content: ""; height: 12px; width: 12px; border: 3px solid #fff; background: #1d90d9; position: absolute; bottom: -15px; border-radius: 100px; right: -4px; }
 .expertSec p>a { color: #1BA8E8; font-weight: 700; }
 .expertSec { padding-bottom: 70px; }
-a.cate-tag { padding: 9px 22px; background: #FDBE41; border-radius: 6px; color: #33415C; font-size: 14px; font-weight: 600; text-transform: uppercase; position: absolute; top: 46%; z-index: 1; right: 5%; }
+a.cate-tag { padding: 9px 22px; background: #FDBE41; border-radius: 6px; color: #33415C; font-size: 14px; font-weight: 600; text-transform: uppercase; position: absolute; top: auto; bottom: 15px; z-index: 1; right: 5%; }
 a.cate-tag:hover { background: #000; color: #fff; }
 .video-box span>p { font-size: 16px; color: #fff; padding-top: 12px; font-weight: 600; }
 ul.tut-list .vid-content { padding: 40px 20px 20px 40px; }

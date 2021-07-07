@@ -891,6 +891,8 @@ ul.course-scroll h5 {
     box-shadow: 0px 12px 24px #1D90D942;
 }
 
+.course-list ul li.active>a .percent svg tspan{ fill: #fff !important;}
+
 .course-list ul li.dropdown-toggle.active>a>span,
 .course-list ul li>a.open>span,
 .course-list ul li>a.active>span,
@@ -2494,7 +2496,7 @@ ul.cate-list {
 }
 
 .xpert-content .vid-box {
-    min-height: auto;
+    min-height: 470px;
 }
 
 .xpert-content>ul {
