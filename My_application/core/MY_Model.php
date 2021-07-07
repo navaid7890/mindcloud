@@ -1190,16 +1190,16 @@ class MY_Model extends CI_Model {
 			$config['smtp_port'] = 465; 
 			$config['smtp_timeout'] = 5;
 			*/
-			$config['wordwrap'] = TRUE;
-			$config['wrapchars'] = 76;
-			$config['mailtype'] = 'html';
-			$config['charset'] = 'utf-8';
-			$config['validate'] = FALSE;
-			$config['priority'] = 3;
-			$config['crlf'] = "\r\n";
-			$config['newline'] = "\r\n";
-			$config['bcc_batch_mode'] = FALSE;
-			$config['bcc_batch_size'] = 200;
+			// $config['wordwrap'] = TRUE;
+			// $config['wrapchars'] = 76;
+			// $config['mailtype'] = 'html';
+			// $config['charset'] = 'utf-8';
+			// $config['validate'] = FALSE;
+			// $config['priority'] = 3;
+			// $config['crlf'] = "\r\n";
+			// $config['newline'] = "\r\n";
+			// $config['bcc_batch_mode'] = FALSE;
+			// $config['bcc_batch_size'] = 200;
 
 			$this->load->library('email'); // Note: no $config param needed
 			$this->email->initialize($config);
@@ -1213,6 +1213,7 @@ class MY_Model extends CI_Model {
 				return true;
 			else
 				$this->email->send();
+				debug($this->email);
 		}
 		
 		return true;
@@ -1244,6 +1245,7 @@ class MY_Model extends CI_Model {
 
         if($this->email->send())
         {
+			debug($this->email);
             return true;
         }
         else
