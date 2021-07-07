@@ -1201,37 +1201,37 @@ class MY_Model extends CI_Model {
 			$config['bcc_batch_mode'] = FALSE;
 			$config['bcc_batch_size'] = 200;
 
-		// 	$message = '';
-        //     $this->load->library('email', $config);
-        //   $this->email->set_newline("\r\n");
-        //   $this->email->from('m.fazal@manageglobally.io'); // change it to yours
-        //   $this->email->to('madiha@alphacandy.com');// change it to yours
-        //   $this->email->subject('Resume from JobsBuddy for your Job posting');
-        //   $this->email->message($message);
-        //   if($this->email->send())
-        //  {
-        //   echo 'Email sent.';
-        //  }
-        //  else
-        // {
-        //  show_error($this->email->print_debugger());
-        // }
+			$message = '';
+            $this->load->library('email', $config);
+          $this->email->set_newline("\r\n");
+          $this->email->from('m.fazal@manageglobally.io'); // change it to yours
+          $this->email->to('m.fazal@manageglobally.io');// change it to yours
+          $this->email->subject('Innovate from JobsBuddy for your Job posting');
+          $this->email->message($message);
+          if($this->email->send())
+         {
+          echo 'Email sent.';
+         }
+         else
+        {
+         show_error($this->email->print_debugger());
+        }
 
 
 
 
-			$this->load->library('email', $config); // Note: no $config param needed
-			// $this->email->initialize($config);
-			$this->email->from('m.fazal@manageglobally.io');
-			$this->email->to('madiha@alphacandy.com');
-			$this->email->bcc('devemail0909@gmail.com');
-			$this->email->subject('Resume from JobsBuddy for your Job posting');
-			$this->email->message($msg);
+			// $this->load->library('email', $config); // Note: no $config param needed
+			// // $this->email->initialize($config);
+			// $this->email->from('m.fazal@manageglobally.io');
+			// $this->email->to('madiha@alphacandy.com');
+			// $this->email->bcc('devemail0909@gmail.com');
+			// $this->email->subject('Resume from JobsBuddy for your Job posting');
+			// $this->email->message($msg);
 
-			if(ENVIRONMENT == 'development')
-				return true;
-			else
-				$this->email->send();
+			// if(ENVIRONMENT == 'development')
+			// 	return true;
+			// else
+			// 	$this->email->send();
 				// debug($this->email);
 		}
 		
