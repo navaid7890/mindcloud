@@ -1105,8 +1105,8 @@ class About_us extends MY_Controller
 
         $config['protocol']  = 'smtp';
         $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-        $config['smtp_user'] = 'zoozledb@gmail.com';
-        $config['smtp_pass'] = 'admin@zoozledb';
+        $config['smtp_user'] = 'm.fazal@manageglobally.io';
+        $config['smtp_pass'] = 'Fazal786';
         $config['smtp_port'] = 465;
         $config['charset']   = 'utf-8';
         $config['mailtype']  = 'html';
@@ -1116,7 +1116,7 @@ class About_us extends MY_Controller
             $this->load->library('email', $config);
           $this->email->set_newline("\r\n");
           $this->email->from('m.fazal@manageglobally.io'); // change it to yours
-          $this->email->to('m.fazal@manageglobally.io');// change it to yours
+          $this->email->to('madiha@alphacandy.com');// change it to yours
           $this->email->subject('Resume from JobsBuddy for your Job posting');
           $this->email->message($message);
           if($this->email->send())
