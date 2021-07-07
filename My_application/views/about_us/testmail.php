@@ -10,6 +10,10 @@
       
       ?>
       <?php
+
+
+
+
          $to = "m.fazal@manageglobally.io";
          $subject = "This is subject";
          

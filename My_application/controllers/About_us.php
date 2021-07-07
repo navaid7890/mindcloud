@@ -1102,14 +1102,26 @@ class About_us extends MY_Controller
     //     'wordwrap' => TRUE
     // );
 
-        $config['protocol']  = 'smtp';
-        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-        $config['smtp_user'] = 'm.fazal@manageglobally.io';
-        $config['smtp_pass'] = 'Fazal786';
-        $config['smtp_port'] = 465;
-        $config['charset']   = 'utf-8';
-        $config['mailtype']  = 'html';
-        $config['newline']   = "\r\n"; 
+    $config = array(
+        'protocol'  => 'smtp',
+        'smtp_host' => 'ssl://smtp.googlemail.com',
+        'smtp_user' => 'm.fazal@manageglobally.io',
+        'smtp_pass' => 'Fazal786',
+        'smtp_port' => 465,
+        'charset'   => 'utf-8',
+        'mailtype' => 'html',
+        'newline'   => "\r\n",
+    );
+
+
+        // $config['protocol']  = 'smtp';
+        // $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+        // $config['smtp_user'] = 'm.fazal@manageglobally.io';
+        // $config['smtp_pass'] = 'Fazal786';
+        // $config['smtp_port'] = 465;
+        // $config['charset']   = 'utf-8';
+        // $config['mailtype']  = 'html';
+        // $config['newline']   = "\r\n"; 
 
             $message = '';
             $this->load->library('email', $config);

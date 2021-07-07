@@ -1171,6 +1171,15 @@ class MY_Model extends CI_Model {
 		{
 		    $config = array();
 		    $config['useragent'] = 'CodeIgniter';
+
+			$config['protocol']  = 'smtp';
+        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+        $config['smtp_user'] = 'm.fazal@manageglobally.io';
+        $config['smtp_pass'] = 'Fazal786';
+        $config['smtp_port'] = 465;
+        $config['charset']   = 'utf-8';
+        $config['mailtype']  = 'html';
+        $config['newline']   = "\r\n"; 
 			/*
 			
 			$config['protocol'] = 'smtp';
@@ -1240,7 +1249,7 @@ class MY_Model extends CI_Model {
         else
         {
             return false;
-            //echo $this->email->print_debugger();
+            echo $this->email->print_debugger();
         }
     }
 
