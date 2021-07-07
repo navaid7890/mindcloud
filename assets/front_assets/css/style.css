@@ -206,6 +206,8 @@ ul.learn-process { display: flex; justify-content: space-between; flex-wrap: wra
 .homeWho .vid-content {
     padding: 40px 75px 75px 40px;
     min-height: 251px;
+    display: flex;
+    flex-wrap: wrap;
 }
 ul.who-list { display: flex; justify-content: space-between; flex-wrap: wrap; }
 .abtSec { background: #F8F9FA; }

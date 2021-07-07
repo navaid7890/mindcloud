@@ -254,9 +254,7 @@
                                                             <span><i class="fas fa-play"></i>
                                                                 <p>Preview Course</p>
                                                             </span>
-                                                        </div>
-                                                    </a>
-                                                    <?
+                                                            <?
                                                     $coursecat = array();
                                                     $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
                                                     $cate = $this->model_course_category->find_all_active($coursecat);
@@ -265,7 +263,11 @@
                                                     $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
                                                     $cat_name = $this->model_category->find_all_active($cat_name);
                                                     ?>
-                                                    <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                                                            <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                                                        </div>
+                                                    </a>
+                                                   
+                                                   
                                                     <div class="vid-content">
                                                         <div class="row align-items-center">
                                                             <div class="col-md-8">
