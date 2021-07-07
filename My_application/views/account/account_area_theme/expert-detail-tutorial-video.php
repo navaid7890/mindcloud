@@ -72,7 +72,7 @@
                                  <div class="video-caption">
 
                                     <p>
-                                    <div id="video_text"><?= html_entity_decode($tutorial_detail['videos_transcript']); ?></div>
+                                    <div id="video_text"></div>
                                     </p>
                                     <?php
                                     $arr[] = html_entity_decode($tutorial_detail['videos_transcript']);
@@ -101,9 +101,7 @@
                                  </div>
                               </div>
                            </div>
-                          
-                        </div>
-                        <div class="col-md-7">
+                           <div class="col-md-7">
                               <div class="video-box">
                                  <video onclick="plusOne(<?= $tutorial_detail['videos_views']; ?>)" ontimeupdate="myFunction(this)" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
                                     <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/mp4">
@@ -112,6 +110,8 @@
                                  </video>
                               </div>
                            </div>
+                        </div>
+                                 </div>
                         <div class="space"><br><br></div>
                         <!-- <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p> -->
                      </div>

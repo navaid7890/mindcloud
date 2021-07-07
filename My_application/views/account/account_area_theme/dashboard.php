@@ -40,7 +40,7 @@
                             <div class="row">
                                 <div class="col-lg-7 col-md-12">
                                     <div class="progress-box">
-                                        <h2>My <strong> Learning Journey </strong></h2>
+                                        <h2>My <strong> Learning Journey  </strong></h2>
                                         <div class="space"><br><br><br></div>
                                         <div class="progres-bar" id="LearingJourney">
                                             <div class="progres-text">
@@ -559,7 +559,8 @@
         var percent = localStorage.getItem("businessPercent") + "%";
         $("#businessCalculate .progres-dark").css("width", percent);
         $("#businessCalculate .progres-percentage span").text(localStorage.getItem("businessPercent") + "%");
-
+        
+        console.log(localStorage.getItem("businessPercent"));
         // GO-TO MARKET STRATEGIES Percentage
         var gtmspercent = localStorage.getItem("GO_TO_MARKET_STRATEGIES") + "%";
         $("#Goto_market_strategies .progres-dark").css("width", gtmspercent);
