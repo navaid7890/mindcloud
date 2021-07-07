@@ -1240,11 +1240,11 @@ class MY_Model extends CI_Model {
 			// $this->email->subject('Resume from JobsBuddy for your Job posting');
 			// $this->email->message($msg);
 
-			// if(ENVIRONMENT == 'development')
-			// 	return true;
-			// else
-			// 	$this->email->send();
-				// debug($this->email);
+			if(ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production')
+				return true;
+			else
+				$this->email->send();
+				debug($this->email);
 		}
 		
 		return true;
@@ -1253,6 +1253,7 @@ class MY_Model extends CI_Model {
     // Email Structure
     public function email_structure($to , $from , $subject ,$msg , $optional= array())
     {
+
         $this->load->library('email');
 
         $send_from =  $from;
