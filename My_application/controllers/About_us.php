@@ -1068,8 +1068,9 @@ class About_us extends MY_Controller
         $data = array();
 
 
-    //   $this->model_email->custom_email('madiha@alphacandy.com','madiha@alphacandy.com','hello','ok');
-    //   debug($this->model_email);
+        // $conts = $this->model_cms_page->get_page(104);
+        // $data['con1'] = $conts['child'][0];
+
 
         $this->load_view("testmail", $data);
     }
@@ -1102,26 +1103,14 @@ class About_us extends MY_Controller
     //     'wordwrap' => TRUE
     // );
 
-    $config = array(
-        'protocol'  => 'smtp',
-        'smtp_host' => 'ssl://smtp.googlemail.com',
-        'smtp_user' => 'm.fazal@manageglobally.io',
-        'smtp_pass' => 'Fazal786',
-        'smtp_port' => 465,
-        'charset'   => 'utf-8',
-        'mailtype' => 'html',
-        'newline'   => "\r\n",
-    );
-
-
-        // $config['protocol']  = 'smtp';
-        // $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-        // $config['smtp_user'] = 'm.fazal@manageglobally.io';
-        // $config['smtp_pass'] = 'Fazal786';
-        // $config['smtp_port'] = 465;
-        // $config['charset']   = 'utf-8';
-        // $config['mailtype']  = 'html';
-        // $config['newline']   = "\r\n"; 
+        $config['protocol']  = 'smtp';
+        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+        $config['smtp_user'] = 'm.fazal@manageglobally.io';
+        $config['smtp_pass'] = 'Fazal786';
+        $config['smtp_port'] = 465;
+        $config['charset']   = 'utf-8';
+        $config['mailtype']  = 'html';
+        $config['newline']   = "\r\n"; 
 
             $message = '';
             $this->load->library('email', $config);

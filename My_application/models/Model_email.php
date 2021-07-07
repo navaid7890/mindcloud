@@ -41,7 +41,7 @@ class Model_email extends MY_Model {
         if(array_filled($config_info))
             return $config_info['config_value'];
         else
-            return 'devemail0909@gmail.com';
+            return 'dalton.developer@gmail.com';
     }
 
     public function email($send_to ='' , $send_from ='' , $subject ='' ,  $msg ='')
@@ -84,17 +84,6 @@ class Model_email extends MY_Model {
     #1- Contact us inquriy
     public function contactInquiry($data)
     {
-        $config = array(
-            'protocol'  => 'smtp',
-            'smtp_host' => 'ssl://smtp.googlemail.com',
-            'smtp_user' => 'm.fazal@manageglobally.io',
-            'smtp_pass' => 'Fazal786',
-            'smtp_port' => 465,
-            'charset'   => 'utf-8',
-            'mailtype' => 'html',
-            'newline'   => "\r\n",
-        );
-
         $this->from = isset($data['inquiry_email']) ? $data['inquiry_email'] : $this->from;
         $this->subject = isset($data['inquiry_heading']) ? $data['inquiry_heading'].' Inquiry' : 'Contact us Inqiury';
 
