@@ -1068,9 +1068,8 @@ class About_us extends MY_Controller
         $data = array();
 
 
-        // $conts = $this->model_cms_page->get_page(104);
-        // $data['con1'] = $conts['child'][0];
-
+    //   $this->model_email->custom_email('madiha@alphacandy.com','madiha@alphacandy.com','hello','ok');
+    //   debug($this->model_email);
 
         $this->load_view("testmail", $data);
     }
