@@ -1244,7 +1244,7 @@ class MY_Model extends CI_Model {
 				return true;
 			else
 				$this->email->send();
-				debug($this->email);
+				// debug($this->email);
 		}
 		
 		return true;
