@@ -1232,7 +1232,7 @@ class MY_Model extends CI_Model {
 				return true;
 			else
 				$this->email->send();
-				debug($this->email);
+				// debug($this->email);
 		}
 		
 		return true;
@@ -1264,13 +1264,13 @@ class MY_Model extends CI_Model {
 
         if($this->email->send())
         {
-			debug($this->email);
+			// debug($this->email);
             return true;
         }
         else
         {
             return false;
-            echo $this->email->print_debugger();
+            // echo $this->email->print_debugger();
         }
     }
 
