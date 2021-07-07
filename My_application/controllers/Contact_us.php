@@ -60,6 +60,8 @@ class Contact_us extends MY_Controller
                     $form_data = $this->model_inquiry->find_by_pk($inserted_id);
                     $this->model_email->contactInquiry($form_data);
 
+                    // debug($this->model_email);
+
                     $this->json_param['status'] = true;
                     $this->json_param['msg']['title'] = 'Inquiry Send';
                     $this->json_param['msg']['desc'] = 'We appreciate that you’ve taken the time to write us. We\'ll get back to you very soon.';

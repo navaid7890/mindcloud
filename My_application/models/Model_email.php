@@ -41,7 +41,7 @@ class Model_email extends MY_Model {
         if(array_filled($config_info))
             return $config_info['config_value'];
         else
-            return 'dalton.developer@gmail.com';
+            return 'devemail0909@gmail.com';
     }
 
     public function email($send_to ='' , $send_from ='' , $subject ='' ,  $msg ='')
