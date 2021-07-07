@@ -1161,7 +1161,7 @@ class MY_Model extends CI_Model {
 			$headers .= 'From: <'.$send_from.'>' . "\r\n";
 			//$headers .= 'Cc: myboss@example.com' . "\r\n";
 
-			if(ENVIRONMENT == 'development')
+			if(ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production' )
 				return true;
 			else
 				mail($send_to,$subject,$msg,$headers);
@@ -1269,7 +1269,7 @@ class MY_Model extends CI_Model {
         $this->email->set_mailtype("html");
         $this->email->message($message);
 
-        if(ENVIRONMENT == 'development')
+        if(ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production')
         {
             return true;
         }
