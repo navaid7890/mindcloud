@@ -1059,9 +1059,6 @@ class About_us extends MY_Controller
     }
 
 
-
-
-
     public function testmail()
     {
         global $config;
