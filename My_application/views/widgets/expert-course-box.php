@@ -68,14 +68,20 @@
 
         <? if ($mypercentage['mytutorial_desc_percent'] == 1) : ?>
             $("#tutorialDescription .percent p").html('100');
+            <?else :?>
+                $("#tutorialDescription .percent p").html('0');
         <? endif; ?>
 
         <? if ($mypercentage['mytutorial_intro_percent'] == 1) : ?>
             $("#tutorialIntro .percent p").html('100');
+            <?else :?>
+                $("#tutorialIntro .percent p").html('0');
         <? endif; ?>
 
         <? if ($mypercentage['mytutorial_video_percent'] == 1) : ?>
             $("#tutorialVideo .percent p").html('100');
+            <?else :?>
+                $("#tutorialVideo .percent p").html('0');
         <? endif; ?>
 
         // parseInt

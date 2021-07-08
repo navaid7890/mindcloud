@@ -2,6 +2,11 @@
 .whoHead strong {
     font-weight: 700;
 }
+.vid-content h4 p {
+    font-size: 20px;
+    font-weight: 700;
+    color: #33415C;
+}
 </style>
 <section class="whoSec bg-white hding-2 para">
     <div class="container">
