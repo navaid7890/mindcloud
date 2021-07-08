@@ -390,7 +390,7 @@ ul.cate-list img {
 .expert-page-Sec .pt-70 {padding-top: 20px;}
 .expert-page-Sec .video-box span { opacity: 0; transition: 0.5s; }
 .expert-page-Sec ul.who-list>li:hover .video-box span { opacity: 1; }
-.expert-page-Sec ul.who-list>li a.cate-tag {top: 139px;}
+.expert-page-Sec ul.who-list>li a.cate-tag {top: auto;}
 .expert-page-Sec a.btn-links { color: #1BA8E8; text-align: center; display: block; font-weight: 600; text-decoration: underline; }
 .expert-page-Sec a.btn-links:hover { color: #000; }
 .consult-content ul.cate-list>li {
