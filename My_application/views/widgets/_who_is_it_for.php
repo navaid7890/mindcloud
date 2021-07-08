@@ -15,9 +15,9 @@
         <ul class="who-list">
             <li>
                 <div class="vid-box">
-                    <a href="<?=get_image($cont10['tutorial_video'],$cont10['tutorial_video_path'])?>" data-fancybox="media">
+                    <a href="<?= g('db.admin.bucket') . $cont10['tutorial_video'] ?>" data-fancybox="media">
                     <div class="video-box">
-                        <img src="<?=get_image($cont10['cms_page_image'],$cont10['cms_page_image_path'])?>">
+                        <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont10['cms_page_image'] ?>">
                         <span><i class="fas fa-play"></i></span>
                     </div>
                     </a>
@@ -31,9 +31,9 @@
 
             <li>
                 <div class="vid-box">
-                    <a href="<?=get_image($cont11['tutorial_video'],$cont11['tutorial_video_path'])?>" data-fancybox="media">
+                    <a href="<?= g('db.admin.bucket') . $cont11['tutorial_video'] ?>" data-fancybox="media">
                     <div class="video-box">
-                        <img src="<?=get_image($cont11['cms_page_image'],$cont11['cms_page_image_path'])?>">
+                        <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont11['cms_page_image'] ?>">
                         <span><i class="fas fa-play"></i></span>
                     </div>
                     </a>
@@ -47,9 +47,9 @@
 
             <li>
                 <div class="vid-box">
-                    <a href="<?=get_image($cont12['tutorial_video'],$cont12['tutorial_video_path'])?>" data-fancybox="media">
+                    <a href="<?= g('db.admin.bucket') . $cont12['tutorial_video'] ?>" data-fancybox="media">
                     <div class="video-box">
-                        <img src="<?=get_image($cont12['cms_page_image'],$cont12['cms_page_image_path'])?>">
+                        <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont12['cms_page_image'] ?>">
                         <span><i class="fas fa-play"></i></span>
                     </div>
                     </a>
