@@ -23,7 +23,7 @@
                     </a>
 
                     <div class="vid-content">
-                    <h4><?=$cont10['cms_page_title']?></h4>
+                    <h4><?=html_entity_decode($cont10['cms_page_title'])?></h4>
                     <?=html_entity_decode($cont10['cms_page_content'])?>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     </a>
 
                     <div class="vid-content">
-                    <h4><?=$cont11['cms_page_title']?></h4>
+                    <h4><?=html_entity_decode($cont11['cms_page_title'])?></h4>
                     <?=html_entity_decode($cont11['cms_page_content'])?>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     </a>
 
                     <div class="vid-content">
-                    <h4><?=$cont12['cms_page_title']?></h4>
+                    <h4><?=html_entity_decode($cont12['cms_page_title'])?></h4>
                     <?=html_entity_decode($cont12['cms_page_content'])?>
                     </div>
                 </div>
