@@ -115,6 +115,13 @@ $menu_links = array(
     ),
 
 
+    array("title"=>"Booking Management", "icon"=>"speech" ,"action" => array("booking") ,
+    "additionals"=>array(
+        array("link"=>"booking","title"=>"Manage Booking", "icon"=>" fa fa-angle-right")            
+    ),
+),
+
+
 
     // array("title"=>"Questions Management", "icon"=>"speech" ,"action" => array("questions","options") ,
     //     "additionals"=>array(

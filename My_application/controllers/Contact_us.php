@@ -1468,4 +1468,52 @@ class Contact_us extends MY_Controller
             echo json_encode($this->json_param);
         }
     }
+
+    public function ajax_booking()
+    {
+        if(array_filled($_POST)) 
+        {  
+            $i = 1;
+          
+            if($i==2)
+            {
+                $param['status'] = 1;
+                $param['txt'] = 'Please prove you\'re not a robot';//'The secret parameter is invalid';
+                echo json_encode($param);
+            } 
+            else
+            {
+             
+                if($this->validate("model_booking"))
+                {
+
+               
+                    $data = $_POST['booking'];
+                    $data['booking_artist_approval'] = 0;
+                    $data['booking_admin_approval'] = 1;
+                    $data['booking_status'] = 1;
+        
+                    // debug($data);
+                    
+                    $this->model_booking->set_attributes($data);
+                    $inserted_id = $this->model_booking->save();
+                    
+                 
+                    
+                    $this->json_param['status'] = true;
+                    $this->json_param['msg']['title'] = 'Booking Saved';
+                    $this->json_param['msg']['desc'] = 'Please Wait for Expert Approval';
+                
+                }
+                else
+                {
+                    $this->json_param['status'] = false;
+                    $this->json_param['msg']['title'] = 'Error Occurred';
+                    $this->json_param['msg']['desc'] = validation_errors();
+                }
+                
+                echo json_encode($this->json_param);
+            }
+        }
+    }
 }

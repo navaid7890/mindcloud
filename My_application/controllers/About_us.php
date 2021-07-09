@@ -899,79 +899,27 @@ class About_us extends MY_Controller
 
 
     public function ajax_get_timeslot()
-    {
+    {  
+        $data=array();
 
         $date = $this->input->post('date');
         $professional_id = $this->input->post('professional_id');
 
-        // if($this->model_vacation->is_professional_available($professional_id,$date))
-        // {
-        $data['open_time'] = strtotime("9:00");
-        $data['close_time'] = strtotime("22:00");
 
-        // $data['booked_slot'] = $this->model_book_appointment->get_already_booked_slot($professional_id,$date);
-        $data['booked_slot'] = $this->model_session_inquiry->get_already_booked_slot($professional_id, $date);
+        
+            $data['open_time'] = strtotime("11:00");
+            $data['close_time'] = strtotime("18:00");
 
-        $this->json_param['status'] = true;
-        $this->json_param['html'] = $this->load->view('appointment/_timesslot', $data, true);
-        // }
-        // else {
-        //     $this->json_param['status'] = false;
-        //     $this->json_param['txt'] = "Specialist Not Available at {$date} date Please select other one";
-        // }
+            // $data['booked_slot'] = $this->model_book_appointment->get_already_booked_slot($professional_id,$date);
+            $data['booked_slot'] = $this->model_booking->get_already_booked_slot($professional_id,$date);
+            // debug($data['booked_slot']);
+            $this->json_param['status'] = true;
+            $this->json_param['html'] = $this->load->view('about_us/_timesslot',$data,true);
+    
 
         echo json_encode($this->json_param);
     }
 
-
-    public function ajax_get_timeslot2()
-    {
-
-        $date = $this->input->post('date');
-        $professional_id = $this->input->post('professional_id');
-
-        // if($this->model_vacation->is_professional_available($professional_id,$date))
-        // {
-        $data['open_time'] = strtotime("9:00");
-        $data['close_time'] = strtotime("22:00");
-
-        // $data['booked_slot'] = $this->model_book_appointment->get_already_booked_slot($professional_id,$date);
-        $data['booked_slot'] = $this->model_session_inquiry->get_already_booked_slot($professional_id, $date);
-
-        $this->json_param['status'] = true;
-        $this->json_param['html'] = $this->load->view('appointment/_timesslot2', $data, true);
-        // }
-        // else {
-        //     $this->json_param['status'] = false;
-        //     $this->json_param['txt'] = "Specialist Not Available at {$date} date Please select other one";
-        // }
-
-        echo json_encode($this->json_param);
-    }
-    public function ajax_get_timeslot_to()
-    {
-        $time = $this->input->post('time');
-        $open_time = strtotime($time);
-        $close_time = strtotime("22:00");
-        $now = time();
-        $output = "";
-
-        $var = ''; //'<option value="">Select Time</option>';
-        $y = 1;
-        for ($i = $open_time; $i <= $close_time; $i += 3600) {
-            $output = date("h:i A", $i);
-            $output2 = date("G:i", $i);
-            //if($y > 1)
-            if ($y == 2)
-                $var .= "<option value='" . $output2 . "'>$output</option>";
-            $y++;
-        }
-
-        $this->json_param['status'] = true;
-        $this->json_param['html'] = $var;
-
-        echo json_encode($this->json_param);
-    }
 
     public function save_order()
     {
@@ -1018,13 +966,13 @@ class About_us extends MY_Controller
     public function booking()
     {
         global $config;
+
+        if($this->userid > 0){
         $data = array();
 
-        //TAB TITLE
         $method_title = ucwords($this->uri->segment(1));
         $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
 
-        //INNER BANNER
 
         $data['exp'] = $this->model_user->find_all();
 
@@ -1032,18 +980,24 @@ class About_us extends MY_Controller
         $ccategory = array();
         $data['category'] = $this->model_category->find_all_active($ccategory);
 
-        // $experts = array();
-        // $data['experts'] = $this->model_expert->find_all_active($experts);
-
-
+  
         $experts = array();
         $experts['where']['tutorial_category_id'] = 14;
         $data['experts'] = $this->model_tutorial->find_all_active($experts);
 
 
-        // debug($data['experts']);
+
 
         $this->load_view("booking", $data);
+        }
+
+        else
+        { 
+         redirect(l('login?msgtype=error&msg='.urlencode('Please login first')) , true);
+   
+   
+        }
+
     }
 
     function get_experts_by_category_id($category_id)
@@ -1110,4 +1064,6 @@ class About_us extends MY_Controller
 
         $this->load_view("userprofile", $data);
     }
+
+
 }
