@@ -58,6 +58,7 @@
     margin-bottom: 10px;
     color: #888686;
   }
+  .index-page ul.dashboard-layout>li.last{ height:80vh; overflow-y:scroll;}
 </style>
 <div class="index-page">
   <section class="dashboard">

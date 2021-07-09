@@ -37,7 +37,7 @@
    <div class="mainBanner hding-1 para">
       <div class="container">
          <div class="row">
-            <div class="col-lg-7 col-md-12">
+            <div class="col-lg-7 col-md-12 offset-lg-1">
                <div>
                   <?
                   $a = $course[0]['tutorial_category_id'];
@@ -112,7 +112,7 @@
                </div>
             </div>
 
-            <div class="col-lg-5 col-md-12">
+            <div class="col-lg-4 col-md-12">
                <?
                // debug($value);
                $vidcat = array();
@@ -160,15 +160,15 @@
 
    <section class="jrnySec hding-2 pad-sec para">
       <div class="container">
-         <div class="jr-top">
-            <div class="jrnyHead">
+         <div class="jr-top row">
+            <div class="jrnyHead col-lg-10 col-md-10 offset-lg-1 offset-md-1">
                <h2>In This <strong>Tutorial</strong> You Will Learn</h2>
                <p><?= html_entity_decode($course[0]['tutorial_desc2']) ?></p>
             </div>
             <div class="space"><br><br><br></div>
 
 
-            <div class="jrnyFaq">
+            <div class="jrnyFaq col-lg-10 col-md-10 offset-lg-1 offset-md-1">
                <h2>Tutorial Content</h2>
                <div class="sapace"><br><br></div>
 
@@ -204,7 +204,7 @@
             </div>
          </div>
 
-         <div class="jr-btm">
+         <div class="jr-btm col-lg-10 col-md-10 offset-lg-1 offset-md-1">
             <div class="user-review">
                
                <?php if (isset($review) && array_filled($review)) : ?>
@@ -254,7 +254,10 @@
    </section>
    <section class="faqSec hding-2 para">
       <div class="container">
-         <div class="faqHead">
+         <div class="row">
+              <div class="col-lg-10 col-md-10 offset-lg-1 offset-md-1">
+                  
+              <div class="faqHead">
             <h2>FAQs about <strong>Expert Tutorials</strong></h2>
          </div>
          <ul class="colasebar">
@@ -271,6 +274,9 @@
                <? endforeach; ?>
             <? endif; ?>
          </ul>
+
+              </div>                      
+         </div>
       </div>
    </section>
 

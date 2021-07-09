@@ -2,6 +2,11 @@
 .whoHead strong {
     font-weight: 700;
 }
+.vid-content h4 p {
+    font-size: 20px;
+    font-weight: 700;
+    color: #33415C;
+}
 </style>
 <section class="whoSec bg-white hding-2 para">
     <div class="container">
@@ -15,15 +20,15 @@
         <ul class="who-list">
             <li>
                 <div class="vid-box">
-                    <a href="<?=get_image($cont10['tutorial_video'],$cont10['tutorial_video_path'])?>" data-fancybox="media">
+                    <a href="<?= g('db.admin.bucket') . $cont10['tutorial_video'] ?>" data-fancybox="media">
                     <div class="video-box">
-                        <img src="<?=get_image($cont10['cms_page_image'],$cont10['cms_page_image_path'])?>">
+                        <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont10['cms_page_image'] ?>">
                         <span><i class="fas fa-play"></i></span>
                     </div>
                     </a>
 
                     <div class="vid-content">
-                    <h4><?=$cont10['cms_page_title']?></h4>
+                    <h4><?=html_entity_decode($cont10['cms_page_title'])?></h4>
                     <?=html_entity_decode($cont10['cms_page_content'])?>
                     </div>
                 </div>
@@ -31,15 +36,15 @@
 
             <li>
                 <div class="vid-box">
-                    <a href="<?=get_image($cont11['tutorial_video'],$cont11['tutorial_video_path'])?>" data-fancybox="media">
+                    <a href="<?= g('db.admin.bucket') . $cont11['tutorial_video'] ?>" data-fancybox="media">
                     <div class="video-box">
-                        <img src="<?=get_image($cont11['cms_page_image'],$cont11['cms_page_image_path'])?>">
+                        <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont11['cms_page_image'] ?>">
                         <span><i class="fas fa-play"></i></span>
                     </div>
                     </a>
 
                     <div class="vid-content">
-                    <h4><?=$cont11['cms_page_title']?></h4>
+                    <h4><?=html_entity_decode($cont11['cms_page_title'])?></h4>
                     <?=html_entity_decode($cont11['cms_page_content'])?>
                     </div>
                 </div>
@@ -47,15 +52,15 @@
 
             <li>
                 <div class="vid-box">
-                    <a href="<?=get_image($cont12['tutorial_video'],$cont12['tutorial_video_path'])?>" data-fancybox="media">
+                    <a href="<?= g('db.admin.bucket') . $cont12['tutorial_video'] ?>" data-fancybox="media">
                     <div class="video-box">
-                        <img src="<?=get_image($cont12['cms_page_image'],$cont12['cms_page_image_path'])?>">
+                        <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont12['cms_page_image'] ?>">
                         <span><i class="fas fa-play"></i></span>
                     </div>
                     </a>
 
                     <div class="vid-content">
-                    <h4><?=$cont12['cms_page_title']?></h4>
+                    <h4><?=html_entity_decode($cont12['cms_page_title'])?></h4>
                     <?=html_entity_decode($cont12['cms_page_content'])?>
                     </div>
                 </div>

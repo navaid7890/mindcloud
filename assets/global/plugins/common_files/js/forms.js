@@ -93,7 +93,7 @@ var Form = function () {
       $('#forms-contact_us-btn').prop('disabled', true);
       var data = form.serialize();
       response = AjaxRequest.fire(urls.contact_us, data);
-      // return false;  
+       return false;  
       $('#forms-contact_us-btn').prop('disabled', false);
 
       if (response.status) {

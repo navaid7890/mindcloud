@@ -4,7 +4,7 @@
       line-height: normal;
       color: #fff;
    }
-  
+
    .joinSec {
       background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(' <?= g('db.admin.bucketimg') . "cms_image/" . $check['cms_page_image'] ?>');
       text-align: center;
@@ -23,16 +23,18 @@
    .joinContent strong {
       font-weight: 700;
    }
+
    .consult-left h2 strong {
-    font-weight: 700;
-}
-.joinContent .hding-2 h2 {
-    font-size: 36px;
-    font-weight: 400;
-    color: #33415C;
-    text-transform: inherit;
-    line-height: normal;
-}
+      font-weight: 700;
+   }
+
+   .joinContent .hding-2 h2 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #33415C;
+      text-transform: inherit;
+      line-height: normal;
+   }
 
    .mainBanner h1 {
       border-bottom: 8px solid #F4C150;
@@ -70,7 +72,7 @@
                <div class="side-bar sticky-top">
                   <div class="searchBox">
                      <h4>What do you want to learn?</h4>
-                     
+
                      <form action="" method="GET">
                         <div class="fld-search">
                            <input type="text" name="search" placeholder="Search by Keyword">
@@ -109,7 +111,7 @@
                                  ?>
                                  <!-- ( <? //= $value['tutorials'] 
                                           ?> ) -->
-                                 <li><a href="<?= l('expert-tutorial') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?> ( <?= $value['tutorials'] ?> )</a>  </li>
+                                 <li><a href="<?= l('expert-tutorial') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?> ( <?= $value['tutorials'] ?> )</a> </li>
                               <? endforeach; ?>
                            <? endif; ?>
                         </ul>
@@ -134,21 +136,23 @@
                                           <div class="video-box">
                                              <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
                                              <span><i class="fas fa-play"></i> </span>
-                                          </div>
-                                       </a>
-                                       <?
-                                       // debug($value);
-                                       $coursecat = array();
-                                       $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
-                                       $cate = $this->model_course_category->find_all_active($coursecat);
+                                             <?
+                                             // debug($value);
+                                             $coursecat = array();
+                                             $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
+                                             $cate = $this->model_course_category->find_all_active($coursecat);
 
-                                       $cat_name = array();
-                                       $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
-                                       $cat_name = $this->model_category->find_all_active($cat_name);
-                                       ?>
-                                       <!-- <a href="javascript:;" class="cate-tag"><? // $value['tutorial_level'] 
-                                                                                    ?></a> -->
-                                       <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                                             $cat_name = array();
+                                             $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                             $cat_name = $this->model_category->find_all_active($cat_name);
+                                             ?>
+                                             <!-- <a href="javascript:;" class="cate-tag"><? // $value['tutorial_level'] 
+                                                                                          ?></a> -->
+                                             <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                                          </div>
+
+                                       </a>
+
                                        <div class="vid-content">
                                           <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
                                           <div class="row align-items-center pt-70">
@@ -159,7 +163,7 @@
                                              </div>
                                              <div class="col-md-8 coutArea">
                                                 <ul class="rating">
-                                                <? $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']); ?>
+                                                   <? $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']); ?>
                                                    <?php
                                                    for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
                                                       "
@@ -168,8 +172,8 @@
                                                    <? } ?>
                                                 </ul>
                                                 <? if (!empty($rating[0]['starCount'])) { ?>
-                                                <div style="margin-left: 5px;">( <?= $rating[0]['starCount']?> )</div>
-                                                <?}?>
+                                                   <div style="margin-left: 5px;">( <?= $rating[0]['starCount'] ?> )</div>
+                                                <? } ?>
                                              </div>
                                              <div class="col-md-4 text-right">
                                                 <h6><?= price($value['tutorial_price']) ?></h6>
@@ -206,13 +210,17 @@
          </div>
          <div class="space"><br><br></div>
          <ul class="cate-list">
-            <? //if (isset($popular) and array_filled($popular)) : ?>
-               <? //foreach ($popular as $key => $value) : ?>
+            <? //if (isset($popular) and array_filled($popular)) : 
+            ?>
+               <? //foreach ($popular as $key => $value) : 
+               ?>
                   <li>
                      <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> <?= $value['category_name'] ?></p>
                   </li>
-               <? //endforeach; ?>
-            <? //endif; ?>
+               <? //endforeach; 
+               ?>
+            <? //endif; 
+            ?>
          </ul>
       </div> -->
       <? $this->load->view('widgets/_most_popular_categories'); ?>
@@ -232,7 +240,7 @@
             <div class="col-lg-4 col-md-5 pad-zero">
                <div class="consult-left">
                   <div>
-                  <h2>Select <strong> Expert <br>Category </strong></h2>
+                     <h2>Select <strong> Expert <br>Category </strong></h2>
                      <ul class="consult-left-slide">
                         <li>
                            <div class="consult-left-content">

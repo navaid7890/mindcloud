@@ -6,7 +6,7 @@
 
 
     <div class="whoHead">
-        <h2>Most watched <strong> Tutorials</strong></h2>
+        <h2>Most watched <strong> Tutorials </strong></h2>
         <div class="space"><br></div>
     </div>
     <div class="space"><br><br><br></div>
@@ -22,9 +22,7 @@
                             <span><i class="fas fa-play"></i>
                                 <p>Preview Course</p>
                             </span>
-                        </div>
-                    </a>
-                    <?
+                            <?
                     // debug($value);
                     $coursecat = array();
                     $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
@@ -36,6 +34,9 @@
                     //  debug($cat_name);
                     ?>
                     <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                        </div>
+                    </a>
+                 
 
                     <div class="vid-content">
                         <?

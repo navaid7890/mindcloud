@@ -1,6 +1,3 @@
-<style>
-
-</style>
 <header>
 	<div class="main-header">
 		<div class="container-fluid">
@@ -27,8 +24,8 @@
 									<li><a href="<?= l('innovate') ?>">Innovate</a></li>
 								</ul>
 							</li>
-							<li><a class="active" href="<?= l('learning-journey') ?>">Learning Journey</a></li>
-							<li><a href="<?= l('') ?>consult-advisors">Consult with Experts</a></li>
+							<li><a href="<?= l('learning-journey') ?>">Learning Journey</a></li>
+							<li><a href="consult-advisors">Consult with Experts</a></li>
 							<li class="dropdown-nav"><a href="#">Community</a>
 								<ul class="dropdownWrap dropdown ">
 									<li><a href="<?= l('about-us') ?>">About us</a></li>

@@ -1,7 +1,7 @@
 <style>
-   .descPage ul.dropdown-box {
+   /* .descPage ul.dropdown-box {
       display: block !important;
-   }
+   } */
 </style>
 <div class="business-page">
    <section class="dashboard">

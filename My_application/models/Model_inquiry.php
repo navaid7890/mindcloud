@@ -69,7 +69,7 @@ class Model_inquiry extends MY_Model {
                     // 'default'   => '0',
                     'attributes'   => array(),
                     'dt_attributes'   => array("width"=>"7%"),
-                    'rules'   => 'required|trim'
+                    'rules'   => 'trim'
                  ),
 
               // 'inquiry_type' => array(

@@ -26,12 +26,20 @@
 
                 </div>
                 <div class="col-md-4 text-right">
-                    <div id="activeBorder" class="active-border">
+                    <!-- <div id="activeBorder" class="active-border">
                         <div id="circle" class="circle">
                             <span class="prec allpercent">0</span>
                             <span id="startDeg" class="180"></span>
                         </div>
+                    </div> -->
+
+                    <div class="topCircle">
+                        <div class="percent2">
+                        <p style="display:none;"><span class="prec allpercent">0</span></p>
                     </div>
+
+                    </div>
+
                 </div>
             </div>
             <div class="space"><br><br><br></div>
@@ -89,16 +97,13 @@
                                 <li class="dropdown-toggle b-child catLj<?= $a ?>">
                                     <a href="#"><?= $value['learning_journey_content_name'] ?>
 
-                                        <div id="activeBorder" class="active-border">
-                                            <div id="circle" class="circle">
-                                                <span class="prec" id="played<?= $a ?>">0</span>
-                                                <span id="startDeg" class="90"></span>
+                                            <div class="percent" id="played<?= $a ?>">
+                                                <p style="display:none;"></p>
                                             </div>
-                                        </div>
 
                                         <small>0/3</small>
                                     </a>
-                                    <ul class="dropdown-box" style="display: none;">
+                                    <ul class="dropdown-box">
                                         <li><a href="description?cat=<?= $a ?>"><i class="fad fa-video"></i>Intro<span><i class="far fa-check"></i></span></a></li>
                                         <li class="videoScript-<?= $a ?>"><a href="<?= l('account/profile/video') ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Tutorial Video & Transcript <span><i class="far fa-check"></i></span></a></li>
                                         <li class="toolbuilder-<?= $a ?>"><a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
@@ -202,91 +207,203 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
         //    var abc = "catLj" + xyz;
         //    $("." + abc).addClass('active');
         //    $("." + abc + " ul").attr("style", "display:block");
+        
+        
+        
+        
+        
+        
         <? if ($tool['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-11").addClass('active');
             $(".mywork-11").addClass('active');
-            $(".catLj11 #played11").html('66');
+            // $(".catLj11 #played11").html('66');
+            var percVal = parseInt('66');
+            $(".catLj11 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj11 #played11 p").html('0');
         <? endif; ?>
         <? if ($toolvp['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-12").addClass('active');
             $(".mywork-12").addClass('active');
-            $(".catLj12 #played12").html('66');
+            // $(".catLj12 #played12").html('66');
+            var percVal = parseInt('66');
+            $(".catLj12 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj12 #played12 p").html('0');
         <? endif; ?>
         <? if ($toolswot['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-13").addClass('active');
             $(".mywork-13").addClass('active');
-            $(".catLj13 #played13").html('66');
+            // $(".catLj13 #played13").html('66');
+            var percVal = parseInt('66');
+            $(".catLj13 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj13 #played13 p").html('0');
         <? endif; ?>
         <? if ($toolpmmt['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-14").addClass('active');
             $(".mywork-14").addClass('active');
-            $(".catLj14 #played14").html('66');
+            // $(".catLj14 #played14").html('66');
+            var percVal = parseInt('66');
+            $(".catLj14 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj14 #played14 p").html('0');
         <? endif; ?>
         <? if ($tool_strg_mkt['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-15").addClass('active');
             $(".mywork-15").addClass('active');
-            $(".catLj15 #played15").html('66');
+            // $(".catLj15 #played15").html('66');
+            var percVal = parseInt('66');
+            $(".catLj15 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj15 #played15 p").html('0');
         <? endif; ?>
         <? if ($tool_cj_dg['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-16").addClass('active');
             $(".mywork-16").addClass('active');
-            $(".catLj16 #played16").html('66');
+            // $(".catLj16 #played16").html('66');
+            var percVal = parseInt('66');
+            $(".catLj16 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj16 #played16 p").html('0');
         <? endif; ?>
         <? if ($tool_mc_mc['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-17").addClass('active');
             $(".mywork-17").addClass('active');
-            $(".catLj17 #played17").html('66');
+            // $(".catLj17 #played17").html('66');
+            var percVal = parseInt('66');
+            $(".catLj17 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj17 #played17 p").html('0');
         <? endif; ?>
         <? if ($tool_osf['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-18").addClass('active');
             $(".mywork-18").addClass('active');
-            $(".catLj18 #played18").html('66');
+            // $(".catLj18 #played18").html('66');
+            var percVal = parseInt('66');
+            $(".catLj18 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj18 #played18 p").html('0');
+        <? endif; ?>
+        <? if ($tool_osf['tool_builder_percent'] == 1) : ?>
+            $(".toolbuilder-19").addClass('active');
+            $(".mywork-19").addClass('active');
+            // $(".catLj18 #played18").html('66');
+            var percVal = parseInt('66');
+            $(".catLj19 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj19 #played19 p").html('0');
         <? endif; ?>
         <? if ($tool_lts['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-25").addClass('active');
             $(".mywork-25").addClass('active');
-            $(".catLj25 #played25").html('66');
+            // $(".catLj25 #played25").html('66');
+            var percVal = parseInt('66');
+            $(".catLj25 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj25 #played25 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_income['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-20").addClass('active');
             $(".mywork-20").addClass('active');
-            $(".catLj20 #played20").html('66');
+            // $(".catLj20 #played20").html('66');
+            var percVal = parseInt('66');
+            $(".catLj20 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj20 #played20 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_bss['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-21").addClass('active');
             $(".mywork-21").addClass('active');
-            $(".catLj21 #played21").html('66');
+            // $(".catLj21 #played21").html('66');
+            var percVal = parseInt('66');
+            $(".catLj21 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj21 #played21 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_cfs['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-22").addClass('active');
             $(".mywork-22").addClass('active');
-            $(".catLj22 #played22").html('66');
+            // $(".catLj22 #played22").html('66');
+            var percVal = parseInt('66');
+            $(".catLj22 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+           
+        <?else :?>
+            $(".catLj22 #played22 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_beps['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-23").addClass('active');
             $(".mywork-23").addClass('active');
-            $(".catLj23 #played23").html('66');
+            // $(".catLj23 #played23").html('66');
+            var percVal = parseInt('66');
+            $(".catLj23 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj23 #played23 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_dcvm['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-24").addClass('active');
             $(".mywork-24").addClass('active');
-            $(".catLj24 #played24").html('66');
+            // $(".catLj24 #played24").html('66');
+            var percVal = parseInt('66');
+            $(".catLj24 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj24 #played24 p").html('0');
         <? endif; ?>
         <? if ($tool_ids['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-26").addClass('active');
             $(".mywork-26").addClass('active');
-            $(".catLj26 #played26").html('66');
+            // $(".catLj26 #played26").html('66');
+            var percVal = parseInt('66');
+            $(".catLj26 .percent p").html(percVal); 
+            var totalseprate = percVal;
+            console.log('value anil is', totalseprate);
+            <?else :?>
+            $(".catLj26 #played26 p").html('0');
         <? endif; ?>
+
 
         <? foreach ($videoTranscript as $vt => $value) : ?>
             <? // if ($value['learning_journey_transcript_content_id'] == 1) : 
             ?>
             <? $a = $value['learning_journey_transcript_content_id'] ?>
-            var transcriptTotalcheck = parseInt($(".catLj<?= $a ?> #played<?= $a ?>").html());
+            var transcriptTotalcheck = parseInt($(".catLj<?= $a ?> #played<?= $a ?> p").html());
             if (transcriptTotalcheck < 100) {
+              
                 $(".videoScript-<?= $a ?>").addClass('active');
-                var transcriptTotal = parseInt($(".catLj<?= $a ?> #played<?= $a ?>").html()) + 34;
-                $(".catLj<?= $a ?> #played<?= $a ?>").html(transcriptTotal);
+                var transcriptTotal = 0;
+                var transcriptTotal = parseInt($(".catLj<?= $a ?> #played<?= $a ?> p").html()) + 34;
+                $("#played<?= $a ?> p").html(transcriptTotal);
+                 
             }
             // else {
             //     $("#forms-mark-complete-btn").attr("disabled", "disabled");
@@ -297,16 +414,18 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
         <? endforeach; ?>
 
 
+        console.log ('all value' ,totalseprate);
 
-
-        var sum = 0;
-        $('.prec').each(function() {
+        var sum = totalseprate;
+        $('.percent p').each(function() {
             sum += +$(this).text() || 0;
         });
         var total = Math.round((sum / 1500) * 100);
 
-        $(".allpercent").text(total);
-        localStorage.setItem("learingPercent", $(".allpercent").text());
+        $('.allpercent').text(total);
+
+        
+          localStorage.setItem("learingPercent", $(".allpercent").text());
         //    
         // }
 
@@ -324,45 +443,52 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
         var businessPercent1 = $("#played12").html();
         var businessTotal = parseInt(businessPercent) + parseInt(businessPercent1)
         var TotalbusinessPercent = Math.round((businessTotal / 200) * 100);
-        localStorage.setItem("businessPercent", TotalbusinessPercent);
+
+        //console.log("businessPercent", parseInt($(".catLj11 .percent p").html()));
+
+        localStorage.setItem("businessPercent", parseInt($(".catLj11 .percent p").html()));
 
         // GO-TO MARKET STRATEGIES
-        var gtms1 = $("#played13").html();
-        var gtms2 = $("#played14").html();
-        var gtms3 = $("#played15").html();
-        var gtms4 = $("#played16").html();
-        var gtms5 = $("#played17").html();
-        var gtms6 = $("#played18").html();
+        var gtms1 = $("#played13 p").html();
+        var gtms2 = $("#played14 p").html();
+        var gtms3 = $("#played15 p").html();
+        var gtms4 = $("#played16 p").html();
+        var gtms5 = $("#played17 p").html();
+        var gtms6 = $("#played18 p").html();
         var gtmsTotal = parseInt(gtms1) + parseInt(gtms2) + parseInt(gtms3) + parseInt(gtms4) + parseInt(gtms5) + parseInt(gtms6);
         var TotalgtmsPercent = Math.round((gtmsTotal / 600) * 100);
-        localStorage.setItem("GO_TO_MARKET_STRATEGIES", TotalgtmsPercent);
+        localStorage.setItem("GO_TO_MARKET_STRATEGIES", parseInt(TotalgtmsPercent));
+
+        console.log("This is test", parseInt(TotalgtmsPercent));
 
 
         // Financial management
-
-        var fm2 = $("#played20").html();
-        var fm3 = $("#played21").html();
-        var fm4 = $("#played22").html();
-        var fm5 = $("#played23").html();
-        var fm6 = $("#played24").html();
+        var fm2 = $("#played20 p").html();
+        var fm3 = $("#played21 p").html();
+        var fm4 = $("#played22 p").html();
+        var fm5 = $("#played23 p").html();
+        var fm6 = $("#played24 p").html();
         var fmTotal = parseInt(fm2) + parseInt(fm3) + parseInt(fm4) + parseInt(fm5) + parseInt(fm6);
+        // var fmTotal = fm2 + fm3 + fm4 + fm5 + fm6;
         var TotalfmPercent = Math.round((fmTotal / 500) * 100);
-        localStorage.setItem("Financial_management", TotalfmPercent);
-        // console.log("Financial management", TotalfmPercent );
+        localStorage.setItem("Financial_management", parseInt(TotalfmPercent));
+        
+       //  console.log("Financial management", parseInt(TotalfmPercent));
 
 
         // Legal Structure
-        var ls = $("#played25").html();
+        var ls = $("#played25 p").html();
         var lsTotal = parseInt(ls);
-        localStorage.setItem("Legal_Structure", lsTotal);
+        localStorage.setItem("Legal_Structure", parseInt(lsTotal));
 
         // Investment / Pitch Deck
-        var Idesk = $("#played26").html();
+        var Idesk = $("#played26 p").html();
         var IdeskTotal = parseInt(Idesk);
-        localStorage.setItem("Investment_Desk", IdeskTotal);
+        localStorage.setItem("Investment_Desk", parseInt(IdeskTotal));
 
 
 
 
     });
 </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js'></script>

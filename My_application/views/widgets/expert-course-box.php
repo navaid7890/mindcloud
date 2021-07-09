@@ -6,11 +6,9 @@
                     <h3><?= $course_name ?></h3>
                 </div>
                 <div class="col-md-4 text-right" id="expTotalPercentage">
-                    <div id="activeBorder" class="active-border">
-                        <div id="circle" class="circle">
-                            <span class="prec">0</span>
-                            <span id="startDeg" class="90"></span>
-                        </div>
+                <div class="topCircle">
+                        <div class="percent2">
+                        <p style="display:none;"><span class="prec allpercent">0</span></p>
                     </div>
                 </div>
             </div>
@@ -26,21 +24,15 @@
                 <h5><?= $course_name ?></h5>
                 <li id="tutorialDescription">
                     <a href="<?= l('account/profile/expert-detail-tutorial') ?>?courseid=<?= $courseid ?>" class="active">Tutorial Description
-                        <div id="activeBorder" class="active-border">
-                            <div id="circle" class="circle">
-                                <span class="prec">0</span>
-                                <span id="startDeg" class="90"></span>
-                            </div>
-                        </div>
+                    <div class="percent">
+                        <p style="display:none;"></p>
+                    </div>
                     </a>
                 </li>
                 <li id="tutorialIntro">
                     <a href="<?= l('account/profile/expert-detail-tutorial-intro-video') ?>?courseid=<?= $courseid ?>">Tutorial - 1 minute introduction
-                        <div id="activeBorder" class="active-border">
-                            <div id="circle" class="circle">
-                                <span class="prec">0</span>
-                                <span id="startDeg" class="90"></span>
-                            </div>
+                        <div class="percent">
+                            <p style="display:none;"></p>
                         </div>
                     </a>
                 </li>
@@ -49,12 +41,9 @@
                         <? foreach ($tutorial_course as $key => $tutor) : ?>
                             <ul>
                                 <li><a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $courseid ?>&tutorialid=<?= $tutor['videos_id'] ?>">Video and Transcript
-                                        <div id="activeBorder" class="active-border">
-                                            <div id="circle" class="circle">
-                                                <span class="prec">0</span>
-                                                <span id="startDeg" class="90"></span>
-                                            </div>
-                                        </div>
+                                <div class="percent">
+                                        <p style="display:none;"></p>
+                                    </div>
                                     </a>
                                 </li>
                             </ul>
@@ -78,24 +67,30 @@
     $(document).ready(function() {
 
         <? if ($mypercentage['mytutorial_desc_percent'] == 1) : ?>
-            $("#tutorialDescription .prec").html('100');
+            $("#tutorialDescription .percent p").html('100');
+            <?else :?>
+                $("#tutorialDescription .percent p").html('0');
         <? endif; ?>
 
         <? if ($mypercentage['mytutorial_intro_percent'] == 1) : ?>
-            $("#tutorialIntro .prec").html('100');
+            $("#tutorialIntro .percent p").html('100');
+            <?else :?>
+                $("#tutorialIntro .percent p").html('0');
         <? endif; ?>
 
         <? if ($mypercentage['mytutorial_video_percent'] == 1) : ?>
-            $("#tutorialVideo .prec").html('100');
+            $("#tutorialVideo .percent p").html('100');
+            <?else :?>
+                $("#tutorialVideo .percent p").html('0');
         <? endif; ?>
 
         // parseInt
-        var totalDesc = parseInt($("#tutorialDescription .prec").html());
-        var totalIntro = parseInt($("#tutorialIntro .prec").html());
-        var totalVideo = parseInt($("#tutorialVideo .prec").html());
+        var totalDesc = parseInt($("#tutorialDescription .percent p").html());
+        var totalIntro = parseInt($("#tutorialIntro .percent p").html());
+        var totalVideo = parseInt($("#tutorialVideo .percent p").html());
         TotalSum = totalDesc + totalIntro + totalVideo
         var totalPercent = Math.round((TotalSum / 300) * 100);
-        $("#expTotalPercentage .prec").html(totalPercent);
+        $("#expTotalPercentage .allpercent").html(totalPercent);
 
         // $("#expTotalPercentage .prec").html('200');
 
@@ -110,3 +105,5 @@
         // console.log("courseid",params.get('courseid'));
     });
 </script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js'></script>

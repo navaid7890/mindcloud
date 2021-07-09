@@ -1013,9 +1013,6 @@ class About_us extends MY_Controller
     }
 
 
-
-
-
     public function testmail()
     {
         global $config;
@@ -1027,6 +1024,60 @@ class About_us extends MY_Controller
 
 
         $this->load_view("testmail", $data);
+    }
+
+    function sendMail()
+    {
+    //     $config = Array(
+    //   'protocol' => 'smtp',
+    //   'smtp_host' => 'smtp.gmail.com',
+    //   'smtp_port' => 465,
+    //   'smtp_user' => 'm.fazal@manageglobally.io', // change it to yours
+    //   'smtp_pass' => 'Fazal786', // change it to yours
+    //   'mailtype' => 'txt',
+    //   'MAIL_TLS' => TRUE,
+    //   'MAIL_SSL' => FALSE,
+    //   'charset' => 'iso-8859-1',
+    //   'wordwrap' => TRUE
+    // );
+
+    // $config = array(
+    //     'protocol' => 'smtp', // 'mail', 'sendmail', or 'smtp'
+    //     'smtp_host' => 'smtp.gmail.com', 
+    //     'smtp_port' => 465,
+    //     'smtp_user' => 'zoozledb@gmail.com',
+    //     'smtp_pass' => 'admin@zoozledb',
+    //     'smtp_crypto' => 'tls', //can be 'ssl' or 'tls' for example
+    //     'mailtype' => 'text', //plaintext 'text' mails or 'html'
+    //     'smtp_timeout' => '4', //in seconds
+    //     'charset' => 'iso-8859-1',
+    //     'wordwrap' => TRUE
+    // );
+
+        $config['protocol']  = 'smtp';
+        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+        $config['smtp_user'] = 'm.fazal@manageglobally.io';
+        $config['smtp_pass'] = 'Fazal786';
+        $config['smtp_port'] = 465;
+        $config['charset']   = 'utf-8';
+        $config['mailtype']  = 'html';
+        $config['newline']   = "\r\n"; 
+
+            $message = '';
+            $this->load->library('email', $config);
+          $this->email->set_newline("\r\n");
+          $this->email->from('m.fazal@manageglobally.io'); // change it to yours
+          $this->email->to('madiha@alphacandy.com');// change it to yours
+          $this->email->subject('Resume from JobsBuddy for your Job posting');
+          $this->email->message($message);
+          if($this->email->send())
+         {
+          echo 'Email sent.';
+         }
+         else
+        {
+         show_error($this->email->print_debugger());
+        }
     }
 
 

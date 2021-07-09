@@ -19,11 +19,11 @@ $footer = $this->model_config->find_all_active($footer);
 						<div class="widget">
 							<h4>OFFERINGS</h4>
 							<ul class="quick-links">
-								<li><a href="#">Experts Tutorials</a></li>
-								<li><a href="#">Learning Journey</a></li>
-								<li><a href="#">Consult with Experts</a></li>
-								<li><a href="#">Advisory</a></li>
-								<li><a href="#">Join our Tribe Experts</a></li>
+								<li><a href="<?= l('expert-tutorial') ?>">Experts Tutorials</a></li>
+								<li><a href="<?= l('learning-journey') ?>">Learning Journey</a></li>
+								<li><a href="<?= l('consult-advisors') ?>">Consult with Experts</a></li>
+								<li><a href="<?= l('consult-advisors') ?>">Advisory</a></li>
+								<!-- <li><a href="<?= l('') ?>">Join our Tribe Experts</a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -31,11 +31,11 @@ $footer = $this->model_config->find_all_active($footer);
 						<div class="widget">
 							<h4>navigation</h4>
 							<ul class="quick-links">
-								<li><a href="#">Mind Cloud Tribe for Enterprise</a></li>
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Community</a></li>
-								<li><a href="#">FAQs</a></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="<?= l('enterprise-partners') ?>">Mind Cloud Tribe for Enterprise</a></li>
+								<li><a href="<?= l('about-us') ?>">About Us</a></li>
+								<li><a href="<?= l('newsfeed') ?>">Community</a></li>
+								<li><a href="<?= l('faq') ?>">FAQs</a></li>
+								<!-- <li><a href="<?= l('') ?>">Contact Us</a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -43,11 +43,11 @@ $footer = $this->model_config->find_all_active($footer);
 						<div class="widget">
 							<h4>top experts tutorials</h4>
 							<ul class="quick-links">
-								<li><a href="#">Building the Right Team</a></li>
-								<li><a href="#">Business Valuation Fundamentals</a></li>
-								<li><a href="#">Digital Marketing and Sales for Start-Ups</a></li>
-								<li><a href="#">Overview of S.E.O</a></li>
-								<li><a href="#">Human Resources 101 for Start-Ups</a></li>
+								<li><a href="<?= l('course-detail/building-retaining-the-right-team-') ?>">Building the Right Team</a></li>
+								<li><a href="<?= l('course-detail/business-valuation-fundamentals') ?>">Business Valuation Fundamentals</a></li>
+								<li><a href="<?= l('course-detail/digital-marketing-sales-for-startups') ?>">Digital Marketing and Sales for Start-Ups</a></li>
+								<li><a href="<?= l('course-detail/overview-of-seo') ?>">Overview of S.E.O</a></li>
+								<li><a href="<?= l('course-detail/human-resources-hr-101') ?>">Human Resources 101 for Start-Ups</a></li>
 							</ul>
 						</div>
 					</div>
