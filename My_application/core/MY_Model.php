@@ -1082,9 +1082,9 @@ class MY_Model extends CI_Model
 			$headers .= 'From: <' . $send_from . '>' . "\r\n";
 			//$headers .= 'Cc: myboss@example.com' . "\r\n";
 
-			if (ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production')
-				return true;
-			else
+			// if (ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production')
+			// 	return true;
+			// else
 				mail($send_to, $subject, $msg, $headers);
 		}
 
@@ -1108,8 +1108,6 @@ class MY_Model extends CI_Model
 			$config['smtp_port'] = 587;
 			$config['smtp_crypto'] = 'tls';
 			$config['charset']   = 'utf-8';
-			$config['mailtype']  = 'html';
-			$config['newline']   = "\r\n";
 			$config['wordwrap'] = TRUE;
 			$config['wrapchars'] = 76;
 			$config['mailtype'] = 'html';
@@ -1142,9 +1140,9 @@ class MY_Model extends CI_Model
 
 
 
-			if (ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production')
-				return true;
-			else
+			// if (ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production')
+			// 	return true;
+			// else
 				$this->email->send();
 		}
 
@@ -1170,9 +1168,9 @@ class MY_Model extends CI_Model
 		$this->email->set_mailtype("html");
 		$this->email->message($message);
 
-		if (ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production') {
-			return true;
-		}
+		// if (ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production') {
+		// 	return true;
+		// }
 
 		if ($this->email->send()) {
 			return true;
