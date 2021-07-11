@@ -2060,7 +2060,8 @@ class CI_Email {
 			return TRUE;
 		}
 
-		// $ssl = ($this->smtp_crypto === 'ssl') ? 'ssl://' : '';
+		$ssl = ($this->smtp_crypto === 'ssl') ? '' : '';
+		// $ssl = ($this->smtp_crypto );
 
 		$this->_smtp_connect = fsockopen($ssl.$this->smtp_host,
 							$this->smtp_port,
