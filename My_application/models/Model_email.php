@@ -11,16 +11,16 @@ class Model_email extends MY_Model {
      */
 
     private $to;
-    private $from = 'dalton.developer@gmail.com';
+    private $from = 'm.fazal@manageglobally.io';
     private $subject;
     private $msg;
 
 
-    private $billingEmail = 'sales@sc.com';//'billing@chemco.com';
-    private $customerSupportEmail = 'sales@sc.com';//'cs@chemco.com';
-    private $salesEmail = 'sales@sc.com';//'sales@chemco.com';
-    private $technicalEmail = 'sales@sc.com';//'technical@chemco.com';
-    private $developerEmail = 'sales@sc.com';//'devemail0909@gmail.com';
+    private $billingEmail = 'm.fazal@manageglobally.io';//'billing@chemco.com';
+    private $customerSupportEmail = 'm.fazal@manageglobally.io';//'cs@chemco.com';
+    private $salesEmail = 'm.fazal@manageglobally.io';//'sales@chemco.com';
+    private $technicalEmail = 'm.fazal@manageglobally.io';//'technical@chemco.com';
+    private $developerEmail = 'm.fazal@manageglobally.io';//'devemail0909@gmail.com';
 
     private $_template = 'default_template';//'query';
 

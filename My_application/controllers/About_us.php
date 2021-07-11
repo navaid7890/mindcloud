@@ -1101,10 +1101,10 @@ class About_us extends MY_Controller
     // );
 
         $config['protocol']  = 'smtp';
-        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-        $config['smtp_user'] = 'm.fazal@manageglobally.io';
-        $config['smtp_pass'] = 'Fazal786';
-        $config['smtp_port'] = 465;
+        $config['smtp_host'] = 'email-smtp.us-east-1.amazonaws.com';
+        $config['smtp_user'] = 'AKIAXQ4HYQNYXG5S4GGM';
+        $config['smtp_pass'] = 'BCRXy/xl0sSg8V6L80Ff6Qfb/v52SLaLZVgOsvoJrPUN';
+        $config['smtp_port'] = 587;
         $config['charset']   = 'utf-8';
         $config['mailtype']  = 'html';
         $config['newline']   = "\r\n"; 
@@ -1113,7 +1113,7 @@ class About_us extends MY_Controller
             $this->load->library('email', $config);
           $this->email->set_newline("\r\n");
           $this->email->from('m.fazal@manageglobally.io'); // change it to yours
-          $this->email->to('madiha@alphacandy.com');// change it to yours
+          $this->email->to('m.fazal@manageglobally.io');// change it to yours
           $this->email->subject('Resume from JobsBuddy for your Job posting');
           $this->email->message($message);
           if($this->email->send())
