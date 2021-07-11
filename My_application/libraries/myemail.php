@@ -258,7 +258,7 @@ class Myemail{
 
 		$CI->load->library('email');
 
-		if(ENVIRONMENT == 'development') {
+		if(ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production' ){
 			$config['protocol'] = 'smtp';
 			$config['smtp_host'] = 'email-smtp.us-east-1.amazonaws.com';
 			$config['smtp_user'] = 'AKIAXQ4HYQNYXG5S4GGM';
