@@ -76,7 +76,7 @@ class CI_Email {
 	 *
 	 * @var	string
 	 */
-	public $smtp_host	= 'email-smtp.us-east-1.amazonaws.com';
+	public $smtp_host	= 'localhost';
 
 	/**
 	 * SMTP Username
