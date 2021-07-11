@@ -69,14 +69,14 @@ class CI_Email {
 	 *
 	 * @var	string	'mail', 'sendmail' or 'smtp'
 	 */
-	public $protocol	= 'mail';		// mail/sendmail/smtp
+	public $protocol	= 'smtp';		// mail/sendmail/smtp
 
 	/**
 	 * STMP Server host
 	 *
 	 * @var	string
 	 */
-	public $smtp_host	= 'localhost';
+	public $smtp_host	= 'email-smtp.us-east-1.amazonaws.com';
 
 	/**
 	 * SMTP Username
@@ -140,7 +140,7 @@ class CI_Email {
 	 *
 	 * @var	string	'text' or 'html'
 	 */
-	public $mailtype	= 'text';
+	public $mailtype	= 'html';
 
 	/**
 	 * Character set (default: utf-8)
@@ -168,7 +168,7 @@ class CI_Email {
 	 *
 	 * @var	int	1-5
 	 */
-	public $priority	= 3;			// Default priority (1 - 5)
+	public $priority	= 1;			// Default priority (1 - 5)
 
 	/**
 	 * Newline character sequence.
@@ -279,7 +279,7 @@ class CI_Email {
 	 *
 	 * @var	bool
 	 */
-	protected $_smtp_auth		= FALSE;
+	protected $_smtp_auth		= true;
 
 	/**
 	 * Whether to send a Reply-To header
