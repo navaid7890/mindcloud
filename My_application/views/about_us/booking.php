@@ -1,3 +1,35 @@
+<style>
+textarea, select, input[type], textarea, select, button {
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+textarea
+{
+
+    resize: none;
+    width: 100%;
+    height: 130px;
+}
+
+input#forms-booking_us-btn {
+    background: #222;
+    font-weight: 500;
+    box-shadow: none;
+    padding: 8px 14px;
+    letter-spacing: 0.2px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+</style>
 <section class="myjoin">
     <div class="container">
         <div class="row">
@@ -65,8 +97,11 @@
                     <div id="topics">
                         <ul class="tSelectBtn">
                             <? if (isset($category) and array_filled($category)) : ?>
-                                <? foreach ($category as $key => $value) : ?>
-                                    <li class="selectTopicBtn" onclick="get_expert('<?= $value['category_id'] ?>')"><span><?= $value['category_name'] ?></span></li>
+                                <? foreach ($category as $key => $value) :
+                                    
+                                 $a=$value['category_id'];
+                                ?>
+                                    <li class="selectTopicBtn" onclick="get_expert('<?= $value['category_id'] ?>')"><span> <?= $value['category_name'] ?></span></li>
                                 <? endforeach; ?>
                             <? endif; ?>
                         </ul>
@@ -87,116 +122,8 @@
                         </div>
 
                         <div class="selectTimeSlot">
-                            <ul>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="08:00 am - 09:00 am"></label>
-                                    <p>8<span>AM</span></p>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="08:15 am - 09:15 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="08:30 am - 09:30 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="08:45 am - 09:45 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="09:00 am - 10:00 am"></label>
-                                    <p>9<span>AM</span></p>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="09:15 am - 10:15 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="09:30 am - 10:30 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="09:45 am - 10:45 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="10:00 am - 11:00 am"></label>
-                                    <p>10<span>AM</span></p>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="10:15 am - 11:15 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="10:30 am - 11:30 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="10:45 am - 11:45 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="11:00 am - 12:00 am"></label>
-                                    <p>11<span>AM</span></p>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="11:15 am - 12:15 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="11:30 am - 12:30 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="11:45 am - 12:45 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="12:00 am - 01:00 am"></label>
-                                    <p>12<span>PM</span></p>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="12:15 am - 01:15 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="12:30 am - 01:30 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="12:45 am - 01:45 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="01:00 am - 02:00 am"></label>
-                                    <p>1<span>PM</span></p>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="01:15 am - 02:15 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="01:30 am - 02:30 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="01:45 am - 02:45 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="02:00 am - 03:00 am"></label>
-                                    <p>2<span>PM</span></p>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="02:15 am - 03:15 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="02:30 am - 03:30 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="02:45 am - 03:45 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="03:00 am - 04:00 am"></label>
-                                    <p>3<span>PM</span></p>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="03:15 am - 04:15 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="03:30 am - 04:30 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="03:45 am - 04:45 am"></label>
-                                </li>
-                                <li>
-                                    <label data-toggle="tooltip" data-placement="top" title="04:00 am - 05:00 am"></label>
-                                    <p>4<span>PM</span></p>
-                                </li>
-                            </ul>
+                       
+
 
                         </div>
                         <div class="btnHolders">
@@ -284,6 +211,7 @@
                             <li>
                                 <label>Date:</label>
                                 <span class="calDate"></span>
+                                
                             </li>
                             <li>
                                 <label>Time:</label>
@@ -300,21 +228,51 @@
                         </ul>
 
                         <h3>Customer Info</h3>
-                        <ul>
-                            <li>
-                                <label>Name:</label>
-                                <span id="firstName2"></span> <span id="lastName2"></span>
-                            </li>
-                            <li>
-                                <label>Phone:</label>
-                                <span id="phoneNumber"></span>
-                            </li>
-                            <li>
-                                <label>Email:</label>
-                                <span id="emailAdress"></span>
-                            </li>
+                        <?
+                        $us=$this->model_user->find_by_pk($this->userid);
+                        ?>
+                        <form  class="form-booking_us" id="forms-book_us">
 
-                        </ul>
+                        <div class="row">
+                        <div class="col-md-6">
+                        <input type="hidden" name="booking[booking_user_id]" value="<?=$us['user_id']?>">
+
+                        <input type="hidden" name="booking[booking_expert_id]" class="ex">
+                        <input type="hidden" name="booking[booking_category_id]" class="cat">
+
+                        <input type="hidden" name="booking[booking_date]" id="ones">
+                        <input type="hidden" name="booking[booking_time]" id="two"> 
+
+
+                        <input type="text"  value="<?=$us['user_firstname']?>" readonly placeholder="Name">
+                        </div>
+
+                        <div class="col-md-6">
+                        <input type="email" name="booking[booking_email]" value="<?=$us['user_email']?>" readonly placeholder="Email">
+                        </div>
+
+                        
+                        </div>
+
+
+
+                        <div class="row">
+                        <div class="col-md-12">
+                        <input type="text" name="booking[booking_phone]"  placeholder="Phone" required> 
+                        </div>
+
+                        <div class="col-md-12">
+                    <textarea name="booking[booking_message]" placeholder="Message" required></textarea>
+                        </div>
+
+                        
+                        </div>
+
+
+                     <input type="submit" id="forms-booking_us-btn" class="forms-booking_us-btn nbtn nextBtn_3">
+
+                        </form>
+             
 
 
                     </div>
@@ -322,9 +280,10 @@
                         <div class="bbtn backBtn_4">
                             <p><i class="fal fa-long-arrow-left"></i> Back </p>
                         </div>
-                        <div class="nbtn nextBtn_3">
+                        <!-- <div class="nbtn nextBtn_3">
                             <p> Submit <i class="fal fa-long-arrow-right"></i></p>
-                        </div>
+
+                        </div> -->
                     </div>
                 </div>
 
@@ -407,7 +366,7 @@
     }
 
 
-    function show_detail(expert_name, category_name) {
+    function show_detail(expert_name, category_name,expert_price,catid,expertid) {
         // expert = JSON.parse(expert);
         // console.log('expert',expert)
         $('h4:nth-child(1)').hide();
@@ -430,18 +389,24 @@
 
         $('.serv').html(category_name);
         $('.agentName').html(expert_name);
+        $('.price').html(expert_price);
+
+        $('.cat').val(catid);
+        $('.ex').val(expertid);
+
+        
 
 
 
-    };
+}
 
     var path = '<?= g('db.admin.bucketimg') ?>'
-    //category_name
+
     function get_expert_html(expert) {
         var s_e = JSON.stringify(expert);
         console.log('s_e', s_e);
         return `
-        <li class="selectTopicBtn" data-price="AED 300" onclick="show_detail('` + expert.expert_name + `','` + expert.category_name + `')" id=` +
+        <li class="selectTopicBtn" data-price="AED 300" onclick="show_detail('` + expert.expert_name + `','` + expert.category_name + `','` + expert.expert_price + `','` + expert.cp_category_id + `','` + expert.expert_id + `')" id=` +
             expert.expert_id + `>
             <img src="` + path + expert.expert_image + `" alt="">
             <span>` + expert.expert_name + `</span>
@@ -452,4 +417,390 @@
 
 
 <script src="<?= l('') ?>assets/front_assets/js/account/slick.js"></script>
-<script src="<?= l('') ?>assets/front_assets/js/account/custombooking.js"></script>
+
+<script>
+
+var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var date = now.getDate();
+
+
+        var data = [{
+            date: year + '-' + month + '-' + (date - 1),
+          //  value: 'hello'
+        }, {
+            date: year + '-' + month + '-' + date,
+            //value: 'Go to work'
+        }, {
+            date: new Date(year, month - 1, date + 1),
+           // value: 'Eat sleep play Peas'
+        }, {
+            date: '2021-06-31',
+            //value: '2021-06-31'
+        }];
+
+        // inline
+        var $ca = $('#one').calendar({
+            // view: 'month',
+            width: 440,
+            height: 440,
+            // startWeek: 0,
+            // selectedRang: [new Date(), null],
+            data: data,
+            monthArray: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            date: new Date(2021, 6, 31),
+            onSelected: function (view, date, data) {
+                console.log('view:' + view)
+                console.log('date:' + date)
+                console.log('data:' + (data || 'no'));
+            },
+            viewChange: function (view, y, m) {
+                console.log(view, y, m)
+
+            }
+        });
+
+        // picker
+        $('#two').calendar({
+            trigger: '#dt',
+            // offset: [0, 1],
+            zIndex: 999,
+            data: data,
+            onSelected: function (view, date, data) {
+                console.log('event: onSelected')
+            },
+            onClose: function (view, date, data) {
+                console.log('event: onClose')
+                //console.log('view:' + view)
+                console.log('date:' + date)
+                console.log('data:' + (data || '无'));
+            }
+        });
+
+        // Dynamic elements
+        var $demo = $('#demo');
+        var UID = 1;
+        $('#add').click(function () {
+            $demo.append('<input id="input-' + UID + '"><div id="ca-' + UID + '"></div>');
+            $('#ca-' + UID).calendar({
+                trigger: '#input-' + UID++
+            })
+        })
+    
+
+$(document).ready(function() {
+    switchDiv();
+
+    $("li:first-child").addClass("first");
+    $("li:last-child").addClass("last");
+
+    $('[href="#"]').attr("href", "javascript:;");
+
+    $('.menu-Bar').click(function() {
+        $(this).toggleClass('open');
+        $('.menuWrap').toggleClass('open');
+        $('body').toggleClass('ovr-hiddn');
+    });
+
+    $('.loginUp').click(function(){
+        $('.LoginPopup').fadeIn();
+        $('.overlay').fadeIn();
+    });
+
+    $('.signUp').click(function(){
+        $('.signUpPop').fadeIn();
+        $('.overlay').fadeIn();
+    });
+
+     $('.closePop,.overlay').click(function(){
+        $('.popupMain').fadeOut();
+        $('.overlay').fadeOut();
+    });
+
+
+
+    $('.index-slider').slick({
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+    });
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+
+
+/*Form Wizard Code Start Here*/
+
+
+$('.fResult').hide();
+$('#experts').hide();
+$('h4:nth-child(2)').hide();
+$('h4:nth-child(3)').hide();
+$('h4:nth-child(4)').hide();
+$('#selectT_D').hide();
+$('.selectTimeSlot').hide();
+$('.nextBtn_1').hide();
+$('#information').hide();
+ $('.finalResult').hide();
+
+
+
+$('#topics li').click(function(){
+
+$('.fResult').show();
+$('.fResult').animate({
+        width:'100%',
+        display: 'flex'
+            }) 
+
+        $('h4:nth-child(2)').show();
+        $('h4:nth-child(1)').hide();
+
+        $('.fResult ul li:first-child').show();
+
+        $('#experts').slideDown();
+        $('#topics').slideUp();
+
+        $('.navigator ul li:nth-child(2)').addClass('active'); 
+
+         $('.expertTopic ul li:nth-child(1)').hide();
+        $('.expertTopic ul li:nth-child(2)').show();
+
+
+});
+
+$('#topics li.selectTopicBtn span').click(function(){
+       var getSpanValOne = ($(this).text());
+        $('span.serv').text(getSpanValOne);
+    });
+
+$('#experts li.selectTopicBtn span').click(function(){
+       var getSpanValTwo = ($(this).text());
+        $('span.agentName').text(getSpanValTwo);
+
+
+    });
+
+
+$('.backBtn_1').click(function(){
+
+        $('#experts').slideUp();
+        $('#topics').slideDown();
+        $('h4:nth-child(2)').hide();
+        $('h4:nth-child(1)').show();
+        $('.navigator li:nth-child(2)').removeClass('active');
+         $('.expertTopic ul li:nth-child(1)').show();
+        $('.expertTopic ul li:nth-child(2)').hide();
+
+
+});
+
+$('.backBtn_2').click(function(){
+
+        $('#selectT_D').slideUp();
+        $('#experts').slideDown();
+        $('h4:nth-child(2)').show();
+        $('h4:nth-child(1)').hide();
+         $('h4:nth-child(3)').hide();
+        $('.navigator li:nth-child(2)').removeClass('active');
+
+
+        $('.expertTopic ul li:nth-child(2)').show();
+        $('.expertTopic ul li:nth-child(3)').hide();
+
+
+});
+
+$('.backBtn_3').click(function(){
+
+        $('#selectT_D').slideDown();
+        $('#information').slideUp();
+        $('h4:nth-child(2)').hide();
+        $('h4:nth-child(1)').hide();
+         $('h4:nth-child(3)').show();
+        $('.navigator li:nth-child(2)').removeClass('active');
+
+
+        $('.expertTopic ul li:nth-child(2)').hide();
+        $('.expertTopic ul li:nth-child(3)').show();
+        $('.expertTopic ul li:nth-child(4)').hide();
+
+});
+
+
+$('#experts li').click(function(){
+
+    $('h4:nth-child(1)').hide();
+    $('h4:nth-child(2)').hide();
+    $('h4:nth-child(3)').show();
+
+    $('.fResult ul li:nth-child(2)').show();
+     $('.fResult ul li:nth-child(6)').show();
+
+    $('#experts').slideUp();
+    $('#selectT_D').slideDown();
+
+    $('.navigator ul li:nth-child(3)').addClass('active'); 
+
+    var target_price = $(this).attr('data-price');
+    $('span.price').text(target_price);
+
+        $('.expertTopic ul li:nth-child(2)').hide();
+        $('.expertTopic ul li:nth-child(3)').show();
+   
+    
+
+});
+
+$('ul.date-items li').click(function(){
+    var target_date = $(this).attr('data-calendar-day');
+    $('span.calDate').text(target_date);
+    $('.selectTimeSlot').slideDown();
+    $('.fResult ul li:nth-child(3)').show();
+
+var date= $('span.calDate').html();
+var us=$('.ex').val();
+
+    var e = date;
+    e.length > 0 ? $.ajax({
+    url: base_url + "about_us/ajax_get_timeslot",
+    type: "POST",
+    data: {
+        date: e,
+        professional_id: us
+    },
+    dataType: "json",
+    success: function(e) {
+        $("#preloader").hide(), e.status ? ($(".selectTimeSlot").html(e.html)) : Toastr.error(e.txt, "")
+    },
+    beforeSend: function(e) {
+        $("#preloader").show()
+    }
+}) : console.log("do nothing");
+
+return false;
+
+});
+
+// $('.selectTimeSlot li label').click(function(){
+
+//      var target_time = $(this).attr('data-original-title');
+//     $('span.calTime').text(target_time);
+
+ 
+ 
+// });
+
+
+
+//var selector = '.selectTimeSlot li';
+
+
+
+//  $('.selectTimeSlot li').click(function(){
+
+//     $('.nextBtn_1').show();
+//     $('.fResult ul li:nth-child(4)').show();
+
+ 
+// }); 
+
+//   $('.nextBtn_1').click(function(){
+//     console.log('i am in');
+//     $('#information').show();
+//     $('#selectT_D').hide();
+//      $('.navigator ul li:nth-child(4)').addClass('active');
+
+//      $('.expertTopic ul li:nth-child(4)').show();
+//      $('.expertTopic ul li:nth-child(3)').hide();
+
+//       $('.fResult ul li:nth-child(5)').show();
+   
+// });
+
+ $('.nextBtn_1').click(function(){
+
+    $('.resultMain').hide();
+    $('.finalResult').show();
+    $('.selectAreaBoxInner').hide();
+
+     $('.navigator ul li:nth-child(5)').addClass('active');
+     $('.expertTopic ul li:nth-child(4)').hide();
+     $('.expertTopic ul li:nth-child(5)').show();
+     
+     $("#ones").val($('.calDate').html());
+
+
+     $("#two").val($('.calTime').html());
+   
+
+
+});  
+
+ $('.backBtn_4').click(function(){
+      $('.resultMain').show();
+    $('.finalResult').hide();
+    $('.selectAreaBoxInner').show();
+ });
+
+//  $('.selectTimeSlot li').on('click', function(){
+//     $(this).removeClass('selected');
+//     alert('Hello')
+//     $(this).addClass('selected');
+// });
+ 
+  
+});
+
+
+//console.log("kjasdkjhaskdhas", target_date)
+
+
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 200) {
+        $(".fixed").addClass("sticky");
+    } else {
+        $(".fixed").removeClass("sticky");
+    }
+});
+     
+
+$(window).on('load', function() {
+    var currentUrl = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
+    $('ul.menu li a').each(function() {
+        var hrefVal = $(this).attr('href');
+        if (hrefVal == currentUrl) {
+            $(this).removeClass('active');
+            $(this).closest('li').addClass('active')
+            $('ul.menu li.first').removeClass('active');
+        }
+    });
+
+});
+
+
+/* RESPONSIVE JS */
+if ($(window).width() < 824) {
+
+
+}
+
+
+function switchDiv() {
+    var $window = $(window).outerWidth();
+    if ($window <= 768) {
+        $('.topAppendTxt').each(function() {
+            var getdtd = $(this).find('.cloneDiv').clone(true);
+            $(this).find('.cloneDiv').remove();
+            $(this).append(getdtd);
+        });
+    };
+}
+
+</script>
+

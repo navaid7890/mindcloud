@@ -62,6 +62,27 @@ class Model_user extends MY_Model {
         }
         return $var;
     }
+
+
+    public function get_user_all()
+    {
+        $var = array();
+        $param = array();
+        // $param['where']['user_type'] = 1;
+        // $param['where']['user_id >'] = 2;
+        $data = $this->find_all_active($param);
+        if(isset($data) AND array_filled($data))
+        {
+            foreach($data as $value)
+            {
+                $name = ucfirst($value['user_firstname'].' '.$value['user_lastname']);
+                if($value['user_is_admin'] == 1)
+                    $name .= ' (Administrator)';
+                $var[$value['user_id']] = $value['user_id']."- " . $name;
+            }
+        }
+        return $var;
+    }
     
    
 

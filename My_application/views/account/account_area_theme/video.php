@@ -74,6 +74,11 @@
                                  <div class="video-caption">
                                     <!-- <p>00:00:00</p> -->
                                     <div class="space"><br></div>
+<<<<<<< HEAD
+                                   
+                                    <div id="video_text"></div>
+                                 
+=======
                                     <p>
                                     <div id="video_text">
 
@@ -81,6 +86,7 @@
 
                                     </div>
                                     </p>
+>>>>>>> 77159ea69b3bb8d8efd03083ce2bb1a8d17ca5ca
                                     <?php
                                     $arr[] = html_entity_decode($learn_content[0]['learning_journey_content_tags']);
                                     ?>

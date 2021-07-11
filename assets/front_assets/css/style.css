@@ -2587,7 +2587,7 @@ section.myjoin {
 
 .selectTimeSlot ul li {
     height: 30px;
-    width: 11px;
+    width: 100%;
     margin-right: 2px;
     cursor: pointer;
     position: relative;
@@ -2613,7 +2613,7 @@ section.myjoin {
 }
 
 .selectTimeSlot ul li p {
-    font-size: 8px;
+    font-size: 11px;
     text-align: center;
 }
 

@@ -34,6 +34,7 @@ var Form = function () {
     verify: base_url + "verify/validate_certificate",
     evaluation: base_url + "course/ajax_save_evaluation",  //course evaluation
 
+    book_review: base_url + "contact_us/ajax_booking",
     // Account Script
     signup: base_url + "ajax-save-signup",
     signin: base_url + "signin",
@@ -88,7 +89,7 @@ var Form = function () {
 
 
     contact_us: function (form) {
-      // Disable the submit button to prevent repeated clicks:
+ 
       $('#forms-contact_us-btn').prop('disabled', true);
       var data = form.serialize();
       response = AjaxRequest.fire(urls.contact_us, data);
@@ -99,14 +100,39 @@ var Form = function () {
 
         Toastr.success(response.msg.desc, 'Success');
         $("#forms-contact_us").find('input[type=text],input[type=email],textarea').val('');
-        //FOR GOOGLE CAPTCHA RESET:
+       
         grecaptcha.reset();
-        // $(".openBtn").click();
+      
         return false;
       }
       else {
         Toastr.error(response.msg.desc, 'Error');
-        //Toastr.error('Error Found please try again','Error');
+       
+        return false;
+      }
+      return false;
+    },
+
+
+    book_review: function (form) {
+ 
+      $('#forms-book_us-btn').prop('disabled', true);
+      var data = form.serialize();
+      response = AjaxRequest.fire(urls.book_review, data);
+      // return false;  
+      $('#forms-book_us-btn').prop('disabled', false);
+
+      if (response.status) {
+
+        Toastr.success(response.msg.desc, 'Success');
+        $("#forms-book_us").find('input[type=text],input[type=email],textarea').val('');
+       
+    
+        return false;
+      }
+      else {
+        Toastr.error(response.msg.desc, 'Error');
+       
         return false;
       }
       return false;
@@ -1827,6 +1853,15 @@ $(function () {
     return false;
   });
 });
+
+$(function () {
+  var $form = $('#forms-book_us');
+  $form.submit(function (event) {
+    Form.book_review($form);
+    return false;
+  });
+});
+
 
 $(function () {
   var $form = $('#forms-review_us');

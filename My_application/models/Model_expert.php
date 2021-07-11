@@ -89,7 +89,7 @@ class Model_expert extends MY_Model {
             //       'rules'   => 'required|strtolower|htmlentities|is_unique['.$this->_table.'.'.$this->_field_prefix.'slug]|callback_is_slug'
             //   ),
                   
-                  /*'expert_price' => array(
+                  'expert_price' => array(
                      'table'   => $this->_table,
                      'name'   => 'expert_price',
                      'label'   => 'Price',
@@ -98,7 +98,7 @@ class Model_expert extends MY_Model {
                      'js_rules'   => 'required',
                      'rules'   => 'required|trim|htmlentities|numeric'
                   ),
-*/
+
                'expert_desc' => array(
                      'table'   => $this->_table,
                      'name'   => 'expert_desc',
