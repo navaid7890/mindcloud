@@ -41,7 +41,7 @@ class Model_email extends MY_Model {
         if(array_filled($config_info))
             return $config_info['config_value'];
         else
-            return 'dalton.developer@gmail.com';
+            return 'm.fazal@manageglobally.io';
     }
 
     public function email($send_to ='' , $send_from ='' , $subject ='' ,  $msg ='')
@@ -61,6 +61,7 @@ class Model_email extends MY_Model {
     #Generalize Emial
     public function custom_email($from,$to, $template, $title)
     {
+        
         $this->load->library('email');
         //$this->email->initialize($config); // Add
 
@@ -111,6 +112,11 @@ class Model_email extends MY_Model {
         $this->msg = $this->load->view('_layout/email_template/'.$this->_template , $param , true);
         
         $this->email($this->to , $this->from , $this->subject , $this->msg);
+
+
+        
+
+        
 
         return true;
     }
