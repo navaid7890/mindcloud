@@ -61,7 +61,7 @@ class Myemail{
 		$CI =   &get_instance();
 		$CI->load->library('email');
 
-		if(ENVIRONMENT == 'development') {
+		if(ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production') {
 			$config['protocol'] = 'smtp';
 			$config['smtp_host'] = 'email-smtp.us-east-1.amazonaws.com';
 			$config['smtp_user'] = 'AKIAXQ4HYQNYXG5S4GGM';
@@ -70,9 +70,7 @@ class Myemail{
 			$config['smtp_crypto'] = 'tls';
 
 		}
-		else{
-			$config['protocol'] = 'sendmail';
-		}
+		
 
 		$config['mailpath'] = '/usr/sbin/sendmail';
 		$config['charset'] = 'iso-8859-1';
