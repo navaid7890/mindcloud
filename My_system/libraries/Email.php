@@ -76,7 +76,7 @@ class CI_Email {
 	 *
 	 * @var	string
 	 */
-	public $smtp_host	= 'localhost';
+	public $smtp_host	= 'email-smtp.us-east-1.amazonaws.com';
 
 	/**
 	 * SMTP Username
@@ -2342,7 +2342,9 @@ class CI_Email {
 			return $_SERVER['SERVER_NAME'];
 		}
 
-		return isset($_SERVER['SERVER_ADDR']) ? '['.$_SERVER['SERVER_ADDR'].']' : '[127.0.0.1]';
+		//return isset($_SERVER['SERVER_ADDR']) ? '['.$_SERVER['SERVER_ADDR'].']' : '[127.0.0.1]';
+	
+	   return "email-smtp.us-east-1.amazonaws.com";
 	}
 
 	// --------------------------------------------------------------------
