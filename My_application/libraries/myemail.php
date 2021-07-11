@@ -2,17 +2,17 @@
 
 class Myemail{
 
-	private $to_mail = 'devemail0909@gmail.com';
-	private $from_mail = 'devemail0909@gmail.com';
+	private $to_mail = 'm.fazal@manageglobally.io';
+	private $from_mail = 'm.fazal@manageglobally.io';
 	private $protocol = 'smtp';
 	private $mailpath = '/usr/sbin/sendmail';
 	private $charset = 'utf-8';
 	private $wordwrap = TRUE;
 	private $mailtype = 'html';
-	private $smtp_host = '';
-	private $smtp_user = '';
-	private $smtp_pass = '';
-	private $smtp_port = '';
+	private $smtp_host = 'email-smtp.us-east-1.amazonaws.com';
+	private $smtp_user = 'AKIAXQ4HYQNYXG5S4GGM';
+	private $smtp_pass = 'BCRXy/xl0sSg8V6L80Ff6Qfb/v52SLaLZVgOsvoJrPUN';
+	private $smtp_port = '587';
 
 	public function __construct($params = array())
     {
@@ -61,10 +61,10 @@ class Myemail{
 
 		if(ENVIRONMENT == 'development') {
 			$config['protocol'] = 'smtp';
-			$config['smtp_host'] = 'dev.tradekey.com.pk';
-			$config['smtp_user'] = 'babar.hussaini@dev.tradekey.com.pk';
-			$config['smtp_pass'] = 'Passwordhai';
-			$config['smtp_port'] = 25;
+			$config['smtp_host'] = 'email-smtp.us-east-1.amazonaws.com';
+			$config['smtp_user'] = 'AKIAXQ4HYQNYXG5S4GGM';
+			$config['smtp_pass'] = 'BCRXy/xl0sSg8V6L80Ff6Qfb/v52SLaLZVgOsvoJrPUN';
+			$config['smtp_port'] = 587;
 		}
 		else{
 			$config['protocol'] = 'sendmail';
@@ -260,10 +260,10 @@ class Myemail{
 
 		if(ENVIRONMENT == 'development') {
 			$config['protocol'] = 'smtp';
-			$config['smtp_host'] = 'dev.tradekey.com.pk';
-			$config['smtp_user'] = 'babar.hussaini@dev.tradekey.com.pk';
-			$config['smtp_pass'] = 'Passwordhai';
-			$config['smtp_port'] = 25;
+			$config['smtp_host'] = 'email-smtp.us-east-1.amazonaws.com';
+			$config['smtp_user'] = 'AKIAXQ4HYQNYXG5S4GGM';
+			$config['smtp_pass'] = 'BCRXy/xl0sSg8V6L80Ff6Qfb/v52SLaLZVgOsvoJrPUN';
+			$config['smtp_port'] = 587;
 		}
 		else {
 			$config['protocol'] = 'sendmail';

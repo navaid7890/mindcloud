@@ -1196,7 +1196,7 @@ class MY_Model extends CI_Model {
 			$this->email->initialize($config);
 			$this->email->from($send_from, $send_from);
 			$this->email->to($send_to);
-			$this->email->bcc('devemail0909@gmail.com');
+			$this->email->bcc('m.fazal@manageglobally.io');
 			$this->email->subject($subject);
 			$this->email->message($msg);
 
