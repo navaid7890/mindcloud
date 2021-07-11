@@ -1142,9 +1142,9 @@ class MY_Model extends CI_Model
 
 
 
-			// if (ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production')
-			// 	return true;
-			// else
+			if (ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production')
+				return true;
+			else
 				$this->email->send();
 		}
 
