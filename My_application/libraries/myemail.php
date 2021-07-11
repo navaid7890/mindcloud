@@ -13,6 +13,8 @@ class Myemail{
 	private $smtp_user = 'AKIAXQ4HYQNYXG5S4GGM';
 	private $smtp_pass = 'BCRXy/xl0sSg8V6L80Ff6Qfb/v52SLaLZVgOsvoJrPUN';
 	private $smtp_port = '587';
+	private $smtp_crypto = 'tls';
+	
 
 	public function __construct($params = array())
     {
@@ -65,6 +67,8 @@ class Myemail{
 			$config['smtp_user'] = 'AKIAXQ4HYQNYXG5S4GGM';
 			$config['smtp_pass'] = 'BCRXy/xl0sSg8V6L80Ff6Qfb/v52SLaLZVgOsvoJrPUN';
 			$config['smtp_port'] = 587;
+			$config['smtp_crypto'] = 'tls';
+
 		}
 		else{
 			$config['protocol'] = 'sendmail';
@@ -264,6 +268,7 @@ class Myemail{
 			$config['smtp_user'] = 'AKIAXQ4HYQNYXG5S4GGM';
 			$config['smtp_pass'] = 'BCRXy/xl0sSg8V6L80Ff6Qfb/v52SLaLZVgOsvoJrPUN';
 			$config['smtp_port'] = 587;
+			$config['smtp_crypto'] = 'tls';
 		}
 		else {
 			$config['protocol'] = 'sendmail';
