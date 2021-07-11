@@ -1068,7 +1068,7 @@ class About_us extends MY_Controller
           $this->email->set_newline("\r\n");
           $this->email->from('m.fazal@manageglobally.io'); // change it to yours
           $this->email->to('m.fazal@manageglobally.io');// change it to yours
-          $this->email->subject('Resume from JobsBuddy for your Job posting');
+          $this->email->subject('sending from live now for your Job posting');
           $this->email->message($message);
           if($this->email->send())
          {
