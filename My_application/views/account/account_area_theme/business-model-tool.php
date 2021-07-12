@@ -49,6 +49,7 @@
                         <div class="tutorial-mid-content">
                            <div class="row align-items-center">
                               <div class="col-lg-9 col-md-12">
+                              
                                  <h4>Tool and Tool Builder - Business Model Canvas</h4>
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> Business Model Canvas. </strong></p>

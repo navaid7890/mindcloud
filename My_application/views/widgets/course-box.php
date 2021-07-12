@@ -95,8 +95,7 @@
                                 $a = $value['learning_journey_content_id'];
                             ?>
                                 <li class="dropdown-toggle b-child catLj<?= $a ?>">
-                                    <a href="#"><?= $value['learning_journey_content_name'] ?>
-
+                                    <a href="javascript:;" ><?= $value['learning_journey_content_name'] ?>
                                             <div class="percent" id="played<?= $a ?>">
                                                 <p style="display:none;"></p>
                                             </div>
@@ -222,7 +221,9 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
             <?else :?>
-            $(".catLj11 #played11 p").html('0');
+            var percVal = parseInt('0');
+            $(".catLj11 .percent p").html(percVal); 
+            var totalseprate = percVal;
         <? endif; ?>
         <? if ($toolvp['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-12").addClass('active');
