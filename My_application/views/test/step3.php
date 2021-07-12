@@ -72,7 +72,7 @@
                 try {
                     
                     var obj = jQuery.parseJSON(data);
-                    //alert(data);
+                  //  alert(data);
 
                     console.log(obj);
            
@@ -81,9 +81,9 @@
                     if (obj.status == 1) {
    window.location = "<?=l('cart/success'.'?oid='.$oid.'&code='.$code.'&payment_type='.$payment_type)?>";
                     }else{
- //window.location = "<?=l('cart/error'.'?oid='.$oid.'&code='.$code.'&payment_type='.$payment_type)?>";
+ window.location = "<?=l('cart/error'.'?oid='.$oid.'&code='.$code.'&payment_type='.$payment_type)?>";
 
- window.location = "<?=l('cart/success'.'?oid='.$oid.'&code='.$code.'&payment_type='.$payment_type)?>";
+ //window.location = "<?=l('cart/success'.'?oid='.$oid.'&code='.$code.'&payment_type='.$payment_type)?>";
 
                     }
 

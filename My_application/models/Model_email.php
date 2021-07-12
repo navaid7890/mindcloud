@@ -11,16 +11,16 @@ class Model_email extends MY_Model {
      */
 
     private $to;
-    private $from = 'm.fazal@manageglobally.io';
+    private $from = 'madiha@alphacandy.com';
     private $subject;
     private $msg;
 
 
-    private $billingEmail = 'm.fazal@manageglobally.io';//'billing@chemco.com';
-    private $customerSupportEmail = 'm.fazal@manageglobally.io';//'cs@chemco.com';
-    private $salesEmail = 'm.fazal@manageglobally.io';//'sales@chemco.com';
-    private $technicalEmail = 'm.fazal@manageglobally.io';//'technical@chemco.com';
-    private $developerEmail = 'm.fazal@manageglobally.io';//'devemail0909@gmail.com';
+    private $billingEmail = 'madiha@alphacandy.com';//'billing@chemco.com';
+    private $customerSupportEmail = 'madiha@alphacandy.com';//'cs@chemco.com';
+    private $salesEmail = 'madiha@alphacandy.com';//'sales@chemco.com';
+    private $technicalEmail = 'madiha@alphacandy.com';//'technical@chemco.com';
+    private $developerEmail = 'madiha@alphacandy.com';//'devemail0909@gmail.com';
 
     private $_template = 'default_template';//'query';
 
@@ -41,7 +41,7 @@ class Model_email extends MY_Model {
         if(array_filled($config_info))
             return $config_info['config_value'];
         else
-            return 'm.fazal@manageglobally.io';
+            return 'madiha@alphacandy.com';
     }
 
     public function email($send_to ='' , $send_from ='' , $subject ='' ,  $msg ='')
@@ -115,9 +115,41 @@ class Model_email extends MY_Model {
 
 
         
+        return true;
+    }
+
+    public function  bookingInquiry($data)
+    {
+        $this->from = isset($data['booking_email']) ? $data['booking_email'] : $this->from;
+        $this->subject = isset($data['inquiry_heading']) ? $data['inquiry_heading'].' Inquiry' : 'Booking Inquiry';
+
+        $param = array();
+        if(isset($data) && array_filled($data))
+        {
+            foreach($data as $kye=>$value)
+            {
+                $param['form_input'][$kye] = htmlentities(trim($value));
+            }
+            //for custom fields
+            // $param['form_input']['Full Name'] = ucfirst(htmlentities(trim($data['inquiry_name'])));
+            // $param['form_input']['Email'] = ucfirst(htmlentities(trim($data['inquiry_email'])));
+            // $param['form_input']['Contact Number'] = ucfirst(htmlentities(trim($data['inquiry_phone'])));
+            // $param['form_input']['Message'] = ucfirst(htmlentities(trim($data['inquiry_message'])));
+            // $param['form_input']['Uploaded File'] = "<a href='".get_image($data['inquiry_image'],$data['inquiry_image_path'])."' download >Uploaded File</a>";
+
+        }
+
+        $param['title'] = 'Booking Inquiry';
+        $param['msg'] = 'Dear Admin,<br> <br>
+                        We have received booking inquiry in your website, detail is given below:<br><br>';
+
+        unset($param['form_input']['booking_status']);
+        $this->msg = $this->load->view('_layout/email_template/'.$this->_template , $param , true);
+        
+        $this->email($this->to , $this->from , $this->subject , $this->msg);
+
 
         
-
         return true;
     }
 
@@ -1084,6 +1116,40 @@ class Model_email extends MY_Model {
         
     //     return true;
     // }
+
+    public function request_payment($user_id,$expert_id)
+    {
+        $data = $this->model_user->find_by_pk($user_id);
+        $ex=$this->model_expert->find_by_pk($expert_id);
+       // debug($ex);
+
+        $this->to = $data['user_email'];
+        $this->from = $this->customerSupportEmail;
+
+        
+        $encrypt_code = $token['ut_token'];
+        $url = g('base_url') . "cart/payment?oid=".rand()."&expert=".$ex['expert_price'];
+
+
+        $content = 'Thanks for booking your expert on '.g('site_title').' 
+                    Click here for below link '.date("m/d/Y g:i a",strtotime($data['user_createdon'])).'<br /><br />';
+
+        $content .= 'Please <a href="'.$url.'">click here for Payment</a>';
+
+        $this->msg = 'Complete Your Payment Process ';
+       
+
+        
+        
+        $param['msg'] = $content;
+
+        $this->msg = $this->load->view('_layout/email_template/'.$this->_template , $param , true);
+
+        $this->subject = 'Payment Process';
+    
+        parent::email($this->to , $this->from ,$this->subject, $this->msg);
+        return true;
+    }
 
 
 

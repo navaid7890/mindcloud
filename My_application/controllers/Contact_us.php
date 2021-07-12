@@ -539,6 +539,8 @@ class Contact_us extends MY_Controller
                         $data = array();
                         $data = $_POST['tool_builder'];
 
+                        
+
                         $data['tool_builder_step_id'] = $tool['tool_builder_step_id'] + 1;
                         // $data['tool_builder_percent'] = 1;
                         $this->model_tool_builder->update_by_pk($id, $data);
@@ -1493,8 +1495,8 @@ class Contact_us extends MY_Controller
 
                
                     $data = $_POST['booking'];
-                    $data['booking_artist_approval'] = 0;
-                    $data['booking_admin_approval'] = 1;
+                    $data['booking_expert_approval'] = 0;
+                    //$data['booking_admin_approval'] = 1;
                     $data['booking_status'] = 1;
         
                     // debug($data);
@@ -1502,6 +1504,9 @@ class Contact_us extends MY_Controller
                     $this->model_booking->set_attributes($data);
                     $inserted_id = $this->model_booking->save();
                     
+                    $this->model_email->bookingInquiry($data);
+                    debug($this->model_email,1);
+
                  
                     
                     $this->json_param['status'] = true;

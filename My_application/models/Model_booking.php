@@ -21,7 +21,7 @@ class Model_booking extends MY_Model
     function __construct()
     {
         // Call the Model constructor
-        $this->pagination_params['fields'] = "booking_id,booking_user_id,booking_expert_id,booking_date,booking_time,booking_artist_approval,booking_admin_approval,booking_status";
+        $this->pagination_params['fields'] = "booking_id,booking_user_id,booking_expert_id,booking_date,booking_time,booking_expert_approval,booking_admin_approval,booking_status";
 
         parent::__construct();
     }
@@ -222,6 +222,21 @@ class Model_booking extends MY_Model
                 'rules'   => 'trim|htmlentities'
              ),
 
+             'booking_expert_approval' => array(
+                'table' => $this->_table,
+                'name' => 'booking_expert_approval',
+                'label' => 'Expert Approval',
+                'type' => 'switch',
+                'type_dt' => 'switch',
+                'type_filter_dt' => 'dropdown',
+                'list_data' => array(),
+                'default' => '1',
+                'attributes' => array(),
+                'dt_attributes' => array("width" => "7%"),
+                'rules' => 'trim'
+            ),
+
+
              'booking_admin_approval' => array(
                 'table' => $this->_table,
                 'name' => 'booking_admin_approval',
@@ -237,19 +252,19 @@ class Model_booking extends MY_Model
             ),
 
 
-         'booking_artist_approval' => array(
-                    'table' => $this->_table,
-                    'name' => 'booking_artist_approval',
-                    'label' => 'Artist Approval',
-                    'type' => 'switch',
-                    'type_dt' => 'switch',
-                    'type_filter_dt' => 'dropdown',
-                    'list_data' => array(),
-                    'default' => '1',
-                    'attributes' => array(),
-                    'dt_attributes' => array("width" => "7%"),
-                    'rules' => 'trim'
-                ),
+        //  'booking_artist_approval' => array(
+        //             'table' => $this->_table,
+        //             'name' => 'booking_artist_approval',
+        //             'label' => 'Expert Approval',
+        //             'type' => 'switch',
+        //             'type_dt' => 'switch',
+        //             'type_filter_dt' => 'dropdown',
+        //             'list_data' => array(),
+        //             'default' => '1',
+        //             'attributes' => array(),
+        //             'dt_attributes' => array("width" => "7%"),
+        //             'rules' => 'trim'
+        //         ),
 
        
 
