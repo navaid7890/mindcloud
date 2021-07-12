@@ -552,7 +552,7 @@ class Contact_us extends MY_Controller
 
                         $data = $_POST['tool_builder'];
                         $data['tool_builder_status'] = 1;
-
+                        $data['tool_builder_percent'] = 1;
 
                         $data['tool_builder_user_id'] = $this->userid;
                         $data['tool_builder_step_id'] = 1;

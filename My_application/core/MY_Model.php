@@ -1107,7 +1107,10 @@ class MY_Model extends CI_Model
 			$config['smtp_pass'] = 'BCRXy/xl0sSg8V6L80Ff6Qfb/v52SLaLZVgOsvoJrPUN';
 			$config['smtp_port'] = 587;
 			$config['smtp_crypto'] = 'tls';
+			$config['smtp_auth'] = TRUE;
 			$config['charset']   = 'utf-8';
+			$config['mailtype']  = 'html';
+			$config['newline']   = "\r\n";
 			$config['wordwrap'] = TRUE;
 			$config['wrapchars'] = 76;
 			$config['mailtype'] = 'html';
@@ -1168,9 +1171,9 @@ class MY_Model extends CI_Model
 		$this->email->set_mailtype("html");
 		$this->email->message($message);
 
-		// if (ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production') {
-		// 	return true;
-		// }
+		if (ENVIRONMENT == 'development' || ENVIRONMENT == 'testing' || ENVIRONMENT == 'production') {
+			return true;
+		}
 
 		if ($this->email->send()) {
 			return true;
