@@ -908,8 +908,8 @@ class About_us extends MY_Controller
 
         
             $data['open_time'] = strtotime("11:00");
-            
             $data['close_time'] = strtotime("18:00");
+            
 
             // $data['booked_slot'] = $this->model_book_appointment->get_already_booked_slot($professional_id,$date);
             $data['booked_slot'] = $this->model_booking->get_already_booked_slot($professional_id,$date);
