@@ -1505,7 +1505,7 @@ class Contact_us extends MY_Controller
                     $inserted_id = $this->model_booking->save();
                     
                     $this->model_email->bookingInquiry($data);
-                    debug($this->model_email,1);
+                    //debug($this->model_email,1);
 
                  
                     
