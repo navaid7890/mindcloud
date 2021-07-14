@@ -16,7 +16,7 @@
 					<div class="menuWrap">
 						<ul class="menu">
 
-							<li class="dropdown-nav"><a href="<?= l('expert-tutorial') ?>">Experts Tutorials</a>
+							<li class="dropdown-nav"><a class="<?=($this->uri->segment(1) =='expert-tutorial')  ? 'active' : ''?>" href="<?= l('expert-tutorial') ?>">Experts Tutorials</a>
 								<ul class="dropdownWrap dropdown ">
 									<li><a href="<?= l('booking') ?>">Booking</a></li><?= l('') ?>
 									<li><a href="<?= l('become-an-expert') ?>">Become An Expert</a></li>
@@ -24,8 +24,8 @@
 									<li><a href="<?= l('innovate') ?>">Innovate</a></li>
 								</ul>
 							</li>
-							<li><a href="<?= l('learning-journey') ?>">Learning Journey</a></li>
-							<li><a href="consult-advisors">Consult with Experts</a></li>
+							<li><a class="<?=($this->uri->segment(1) =='learning-journey')  ? 'active' : ''?>" href="<?= l('learning-journey') ?>">Learning Journey</a></li>
+							<li><a class="<?=($this->uri->segment(1) =='consult-advisors')  ? 'active' : ''?>" href="consult-advisors">Consult with Experts</a></li>
 							<li class="dropdown-nav"><a href="#">Community</a>
 								<ul class="dropdownWrap dropdown ">
 									<li><a href="<?= l('about-us') ?>">About us</a></li>

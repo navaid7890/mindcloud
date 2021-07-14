@@ -50,7 +50,7 @@ class Model_category extends MY_Model {
 
     
 	public function get_category_tutorials(){
-		$this->db->select('category.category_id,category.category_name,count(md_tutorial.tutorial_id) as tutorials');
+		$this->db->select('category.category_id,category.category_name,category.category_image,count(md_tutorial.tutorial_id) as tutorials');
 		$this->db->from('category');
 		$this->db->join('course_category', 'category.category_id = course_category.cp_category_id');
 		$this->db->join('tutorial', 'tutorial.tutorial_id = course_category.cp_course_id');

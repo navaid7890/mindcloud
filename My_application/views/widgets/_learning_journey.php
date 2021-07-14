@@ -6,6 +6,16 @@
     display: inline-block;
 }
 </style>
+<?
+
+if ($this->userid > 0) {
+
+    $usdata = $this->layout_data['user_data'];
+    // debug($usdata['user_paid'],1);
+
+}
+
+?>
 <section class="lrnjSec">
     <div class="mainBanner hding-1 para">
         <div class="container">
@@ -17,8 +27,9 @@
 
                     <?=html_entity_decode($cont7['cms_page_content'])?> 
                     <div class="space"><br><br></div>
-
+                    <? if($usdata['user_paid']==0){?>
                     <a href="<?= l('learning-journey') ?>" class="btn-theme btn-hover">Start your Free Trial <span></span></a>
+                   <? }?>
                     </div>
                 </div>
 
