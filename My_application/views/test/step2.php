@@ -40,7 +40,7 @@
                             <!-- custom -->
                             <input type="hidden" name="oid" value="<?=$oid?>">
                             <input type="hidden" name="code" value="<?=$code?>">
-                            <input type="hidden" name="payment_type" value="<?=$payment_type?>">
+                            <input type="hidden" name="payment_type" value="downpayment">
                             <!-- custom -->
                             <button id="place-order" class="btn btn-lg btn-success" style="background:#1d90d9;">Place Order</button>
                             <div id="ajax-loader" style="display:none;"><img src="<?=i('')?>LoaderIcon.gif" />

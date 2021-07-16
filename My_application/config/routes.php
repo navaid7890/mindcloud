@@ -101,6 +101,7 @@ $route['newsfeed'] = "about_us/newsfeed";
 $route['member'] = "about_us/member";
 $route['booking'] = "about_us/booking";
 $route['user-detail/(:any)'] = "about_us/userprofile/$1";
+$route['subscription'] = "about_us/trial";
 
 
 

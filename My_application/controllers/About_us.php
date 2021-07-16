@@ -921,6 +921,25 @@ class About_us extends MY_Controller
         echo json_encode($this->json_param);
     }
 
+    public function trial()
+	{
+        global $config;
+        $data = array();
+        //TAB TITLE
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+
+      
+        $data['testimonial'] = $this->model_testimonials->find_all_active();
+
+        $fa = array();
+        $fa['where']['faq_category'] = 1;
+        $fa['order'] = "faq_id ASC";
+        $data['faq'] = $this->model_faq->find_all_active($fa);
+            
+		$this->load_view("trial",$data);
+	}
+
 
     public function save_order()
     {

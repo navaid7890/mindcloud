@@ -434,7 +434,7 @@ class Cart extends MY_Controller {
 					$data['discount_amount'] = $order_data['order_discount_amount'];
 					$data['total_order_amount'] = ($order_data['price']+$order_data['order_shipping_amount']+$order_data['order_tax_amount'])-$order_data['order_discount_amount'];
 
-					$paymentType = $_GET['payment-type'];
+					$paymentType ="downpayment";
 			
 					$data['paymentType'] = $paymentType;
 					$ptypes = array("downpayment","partialpayment");
