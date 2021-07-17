@@ -541,13 +541,13 @@ class About_us extends MY_Controller
         }
         $data['gene'] = $this->model_faq->find_all_active($par3);
 
-        $par4 = array();
-        $par4['where']['faq_category'] = 4;
-        if (isset($_GET['search'])) {
+        // $par4 = array();
+        // $par4['where']['faq_category'] = 4;
+        // if (isset($_GET['search'])) {
 
-            $par4['where_like'][] = array('column' => 'faq_question', 'value' => $_GET['search']);
-        }
-        $data['cons'] = $this->model_faq->find_all_active($par4);
+        //     $par4['where_like'][] = array('column' => 'faq_question', 'value' => $_GET['search']);
+        // }
+        // $data['cons'] = $this->model_faq->find_all_active($par4);
 
 
         $contss = $this->model_cms_page->get_page(78);

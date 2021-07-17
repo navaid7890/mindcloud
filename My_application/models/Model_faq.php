@@ -72,7 +72,7 @@ class Model_faq extends MY_Model {
                         1 => "Expert Tutorials",
                         2 => "Learning Journey",
                         3 => "General",
-                        4 => "Consult with an Expert",
+                        // 4 => "Consult with an Expert",
                         ),
                     // 'default'   => '0',
                     'attributes'   => array(),
