@@ -34,8 +34,8 @@ if ($this->userid > 0) {
                 </div>
 
                 <div class="col-lg-4 col-md-12">
-                    <div class="video-card">
-                    <a href="<?= g('db.admin.bucket') . $cont8['tutorial_video'] ?>" data-fancybox="media">
+                    <div class="video-card"><?//= g('db.admin.bucket') . $cont8['tutorial_video'] ?>
+                    <a href="https://www.youtube.com/watch?v=SJX1FxjluLM" data-fancybox="media">
                         <div class="video-box">
                             <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont8['cms_page_image'] ?>" />
                             <span><i class="fas fa-play"></i></span>
