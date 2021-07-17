@@ -14,7 +14,8 @@
    }
 
    .bannerSeactionArea a {
-      color: #e18e25;
+      /* color: #e18e25; */
+      color: yellow;
    }
 
    .consult-left h2 strong span strong,
@@ -178,9 +179,7 @@ $usdata = $this->layout_data['user_data'];
                                                       ";
                                                    <? } ?>
                                                 </ul>
-                                                <? if (!empty($rating[0]['starCount'])) { ?>
-                                                   <div style="margin-left: 5px;">( <?= $rating[0]['starCount'] ?> )</div>
-                                                <? } ?>
+                                                
                                              </div>
                                              <div class="col-md-4 text-right">
                                                 <h6><?= price($value['tutorial_price']) ?></h6>

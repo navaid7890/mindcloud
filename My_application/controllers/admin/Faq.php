@@ -20,7 +20,7 @@ class Faq extends MY_Controller {
 		global $config;
 		
 		parent::__construct();
-        $this->dt_params['dt_headings'] = "faq_id,faq_question,faq_answer,faq_status";
+        $this->dt_params['dt_headings'] = "faq_id,faq_category,faq_question,faq_answer,faq_status";
         $this->dt_params['searchable'] = array("faq_id","faq_status");
         $this->dt_params['action'] = array(
                                         "hide" => false ,
