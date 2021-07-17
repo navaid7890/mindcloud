@@ -20,6 +20,14 @@
     #expertGraph span.prec {
         display: none;
     }
+    #expertGraph .progress-box {
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #dfefff;
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
 </style>
 
 <div class="index-page">
