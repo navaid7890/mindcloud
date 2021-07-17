@@ -20,7 +20,7 @@ class Booking extends MY_Controller {
         global $config;
 
         parent::__construct();
-        $this->dt_params['dt_headings'] = "booking_id,booking_user_id,booking_expert_id,booking_date,booking_time, booking_artist_approval ,booking_admin_approval,booking_status";
+        $this->dt_params['dt_headings'] = "booking_id,booking_user_id,booking_expert_id,booking_date,booking_time, booking_expert_approval ,booking_admin_approval,booking_status";
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
 
         $this->dt_params['action'] = array(
@@ -74,6 +74,19 @@ class Booking extends MY_Controller {
 
         // To access from Child Class
         return true;
+    }
+
+
+    public function add($id=0 , $data = array()) {
+
+        if($_POST['booking']['booking_expert_approval']==1)
+        {
+           $this->model_email->request_payment($_POST['booking']['booking_user_id'],$_POST['booking']['booking_expert_id']);
+        //  debug( $this->model_email,1);
+
+        }
+        parent::add($id, $data);
+
     }
 
 }

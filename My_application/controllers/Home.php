@@ -92,22 +92,11 @@ class Home extends MY_Controller
     $param = array();
     $param['where_in']['tutorial_id'] = $all1;
     $data['tut'] = $this->model_tutorial->find_all_active($param);
-    // debug($data['tut']);
-
-    
-    // $data['rate'] = $this->model_learning_journey_course_review->get_avg_reating($param);
-
-
-    // debug($data['rate']);
-   
-    // $param = array();
-    // $param['where']['cp_tutorial_id'] = 1;
-    // $data['category'] = $this->model_category->find_all_active($param);
+  
+    $categories = $this->model_category->get_category_tutorials();
+    $data['main_categories'] = $categories;
 
 
-    // $data['config']=$config;
-    //debug($data['config']);
-    // Load View
     $this->load_view("home", $data);
   }
 

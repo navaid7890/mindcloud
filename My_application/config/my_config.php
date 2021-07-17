@@ -311,8 +311,8 @@ if (ENVIRONMENT == 'development') {
 }else
 {
 	// CLIENT CREDENTIALS
-	define('AMAZON_MERCHANT_ID','A1RX1ZEKJGE93B');  
-    define('AMAZON_ACCESS_KEY','AKIAI5D4Z5GAWA3HD43A');  
+	define('AMAZON_MERCHANT_ID','vHgjzRkl');  
+    define('AMAZON_ACCESS_KEY','j0EDelL8zOwb9bZEwpsr');  
     define('AMAZON_SECRET_KEY','');  
     define('AMAZON_CLIENT_ID','');  
     define('AMAZON_CLIENT_SECRET','');  

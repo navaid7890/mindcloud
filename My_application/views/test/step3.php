@@ -72,7 +72,7 @@
                 try {
                     
                     var obj = jQuery.parseJSON(data);
-                    //alert(data);
+                  //  alert(data);
 
                     console.log(obj);
            
