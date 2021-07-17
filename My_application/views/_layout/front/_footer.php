@@ -188,7 +188,7 @@ $footer = $this->model_config->find_all_active($footer);
 							<li><a href="<?= $footer[0]['config_value'] ?>"><i class="fab fa-facebook-f"></i></a></li>
 							<li><a href="<?= $footer[3]['config_value'] ?>"><i class="fab fa-instagram"></i></a></li>
 							<li><a href="<?= $footer[10]['config_value'] ?>"><i class="fab fa-linkedin-in"></i></a></li>
-							<li><a href="<?= $footer[1]['config_value'] ?>"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="<?= $footer[1]['config_value'] ?>"><i class="fab fa-youtube"></i></a></li>
 						</ul>
 
 						<ul class="social-links">

@@ -90,9 +90,11 @@ ul.login-btn .btn-hover:hover { color: #fff; }
 a.btn-theme { background: #FDBE41; padding: 22px 82px; border-radius: 12px; font-size: 20px; font-weight: 600; color: #fff; box-shadow: 0px 12px 24px #1D90D942; border: 2px solid transparent; text-align: center; }
 a.btn-transparent { background: transparent; border-color: #fff; margin-left: 30px; }
 a.btn-transparent:hover,
-a.btn-theme:hover { border-color: #33415c; }
+/* a.btn-theme:hover { border-color: #33415c; } */
+a.btn-theme:hover { border-color: #1D90D9; }
 a.btn-theme:hover { transform: scale(1.05); }
-a.btn-theme>span { background: #2b2b2b; }
+/* a.btn-theme>span { background: #2b2b2b; } */
+a.btn-theme>span { background: #1D90D9;}
 .btn-hover span { position: absolute; display: block; width: 0; height: 0; border-radius: 50%; background-color: #e28f26; -webkit-transition: width 0.4s ease-in-out, height 0.4s ease-in-out; transition: width 0.4s ease-in-out, height 0.4s ease-in-out; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); z-index: -1; }
 .btn-hover:hover { color: #ffffff; }
 .btn-hover:hover span { width: 225%; height: 562.5px; }
