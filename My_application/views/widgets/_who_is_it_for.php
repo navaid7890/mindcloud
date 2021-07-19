@@ -7,7 +7,7 @@
     font-weight: 700;
     color: #33415C;
 }
-.vid-content h4 {
+#whoIsitFor .vid-content h4 {
     word-spacing: 100vh;
 }
 </style>
@@ -20,7 +20,7 @@
         </div>
         <div class="space"><br><br><br></div>
 
-        <ul class="who-list">
+        <ul class="who-list" id="whoIsitFor">
             <li>
                 <div class="vid-box">
                     <a href="<?= g('db.admin.bucket') . $cont10['tutorial_video'] ?>" data-fancybox="media">

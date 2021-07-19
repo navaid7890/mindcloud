@@ -157,7 +157,7 @@
                <div class="space"><br><br></div>
                <p>Feeling stuck? Book one-on-one video<br> meetings with our panel of top business<br> Experts.</p>
                <div class="space"><br><br></div>
-               <a href="#" class="btn-theme btn-hover">Book a Consultation<span></span></a>
+               <a href="<?= l('consult-advisors') ?>" class="btn-theme btn-hover">Book a Consultation<span></span></a>
             </div>
          </div>
          <div class="col-md-6">
@@ -166,7 +166,7 @@
                <div class="space"><br><br></div>
                <p>Join our tribe as an Expert if you love to share <br>your knowledge. We will connect you with an<br> audience eager for your expertise.</p>
                <div class="space"><br><br></div>
-               <a href="#" class="btn-theme btn-hover">Join as an Expert<span></span></a>
+               <a href="<?= l('become-an-expert') ?>" class="btn-theme btn-hover">Join as an Expert<span></span></a>
             </div>
          </div>
       </div>
