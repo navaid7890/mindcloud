@@ -568,7 +568,6 @@ class About_us extends MY_Controller
 
     public function newsfeed()
     {
-
         global $config;
         if ($this->userid > 0) {
             $data = array();
@@ -1135,6 +1134,28 @@ class About_us extends MY_Controller
         $data['profile'] = $this->model_user->find_one_active($par);
 
         $this->load_view("userprofile", $data);
+    }
+    public function privacy()
+    {
+        global $config;
+        $data = array();
+
+        //TAB TITLE
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+
+        //INNER BANNER
+
+        $data['exp'] = $this->model_user->find_all();
+
+
+
+        $cont = array();
+        $cont = $this->model_cms_page->get_page(106);
+        $data['privacy'] = $cont['child'][0];
+        // debug($data['privacy']);
+
+        $this->load_view("privacy_policy", $data);
     }
 
 
