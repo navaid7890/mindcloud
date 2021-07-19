@@ -35,7 +35,7 @@
 							<li class="dropdown-nav"><a href="<?= l('about-us') ?>">About us</a>
 								<ul class="dropdownWrap dropdown ">
 									<li><a href="<?= l('about-us') ?>">About us</a></li>
-									<li><a href="https://mindcloudacademy.com/">The Academy</a></li>
+									<li><a href="https://mindcloudacademy.com/" target="_blank">The Academy</a></li>
 									<li><a href="<?= l('enterprise-partners') ?>">Enterprise Partners</a></li>
 									<li><a href="<?= l('faq') ?>">FAQs</a></li>
 								</ul>
