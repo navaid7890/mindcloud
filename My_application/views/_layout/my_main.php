@@ -345,14 +345,14 @@ if(array_filled($additional_tools))
 
 
 <script>
-new WOW().init();
-var theDate = new Date();
-$(".datepicker").datetimepicker({
-    format: 'Y-m-d',
-    minDate: theDate,
-    timepicker:false,
-});
-</script>  
+
+// var theDate = new Date();
+// $(".datepicker").datetimepicker({
+//     format: 'Y-m-d',
+//     minDate: theDate,
+//     timepicker:false,
+// });
+// </script>  
 
 
 

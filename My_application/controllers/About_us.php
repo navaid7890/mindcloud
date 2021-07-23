@@ -940,6 +940,22 @@ class About_us extends MY_Controller
 		$this->load_view("trial",$data);
 	}
 
+    public function ConfirmPaymentAndAuthorize()
+	{
+        global $config;
+        $data = array();
+        $this->load_view("ConfirmPaymentAndAuthorize",$data);
+   
+    }
+
+    public function SetPaymentDetails()
+	{
+        global $config;
+        $data = array();
+        $this->load_view("SetPaymentDetails",$data);
+   
+    }
+
 
     public function save_order()
     {
@@ -1136,6 +1152,34 @@ class About_us extends MY_Controller
 
         $this->load_view("userprofile", $data);
     }
+
+    public function ConfirmAndAuthorize()
+    {
+        global $config;
+        $data = array();
+
+
+        $conts = $this->model_cms_page->get_page(104);
+        $data['con1'] = $conts['child'][0];
+
+
+        $this->load_view("ConfirmAndAuthorize", $data);
+    }
+
+    
+    public function GetDetails()
+    {
+        global $config;
+        $data = array();
+
+
+        $conts = $this->model_cms_page->get_page(104);
+        $data['con1'] = $conts['child'][0];
+
+
+        $this->load_view("GetDetails", $data);
+    }
+
 
 
 }
