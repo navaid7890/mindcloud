@@ -1,36 +1,17 @@
 <?php
     session_start();
-    require_once "../config.php";
+    include 'config.php';
+  //  include 'Apicalls/GetDetails.php';
+
 ?>
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/sample.css">
-    </head>
 
-    <body>
-        <div class="container">
-
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand start-over" href="#">Amazon Pay PHP SDK Sample: Recurring Payment Checkout</a>
-                    </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a class="start-over" href="#">Logout and Start Over</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+<section>
+    <div class="container">
             <div class="jumbotron jumbotroncolor" style="padding-top:25px;" id="api-content">
                 <div id="section-content">
 
                     <h2>Select Shipping and Payment Method</h2>
-                    <p style="margin-top:20px;">Select your shipping address and payment method from the widgets below.</p>
+                    <!-- <p style="margin-top:20px;">Select your shipping address and payment method from the widgets below.</p>
                     <p>
                         Notice in the URL above there are several parameters available.
                         The 'access_token' should be saved in order to obtain address line one and
@@ -46,7 +27,7 @@
                         If you see a error message in the widgets you will need to
                         start over. This usually indicates that your session has expired. If the problem
                         persists please contact developer support.
-                    </p>
+                    </p> -->
 
                     <div class="text-center" style="margin-top:40px;">
                         <div id="addressBookWidgetDiv" style="width:320px; height:250px; display:inline-block;"></div>
@@ -59,23 +40,23 @@
                         </form>
                     </div>
 
-                    <p><br>
+                    <!-- <p><br>
                         The "Confirm Subscription" button is disabled when either of the following conditions are true:
                         <ul>
                             <li>The consent checkbox allowing future purchases for this payment method is not checked.</li>
                             <li>The "4545" test credit card simulating the PaymentMethodNotAllowed constraint is selected.</li>
                         </ul>
-                    </p>
+                    </p> -->
 
                 </div>
 
             </div>
                 <div class="jumbotron jumbotroncodecolor" style="padding-top:25px;" id="api-calls">
-                <p>This is the live response from the previous API call.</p>
-                <pre id="get_details_response"><div class="text-center"><img src="images/ajax-loader.gif" /></div></pre>
+                <!-- <p>This is the live response from the previous API call.</p>
+                <pre id="get_details_response"><div class="text-center"><img src="images/ajax-loader.gif" /></div></pre> -->
             </div>
-
-        </div>
+    </div>
+</section>
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
         
@@ -146,7 +127,7 @@
                 }).bind("addressBookWidgetDiv");
         
                 function get_details(billingAgreementId, access_token) {
-                    $.post("Apicalls/GetDetails.php", {
+                    $.post("GetDetails.php", {
                         amazon_billing_agreement_id: billingAgreementId,
                         accessToken: access_token
                     }).done(function (data) {
@@ -187,16 +168,13 @@
 
             };
 
-            $(document).ready(function() {
-                $('.start-over').on('click', function() {
-                    amazon.Login.logout();
-                    document.cookie = "amazon_Login_accessToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-                    window.location = 'index.php';
-                });
-            });
+            // $(document).ready(function() {
+            //     $('.start-over').on('click', function() {
+            //         amazon.Login.logout();
+            //         document.cookie = "amazon_Login_accessToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            //         window.location = 'index.php';
+            //     });
+            // });
 
         </script>
         <script async="async" type='text/javascript' src="<?php echo getWidgetsJsURL($amazonpay_config); ?>"></script>
-
-    </body>
-</html>

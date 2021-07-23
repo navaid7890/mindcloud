@@ -14,6 +14,46 @@ color: #5C677D;
 }
 
 </style>
+<?php
+    session_start();
+    include 'config.php';
+    //include 'db/db.php';
+
+//     $amazonpay_config = array(
+//         'merchant_id'   => 'A1RX1ZEKJGE93B', // Merchant/SellerID
+//         'access_key'    => 'AKIAI5D4Z5GAWA3HD43A', // MWS Access Key
+//         'secret_key'    => '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', // MWS Secret Key
+//         'client_id'     => 'amzn1.application-oa2-client.12aacd6441274cf0a658552a4afc523a', // Login With Amazon Client ID
+//         'region'        => 'uk',  // us, de, uk, jp
+//         'currency_code' => 'GBP', // USD, EUR, GBP, JPY
+//         'sandbox'       => true); // Use sandbox test mode
+
+// function getWidgetsJsURL($config)
+// {
+//     if ($config['sandbox'])
+//         $sandbox = "sandbox/";
+//     else
+//         $sandbox = "";
+
+//     switch (strtolower($config['region'])) {
+//         case "us":
+//             return "https://static-na.payments-amazon.com/OffAmazonPayments/us/" . $sandbox . "js/Widgets.js";
+//             break;
+//         case "uk":
+//             return "https://static-eu.payments-amazon.com/OffAmazonPayments/gbp/" . $sandbox . "lpa/js/Widgets.js";
+//             break;
+//         case "jp":
+//             return "https://static-fe.payments-amazon.com/OffAmazonPayments/jp/" . $sandbox . "lpa/js/Widgets.js";
+//             break;
+//         default:
+//             return "https://static-eu.payments-amazon.com/OffAmazonPayments/eur/" . $sandbox . "lpa/js/Widgets.js";
+//             break;
+//     }
+// }
+
+
+?>
+
 
     <div class="trial-page"> 
     
@@ -31,7 +71,8 @@ color: #5C677D;
                             <div class="space"><br></div>
                             <p>One week free trial,<br> then $20/month</p>
                             <div class="space"><br><br></div>
-                            <a href="#" data-fancybox data-src="#trial-popup" class="btn-hover">Subscribe Now <span></span></a>
+                            <div class="text-center" style="margin-top:40px;" id="AmazonPayButton"></div>
+                            <!-- <a href="#" id="AmazonPayButton" data-fancybox data-src="#trial-popup" class="btn-hover">Subscribe Now <span></span></a> -->
                         </div>
                         
                         <div class="banner-down">
@@ -90,4 +131,42 @@ color: #5C677D;
 
       </div>
 
+      <script type='text/javascript'>
+            window.onAmazonLoginReady = function () {
+                try {
+                    amazon.Login.setClientId("<?php echo $amazonpay_config['client_id']; ?>");
+                    amazon.Login.setUseCookie(true);
+                } catch (err) {
+                    alert(err);
+                }
+            };
+
+            window.onAmazonPaymentsReady = function () {
+                var authRequest;
+                OffAmazonPayments.Button("AmazonPayButton", "<?php echo $amazonpay_config['merchant_id']; ?>", {
+                    type: "PwA",       // PwA, Pay, A, LwA, Login
+                    color: "DarkGray", // Gold, LightGray, DarkGray
+                    size: "medium",    // small, medium, large, x-large
+                    language: "en-GB", // for Europe/UK regions only: en-GB, de-DE, fr-FR, it-IT, es-ES
+                    authorization: function() {
+                        loginOptions = { scope: "profile postal_code payments:widget payments:shipping_address", popup: true };
+                        authRequest = amazon.Login.authorize(loginOptions, "SetPaymentDetails.php");
+                    },
+                    onError: function(error) {
+                        // something bad happened
+                    }
+                });
+
+                document.getElementById('Logout').onclick = function() {
+                    amazon.Login.logout();
+                    document.cookie = "amazon_Login_accessToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+                    window.location = 'index.php';
+                };
+
+            };
+        </script>
+        <script async="async" type='text/javascript' src="<?php echo getWidgetsJsURL($amazonpay_config); ?>"></script>
+
+
    
+      
