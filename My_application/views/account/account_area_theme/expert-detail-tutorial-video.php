@@ -77,7 +77,28 @@
                                     <?php
                                     $arr[] = html_entity_decode($tutorial_detail['videos_transcript']);
                                     ?>
-                                    <?php
+                                    <?php 
+                                    // $text_time_arr = [];
+                                    // foreach ($arr as $result) {
+                                    //    //  echo $result['v_text'];
+                                    //    $v_text = explode("|", html_entity_decode($tutorial_detail['videos_transcript']));
+                                    //    for ($i = 0; $i < sizeof($v_text); $i++) {
+                                    //       $v_wait = explode("~", html_entity_decode($v_text[$i]));
+                                    //       $video_time = new \stdClass();
+                                    //       $video_time->text = $v_wait[0];
+                                    //       $video_time->time = $v_wait[1];
+                                    //       $text_text_arr[] = $video_time;
+                                    //       $timeConvert = explode(":", $v_wait[1]);
+                                    //       $secondtime = $timeConvert[0] * 60;
+                                    //       $minutetime = $timeConvert[1];
+                                    //       $requiredtime = $secondtime + $minutetime;
+
+                                    //       $text_time_arr[] = $requiredtime;
+                                    //    }
+                                    // }
+                                    ?>
+
+<?php
                                     $text_time_arr = [];
                                     foreach ($arr as $result) {
                                        //  echo $result['v_text'];
