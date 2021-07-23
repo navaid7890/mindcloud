@@ -100,8 +100,8 @@ $footer = $this->model_config->find_all_active($footer);
 			<div class="container">
 				<ul>
 					<li><?= $footer[9]['config_value'] ?></li>
-					<li><a href="#">Privacy Policy</a></li>
-					<li><a href="#">Terms of use and Refund</a></li>
+					<li><a href="<?= l('privacy-policy') ?>">Privacy Policy</a></li>
+					<li><a href="<?= l('terms-and-conditions') ?>">Terms of use and Refund</a></li>
 				</ul>
 			</div>
 		</div>

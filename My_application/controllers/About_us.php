@@ -95,6 +95,11 @@ class About_us extends MY_Controller
         // $data['content'] = $content;
 
 
+        $cont = $this->model_cms_page->get_page(108);
+        $data['terms'] = $cont['child'][0];
+        // debug($data['con1']);
+
+
         $this->load_view("terms", $data);
     }
 
@@ -196,29 +201,29 @@ class About_us extends MY_Controller
 
 
 
-    public function policy()
-    {
-        $data = array();
-        global $config;
+    // public function policy()
+    // {
+    //     $data = array();
+    //     global $config;
 
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+    //     $method_title = ucwords($this->uri->segment(1));
+    //     $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
 
-        //INNER BANNER
-        $b = $this->get_ibanner(7);
-        $data['ititle'] = $b['ititle'];
-        $data['ibanner_img'] = $b['ibanner_img'];
-        //BANNER
-        // $b = $this->get_banner(10);
-        // $data['bcontent'] = $b['bcontent'];
-        // $data['bimage'] = $b['bimage'];
+    //     //INNER BANNER
+    //     $b = $this->get_ibanner(7);
+    //     $data['ititle'] = $b['ititle'];
+    //     $data['ibanner_img'] = $b['ibanner_img'];
+    //     //BANNER
+    //     // $b = $this->get_banner(10);
+    //     // $data['bcontent'] = $b['bcontent'];
+    //     // $data['bimage'] = $b['bimage'];
 
-        $cont = $this->model_cms_page->get_page(34);
+    //     $cont = $this->model_cms_page->get_page(34);
 
-        $data['content'] = $cont;
+    //     $data['content'] = $cont;
 
-        $this->load_view("terms", $data);
-    }
+    //     $this->load_view("terms", $data);
+    // }
 
     // public function faq()
     // {
