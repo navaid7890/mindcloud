@@ -928,6 +928,8 @@ class About_us extends MY_Controller
     public function trial()
 	{
         global $config;
+
+        if($this->userid > 0){
         $data = array();
         //TAB TITLE
         $method_title = ucwords($this->uri->segment(1));
@@ -940,8 +942,33 @@ class About_us extends MY_Controller
         $fa['where']['faq_category'] = 1;
         $fa['order'] = "faq_id ASC";
         $data['faq'] = $this->model_faq->find_all_active($fa);
+
+
+        $id = $this->userid;
+
+        $pars=array(); 
+        $pars['fields'] = "user_id,user_paid";
+        $pars['where']['user_id']=$this->userid;
+
+        $u=$this->model_user->find_one_active($pars);
+       //debug($u);
+
+        $u['user_paid']=1;
+        $test=$this->model_user->update_by_pk($id, $u);
+        // debug($test);
+
+           
             
 		$this->load_view("trial",$data);
+
+        }
+        else
+        { 
+         redirect(l('login?msgtype=error&msg='.urlencode('Please login first')) , true);
+    
+    
+        }
+    
 	}
 
     public function ConfirmPaymentAndAuthorize()

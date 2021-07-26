@@ -6,10 +6,29 @@ include 'config.php';
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    <style>
+.container {
+    margin: 25px 70px;
+}
+button#pause-cycle {
+    background: #FDBE41;
+    padding: 22px 82px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0px 12px 24px #1d90d942;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+
+
+</style>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/sample.css">
+      
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     </head>
 
@@ -20,7 +39,7 @@ include 'config.php';
                 <div id="section-content">
                 
                     <h2>Recurring Simulation</h2>
-                    <p style="margin-top:40px;">This will make authorizations on the billing agreement every <strong>1</strong> year. We will authorize <strong>20.00</strong> to simulate the recurring charge.</p>
+                    <p style="margin-top:40px;">This will make authorizations on the billing agreement every <strong>1</strong> year. We will authorize <strong>£20.00</strong> to simulate the recurring charge.</p>
                     <div class="text-center" style="margin-top:10px;">
                         <button id="pause-cycle" class="btn btn-danger">Pause</button>
                     </div>
@@ -52,7 +71,7 @@ include 'config.php';
                         $(function() {
                             $('.dial').knob({
                                'min': 0,
-                               'max': 10,
+                               'max': 31536000,
                                'val': 0,
                                'readOnly': true
                             });
@@ -64,7 +83,7 @@ include 'config.php';
                             $('.dial').val(countdown).trigger('change');
                             timeout = setTimeout('tick()', 1000);
                             countdown++;
-                            if (countdown > 10) {
+                            if (countdown > 31536000) {
                                 $.notify('Authorizing', {
                                     className: 'success',
                                     autoHide: true,

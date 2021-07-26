@@ -115,7 +115,7 @@ class Model_user extends MY_Model {
     {
         $param['fields'] = 'AVG(jm_user_review.ur_rating) AS rating,COUNT(jm_user_review.ur_rating) AS total_reviews,jm_user.*,,jm_user_info.*';
         $param['where']['user_username'] = $slug;
-        $param['joins'][] = array(
+        $param['joins'][0] = array(
                         'table' => 'user_review',
                         'joint' => 'user.user_id = user_review.ur_client_id',
                         'type' => 'LEFT'
@@ -157,14 +157,14 @@ class Model_user extends MY_Model {
     // include join of user_info
     public function find_one($params=array() , $return_obj = false)
     {
-        $params['joins'][] = $this->join_user_info("LEFT");
+        $params['joins'][0] = $this->join_user_info("LEFT");
         return parent::find_one($params,  $return_obj);
     }
 
     // include join of user_info
     public function find_all($params=array())
     {
-        $params['joins'][] = $this->join_user_info("");
+        $params['joins'][0] = $this->join_user_info("");
         return parent::find_all($params);
     }
 

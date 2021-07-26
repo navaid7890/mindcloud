@@ -217,6 +217,7 @@ foreach ($meta_data AS $meta_name => $meta_val){?>
 <!-- [METAS TAG END] -->
 <!-- [favicon Start] -->
 <link rel="icon" type="image/png" sizes="16x16" href="<?=$this->layout_data['faviconlogo']?>">
+
 <!-- [favicon End] -->
 
 <!-- template script -->
@@ -353,7 +354,8 @@ if(array_filled($additional_tools))
 //     timepicker:false,
 // });
 // </script>  
-
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+   -->
 
 
   </div>

@@ -1525,4 +1525,24 @@ class Contact_us extends MY_Controller
             }
         }
     }
+
+    public function paid_user()
+    {
+
+
+        $id = $this->userid;
+        $u=$this->model_user->find_by_pk($this->userid);
+
+        $u['user_paid']=1;
+        $this->model_user->update_by_pk($id, $u);
+
+        echo json_encode($this->json_param);
+
+        // $data = array();
+        // $data['where']['user_id']=$this->userid
+
+        // $data['tool_builder_lts_step_id'] = $tool['tool_builder_lts_step_id'] + 1;
+    }
+
+    
 }
