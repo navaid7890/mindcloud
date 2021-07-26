@@ -69,7 +69,7 @@ color: #5C677D;
                         <div class="bannerHead">
                             <h2>Annually</h2>
                             <div class="space"><br></div>
-                            <p>One week free trial,<br> then $20/month</p>
+                            <p>One week free trial,<br> then £20/month</p>
                             <div class="space"><br><br></div>
                             <div class="text-center" style="margin-top:40px;" id="AmazonPayButton"></div>
                             <!-- <a href="#" id="AmazonPayButton" data-fancybox data-src="#trial-popup" class="btn-hover">Subscribe Now <span></span></a> -->

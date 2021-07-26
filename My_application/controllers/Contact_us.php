@@ -1525,4 +1525,18 @@ class Contact_us extends MY_Controller
             }
         }
     }
+
+    public function paid_user()
+    {
+
+
+ 
+
+        // $data = array();
+        // $data['where']['user_id']=$this->userid
+
+        // $data['tool_builder_lts_step_id'] = $tool['tool_builder_lts_step_id'] + 1;
+    }
+
+    
 }

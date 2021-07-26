@@ -1,9 +1,33 @@
+<style>
+.container {
+    margin: 25px 70px;
+}
+
+button#confirm-subscription {
+    background: #FDBE41;
+    padding: 22px 82px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0px 12px 24px #1d90d942;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+
+
+</style>
+
 <?php
     session_start();
     include 'config.php';
   //  include 'Apicalls/GetDetails.php';
 
 ?>
+
+
+
 
 <section>
     <div class="container">
@@ -35,7 +59,7 @@
                         <div id="consentWidgetDiv" style="width:320px; height:250px; display:inline-block;"></div>
                         <div style="clear:both;"></div>
                         <form class="form-horizontal" style="margin-top:40px;" role="form" method="post" action="ConfirmPaymentAndAuthorize.php">
-                            <button id="confirm-subscription" class="btn btn-lg btn-success" disabled>Confirm Subscription</button>
+                            <button id="confirm-subscription" class="btn btn-lg btn-success" disabled onclick="alert(ok)">Confirm Subscription</button>
                             <div id="ajax-loader" style="display:none;"><img src="images/ajax-loader.gif" /></div>
                         </form>
                     </div>
@@ -57,9 +81,9 @@
             </div>
     </div>
 </section>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-        
+
         <script type='text/javascript'>
 
             window.onAmazonLoginReady = function () {
@@ -156,6 +180,10 @@
                                     $('#confirm-subscription').prop('disabled', false);
                                 }
                                 $("#get_details_response").html(message);
+                                //alert("test");
+
+
+
 
                             } catch (err) {
                                 $("#get_details_response").html(data);
@@ -164,7 +192,10 @@
                         }
 
                     });
-                }
+
+
+}
+                
 
             };
 
@@ -178,3 +209,5 @@
 
         </script>
         <script async="async" type='text/javascript' src="<?php echo getWidgetsJsURL($amazonpay_config); ?>"></script>
+   
+
