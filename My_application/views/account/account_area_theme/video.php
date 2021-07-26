@@ -2,7 +2,12 @@
    /* .videoPage ul.dropdown-box {
       display: block !important;
    } */
-
+   div#video_text,
+   div#video_text p {
+      color: #A3A5A9;
+      font-size: 13px;
+      font-weight: 500;
+   }
    input#forms-mark-complete-btn {
       padding: 13px 26px;
       background: #FDBE41;
@@ -19,11 +24,6 @@
       background-color: #e28f26;
    }
 
-   div#video_text p {
-      color: #A3A5A9;
-      font-size: 13px;
-      font-weight: 500;
-   }
 </style>
 <div class="business-page">
    <section class="dashboard">
@@ -77,9 +77,7 @@
                                     <div class="space"><br></div>
 
                                     <div id="video_text">
-                                       <?=
-                                       html_entity_decode($learn_content[0]['learning_journey_content_tags']);
-                                       ?>
+                                       
                                     </div>
 
                                     <?php
@@ -272,8 +270,8 @@
    var w = <?php echo json_encode($text_time_arr, TRUE); ?>;
 
 
-   // console.log(v);
-   // console.log(w);
+   console.log(v);
+   console.log(w);
 
    function myFunction(e) {
       var currentTime = e.currentTime;
