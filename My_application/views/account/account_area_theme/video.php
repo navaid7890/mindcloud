@@ -286,6 +286,7 @@
                $('#video_text').html(v[i].text);
             }
          }
+         
       }
    }
 </script>
