@@ -114,6 +114,7 @@ class Dashboard extends MY_Controller_Account
 			$data['art'] = $this->model_tutorial->find_all_active($param);
 			// debug("user is Not paid");
 		}
+		// debug($data['art']);
 
 		$mytut = array();
 		$mytut['where']['mytutorial_user_id'] = $this->userid;

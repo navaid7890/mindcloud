@@ -213,7 +213,7 @@
                                                     </script>
                                                     <div class="progres-percentage tutPer<?= $value['tutorial_id'] ?>" id="tuztPer">
                                                         <span>0</span>
-                                                    </div>
+                                                    </div> %
                                                 </div>
                                             <?php endforeach; ?>
                                         <?php endif ?>
@@ -234,7 +234,6 @@
                                                 </div>
                                             </div>
                                             <div class="expertCount">4/<?= count($art) ?></div>
-
                                         </div>
 
                                         <div class="progress-footer">
