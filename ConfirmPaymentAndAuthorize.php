@@ -1,6 +1,7 @@
 <?php
     session_start();
-    require_once "../config.php";
+
+include 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,23 +16,11 @@
     <body>
         <div class="container">
 
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand start-over" href="#">Pay with Amazon PHP SDK Simple Recurring Payment</a>
-                    </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a class="start-over" href="#">Logout and Start Over</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
             <div class="jumbotron jumbotroncolor" style="padding-top:25px;" id="api-content">
                 <div id="section-content">
                 
                     <h2>Recurring Simulation</h2>
-                    <p style="margin-top:40px;">This will make authorizations on the billing agreement every <strong>10</strong> seconds. We will authorize <strong>150.00</strong> to simulate the recurring charge.</p>
+                    <p style="margin-top:40px;">This will make authorizations on the billing agreement every <strong>1</strong> year. We will authorize <strong>20.00</strong> to simulate the recurring charge.</p>
                     <div class="text-center" style="margin-top:10px;">
                         <button id="pause-cycle" class="btn btn-danger">Pause</button>
                     </div>
@@ -42,15 +31,15 @@
                     <div id="details-result"></div>
                     <div id="authorize-result"></div>
 
-                    <h3>GetBillingAgreementDetails Response</h3>
-                    <div id="details-response"><pre><code>Waiting for details...</code></pre></div>
-                    <h3>Authorize Response</h3>
-                    <div id="authorize-response"><pre><code>Waiting for authorization...</code></pre></div>
+                    <!-- <h3>GetBillingAgreementDetails Response</h3>
+                    <div id="details-response"><pre><code>Waiting for details...</code></pre></div> -->
+                    <!-- <h3>Authorize Response</h3>
+                    <div id="authorize-response"><pre><code>Waiting for authorization...</code></pre></div> -->
                     <h3>Confirm Response</h3>
                     <div id="confirm-response"><pre><code></code></pre></div>
                     <script type="text/javascript">
                         function confirm() {
-                            $.post("Apicalls/ConfirmAndAuthorize.php", {
+                            $.post("ConfirmAndAuthorize.php", {
                                 action: 'confirm'
                             }).done(function (data) {
                                 $("#confirm-response").html('<pre><code>'+data+'</pre></code>');
@@ -83,7 +72,7 @@
                                     autoHideDelay: 3000
                                 });
                                 clearTimeout(timeout);
-                                $.post("Apicalls/ConfirmAndAuthorize.php", {
+                                $.post("ConfirmAndAuthorize.php", {
                                     action: 'authorize',
                                 }).done(function (data) {
                                     $("#authorize-result").html('');
