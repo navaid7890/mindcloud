@@ -1,4 +1,5 @@
 <style>
+   div#video_text,
    div#video_text p {
       color: #A3A5A9;
       font-size: 13px;
@@ -77,7 +78,28 @@
                                     <?php
                                     $arr[] = html_entity_decode($tutorial_detail['videos_transcript']);
                                     ?>
-                                    <?php
+                                    <?php 
+                                    // $text_time_arr = [];
+                                    // foreach ($arr as $result) {
+                                    //    //  echo $result['v_text'];
+                                    //    $v_text = explode("|", html_entity_decode($tutorial_detail['videos_transcript']));
+                                    //    for ($i = 0; $i < sizeof($v_text); $i++) {
+                                    //       $v_wait = explode("~", html_entity_decode($v_text[$i]));
+                                    //       $video_time = new \stdClass();
+                                    //       $video_time->text = $v_wait[0];
+                                    //       $video_time->time = $v_wait[1];
+                                    //       $text_text_arr[] = $video_time;
+                                    //       $timeConvert = explode(":", $v_wait[1]);
+                                    //       $secondtime = $timeConvert[0] * 60;
+                                    //       $minutetime = $timeConvert[1];
+                                    //       $requiredtime = $secondtime + $minutetime;
+
+                                    //       $text_time_arr[] = $requiredtime;
+                                    //    }
+                                    // }
+                                    ?>
+
+<?php
                                     $text_time_arr = [];
                                     foreach ($arr as $result) {
                                        //  echo $result['v_text'];
@@ -248,12 +270,12 @@
    var w = <?php echo json_encode($text_time_arr, TRUE); ?>;
 
 
-   // console.log(v);
-   // console.log(w);
+   console.log(v);
+   console.log(w);
 
    function myFunction(e) {
       var currentTime = e.currentTime;
-      // console.log('current time ', e.currentTime);
+      console.log('current time ', e.currentTime);
       for (var i = 0; i < w.length; i++) {
          if (i < (w.length - 1)) {
             if (w[i] < currentTime && w[i + 1] > currentTime) {

@@ -2,7 +2,12 @@
    /* .videoPage ul.dropdown-box {
       display: block !important;
    } */
-
+   div#video_text,
+   div#video_text p {
+      color: #A3A5A9;
+      font-size: 13px;
+      font-weight: 500;
+   }
    input#forms-mark-complete-btn {
       padding: 13px 26px;
       background: #FDBE41;
@@ -19,11 +24,6 @@
       background-color: #e28f26;
    }
 
-   div#video_text p {
-      color: #A3A5A9;
-      font-size: 13px;
-      font-weight: 500;
-   }
 </style>
 <div class="business-page">
    <section class="dashboard">
@@ -49,8 +49,9 @@
                            <div class="col-md-7">
                               <ul class="bredcum-links">
                                  <li><a href="#">Learning Journey</a></li>
-                                 <li><a href="#">Business Model Canvas</a></li>
+                                 <!-- <li><a href="#">Business Model Canvas</a></li> -->
                                  <li><a href="#">Video and Transcript</a></li>
+
                               </ul>
                            </div>
                            <div class="col-md-5 text-right">
@@ -74,9 +75,11 @@
                                  <div class="video-caption">
                                     <!-- <p>00:00:00</p> -->
                                     <div class="space"><br></div>
-                                   
-                                    <div id="video_text"></div>
-                                 
+
+                                    <div id="video_text">
+                                       
+                                    </div>
+
                                     <?php
                                     $arr[] = html_entity_decode($learn_content[0]['learning_journey_content_tags']);
                                     ?>
@@ -110,8 +113,8 @@
                            <div class="col-md-7">
                               <div class="video-box">
                                  <video width="100%" ontimeupdate="myFunction(this)" controls="true" id="video" height="100%" poster="<?= g('db.admin.bucket') . 'images/learning_journey_content/' . $learn_content['0']['learning_journey_content_image'] ?>">
-                                    <source src="<?= g('db.admin.bucket') . 'videos/content/' . $learn_content[0]['learning_journey_video'] ?>" type="video/mp4">
-                                    <source src="<?= g('db.admin.bucket') . 'videos/content/' . $learn_content[0]['learning_journey_video'] ?>" type="video/ogg">
+                                    <source src="<?= g('db.admin.bucket') . 'videos/' . $learn_content[0]['learning_journey_video'] ?>" type="video/mp4">
+                                    <source src="<?= g('db.admin.bucket') . 'videos/' . $learn_content[0]['learning_journey_video'] ?>" type="video/ogg">
                                     Your browser does not support the video tag.
                                  </video>
                               </div>
@@ -139,7 +142,7 @@
                               <input type="hidden" name="learning_journey_transcript[learning_journey_transcript_content_id]" value="<?= $_GET['cat'] ?>">
                               <input type="hidden" name="learning_journey_transcript[learning_journey_transcript_percent]" value="1">
 
-                              <input type="submit" class="btn-round btn-hover"  value="Mark As Complete" id="forms-mark-complete-btn">
+                              <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-mark-complete-btn">
                            </form>
                            <div classs="space"><br><br></div>
                            <p>Complete all tutorials of Learning Journey to receive Certificate.</p>
@@ -267,8 +270,8 @@
    var w = <?php echo json_encode($text_time_arr, TRUE); ?>;
 
 
-   // console.log(v);
-   // console.log(w);
+   console.log(v);
+   console.log(w);
 
    function myFunction(e) {
       var currentTime = e.currentTime;
@@ -283,6 +286,7 @@
                $('#video_text').html(v[i].text);
             }
          }
+         
       }
    }
 </script>

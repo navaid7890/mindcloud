@@ -82,7 +82,8 @@ $route['product-detail/(:any)'] = "store/detail/$1";
 
 
 $route['terms-and-conditions'] = "about_us/terms";
-$route['privacy-policy'] = "about_us/policy";
+// $route['privacy-policy'] = "about_us/policy";
+$route['privacy-policy'] = "about_us/privacy";
 $route['cookie-policy'] = "about_us/cookie";
 
 $route['learning-journey'] = "about_us/learning";

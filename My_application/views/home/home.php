@@ -136,7 +136,8 @@
          </div>
       </div>
       <div class="space"><br><br><br><br></div>
-      <a href="<?= g('db.admin.bucket') . $cont13['tutorial_video'] ?>" data-fancybox="media">
+      <?//= g('db.admin.bucket') . $cont13['tutorial_video'] ?>
+      <a href="https://www.youtube.com/watch?v=MPKy8w3YX4I&list=PL-uOqadEk4aFQa-6Jk0AOCdAWRhGhmbV7&index=6" data-fancybox="media">
          <div class="video-box">
             <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont13['cms_page_image'] ?>" />
             <span><i class="fas fa-play"></i></span>
@@ -156,7 +157,7 @@
                <div class="space"><br><br></div>
                <p>Feeling stuck? Book one-on-one video<br> meetings with our panel of top business<br> Experts.</p>
                <div class="space"><br><br></div>
-               <a href="#" class="btn-theme btn-hover">Book a Consultation<span></span></a>
+               <a href="<?= l('consult-advisors') ?>" class="btn-theme btn-hover">Book a Consultation<span></span></a>
             </div>
          </div>
          <div class="col-md-6">
@@ -165,7 +166,7 @@
                <div class="space"><br><br></div>
                <p>Join our tribe as an Expert if you love to share <br>your knowledge. We will connect you with an<br> audience eager for your expertise.</p>
                <div class="space"><br><br></div>
-               <a href="#" class="btn-theme btn-hover">Join as an Expert<span></span></a>
+               <a href="<?= l('become-an-expert') ?>" class="btn-theme btn-hover">Join as an Expert<span></span></a>
             </div>
          </div>
       </div>

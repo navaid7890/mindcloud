@@ -140,9 +140,7 @@
                                                                                         ";
                                                                                     <? } ?>
                                                                                 </ul>
-                                                                                <? if (!empty($rating[0]['starCount'])) { ?>
-                                                                                    <div style="margin-left: 5px;">( <?= $rating[0]['starCount'] ?> )</div>
-                                                                                <? } ?>
+                                                                                
                                                                                 </div>
                                                                             </div>
                                                                             <!-- <div class="col-md-4 text-right">

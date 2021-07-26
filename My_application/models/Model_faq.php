@@ -22,7 +22,7 @@ class Model_faq extends MY_Model {
     function __construct()
     {
         // Call the Model constructor
-        $this->pagination_params['fields'] = "faq_id,faq_question,faq_answer,faq_status";
+        $this->pagination_params['fields'] = "faq_id,faq_category,faq_question,faq_answer,faq_status";
         
         parent::__construct();
     }
@@ -72,7 +72,7 @@ class Model_faq extends MY_Model {
                         1 => "Expert Tutorials",
                         2 => "Learning Journey",
                         3 => "General",
-                        4 => "Consult with an Expert",
+                        // 4 => "Consult with an Expert",
                         ),
                     // 'default'   => '0',
                     'attributes'   => array(),

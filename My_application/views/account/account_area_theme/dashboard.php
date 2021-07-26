@@ -20,6 +20,14 @@
     #expertGraph span.prec {
         display: none;
     }
+    #expertGraph .progress-box {
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #dfefff;
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
 </style>
 
 <div class="index-page">
@@ -442,7 +450,7 @@
                                                     <div class="space"><br></div>
                                                     <p style="font-size: 14px;color: #4b647a;">has successfully completed on the <?= date("jS \of F Y") ?> the tutorial</p>
                                                     <div class="space"><br></div>
-                                                    <h3 style="color: #425c73; font-weight: 700;text-transform: capitalize;font-size: 32px;">"<?=$certificate[0]['tutorial_name'] ?>"</h3>
+                                                    <h3 style="color: #425c73; font-weight: 700;text-transform: capitalize;font-size: 32px;min-height: 64px;">"<?=$certificate[0]['tutorial_name'] ?>"</h3>
                                                     <div class="space"><br></div>
                                                     <h6 style="font-style: italic;font-size: 18px;color: #4b647a;">by Expert <span> <?= $expert[0]['expert_name'] ?></span></h6>
                                                     <div class="space"><br><br></div>

@@ -7,6 +7,9 @@
     font-weight: 700;
     color: #33415C;
 }
+#whoIsitFor .vid-content h4 {
+    word-spacing: 100vh;
+}
 </style>
 <section class="whoSec bg-white hding-2 para">
     <div class="container">
@@ -17,7 +20,7 @@
         </div>
         <div class="space"><br><br><br></div>
 
-        <ul class="who-list">
+        <ul class="who-list" id="whoIsitFor">
             <li>
                 <div class="vid-box">
                     <a href="<?= g('db.admin.bucket') . $cont10['tutorial_video'] ?>" data-fancybox="media">
@@ -28,7 +31,7 @@
                     </a>
 
                     <div class="vid-content">
-                    <h4><?=html_entity_decode($cont10['cms_page_title'])?></h4>
+                    <?=html_entity_decode($cont10['cms_page_title'])?>
                     <?=html_entity_decode($cont10['cms_page_content'])?>
                     </div>
                 </div>
@@ -44,7 +47,7 @@
                     </a>
 
                     <div class="vid-content">
-                    <h4><?=html_entity_decode($cont11['cms_page_title'])?></h4>
+                    <?=html_entity_decode($cont11['cms_page_title'])?>
                     <?=html_entity_decode($cont11['cms_page_content'])?>
                     </div>
                 </div>
@@ -60,7 +63,7 @@
                     </a>
 
                     <div class="vid-content">
-                    <h4><?=html_entity_decode($cont12['cms_page_title'])?></h4>
+                    <?=html_entity_decode($cont12['cms_page_title'])?>
                     <?=html_entity_decode($cont12['cms_page_content'])?>
                     </div>
                 </div>

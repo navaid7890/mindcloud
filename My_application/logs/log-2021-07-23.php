@@ -1,5 +1,8 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+<<<<<<< HEAD
+ERROR - 2021-07-23 21:41:48 --> 404 Page Not Found: ConfirmAndAuthorizephp/index
+=======
 ERROR - 2021-07-23 19:10:28 --> 404 Page Not Found: About_us/images
 ERROR - 2021-07-23 22:15:35 --> Severity: error --> Exception: Unable to post request, underlying exception of Operation timed out after 0 milliseconds with 0 out of 0 bytes received phar:///opt/lampp/htdocs/cloud/My_application/third_party/amazon-pay.phar/AmazonPay/HttpCurl.php 127
 ERROR - 2021-07-23 19:15:35 --> 404 Page Not Found: About_us/images
@@ -56,3 +59,4 @@ ERROR - 2021-07-23 20:42:04 --> 404 Page Not Found: Images/ajax_loader.gif
 ERROR - 2021-07-23 20:42:14 --> 404 Page Not Found: Css/sample.css
 ERROR - 2021-07-23 20:45:00 --> 404 Page Not Found: Css/sample.css
 ERROR - 2021-07-23 21:39:48 --> 404 Page Not Found: Css/sample.css
+>>>>>>> dev/madiha
