@@ -89,6 +89,9 @@ $footer = $this->model_config->find_all_active($footer);
 								<li>Payment</li>
 								<li><a href="#"><i class="fab fa-cc-mastercard"></i></a></li>
 								<li><a href="#"><i class="fab fa-cc-visa"></i></a></li>
+								<li><a href="#"  style="background: #fff;"><img src="<?= i('') ?>verified_master.png" class="img-fluid img-responsive"></a></li>
+								<li><a href="#"  style="background: #fff;"><img src="<?= i('') ?>verified_visa.png" class="img-fluid img-responsive"></a></li>
+
 							</ul>
 						</div>
 					</div>
