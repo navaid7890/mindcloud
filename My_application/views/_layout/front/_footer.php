@@ -35,7 +35,7 @@ $footer = $this->model_config->find_all_active($footer);
 								<li><a href="<?= l('about-us') ?>">About Us</a></li>
 								<li><a href="<?= l('innovate') ?>">Competition</a></li>
 								<li><a href="<?= l('faq') ?>">FAQs</a></li>
-								<!-- <li><a href="<?= l('') ?>">Contact Us</a></li> -->
+								<li><a href="<?= l('contact_us') ?>">Contact Us</a></li>
 							</ul>
 						</div>
 					</div>

@@ -2,80 +2,138 @@
     .social a{
         display: contents !important;
     }
+
+    .fld-contact input  {
+    /* height: 70px; */
+    /* background: #6b6e72 0% 0% no-repeat padding-box; */
+    border-radius: 8px;
+    width: 100%;
+    padding: 15px 25px;
+    resize: none;
+    border: 1px solid #ccc;
+}
+
+.fld-contact textarea
+{
+
+  height: 150px;
+  border: 1px solid #ccc;
+  background:transparent;
+}
+
+.ban h2 {
+    padding: 30px;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.pad-sec {
+    padding: 30px 0;
+}
+
+.fld-contact-half:nth-child(2n) {
+    margin-left: 0px;
+}
+.criteriaHead p {
+    padding-bottom: 15px;
+}
+
+form#forms-contact_us {
+    padding: 10% 0 0 0;
+}
+
+.contact-info ul {
+    margin-bottom: 30px;
+}
+
+.contact-info ul li {
+    margin-bottom: 35px;
+}
+
+.contact-info ul li a {
+    color: hsl(220, 29%, 28%);
+    font-size: 17px;
+    border-bottom: 1px solid transparent;
+}
+
+.contact-info {
+    padding: 15% 0;
+}
+.contact-info ul li a i
+{
+margin-right: 10px;
+
+}
     </style>
     <!-- Begin: Crousel -->
-    <div class="ban">
-      <h2>Contact Us</h2>
-    </div>
-    <!-- END: Crousel -->
 
-    <section class="contactForm">
+    <!-- END: Crousel -->
+    <section class="contactSec pad-sec hding-1 para">
       <div class="container">
-        <form action="post" class="row formStyle" id="forms-contact_us">
-          <div class="col-md-3 col-sm-3">
-            <input type="text" class="form-control" placeholder="Full Name" name="inquiry[inquiry_name]" pattern="[a-zA-z ]{2,30}" title="Only Alphabets (minimum 2 charachters)" required="">
-          </div>
-          <div class="col-md-3 col-sm-3">
-            <input type="email" class="form-control" placeholder="Email" required name="inquiry[inquiry_email]">
-          </div>
-          <div class="col-md-3 col-sm-3">
-            <input type="text" class="form-control" placeholder="Subject" name="inquiry[inquiry_subject]">
-          </div>
-          <div class="col-md-3 col-sm-3"><?$this->load->view("widgets/google_captcha")?>
-          </div>
-          <div class="col-md-9 col-sm-9">
-            <textarea rows="6" class="form-control" placeholder="Message" name="inquiry[inquiry_message]" required></textarea>
-          </div>
-          <div class="col-md-3 col-sm-3">
-          <br>
-          <br>
-            <button class="btnStyle" type="submit" style="    margin-left: 22px;">Send</button>
-          </div>
-        </form>
+      <div class="criteriaHead">
+        <h1><p><span style="font-size:36px;">Contact&nbsp;<strong>Us</strong></span></p></h1>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+
+            <form id="forms-contact_us">
+              <div class="fld-contact fld-contact-half">
+                <label>Your Name</label>
+                <input type="text" name="inquiry[inquiry_name]" required="">
+              </div>
+
+              <!-- <div class="fld-contact fld-contact-half">
+                <label>Last name</label>
+                <input type="text" name="inquiry[inquiry_lastname]">
+              </div> -->
+
+              <div class="fld-contact fld-contact-half">
+                <label>Your Email Address</label>
+                <input type="text" name="inquiry[inquiry_email]">
+              </div>
+
+              <div class="fld-contact fld-contact-half">
+                <label>Subject</label>
+                <input type="text" name="inquiry[inquiry_subject]">
+              </div>
+
+     
+
+              <div class="fld-contact">
+                <label>Your Message </label>
+                <textarea name="inquiry[inquiry_message]"></textarea>
+              </div>
+
+              <div class="row pt-70 align-items-center">
+             
+
+                <div class="col-lg-2 col-md-4">
+                  <div class="fld-btn">
+                    <input type="submit" id="forms-contact_us-btn" value="Submit">
+                  </div>
+                </div>
+              </div>
+
+            </form>
+
+        </div>
+
+        <div class="col-md-6">
+        <div class="contact-info">
+        <ul>
+                            <li><a href="javascript:void(0)"><i class="fa fa-home" aria-hidden="true"></i><?=g('db.admin.company_address')?> </a></li>
+                            <li><a href="tel:<?=g('db.admin.phone')?>"><i class="fa fa-phone" aria-hidden="true"></i><?=g('db.admin.phone')?></a></li>
+                            <li><a href="mailto:<?=g('db.admin.email_contact_us')?>"><i class="fa fa-envelope" aria-hidden=" true"></i><?=g('db.admin.email_contact_us')?></a></li>
+
+                        </ul>
+        </div>
+
+
+
+        </div>
+      </div>
       </div>
     </section>
 
-
-    <div class="contactInfoDetl">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <div class="cell">
-              <i class="fa fa-mobile"></i>
-              <a href="tel:<?=g('db.admin.phone')?>"><?=g('db.admin.phone')?> - Business Phone</a>
-              <a href="tel:<?=g('db.admin.bussiness_phone')?>"><?=g('db.admin.bussiness_phone')?> - Office Phone</a>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <div class="cell mail">
-              <i class="fa fa-envelope"></i>
-              <a href="mailto:<?=g('db.admin.support_email')?>"><?=g('db.admin.support_email')?></a>
-              <a href="mailto:<?=g('db.admin.email_contact_us')?>"><?=g('db.admin.email_contact_us')?></a>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <div class="cell social">
-             
-              <?php if (!empty(g('db.admin.instagram_id'))): ?>
-                    <a href="<?=g('db.admin.instagram_id')?>" target="_blank" >
-                    <i class="fa fa-instagram"></i>
-                    </a>
-                <?php endif ?>
-                
-              <?php if (!empty(g('db.admin.facebook_id'))): ?>
-              <a href="<?=g('db.admin.facebook_id')?>" target="_blank" >
-              <i class="fa fa-facebook-square"></i>
-              </a>
-              <?php endif ?>
-              <?php if (!empty(g('db.admin.linkedin_id'))): ?>
-              <a href="<?=g('db.admin.linkedin_id')?>" target="_blank" >
-              <i class="fa fa-linkedin"></i>
-              </a>
-              <?php endif ?>
-              <br>
-              <a href="<?=l('')?>">Advancehealthcarece.edu</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>

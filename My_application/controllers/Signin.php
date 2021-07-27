@@ -24,8 +24,6 @@ class Signin extends MY_Controller {
 
         
         if(isset($_POST) && array_filled($_POST)) {
-
-          //  debug($_POST,1);
             
             //if(isset($_POST['g-recaptcha-response']) && empty($_POST['g-recaptcha-response']))
             if(1 == 2)
