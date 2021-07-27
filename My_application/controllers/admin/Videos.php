@@ -279,6 +279,66 @@ class Videos extends MY_Controller {
 	}
 
 
+
+    public function upload_ppt(){
+
+		require_once APPPATH.'third_party/S3/S3.php';
+		// $k=$this->load->library('S3');
+		//debug($k);
+  
+		$formdata = $_POST['videos'];
+		$filedata = $_FILES['videos'];
+		$cmsID = $formdata['videos_id'];
+
+
+		$uploads_dir = 'assets/uploads/videos';
+		$tmp_name = $_FILES["ok"]["tmp_name"];
+		$name = rand(1000,100000)."_".$_FILES["ok"]["name"];
+		
+  
+		// $tmpfile = $_FILES["ok"]["tmp_name"];
+		// $file = $_FILES["ok"]["name"];
+ 
+        
+        // move_uploaded_file($tmp_name, "$uploads_dir/$file");
+
+		$Nname = explode(".", $name); 
+        $c_type = 'ppt'.$Nname[1]; 
+
+        $s = new S3();
+	
+        $s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
+        $s->setRegion(AWS_S3_REGION);
+        $s->setSignatureVersion('v4'); ;
+        $s->putObject($s->inputFile($tmp_name), AWS_S3_BUCKET, 'assets/images/'.$name, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
+        //debug($s,1);
+    
+
+	    $allowEd = array('ppt','pptx');
+	    if(in_array($Nname[1],$allowEd)){
+
+		
+
+		   
+
+		    $insertImage['videos_ppt'] = $name;
+		    // $insertImage['videos_ppt'] = 'assets/uploads/videos/';
+		    $where['where']['videos_id'] = $cmsID;
+	        $status = $this->model_videos->update_model($where,$insertImage);
+		
+			if($status){
+	        	echo json_encode(array('status'=>1,'message'=>'ppt updated successfully.'));
+	        }
+	        else{
+	        	echo json_encode(array('status'=>0,'message'=>'Please try again.'));	
+	        }
+	    }
+	    else{
+	    	echo json_encode(array('status'=>0,'message'=>'Only PPT and PPTX format allowed'));	
+	    }
+	}
+
+
 }
 
 /* End of file welcome.php */
