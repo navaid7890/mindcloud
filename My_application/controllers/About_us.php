@@ -418,7 +418,13 @@ class About_us extends MY_Controller
         $param['order'] = "tutorial_id ASC";
         $param['where_in']['tutorial_id'] = $all;
 
-        $data['art'] = $this->model_tutorial->get_details($param);
+        $art = $this->model_tutorial->get_details($param);
+
+        $product_data = $this->_pagination('tutorial',$art);
+        $data['art'] = $product_data['data'];
+        $data['links'] = $product_data['links'];  
+      //  debug($product_data);
+
         // debug($data['art']);
 
         $pop = array();
@@ -1231,6 +1237,49 @@ class About_us extends MY_Controller
 
 
         $this->load_view("GetDetails", $data);
+    }
+
+
+    
+    private function _pagination($model_name='',$param = array())
+    {
+        $per_page = 9;
+        $this->load->library('mypagination');
+
+        $class_name = $this->router->fetch_class();
+        // $method_name = $slug;
+         $method_name = $this->router->fetch_method();
+
+        // Model get
+        $model_name = empty($model_name) ? $class_name : $model_name;
+        $model_name = "model_".$model_name;
+        $model_obj = $this->$model_name ;
+        // Model get
+
+        $suffix = empty($_SERVER['QUERY_STRING']) ? '' : '?'.$_SERVER['QUERY_STRING'];
+
+      
+        // $pagination["base_url"] = g('base_url')."shop-category/".$method_name."/page/";
+
+        $pagination["base_url"] = g('base_url') . "about_us/expert/";
+
+        $pagination["total_rows"] = $model_obj->get_pagination_total_count();
+        $pagination["per_page"] = (ENVIRONMENT == 'development') ? $per_page : $per_page;
+        $pagination['use_page_numbers']  = TRUE;
+        $pagination["uri_segment"] = 3;
+        $pagination["suffix"] = $suffix;
+        $pagination['last_tag_open'] = '';
+        $this->mypagination->initialize($pagination);
+
+        $page = ($this->uri->segment(3))? $this->uri->segment(3) : 0;
+
+        // $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"]);
+           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"],$param);
+
+        $vars["links"] = $this->mypagination->create_links();
+        
+        //.debug($vars,1); 
+        return $vars;
     }
 
 

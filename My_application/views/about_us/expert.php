@@ -41,6 +41,41 @@
       border-bottom: 8px solid #F4C150;
       display: inline-block;
    }
+
+   .pagination {
+    display: table;
+    margin: 20px auto;
+}
+
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.pagination>li {
+    display: inline;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #FDBE41;
+    border-color:#FDBE41;
+}
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #FDBE41;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
 </style>
 
 <div class="mainBanner home-banner para" style="background-image:url('<?= g('db.admin.bucketimg') . "cms_image/" . $con1['cms_page_image'] ?>');">
@@ -192,6 +227,17 @@ $usdata = $this->layout_data['user_data'];
                            <?php endif ?>
                         </ul>
                      <? } ?>
+                     <div class="row">
+              <div class="col-md-12">
+            <div class="text-center"> 
+                <nav aria-label="Page navigation example"><br>
+                  <ul class="pagination">
+                    <?=$links?>
+                  </ul>
+                </nav>
+            </div>
+              </div>
+            </div>
                      <!-- <div class="space"><br><br></div>
                      <a href="#" class="btn-links">See more Experts Tutorials</a>
                      
@@ -286,6 +332,7 @@ $usdata = $this->layout_data['user_data'];
                         <? endforeach; ?>
                      <? endif; ?>
                   </ul>
+                  
                </div>
             </div>
          </div>

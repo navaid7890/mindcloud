@@ -83,6 +83,28 @@ class Model_tutorial extends MY_Model
 
     }
 
+    public function get_pagination_total_count()
+    {
+        $param = array();
+       // $param = $this->_pagination_filter($paginate_param);
+        $data = $this->find_count_active($param);
+        return $data;
+    }
+
+    public function get_pagination_data($limit = '', $offset = '',$param = array())
+    {
+       // $param = array();
+        $param['order'] = 'tutorial_id DESC';
+        $param['limit'] = $limit;
+
+        //  Filters Start
+      //  $param = $this->_pagination_filter($paginate_param);
+        
+      //  $param['limit'] = $limit;
+        $param['offset'] = $offset;
+        return $this->get_details($param);
+    }
+
     function course_by_slug($slug = '', $params = array())
     {
 
