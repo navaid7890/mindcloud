@@ -36,7 +36,7 @@
                <div class="dashboard-child-links">
                   <ul>
                      <li><a href="<?= l('account/profile/startup') ?>"> <span><img src="<?= i('') ?>dashboard/menu/3.svg"></span> My Startup: App Monster</a></li>
-                     <li><a href="#"> <span><img src="<?= i('') ?>dashboard/menu/3.svg"></span> New Startup</a></li>
+                     <li><a href="<?= l('account/profile/learning') ?>"> <span><img src="<?= i('') ?>dashboard/menu/3.svg"></span> New Startup</a></li>
                   </ul>
                </div>
             </li>
