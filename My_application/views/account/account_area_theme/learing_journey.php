@@ -82,7 +82,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 text-right">
-                                        <a href="<?= $contd['cms_page_url'] ?>" data-fancybox="media">
+                                        <a href="https://www.youtube.com/watch?v=__nXmdX3fM0&amp;list=PL-uOqadEk4aEnXXTRM1ekVMLNc-b4L3iM&amp;index=6" data-fancybox="media">
                                             <div class="video-box">
                                                 <img src="<?= get_image($contd['cms_page_image'], $contd['cms_page_image_path']) ?>">
                                                 <span><i class="fas fa-play"></i></span>
@@ -107,6 +107,8 @@
                                     <li><i><img src="<?= i('') ?>journy/3.svg"></i> Tool and Tool-Builder</li>
                                 </ul>
                             </div>
+                           
+
                             <? if (isset($learn_cat) and array_filled($learn_cat)) : ?>
                                 <? foreach ($learn_cat as $key => $value) : ?>
                                     <div class="jrnyFaq">

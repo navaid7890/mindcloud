@@ -67,6 +67,10 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
             <a href="#tab_4" data-toggle="tab">
             <?=humanize($page_title)?> image</a>
           </li>
+          <li>
+            <a href="#tab_5" data-toggle="tab">
+            <?=humanize($page_title)?> PPT</a>
+          </li>
         </ul>
 
         <div class="tab-content">
@@ -132,6 +136,25 @@ $model_heads = explode("," , $dt_params['dt_headings'] );
                     
                     <!-- BEGIN FORM-->
                     <? $this->load->view("admin/widget/_videos");?>
+                    <!-- END FORM-->
+                  </div>
+                  <!-- END VALIDATION STATES-->
+                </div>
+              </div>
+              <div class="tab-pane" id="tab_5">
+                    <div class="portlet box green">
+                  <div class="portlet-title">
+                    <div class="caption">
+                      <i class="fa fa-shopping-cart"></i><?=humanize('PPT')?>
+                          <small>Uploaded</small>
+
+                    </div>
+                  </div>
+                  <div class="portlet-body form">
+                    
+                    <!-- BEGIN FORM-->
+                    <? $this->load->view("admin/videos/_pptfile");?>
+                    <?// $this->load->view("admin/widget/ppt_uploadfiles.php");?>
                     <!-- END FORM-->
                   </div>
                   <!-- END VALIDATION STATES-->

@@ -148,24 +148,24 @@ class Model_videos extends MY_Model {
                 ),
 
                 
-            // 'course_image2' => array(
-            //     'table' => $this->_table,
-            //     'name' => 'course_image2',
-            //     'label' => 'Other Related Image',
-            //     'name_path' => 'course_image_path',
-            //     'upload_config' => 'site_upload_course',
-            //     'type' => 'fileupload',
-            //     'type_dt' => 'image',
-            //     'randomize' => true,
-            //     'preview' => 'true',
-            //     'attributes'   => array(
-            //         'image_size_recommended'=>'366px × 397px',
-            //         'allow_ext'=>'png|jpeg|jpg',
-            //     ),
-            //     'dt_attributes' => array("width" => "10%"),
-            //     'rules' => 'trim|htmlentities',
-            //     // 'js_rules'=>$is_required_image
-            // ),
+            'videos_ppt' => array(
+                'table' => $this->_table,
+                'name' => 'videos_ppt',
+                'label' => 'Upload PPT File',
+                // 'name_path' => 'course_image_path',
+                'upload_config' => 'site_upload_course',
+                'type' => 'customfileupload',
+                'type_dt' => 'image',
+                'randomize' => true,
+                'preview' => 'true',
+                'attributes'   => array(
+                    // 'image_size_recommended'=>'366px × 397px',
+                    'allow_ext'=>'ppt|pptx',
+                ),
+                'dt_attributes' => array("width" => "10%"),
+                'rules' => 'trim|htmlentities',
+                // 'js_rules'=>$is_required_image
+            ),
 
 
          
