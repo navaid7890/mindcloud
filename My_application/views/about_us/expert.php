@@ -229,11 +229,13 @@ $usdata = $this->layout_data['user_data'];
                      <? } ?>
                      <div class="row">
               <div class="col-md-12">
-                <nav aria-label="Page navigation example">
+            <div class="text-center"> 
+                <nav aria-label="Page navigation example"><br>
                   <ul class="pagination">
                     <?=$links?>
                   </ul>
                 </nav>
+            </div>
               </div>
             </div>
                      <!-- <div class="space"><br><br></div>
