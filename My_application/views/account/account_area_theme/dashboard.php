@@ -163,6 +163,8 @@
                                 </div>
                             </div>
                         </div>
+
+
                         <div class="space"><br><br></div>
                         <div class="index-graph-box">
                             <div class="row graph-box-2" id="expertGraph">
@@ -171,6 +173,7 @@
                                         <h2>My <strong> Experts Tutorials </strong></h2>
                                         <?php if (isset($art) && array_filled($art)) : ?>
                                             <?php foreach ($art as $key => $value) : ?>
+
                                                 <?
                                                 $param = array();
                                                 $param['where']['mytutorial_user_id'] = $this->userid;
@@ -213,7 +216,7 @@
                                                     </script>
                                                     <div class="progres-percentage tutPer<?= $value['tutorial_id'] ?>" id="tuztPer">
                                                         <span>0</span>
-                                                    </div>
+                                                    </div> %
                                                 </div>
                                             <?php endforeach; ?>
                                         <?php endif ?>
@@ -234,7 +237,6 @@
                                                 </div>
                                             </div>
                                             <div class="expertCount">4/<?= count($art) ?></div>
-
                                         </div>
 
                                         <div class="progress-footer">

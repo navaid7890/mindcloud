@@ -17,19 +17,19 @@
 						<ul class="menu">
 							<li><a class="<?= ($this->uri->segment(1) == 'expert-tutorial')  ? 'active' : '' ?>" href="<?= l('expert-tutorial') ?>">Experts Tutorials</a></li>
 							<li><a class="<?= ($this->uri->segment(1) == 'learning-journey')  ? 'active' : '' ?>" href="<?= l('learning-journey') ?>">Learning Journey</a></li>
-							<li class="dropdown-nav"><a class="<?= ($this->uri->segment(1) == 'consult-advisors')  ? 'active' : '' ?>" href="<?= l('consult-advisors') ?>">Consult with Experts</a>
+							<li class="dropdown-nav"><a class="<?= ($this->uri->segment(1) == 'booking')  ? 'active' : '' ?>" href="<?= l('booking') ?>">Consult with Experts</a>
 								<ul class="dropdownWrap dropdown ">
-									<li><a href="<?= l('consult-advisors') ?>">Consult with Experts</a></li>
+									<li><a href="<?= l('booking') ?>">Consult with Experts</a></li>
 									<li><a href="<?= l('become-an-expert') ?>">Become An Expert</a></li>
 
-									<li><a href="<?= l('innovate') ?>">Innovate</a></li>
+									<!-- <li><a href="<?//= l('innovate') ?>">Innovate</a></li> -->
 								</ul>
 							</li>
 							<li class="dropdown-nav"><a href="#">Community</a>
 								<ul class="dropdownWrap dropdown ">
 									<li><a href="<?= l('member') ?>">Members</a></li>
 									<li><a href="<?= l('newsfeed') ?>">News feed</a></li>
-									<li><a href="<?= l('booking') ?>">Booking</a></li><?= l('') ?>
+									<!-- <li><a href="<?//= l('booking') ?>">Booking</a></li><?= l('') ?> -->
 								</ul>
 							</li>
 							<li class="dropdown-nav"><a href="<?= l('about-us') ?>">About us</a>

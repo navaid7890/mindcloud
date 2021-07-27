@@ -34,6 +34,7 @@ $footer = $this->model_config->find_all_active($footer);
 								<li><a href="<?= l('enterprise-partners') ?>">Enterprise Partners</a></li>
 								<li><a href="<?= l('about-us') ?>">About Us</a></li>
 								<li><a href="<?= l('innovate') ?>">Competition</a></li>
+								<li><a href="<?= l('newsfeed') ?>">News Feed</a></li>
 								<li><a href="<?= l('faq') ?>">FAQs</a></li>
 								<li><a href="<?= l('contact_us') ?>">Contact Us</a></li>
 							</ul>
@@ -89,6 +90,9 @@ $footer = $this->model_config->find_all_active($footer);
 								<li>Payment</li>
 								<li><a href="#"><i class="fab fa-cc-mastercard"></i></a></li>
 								<li><a href="#"><i class="fab fa-cc-visa"></i></a></li>
+								<li><a href="#"  style="background: #fff;"><img src="<?= i('') ?>verified_master.png" class="img-fluid img-responsive"></a></li>
+								<li><a href="#"  style="background: #fff;"><img src="<?= i('') ?>verified_visa.png" class="img-fluid img-responsive"></a></li>
+
 							</ul>
 						</div>
 					</div>
