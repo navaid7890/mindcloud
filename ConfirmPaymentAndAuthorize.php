@@ -71,7 +71,7 @@ button#pause-cycle {
                         $(function() {
                             $('.dial').knob({
                                'min': 0,
-                               'max': 31536000,
+                               'max': 10,
                                'val': 0,
                                'readOnly': true
                             });
@@ -83,7 +83,7 @@ button#pause-cycle {
                             $('.dial').val(countdown).trigger('change');
                             timeout = setTimeout('tick()', 1000);
                             countdown++;
-                            if (countdown > 31536000) {
+                            if (countdown > 10) {
                                 $.notify('Authorizing', {
                                     className: 'success',
                                     autoHide: true,
