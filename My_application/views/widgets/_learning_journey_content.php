@@ -8,7 +8,7 @@
         <ul class="learn-process">
             <li><?//= g('db.admin.bucketimg') . "cms_image/" . $learning['0']['learning_image'] ?>
                 <div class="learnContentBox">
-                    <i><img src="<?= get_image($learning['0']['learning_image'], $learning['0']['learning_image_path'])?>"></i>
+                    <i><img src="<?= g('db.admin.bucketimg') . $learning[0]['learning_image'] ?>"></i>
                     <div class="space"><br></div>
                     <h3><?=$learning['0']['learning_name']?></h3>
                 </div>

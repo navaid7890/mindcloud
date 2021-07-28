@@ -74,6 +74,18 @@ class Model_learning_journey_category extends MY_Model {
                      'rules'   => 'required|trim|htmlentities'
                   ),
 
+
+            'learning_journey_category_image' => array(
+                'table' => $this->_table,
+                'name' => 'learning_journey_category_image',
+                'label' => 'Image',
+                'type' => 'hidden',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+
+
                   
 
 

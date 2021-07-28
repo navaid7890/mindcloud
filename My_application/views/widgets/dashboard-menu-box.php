@@ -16,7 +16,7 @@
                </a>
             </li>
             <li>
-               <a href="#">
+               <a href="<?=l('booking')?>">
                   <span><img src="<?= i('') ?>dashboard/menu/1.svg"></span>
                   Consult with Experts
                </a>

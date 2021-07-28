@@ -28,6 +28,18 @@
     color: #000;
     border: 1px solid rgba(0, 0, 0, .15);
   }
+
+  h2:after {
+    content: "";
+    height: 12px;
+    width: 12px;
+    border: 3px solid #fff;
+    background: #1d90d9;
+    position: absolute;
+    bottom: -15px;
+    border-radius: 100px;
+    right: -4px;
+}
 </style>
 
 

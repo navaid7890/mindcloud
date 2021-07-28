@@ -14,7 +14,7 @@
    <div class="container">
       <div class="row">
          <div class="col-md-7">
-            <h2>All FAQ</h2>
+            <h2>All FAQ's</h2>
          </div>
 
          <div class="col-md-5">
@@ -172,6 +172,6 @@
       <div class="space"><br></div>
       <?= html_entity_decode($cont1['cms_page_content']) ?>
       <div class="space"><br><br></div>
-      <a href="#" class="btn-theme btn-hover">Contact Us <span></span></a>
+      <a href="<?=l('contact_us')?>" class="btn-theme btn-hover">Contact Us <span></span></a>
    </div>
 </section>

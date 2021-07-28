@@ -73,17 +73,17 @@ $footer = $this->model_config->find_all_active($footer);
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-8 col-md-12">
-						<p>Mind Cloud Tribe is part of Mind Cloud Academy with Knowledge and Human Development Authority ( KHDA ) Permit # : 628780</p>
+						<p>Mind Cloud Tribe is part of Mind Cloud Academy with Knowledge and Human Development Authority ( KHDA ) Permit # 628780</p>
 					</div>
 
 					<div class="col-lg-4 col-md-12">
 						<div class="ftr-pay">
 							<ul class="social-links">
 								<li>Follow us:</li>
-							<li><a href="<?= $footer[0]['config_value'] ?>"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="<?= $footer[3]['config_value'] ?>"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="<?= $footer[10]['config_value'] ?>"><i class="fab fa-linkedin-in"></i></a></li>
-							<li><a href="<?= $footer[1]['config_value'] ?>"><i class="fab fa-youtube"></i></a></li>
+							<li><a href="<?= g('db.admin.facebook_id') ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="<?= g('db.admin.instagram_id') ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="<?= g('db.admin.linkedin_id') ?>" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+							<li><a href="<?= g('db.admin.youtube_id') ?>" target="_blank"><i class="fab fa-youtube"></i></a></li>
 							</ul>
 
 							<ul class="social-links">

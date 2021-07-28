@@ -157,7 +157,7 @@
                <div class="space"><br><br></div>
                <p>Feeling stuck? Book one-on-one video<br> meetings with our panel of top business<br> Experts.</p>
                <div class="space"><br><br></div>
-               <a href="<?= l('consult-advisors') ?>" class="btn-theme btn-hover">Book a Consultation<span></span></a>
+               <a href="<?= l('booking') ?>" class="btn-theme btn-hover">Book a Consultation<span></span></a>
             </div>
          </div>
          <div class="col-md-6">

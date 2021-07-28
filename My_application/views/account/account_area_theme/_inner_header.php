@@ -22,7 +22,7 @@
 					<ul class="menu">
 						<li><a class="<?=($this->uri->segment(1) =='expert-tutorial')  ? 'active' : ''?>" href="<?=l('expert-tutorial')?>">Experts Tutorials</a></li>
 						<li><a class="<?=($this->uri->segment(2) =='learing-journey')  ? 'active' : ''?>" href="<?=l('account/learing-journey')?>">Learning Journey</a></li>
-						<li><a href="#">Consult with Experts</a></li>
+						<li><a href="<?=l('booking')?>">Consult with Experts</a></li>
 						<li><a href="#"> Community</a></li>
 						<li><a href="https://mindcloudacademy.com/">The Academy</a></li>
 						<!-- <li><a href="https://mindcloudacademy.com/"> The Academy</a></li> -->
@@ -36,7 +36,7 @@
 
 				<div class="col-md-3 text-right">
 					<ul class="login-btn">
-						<li class="dropdown-toggle"><a href="#"><span><img src="<?=get_image($this->layout_data['user_data']['ui_profile_image'],$this->layout_data['user_data']['ui_profile_image_path'])?>"></span> <?= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a>
+						<li class="dropdown-toggle"><a href="#"><span><img src="<?=get_image($this->layout_data['user_data']['ui_profile_image'],$this->layout_data['user_data']['ui_profile_image_path'])?>"></span> <?=$this->session->userdata['logged_in_front']['first_name']?> <i class="fal fa-angle-down"></i></a>
 							<div class="dropdown-box">
 								<ul class="user-links">
 									<li><a href="<?=l('signout')?>"> <i class="far fa-sign-out-alt"></i> Logout</a></li>

@@ -32,7 +32,7 @@
             <p><?= html_entity_decode($con3['cms_page_content']) ?></p>
             <div class="space"><br><br></div>
 
-            <a href="#" class="btn-theme btn-hover">Contact Us <span></span></a>
+            <a href="<?=l('contact_us')?>" class="btn-theme btn-hover">Contact Us <span></span></a>
          </div>
       </div>
    </section>
@@ -161,9 +161,21 @@
                <div class="col-lg-6 col-md-12 flex-center">
                   <div class="abtContent">
                      <h3><?= html_entity_decode($con7['cms_page_title']) ?></h3>
+
+
+                     <div class="one">
+                      <p>  
+                     <?= short_text($con7['cms_page_content'],380) ?>
+                      </p>
+                     </div>
+
+                     <div class="two">
+
                      <?= html_entity_decode($con7['cms_page_content']) ?>
+                     </div>
+
                      <div class="space"><br></div>
-                     <a href="#">(read more)</a>
+                     <a href="#" class="dt">(read more)</a>
                   </div>
                </div>
                <div class="col-lg-6 col-md-12 text-right">
@@ -239,7 +251,7 @@
          <div class="space"><br></div>
          <p><?= html_entity_decode($con8['cms_page_content']) ?></p>
          <div class="space"><br><br></div>
-         <a href="#" class="btn-theme btn-hover">Contact Us <span></span></a>
+         <a href="<?=l('contact_us')?>" class="btn-theme btn-hover">Contact Us <span></span></a>
       </div>
    </section>
 
@@ -248,3 +260,15 @@
 
 
 </div>
+
+<script>
+$( document ).ready(function() {    
+    $(".two").hide();
+$(".dt").click(function(){
+  $(".one").hide();
+  $(".two").show();
+  $(".dt").hide();
+});
+});
+
+</script>

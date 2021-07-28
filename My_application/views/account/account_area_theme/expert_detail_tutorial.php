@@ -121,7 +121,7 @@
             <div>
                 <h2>certificate of completion</h2>
                 <div class="space"><br><br></div>
-                <h3><?= $this->session_data['username'] ?></h3>
+                <h3><?=$this->session->userdata['logged_in_front']['first_name']?></h3>
                 <div class="space"><br></div>
                 <p>has successfully completed on the <?= date("jS \of F Y") ?> the tutorial</p>
                 <div class="space"><br></div>
@@ -158,10 +158,10 @@
                     <li>
                         <p> Share on:</p>
                     </li>
-                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="<?= g('db.admin.linkedin_id') ?>" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="<?= g('db.admin.youtube_id') ?>" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="<?= g('db.admin.facebook_id') ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="<?= g('db.admin.instagram_id') ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
             <div class="col-md-6">

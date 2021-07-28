@@ -42,7 +42,7 @@
             <li>
                 <div class="index-page-wrap">
                     <div class="index-page-content hding-2">
-                        <h2>Welcome <strong><?= $this->session_data['username'] ?></strong></h2>
+                        <h2>Welcome <strong><?=$this->session->userdata['logged_in_front']['first_name']?></strong></h2>
                         <div class="space"><br><br></div>
                         <div class="index-graph-box">
                             <div class="row">
@@ -236,7 +236,19 @@
                                                     <span id="startDeg2" class="8"></span>
                                                 </div>
                                             </div>
-                                            <div class="expertCount">4/<?= count($art) ?></div>
+                                            <?
+                                                $completTut = array();
+                                                $completTut['where']['mytutorial_user_id'] = $this->userid;
+                                                $completTut['where']['mytutorial_desc_percent'] = 1;
+                                                $completTut['where']['mytutorial_intro_percent'] = 1;
+                                                $completTut['where']['mytutorial_video_percent'] = 1;
+
+                                                $completTutCount = $this->model_mytutorial->find_one_active($completTut);
+
+                                                // debug($completTutCount );
+                                                // echo count($completTutCount);
+                                                ?>
+                                            <div class="expertCount"><?=count($completTutCount);?>/<?= count($art) ?></div>
                                         </div>
 
                                         <div class="progress-footer">
@@ -448,7 +460,7 @@
                                                 <div>
                                                     <h2 style="font-size: 26px;color: #4b647a;font-weight: 400;text-transform: uppercase;">certificate of completion</h2>
                                                     <div class="space"><br><br></div>
-                                                    <h3 style="color: #425c73; font-weight: 700;text-transform: capitalize;font-size: 32px;"><?= $this->session_data['username'] ?></h3>
+                                                    <h3 style="color: #425c73; font-weight: 700;text-transform: capitalize;font-size: 32px;"><?=$this->session->userdata['logged_in_front']['first_name']?></h3>
                                                     <div class="space"><br></div>
                                                     <p style="font-size: 14px;color: #4b647a;">has successfully completed on the <?= date("jS \of F Y") ?> the tutorial</p>
                                                     <div class="space"><br></div>
