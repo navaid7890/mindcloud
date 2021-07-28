@@ -109,7 +109,7 @@ global $config;
             <div class="col-md-offset-3 col-md-9">
                 <button type="button" class="btn sub-btn green" id="savepptCms">Save</button>
                 <div id="loading-image" style="display: none;">
-                    <img src="<?= g('base_url') ?>assets/front_assets/images/icons/loader.gif">
+                    <img src="https://mindcloud-bucket.s3.amazonaws.com/assets/images/loader.gif">
                 </div>
             </div>
         </div>
@@ -117,7 +117,13 @@ global $config;
 </form>
 <style>
     div#loading-image img {
-        width: 8%;
+        position: fixed;
+        z-index: 999;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
     }
 </style>
 
