@@ -15,7 +15,7 @@
                 <div class="space"><br><br><br></div>
                 
                 <div class="learnContentBox arrow-position">
-                    <i><img src="<<?= g('db.admin.bucketimg') . $learning[1]['learning_image'] ?>"></i>
+                    <i><img src="<?= g('db.admin.bucketimg') . $learning[1]['learning_image'] ?>"></i>
                     <div class="space"><br></div>
                     <h3><?=$learning['1']['learning_name']?></h3>
                     <div class="space"><br></div>
