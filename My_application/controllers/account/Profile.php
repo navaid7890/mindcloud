@@ -632,6 +632,36 @@ class Profile extends MY_Controller_Account
 
 		$this->load_view('learning', $data);
 	}
+	// public function ppt()
+	// {
+	// 	global $config;
+	// 	$user_id = $this->userid;
+
+	// 	$data['title'] = 'My Profile';
+
+	// 	set_time_limit(0);
+	// 	$all_slides ="";
+	// 	$file = file_get_contents("https://mindcloud-bucket.s3.amazonaws.com/assets/legal_term_sheet.pptx");
+	// 	file_put_contents('ppt_temp.pptx', $file);
+	// 	$file = "ppt_temp.pptx";
+	// 	if (!file_exists('assets/slides/')) {
+	// 		mkdir('assets/slides/', 0777, true);
+	// 	}
+	// 	$uploadsFolder = "assets/slides/";
+	// 	$powerpnt = new COM("powerpoint.application") or die("Unable to instantiate Powerpoint");
+	// 	$presentation = $powerpnt->Presentations->Open(realpath($file), false, false, false) or die("Unable to open presentation");
+	// 	foreach ($presentation->Slides as $slide) {
+	// 		$slideName = "Slide_" . $slide->SlideNumber;
+	// 		$exportFolder = realpath($uploadsFolder);
+	// 		$slide->Export($exportFolder . "\\\\" . $slideName . ".jpg", "jpg", "600", "400");
+	// 		$all_slides .= $slideName.",";
+	// 		ob_flush();
+	// 		flush();
+	// 	}
+	// 	$powerpnt->quit();
+	// 	echo $all_slides;
+	// 	// $this->load_view('learning', $data);
+	// }
 
 	public function startup()
 	{

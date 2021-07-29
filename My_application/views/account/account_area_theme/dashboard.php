@@ -10,7 +10,7 @@
         line-height: 122px;
         position: absolute;
         top: 80px;
-        right: 35%;
+        right: 21%;
     }
 
     #expertGraph .progres-circle-box {

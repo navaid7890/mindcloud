@@ -154,7 +154,7 @@ class Model_videos extends MY_Model {
                 'label' => 'Upload PPT File',
                 // 'name_path' => 'course_image_path',
                 'upload_config' => 'site_upload_course',
-                'type' => 'customfileupload',
+                'type' => 'hidden',
                 'type_dt' => 'image',
                 'randomize' => true,
                 'preview' => 'true',
@@ -166,6 +166,43 @@ class Model_videos extends MY_Model {
                 'rules' => 'trim|htmlentities',
                 // 'js_rules'=>$is_required_image
             ),
+
+            'videos_ppt_time' => array(
+                'table'   => $this->_table,
+                'name'   => 'videos_ppt_time',
+                'label'   => 'PPT Time Slots',
+                'type'   => 'text',
+                'attributes'   => array(),
+                'js_rules'   => '',
+                'rules'   => 'trim|htmlentities'
+             ),
+             'videos_ppt_slides' => array(
+                'table'   => $this->_table,
+                'name'   => 'videos_ppt_slides',
+                'label'   => 'Slides',
+                'type'   => 'text',
+                'type_dt'   => 'text',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width"=>"5%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+           ),
+
+
+           'videos_ppt_status' => array(
+            'table'   => $this->_table,
+            'name'   => 'videos_ppt_status',
+            'label'   => 'Slide Status?',
+            'type'   => 'switch',
+            'type_dt'   => 'dropdown',
+            'type_filter_dt' => 'dropdown',
+            'list_data_key' => "videos_ppt_status" ,
+            'list_data' => array(),
+            'default'   => '1',
+            'attributes'   => array(),
+            'dt_attributes'   => array("width"=>"7%"),
+            'rules'   => 'trim'
+         ),
 
 
          

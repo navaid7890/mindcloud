@@ -35,10 +35,10 @@ if ($this->userid > 0) {
 
                 <div class="col-lg-4 col-md-12">
                     <div class="video-card"><?//= g('db.admin.bucket') . $cont8['tutorial_video'] ?>
-                    <a href="<?= get_image($cont8['tutorial_video'], $cont8['tutorial_video_path']) ?>" data-fancybox="media">
+                    <a href="<?= g('db.admin.bucket') . $cont8['tutorial_video'] ?>" data-fancybox="media">
                         <div class="video-box">
                             <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont8['cms_page_image'] ?>" />
-                            <!-- <span><i class="fas fa-play"></i></span> -->
+                            <span><i class="fas fa-play"></i></span>
                         </div>
                     </a>   
                     <div class="video-content">

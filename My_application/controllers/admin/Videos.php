@@ -2,7 +2,8 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Videos extends MY_Controller {
+class Videos extends MY_Controller
+{
 
     /**
      * Achievements page
@@ -15,7 +16,8 @@ class Videos extends MY_Controller {
 
     public $_list_data = array();
 
-    public function __construct() {
+    public function __construct()
+    {
 
         global $config;
 
@@ -24,17 +26,17 @@ class Videos extends MY_Controller {
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
 
         $this->dt_params['action'] = array(
-            "hide_add_button" => false ,
-            "hide" => false ,
-            "show_delete" => true ,
-            "show_edit" => true ,
-            "order_field" => false ,
-            "show_view" => false ,
-            "extra" => array() ,
+            "hide_add_button" => false,
+            "hide" => false,
+            "show_delete" => true,
+            "show_edit" => true,
+            "order_field" => false,
+            "show_view" => false,
+            "extra" => array(),
         );
 
         $this->_list_data['videos_status'] = array(
-            STATUS_INACTIVE => "<span class=\"label label-default\">Inactive</span>" ,
+            STATUS_INACTIVE => "<span class=\"label label-default\">Inactive</span>",
             STATUS_ACTIVE =>  "<span class=\"label label-primary\">Active</span>"
         );
         /*$this->_list_data['videos_feature'] = array(
@@ -56,26 +58,66 @@ class Videos extends MY_Controller {
         // $this->_list_data['videos_parent_id'] = $this->model_videos->find_all_list_active(
         //     array('where_string'=>'videos_parent_id <= 1')
         //     ,"videos_name");
-        
+
 
         $_POST = $this->input->post(NULL, true);
     }
 
 
-    public function add($id=0 , $data = array()) {
-        $this->add_script(array( "jquery.validate.js" , "form-validation-script.js","plupload.full.min.js") , "js" );
-        $this->register_plugins(array("datatables","jquery-file-upload"));
-        
-     
-        parent::add($id, $data);
+    public function add($id = 0, $data = array())
+    {
 
+        //   debug($_POST['videos']);
+        $this->add_script(array("jquery.validate.js", "form-validation-script.js", "plupload.full.min.js"), "js");
+        $this->register_plugins(array("datatables", "jquery-file-upload"));
+
+        if (isset($_POST) and array_filled($_POST)) {
+
+            if ($_POST['videos']['videos_ppt_status'] == 1) {
+                
+                set_time_limit(0);
+                $all_slides = "";
+                $file = file_get_contents("https://mindcloud-bucket.s3.amazonaws.com/assets/".$_POST['videos']['videos_ppt']);
+                file_put_contents('ppt_temp.pptx', $file);
+                $files = "ppt_temp.pptx";
+                $folderName = "assets/".$_POST['videos']['videos_name']."/";
+                
+
+                if (!file_exists($folderName)) {
+                    mkdir($folderName, 0777, true);
+                }
+                $uploadsFolder = $folderName;
+                $powerpnt = new COM("powerpoint.application") or die("Unable to instantiate Powerpoint");
+                $presentation = $powerpnt->Presentations->Open(realpath($files), false, false, false) or die("Unable to open presentation");
+                foreach ($presentation->Slides as $slide) {
+                    $slideName = "Slide_" . $slide->SlideNumber;
+                    $exportFolder = realpath($uploadsFolder);
+                    $slide->Export($exportFolder . "\\\\" . $slideName . ".jpg", "jpg", "600", "400");
+                    $all_slides .= $slideName . ",";
+                    // ob_flush();
+                    // flush();
+                }
+                // $powerpnt->quit();
+                // echo $all_slides;
+                $_POST['videos']['videos_ppt_slides'] = $all_slides;
+            }
+            // debug($_POST['videos'],1);
+            // $_POST['article']['a_type_id'] = ARTICLE;
+            // if(!isset($_POST['article']['a_id'])){
+            //     $_POST['article']['a_createdon'] = date("Y-m-d h:m:s");
+            // }
+            // debug($_POST['videos']['videos_ppt_slides'],1);
+        }
+
+
+        parent::add($id, $data);
     }
 
-    
+
     public function ajax_uploadtoserver()
     {
 
-        require_once APPPATH.'third_party/S3/S3.php';
+        require_once APPPATH . 'third_party/S3/S3.php';
 
 
         // 5 minutes execution time
@@ -85,7 +127,7 @@ class Videos extends MY_Controller {
 
         // Settings
         $targetDir_path = "assets/uploads/videos";
-        $targetDir = FCPATH . $targetDir_path;//"assets/uploads/video_gameplay_reviews";
+        $targetDir = FCPATH . $targetDir_path; //"assets/uploads/video_gameplay_reviews";
 
         //$targetDir = ‘uploads’;
         $cleanupTargetDir = true; // Remove old files
@@ -93,7 +135,7 @@ class Videos extends MY_Controller {
 
         // Create target dir
         if (!file_exists($targetDir)) {
-        @mkdir($targetDir);
+            @mkdir($targetDir);
         }
 
         // Get a file name
@@ -108,25 +150,25 @@ class Videos extends MY_Controller {
         $filePath = $targetDir . DIRECTORY_SEPARATOR . $fileName;
 
         $s = new S3();
-    
+
         $s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
         $s->setRegion(AWS_S3_REGION);
         $s->setSignatureVersion('v4');
         $tmpfile = $_FILES["file"]["tmp_name"];
-       //debug($tmpfile);
+        //debug($tmpfile);
         $file = $fileName;
-        
-      //  debug($file);
-        $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/'.$file, $s->ACL_PUBLIC_READ,[],['Content-Type'=>'video/mp4']);
 
-       
+        //  debug($file);
+        $s->putObject($s->inputFile($tmpfile), AWS_S3_BUCKET, 'assets/' . $file, $s->ACL_PUBLIC_READ, [], ['Content-Type' => 'video/mp4']);
 
-      
+
+
+
 
         // Chunking might be enabled
         $chunk = isset($_REQUEST["chunk"]) ? intval($_REQUEST["chunk"]) : 0;
         $chunks = isset($_REQUEST["chunks"]) ? intval($_REQUEST["chunks"]) : 0;
-        
+
         // Remove old temp files
         if ($cleanupTargetDir) {
             if (!is_dir($targetDir) || !$dir = opendir($targetDir)) {
@@ -134,8 +176,7 @@ class Videos extends MY_Controller {
                 $error[] = 'Failed to open temp directory.';
             }
 
-            while (($file = readdir($dir)) !== false)
-            {
+            while (($file = readdir($dir)) !== false) {
                 $tmpfilePath = $targetDir . DIRECTORY_SEPARATOR . $file;
 
                 // If temp file is current file proceed to the next
@@ -144,8 +185,7 @@ class Videos extends MY_Controller {
                 }
 
                 // Remove temp file if it is older than the max age and is not the current file
-                if (preg_match('/\.part$/', $file) && (filemtime($tmpfilePath) < time() - $maxFileAge))
-                {
+                if (preg_match('/\.part$/', $file) && (filemtime($tmpfilePath) < time() - $maxFileAge)) {
                     @unlink($tmpfilePath);
                 }
             }
@@ -170,8 +210,7 @@ class Videos extends MY_Controller {
                 //die('{"jsonrpc" : "2.0", "error" : {"code": 101, "message": "Failed to open input stream."}, "id" : "id"}');
                 $error[] = 'Failed to open input stream.';
             }
-        }
-        else {
+        } else {
             if (!$in = @fopen("php://input", "rb")) {
                 //die('{"jsonrpc" : "2.0", "error" : {"code": 101, "message": "Failed to open input stream."}, "id" : "id"}');
                 $error[] = 'Failed to open input stream.';
@@ -187,158 +226,153 @@ class Videos extends MY_Controller {
 
         // Check if file has been uploaded
         if (!$chunks || $chunk == $chunks - 1) {
-        // Strip the temp .part suffix off
+            // Strip the temp .part suffix off
             rename("{$filePath}.part", $filePath);
         }
 
 
-        if(($chunk+1) == $chunks) {
-         
+        if (($chunk + 1) == $chunks) {
 
-           
-        
-   
-       
-            $data = array('videos_image'=>$fileName,'videos_image_path'=>$targetDir_path."/");
-            $this->db->where('videos_id',$this->input->get('id'));
-            $this->db->update('videos',$data);
-         
+
+
+
+
+
+            $data = array('videos_image' => $fileName, 'videos_image_path' => $targetDir_path . "/");
+            $this->db->where('videos_id', $this->input->get('id'));
+            $this->db->update('videos', $data);
+
             $param = array();
             $param['status'] = true;
             $param['msg'] = 'videos Uploaded';
             echo json_encode($param);
-        }
-        else {
+        } else {
             $param = array();
             $param['msg'] = 'Videos In-Progress';
-            echo json_encode($param);    
+            echo json_encode($param);
         }
-      
-       // die();
+
+        // die();
         // Return Success JSON-RPC response
         //die('{"jsonrpc" : "2.0", "result" : null, "id" : "id"}');
 
-    }  
-    
-    public function upload_images(){
+    }
 
-		require_once APPPATH.'third_party/S3/S3.php';
-		// $k=$this->load->library('S3');
-		//debug($k);
-  
-		$formdata = $_POST['videos'];
-		$filedata = $_FILES['videos'];
-		$cmsID = $formdata['videos_id'];
+    public function upload_images()
+    {
+
+        require_once APPPATH . 'third_party/S3/S3.php';
+        // $k=$this->load->library('S3');
+        //debug($k);
+
+        $formdata = $_POST['videos'];
+        $filedata = $_FILES['videos'];
+        $cmsID = $formdata['videos_id'];
 
 
-		$uploads_dir = 'assets/uploads/videos';
-		$tmp_name = $_FILES["ok"]["tmp_name"];
-		$name = rand(1000,100000)."_".$_FILES["ok"]["name"];
-		
-  
-		// $tmpfile = $_FILES["ok"]["tmp_name"];
-		// $file = $_FILES["ok"]["name"];
- 
-        
+        $uploads_dir = 'assets/uploads/videos';
+        $tmp_name = $_FILES["ok"]["tmp_name"];
+        $name = rand(1000, 100000) . "_" . $_FILES["ok"]["name"];
+
+
+        // $tmpfile = $_FILES["ok"]["tmp_name"];
+        // $file = $_FILES["ok"]["name"];
+
+
         // move_uploaded_file($tmp_name, "$uploads_dir/$file");
 
-		$Nname = explode(".", $name); 
-        $c_type = 'image/'.$Nname[1]; 
+        $Nname = explode(".", $name);
+        $c_type = 'image/' . $Nname[1];
 
         $s = new S3();
-	
+
         $s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
         $s->setRegion(AWS_S3_REGION);
-        $s->setSignatureVersion('v4'); ;
-        $s->putObject($s->inputFile($tmp_name), AWS_S3_BUCKET, 'assets/images/'.$name, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
+        $s->setSignatureVersion('v4');;
+        $s->putObject($s->inputFile($tmp_name), AWS_S3_BUCKET, 'assets/images/' . $name, $s->ACL_PUBLIC_READ, [], ['Content-Type' => $c_type]);
         //debug($s,1);
-    
 
-	    $allowEd = array('jpg','png','.JPG','jpeg');
-	    if(in_array($Nname[1],$allowEd)){
 
-		
-
-		   
-
-		    $insertImage['videos_image2'] = $name;
-		    $insertImage['videos_image_path'] = 'assets/uploads/videos/';
-		    $where['where']['videos_id'] = $cmsID;
-	        $status = $this->model_videos->update_model($where,$insertImage);
-		
-			if($status){
-	        	echo json_encode(array('status'=>1,'message'=>'image updated successfully.'));
-	        }
-	        else{
-	        	echo json_encode(array('status'=>0,'message'=>'Please try again.'));	
-	        }
-	    }
-	    else{
-	    	echo json_encode(array('status'=>0,'message'=>'Only JPG and PNG format allowed'));	
-	    }
-	}
+        $allowEd = array('jpg', 'png', '.JPG', 'jpeg');
+        if (in_array($Nname[1], $allowEd)) {
 
 
 
-    public function upload_ppt(){
-
-		require_once APPPATH.'third_party/S3/S3.php';
-		// $k=$this->load->library('S3');
-		//debug($k);
-  
-		$formdata = $_POST['videos'];
-		$filedata = $_FILES['videos'];
-		$cmsID = $formdata['videos_id'];
 
 
-		$uploads_dir = 'assets/uploads/videos';
-		$tmp_name = $_FILES["ok"]["tmp_name"];
-		$name = rand(1000,100000)."_".$_FILES["ok"]["name"];
-		
-  
-		// $tmpfile = $_FILES["ok"]["tmp_name"];
-		// $file = $_FILES["ok"]["name"];
- 
-        
+            $insertImage['videos_image2'] = $name;
+            $insertImage['videos_image_path'] = 'assets/uploads/videos/';
+            $where['where']['videos_id'] = $cmsID;
+            $status = $this->model_videos->update_model($where, $insertImage);
+
+            if ($status) {
+                echo json_encode(array('status' => 1, 'message' => 'image updated successfully.'));
+            } else {
+                echo json_encode(array('status' => 0, 'message' => 'Please try again.'));
+            }
+        } else {
+            echo json_encode(array('status' => 0, 'message' => 'Only JPG and PNG format allowed'));
+        }
+    }
+
+
+
+    public function upload_ppt()
+    {
+
+        require_once APPPATH . 'third_party/S3/S3.php';
+        // $k=$this->load->library('S3');
+        //debug($k);
+
+        $formdata = $_POST['videos'];
+        $filedata = $_FILES['videos'];
+        $cmsID = $formdata['videos_id'];
+
+
+        $uploads_dir = 'assets/uploads/videos';
+        $tmp_name = $_FILES["ok"]["tmp_name"];
+        $name = rand(1000, 100000) . "_" . $_FILES["ok"]["name"];
+
+
+        // $tmpfile = $_FILES["ok"]["tmp_name"];
+        // $file = $_FILES["ok"]["name"];
+
+
         // move_uploaded_file($tmp_name, "$uploads_dir/$file");
 
-		$Nname = explode(".", $name); 
-        $c_type = 'ppt'.$Nname[1]; 
+        $Nname = explode(".", $name);
+        $c_type = 'ppt' . $Nname[1];
 
         $s = new S3();
-	
+
         $s->setAuth(AWS_S3_KEY, AWS_S3_SECRET);
         $s->setRegion(AWS_S3_REGION);
-        $s->setSignatureVersion('v4'); ;
-        $s->putObject($s->inputFile($tmp_name), AWS_S3_BUCKET, 'assets/images/'.$name, $s->ACL_PUBLIC_READ,[],['Content-Type'=>$c_type]);
+        $s->setSignatureVersion('v4');;
+        $s->putObject($s->inputFile($tmp_name), AWS_S3_BUCKET, 'assets/images/' . $name, $s->ACL_PUBLIC_READ, [], ['Content-Type' => $c_type]);
         //debug($s,1);
-    
-
-	    $allowEd = array('ppt','pptx');
-	    if(in_array($Nname[1],$allowEd)){
-
-		
-
-		   
-
-		    $insertImage['videos_ppt'] = $name;
-		    // $insertImage['videos_ppt'] = 'assets/uploads/videos/';
-		    $where['where']['videos_id'] = $cmsID;
-	        $status = $this->model_videos->update_model($where,$insertImage);
-		
-			if($status){
-	        	echo json_encode(array('status'=>1,'message'=>'ppt updated successfully.'));
-	        }
-	        else{
-	        	echo json_encode(array('status'=>0,'message'=>'Please try again.'));	
-	        }
-	    }
-	    else{
-	    	echo json_encode(array('status'=>0,'message'=>'Only PPT and PPTX format allowed'));	
-	    }
-	}
 
 
+        $allowEd = array('ppt', 'pptx');
+        if (in_array($Nname[1], $allowEd)) {
+
+
+
+
+
+            $insertImage['videos_ppt'] = $name;
+            // $insertImage['videos_ppt'] = 'assets/uploads/videos/';
+            $where['where']['videos_id'] = $cmsID;
+            $status = $this->model_videos->update_model($where, $insertImage);
+
+            if ($status) {
+                echo json_encode(array('status' => 1, 'message' => 'ppt updated successfully.'));
+            } else {
+                echo json_encode(array('status' => 0, 'message' => 'Please try again.'));
+            }
+        } else {
+            echo json_encode(array('status' => 0, 'message' => 'Only PPT and PPTX format allowed'));
+        }
+    }
 }
 
 /* End of file welcome.php */

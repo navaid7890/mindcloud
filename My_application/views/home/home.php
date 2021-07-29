@@ -137,7 +137,7 @@
       </div>
       <div class="space"><br><br><br><br></div>
       <?//= g('db.admin.bucket') . $cont13['tutorial_video'] ?>
-      <a href="https://www.youtube.com/watch?v=MPKy8w3YX4I&list=PL-uOqadEk4aFQa-6Jk0AOCdAWRhGhmbV7&index=6" data-fancybox="media">
+      <a href="<?= g('db.admin.bucket') . $cont13['tutorial_video'] ?>" data-fancybox="media">
          <div class="video-box">
             <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont13['cms_page_image'] ?>" />
             <span><i class="fas fa-play"></i></span>
