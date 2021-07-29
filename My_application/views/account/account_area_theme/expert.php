@@ -16,6 +16,43 @@
     .vid-content h4 {
     min-height: 56px;
 }
+
+
+
+.pagination {
+    display: table;
+    margin: 20px auto;
+}
+
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.pagination>li {
+    display: inline;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #FDBE41;
+    border-color:#FDBE41;
+}
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #FDBE41;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
 </style>
 <div class="index-page">
     <section class="dashboard">
@@ -143,10 +180,7 @@
                                                                                 
                                                                                 </div>
                                                                             </div>
-                                                                            <!-- <div class="col-md-4 text-right">
-                                                                                <h6><? //= price($value['tutorial_price']) 
-                                                                                    ?></h6>
-                                                                            </div> -->
+                                                                   
                                                                         </div>
                                                                         <div class="space"><br><br></div>
                                                                         <div class="row align-items-center">
@@ -175,7 +209,22 @@
                                                         <?php endforeach; ?>
                                                     <?php endif ?>
                                                 </ul>
+                                                
+        
+            <div class="text-center"> 
+                <nav aria-label="Page navigation example"><br>
+                  <ul class="pagination">
+                    <?=$links?>
+                  </ul>
+                </nav>
+            </div>
+ 
+        
+
                                             <? } ?>
+
+
+                                            
 
 
                                             <div class="space"><br><br></div>

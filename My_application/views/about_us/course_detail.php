@@ -62,7 +62,7 @@
                   // //debug($a);
                   // $dt=$this->model_category->find_by_pk($a);
 
-                  debug($dt);
+               //   debug($dt);
                   ?>
                   <ul class="bnr-cate">
                      <li>Category</li>

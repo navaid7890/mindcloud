@@ -71,7 +71,7 @@
       <? if(isset($learn_cat) AND array_filled($learn_cat)) :?>
       <? foreach($learn_cat as $key=>$value):?>
       <div class="jrnyFaq">
-         <h5><i><img src="<?=i('')?>icons/learn/1.svg" alt=""></i> 
+         <h5><i><img src="<?= g('db.admin.bucketimg') . $value['learning_journey_category_image'] ?>" alt=""></i> 
             <?=$value['learning_journey_category_name']?>
          </h5>
          <?

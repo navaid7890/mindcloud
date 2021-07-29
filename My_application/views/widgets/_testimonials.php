@@ -21,7 +21,18 @@
                                 <h2><?=$value['testimonials_heading']?></h2> 
                                 <div class="space"><br><br></div>
 
+                                <div class="one">
+                               <p>
+                                <?=short_text($value['testimonials_desc'],130)?>
+                               </p>
+                               <a href="javascript:;" class="dt" style="font-size: 18px;margin-top:20px;">Read More</a>
+                                </div>
+
+                                <div class="two">
                                 <?=html_entity_decode($value['testimonials_desc'])?>
+
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -30,3 +41,14 @@
         </ul>
     </div>
 </section>
+
+<script>
+$( document ).ready(function() {    
+    $(".two").hide();
+$(".dt").click(function(){
+  $(".one").hide();
+  $(".two").show();
+});
+});
+
+</script>

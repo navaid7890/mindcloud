@@ -20,7 +20,7 @@ class Model_learning extends MY_Model {
     function __construct()
     {
         // Call the Model constructor
-        $this->pagination_params['fields'] = "learning_id,learning_name,CONCAT(learning_image_path,learning_image) AS learning_image,learning_status";
+        $this->pagination_params['fields'] = "learning_id,learning_name,learning_status";
         parent::__construct();
 
     }
@@ -108,24 +108,34 @@ class Model_learning extends MY_Model {
                   ),
 
          
-                  'learning_image' => array(
+            //       'learning_image' => array(
+            //     'table' => $this->_table,
+            //     'name' => 'learning_image',
+            //     'label' => 'Image',
+            //     'name_path' => 'learning_image_path',
+            //     'upload_config' => 'site_upload_learning',
+            //     'type' => 'fileupload',
+            //     'type_dt' => 'image',
+            //     'randomize' => true,
+            //     'preview' => 'true',
+            //     // 'thumb'   => array(array('name'=>'learning_image_thumb','max_width'=>260, 'max_height'=>250),),
+            //     'attributes'   => array(
+            //         'image_size_recommended'=>'31px × 31px',
+            //         'allow_ext'=>'png|jpeg|jpg|svg',
+            //     ),
+            //     'dt_attributes' => array("width" => "10%"),
+            //     'rules' => 'trim|htmlentities',
+            //     'js_rules'=>$is_required_image
+            // ),
+
+            'learning_image' => array(
                 'table' => $this->_table,
                 'name' => 'learning_image',
                 'label' => 'Image',
-                'name_path' => 'learning_image_path',
-                'upload_config' => 'site_upload_learning',
-                'type' => 'fileupload',
-                'type_dt' => 'image',
-                'randomize' => true,
-                'preview' => 'true',
-                // 'thumb'   => array(array('name'=>'learning_image_thumb','max_width'=>260, 'max_height'=>250),),
-                'attributes'   => array(
-                    'image_size_recommended'=>'31px × 31px',
-                    'allow_ext'=>'png|jpeg|jpg|svg',
-                ),
-                'dt_attributes' => array("width" => "10%"),
-                'rules' => 'trim|htmlentities',
-                'js_rules'=>$is_required_image
+                'type' => 'hidden',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
             ),
 
 

@@ -30,7 +30,8 @@ class Contact_us extends MY_Controller
 
 
         //CONTENT
-        $data['cont'] = $this->model_cms_page->find_by_pk(9);
+        $conts = $this->model_cms_page->get_page(110);
+        $data['con1'] = $conts['child'][0];
 
 
         $this->load_view("index", $data);

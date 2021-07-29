@@ -8,14 +8,14 @@
         <ul class="learn-process">
             <li><?//= g('db.admin.bucketimg') . "cms_image/" . $learning['0']['learning_image'] ?>
                 <div class="learnContentBox">
-                    <i><img src="<?= get_image($learning['0']['learning_image'], $learning['0']['learning_image_path'])?>"></i>
+                    <i><img src="<?= g('db.admin.bucketimg') . $learning[0]['learning_image'] ?>"></i>
                     <div class="space"><br></div>
                     <h3><?=$learning['0']['learning_name']?></h3>
                 </div>
                 <div class="space"><br><br><br></div>
                 
                 <div class="learnContentBox arrow-position">
-                    <i><img src="<?= get_image($learning['1']['learning_image'], $learning['1']['learning_image_path'])?>"></i>
+                    <i><img src="<?= g('db.admin.bucketimg') . $learning[1]['learning_image'] ?>"></i>
                     <div class="space"><br></div>
                     <h3><?=$learning['1']['learning_name']?></h3>
                     <div class="space"><br></div>
@@ -25,7 +25,7 @@
 
             <li>
                 <div class="learnContentBox">
-                    <i><img src="<?= get_image($learning['2']['learning_image'], $learning['2']['learning_image_path'])?>"></i>
+                    <i><img src="<?= g('db.admin.bucketimg') . $learning[2]['learning_image'] ?>"></i>
                     <div class="space"><br></div>
                     <h3><?=$learning['2']['learning_name']?></h3>
                     <div class="space"><br></div>
@@ -35,7 +35,7 @@
 
             <li>
                 <div class="learnContentBox">
-                    <i><img src="<?= get_image($learning['3']['learning_image'], $learning['3']['learning_image_path'])?>"></i>
+                    <i><img src="<?= g('db.admin.bucketimg') . $learning[3]['learning_image'] ?>"></i>
                     <div class="space"><br></div>
                     <h3><?=$learning['3']['learning_name']?></h3>
                     <div class="space"><br></div>
@@ -45,7 +45,7 @@
 
             <li>
                 <div class="learnContentBox">
-                    <i><img src="<?= get_image($learning['4']['learning_image'], $learning['4']['learning_image_path'])?>"></i>
+                    <i><img src="<?= g('db.admin.bucketimg') . $learning[4]['learning_image'] ?>"></i>
                     <div class="space"><br></div>
                     <h3><?=$learning['4']['learning_name']?></h3>
                     <div class="space"><br></div>
@@ -54,7 +54,7 @@
                 <div class="space"><br><br><br></div>
 
                 <div class="learnContentBox arrow-hide">
-                    <i><img src="<?= get_image($learning['5']['learning_image'], $learning['5']['learning_image_path'])?>"></i>
+                    <i><img src="<?= g('db.admin.bucketimg') . $learning[5]['learning_image'] ?>"></i>
                     <div class="space"><br></div>
                     <h3><?=$learning['5']['learning_name']?></h3>
                     <div class="space"><br></div>

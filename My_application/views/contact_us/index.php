@@ -39,7 +39,7 @@
 }
 
 form#forms-contact_us {
-    padding: 10% 0 0 0;
+    padding: 0% 0 0 0;
 }
 
 .contact-info ul {
@@ -57,12 +57,31 @@ form#forms-contact_us {
 }
 
 .contact-info {
-    padding: 15% 0;
+    padding: 5% 0;
 }
 .contact-info ul li a i
 {
 margin-right: 10px;
 
+}
+
+.redyContent.text-center {
+    background: #f3f7fb;
+    padding-bottom: 5px;
+}
+.readySec {
+    background: #f3f7fb;
+    padding-bottom: 15px;
+}
+
+.redyContent h1 {
+    border-bottom: 8px solid #F4C150;
+    display: inline;
+    padding-bottom: 12px;
+    position: relative;
+    margin-bottom: 33px;
+    display: inline-block;
+    margin-top: 45px;
 }
     </style>
     <!-- Begin: Crousel -->
@@ -70,12 +89,40 @@ margin-right: 10px;
     <!-- END: Crousel -->
     <section class="contactSec pad-sec hding-1 para">
       <div class="container">
-      <div class="criteriaHead">
-        <h1><p><span style="font-size:36px;">Contact&nbsp;<strong>Us</strong></span></p></h1>
 
-      </div>
 
       <div class="row">
+
+      <div class="col-md-12">
+
+<div class="readySec para hding-1 n">
+
+      <div class="redyContent text-center">
+         <h1><?=html_entity_decode($con1['cms_page_title'])?></h1>
+         <?=html_entity_decode($con1['cms_page_content'])?>
+      
+       
+      </div>
+
+      </div>
+      </div>
+
+
+      <div class="col-md-12">
+
+<div class="readySec para hding-1 n">
+
+      <div class="redyContent text-center">
+         <h1>Contact Us</h1>
+         
+       
+      </div>
+
+      </div>
+      </div>
+
+
+
         <div class="col-md-6">
 
             <form id="forms-contact_us">

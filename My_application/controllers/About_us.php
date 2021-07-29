@@ -1243,7 +1243,7 @@ class About_us extends MY_Controller
     
     private function _pagination($model_name='',$param = array())
     {
-        $per_page = 9;
+        $per_page = 12;
         $this->load->library('mypagination');
 
         $class_name = $this->router->fetch_class();
