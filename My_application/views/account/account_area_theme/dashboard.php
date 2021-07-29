@@ -20,14 +20,15 @@
     #expertGraph span.prec {
         display: none;
     }
+
     #expertGraph .progress-box {
-    padding-bottom: 50px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #dfefff;
-    height: 400px;
-    overflow: scroll;
-    overflow-x: hidden;
-}
+        padding-bottom: 50px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #dfefff;
+        height: 400px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
 </style>
 
 <div class="index-page">
@@ -42,13 +43,13 @@
             <li>
                 <div class="index-page-wrap">
                     <div class="index-page-content hding-2">
-                        <h2>Welcome <strong><?=$this->session->userdata['logged_in_front']['first_name']?></strong></h2>
+                        <h2>Welcome <strong><?= $this->session->userdata['logged_in_front']['first_name'] ?></strong></h2>
                         <div class="space"><br><br></div>
                         <div class="index-graph-box">
                             <div class="row">
                                 <div class="col-lg-7 col-md-12">
                                     <div class="progress-box">
-                                        <h2>My <strong> Learning Journey  </strong></h2>
+                                        <h2>My <strong> Learning Journey </strong></h2>
                                         <div class="space"><br><br><br></div>
                                         <div class="progres-bar" id="LearingJourney">
                                             <div class="progres-text">
@@ -237,18 +238,18 @@
                                                 </div>
                                             </div>
                                             <?
-                                                $completTut = array();
-                                                $completTut['where']['mytutorial_user_id'] = $this->userid;
-                                                $completTut['where']['mytutorial_desc_percent'] = 1;
-                                                $completTut['where']['mytutorial_intro_percent'] = 1;
-                                                $completTut['where']['mytutorial_video_percent'] = 1;
-                                                $completTutCount = $this->model_mytutorial->find_all_active($completTut);
+                                            $completTut = array();
+                                            $completTut['where']['mytutorial_user_id'] = $this->userid;
+                                            $completTut['where']['mytutorial_desc_percent'] = 1;
+                                            $completTut['where']['mytutorial_intro_percent'] = 1;
+                                            $completTut['where']['mytutorial_video_percent'] = 1;
+                                            $completTutCount = $this->model_mytutorial->find_all_active($completTut);
 
-                                                // $query = $this->db->last_query($completTutCount);
-                                                // echo debug($completTut );
-                                                // echo count($completTutCount);
-                                                ?>
-                                            <div class="expertCount"><?=count($completTutCount);?>/<?= count($art) ?></div>
+                                            // $query = $this->db->last_query($completTutCount);
+                                            // echo debug($completTut );
+                                            // echo count($completTutCount);
+                                            ?>
+                                            <div class="expertCount"><?= count($completTutCount); ?>/<?= count($art) ?></div>
                                         </div>
 
                                         <div class="progress-footer">
@@ -277,22 +278,22 @@
                                                                 <p>Preview Course</p>
                                                             </span>
                                                             <?
-                                                    $coursecat = array();
-                                                    $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
-                                                    $cate = $this->model_course_category->find_all_active($coursecat);
+                                                            $coursecat = array();
+                                                            $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
+                                                            $cate = $this->model_course_category->find_all_active($coursecat);
 
-                                                    $cat_name = array();
-                                                    $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
-                                                    $cat_name = $this->model_category->find_all_active($cat_name);
-                                                    ?>
+                                                            $cat_name = array();
+                                                            $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                                            $cat_name = $this->model_category->find_all_active($cat_name);
+                                                            ?>
                                                             <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
                                                         </div>
                                                     </a>
-                                                   
-                                                   
+
+
                                                     <div class="vid-content">
                                                         <div class="row align-items-center">
-                                                            <div class="col-md-8">
+                                                            <div class="col-md-12">
                                                                 <h4><?= $value['tutorial_name'] ?></h4>
                                                                 <ul class="rating">
                                                                     <?
@@ -306,7 +307,7 @@
                                                                     <? } ?>
                                                                 </ul>
                                                             </div>
-                                                            <div class="col-md-4">
+                                                            <!-- <div class="col-md-4">
                                                                 <div class="progres-box">
                                                                     <div id="activeBorder1" class="active-border">
                                                                         <div id="circle1" class="circle">
@@ -315,7 +316,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
                                                         </div>
                                                         <div class="space"><br><br><br><br></div>
                                                         <div class="row align-items-center">
@@ -359,21 +360,22 @@
                                                             <span><i class="fas fa-play"></i>
                                                                 <p>Preview Course</p>
                                                             </span>
+                                                            <?
+                                                            $coursecat = array();
+                                                            $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
+                                                            $cate = $this->model_course_category->find_all_active($coursecat);
+
+                                                            $cat_name = array();
+                                                            $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                                            $cat_name = $this->model_category->find_all_active($cat_name);
+                                                            ?>
+                                                            <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
                                                         </div>
                                                     </a>
-                                                    <?
-                                                    $coursecat = array();
-                                                    $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
-                                                    $cate = $this->model_course_category->find_all_active($coursecat);
 
-                                                    $cat_name = array();
-                                                    $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
-                                                    $cat_name = $this->model_category->find_all_active($cat_name);
-                                                    ?>
-                                                    <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
                                                     <div class="vid-content">
                                                         <div class="row align-items-center">
-                                                            <div class="col-md-8">
+                                                            <div class="col-md-12">
                                                                 <h4><?= $value['tutorial_name'] ?></h4>
                                                                 <ul class="rating">
                                                                     <?
@@ -387,7 +389,7 @@
                                                                     <? } ?>
                                                                 </ul>
                                                             </div>
-                                                            <div class="col-md-4">
+                                                            <!-- <div class="col-md-4">
                                                                 <div class="progres-box">
                                                                     <div id="activeBorder1" class="active-border">
                                                                         <div id="circle1" class="circle">
@@ -396,7 +398,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
                                                         </div>
                                                         <div class="space"><br><br><br><br></div>
                                                         <div class="row align-items-center">
@@ -434,67 +436,67 @@
                                 <div class="space"><br><br></div>
                                 <? //= debug($mytutorial) 
                                 ?>
-                                
+
 
                                 <ul class="certificate-slide">
-                                <?php if (isset($mytutorial) && array_filled($mytutorial)) : ?>
-                                    <?php foreach ($mytutorial as $key => $value) : ?>
-                                        <?= $value['mytutorial_tutorial_id'] ?>
-                                        <?
-                                        $cer = array();
-                                        $cer['order'] = "tutorial_id ASC";
-                                        $cer['where']['tutorial_id'] = $value['mytutorial_tutorial_id'];
-                                        $cer['where']['tutorial_status'] = 1;
-                                        // $param['where_in']['tutorial_id'] = $all;
-                                        $certificate = $this->model_tutorial->find_all_active($cer);
-                                        ?>
-                                        
-                                        <?
-                                        $al = array();
-                                        $al['where']['expert_id'] = $certificate[0]['tutorial_expert_id'];
-                                        $expert = $this->model_expert->find_all_active($al);
-                                        ?>
-                                    <li>
-                                        <div style="text-align: center;">
-                                            <div style="padding: 20px 20px 35px;margin-bottom: 15px;text-align: center;background: #f3f7fb;border: 10px solid #71c2fd;">
-                                                <div>
-                                                    <h2 style="font-size: 26px;color: #4b647a;font-weight: 400;text-transform: uppercase;">certificate of completion</h2>
-                                                    <div class="space"><br><br></div>
-                                                    <h3 style="color: #425c73; font-weight: 700;text-transform: capitalize;font-size: 32px;"><?=$this->session->userdata['logged_in_front']['first_name']?></h3>
-                                                    <div class="space"><br></div>
-                                                    <p style="font-size: 14px;color: #4b647a;">has successfully completed on the <?= date("jS \of F Y") ?> the tutorial</p>
-                                                    <div class="space"><br></div>
-                                                    <h3 style="color: #425c73; font-weight: 700;text-transform: capitalize;font-size: 32px;min-height: 64px;">"<?=$certificate[0]['tutorial_name'] ?>"</h3>
-                                                    <div class="space"><br></div>
-                                                    <h6 style="font-style: italic;font-size: 18px;color: #4b647a;">by Expert <span> <?= $expert[0]['expert_name'] ?></span></h6>
-                                                    <div class="space"><br><br></div>
-                                                    <div class="space"><br><br></div>
+                                    <?php if (isset($mytutorial) && array_filled($mytutorial)) : ?>
+                                        <?php foreach ($mytutorial as $key => $value) : ?>
+                                            <?= $value['mytutorial_tutorial_id'] ?>
+                                            <?
+                                            $cer = array();
+                                            $cer['order'] = "tutorial_id ASC";
+                                            $cer['where']['tutorial_id'] = $value['mytutorial_tutorial_id'];
+                                            $cer['where']['tutorial_status'] = 1;
+                                            // $param['where_in']['tutorial_id'] = $all;
+                                            $certificate = $this->model_tutorial->find_all_active($cer);
+                                            ?>
 
-                                                    <div style="display: flex;justify-content: space-between; align-items: center;">
+                                            <?
+                                            $al = array();
+                                            $al['where']['expert_id'] = $certificate[0]['tutorial_expert_id'];
+                                            $expert = $this->model_expert->find_all_active($al);
+                                            ?>
+                                            <li>
+                                                <div style="text-align: center;">
+                                                    <div style="padding: 20px 20px 35px;margin-bottom: 15px;text-align: center;background: #f3f7fb;border: 10px solid #71c2fd;">
                                                         <div>
-                                                            <span><img src="<?= base_url() ?>assets/front_assets/images/logo.png" alt=""></span>
-                                                        </div>
+                                                            <h2 style="font-size: 26px;color: #4b647a;font-weight: 400;text-transform: uppercase;">certificate of completion</h2>
+                                                            <div class="space"><br><br></div>
+                                                            <h3 style="color: #425c73; font-weight: 700;text-transform: capitalize;font-size: 32px;"><?= $this->session->userdata['logged_in_front']['first_name'] ?></h3>
+                                                            <div class="space"><br></div>
+                                                            <p style="font-size: 14px;color: #4b647a;">has successfully completed on the <?= date("jS \of F Y") ?> the tutorial</p>
+                                                            <div class="space"><br></div>
+                                                            <h3 style="color: #425c73; font-weight: 700;text-transform: capitalize;font-size: 32px;min-height: 64px;">"<?= $certificate[0]['tutorial_name'] ?>"</h3>
+                                                            <div class="space"><br></div>
+                                                            <h6 style="font-style: italic;font-size: 18px;color: #4b647a;">by Expert <span> <?= $expert[0]['expert_name'] ?></span></h6>
+                                                            <div class="space"><br><br></div>
+                                                            <div class="space"><br><br></div>
 
-                                                        <div>
-                                                            <span><img src="<?= base_url() ?>assets/front_assets/images/certificate.png" alt=""></span>
-                                                        </div>
+                                                            <div style="display: flex;justify-content: space-between; align-items: center;">
+                                                                <div>
+                                                                    <span><img src="<?= base_url() ?>assets/front_assets/images/logo.png" alt=""></span>
+                                                                </div>
 
-                                                        <div>
-                                                            <img src="<?= base_url() ?>assets/front_assets/images/signature.jpg" alt="" style="text-align: left; mix-blend-mode: darken;">
-                                                            <h6 style="font-weight: 600;padding-bottom: 4px;text-transform: capitalize;font-size: 16px;">genny ghanimeh</h6>
-                                                            <p style="font-style: italic;text-transform: capitalize;font-size: 13px;font-weight: 300;">founder mind cloud tribe</p>
+                                                                <div>
+                                                                    <span><img src="<?= base_url() ?>assets/front_assets/images/certificate.png" alt=""></span>
+                                                                </div>
+
+                                                                <div>
+                                                                    <img src="<?= base_url() ?>assets/front_assets/images/signature.jpg" alt="" style="text-align: left; mix-blend-mode: darken;">
+                                                                    <h6 style="font-weight: 600;padding-bottom: 4px;text-transform: capitalize;font-size: 16px;">genny ghanimeh</h6>
+                                                                    <p style="font-style: italic;text-transform: capitalize;font-size: 13px;font-weight: 300;">founder mind cloud tribe</p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
 
-                                            <div>
-                                                <h6 style="font-size: 18px;font-weight: 700;color: #425C73;"><?=$certificate[0]['tutorial_name'] ?></h6>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <?php endforeach; ?>
-                                <?php endif ?>
+                                                    <div>
+                                                        <h6 style="font-size: 18px;font-weight: 700;color: #425C73;"><?= $certificate[0]['tutorial_name'] ?></h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    <?php endif ?>
                                 </ul>
 
                             </div>
@@ -581,7 +583,7 @@
         var percent = localStorage.getItem("businessPercent") + "%";
         $("#businessCalculate .progres-dark").css("width", percent);
         $("#businessCalculate .progres-percentage span").text(localStorage.getItem("businessPercent") + "%");
-        
+
         console.log(localStorage.getItem("businessPercent"));
         // GO-TO MARKET STRATEGIES Percentage
         var gtmspercent = localStorage.getItem("GO_TO_MARKET_STRATEGIES") + "%";
