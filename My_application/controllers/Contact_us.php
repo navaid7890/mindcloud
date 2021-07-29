@@ -1505,13 +1505,13 @@ class Contact_us extends MY_Controller
                     $this->model_booking->set_attributes($data);
                     $inserted_id = $this->model_booking->save();
                     
-                    $this->model_email->bookingInquiry($data);
+                    //$this->model_email->bookingInquiry($data);
                     //debug($this->model_email,1);
 
                     parent::book($data);
         
 
-                    debug(parent::book($data),1);
+                 //   debug(parent::book($data),1);
                     
                     $this->json_param['status'] = true;
                     $this->json_param['msg']['title'] = 'Booking Saved';
