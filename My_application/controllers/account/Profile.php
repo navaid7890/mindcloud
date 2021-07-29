@@ -1683,7 +1683,7 @@ class Profile extends MY_Controller_Account
 	    
     private function _pagination($model_name='',$param = array())
     {
-        $per_page = 12;
+        $per_page = 4;
         $this->load->library('mypagination');
 
         $class_name = $this->router->fetch_class();

@@ -13,46 +13,54 @@
     .consult-left h2 strong {
         font-weight: 400;
     }
+
     .vid-content h4 {
-    min-height: 56px;
-}
+        min-height: 56px;
+    }
 
 
 
-.pagination {
-    display: table;
-    margin: 20px auto;
-}
+    .pagination {
+        display: table;
+        margin: 20px auto;
+    }
 
-.pagination {
-    display: inline-block;
-    padding-left: 0;
-    margin: 20px 0;
-    border-radius: 4px;
-}
+    .pagination {
+        display: inline-block;
+        padding-left: 0;
+        margin: 20px 0;
+        border-radius: 4px;
+    }
 
-.pagination>li {
-    display: inline;
-}
+    .pagination>li {
+        display: inline;
+    }
 
-.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
-    z-index: 3;
-    color: #fff;
-    cursor: default;
-    background-color: #FDBE41;
-    border-color:#FDBE41;
-}
-.pagination>li>a, .pagination>li>span {
-    position: relative;
-    float: left;
-    padding: 6px 12px;
-    margin-left: -1px;
-    line-height: 1.42857143;
-    color: #FDBE41;
-    text-decoration: none;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
+    .pagination>.active>a,
+    .pagination>.active>a:focus,
+    .pagination>.active>a:hover,
+    .pagination>.active>span,
+    .pagination>.active>span:focus,
+    .pagination>.active>span:hover {
+        z-index: 3;
+        color: #fff;
+        cursor: default;
+        background-color: #FDBE41;
+        border-color: #FDBE41;
+    }
+
+    .pagination>li>a,
+    .pagination>li>span {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.42857143;
+        color: #FDBE41;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
 </style>
 <div class="index-page">
     <section class="dashboard">
@@ -142,21 +150,21 @@
                                                                             <span><i class="fas fa-play"></i> </span>
 
                                                                             <?
-                                                                    // debug($value);
-                                                                    $coursecat = array();
-                                                                    $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
-                                                                    $cate = $this->model_course_category->find_all_active($coursecat);
+                                                                            // debug($value);
+                                                                            $coursecat = array();
+                                                                            $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
+                                                                            $cate = $this->model_course_category->find_all_active($coursecat);
 
-                                                                    $cat_name = array();
-                                                                    $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
-                                                                    $cat_name = $this->model_category->find_all_active($cat_name);
-                                                                    //  debug($cat_name);
-                                                                    ?>
-                                                                    <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                                                                            $cat_name = array();
+                                                                            $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                                                            $cat_name = $this->model_category->find_all_active($cat_name);
+                                                                            //  debug($cat_name);
+                                                                            ?>
+                                                                            <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
 
                                                                         </div>
                                                                     </a>
-                                                                    
+
                                                                     <!-- <a href="javascript:;" class="cate-tag"><? //= $value['tutorial_level'] 
                                                                                                                     ?></a> -->
                                                                     <div class="vid-content">
@@ -168,19 +176,19 @@
                                                                                     <h4><?= $value['tutorial_name'] ?></h4>
                                                                                 </a>
                                                                                 <div class="coutArea">
-                                                                                <ul class="rating">
-                                                                                    <? $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']); ?>
-                                                                                    <?php
-                                                                                    for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
-                                                                                        "
-                                                                                        <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
-                                                                                        ";
-                                                                                    <? } ?>
-                                                                                </ul>
-                                                                                
+                                                                                    <ul class="rating">
+                                                                                        <? $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']); ?>
+                                                                                        <?php
+                                                                                        for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
+                                                                                            "
+                                                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                                                            ";
+                                                                                        <? } ?>
+                                                                                    </ul>
+
                                                                                 </div>
                                                                             </div>
-                                                                   
+
                                                                         </div>
                                                                         <div class="space"><br><br></div>
                                                                         <div class="row align-items-center">
@@ -209,24 +217,14 @@
                                                         <?php endforeach; ?>
                                                     <?php endif ?>
                                                 </ul>
-                                                
-        
-     
- 
-        
-
                                             <? } ?>
-
-
-                                            <div class="text-center"> 
-                <nav aria-label="Page navigation example"><br>
-                  <ul class="pagination">
-                    <?=$links?>
-                  </ul>
-                </nav>
-            </div>
-
-
+                                            <div class="text-center">
+                                                <nav aria-label="Page navigation example"><br>
+                                                    <ul class="pagination">
+                                                        <?= $links ?>
+                                                    </ul>
+                                                </nav>
+                                            </div>
                                             <div class="space"><br><br></div>
 
                                             <a href="#" class="btn-links">See more Experts Tutorials</a>
