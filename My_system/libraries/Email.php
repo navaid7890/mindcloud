@@ -6,7 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2014 - 2019, British Columbia Institute of Technology
+ * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,8 +29,8 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
- * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (https://bcit.ca/)
- * @license	https://opensource.org/licenses/MIT	MIT License
+ * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 1.0.0
  * @filesource
@@ -69,42 +69,42 @@ class CI_Email {
 	 *
 	 * @var	string	'mail', 'sendmail' or 'smtp'
 	 */
-	public $protocol	= 'smtp';		// mail/sendmail/smtp
+	public $protocol	= 'mail';		// mail/sendmail/smtp
 
 	/**
 	 * STMP Server host
 	 *
 	 * @var	string
 	 */
-	public $smtp_host	= 'email-smtp.us-east-1.amazonaws.com';
+	public $smtp_host	= '';
 
 	/**
 	 * SMTP Username
 	 *
 	 * @var	string
 	 */
-	public $smtp_user	= 'AKIAXQ4HYQNYXG5S4GGM';
+	public $smtp_user	= '';
 
 	/**
 	 * SMTP Password
 	 *
 	 * @var	string
 	 */
-	public $smtp_pass	= 'BCRXy/xl0sSg8V6L80Ff6Qfb/v52SLaLZVgOsvoJrPUN';
+	public $smtp_pass	= '';
 
 	/**
 	 * SMTP Server port
 	 *
 	 * @var	int
 	 */
-	public $smtp_port	= 587;
+	public $smtp_port	= 25;
 
 	/**
 	 * SMTP connection timeout in seconds
 	 *
 	 * @var	int
 	 */
-	public $smtp_timeout	= 50;
+	public $smtp_timeout	= 5;
 
 	/**
 	 * SMTP persistent connection
@@ -118,7 +118,7 @@ class CI_Email {
 	 *
 	 * @var	string	empty, 'tls' or 'ssl'
 	 */
-	public $smtp_crypto	= 'tls';
+	public $smtp_crypto	= '';
 
 	/**
 	 * Whether to apply word-wrapping to the message body.
@@ -140,7 +140,7 @@ class CI_Email {
 	 *
 	 * @var	string	'text' or 'html'
 	 */
-	public $mailtype	= 'html';
+	public $mailtype	= 'text';
 
 	/**
 	 * Character set (default: utf-8)
@@ -168,7 +168,7 @@ class CI_Email {
 	 *
 	 * @var	int	1-5
 	 */
-	public $priority	= 1;			// Default priority (1 - 5)
+	public $priority	= 3;			// Default priority (1 - 5)
 
 	/**
 	 * Newline character sequence.
@@ -279,7 +279,7 @@ class CI_Email {
 	 *
 	 * @var	bool
 	 */
-	protected $_smtp_auth		= true;
+	protected $_smtp_auth		= FALSE;
 
 	/**
 	 * Whether to send a Reply-To header
@@ -2060,8 +2060,7 @@ class CI_Email {
 			return TRUE;
 		}
 
-		$ssl = ($this->smtp_crypto === 'ssl') ? '' : '';
-		// $ssl = ($this->smtp_crypto );
+		$ssl = ($this->smtp_crypto === 'ssl') ? 'ssl://' : '';
 
 		$this->_smtp_connect = fsockopen($ssl.$this->smtp_host,
 							$this->smtp_port,
