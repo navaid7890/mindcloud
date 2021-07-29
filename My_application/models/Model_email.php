@@ -1127,7 +1127,7 @@ class Model_email extends MY_Model {
         $this->from = $this->customerSupportEmail;
 
         
-        $encrypt_code = $token['ut_token'];
+      //  $encrypt_code = $token['ut_token'];
         $url = g('base_url') . "cart/payment?oid=".rand()."&expert=".$ex['expert_price'];
 
 

@@ -564,32 +564,15 @@ class Profile extends MY_Controller_Account
 			$param['order'] = "tutorial_id ASC";
 			// $param['where_in']['tutorial_id'] = $all;
 
-
-			//$data['art'] = $this->model_tutorial->find_all_active($param);
+			$data['art'] = $this->model_tutorial->find_all_active($param);
 			// debug("user is paid");
-
-			$art = $this->model_tutorial->get_details($param);
-
-			$product_data = $this->_pagination('tutorial',$art);
-			$data['art'] = $product_data['data'];
-			$data['links'] = $product_data['links'];  
-
-        
-
 		} else {
 			$param['order'] = "tutorial_id ASC";
 			$param['where']['tutorial_free_status'] = 1;
 			// $param['where_in']['tutorial_id'] = $all;
 
-			//$data['art'] = $this->model_tutorial->find_all_active($param);
+			$data['art'] = $this->model_tutorial->find_all_active($param);
 			// debug("user is Not paid");
-
-			$art = $this->model_tutorial->get_details($param);
-
-			$product_data = $this->_pagination('tutorial',$art);
-			$data['art'] = $product_data['data'];
-			$data['links'] = $product_data['links'];  
-
 		}
 
 		$pop = array();
@@ -1686,11 +1669,10 @@ class Profile extends MY_Controller_Account
 		}
 		$data['tutorial_course'] = $all_tutorials;
 		return $data;
-	
-	
 	}
 
-	private function _pagination($model_name='',$param = array())
+	    
+    private function _pagination($model_name='',$param = array())
     {
         $per_page = 12;
         $this->load->library('mypagination');
@@ -1730,8 +1712,6 @@ class Profile extends MY_Controller_Account
         //.debug($vars,1); 
         return $vars;
     }
-
-
 }
 
 /* End of file welcome.php */

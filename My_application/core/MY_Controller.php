@@ -537,6 +537,28 @@ class MY_Controller extends MY_Controller_Admin
     }
 
 
+    public function book($data){
+       
+        $config['mailtype'] = 'html';    
+        $this->load->library('email'); 
+        $data = $data;
+        $from_email = "contact@phpforever.com"; 
+        $to_email = 'test@testemail.com';            
+        $this->email->from($from_email, 'Booking Confirmation'); 
+        $this->email->to($to_email);
+        $this->email->set_header('Content-Type', 'text/html');
+        $this->email->subject('Booking Confirmation'); 
+        $this->email->message($this->load->view('_layout/email_template/default_template', $data , true));   
+        $this->email->send();
+       // debug("ok");
+    //     if($this->email->send()){            
+    //      echo "Mail Sent";
+    //     }else{ 
+    //      echo "Error";
+    //    }
+}
+
+
 
 
 

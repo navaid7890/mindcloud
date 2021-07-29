@@ -211,20 +211,20 @@
                                                 </ul>
                                                 
         
-            <div class="text-center"> 
-                <nav aria-label="Page navigation example"><br>
-                  <ul class="pagination">
-                    <?=$links?>
-                  </ul>
-                </nav>
-            </div>
+     
  
         
 
                                             <? } ?>
 
 
-                                            
+                                            <div class="text-center"> 
+                <nav aria-label="Page navigation example"><br>
+                  <ul class="pagination">
+                    <?=$links?>
+                  </ul>
+                </nav>
+            </div>
 
 
                                             <div class="space"><br><br></div>

@@ -22,7 +22,7 @@
                </a>
             </li>
             <li>
-               <a href="#">
+               <a href="<?=l('consult-advisors')?>">
                   <span><img src="<?= i('') ?>dashboard/menu/2.svg"></span>
                   Advisory
                </a>
