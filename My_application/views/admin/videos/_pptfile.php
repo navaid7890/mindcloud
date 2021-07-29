@@ -28,11 +28,14 @@ global $config;
                                 <?php
                                 if (!empty($form_data['videos']['videos_ppt'])) {
                                 ?>
-                                    <img alt="" src="<?= g('db.admin.bucketimg') ?><?= $form_data['videos']['videos_ppt'] ?>">
+                                    <figure>
+                                        <img src="<?= g('admin_images_root') . "general-icon.png" ?>" alt="" style="height: 50px">
+                                        <figcaption><?= $form_data['videos']['videos_ppt'] ?></figcaption>
+                                    </figure>
                                 <?php
                                 } else {
                                 ?>
-                                    <img alt="" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image">
+                                   <img alt="" src="<?= g('admin_images_root') . "general-icon.png" ?>">
                                 <?php
                                 }
                                 ?>
@@ -42,7 +45,7 @@ global $config;
             </div> -->
                             <div>
                                 <span class="btn btn-file blue">
-                                    <span class="uploadfile-new"><i class="fa fa-paper-clip"></i> Select image</span>
+                                    <span class="uploadfile-new"><i class="fa fa-paper-clip"></i> Select File</span>
                                     <span class="uploadfile-exists"><i class="fa fa-undo"></i> Change</span>
                                     <input type="file" name="ok" class="default">
                                 </span>
@@ -61,6 +64,41 @@ global $config;
 
                 <?php if ($form_data['videos']['videos_is_image' . $i]  == 1) : ?>
 
+
+
+                    <!-- <div class="col-md-3">
+                        <div class="">
+                            <div class="uploadfile uploadfile-new" data-provides="uploadfile">
+                                <div class="uploadfile-new thumbnail" style="max-width: 150px; max-height: 150px;">
+
+                                    <figure>
+                                        <img src="http://localhost/cloud/assets/admin/img/general-icon.png" alt="" style="height: 50px">
+                                        <figcaption>98006_test.ppt</figcaption>
+                                    </figure>
+
+                                </div>
+                                <div class="uploadfile-preview uploadfile-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;">
+                                    98006_test.ppt </div>
+                                <div>
+                                    <span class="btn btn-file blue">
+
+                                        <span class="uploadfile-new"><i class="fa fa-paper-clip"></i> Select File</span>
+                                        <span class="uploadfile-exists"><i class="fa fa-undo"></i> Change</span>
+                                        <input type="file" class="default " name="videos[videos_ppt]">
+
+                                    </span>
+                                    <a href="#" class="btn btn-danger uploadfile-exists" data-dismiss="uploadfile"><i class="fa fa-trash"></i> Remove</a>
+
+                                </div>
+                                <span style="font-size: 10px;color:red;">
+                                    Allow Ext: ppt|pptx </span>
+                                <br>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+
                     <div class="col-md-4">
                         <div class="form-group ">
                             <div class="">
@@ -70,11 +108,14 @@ global $config;
                                         <?php
                                         if (!empty($form_data['videos']['videos_ppt' . $i])) {
                                         ?>
-                                            <img alt="" src="<?= g('db.admin.bucketimg') ?><?= $form_data['videos']['videos_ppt'] ?>">
+                                            <figure>
+                                                <img src="<?= g('admin_images_root') . "general-icon.png" ?>" alt="" style="height: 50px">
+                                                <figcaption><?= $form_data['videos']['videos_ppt'] ?></figcaption>
+                                            </figure>
                                         <?php
                                         } else {
                                         ?>
-                                            <img alt="" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image">
+                                            <img alt="" src="<?= g('admin_images_root') . "general-icon.png" ?>">
                                         <?php
                                         }
                                         ?>

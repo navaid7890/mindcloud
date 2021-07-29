@@ -72,145 +72,161 @@
                                  <div class="space"><br></div>
                                  <div class="video-caption">
 
-                                    <p>
-                                    <div id="video_text"></div>
-                                    </p>
-                                    <?php
-                                    $arr[] = html_entity_decode($tutorial_detail['videos_transcript']);
-                                    ?>
-                                    <?php 
-                                    // $text_time_arr = [];
-                                    // foreach ($arr as $result) {
-                                    //    //  echo $result['v_text'];
-                                    //    $v_text = explode("|", html_entity_decode($tutorial_detail['videos_transcript']));
-                                    //    for ($i = 0; $i < sizeof($v_text); $i++) {
-                                    //       $v_wait = explode("~", html_entity_decode($v_text[$i]));
-                                    //       $video_time = new \stdClass();
-                                    //       $video_time->text = $v_wait[0];
-                                    //       $video_time->time = $v_wait[1];
-                                    //       $text_text_arr[] = $video_time;
-                                    //       $timeConvert = explode(":", $v_wait[1]);
-                                    //       $secondtime = $timeConvert[0] * 60;
-                                    //       $minutetime = $timeConvert[1];
-                                    //       $requiredtime = $secondtime + $minutetime;
+                                    <? if ($tutorial_detail['videos_ppt_status'] == 1) : ?>
+                                       <p>
+                                       <div id="video_text">
+                                          <img id="pptimg">
+                                       </div>
+                                       </p>
+                                       <?php
+                                       $arr_time = explode('|', html_entity_decode($tutorial_detail['videos_ppt_time']));
+                                       $pptarr = explode(',', html_entity_decode($tutorial_detail['videos_ppt_slides']));
+                                       $ppt_time_text = [];
 
-                                    //       $text_time_arr[] = $requiredtime;
-                                    //    }
-                                    // }
-                                    ?>
-
-<?php
-                                    $text_time_arr = [];
-                                    foreach ($arr as $result) {
-                                       //  echo $result['v_text'];
-                                       $v_text = explode("|", html_entity_decode($tutorial_detail['videos_transcript']));
-                                       for ($i = 0; $i < sizeof($v_text); $i++) {
-                                          $v_wait = explode("~", html_entity_decode($v_text[$i]));
-                                          $video_time = new \stdClass();
-                                          $video_time->text = $v_wait[0];
-                                          $video_time->time = $v_wait[1];
-                                          $text_text_arr[] = $video_time;
-                                          $timeConvert = explode(":", $v_wait[1]);
-                                          $secondtime = $timeConvert[0] * 60;
-                                          $minutetime = $timeConvert[1];
-                                          $requiredtime = $secondtime + $minutetime;
-
-                                          $text_time_arr[] = $requiredtime;
+                                       foreach ($arr_time as $arr_time_key => $ppttime) {
+                                          $ppttime = explode(':', $ppttime);
+                                          $sec = ($ppttime[0] * 60) + $ppttime[1];
+                                          $ppt_time_text[] = [
+                                             'time' => $sec,
+                                             'text' => $pptarr[$arr_time_key],
+                                             'img' => l('') . 'assets/' . $tutorial_detail['videos_name'] . '/' . $pptarr[$arr_time_key] . '.jpg',
+                                          ];
                                        }
-                                    }
-                                    ?>
+
+                                       ?>
+
+                                    <? else : ?>
+                                       <p>
+                                       <div id="video_text"></div>
+                                       </p>
+                                       <?php
+                                       $arr[] = html_entity_decode($tutorial_detail['videos_transcript']);
+                                       ?>
+                                       <?php
+                                       $text_time_arr = [];
+                                       foreach ($arr as $result) {
+                                          //  echo $result['v_text'];
+                                          $v_text = explode("|", html_entity_decode($tutorial_detail['videos_transcript']));
+                                          for ($i = 0; $i < sizeof($v_text); $i++) {
+                                             $v_wait = explode("~", html_entity_decode($v_text[$i]));
+                                             $video_time = new \stdClass();
+                                             $video_time->text = $v_wait[0];
+                                             $video_time->time = $v_wait[1];
+                                             $text_text_arr[] = $video_time;
+                                             $timeConvert = explode(":", $v_wait[1]);
+                                             $secondtime = $timeConvert[0] * 60;
+                                             $minutetime = $timeConvert[1];
+                                             $requiredtime = $secondtime + $minutetime;
+
+                                             $text_time_arr[] = $requiredtime;
+                                             // debug($text_time_arr);
+                                          }
+                                       }
+                                       ?>
+                                    <? endif; ?>
+
                                     <div class="space"><br></div>
                                  </div>
                               </div>
                            </div>
                            <div class="col-md-7">
-                              <div class="video-box">
-                                 <video onclick="plusOne(<?= $tutorial_detail['videos_views']; ?>)" ontimeupdate="myFunction(this)" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
-                                    <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/mp4">
-                                    <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/ogg">
-                                    Your browser does not support the video tag.
-                                 </video>
-                              </div>
+                              <? if ($tutorial_detail['videos_ppt_status'] == 1) : ?>
+                                 <div class="video-box">
+                                    <video onclick="plusOne(<?= $tutorial_detail['videos_views']; ?>)" ontimeupdate="myPPTTime(this)" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
+                                       <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/mp4">
+                                       <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/ogg">
+                                       Your browser does not support the video tag.
+                                    </video>
+                                 </div>
+                              <? else : ?>
+                                 <div class="video-box">
+                                    <video onclick="plusOne(<?= $tutorial_detail['videos_views']; ?>)" ontimeupdate="myFunction(this)" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
+                                       <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/mp4">
+                                       <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/ogg">
+                                       Your browser does not support the video tag.
+                                    </video>
+                                 </div>
+                              <? endif; ?>
                            </div>
                         </div>
-                                 </div>
-                        <div class="space"><br><br></div>
-                        <!-- <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p> -->
                      </div>
-                     <div class="tutorial-footer vid-tran para">
-                        <div class="tutorial-footer-content">
-                           <form id="forms-expert-tutorial-video">
-                              <input type="hidden" name="mytutorial[mytutorial_user_id]" value="<?= ($this->userid) ?>">
-                              <input type="hidden" name="mytutorial[mytutorial_tutorial_id]" value="<?= $_GET['courseid'] ?>">
-                              <input type="hidden" name="mytutorial[mytutorial_video_percent]" value="1">
-                              <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-expert-tutorial-video-btn">
-                           </form>
-                           <p>Complete this tutorials to receive Certificate.</p>
-                           <div classs="space"><br><br></div>
-                           <form id="forms-tutorial-review_us">
-                              <div class="fld-textarea">
+                     <div class="space"><br><br></div>
+                     <!-- <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p> -->
+                  </div>
+                  <div class="tutorial-footer vid-tran para">
+                     <div class="tutorial-footer-content">
+                        <form id="forms-expert-tutorial-video">
+                           <input type="hidden" name="mytutorial[mytutorial_user_id]" value="<?= ($this->userid) ?>">
+                           <input type="hidden" name="mytutorial[mytutorial_tutorial_id]" value="<?= $_GET['courseid'] ?>">
+                           <input type="hidden" name="mytutorial[mytutorial_video_percent]" value="1">
+                           <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-expert-tutorial-video-btn">
+                        </form>
+                        <p>Complete this tutorials to receive Certificate.</p>
+                        <div classs="space"><br><br></div>
+                        <form id="forms-tutorial-review_us">
+                           <div class="fld-textarea">
 
-                                 <input type="hidden" name="expert_tutorial_review[tutorial_review_user_id]" value="<?= ($this->userid) ?>">
-                                 <input type="hidden" name="expert_tutorial_review[tutorial_review_course_id]" value="<?= $courseid ?>">
-                                 <input type="hidden" name="expert_tutorial_review[tutorial_review_tutorial_id]" value="<?= $_GET['tutorialid'] ?>">
-                                 <input type="hidden" name="expert_tutorial_review[tutorial_review_stars]" id="reviewId" value="">
-                              </div>
-                              <div class="fld-textarea">
-                                 <textarea name="expert_tutorial_review[tutorial_review_desc]" placeholder="Write a Review…"></textarea>
-                              </div>
-                              <div class="space"><br></div>
+                              <input type="hidden" name="expert_tutorial_review[tutorial_review_user_id]" value="<?= ($this->userid) ?>">
+                              <input type="hidden" name="expert_tutorial_review[tutorial_review_course_id]" value="<?= $courseid ?>">
+                              <input type="hidden" name="expert_tutorial_review[tutorial_review_tutorial_id]" value="<?= $_GET['tutorialid'] ?>">
+                              <input type="hidden" name="expert_tutorial_review[tutorial_review_stars]" id="reviewId" value="">
+                           </div>
+                           <div class="fld-textarea">
+                              <textarea name="expert_tutorial_review[tutorial_review_desc]" placeholder="Write a Review…"></textarea>
+                           </div>
+                           <div class="space"><br></div>
 
-                              <div class="row align-items-center">
-                                 <div class="col-md-4">
-                                    <!-- <ul class="rating">
+                           <div class="row align-items-center">
+                              <div class="col-md-4">
+                                 <!-- <ul class="rating">
                                        <li><span>1</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                        <li><span>2</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                        <li><span>3</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                        <li><span>4</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                        <li><span>5</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                     </ul> -->
-                                    <section class='rating-widget'>
-                                       <!-- Rating Stars Box -->
-                                       <div class='rating-stars'>
-                                          <ul id='stars'>
-                                             <li class='star' title='Poor' data-value='1'>
-                                                <i class='fa fa-star fa-fw'></i>
-                                             </li>
-                                             <li class='star' title='Fair' data-value='2'>
-                                                <i class='fa fa-star fa-fw'></i>
-                                             </li>
-                                             <li class='star' title='Good' data-value='3'>
-                                                <i class='fa fa-star fa-fw'></i>
-                                             </li>
-                                             <li class='star' title='Excellent' data-value='4'>
-                                                <i class='fa fa-star fa-fw'></i>
-                                             </li>
-                                             <li class='star' title='WOW!!!' data-value='5'>
-                                                <i class='fa fa-star fa-fw'></i>
-                                             </li>
-                                          </ul>
-                                       </div>
+                                 <section class='rating-widget'>
+                                    <!-- Rating Stars Box -->
+                                    <div class='rating-stars'>
+                                       <ul id='stars'>
+                                          <li class='star' title='Poor' data-value='1'>
+                                             <i class='fa fa-star fa-fw'></i>
+                                          </li>
+                                          <li class='star' title='Fair' data-value='2'>
+                                             <i class='fa fa-star fa-fw'></i>
+                                          </li>
+                                          <li class='star' title='Good' data-value='3'>
+                                             <i class='fa fa-star fa-fw'></i>
+                                          </li>
+                                          <li class='star' title='Excellent' data-value='4'>
+                                             <i class='fa fa-star fa-fw'></i>
+                                          </li>
+                                          <li class='star' title='WOW!!!' data-value='5'>
+                                             <i class='fa fa-star fa-fw'></i>
+                                          </li>
+                                       </ul>
+                                    </div>
 
-                                    </section>
-                                 </div>
-                                 <div class="col-md-8 text-right">
-                                    <!-- <div class="fld-link">
+                                 </section>
+                              </div>
+                              <div class="col-md-8 text-right">
+                                 <!-- <div class="fld-link">
                                        <button>Skip</button>
                                     </div> -->
-                                    <div class="fld-btn">
-                                       <input type="submit" value="Submit Your Review" id="forms-tutorial-review_us-btn">
-                                    </div>
+                                 <div class="fld-btn">
+                                    <input type="submit" value="Submit Your Review" id="forms-tutorial-review_us-btn">
                                  </div>
                               </div>
-                           </form>
-                        </div>
+                           </div>
+                        </form>
                      </div>
                   </div>
                </div>
             </div>
-         </li>
-      </ul>
-   </section>
+</div>
+</li>
+</ul>
+</section>
 </div>
 <style>
    * {
@@ -268,10 +284,33 @@
 <script>
    var v = <?php echo json_encode($text_text_arr, TRUE); ?>;
    var w = <?php echo json_encode($text_time_arr, TRUE); ?>;
+   var ppt_time_text = <?php echo json_encode($ppt_time_text, TRUE); ?>;
 
 
    console.log(v);
-   console.log(w);
+   // console.log(w);
+   console.log(ppt_time_text);
+
+   function myPPTTime(e) {
+      var currentTime = e.currentTime;
+
+      for (var i = 0; i < ppt_time_text.length; i++) {
+         if (i < (ppt_time_text.length - 1)) {
+            console.log('current time ppt', ppt_time_text[i].time);
+            console.log('current time asdsdd', currentTime);
+            // break;
+            if (ppt_time_text[i].time < currentTime && ppt_time_text[i + 1].time > currentTime) {
+               $('#pptimg').attr("src", ppt_time_text[i].img);
+               console.log('src', ppt_time_text[i].img)
+            }
+         } else {
+            if (ppt_time_text[i].time < currentTime && ppt_time_text[i - 1].time < currentTime) {
+               $('#pptimg').attr("src", ppt_time_text[i].img);
+               console.log('src', ppt_time_text[i].img)
+            }
+         }
+      }
+   }
 
    function myFunction(e) {
       var currentTime = e.currentTime;
