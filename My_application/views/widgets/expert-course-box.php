@@ -1,4 +1,4 @@
-<div class="course-box hding-3">
+<div class="course-box hding-3 CBoxExp">
     <div class="course-box-content">
         <div class="course-box-head">
             <div class="row align-items-center">

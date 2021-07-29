@@ -4146,12 +4146,21 @@ body.page26 li.dropdown-toggle.catLj26 > a:after{ transform: rotate(90deg);}
 
 .course-list ul li.dropdown-toggle>a.tCurrent:after{ transform: rotate(90deg) !important;}
 
-.percent{
+.CboxLJ .percent{
 	width:26px;
 	height:26px;
     margin-right: 20px;
     position: absolute;
     right: 30px;
+    top: 20px;
+}
+
+.CBoxExp .percent{
+	width: 26px;
+    height: 26px;
+    margin-right: 0px;
+    position: absolute;
+    right: 18px;
     top: 20px;
 }
 .percent svg{
