@@ -15,7 +15,7 @@
                   <div class="space"><br><br></div>
                   <?= html_entity_decode($con1['cms_page_content']) ?>
                   <div class="space"><br><br></div>
-                  <a href="#" class="btn-theme btn-hover">Contact Us <span></span></a>
+                  <a href="<?= l('contact_us') ?>" class="btn-theme btn-hover">Contact Us <span></span></a>
                </div>   
             </div>   
          </section>
@@ -313,7 +313,7 @@
           </div>
         </section>
 
-        <section class="reportSec hding-1 pad-sec">
+        <!-- <section class="reportSec hding-1 pad-sec">
           <div class="container">
             <div class="reportHead">
               <h1>Sustainability and <strong>Impact Reports</strong></h1>
@@ -431,7 +431,7 @@
             </div>
 
           </div>
-        </section>
+        </section> -->
         <? $this->load->view('widgets/_clients'); ?>
       
       </div>

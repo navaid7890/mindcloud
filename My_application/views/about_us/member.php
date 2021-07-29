@@ -35,7 +35,7 @@
     margin-bottom: 20px;
     display: inline-block;
     background: #fff;
-    min-height: 310px;
+    min-height: 260px;
     position: relative;
     width: 100%;
 }
@@ -50,6 +50,11 @@
     margin-bottom: 5%;
     border-radius: 50%;
     margin-top: 10px;
+    margin: 0 auto;
+}
+.membersBox a {
+    width: 100%;
+    text-align: center;
 }
 .auctions .pro-name {
     font-size: 16px;
@@ -77,7 +82,7 @@ p.pro-name {
             
             <? if (isset($exp) and array_filled($exp)) : ?>
                 <? foreach ($exp as $key => $value) : ?>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
+                    <div class="col-lg-3 col-md-4 col-xs-12 membersBox">
                         <a href="<?=l('user-detail').'/'.$value['user_id']?> ">
                             <div class="single-item">
 

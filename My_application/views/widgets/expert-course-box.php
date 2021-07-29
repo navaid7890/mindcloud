@@ -15,7 +15,7 @@
             <div class="space"><br><br><br></div>
             <div class="course-user-info">
                 <ul class="login-btn">
-                    <li><a href="#"><span><img src="<?= i('') ?><?= $this->session_data['profile_image'] ?>"></span> <?=$this->session->userdata['logged_in_front']['first_name']?>
+                <li><a href="#"><span><img src="<?= get_image($this->layout_data['user_data']['ui_profile_image'], $this->layout_data['user_data']['ui_profile_image_path']) ?>"></span> <?=$this->session->userdata['logged_in_front']['first_name']?>
  </a></li>
                 </ul>
             </div>
