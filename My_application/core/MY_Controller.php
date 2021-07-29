@@ -542,7 +542,7 @@ class MY_Controller extends MY_Controller_Admin
         $config['mailtype'] = 'html';    
         $this->load->library('email'); 
 
-        $u=$this->model_booking->find_by_pk($data['booking_expert_id']);
+       // $u=$this->model_booking->find_by_pk($data['booking_expert_id']);
         $param = array();
         if(isset($data) && array_filled($data))
         {
@@ -556,7 +556,7 @@ class MY_Controller extends MY_Controller_Admin
         We have received a booking in your website, detail is given below:<br><br>';
 
         $from_email = $data['booking_email']; 
-        $to_email = $u['user_email'];            
+        $to_email = 'devemail0909@gmail.com';            
         $this->email->from($from_email, 'Booking Confirmation'); 
         $this->email->to($to_email);
         $this->email->set_header('Content-Type', 'text/html');
