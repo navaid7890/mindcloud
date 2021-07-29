@@ -242,10 +242,10 @@
                                                 $completTut['where']['mytutorial_desc_percent'] = 1;
                                                 $completTut['where']['mytutorial_intro_percent'] = 1;
                                                 $completTut['where']['mytutorial_video_percent'] = 1;
+                                                $completTutCount = $this->model_mytutorial->find_all_active($completTut);
 
-                                                $completTutCount = $this->model_mytutorial->find_one_active($completTut);
-
-                                                // debug($completTutCount );
+                                                // $query = $this->db->last_query($completTutCount);
+                                                // echo debug($completTut );
                                                 // echo count($completTutCount);
                                                 ?>
                                             <div class="expertCount"><?=count($completTutCount);?>/<?= count($art) ?></div>
