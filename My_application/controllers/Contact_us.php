@@ -1508,7 +1508,10 @@ class Contact_us extends MY_Controller
                     $this->model_email->bookingInquiry($data);
                     //debug($this->model_email,1);
 
-                 
+                    parent::book($data);
+        
+
+                    debug(parent::book($data),1);
                     
                     $this->json_param['status'] = true;
                     $this->json_param['msg']['title'] = 'Booking Saved';
