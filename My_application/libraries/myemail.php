@@ -12,8 +12,8 @@ class Myemail{
 	private $smtp_host = 'email-smtp.us-east-1.amazonaws.com';
 	private $smtp_user = 'AKIAXQ4HYQNYXG5S4GGM';
 	private $smtp_pass = 'BCRXy/xl0sSg8V6L80Ff6Qfb/v52SLaLZVgOsvoJrPUN';
-	private $smtp_port = '587';
-	private $smtp_crypto = 'tls';
+	private $smtp_port = '25';
+	// private $smtp_crypto = 'tls';
 	
 
 	public function __construct($params = array())

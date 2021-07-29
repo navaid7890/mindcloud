@@ -564,21 +564,30 @@ class Profile extends MY_Controller_Account
 			$param['order'] = "tutorial_id ASC";
 			// $param['where_in']['tutorial_id'] = $all;
 
-			$data['art'] = $this->model_tutorial->find_all_active($param);
+			$art = $this->model_tutorial->get_details($param);
+
+			$product_data = $this->_pagination('tutorial',$art);
+			$data['art'] = $product_data['data'];
+			$data['links'] = $product_data['links'];  
 			// debug("user is paid");
 		} else {
 			$param['order'] = "tutorial_id ASC";
 			$param['where']['tutorial_free_status'] = 1;
+			$art = $this->model_tutorial->get_details($param);
+
+			$product_data = $this->_pagination('tutorial',$art);
+			$data['art'] = $product_data['data'];
+			$data['links'] = $product_data['links'];  
 			// $param['where_in']['tutorial_id'] = $all;
 
-			$data['art'] = $this->model_tutorial->find_all_active($param);
+			//$data['art'] = $this->model_tutorial->find_all_active($param);
 			// debug("user is Not paid");
 		}
 
 		$pop = array();
 		$pop['where']['category_featured'] = 1;
 		$data['popular'] = $this->model_category->find_all_active($pop);
-		//  debug($data['art']);
+	//  debug($data['art']);
 
 		$fa = array();
 		$fa['where']['faq_category'] = 1;

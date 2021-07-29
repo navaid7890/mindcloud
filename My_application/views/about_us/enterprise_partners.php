@@ -15,7 +15,11 @@
                   <div class="space"><br><br></div>
                   <?= html_entity_decode($con1['cms_page_content']) ?>
                   <div class="space"><br><br></div>
+<<<<<<< HEAD
+                  <a href="<?=l('contact_us')?>" class="btn-theme btn-hover">Contact Us <span></span></a>
+=======
                   <a href="<?= l('contact_us') ?>" class="btn-theme btn-hover">Contact Us <span></span></a>
+>>>>>>> QA
                </div>   
             </div>   
          </section>
