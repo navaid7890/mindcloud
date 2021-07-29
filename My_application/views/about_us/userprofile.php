@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <!-- <div class="card-body">
                         <div class="row tabsArea">
                             <div class="col-lg-12">
                                 <ul class="nav nav-tabs">
@@ -57,7 +57,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
