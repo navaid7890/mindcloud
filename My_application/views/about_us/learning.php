@@ -41,9 +41,9 @@
                   <?=html_entity_decode($contd['cms_page_content'])?>
                   <div class="space"><br></div>
                </div>
-            </div>
+            </div><?= g('db.admin.bucket') . $cont13['tutorial_video'] ?>
             <div class="col-md-6 text-right"><?//=$contd['cms_page_url']?>
-               <a href="https://www.youtube.com/watch?v=__nXmdX3fM0&list=PL-uOqadEk4aEnXXTRM1ekVMLNc-b4L3iM&index=6" data-fancybox="media">
+               <a href="<?=$contd['cms_page_url']?>" data-fancybox="media">
                   <div class="video-box">
                      <img src="<?=get_image($contd['cms_page_image'],$contd['cms_page_image_path'])?>">
                      <span><i class="fas fa-play"></i></span>
