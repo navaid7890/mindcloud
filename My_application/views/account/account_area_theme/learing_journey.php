@@ -34,19 +34,23 @@
     .whoSec.bg-white {
         background: transparent;
     }
+
     .abtBox .video-box {
-    width: 100%;
-    height: 410px;
-}
-.abtBox img {
-    width: 100%;
-}
-.video-card {
-    height: 538px !important;
-}
-.mainBanner .video-box {
-    width: 340px !important;
-}
+        width: 100%;
+        height: 410px;
+    }
+
+    .abtBox img {
+        width: 100%;
+    }
+
+    .video-card {
+        height: 538px !important;
+    }
+
+    .mainBanner .video-box {
+        width: 340px !important;
+    }
 </style>
 <div class="index-page">
     <section class="dashboard">
@@ -107,12 +111,10 @@
                                     <li><i><img src="<?= i('') ?>journy/3.svg"></i> Tool and Tool-Builder</li>
                                 </ul>
                             </div>
-                           
-
                             <? if (isset($learn_cat) and array_filled($learn_cat)) : ?>
                                 <? foreach ($learn_cat as $key => $value) : ?>
                                     <div class="jrnyFaq">
-                                        <h5><i><img src="<?= i('') ?>icons/learn/1.svg" alt=""></i>
+                                        <h5><i><img src="<?= g('db.admin.bucketimg') . $value['learning_journey_category_image'] ?>" alt=""></i>
                                             <?= $value['learning_journey_category_name'] ?>
                                         </h5>
                                         <?
