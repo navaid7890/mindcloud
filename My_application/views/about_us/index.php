@@ -179,7 +179,7 @@
                   </div>
                </div>
                <div class="col-lg-6 col-md-12 text-right">
-                  <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
+                  <a href="<?= g('db.admin.bucket') . $con7['tutorial_video'] ?>" data-fancybox="media">
                      <div class="video-box">
                         <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $con7['cms_page_image'] ?>">
                         <span><i class="fas fa-play"></i></span>

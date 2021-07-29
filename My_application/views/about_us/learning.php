@@ -41,7 +41,7 @@
                   <?=html_entity_decode($contd['cms_page_content'])?>
                   <div class="space"><br></div>
                </div>
-            </div><?= g('db.admin.bucket') . $cont13['tutorial_video'] ?>
+            </div><?//= g('db.admin.bucket') . $cont13['tutorial_video'] ?>
             <div class="col-md-6 text-right"><?//=$contd['cms_page_url']?>
                <a href="<?=$contd['cms_page_url']?>" data-fancybox="media">
                   <div class="video-box">
