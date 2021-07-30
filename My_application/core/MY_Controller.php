@@ -539,9 +539,19 @@ class MY_Controller extends MY_Controller_Admin
 
     public function book($data){
        
-        $config['mailtype'] = 'html';    
+       // $config['mailtype'] = 'html';    
         $this->load->library('email'); 
 
+        $config['mailtype'] = 'html';
+        $config['smtp_port']='465';
+        $config['smtp_timeout']='30';
+        $config['charset']='utf-8';
+        $config['protocol'] = 'smtp';
+        $config['mailpath'] = '/usr/sbin/sendmail';
+        $config['charset'] = 'iso-8859-1';
+        $config['wordwrap'] = TRUE;
+
+    
        // $u=$this->model_booking->find_by_pk($data['booking_expert_id']);
         $param = array();
         if(isset($data) && array_filled($data))
@@ -575,7 +585,7 @@ class MY_Controller extends MY_Controller_Admin
 
        }
 
-    //    die();
+      //  die();
 
 }
 

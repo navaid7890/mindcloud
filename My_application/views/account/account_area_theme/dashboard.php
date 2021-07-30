@@ -29,6 +29,10 @@
         overflow: scroll;
         overflow-x: hidden;
     }
+
+    ul.rating {
+        min-height: 16px;
+    }
 </style>
 
 <div class="index-page">
@@ -318,7 +322,7 @@
                                                                 </div>
                                                             </div> -->
                                                         </div>
-                                                        <div class="space"><br><br><br><br></div>
+                                                        <div class="space"><br></div>
                                                         <div class="row align-items-center">
                                                             <div class="col-md-10">
                                                                 <?
@@ -400,7 +404,7 @@
                                                                 </div>
                                                             </div> -->
                                                         </div>
-                                                        <div class="space"><br><br><br><br></div>
+                                                        <div class="space"><br></div>
                                                         <div class="row align-items-center">
                                                             <div class="col-md-10">
                                                                 <?
