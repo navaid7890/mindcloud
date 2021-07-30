@@ -30,10 +30,10 @@
    }
 
    .abtContent h6 {
-    font-size: 13px;
-    font-weight: 800;
-    margin: 10px 0px;
-}
+      font-size: 13px;
+      font-weight: 800;
+      margin: 10px 0px;
+   }
 </style>
 <div class="abt-page">
 
@@ -46,7 +46,7 @@
             <p><?= html_entity_decode($con3['cms_page_content']) ?></p>
             <div class="space"><br><br></div>
 
-            <a href="<?=l('contact_us')?>" class="btn-theme btn-hover">Contact Us <span></span></a>
+            <a href="<?= l('contact_us') ?>" class="btn-theme btn-hover">Contact Us <span></span></a>
          </div>
       </div>
    </section>
@@ -178,14 +178,14 @@
 
 
                      <div class="disp-cont" style="display:block;">
-                     <p>
-                        <?= short_text($contd['cms_page_content'], 368) ?>
-                     </p>
-                  </div>
-                  <div class="more-cont" style="display:none;">
-                     <?= html_entity_decode($contd['cms_page_content']) ?>
-                  </div>
-                  <a href="#" class="more">more</a>
+                        <p>
+                           <?= short_text($contd['cms_page_content'], 368) ?>
+                        </p>
+                     </div>
+                     <div class="more-cont" style="display:none;">
+                        <?= html_entity_decode($contd['cms_page_content']) ?>
+                     </div>
+                     <a href="#" class="more">more</a>
 
                      <div class="space"><br></div>
                   </div>
@@ -216,10 +216,10 @@
                            <div class="userBox">
                               <div class="useBox-profile">
                                  <span><img src="<?= g('db.admin.bucketimg') . "team/" . $value['team_image'] ?>"></span>
-                                 <h5><?=$value['team_name']?></h5>
+                                 <h5><?= $value['team_name'] ?></h5>
                               </div>
                               <div class="userBox-content">
-                                 <p><?=$value['team_description']?></p>
+                                 <p><?= $value['team_description'] ?></p>
                               </div>
                            </div>
 
@@ -231,20 +231,20 @@
          <?php endif ?>
          <div class="space"><br><br><br><br><br></div>
          <? if (!empty($team)) : ?>
-         <div class="mng-bord">
-            <h2>Mind Cloud Tribe <strong> Management Team</strong></h2>
-            <div class="space"><br><br></div>
-            <ul>
+            <div class="mng-bord">
+               <h2>Mind Cloud Tribe <strong> Management Team</strong></h2>
+               <div class="space"><br><br></div>
+               <ul>
                   <?php if (isset($team) && array_filled($team)) : ?>
                      <?php foreach ($team as $key => $value) : ?>
                         <li>
                            <div class="userBox">
                               <div class="useBox-profile">
                                  <span><img src="<?= g('db.admin.bucketimg') . "team/" . $value['team_image'] ?>"></span>
-                                 <h5><?=$value['team_name']?></h5>
+                                 <h5><?= $value['team_name'] ?></h5>
                               </div>
                               <div class="userBox-content">
-                                 <p><?=$value['team_description']?></p>
+                                 <p><?= $value['team_description'] ?></p>
                               </div>
                            </div>
 
@@ -252,7 +252,7 @@
                      <?php endforeach; ?>
                   <?php endif ?>
                </ul>
-         </div>
+            </div>
          <?php endif ?>
       </div>
    </section>
@@ -263,7 +263,7 @@
          <div class="space"><br></div>
          <p><?= html_entity_decode($con8['cms_page_content']) ?></p>
          <div class="space"><br><br></div>
-         <a href="<?=l('contact_us')?>" class="btn-theme btn-hover">Contact Us <span></span></a>
+         <a href="<?= l('contact_us') ?>" class="btn-theme btn-hover">Contact Us <span></span></a>
       </div>
    </section>
 
