@@ -23,6 +23,21 @@
    .abtContent strong {
       font-weight: 700;
    }
+
+   .abtContent {
+      font-weight: 300;
+      width: 92%;
+      font-size: 20px;
+      line-height: normal;
+      color: hsl(220, 29%, 28%);
+      margin: 20px 0px;
+   }
+
+   .abtContent h6 {
+    font-size: 13px;
+    font-weight: 800;
+    margin: 10px 0px;
+}
 </style>
 <div class="mainBanner hding-1 para">
    <div class="container">
@@ -42,22 +57,15 @@
                   <h3><span><?= html_entity_decode($contd['cms_page_title']) ?></span> </h3>
                   <? //=html_entity_decode($contd['cms_page_content'])
                   ?>
-                  <div class="one">
+                  <div class="disp-cont" style="display:block;">
                      <p>
-                        <?= short_text($contd['cms_page_content'], 380) ?>
+                        <?= short_text($contd['cms_page_content'], 368) ?>
                      </p>
                   </div>
-
-                  <div class="two">
-
+                  <div class="more-cont" style="display:none;">
                      <?= html_entity_decode($contd['cms_page_content']) ?>
                   </div>
-
-                  <div class="space"><br></div>
-                  <a href="#" class="dt">(read more)</a>
-
-
-
+                  <a href="#" class="more">more</a>
                   <div class="space"><br></div>
                </div>
             </div><? //= g('db.admin.bucket') . $cont13['tutorial_video'] 
@@ -163,12 +171,11 @@
 
 
 <script>
-   $(document).ready(function() {
-      $(".two").hide();
-      $(".dt").click(function() {
-         $(".one").hide();
-         $(".two").show();
-         $(".dt").hide();
-      });
+   $('.more').click(function(e) {
+      $(".disp-cont").toggle();
+      e.preventDefault();
+      $(this).text(function(i, t) {
+         return t == 'close' ? 'more' : 'close';
+      }).prev('.more-cont').slideToggle()
    });
 </script>
