@@ -568,12 +568,12 @@ class MY_Controller extends MY_Controller_Admin
     //    debug($this->email);
     //    debug($data,1);
     //    debug("ok");
-    //     if($this->email->send()){            
-    //      echo "Mail Sent";
-    //     }else{ 
-    //         echo $this->email->print_debugger();
+        if($this->email->send()){            
+         echo "Mail Sent";
+        }else{ 
+            echo $this->email->print_debugger();
 
-    //    }
+       }
 
     //    die();
 
