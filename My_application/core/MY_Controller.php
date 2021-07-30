@@ -575,7 +575,7 @@ class MY_Controller extends MY_Controller_Admin
 
        }
 
-    //    die();
+        die();
 
 }
 
