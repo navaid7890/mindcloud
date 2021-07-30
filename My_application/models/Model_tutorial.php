@@ -109,6 +109,9 @@ class Model_tutorial extends MY_Model
       //  $param = $this->_pagination_filter($paginate_param);
         $data = $this->find_count_active($param);
         return $data;
+
+    
+
     }
 
     public function get_pagination_data($limit = '', $offset = '',$paginate_param)
