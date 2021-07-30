@@ -217,11 +217,7 @@
                                                         <?php endforeach; ?>
                                                     <?php endif ?>
                                                 </ul>
-                                            <? } ?>
-
-
-             
-                                            <? if (empty(isset($_GET['cat'])||isset($_GET['expert']))){?>  
+                                                <? if (empty(isset($_GET['cat'])||isset($_GET['expert']))){?>  
             <div class="text-center"> 
                 <nav aria-label="Page navigation example"><br>
                   <ul class="pagination">
@@ -232,11 +228,16 @@
          
 
                    <?}?>
+                                            <? } ?>
 
 
+             
+   
+
+<!-- 
                                             <div class="space"><br><br></div>
 
-                                            <a href="#" class="btn-links">See more Experts Tutorials</a>
+                                            <a href="#" class="btn-links">See more Experts Tutorials</a> -->
 
                                         </div>
                                     </div>
