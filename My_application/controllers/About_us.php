@@ -422,11 +422,9 @@ class About_us extends MY_Controller
 
         $product_data = $this->_pagination('tutorial',$art);
         $data['art'] = $product_data['data'];
-        $data['links'] = $product_data['links'];  
-      //  debug($product_data);
-
-        // debug($data['art']);
-
+        $data['links'] = $product_data['links']; 
+      
+     
         $pop = array();
         $pop['where']['category_featured'] = 1;
         $data['popular'] = $this->model_category->find_all_active($pop);
@@ -1241,7 +1239,7 @@ class About_us extends MY_Controller
 
 
     
-    private function _pagination($model_name='',$param = array())
+    private function _pagination($model_name='',$paginate_param)
     {
         $per_page = 12;
         $this->load->library('mypagination');
@@ -1274,7 +1272,7 @@ class About_us extends MY_Controller
         $page = ($this->uri->segment(3))? $this->uri->segment(3) : 0;
 
         // $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"]);
-           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"],$param);
+           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"],$paginate_param);
 
         $vars["links"] = $this->mypagination->create_links();
         
