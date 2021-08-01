@@ -43,44 +43,50 @@
    }
 
    .pagination {
-    display: table;
-    margin: 20px auto;
-}
+      display: table;
+      margin: 20px auto;
+   }
 
-.pagination {
-    display: inline-block;
-    padding-left: 0;
-    margin: 20px 0;
-    border-radius: 4px;
-}
+   .pagination {
+      display: inline-block;
+      padding-left: 0;
+      margin: 20px 0;
+      border-radius: 4px;
+   }
 
-.pagination>li {
-    display: inline;
-}
+   .pagination>li {
+      display: inline;
+   }
 
-.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
-    z-index: 3;
-    color: #fff;
-    cursor: default;
-    background-color: #FDBE41;
-    border-color:#FDBE41;
-}
-.pagination>li>a, .pagination>li>span {
-    position: relative;
-    float: left;
-    padding: 6px 12px;
-    margin-left: -1px;
-    line-height: 1.42857143;
-    color: #FDBE41;
-    text-decoration: none;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
+   .pagination>.active>a,
+   .pagination>.active>a:focus,
+   .pagination>.active>a:hover,
+   .pagination>.active>span,
+   .pagination>.active>span:focus,
+   .pagination>.active>span:hover {
+      z-index: 3;
+      color: #fff;
+      cursor: default;
+      background-color: #FDBE41;
+      border-color: #FDBE41;
+   }
 
-.pagination li.first a 
-{
-padding: 6px 12px;
-}
+   .pagination>li>a,
+   .pagination>li>span {
+      position: relative;
+      float: left;
+      padding: 6px 12px;
+      margin-left: -1px;
+      line-height: 1.42857143;
+      color: #FDBE41;
+      text-decoration: none;
+      background-color: #fff;
+      border: 1px solid #ddd;
+   }
+
+   .pagination li.first a {
+      padding: 6px 12px;
+   }
 </style>
 
 <div class="mainBanner home-banner para" style="background-image:url('<?= g('db.admin.bucketimg') . "cms_image/" . $con1['cms_page_image'] ?>');">
@@ -96,17 +102,19 @@ padding: 6px 12px;
                   </div>
                   <div class="col-lg-6 col-md-12 bannerSeactionArea">
                      <?= html_entity_decode($cont2['cms_page_content']) ?>
+                     <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/HOW_IT_WORKS_COMPLETE.mp4" class="btn-links" data-fancybox="media" style="color: #fff;margin-top: 10px;float: right;"><i class="fas fa-play-circle"></i> watch how it works</a>
                   </div>
+                  
                </div>
                <div class="space"><br><br></div>
 
-<?if ($this->userid > 0) {
-$usdata = $this->layout_data['user_data'];
-}?>
- <? if($usdata['user_paid']==0){?>
-               <a href="javascript:void(0)" class="btn-theme btn-hover">Start your Free Trial <span></span></a>
+               <? if ($this->userid > 0) {
+                  $usdata = $this->layout_data['user_data'];
+               } ?>
+               <? if ($usdata['user_paid'] == 0) { ?>
+                  <a href="javascript:void(0)" class="btn-theme btn-hover">Start your Free Trial <span></span></a>
 
-    <? }?>
+               <? } ?>
             </div>
          </div>
       </div>
@@ -219,7 +227,7 @@ $usdata = $this->layout_data['user_data'];
                                                       ";
                                                    <? } ?>
                                                 </ul>
-                                                
+
                                              </div>
                                              <div class="col-md-4 text-right">
                                                 <h6><?= price($value['tutorial_price']) ?></h6>
@@ -233,20 +241,20 @@ $usdata = $this->layout_data['user_data'];
                         </ul>
                      <? } ?>
 
-                   <? if (empty(isset($_GET['cat'])||isset($_GET['expert']))){?>  
-                     <div class="row">
-              <div class="col-md-12">
-            <div class="text-center"> 
-                <nav aria-label="Page navigation example"><br>
-                  <ul class="pagination">
-                    <?=$links?>
-                  </ul>
-                </nav>
-            </div>
-              </div>
-            </div>
+                     <? if (empty(isset($_GET['cat']) || isset($_GET['expert']))) { ?>
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="text-center">
+                                 <nav aria-label="Page navigation example"><br>
+                                    <ul class="pagination">
+                                       <?= $links ?>
+                                    </ul>
+                                 </nav>
+                              </div>
+                           </div>
+                        </div>
 
-                   <?}?>
+                     <? } ?>
                      <!-- <div class="space"><br><br></div>
                      <a href="#" class="btn-links">See more Experts Tutorials</a>
                      
@@ -341,7 +349,7 @@ $usdata = $this->layout_data['user_data'];
                         <? endforeach; ?>
                      <? endif; ?>
                   </ul>
-                  
+
                </div>
             </div>
          </div>
@@ -355,9 +363,9 @@ $usdata = $this->layout_data['user_data'];
       <?= html_entity_decode($check['cms_page_content']) ?>
       <div class="space"><br><br></div>
 
-      <? if($usdata['user_paid']==0){?>
-      <a href="<?= l('learning-journey') ?>" class="btn-theme btn-hover">Start Free Trial <span></span></a>
-      <? }?>
+      <? if ($usdata['user_paid'] == 0) { ?>
+         <a href="<?= l('learning-journey') ?>" class="btn-theme btn-hover">Start Free Trial <span></span></a>
+      <? } ?>
    </div>
 </section>
 <section class="faqSec hding-2 para">

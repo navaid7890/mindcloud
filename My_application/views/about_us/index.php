@@ -179,11 +179,11 @@
 
                      <div class="disp-cont" style="display:block;">
                         <p>
-                           <?= short_text($con7['cms_page_content'], 368) ?>
+                           <?= short_text($contd['cms_page_content'], 368) ?>
                         </p>
                      </div>
                      <div class="more-cont" style="display:none;">
-                        <?= html_entity_decode($con7['cms_page_content']) ?>
+                        <?= html_entity_decode($contd['cms_page_content']) ?>
                      </div>
                      <a href="#" class="more">more</a>
 
