@@ -91,7 +91,6 @@
                   </div>
                   <div class="col-lg-6 col-md-12 bannerSeactionArea">
                      <?= html_entity_decode($cont2['cms_page_content']) ?>
-                     <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/HOW_IT_WORKS_COMPLETE.mp4" class="btn-links" data-fancybox="media" style="color: #fff;margin-top: 10px;float: right;"><i class="fas fa-play-circle"></i> watch how it works</a>
                   </div>
                </div>
                <div class="space"><br><br></div>
