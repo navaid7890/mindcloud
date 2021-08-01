@@ -368,11 +368,10 @@ class About_us extends MY_Controller
 
         $cont = $this->model_cms_page->get_page(2);
 
-        //  debug($cont);
         $data['cont1'] = $cont['child'][4];
         $data['cont2'] = $cont['child'][5];
         $data['cont3'] = $cont['child'][17];
-        // debug($data['cont3']);
+
         $conts = $this->model_cms_page->get_page(20);
         $data['con1'] = $conts['child'][0];
 
@@ -384,8 +383,7 @@ class About_us extends MY_Controller
         $data['con5'] = $contss['child'][4];
         $data['con6'] = $contss['child'][4];
 
-        // $test_f = $cont['0']['0'];
-        // debug($data['con4']);
+  
         $par = array();
         $par['order'] = "category_id ASC";
         $data['main_categories'] = $this->model_category->find_all_active($par);
@@ -393,26 +391,28 @@ class About_us extends MY_Controller
         $coursecat = array();
         $coursecat['where']['cp_category_id'] = intval($this->input->get('cat'));
         $cate = $this->model_course_category->find_all_active($coursecat);
-        // debug($cate);
-        foreach ($cate as $key => $value) {
-            $all[] = $value['cp_course_id'];
-        }
-        // debug($all);
+
+  
+
         $categories = $this->model_category->get_category_tutorials();
         $data['main_categories'] = $categories;
 
         $par2 = array();
         $par2['order'] = "expert_id ASC";
         $data['ex'] = $this->model_expert->find_all_active($par2);
-        //debug($data['main_categories']);
+     
 
         $param = array();
         if (isset($_GET['expert']) and intval($_GET['expert']) > 0) {
             $param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
         }
         if (isset($_GET['search'])) {
-            // debug($_GET['search']);
+    
             $param['where_like'][] = array('column' => 'tutorial_name', 'value' => $_GET['search']);
+        }
+
+        foreach ($cate as $key => $value) {
+            $all[] = $value['cp_course_id'];
         }
 
         $param['order'] = "tutorial_id ASC";
@@ -422,11 +422,9 @@ class About_us extends MY_Controller
 
         $product_data = $this->_pagination('tutorial',$art);
         $data['art'] = $product_data['data'];
-        $data['links'] = $product_data['links'];  
-      //  debug($product_data);
-
-        // debug($data['art']);
-
+        $data['links'] = $product_data['links']; 
+      
+     
         $pop = array();
         $pop['where']['category_featured'] = 1;
         $data['popular'] = $this->model_category->find_all_active($pop);
@@ -1241,7 +1239,7 @@ class About_us extends MY_Controller
 
 
     
-    private function _pagination($model_name='',$param = array())
+    private function _pagination($model_name='',$paginate_param)
     {
         $per_page = 12;
         $this->load->library('mypagination');
@@ -1274,7 +1272,7 @@ class About_us extends MY_Controller
         $page = ($this->uri->segment(3))? $this->uri->segment(3) : 0;
 
         // $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"]);
-           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"],$param);
+           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"],$paginate_param);
 
         $vars["links"] = $this->mypagination->create_links();
         

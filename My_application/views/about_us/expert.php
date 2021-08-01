@@ -76,6 +76,11 @@
     background-color: #fff;
     border: 1px solid #ddd;
 }
+
+.pagination li.first a 
+{
+padding: 6px 12px;
+}
 </style>
 
 <div class="mainBanner home-banner para" style="background-image:url('<?= g('db.admin.bucketimg') . "cms_image/" . $con1['cms_page_image'] ?>');">
@@ -227,6 +232,8 @@ $usdata = $this->layout_data['user_data'];
                            <?php endif ?>
                         </ul>
                      <? } ?>
+
+                   <? if (empty(isset($_GET['cat'])||isset($_GET['expert']))){?>  
                      <div class="row">
               <div class="col-md-12">
             <div class="text-center"> 
@@ -238,6 +245,8 @@ $usdata = $this->layout_data['user_data'];
             </div>
               </div>
             </div>
+
+                   <?}?>
                      <!-- <div class="space"><br><br></div>
                      <a href="#" class="btn-links">See more Experts Tutorials</a>
                      

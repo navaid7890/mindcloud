@@ -83,24 +83,57 @@ class Model_tutorial extends MY_Model
 
     }
 
+    private function _pagination_filter($paginate_param = array())
+    {
+        //  Filters Start
+    
+        // if(isset($_GET['cat']) AND intval($_GET['cat']) > 0){
+        //     $param['where']['product_category_id'] = $this->input->get('cat');
+        // }
+
+        if(isset($_GET['search']) AND (!empty($_GET['search']))){
+            $search = trim($_GET['search']);
+            $param['where_like'][] = array('column'=>'tutorial_name','value'=>$search,'type'=>'both');
+        }
+
+        if (isset($_GET['expert']) and intval($_GET['expert']) > 0) {
+            $param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
+        }
+
+        return $param;
+    }
+
     public function get_pagination_total_count()
     {
         $param = array();
-       // $param = $this->_pagination_filter($paginate_param);
+      //  $param = $this->_pagination_filter($paginate_param);
         $data = $this->find_count_active($param);
         return $data;
+
+    
+
     }
 
-    public function get_pagination_data($limit = '', $offset = '',$param = array())
+    public function get_pagination_data($limit = '', $offset = '',$paginate_param)
     {
-       // $param = array();
-        $param['order'] = 'tutorial_id DESC';
-        $param['limit'] = $limit;
+        $param = array();
 
-        //  Filters Start
-      //  $param = $this->_pagination_filter($paginate_param);
+
+        $param = $this->_pagination_filter($paginate_param);
+
+        $coursecat = array();
+        $coursecat['where']['cp_category_id'] = intval($this->input->get('cat'));
+        $cate = $this->model_course_category->find_all_active($coursecat);
+        // debug($cate);
+        foreach ($cate as $key => $value) {
+            $all[] = $value['cp_course_id'];
+        }
         
-      //  $param['limit'] = $limit;
+        $param['order'] = 'tutorial_id DESC';
+        $param['where_in']['tutorial_id'] = $all;
+
+
+        $param['limit'] = $limit;
         $param['offset'] = $offset;
         return $this->get_details($param);
     }
@@ -203,10 +236,11 @@ class Model_tutorial extends MY_Model
     {
         $params['fields'] = 'tutorial_id,tutorial_expert_id,tutorial_category_id,tutorial_slug,
         tutorial_name,tutorial_level,tutorial_price,tutorial_video,tutorial_video_path,tutorial_status,tutorial_createdon,tutorial_duration,tutorial_image2,tutorial_image,tutorial_image_path,expert_id,expert_name,expert_image,tutorial_featured,tutorial_rating,tutorial_keywords,language_id,language_name,tutorial_language_id, tutorial_desc,tutorial_desc2,tutorial_desc3';
-
+       
 
         $params['joins'][] = $this->join_expert();
         $params['joins'][] = $this->join_language();
+       // $params['joins'][] = $this->join_category();
         $course = $this->find_all_active($params);
 
         return $course;

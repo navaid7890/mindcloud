@@ -24,7 +24,7 @@
             <div>
                <h1><?= html_entity_decode($banner['inner_banner_title']) ?></h1>
                <div class="space"><br><br></div>
-               <?= html_entity_decode($banner['inner_banner_content']) ?> 
+               <?= html_entity_decode($banner['inner_banner_content']) ?>  
                <div class="space"><br><br></div>
                <a href="#" class="btn-links" data-fancybox="media"><i class="fas fa-play-circle"></i> watch how it works</a>
             </div>

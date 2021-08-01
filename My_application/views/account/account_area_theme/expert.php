@@ -217,17 +217,27 @@
                                                         <?php endforeach; ?>
                                                     <?php endif ?>
                                                 </ul>
+                                                <? if (empty(isset($_GET['cat'])||isset($_GET['expert']))){?>  
+            <div class="text-center"> 
+                <nav aria-label="Page navigation example"><br>
+                  <ul class="pagination">
+                    <?=$links?>
+                  </ul>
+                </nav>
+            </div>
+         
+
+                   <?}?>
                                             <? } ?>
-                                            <div class="text-center">
-                                                <nav aria-label="Page navigation example"><br>
-                                                    <ul class="pagination">
-                                                        <?= $links ?>
-                                                    </ul>
-                                                </nav>
-                                            </div>
+
+
+             
+   
+
+<!-- 
                                             <div class="space"><br><br></div>
 
-                                            <a href="#" class="btn-links">See more Experts Tutorials</a>
+                                            <a href="#" class="btn-links">See more Experts Tutorials</a> -->
 
                                         </div>
                                     </div>
