@@ -89,7 +89,7 @@
                                           $ppt_time_text[] = [
                                              'time' => $sec,
                                              'text' => $pptarr[$arr_time_key],
-                                             'img' => l('') . 'assets/' . $tutorial_detail['videos_name'] . '/' . $pptarr[$arr_time_key] . '.jpg',
+                                             'img' => l('') . 'assets/' . html_entity_decode($tutorial_detail['videos_name']) . '/' . $pptarr[$arr_time_key] . '.jpg',
                                           ];
                                        }
 
