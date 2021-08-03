@@ -135,7 +135,7 @@
                                 <div class="col-md-8">
                                     <div class="xpert-box">
                                         <div class="xpert-content">
-                                            <h2>What to Learn next in <strong>Experts Tutorials </strong></h2>
+                                            <h2>What to Learn in <strong>Experts Tutorials </strong></h2>
                                             <? if (empty($art)) { ?>
                                                 <h1 class="text-center" style="color: #000; font-size:30px; font-weight:700;">Course Not Found</h1>
                                             <? } else { ?>
@@ -168,8 +168,6 @@
                                                                     <!-- <a href="javascript:;" class="cate-tag"><? //= $value['tutorial_level'] 
                                                                                                                     ?></a> -->
                                                                     <div class="vid-content">
-
-
                                                                         <div class="row align-items-center ">
                                                                             <div class="col-md-12">
                                                                                 <a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;">
@@ -217,34 +215,25 @@
                                                         <?php endforeach; ?>
                                                     <?php endif ?>
                                                 </ul>
-                                                <? if (empty(isset($_GET['cat'])||isset($_GET['expert']))){?>  
-            <div class="text-center"> 
-                <nav aria-label="Page navigation example"><br>
-                  <ul class="pagination">
-                    <?=$links?>
-                  </ul>
-                </nav>
-            </div>
-         
-
-                   <?}?>
+                                                <? if (empty(isset($_GET['cat']) || isset($_GET['expert']))) { ?>
+                                                    <div class="text-center">
+                                                        <nav aria-label="Page navigation example"><br>
+                                                            <ul class="pagination">
+                                                                <?= $links ?>
+                                                            </ul>
+                                                        </nav>
+                                                    </div>
+                                                <? } ?>
                                             <? } ?>
-
-
-             
-   
-
-<!-- 
+                                            <!-- 
                                             <div class="space"><br><br></div>
 
                                             <a href="#" class="btn-links">See more Experts Tutorials</a> -->
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="tutorialSec">
                             <section class="whoSec hding-2 para pad-sec">
                                 <div class="container-fluid pad-zero">
@@ -252,45 +241,42 @@
                                 </div>
                             </section>
                         </div>
-
-
-                        <div class="index-graph-box">
+                        <!-- <div class="index-graph-box">
                             <div class="consult-sec hding-2 para">
                                 <div class="consult-head">
                                     <h2>Consult with <strong>Experts</strong></h2>
                                     <div class="space"><br><br></div>
-                                    <p><?= html_entity_decode($con1['cms_page_content']) ?></p>
+                                    <p><?//= html_entity_decode($con1['cms_page_content']) ?></p>
                                 </div>
                                 <div classs="sapce"><br><br><br></div>
-
                                 <div class="row border-box">
                                     <div class="col-md-4 pad-zero">
                                         <div class="consult-left">
                                             <div>
-                                                <h2><strong><?= html_entity_decode($con1['cms_page_title']) ?></strong></h2>
+                                                <h2><strong><?//= html_entity_decode($con1['cms_page_title']) ?></strong></h2>
 
                                                 <ul class="consult-left-slide">
                                                     <li>
                                                         <div class="consult-left-content">
-                                                            <p> <?= html_entity_decode($con2['cms_page_content']) ?></p>
+                                                            <p> <?//= html_entity_decode($con2['cms_page_content']) ?></p>
                                                         </div>
                                                     </li>
 
                                                     <li>
                                                         <div class="consult-left-content">
-                                                            <p> <?= html_entity_decode($con3['cms_page_content']) ?></p>
+                                                            <p> <?//= html_entity_decode($con3['cms_page_content']) ?></p>
                                                         </div>
                                                     </li>
 
                                                     <li>
                                                         <div class="consult-left-content">
-                                                            <p><?= html_entity_decode($con4['cms_page_content']) ?></p>
+                                                            <p><?//= html_entity_decode($con4['cms_page_content']) ?></p>
                                                         </div>
                                                     </li>
 
                                                     <li>
                                                         <div class="consult-left-content">
-                                                            <p><?= html_entity_decode($con5['cms_page_content']) ?></p>
+                                                            <p><?//= html_entity_decode($con5['cms_page_content']) ?></p>
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -303,31 +289,31 @@
                                             <h2>Select <strong>Topic</strong></h2>
 
                                             <ul class="cate-list">
-                                                <? if (isset($art) and array_filled($art)) : ?>
-                                                    <? foreach ($art as $key => $value) : ?>
+                                                <?// if (isset($dashCatV) and array_filled($dashCatV)) : ?>
+                                                    <?// foreach ($dashCatV as $key => $value) : ?>
                                                         <li>
-                                                            <a href="javascript:void(0)">
-                                                                <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> <?= $value['tutorial_name'] ?> </p>
+                                                            <a href="<?//= l('booking') ?>">
+                                                                <p><span><img src="<?//= i('') ?>icons/category/1.svg"></span> <?//= $value['category_name'] ?> </p>
                                                             </a>
                                                         </li>
-                                                    <? endforeach; ?>
-                                                <? endif; ?>
+                                                    <?// endforeach; ?>
+                                                <?// endif; ?>
                                             </ul>
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
-                    <div class="space"><br><br></div>
-
+                    <!-- <div class="space"><br><br></div> -->
+<!-- 
                     <section class="joinSec hding-2 para">
                         <div class="joinContent">
-                            <h2><?= html_entity_decode($check['cms_page_title']) ?></h2>
+                            <h2><?//= html_entity_decode($check['cms_page_title']) ?></h2>
                             <div class="space"><br></div>
-                            <p><?= html_entity_decode($check['cms_page_content']) ?></p>
+                            <p><?//= html_entity_decode($check['cms_page_content']) ?></p>
                             <div class="space"><br><br></div>
 
 
@@ -340,13 +326,13 @@ $usdata = $this->layout_data['user_data'];
                 <? }?>
 
                         </div>
-                    </section>
+                    </section> -->
 
 
                     <section class="faqSec hding-2 para">
                         <div class="container">
                             <div class="faqHead">
-                                <h2>FAQs about <strong>Learning Journey</strong></h2>
+                                <h2>FAQs about <strong>Experts Tutorials.</strong></h2>
                             </div>
 
                             <ul class="colasebar">
@@ -364,7 +350,7 @@ $usdata = $this->layout_data['user_data'];
                                 <? endif; ?>
                             </ul>
 
-                            <a href="#">See more</a>
+                            <a href="<?= l('faq') ?>">See more</a>
                         </div>
                     </section>
 

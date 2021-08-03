@@ -621,6 +621,11 @@ class Profile extends MY_Controller_Account
 		$data['tut'] = $this->model_tutorial->find_all_active($param);
 
 
+		$dashCat = array();
+		$dashCat['where']['category_status'] = 1;
+		$data['dashCatV'] = $this->model_category->find_all_active($dashCat);
+
+
 		$this->load_view('expert', $data);
 	}
 

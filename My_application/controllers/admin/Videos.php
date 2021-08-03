@@ -77,10 +77,10 @@ class Videos extends MY_Controller
                 
                 set_time_limit(0);
                 $all_slides = "";
-                $file = file_get_contents("https://mindcloud-bucket.s3.amazonaws.com/assets/".$_POST['videos']['videos_ppt']);
+                $file = file_get_contents("https://mindcloud-bucket.s3.amazonaws.com/assets/".rawurlencode($_POST['videos']['videos_ppt']));
                 file_put_contents('ppt_temp.pptx', $file);
                 $files = "ppt_temp.pptx";
-                $folderName = "assets/".$_POST['videos']['videos_name']."/";
+                $folderName = "assets/".html_entity_decode($_POST['videos']['videos_name'])."/";
                 
 
                 if (!file_exists($folderName)) {

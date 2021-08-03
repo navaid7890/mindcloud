@@ -24,9 +24,9 @@
             <div>
                <h1><?= html_entity_decode($banner['inner_banner_title']) ?></h1>
                <div class="space"><br><br></div>
-               <?= html_entity_decode($banner['inner_banner_content']) ?> 
+               <?= html_entity_decode($banner['inner_banner_content']) ?>  
                <div class="space"><br><br></div>
-               <a href="#" class="btn-links" data-fancybox="media"><i class="fas fa-play-circle"></i> watch how it works</a>
+               <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/HOW_IT_WORKS_COMPLETE.mp4" class="btn-links" data-fancybox="media"><i class="fas fa-play-circle"></i> watch how it works</a>
             </div>
          </div>
          <div class="col-lg-4 col-md-12">
