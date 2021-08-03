@@ -43,9 +43,17 @@
                         <p>Gain <strong> 7-day free </strong> limited access to Learning Journey and Experts Tutorials.</p>
                      </div>
                      <div class="space"><br></div>
+               
+<?if ($this->userid > 0) {
+$usdata = $this->layout_data['user_data'];
+}?>
+ <? if($usdata['user_paid']==0){?>
                      <div class="fld-btn">
                         <input type="submit" id="forms-newsletter-btn" value="Proceed to Free Trial">
                      </div>
+                 
+    <? }?>
+
                   </form>
                </div>
             </div>
