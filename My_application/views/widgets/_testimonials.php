@@ -58,10 +58,10 @@
 
     $('article').readmore({
             speed: 100,
-            collapsedHeight: 50,
+            collapsedHeight: 140,
             heightMargin: 16,
             moreLink: '<a href="#" class="">Read More</a>',
-            lessLink: '<a href="#" class="btn btn-dark btn-sm">Close</a>',
+            lessLink: '<a href="#" class="">Read Less</a>',
             embedCSS: true,
             blockCSS: 'display: block; width: 100%;',
             startOpen: false,
