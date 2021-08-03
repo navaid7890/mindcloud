@@ -163,7 +163,7 @@ class MY_Controller_Admin extends CI_Controller {
 
     // public function get_mysqli() {
     //  $db = (array)get_instance()->db;
-    //  return mysqli_connect('aarswslr2t7vuw.cihoyrcngosj.us-east-1.rds.amazonaws.com', 'mindcloud', 'mindcloud', 'ebdb');
+    //  return mysqli_connect('aa1xj7fqh4ksonz.cihoyrcngosj.us-east-1.rds.amazonaws.com', 'mindcloud', 'mindcloud', 'ebdb');
     // }
 
 
