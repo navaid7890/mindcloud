@@ -87,6 +87,7 @@ $db['development'] = array(
 
 $db['testing'] = array(
 	'dsn'	=> '',
+	// 'hostname' => 'aarswslr2t7vuw.cihoyrcngosj.us-east-1.rds.amazonaws.com',
 	'hostname' => 'aa1xj7fqh4ksonz.cihoyrcngosj.us-east-1.rds.amazonaws.com',
 	'username' => 'mindcloud',
 	'password' => 'mindcloud',
@@ -110,6 +111,7 @@ $db['testing'] = array(
 
 $db['production'] = array(
 	'dsn'	=> '',
+	// 'hostname' => 'aarswslr2t7vuw.cihoyrcngosj.us-east-1.rds.amazonaws.com',
 	'hostname' => 'aa1xj7fqh4ksonz.cihoyrcngosj.us-east-1.rds.amazonaws.com',
 	'username' => 'mindcloud',
 	'password' => 'mindcloud',
