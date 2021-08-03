@@ -14,7 +14,7 @@
    <div class="container">
       <div class="row">
          <div class="col-md-7">
-            <h2>All FAQ's</h2>
+            <h2>All FAQs</h2>
          </div>
 
          <div class="col-md-5">
