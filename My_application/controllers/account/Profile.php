@@ -49,36 +49,31 @@ class Profile extends MY_Controller_Account
 
 
 	// Edit Profile
-	public function expertTutorial()
-	{
-		global $config;
-		$user_id = $this->userid;
+	// public function expertTutorial()
+	// {
+	// 	global $config;
+	// 	$user_id = $this->userid;
 
-		$data['title'] = 'Expert Tutorial';
+	// 	$data['title'] = 'Expert Tutorial';
 
-		$data['user_data'] = $this->layout_data['user_data'];
-
-
-		$param = array();
-		if (isset($_GET['cat']) and intval($_GET['cat']) > 0) {
-			$param['where']['tutorial_category_id'] = intval($this->input->get('cat'));
-		}
-		$param['order'] = "tutorial_id DESC";
-
-		// $param['joins'][] = array(
-		// 	"table"=>"category" , 
-		// 	"joint"=>"category.category_id = course.course_category_id"
-		// );
-
-		$data['tutorial'] = $this->model_tutorial->find_all_active($param);
-		$data['category'] = $this->model_category->find_all_active();
+	// 	$data['user_data'] = $this->layout_data['user_data'];
 
 
-		$data['dt'] = $this->model_category->find_all_active();
-		// debug($data['tutorial']); 
+	// 	$param = array();
+	// 	if (isset($_GET['cat']) and intval($_GET['cat']) > 0) {
+	// 		$param['where']['tutorial_category_id'] = intval($this->input->get('cat'));
+	// 	}
+	// 	$param['order'] = "tutorial_id DESC";
 
-		$this->load_view('expert', $data);
-	}
+	// 	$data['tutorial'] = $this->model_tutorial->find_all_active($param);
+	// 	$data['category'] = $this->model_category->find_all_active();
+
+
+	// 	$data['dt'] = $this->model_category->find_all_active();
+	// 	// debug($data['tutorial']); 
+
+	// 	$this->load_view('expert', $data);
+	// }
 
 	// Package Info Profile
 	public function change_password()
@@ -481,6 +476,7 @@ class Profile extends MY_Controller_Account
 
 	public function expert()
 	{
+		
 		$data = array();
 		global $config;
 
@@ -501,129 +497,80 @@ class Profile extends MY_Controller_Account
 		$data['con4'] = $contss['child'][3];
 		$data['con5'] = $contss['child'][4];
 
-		// $par = array();
-		// $par['order'] = "category_id ASC";
-		// $par['group'] = "category_id";
+		$par = array();
+        $par['order'] = "category_id ASC";
+        $data['main_categories'] = $this->model_category->find_all_active($par);
 
-		// $par['joins'][] = array(
-		//     "table" => "course_category",
-		//     "joint" => "category.category_id = course_category.cp_category_id"
-		// );
+        $coursecat = array();
+        $coursecat['where']['cp_category_id'] = intval($this->input->get('cat'));
+        $cate = $this->model_course_category->find_all_active($coursecat);
 
+  
 
-		// $par['joins'][] = array(
-		//     "table" => "tutorial",
-		//     "joint" => "tutorial.tutorial_id = course_category.cp_course_id"
-		// );
+        $categories = $this->model_category->get_category_tutorials();
+        $data['main_categories'] = $categories;
 
-		$categories = $this->model_category->get_category_tutorials();
-		$data['main_categories'] = $categories;
+        $par2 = array();
+        $par2['order'] = "expert_id ASC";
+        $data['ex'] = $this->model_expert->find_all_active($par2);
+     
 
-		// $data['main_categories'] = $this->model_category->find_all_active($par);
+        $param = array();
+        if (isset($_GET['expert']) and intval($_GET['expert']) > 0) {
+            $param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
+        }
+        if (isset($_GET['search'])) {
+    
+            $param['where_like'][] = array('column' => 'tutorial_name', 'value' => $_GET['search']);
+        }
 
-		$par2 = array();
-		$par2['order'] = "expert_id ASC";
-		$data['ex'] = $this->model_expert->find_all_active($par2);
+        foreach ($cate as $key => $value) {
+            $all[] = $value['cp_course_id'];
+        }
 
-		$coursecat = array();
-		$coursecat['where']['cp_category_id'] = intval($this->input->get('cat'));
-		$cate = $this->model_course_category->find_all_active($coursecat);
-
-		//    debug($cate);
-
-		foreach ($cate as $key => $value) {
-			$all[] = $value['cp_course_id'];
-		}
-
-		// $newone=count($all);
-
-		//debug($data['main_categories']);
+		$params = array();
+		$params['limit']=3;
+		$params['where_in']['tutorial_id'] = $all;
+		$data['tut'] = $this->model_tutorial->find_all_active($params);
 
 
-		// debug($categories);
-		// die();
-		$param = array();
-		if (isset($_GET['expert']) and intval($_GET['expert']) > 0) {
-			$param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
-		}
-		if (isset($_GET['search'])) {
-			// debug($_GET['search']);
-			$param['where_like'][] = array('column' => 'tutorial_name', 'value' => $_GET['search']);
-		}
+        $param['order'] = "tutorial_id ASC";
+        $param['where_in']['tutorial_id'] = $all;
 
-		$upaid = array();
-		$upaid['where']['user_id'] = $this->userid;
-		$upaid['where']['user_paid'] = 1;
-		$datapaid = $this->model_user->find_all_active($upaid);
+        $art = $this->model_tutorial->get_details($param);
 
-		// debug($datapaid[0]['user_paid']);
+        $product_data = $this->_paginations('tutorial',$art);
+        $data['art'] = $product_data['data'];
+        $data['links'] = $product_data['links']; 
+
+	//	debug($this->db->last_query());
+      
+     
+        $pop = array();
+        $pop['where']['category_featured'] = 1;
+        $data['popular'] = $this->model_category->find_all_active($pop);
+
+        $fa = array();
+        $fa['where']['faq_category'] = 1;
+        $fa['order'] = "faq_id ASC";
+        $data['faq'] = $this->model_faq->find_all_active($fa);
 
 
-		if ($datapaid[0]['user_paid'] == 1) {
+        $param = array();
+        $param['where']['category_featured'] = 1;
+        $data['category'] = $this->model_category->find_all_active($param);
 
-			$param['order'] = "tutorial_id ASC";
-			// $param['where_in']['tutorial_id'] = $all;
 
-			$art = $this->model_tutorial->get_details($param);
-
-			$product_data = $this->_pagination('tutorial',$art);
-			$data['art'] = $product_data['data'];
-			$data['links'] = $product_data['links'];  
-			// debug("user is paid");
-		} else {
-			$param['order'] = "tutorial_id ASC";
-			$param['where']['tutorial_free_status'] = 1;
-			$art = $this->model_tutorial->get_details($param);
-
-			$product_data = $this->_pagination('tutorial',$art);
-			$data['art'] = $product_data['data'];
-			$data['links'] = $product_data['links'];  
-			// $param['where_in']['tutorial_id'] = $all;
-
-			//$data['art'] = $this->model_tutorial->find_all_active($param);
-			// debug("user is Not paid");
-		}
-
-		$pop = array();
-		$pop['where']['category_featured'] = 1;
-		$data['popular'] = $this->model_category->find_all_active($pop);
-	//  debug($data['art']);
-
-		$fa = array();
-		$fa['where']['faq_category'] = 1;
-		$fa['order'] = "faq_id ASC";
-		$data['faq'] = $this->model_faq->find_all_active($fa);
 
 		$exp1 = $this->model_cms_page->get_page(26);
 
 		$data['check'] = $exp1['child'][0];
 
-		$param = array();
-		$param['order'] = "videos_views DESC";
-		$param['limit'] = 3;
 
-		$videos = $this->model_videos->find_all_active($param);
+		// $dashCat = array();
+		// $dashCat['where']['category_status'] = 1;
+		// $data['dashCatV'] = $this->model_category->find_all_active($dashCat);
 
-		foreach ($videos as $key => $value) {
-			$all[] = $value['videos_id'];
-		}
-
-		$param = array();
-		$param['where_in']['cp_tutorial_id'] = $all;
-		$tut = $this->model_course_tutorial->find_all_active($param);
-
-		foreach ($tut as $key => $value) {
-			$all1[] = $value['cp_course_id'];
-		}
-
-		$param = array();
-		$param['where_in']['tutorial_id'] = $all1;
-		$data['tut'] = $this->model_tutorial->find_all_active($param);
-
-
-		$dashCat = array();
-		$dashCat['where']['category_status'] = 1;
-		$data['dashCatV'] = $this->model_category->find_all_active($dashCat);
 
 
 		$this->load_view('expert', $data);
@@ -1686,9 +1633,10 @@ class Profile extends MY_Controller_Account
 	}
 
 	    
-    private function _pagination($model_name='',$param = array())
+    
+    public function _paginations($model_name='',$paginate_param)
     {
-        $per_page = 4;
+        $per_page = 12;
         $this->load->library('mypagination');
 
         $class_name = $this->router->fetch_class();
@@ -1706,7 +1654,7 @@ class Profile extends MY_Controller_Account
       
         // $pagination["base_url"] = g('base_url')."shop-category/".$method_name."/page/";
 
-        $pagination["base_url"] = g('base_url') . "account/profile/expert";
+        $pagination["base_url"] = g('base_url') . "about_us/expert/";
 
         $pagination["total_rows"] = $model_obj->get_pagination_total_count();
         $pagination["per_page"] = (ENVIRONMENT == 'development') ? $per_page : $per_page;
@@ -1719,14 +1667,15 @@ class Profile extends MY_Controller_Account
         $page = ($this->uri->segment(3))? $this->uri->segment(3) : 0;
 
         // $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"]);
-           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"],$param);
+           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"],$paginate_param);
 
         $vars["links"] = $this->mypagination->create_links();
         
         //.debug($vars,1); 
         return $vars;
     }
+
+
+
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

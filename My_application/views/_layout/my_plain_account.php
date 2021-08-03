@@ -1286,7 +1286,7 @@ if(array_filled($additional_tools))
 
 
 
-<script>
+<!-- <script>
 
 jQuery(document).ready(function(){
 
@@ -1294,7 +1294,7 @@ jQuery(document).ready(function(){
 
 });
 
-</script>
+</script> -->
 
 
 
