@@ -37,7 +37,18 @@
          <li>
             <? $this->load->view("widgets/expert-course-box"); ?>
          </li>
+         <?
+            //   debug($expert_course);
+            $vidcat = array();
+            $vidcat['where']['cp_course_id'] = $expert_course['tutorial_id'];
+            $vidcat = $this->model_course_tutorial->find_all_active($vidcat);
+            //  debug($vidcat) ;
+            $vid_name = array();
+            $vid_name['where']['videos_id'] = $vidcat[0]['cp_tutorial_id'];
+            $vid_name = $this->model_videos->find_all_active($vid_name);
+            // debug($vid_name[0]['videos_name']);
 
+            ?>
          <li>
             <div class="tutorial-box">
                <div class="tutorial-scroll-content">
@@ -46,19 +57,30 @@
                         <div class="row align-items-center">
                            <div class="col-md-7">
                               <ul class="bredcum-links">
-                                 <li><a href="#">Learning Journey</a></li>
-                                 <li><a href="#">Business Model Canvas</a></li>
-                                 <li><a href="#">Video and Transcript</a></li>
+                                 <li><a href="#">Experts Tutorials</a></li>
+                                 <!-- <li><a href="#">Business Model Canvas</a></li> -->
+                                 <li><a href="#"><?= $vid_name[0]['videos_name'] ?></a></li>
+                                 <li><a href="#">1 minute introduction</a></li>
                               </ul>
                            </div>
                            <div class="col-md-5 text-right">
                               <div class="bredcum-right">
-                                 <a href="#" class="btn-round btn-hover">In progress <span></span></a>
+                                 <?
+                                 $completTut = array();
+                                 $completTut['where']['mytutorial_user_id'] = $this->userid;
+                                 $completTut['where']['mytutorial_tutorial_id'] = $_GET['courseid'];
+                                 $completTut['where']['mytutorial_desc_percent'] = 1;
+                                 $completTut['where']['mytutorial_intro_percent'] = 1;
+                                 $completTut['where']['mytutorial_video_percent'] = 1;
+                                 $completTutProgress = $this->model_mytutorial->find_all_active($completTut);
+                                 ?>
+                                 <? if (!empty($completTutProgress)) : ?>
+                                    <a href="#" class="btn-round btn-hover">Completed <span></span></a>
+                                 <? else : ?>
+                                    <a href="#" class="btn-round btn-hover">In progress <span></span></a>
+                                 <? endif; ?>
 
-                                 <ul class="indicator-links">
-                                    <li><a href="#"><i class="fal fa-angle-left"></i></a></li>
-                                    <li><a href="#"><i class="fal fa-angle-right"></i></a></li>
-                                 </ul>
+
                               </div>
                            </div>
                         </div>
@@ -161,7 +183,7 @@
                            <input type="hidden" name="mytutorial[mytutorial_video_percent]" value="1">
                            <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-expert-tutorial-video-btn">
                         </form>
-                        <p>Complete this tutorials to receive Certificate.</p>
+                        <p>Complete this tutorial to receive Certificate.</p>
                         <div classs="space"><br><br></div>
                         <form id="forms-tutorial-review_us">
                            <div class="fld-textarea">

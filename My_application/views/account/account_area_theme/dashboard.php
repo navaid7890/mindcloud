@@ -522,31 +522,40 @@
                                             <div>
                                                 <h2><strong><?= html_entity_decode($con1['cms_page_title']) ?></strong></h2>
 
-                                                <ul class="consult-left-slide">
+                                                <ul class="consult-left-slideasd">
+                                                    <li>
+                                                        <div class="consult-left-contentasd">
+                                                        <p> <?= html_entity_decode($con2['cms_page_content']) ?></p>
+                                                        </div>
+                                                    </li>
+                                                    <a href="<?= l('booking') ?>" class="btn-theme" style="margin-top: 60px;padding: 22px;">Start Consulting <span style="top: 194.7px; left: 165.303px;"></span></a>
+                                                </ul>    
+
+                                                <!-- <ul class="consult-left-slide">
                                                     <li>
                                                         <div class="consult-left-content">
-                                                            <p> <?= html_entity_decode($con2['cms_page_content']) ?></p>
+                                                            <p> <?//= html_entity_decode($con2['cms_page_content']) ?></p>
                                                         </div>
                                                     </li>
 
                                                     <li>
                                                         <div class="consult-left-content">
-                                                            <p> <?= html_entity_decode($con3['cms_page_content']) ?></p>
+                                                            <p> <?//= html_entity_decode($con3['cms_page_content']) ?></p>
                                                         </div>
                                                     </li>
 
                                                     <li>
                                                         <div class="consult-left-content">
-                                                            <p><?= html_entity_decode($con4['cms_page_content']) ?></p>
+                                                            <p><?//= html_entity_decode($con4['cms_page_content']) ?></p>
                                                         </div>
                                                     </li>
 
                                                     <li>
                                                         <div class="consult-left-content">
-                                                            <p><?= html_entity_decode($con5['cms_page_content']) ?></p>
+                                                            <p><?//= html_entity_decode($con5['cms_page_content']) ?></p>
                                                         </div>
                                                     </li>
-                                                </ul>
+                                                </ul> -->
                                             </div>
                                         </div>
                                     </div>
