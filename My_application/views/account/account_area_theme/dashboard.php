@@ -4,14 +4,16 @@
     }
 
     #expertGraph .expertCount {
-        font-size: 36px;
-        color: #33415C;
-        font-weight: 800;
-        line-height: 122px;
-        position: absolute;
-        top: 80px;
-        right: 21%;
-    }
+    font-size: 36px;
+    color: #33415C;
+    font-weight: 800;
+    line-height: 122px;
+    position: absolute;
+    top: 80px;
+    right: 17%;
+    width: 68%;
+    text-align: center;
+}
 
     #expertGraph .progres-circle-box {
         position: relative;
@@ -144,7 +146,7 @@
                                 <div class="col-lg-5 col-md-12">
                                     <div class="progress-wrap">
                                         <div class="progres-circle-box">
-                                            <p>Journey completion</p>
+                                            <p>Journey Completion</p>
                                             <div class="space"><br><br></div>
                                             <div id="activeBorder1" class="active-border">
                                                 <div id="circle1" class="circle">
@@ -233,7 +235,7 @@
                                 <div class="col-lg-5 col-md-12">
                                     <div class="progress-wrap">
                                         <div class="progres-circle-box" id="circlePercent">
-                                            <p>Journey completion</p>
+                                            <p>Tutorials Completed</p>
                                             <div class="space"><br><br></div>
                                             <div id="activeBorder2" class="active-border">
                                                 <div id="circle2" class="circle">
@@ -257,15 +259,15 @@
                                         </div>
 
                                         <div class="progress-footer">
-                                            <h6>My Certificate</h6>
-                                            <p>Complete Expert Tutorials<br> to receive Certificate</p>
+                                            <h6>My Certificates</h6>
+                                            <p>Complete Expert Tutorials<br> to receive Certificates</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="expert-tut-sec pb-80">
                                 <div class="exper-head">
-                                    <h2>Your <strong>Expert Tutorials</strong></h2>
+                                    <h2>Your <strong>Experts Tutorials</strong></h2>
                                 </div>
                                 <div class="space"><br><br></div>
                                 <? //= debug($data['popular']); 
@@ -350,7 +352,7 @@
                             </div>
                             <div class="want-lern-sec expert-tut-sec">
                                 <div class="exper-head">
-                                    <h2>What to learn next in <strong>Expert Tutorials</strong></h2>
+                                    <h2>What to learn next in <strong>Experts Tutorials</strong></h2>
                                 </div>
                                 <div class="space"><br><br></div>
                                 <ul>
@@ -430,7 +432,7 @@
                                     <?php endif ?>
                                 </ul>
                                 <div class="space"><br><br><br></div>
-                                <a href="#" class="btn-links">See All Experts</a>
+                                <a href="<?= l('expert-tutorial') ?>" class="btn-links">See All Experts Tutorials</a>
                             </div>
                         </div>
                         <div class="space"><br><br></div>
@@ -553,11 +555,11 @@
                                             <h2>Select <strong>Topic</strong></h2>
 
                                             <ul class="cate-list">
-                                                <? if (isset($art) and array_filled($art)) : ?>
-                                                    <? foreach ($art as $key => $value) : ?>
+                                                <? if (isset($dashCatV) and array_filled($dashCatV)) : ?>
+                                                    <? foreach ($dashCatV as $key => $value) : ?>
                                                         <li>
-                                                            <a href="javascript:void(0)">
-                                                                <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> <?= $value['tutorial_name'] ?> </p>
+                                                            <a href="<?= l('booking') ?>">
+                                                                <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> <?= $value['category_name'] ?> </p>
                                                             </a>
                                                         </li>
                                                     <? endforeach; ?>

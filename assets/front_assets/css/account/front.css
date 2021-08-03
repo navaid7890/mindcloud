@@ -834,7 +834,8 @@
     }
     
     .vid-box {
-        max-width: 370px;
+        /* max-width: 370px; */
+        max-width: 350px;
         border-radius: 15px;
         overflow: hidden;
         background: #fff;

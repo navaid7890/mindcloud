@@ -121,6 +121,10 @@ class Dashboard extends MY_Controller_Account
 		$mytut['where']['mytutorial_certificate'] = 1;
 		$data['mytutorial'] = $this->model_mytutorial->find_all_active($mytut);
 
+		$dashCat = array();
+		$dashCat['where']['category_status'] = 1;
+		$data['dashCatV'] = $this->model_category->find_all_active($dashCat);
+
 
 		$this->load_view("dashboard", $data);
 	}
