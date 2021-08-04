@@ -50,7 +50,7 @@
                      ?>
                      <ul class="tutorial-box-list">
                         <li>
-                           <a href="<?= g('db.admin.bucket') .'videos/'. $startup[0]['startup_video_new'] ?>" data-fancybox="media">
+                           <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/Learning Journey_Intro 1_New Entrepreneur_Social Cut.mp4" data-fancybox="media">
                               <div class="tutorial-list-box">
                                  <div class="tutorial-box-content">
                                     <span><img src="<?= i('') ?>dashboard/home/icons/1.svg"></span>
@@ -63,7 +63,7 @@
                         </li>
 
                         <li>
-                           <a href="<?= g('db.admin.bucket') .'videos/'. $startup[0]['startup_video_corporate'] ?>" data-fancybox="media">
+                           <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/Learning Journey_Intro 2_Corporate Intrapreneur_Social Cut.mp4" data-fancybox="media">
                               <div class="tutorial-list-box">
                                  <div class="tutorial-box-content">
                                     <span><img src="<?= i('') ?>dashboard/home/icons/5.svg"></span>
@@ -76,7 +76,7 @@
                         </li>
 
                         <li>
-                           <a href="<?= g('db.admin.bucket') .'videos/'. $startup[0]['startup_video_growth'] ?>" data-fancybox="media">
+                           <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/Learning Journey_Intro 3_Growth Entrepreneur_Social Cut.mp4" data-fancybox="media">
                               <div class="tutorial-list-box">
                                  <div class="tutorial-box-content">
                                     <span><img src="<?= i('') ?>dashboard/home/icons/6.png"></span>

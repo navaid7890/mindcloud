@@ -26,10 +26,11 @@
                            <div class="col-md-7">
                               <ul class="bredcum-links">
                                  <li><a href="#">Learning Journey</a></li>
+                                 <li><a href="#"><?=$learn_content[0]['learning_journey_content_name']?></a></li>
                                  <li><a href="#">Introduction</a></li>
                               </ul>
                            </div>
-                           <div class="col-md-5 text-right">
+                           <!-- <div class="col-md-5 text-right">
                               <div class="bredcum-right">
                                  <a href="#" class="btn-round btn-hover">In progress <span></span></a>
 
@@ -38,10 +39,9 @@
                                     <li><a href="#"><i class="fal fa-angle-right"></i></a></li>
                                  </ul>
                               </div>
-                           </div>
+                           </div> -->
                         </div>
                      </div>
-
                      <div class="tutorial-mid hding-4 hding-3 para">
                         <div class="tutorial-mid-content">
                            <h4>Tutorial Contents:</h4>
