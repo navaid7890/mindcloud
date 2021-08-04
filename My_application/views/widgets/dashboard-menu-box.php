@@ -16,13 +16,13 @@
                </a>
             </li>
             <li>
-               <a href="<?=l('booking')?>">
+               <a href="<?= l('booking') ?>">
                   <span><img src="<?= i('') ?>dashboard/menu/1.svg"></span>
                   Consult with Experts
                </a>
             </li>
             <li>
-               <a href="<?=l('consult-advisors')?>">
+               <a href="<?= l('consult-advisors') ?>">
                   <span><img src="<?= i('') ?>dashboard/menu/2.svg"></span>
                   Advisory
                </a>
@@ -35,8 +35,23 @@
 
                <div class="dashboard-child-links">
                   <ul>
-                     <li><a href="<?= l('account/profile/startup') ?>"> <span><img src="<?= i('') ?>dashboard/menu/3.svg"></span> My Startup: App Monster</a></li>
-                     <li><a href="<?= l('account/profile/learning') ?>"> <span><img src="<?= i('') ?>dashboard/menu/3.svg"></span> New Startup</a></li>
+                     <?
+                     $startup = array();
+                     $startup['where']['startup_user_id'] = $this->userid;
+                     $startupdata = $this->model_startup->find_all_active($startup);
+                     // debug($startupdata[0]['startup_name']);
+                     ?>
+
+                     <li><a href="<?= l('account/profile/startup') ?>"> <span><img src="<?= i('') ?>dashboard/menu/3.svg"></span> My Startup:
+                           <? if (!empty($startupdata)) : ?>
+                              <?= $startupdata[0]['startup_name'] ?>
+                           <? else : ?>
+                              -- -- --
+                           <? endif; ?>
+                        </a>
+                     </li>
+                     <!-- <li><a href="<? //= l('account/profile/learning') 
+                                       ?>"> <span><img src="<?= i('') ?>dashboard/menu/3.svg"></span> New Startup</a></li> -->
                   </ul>
                </div>
             </li>
@@ -68,7 +83,7 @@
                            About
                         </a>
                      </li>
-                     
+
                   </ul>
                </div>
             </li>
