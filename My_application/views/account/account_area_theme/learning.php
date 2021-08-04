@@ -24,7 +24,7 @@
                               <li><a href="#">Introduction</a></li>
                            </ul>
                         </div>
-                        <div class="col-md-5 text-right">
+                        <!-- <div class="col-md-5 text-right">
                            <div class="bredcum-right">
                               <a href="#" class="btn-round btn-hover">In progress <span></span></a>
 
@@ -33,7 +33,7 @@
                                  <li><a href="#"><i class="fal fa-angle-right"></i></a></li>
                               </ul>
                            </div>
-                        </div>
+                        </div> -->
                      </div>
                   </div>
                   

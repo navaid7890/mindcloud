@@ -68,6 +68,21 @@
                     </div>
                 </div>
             </li>
+            <li style="display:none;">
+                <div class="vid-box">
+                    <a href="https://www.youtube.com/watch?v=NQAYb9ok4s0" data-fancybox="media">
+                    <div class="video-box">
+                        <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont12['cms_page_image'] ?>">
+                        <span><i class="fas fa-play"></i></span>
+                    </div>
+                    </a>
+
+                    <div class="vid-content">
+                    <?=html_entity_decode($cont12['cms_page_title'])?>
+                    <?=html_entity_decode($cont12['cms_page_content'])?>
+                    </div>
+                </div>
+            </li>
         </ul>
     </div>
 </section>  
