@@ -316,7 +316,7 @@
                               <?= html_entity_decode($con2['cms_page_content']) ?>
                            </div>
                         </li>
-                        <li>
+                        <!-- <li>
                            <div class="consult-left-content">
                               <?= html_entity_decode($con3['cms_page_content']) ?>
                            </div>
@@ -330,7 +330,7 @@
                            <div class="consult-left-content">
                               <?= html_entity_decode($con5['cms_page_content']) ?>
                            </div>
-                        </li>
+                        </li> -->
                      </ul>
                   </div>
                </div>
@@ -339,11 +339,11 @@
                <div class="consult-content">
                   <h2>Select <strong>Topic</strong></h2>
                   <ul class="cate-list">
-                     <? if (isset($art) and array_filled($art)) : ?>
-                        <? foreach ($art as $key => $value) : ?>
+                     <? if (isset($main_categories) and array_filled($main_categories)) : ?>
+                        <? foreach ($main_categories as $key => $value) : ?>
                            <li>
-                              <a href="javascript:void(0)">
-                                 <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> <?= $value['tutorial_name'] ?> </p>
+                              <a href="<?=l('booking')?>">
+                                 <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> <?= $value['category_name'] ?> </p>
                               </a>
                            </li>
                         <? endforeach; ?>

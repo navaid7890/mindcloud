@@ -791,6 +791,7 @@ if ($(window).width() < 824) {
 }
 
 
+
 function switchDiv() {
     var $window = $(window).outerWidth();
     if ($window <= 768) {

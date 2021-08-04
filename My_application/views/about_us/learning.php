@@ -69,6 +69,7 @@
                   <div class="space"><br></div>
                </div>
             </div><? //= g('db.admin.bucket') . $cont13['tutorial_video'] 
+            
                   ?>
             <div class="col-md-6 text-right"><? //=$contd['cms_page_url']
                                              ?>

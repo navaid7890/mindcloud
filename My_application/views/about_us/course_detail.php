@@ -307,6 +307,7 @@
             <ul class="who-list tut-list">
                <?php if (isset($popular) && array_filled($popular)) : ?>
                   <?php foreach ($popular as $key => $value) : ?>
+                     
                      <li>
 
                         <div class="vid-box">
