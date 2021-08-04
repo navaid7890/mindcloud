@@ -662,6 +662,12 @@ class Profile extends MY_Controller_Account
 		$startup['where']['startup_user_id'] = $this->userid;
 		$data['startup'] = $this->model_startup->find_all_active($startup);
 
+		$param = array();
+		if (isset($_GET['cat']) and intval($_GET['cat']) > 0) {
+			$param['where']['learning_journey_content_id'] = intval($this->input->get('cat'));
+		}
+		$data['learn_content'] = $this->model_learning_journey_content->find_all_active($param);
+
 
 
 		$this->load_view('your_work', $data);

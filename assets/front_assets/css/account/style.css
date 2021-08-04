@@ -2332,6 +2332,56 @@ a.arrow-links:hover {
     color: #000000;
 }
 
+.courses-slide button.slick-arrow {
+    position: absolute;
+    z-index: 1;
+    font-size: 0;
+    border: 0;
+    padding: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 3px;
+    transition: 0.5s;
+    top: 33%;
+}
+
+.courses-slide button.slick-arrow:after {
+    content: '\f105';
+    position: absolute;
+    color: #D1E4F3;
+    font-family: "Font Awesome 5";
+    cursor: pointer;
+    line-height: 56px;
+    transition: all 0.4s ease-In-out;
+    right: 0;
+    font-size: 80px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    font-weight: 300;
+}
+
+.courses-slide button.slick-arrow {
+    left: -60px;
+    right: inherit;
+}
+
+.courses-slide button.slick-next.slick-arrow {
+    right: -20px;
+    left: inherit;
+}
+
+.courses-slide button.slick-prev.slick-arrow:after {
+    content: '\f104';
+    left: 0;
+    right: 0;
+}
+
+.courses-slide button.slick-arrow:hover:after {
+    color: #000000;
+}
+
 .consult-content h2,
 .consult-left h2 {
     font-size: 26px;

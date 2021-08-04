@@ -209,7 +209,7 @@ class Contact_us extends MY_Controller
 
                 $this->json_param['status'] = true;
                 $this->json_param['msg']['title'] = 'Review Send';
-                $this->json_param['msg']['desc'] = 'We appreciate that you’ve taken the time to write us. We\'ll get back to you very soon.';
+                $this->json_param['msg']['desc'] = 'We appreciate that you’ve taken the time to write us your Review.';
             } else {
                 $this->json_param['status'] = false;
                 $this->json_param['msg']['title'] = 'Error Occurred';
@@ -240,7 +240,7 @@ class Contact_us extends MY_Controller
 
                 $this->json_param['status'] = true;
                 $this->json_param['msg']['title'] = 'Review Send';
-                $this->json_param['msg']['desc'] = 'We appreciate that you’ve taken the time to write us. We\'ll get back to you very soon.';
+                $this->json_param['msg']['desc'] = 'We appreciate that you’ve taken the time to write us your Review.';
             } else {
                 $this->json_param['status'] = false;
                 $this->json_param['msg']['title'] = 'Error Occurred';
@@ -271,7 +271,7 @@ class Contact_us extends MY_Controller
 
                 $this->json_param['status'] = true;
                 $this->json_param['msg']['title'] = 'Review Send';
-                $this->json_param['msg']['desc'] = 'We appreciate that you’ve taken the time to write us. We\'ll get back to you very soon.';
+                $this->json_param['msg']['desc'] = 'We appreciate that you’ve taken the time to write us your Review.';
             } else {
                 $this->json_param['status'] = false;
                 $this->json_param['msg']['title'] = 'Error Occurred';
@@ -302,7 +302,7 @@ class Contact_us extends MY_Controller
 
                 $this->json_param['status'] = true;
                 $this->json_param['msg']['title'] = 'Review Send';
-                $this->json_param['msg']['desc'] = 'We appreciate that you’ve taken the time to write us. We\'ll get back to you very soon.';
+                $this->json_param['msg']['desc'] = 'You’ve successfully added your Startup name.';
             } else {
                 $this->json_param['status'] = false;
                 $this->json_param['msg']['title'] = 'Error Occurred';

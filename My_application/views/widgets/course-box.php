@@ -23,7 +23,6 @@
             <div class="row align-items-center">
                 <div class="col-md-8">
                     <h3>Learning Journey</h3>
-
                 </div>
                 <div class="col-md-4 text-right">
                     <!-- <div id="activeBorder" class="active-border">
@@ -35,8 +34,8 @@
 
                     <div class="topCircle">
                         <div class="percent2">
-                        <p style="display:none;"><span class="prec allpercent">0</span></p>
-                    </div>
+                            <p style="display:none;"><span class="prec allpercent">0</span></p>
+                        </div>
 
                     </div>
 
@@ -45,11 +44,23 @@
             <div class="space"><br><br><br></div>
 
             <div class="course-user-info">
-                <? // print_r($this->session->userdata); 
+                <?
+                $startup = array();
+                $startup['where']['startup_user_id'] = $this->userid;
+                $startupdata = $this->model_startup->find_all_active($startup);
+                // debug($startupdata[0]['startup_name']);
                 ?>
                 <ul class="login-btn">
-                    <li><a href="#"><span><img src="<?= get_image($this->layout_data['user_data']['ui_profile_image'], $this->layout_data['user_data']['ui_profile_image_path']) ?>"></span> <?=$this->session->userdata['logged_in_front']['first_name']?>
- </a></li>
+                    <li><a href="#"><span><img src="<?= get_image($this->layout_data['user_data']['ui_profile_image'], $this->layout_data['user_data']['ui_profile_image_path']) ?>"></span>
+                            <? if (!empty($startupdata)) : ?>
+                                <?= $startupdata[0]['startup_name'] ?>
+                            <? else : ?>
+                                -- -- --
+                            <? endif; ?>
+                            <? //=$this->session->userdata['logged_in_front']['first_name']
+                            ?>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -96,18 +107,18 @@
                                 $a = $value['learning_journey_content_id'];
                             ?>
                                 <li class="dropdown-toggle b-child catLj<?= $a ?>">
-                                    <a href="javascript:;" ><?= $value['learning_journey_content_name'] ?>
-                                            <div class="percent" id="played<?= $a ?>">
-                                                <p style="display:none;"></p>
-                                            </div>
+                                    <a href="javascript:;"><?= $value['learning_journey_content_name'] ?>
+                                        <div class="percent" id="played<?= $a ?>">
+                                            <p style="display:none;"></p>
+                                        </div>
 
                                         <small>0/3</small>
                                     </a>
                                     <ul class="dropdown-box">
-                                        <li><a href="description?cat=<?= $a ?>"><i class="fad fa-video"></i>Intro<span><i class="far fa-check"></i></span></a></li>
+                                        <li><a href="description?cat=<?= $a ?>"><i class="fas fa-info-circle"></i>Intro<span><i class="far fa-check"></i></span></a></li>
                                         <li class="videoScript-<?= $a ?>"><a href="<?= l('account/profile/video') ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Tutorial Video & Transcript <span><i class="far fa-check"></i></span></a></li>
-                                        <li class="toolbuilder-<?= $a ?>"><a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <li class="mywork-<?= $a ?>"><a href="your_work?tool=<?= $dt_index ?>&cat=<?= $a ?>"><i class="fad fa-video"></i> My Work<span><i class="far fa-check"></i></span></a></li>
+                                        <li class="toolbuilder-<?= $a ?>"><a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>?cat=<?= $a ?>"><i class="fas fa-tools"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
+                                        <li class="mywork-<?= $a ?>"><a href="your_work?tool=<?= $dt_index ?>&cat=<?= $a ?>"><i class="fas fa-briefcase"></i> My Work<span><i class="far fa-check"></i></span></a></li>
                                         <?php $dt_index = $dt_index + 1; ?>
                                     </ul>
                                 </li>
@@ -207,23 +218,23 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
         //    var abc = "catLj" + xyz;
         //    $("." + abc).addClass('active');
         //    $("." + abc + " ul").attr("style", "display:block");
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         <? if ($tool['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-11").addClass('active');
             $(".mywork-11").addClass('active');
             // $(".catLj11 #played11").html('66');
             var percVal = parseInt('66');
-            $(".catLj11 .percent p").html(percVal); 
+            $(".catLj11 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             var percVal = parseInt('0');
-            $(".catLj11 .percent p").html(percVal); 
+            $(".catLj11 .percent p").html(percVal);
             var totalseprate = percVal;
         <? endif; ?>
         <? if ($toolvp['tool_builder_percent'] == 1) : ?>
@@ -231,10 +242,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-12").addClass('active');
             // $(".catLj12 #played12").html('66');
             var percVal = parseInt('66');
-            $(".catLj12 .percent p").html(percVal); 
+            $(".catLj12 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj12 #played12 p").html('0');
         <? endif; ?>
         <? if ($toolswot['tool_builder_percent'] == 1) : ?>
@@ -242,10 +253,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-13").addClass('active');
             // $(".catLj13 #played13").html('66');
             var percVal = parseInt('66');
-            $(".catLj13 .percent p").html(percVal); 
+            $(".catLj13 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj13 #played13 p").html('0');
         <? endif; ?>
         <? if ($toolpmmt['tool_builder_percent'] == 1) : ?>
@@ -253,10 +264,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-14").addClass('active');
             // $(".catLj14 #played14").html('66');
             var percVal = parseInt('66');
-            $(".catLj14 .percent p").html(percVal); 
+            $(".catLj14 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj14 #played14 p").html('0');
         <? endif; ?>
         <? if ($tool_strg_mkt['tool_builder_percent'] == 1) : ?>
@@ -264,10 +275,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-15").addClass('active');
             // $(".catLj15 #played15").html('66');
             var percVal = parseInt('66');
-            $(".catLj15 .percent p").html(percVal); 
+            $(".catLj15 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj15 #played15 p").html('0');
         <? endif; ?>
         <? if ($tool_cj_dg['tool_builder_percent'] == 1) : ?>
@@ -275,10 +286,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-16").addClass('active');
             // $(".catLj16 #played16").html('66');
             var percVal = parseInt('66');
-            $(".catLj16 .percent p").html(percVal); 
+            $(".catLj16 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj16 #played16 p").html('0');
         <? endif; ?>
         <? if ($tool_mc_mc['tool_builder_percent'] == 1) : ?>
@@ -286,10 +297,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-17").addClass('active');
             // $(".catLj17 #played17").html('66');
             var percVal = parseInt('66');
-            $(".catLj17 .percent p").html(percVal); 
+            $(".catLj17 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj17 #played17 p").html('0');
         <? endif; ?>
         <? if ($tool_osf['tool_builder_percent'] == 1) : ?>
@@ -297,10 +308,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-18").addClass('active');
             // $(".catLj18 #played18").html('66');
             var percVal = parseInt('66');
-            $(".catLj18 .percent p").html(percVal); 
+            $(".catLj18 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj18 #played18 p").html('0');
         <? endif; ?>
         <? if ($tool_osf['tool_builder_percent'] == 1) : ?>
@@ -308,10 +319,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-19").addClass('active');
             // $(".catLj18 #played18").html('66');
             var percVal = parseInt('66');
-            $(".catLj19 .percent p").html(percVal); 
+            $(".catLj19 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj19 #played19 p").html('0');
         <? endif; ?>
         <? if ($tool_lts['tool_builder_percent'] == 1) : ?>
@@ -319,10 +330,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-25").addClass('active');
             // $(".catLj25 #played25").html('66');
             var percVal = parseInt('66');
-            $(".catLj25 .percent p").html(percVal); 
+            $(".catLj25 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj25 #played25 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_income['tool_builder_percent'] == 1) : ?>
@@ -330,10 +341,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-20").addClass('active');
             // $(".catLj20 #played20").html('66');
             var percVal = parseInt('66');
-            $(".catLj20 .percent p").html(percVal); 
+            $(".catLj20 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj20 #played20 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_bss['tool_builder_percent'] == 1) : ?>
@@ -341,10 +352,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-21").addClass('active');
             // $(".catLj21 #played21").html('66');
             var percVal = parseInt('66');
-            $(".catLj21 .percent p").html(percVal); 
+            $(".catLj21 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj21 #played21 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_cfs['tool_builder_percent'] == 1) : ?>
@@ -352,11 +363,11 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-22").addClass('active');
             // $(".catLj22 #played22").html('66');
             var percVal = parseInt('66');
-            $(".catLj22 .percent p").html(percVal); 
+            $(".catLj22 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-           
-        <?else :?>
+
+        <? else : ?>
             $(".catLj22 #played22 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_beps['tool_builder_percent'] == 1) : ?>
@@ -364,10 +375,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-23").addClass('active');
             // $(".catLj23 #played23").html('66');
             var percVal = parseInt('66');
-            $(".catLj23 .percent p").html(percVal); 
+            $(".catLj23 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj23 #played23 p").html('0');
         <? endif; ?>
         <? if ($tool_fm_dcvm['tool_builder_percent'] == 1) : ?>
@@ -375,10 +386,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-24").addClass('active');
             // $(".catLj24 #played24").html('66');
             var percVal = parseInt('66');
-            $(".catLj24 .percent p").html(percVal); 
+            $(".catLj24 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj24 #played24 p").html('0');
         <? endif; ?>
         <? if ($tool_ids['tool_builder_percent'] == 1) : ?>
@@ -386,10 +397,10 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             $(".mywork-26").addClass('active');
             // $(".catLj26 #played26").html('66');
             var percVal = parseInt('66');
-            $(".catLj26 .percent p").html(percVal); 
+            $(".catLj26 .percent p").html(percVal);
             var totalseprate = percVal;
             console.log('value anil is', totalseprate);
-            <?else :?>
+        <? else : ?>
             $(".catLj26 #played26 p").html('0');
         <? endif; ?>
 
@@ -400,12 +411,12 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
             <? $a = $value['learning_journey_transcript_content_id'] ?>
             var transcriptTotalcheck = parseInt($(".catLj<?= $a ?> #played<?= $a ?> p").html());
             if (transcriptTotalcheck < 100) {
-              
+
                 $(".videoScript-<?= $a ?>").addClass('active');
                 var transcriptTotal = 0;
                 var transcriptTotal = parseInt($(".catLj<?= $a ?> #played<?= $a ?> p").html()) + 34;
                 $("#played<?= $a ?> p").html(transcriptTotal);
-                 
+
             }
             // else {
             //     $("#forms-mark-complete-btn").attr("disabled", "disabled");
@@ -416,7 +427,7 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
         <? endforeach; ?>
 
 
-        console.log ('all value' ,totalseprate);
+        console.log('all value', totalseprate);
 
         var sum = totalseprate;
         $('.percent p').each(function() {
@@ -426,8 +437,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
 
         $('.allpercent').text(total);
 
-        
-          localStorage.setItem("learingPercent", $(".allpercent").text());
+
+        localStorage.setItem("learingPercent", $(".allpercent").text());
         //    
         // }
 
@@ -474,8 +485,8 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
         // var fmTotal = fm2 + fm3 + fm4 + fm5 + fm6;
         var TotalfmPercent = Math.round((fmTotal / 500) * 100);
         localStorage.setItem("Financial_management", parseInt(TotalfmPercent));
-        
-       //  console.log("Financial management", parseInt(TotalfmPercent));
+
+        //  console.log("Financial management", parseInt(TotalfmPercent));
 
 
         // Legal Structure

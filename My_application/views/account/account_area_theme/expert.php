@@ -15,7 +15,7 @@
     }
 
     .vid-content h4 {
-        min-height: 56px;
+        height: 53px !important;
     }
 
 
@@ -135,91 +135,91 @@
                                 </div>
 
                                 <div class="col-md-8">
-                                <div class="xpert-box">
-                  <div class="xpert-content">
-                     <div class="sapce"><br><br></div>
-                     <? if (empty($art)) { ?>
-                        <h1 class="text-center" style="color: #000; font-size:30px; font-weight:700;">Course Not Found</h1>
-                     <? } else { ?>
-                        <ul class="who-list tut-list">
-                           <?php if (isset($art) && array_filled($art)) : ?>
-                              <?php foreach ($art as $key => $value) : ?>
-                                 <li>
-                                    <div class="vid-box">
+                                    <div class="xpert-box">
+                                        <div class="xpert-content">
+                                            <div class="sapce"><br><br></div>
+                                            <? if (empty($art)) { ?>
+                                                <h1 class="text-center" style="color: #000; font-size:30px; font-weight:700;">Course Not Found</h1>
+                                            <? } else { ?>
+                                                <ul class="who-list tut-list">
+                                                    <?php if (isset($art) && array_filled($art)) : ?>
+                                                        <?php foreach ($art as $key => $value) : ?>
+                                                            <li>
+                                                                <div class="vid-box">
 
-                                       <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
-                                          <div class="video-box">
-                                             <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
-                                             <span><i class="fas fa-play"></i> </span>
-                                             <?
-                                             // debug($value);
-                                             $coursecat = array();
-                                             $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
-                                             $cate = $this->model_course_category->find_all_active($coursecat);
+                                                                    <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
+                                                                        <div class="video-box">
+                                                                            <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
+                                                                            <span><i class="fas fa-play"></i> </span>
+                                                                            <?
+                                                                            // debug($value);
+                                                                            $coursecat = array();
+                                                                            $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
+                                                                            $cate = $this->model_course_category->find_all_active($coursecat);
 
-                                             $cat_name = array();
-                                             $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
-                                             $cat_name = $this->model_category->find_all_active($cat_name);
-                                             ?>
-                                             <!-- <a href="javascript:;" class="cate-tag"><? // $value['tutorial_level'] 
-                                                                                          ?></a> -->
-                                             <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
-                                          </div>
+                                                                            $cat_name = array();
+                                                                            $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                                                            $cat_name = $this->model_category->find_all_active($cat_name);
+                                                                            ?>
+                                                                            <!-- <a href="javascript:;" class="cate-tag"><? // $value['tutorial_level'] 
+                                                                                                                            ?></a> -->
+                                                                            <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                                                                        </div>
 
-                                       </a>
+                                                                    </a>
 
-                                       <div class="vid-content">
-                                          <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
-                                          <div class="row align-items-center pt-70">
-                                             <div class="col-md-12">
-                                                <ul class="login-btn">
-                                                   <li><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $value['expert_image'] ?>"></span> <?= $value['expert_name'] ?> </a></li>
+                                                                    <div class="vid-content">
+                                                                        <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+                                                                        <div class="row align-items-center pt-70">
+                                                                            <div class="col-md-12">
+                                                                                <ul class="login-btn">
+                                                                                    <li><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $value['expert_image'] ?>"></span> <?= $value['expert_name'] ?> </a></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="col-md-8 coutArea">
+                                                                                <ul class="rating">
+                                                                                    <? $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']); ?>
+                                                                                    <?php
+                                                                                    for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
+                                                                                        "
+                                                                                        <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                                                        ";
+                                                                                    <? } ?>
+                                                                                </ul>
+
+                                                                            </div>
+                                                                            <div class="col-md-4 text-right">
+                                                                                <h6><?= price($value['tutorial_price']) ?></h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        <?php endforeach; ?>
+                                                    <?php endif ?>
                                                 </ul>
-                                             </div>
-                                             <div class="col-md-8 coutArea">
-                                                <ul class="rating">
-                                                   <? $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']); ?>
-                                                   <?php
-                                                   for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
-                                                      "
-                                                      <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
-                                                      ";
-                                                   <? } ?>
-                                                </ul>
+                                            <? } ?>
 
-                                             </div>
-                                             <div class="col-md-4 text-right">
-                                                <h6><?= price($value['tutorial_price']) ?></h6>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </li>
-                              <?php endforeach; ?>
-                           <?php endif ?>
-                        </ul>
-                     <? } ?>
+                                            <? if (empty(isset($_GET['cat']) || isset($_GET['expert']))) { ?>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="text-center">
+                                                            <nav aria-label="Page navigation example"><br>
+                                                                <ul class="pagination">
+                                                                    <?= $links ?>
+                                                                </ul>
+                                                            </nav>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                     <? if (empty(isset($_GET['cat']) || isset($_GET['expert']))) { ?>
-                        <div class="row">
-                           <div class="col-md-12">
-                              <div class="text-center">
-                                 <nav aria-label="Page navigation example"><br>
-                                    <ul class="pagination">
-                                       <?= $links ?>
-                                    </ul>
-                                 </nav>
-                              </div>
-                           </div>
-                        </div>
-
-                     <? } ?>
-                     <!-- <div class="space"><br><br></div>
+                                            <? } ?>
+                                            <!-- <div class="space"><br><br></div>
                      <a href="#" class="btn-links">See more Experts Tutorials</a>
                      
                      </div> -->
-                  </div>
-               </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -235,37 +235,43 @@
                                 <div class="consult-head">
                                     <h2>Consult with <strong>Experts</strong></h2>
                                     <div class="space"><br><br></div>
-                                    <p><?//= html_entity_decode($con1['cms_page_content']) ?></p>
+                                    <p><? //= html_entity_decode($con1['cms_page_content']) 
+                                        ?></p>
                                 </div>
                                 <div classs="sapce"><br><br><br></div>
                                 <div class="row border-box">
                                     <div class="col-md-4 pad-zero">
                                         <div class="consult-left">
                                             <div>
-                                                <h2><strong><?//= html_entity_decode($con1['cms_page_title']) ?></strong></h2>
+                                                <h2><strong><? //= html_entity_decode($con1['cms_page_title']) 
+                                                            ?></strong></h2>
 
                                                 <ul class="consult-left-slide">
                                                     <li>
                                                         <div class="consult-left-content">
-                                                            <p> <?//= html_entity_decode($con2['cms_page_content']) ?></p>
+                                                            <p> <? //= html_entity_decode($con2['cms_page_content']) 
+                                                                ?></p>
                                                         </div>
                                                     </li>
 
                                                     <li>
                                                         <div class="consult-left-content">
-                                                            <p> <?//= html_entity_decode($con3['cms_page_content']) ?></p>
+                                                            <p> <? //= html_entity_decode($con3['cms_page_content']) 
+                                                                ?></p>
                                                         </div>
                                                     </li>
 
                                                     <li>
                                                         <div class="consult-left-content">
-                                                            <p><?//= html_entity_decode($con4['cms_page_content']) ?></p>
+                                                            <p><? //= html_entity_decode($con4['cms_page_content']) 
+                                                                ?></p>
                                                         </div>
                                                     </li>
 
                                                     <li>
                                                         <div class="consult-left-content">
-                                                            <p><?//= html_entity_decode($con5['cms_page_content']) ?></p>
+                                                            <p><? //= html_entity_decode($con5['cms_page_content']) 
+                                                                ?></p>
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -278,15 +284,22 @@
                                             <h2>Select <strong>Topic</strong></h2>
 
                                             <ul class="cate-list">
-                                                <?// if (isset($dashCatV) and array_filled($dashCatV)) : ?>
-                                                    <?// foreach ($dashCatV as $key => $value) : ?>
+                                                <? // if (isset($dashCatV) and array_filled($dashCatV)) : 
+                                                ?>
+                                                    <? // foreach ($dashCatV as $key => $value) : 
+                                                    ?>
                                                         <li>
-                                                            <a href="<?//= l('booking') ?>">
-                                                                <p><span><img src="<?//= i('') ?>icons/category/1.svg"></span> <?//= $value['category_name'] ?> </p>
+                                                            <a href="<? //= l('booking') 
+                                                                        ?>">
+                                                                <p><span><img src="<? //= i('') 
+                                                                                    ?>icons/category/1.svg"></span> <? //= $value['category_name'] 
+                                                                                                                    ?> </p>
                                                             </a>
                                                         </li>
-                                                    <?// endforeach; ?>
-                                                <?// endif; ?>
+                                                    <? // endforeach; 
+                                                    ?>
+                                                <? // endif; 
+                                                ?>
                                             </ul>
 
                                         </div>
@@ -297,22 +310,24 @@
                     </div>
 
                     <!-- <div class="space"><br><br></div> -->
-<!-- 
+                    <!-- 
                     <section class="joinSec hding-2 para">
                         <div class="joinContent">
-                            <h2><?//= html_entity_decode($check['cms_page_title']) ?></h2>
+                            <h2><? //= html_entity_decode($check['cms_page_title']) 
+                                ?></h2>
                             <div class="space"><br></div>
-                            <p><?//= html_entity_decode($check['cms_page_content']) ?></p>
+                            <p><? //= html_entity_decode($check['cms_page_content']) 
+                                ?></p>
                             <div class="space"><br><br></div>
 
 
-<?if ($this->userid > 0) {
-$usdata = $this->layout_data['user_data'];
-}?>
- <? if($usdata['user_paid']==0){?>
+<? if ($this->userid > 0) {
+    $usdata = $this->layout_data['user_data'];
+} ?>
+ <? if ($usdata['user_paid'] == 0) { ?>
 
                             <a href="#" class="btn-theme btn-hover">Start Free Trial <span></span></a>
-                <? }?>
+                <? } ?>
 
                         </div>
                     </section> -->
