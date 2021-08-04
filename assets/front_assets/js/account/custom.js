@@ -188,6 +188,36 @@ $('.certificate-slide').slick({
     ]
 });
 
+
+$('.courses-slide').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    responsive: [{
+            breakpoint: 824,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+            }
+        },
+
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+            }
+        },
+
+
+    ]
+});
+
 $('.consult-left-slide').slick({
     infinite: true,
     slidesToShow: 1,

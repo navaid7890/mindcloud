@@ -70,7 +70,7 @@
             </li>
             <li style="display:none;">
                 <div class="vid-box">
-                    <a href="https://www.youtube.com/watch?v=NQAYb9ok4s0" data-fancybox="media">
+                    <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/Video_Fundraising_Entrepreneur_Intro_4.mp4" data-fancybox="media">
                     <div class="video-box">
                         <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont12['cms_page_image'] ?>">
                         <span><i class="fas fa-play"></i></span>
