@@ -60,7 +60,7 @@
                                  <li><a href="#">Experts Tutorials</a></li>
                                  <!-- <li><a href="#">Business Model Canvas</a></li> -->
                                  <li><a href="#"><?= $vid_name[0]['videos_name'] ?></a></li>
-                                 <li><a href="#">1 minute introduction</a></li>
+                                 <li><a href="#">Video and Transcript</a></li>
                               </ul>
                            </div>
                            <div class="col-md-5 text-right">

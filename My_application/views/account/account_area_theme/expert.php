@@ -137,11 +137,14 @@
                                 <div class="col-md-8">
                                     <div class="xpert-box">
                                         <div class="xpert-content">
-                                            <div class="sapce"><br><br></div>
+                                            
                                             <? if (empty($art)) { ?>
                                                 <h1 class="text-center" style="color: #000; font-size:30px; font-weight:700;">Course Not Found</h1>
                                             <? } else { ?>
+                                                <h2>What to Learn in <strong>Experts Tutorials</strong></h2>
+                                                <div class="sapce"><br><br></div>
                                                 <ul class="who-list tut-list">
+                                                   
                                                     <?php if (isset($art) && array_filled($art)) : ?>
                                                         <?php foreach ($art as $key => $value) : ?>
                                                             <li>

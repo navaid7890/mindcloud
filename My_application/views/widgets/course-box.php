@@ -233,7 +233,8 @@ $datapaid = $this->model_user->find_all_active($upaid);
         .catLj22 strong.locked,
         .catLj23 strong.locked,
         .catLj24 strong.locked,
-        .catLj25 strong.locked{
+        .catLj25 strong.locked,
+        .catLj26 strong.locked{
             margin-left: 5px;
             display: initial;
         }
@@ -266,6 +267,8 @@ $datapaid = $this->model_user->find_all_active($upaid);
         $(".catLj24 a").removeAttr("href");
         $('.catLj25').click(false);
         $(".catLj25 a").removeAttr("href");
+        $('.catLj26').click(false);
+        $(".catLj26 a").removeAttr("href");
 
     </script>
     <? // else : 
