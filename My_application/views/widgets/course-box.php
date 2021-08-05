@@ -15,6 +15,10 @@
     .catLj19 small {
         display: none;
     }
+
+    strong.locked {
+        display: none;
+    }
 </style>
 
 <div class="course-box hding-3 CboxLJ">
@@ -115,10 +119,10 @@
                                         <small>0/3</small>
                                     </a>
                                     <ul class="dropdown-box">
-                                        <li><a href="description?cat=<?= $a ?>"><i class="fas fa-info-circle"></i>Intro<span><i class="far fa-check"></i></span></a></li>
-                                        <li class="videoScript-<?= $a ?>"><a href="<?= l('account/profile/video') ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Tutorial Video & Transcript <span><i class="far fa-check"></i></span></a></li>
-                                        <li class="toolbuilder-<?= $a ?>"><a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>?cat=<?= $a ?>"><i class="fas fa-tools"></i> Tool & Tool Builder <span><i class="far fa-check"></i></span></a></li>
-                                        <li class="mywork-<?= $a ?>"><a href="your_work?tool=<?= $dt_index ?>&cat=<?= $a ?>"><i class="fas fa-briefcase"></i> My Work<span><i class="far fa-check"></i></span></a></li>
+                                        <li><a href="description?cat=<?= $a ?>"><i class="fas fa-info-circle"></i>Intro<strong class="locked"><i class="fas fa-lock"></i></strong><span><i class="far fa-check"></i></span></a></li>
+                                        <li class="videoScript-<?= $a ?>"><a href="<?= l('account/profile/video') ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Tutorial Video & Transcript <strong class="locked"><i class="fas fa-lock"></i></strong><span><i class="far fa-check"></i></span></a></li>
+                                        <li class="toolbuilder-<?= $a ?>"><a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>?cat=<?= $a ?>"><i class="fas fa-tools"></i> Tool & Tool Builder <strong class="locked"><i class="fas fa-lock"></i></strong> <span><i class="far fa-check"></i></span></a></li>
+                                        <li class="mywork-<?= $a ?>"><a href="your_work?tool=<?= $dt_index ?>&cat=<?= $a ?>"><i class="fas fa-briefcase"></i> My Work <strong class="locked"><i class="fas fa-lock"></i></strong><span><i class="far fa-check"></i></span></a></li>
                                         <?php $dt_index = $dt_index + 1; ?>
                                     </ul>
                                 </li>
@@ -205,11 +209,74 @@ $param['where']['learning_journey_transcript_user_id'] = $this->userid;
 $param['where']['learning_journey_transcript_percent'] = 1;
 // $param['where']['learning_journey_transcript_content_id'] = $_GET['cat'];
 $videoTranscript = $this->model_learning_journey_transcript->find_all_active($param);
+
+$upaid = array();
+$upaid['where']['user_id'] = $this->userid;
+$upaid['where']['user_paid'] = 1;
+$datapaid = $this->model_user->find_all_active($upaid);
+
+
+
 ?>
 
+<? if ($datapaid[0]['user_paid'] == 0) : ?>
+    <style>
+        .catLj12 strong.locked,
+        .catLj13 strong.locked,
+        .catLj14 strong.locked,
+        .catLj15 strong.locked,
+        .catLj16 strong.locked,
+        .catLj17 strong.locked,
+        .catLj18 strong.locked,
+        .catLj20 strong.locked,
+        .catLj21 strong.locked,
+        .catLj22 strong.locked,
+        .catLj23 strong.locked,
+        .catLj24 strong.locked,
+        .catLj25 strong.locked{
+            margin-left: 5px;
+            display: initial;
+        }
+    </style>
+    <script>
+        $('.catLj12').click(false);
+        $(".catLj12 a").removeAttr("href");
+
+        $('.catLj13').click(false);
+        $(".catLj13 a").removeAttr("href");
+        $('.catLj14').click(false);
+        $(".catLj14 a").removeAttr("href");
+        $('.catLj15').click(false);
+        $(".catLj15 a").removeAttr("href");
+        $('.catLj16').click(false);
+        $(".catLj16 a").removeAttr("href");
+        $('.catLj17').click(false);
+        $(".catLj17 a").removeAttr("href");
+        $('.catLj18').click(false);
+        $(".catLj18 a").removeAttr("href");
+        $('.catLj20').click(false);
+        $(".catLj20 a").removeAttr("href");
+        $('.catLj21').click(false);
+        $(".catLj21 a").removeAttr("href");
+        $('.catLj22').click(false);
+        $(".catLj22 a").removeAttr("href");
+        $('.catLj23').click(false);
+        $(".catLj23 a").removeAttr("href");
+        $('.catLj24').click(false);
+        $(".catLj24 a").removeAttr("href");
+        $('.catLj25').click(false);
+        $(".catLj25 a").removeAttr("href");
+
+    </script>
+    <? // else : 
+    ?>
+<? endif; ?>
 
 <script>
     $(document).ready(function() {
+
+
+        // $('.catLj12').click(false);
 
         // $(".catLj"+id).addClass('active');
         // url = new URL(window.location.href);
