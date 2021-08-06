@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 28">
+  <g id="Group_616" data-name="Group 616" transform="translate(-58 -464)">
+    <g id="icons8-rocket" transform="translate(55.982 462)">
+      <path id="Path_278" data-name="Path 278" d="M17.167,2.391a1.328,1.328,0,0,0-1.129-.378C14.07,2.289,9.463,2.936,5.157,9.7l4.7,4.7c6.764-4.305,7.412-8.913,7.689-10.881A1.324,1.324,0,0,0,17.167,2.391Zm-6.6,7.707a1.1,1.1,0,1,1,1.1-1.1A1.1,1.1,0,0,1,10.563,10.1Zm2.945-2.945a1.1,1.1,0,1,1,1.1-1.1A1.1,1.1,0,0,1,13.507,7.153Z" transform="translate(-0.828)" fill="#1d90d9"/>
+      <path id="Path_279" data-name="Path 279" d="M8.249,16.668C7.674,17.243,5,17.835,5,17.835s.593-2.674,1.168-3.249" transform="translate(-0.787 -3.321)" fill="none" stroke="#f7f7f7" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path_280" data-name="Path 280" d="M5.225,12.681H2.973A.955.955,0,0,1,2.3,11.05L3.99,9.289A.943.943,0,0,1,4.668,9H6.422Zm3.631,5.877a.964.964,0,0,1-.372-.074.95.95,0,0,1-.59-.882V15.2l3.681-1.043V16a.939.939,0,0,1-.307.695L9.5,18.3A.908.908,0,0,1,8.856,18.558Z" transform="translate(0 -1.847)" fill="#1d90d9"/>
+    </g>
+    <text id="_" data-name="+" transform="translate(68 486)" fill="#f7f7f7" font-size="20" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">+</tspan></text>
+  </g>
+</svg>
