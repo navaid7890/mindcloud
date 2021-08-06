@@ -1364,6 +1364,8 @@ class Profile extends MY_Controller_Account
 
 		$data['review'] = $review_data;
 
+		
+
 		//  debug($coursecat[0]['cp_course_id']);
 		//  debug($review_data);
 
