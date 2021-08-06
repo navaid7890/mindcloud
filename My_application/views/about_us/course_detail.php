@@ -42,8 +42,13 @@
       color: #fff;
       padding-top: 15px;
    }
-   .joinContent strong{
+
+   .joinContent strong {
       font-weight: 700;
+   }
+
+   .toBeLocked strong.locked {
+      display: none;
    }
 </style>
 <div class="abt-tut-page">
@@ -62,7 +67,7 @@
                   // //debug($a);
                   // $dt=$this->model_category->find_by_pk($a);
 
-               //   debug($dt);
+                  //   debug($dt);
                   ?>
                   <ul class="bnr-cate">
                      <li>Category</li>
@@ -98,7 +103,7 @@
                      $rating = $this->model_learning_journey_course_review->get_avg_reating($course[0]['tutorial_id']);
                      ?>
                      <?php
-                        
+
                      for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
                         <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                      <? } ?>
@@ -178,6 +183,20 @@
          </div>
       </div>
    </div>
+   <?
+   $upaid = array();
+   $upaid['where']['user_id'] = $this->userid;
+   $datapaid = $this->model_user->find_all_active($upaid);
+   ?>
+   <?//= debug($datapaid[0]['user_paid'])
+   ?>
+   <?
+   $courfreecheck = array();
+   $courfreecheck['where']['tutorial_id'] = $course[0]['tutorial_id'];
+   $datacourfreecheck = $this->model_tutorial->find_all_active($courfreecheck);
+   ?>
+   <?//= $datacourfreecheck[0]['tutorial_free_status'] ?>
+
    <section class="jrnySec hding-2 pad-sec para">
       <div class="container">
          <div class="jr-top">
@@ -189,11 +208,28 @@
             <div class="jrnyFaq">
                <h2>Tutorial Content</h2>
                <div class="sapace"><br><br></div>
+               <?php if ($datapaid[0]['user_paid'] == 0  && $datacourfreecheck[0]['tutorial_free_status'] == 0) : ?>
+                  <style>
+                     .toBeLocked strong.locked {
+                        margin-left: 5px;
+                        display: initial;
+                        float: right;
+                     }
+                  </style>
+                  <script>
+                     $(document).ready(function() {
+                        var newUrl = "<?= l('subscription') ?>";
+                        // $('.toBeLocked').click(false);
+                        $(".toBeLocked .faqBoxLock a").attr('href', newUrl);
+
+                     });
+                  </script>
+               <?php endif ?>
                <ul class="colasebar">
-                  <li>
-                     <div class="faqBox">
+                  <li class="toBeLocked">
+                     <div class="faqBoxLock">
                         <a href="<?= l('account/profile/expert-detail-tutorial-intro-video') ?>?courseid=<?= $course[0]['tutorial_id'] ?>">
-                           <i class="fas fa-video"></i> Tutorial - 1 Minute Intro</a>
+                           <i class="fas fa-info"></i> Tutorial - 1 Minute Intro<strong class="locked"><i class="fas fa-lock"></i></strong></a>
                      </div>
                   </li>
                   <li>
@@ -207,10 +243,10 @@
 
                   <? if (isset($lc) and array_filled($lc)) : ?>
                      <? foreach ($lc as $key => $value) : ?>
-                        <li>
-                           <div class="faqBox">
+                        <li class="toBeLocked">
+                           <div class="faqBoxLock">
                               <a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $course[0]['tutorial_id'] ?>&tutorialid=<?= $value['videos_id'] ?>">
-                                 <i class="fas fa-video"></i> Tutorial - Video and Transcript</a>
+                                 <i class="fas fa-video"></i> Tutorial - Video and Transcript<strong class="locked"><i class="fas fa-lock"></i></strong></a>
                            </div>
                         </li>
 
@@ -307,7 +343,7 @@
             <ul class="who-list tut-list">
                <?php if (isset($popular) && array_filled($popular)) : ?>
                   <?php foreach ($popular as $key => $value) : ?>
-                     
+
                      <li>
 
                         <div class="vid-box">

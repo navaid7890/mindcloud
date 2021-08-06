@@ -166,14 +166,14 @@
    $upaid['where']['user_id'] = $this->userid;
    $datapaid = $this->model_user->find_all_active($upaid);
    ?>
-   <?= debug($datapaid[0]['user_paid']) ?>
+   <?//= debug($datapaid[0]['user_paid']) ?>
    <?
    $courfreecheck = array();
    $courfreecheck['where']['tutorial_id'] = $course[0]['tutorial_id'];
    $datacourfreecheck = $this->model_tutorial->find_all_active($courfreecheck);
    ?>
 
-   <?= debug($datacourfreecheck[0]['tutorial_free_status']) ?>
+   <?//= debug($datacourfreecheck[0]['tutorial_free_status']) ?>
 
 
 
@@ -200,16 +200,16 @@
                   </style>
                   <script>
                      $(document).ready(function() {
-                        var newUrl = "<?= l('google') ?>";
-                        $('.toBeLocked').click(false);
-                        $(".toBeLocked .faqBox a").attr('href', newUrl);
+                        var newUrl = "<?= l('subscription') ?>";
+                        // $('.toBeLocked').click(false);
+                        $(".toBeLocked .faqBoxLock a").attr('href', newUrl);
 
                      });
                   </script>
                <?php endif ?>
                <ul class="colasebar">
                   <li class="toBeLocked">
-                     <div class="faqBox">
+                     <div class="faqBoxLock">
                         <a href="<?= l('account/profile/expert-detail-tutorial-intro-video') ?>?courseid=<?= $course[0]['tutorial_id'] ?>">
                            <i class="fas fa-info"></i> Tutorial - 1 Minute Intro<strong class="locked"><i class="fas fa-lock"></i></strong></a>
                      </div>
@@ -227,7 +227,7 @@
                      <? foreach ($lc as $key => $value) : ?>
 
                         <li class="toBeLocked">
-                           <div class="faqBox">
+                           <div class="faqBoxLock">
                               <a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $course[0]['tutorial_id'] ?>&tutorialid=<?= $value['videos_id'] ?>">
                                  <i class="fas fa-video"></i>Tutorial - Video and Transcript<strong class="locked"><i class="fas fa-lock"></i></strong></a>
                            </div>
