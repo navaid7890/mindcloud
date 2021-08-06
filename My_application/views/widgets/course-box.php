@@ -212,10 +212,9 @@ $videoTranscript = $this->model_learning_journey_transcript->find_all_active($pa
 
 $upaid = array();
 $upaid['where']['user_id'] = $this->userid;
-$upaid['where']['user_paid'] = 1;
 $datapaid = $this->model_user->find_all_active($upaid);
 
-
+debug($datapaid[0]['user_paid']);
 
 ?>
 
@@ -234,45 +233,45 @@ $datapaid = $this->model_user->find_all_active($upaid);
         .catLj23 strong.locked,
         .catLj24 strong.locked,
         .catLj25 strong.locked,
-        .catLj26 strong.locked{
+        .catLj26 strong.locked {
             margin-left: 5px;
             display: initial;
         }
     </style>
     <script>
+        var newUrl = "<?= l('subscription') ?>";
+
         $('.catLj12').click(false);
-        $(".catLj12 a").removeAttr("href");
+        $(".catLj12 a").attr('href', newUrl);
 
         $('.catLj13').click(false);
-        $(".catLj13 a").removeAttr("href");
+        $(".catLj13 a").attr('href', newUrl);
         $('.catLj14').click(false);
-        $(".catLj14 a").removeAttr("href");
+        $(".catLj14 a").attr('href', newUrl);
         $('.catLj15').click(false);
-        $(".catLj15 a").removeAttr("href");
+        $(".catLj15 a").attr('href', newUrl);
         $('.catLj16').click(false);
-        $(".catLj16 a").removeAttr("href");
+        $(".catLj16 a").attr('href', newUrl);
         $('.catLj17').click(false);
-        $(".catLj17 a").removeAttr("href");
+        $(".catLj17 a").attr('href', newUrl);
         $('.catLj18').click(false);
-        $(".catLj18 a").removeAttr("href");
+        $(".catLj18 a").attr('href', newUrl);
         $('.catLj20').click(false);
-        $(".catLj20 a").removeAttr("href");
+        $(".catLj20 a").attr('href', newUrl);
         $('.catLj21').click(false);
-        $(".catLj21 a").removeAttr("href");
+        $(".catLj21 a").attr('href', newUrl);
         $('.catLj22').click(false);
-        $(".catLj22 a").removeAttr("href");
+        $(".catLj22 a").attr('href', newUrl);
         $('.catLj23').click(false);
-        $(".catLj23 a").removeAttr("href");
+        $(".catLj23 a").attr('href', newUrl);
         $('.catLj24').click(false);
-        $(".catLj24 a").removeAttr("href");
+        $(".catLj24 a").attr('href', newUrl);
         $('.catLj25').click(false);
-        $(".catLj25 a").removeAttr("href");
+        $(".catLj25 a").attr('href', newUrl);
         $('.catLj26').click(false);
-        $(".catLj26 a").removeAttr("href");
-
+        $(".catLj26 a").attr('href', newUrl);
     </script>
-    <? // else : 
-    ?>
+
 <? endif; ?>
 
 <script>
