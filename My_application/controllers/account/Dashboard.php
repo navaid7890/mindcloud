@@ -86,7 +86,7 @@ class Dashboard extends MY_Controller_Account
 
 		$nexttut = array();
 		$nexttut['where']['tutorial_free_status'] = '0';
-		$nexttut['limit'] = 3;
+		// $nexttut['limit'] = 3;
 		$data['next_tut'] = $this->model_tutorial->find_all_active($nexttut);
 
 
@@ -127,6 +127,9 @@ class Dashboard extends MY_Controller_Account
 		$dashCat['where']['category_status'] = 1;
 		$data['dashCatV'] = $this->model_category->find_all_active($dashCat);
 
+		$nextut = array();
+		$nextut['where']['user_id'] = $this->userid;
+		$data['nextutshow'] = $this->model_user->find_all_active($nextut);
 
 		$this->load_view("dashboard", $data);
 	}

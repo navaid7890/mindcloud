@@ -185,7 +185,7 @@
                      <div class="more-cont" style="display:none;">
                         <?= html_entity_decode($con7['cms_page_content']) ?>
                      </div>
-                     <a href="#" class="more">more</a>
+                     <a href="#" class="more">Read More</a>
 
                      <div class="space"><br></div>
                   </div>
@@ -279,7 +279,7 @@
       $(".disp-cont").toggle();
       e.preventDefault();
       $(this).text(function(i, t) {
-         return t == 'close' ? 'more' : 'close';
+         return t == 'Read Less' ? 'Read More' : 'Read Less';
       }).prev('.more-cont').slideToggle()
    });
 </script>

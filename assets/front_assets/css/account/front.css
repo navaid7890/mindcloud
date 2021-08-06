@@ -984,7 +984,36 @@
         opacity: 0.5;
         margin-right: 34px;
     }
+    .faqBoxLock {
+        width: 680px;
+        background: #F3F7FB;
+        align-items: center;
+        display: flex;
+        padding: 25px 36px;
+        border-radius: 8px;
+        flex-direction: column;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    .faqBoxLock span {
+        font-size: 20px;
+        color: #5C677D;
+        text-transform: capitalize;
+        display: block;
+        width: 100%;
+    }
     
+    .faqBoxLock a {
+        font-size: 20px;
+        color: #5C677D;
+        text-transform: capitalize;
+        display: block;
+        width: 100%;
+    }
+    .faqBoxLock i {
+        opacity: 0.5;
+        margin-right: 34px;
+    }
     .jrnyFaq ul {
         margin-left: 79px;
     }

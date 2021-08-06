@@ -22,9 +22,14 @@
       background: #fff;
       z-index: 2;
    }
+
    .contentArea {
       color: #fff;
       padding-top: 15px;
+   }
+
+   .toBeLocked strong.locked {
+      display: none;
    }
 </style>
 <div class="abt-tut-page">
@@ -74,7 +79,7 @@
                      </li>
                   </ul>
                   <ul class="usr-rating">
-                  <?
+                     <?
                      $rating = $this->model_learning_journey_course_review->get_avg_reating($course[0]['tutorial_id']);
                      ?>
                      <?php
@@ -156,6 +161,20 @@
          </div>
       </div>
    </div>
+   <?
+   $upaid = array();
+   $upaid['where']['user_id'] = $this->userid;
+   $datapaid = $this->model_user->find_all_active($upaid);
+   ?>
+   <?//= debug($datapaid[0]['user_paid']) ?>
+   <?
+   $courfreecheck = array();
+   $courfreecheck['where']['tutorial_id'] = $course[0]['tutorial_id'];
+   $datacourfreecheck = $this->model_tutorial->find_all_active($courfreecheck);
+   ?>
+
+   <?//= debug($datacourfreecheck[0]['tutorial_free_status']) ?>
+
 
 
    <section class="jrnySec hding-2 pad-sec para">
@@ -171,12 +190,28 @@
             <div class="jrnyFaq col-lg-10 col-md-10 offset-lg-1 offset-md-1">
                <h2>Tutorial Content</h2>
                <div class="sapace"><br><br></div>
+               <?php if ($datapaid[0]['user_paid'] == 0  && $datacourfreecheck[0]['tutorial_free_status'] == 0) : ?>
+                  <style>
+                     .toBeLocked strong.locked {
+                        margin-left: 5px;
+                        display: initial;
+                        float: right;
+                     }
+                  </style>
+                  <script>
+                     $(document).ready(function() {
+                        var newUrl = "<?= l('subscription') ?>";
+                        // $('.toBeLocked').click(false);
+                        $(".toBeLocked .faqBoxLock a").attr('href', newUrl);
 
+                     });
+                  </script>
+               <?php endif ?>
                <ul class="colasebar">
-                  <li>
-                     <div class="faqBox">
+                  <li class="toBeLocked">
+                     <div class="faqBoxLock">
                         <a href="<?= l('account/profile/expert-detail-tutorial-intro-video') ?>?courseid=<?= $course[0]['tutorial_id'] ?>">
-                           <i class="fas fa-video"></i> Tutorial - 1 Minute Intro</a>
+                           <i class="fas fa-info"></i> Tutorial - 1 Minute Intro<strong class="locked"><i class="fas fa-lock"></i></strong></a>
                      </div>
                   </li>
                   <li>
@@ -191,10 +226,10 @@
                   <? if (isset($lc) and array_filled($lc)) : ?>
                      <? foreach ($lc as $key => $value) : ?>
 
-                        <li>
-                           <div class="faqBox">
+                        <li class="toBeLocked">
+                           <div class="faqBoxLock">
                               <a href="<?= l('account/profile/expert-detail-tutorial-video') ?>?courseid=<?= $course[0]['tutorial_id'] ?>&tutorialid=<?= $value['videos_id'] ?>">
-                                 <i class="fas fa-video"></i>Tutorial - Video and Transcript</a>
+                                 <i class="fas fa-video"></i>Tutorial - Video and Transcript<strong class="locked"><i class="fas fa-lock"></i></strong></a>
                            </div>
                         </li>
 
@@ -206,10 +241,10 @@
 
          <div class="jr-btm col-lg-10 col-md-10 offset-lg-1 offset-md-1">
             <div class="user-review">
-               
+
                <?php if (isset($review) && array_filled($review)) : ?>
                   <h2>User <strong> Reviews </strong></h2>
-               <div class="space"><br><br></div>
+                  <div class="space"><br><br></div>
                   <?php foreach ($review as $key => $value) : ?>
                      <div class="row">
                         <div class="col-lg-1 col-md-12">
@@ -255,27 +290,27 @@
    <section class="faqSec hding-2 para">
       <div class="container">
          <div class="row">
-              <div class="col-lg-10 col-md-10 offset-lg-1 offset-md-1">
-                  
-              <div class="faqHead">
-            <h2>FAQs about <strong>Expert Tutorials</strong></h2>
-         </div>
-         <ul class="colasebar">
-            <? if (isset($faq) and array_filled($faq)) : ?>
-               <? foreach ($faq as $key => $value) : ?>
-                  <li>
-                     <div class="faqBar">
-                        <span><?= $value['faq_question'] ?> <i class="fal fa-angle-down"></i></span>
-                        <div class="expandable">
-                           <?= html_entity_decode($value['faq_answer']) ?>
-                        </div>
-                     </div>
-                  </li>
-               <? endforeach; ?>
-            <? endif; ?>
-         </ul>
+            <div class="col-lg-10 col-md-10 offset-lg-1 offset-md-1">
 
-              </div>                      
+               <div class="faqHead">
+                  <h2>FAQs about <strong>Expert Tutorials</strong></h2>
+               </div>
+               <ul class="colasebar">
+                  <? if (isset($faq) and array_filled($faq)) : ?>
+                     <? foreach ($faq as $key => $value) : ?>
+                        <li>
+                           <div class="faqBar">
+                              <span><?= $value['faq_question'] ?> <i class="fal fa-angle-down"></i></span>
+                              <div class="expandable">
+                                 <?= html_entity_decode($value['faq_answer']) ?>
+                              </div>
+                           </div>
+                        </li>
+                     <? endforeach; ?>
+                  <? endif; ?>
+               </ul>
+
+            </div>
          </div>
       </div>
    </section>

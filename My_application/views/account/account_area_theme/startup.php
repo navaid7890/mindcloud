@@ -52,7 +52,7 @@
                             </div>
                             <div class="space"><br><br></div>
                             <ul class="work-list">
-                                <li>
+                                <li class="unlockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -75,7 +75,7 @@
                                     </div>
                                 </li>
 
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -98,7 +98,7 @@
                                     </div>
                                 </li>
 
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -121,7 +121,7 @@
                                     </div>
                                 </li>
 
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -144,7 +144,7 @@
                                     </div>
                                 </li>
 
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -167,7 +167,7 @@
                                     </div>
                                 </li>
 
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -190,7 +190,7 @@
                                     </div>
                                 </li>
 
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -213,7 +213,7 @@
                                     </div>
                                 </li>
 
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -235,7 +235,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -257,7 +257,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -279,7 +279,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -301,7 +301,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -323,7 +323,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -345,7 +345,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -368,7 +368,7 @@
                                     </div>
                                 </li>
 
-                                <li>
+                                <li class="lockedItem">
                                     <div class="work-box">
                                         <div>
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
@@ -400,3 +400,26 @@
         </li>
     </ul>
 </section>
+
+
+<?
+$upaid = array();
+$upaid['where']['user_id'] = $this->userid;
+$upaid['where']['user_paid'] = 1;
+$datapaid = $this->model_user->find_all_active($upaid);
+?>
+
+
+<? if ($datapaid[0]['user_paid'] == 0) : ?>
+    <style>
+       
+    </style>
+    <script>
+        // $('.catLj12').click(false);
+        // $(".lockedItem a").removeAttr("href");
+        var newUrl = "<?=l('subscription')?>";
+        $(".lockedItem a").attr('href', newUrl);
+    </script>
+    <? // else : 
+    ?>
+<? endif; ?>
