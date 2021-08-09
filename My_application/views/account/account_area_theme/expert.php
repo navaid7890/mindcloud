@@ -61,6 +61,10 @@
         background-color: #fff;
         border: 1px solid #ddd;
     }
+
+    .pb-10 {
+        padding-bottom: 20px;
+    }
 </style>
 
 
@@ -134,14 +138,14 @@
                                 <div class="col-md-8">
                                     <div class="xpert-box">
                                         <div class="xpert-content">
-                                            
+
                                             <? if (empty($art)) { ?>
                                                 <h1 class="text-center" style="color: #000; font-size:30px; font-weight:700;">Course Not Found</h1>
                                             <? } else { ?>
                                                 <h2>What to Learn in <strong>Experts Tutorials</strong></h2>
                                                 <div class="sapce"><br><br></div>
                                                 <ul class="who-list tut-list">
-                                                   
+
                                                     <?php if (isset($art) && array_filled($art)) : ?>
                                                         <?php foreach ($art as $key => $value) : ?>
                                                             <li>
@@ -149,7 +153,7 @@
 
                                                                     <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
                                                                         <div class="video-box">
-                                                                            <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
+                                                                            <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
                                                                             <span><i class="fas fa-play"></i> </span>
                                                                             <?
                                                                             // debug($value);
@@ -170,9 +174,9 @@
 
                                                                     <div class="vid-content">
                                                                         <h4><a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
-                                                                        <div class="row align-items-center pt-70">
+                                                                        <div class="row align-items-center pt-60">
                                                                             <div class="col-md-12">
-                                                                                <ul class="login-btn">
+                                                                                <ul class="login-btn pb-10">
                                                                                     <li><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $value['expert_image'] ?>"></span> <?= $value['expert_name'] ?> </a></li>
                                                                                 </ul>
                                                                             </div>
@@ -182,7 +186,7 @@
                                                                                     <?php
                                                                                     for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
                                                                                         "
-                                                                                        <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                                                        <li><img src="<?= i('') ?>icons/rat-d.svg" loading="lazy"></li>
                                                                                         ";
                                                                                     <? } ?>
                                                                                 </ul>

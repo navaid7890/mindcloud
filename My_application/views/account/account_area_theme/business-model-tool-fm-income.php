@@ -18,14 +18,14 @@
                         <div class="tutorial-content">
                             <div class="tutorial-head">
                                 <div class="row align-items-center">
-                                    <div class="col-md-7">
+                                    <div class="col-md-12">
                                         <ul class="bredcum-links">
                                             <li><a href="#">Learning Journey</a></li>
                                             <li><a href="#">Income Statement</a></li>
                                             <li><a href="#">Tool and Tool Builder</a></li>
                                         </ul>
                                     </div>
-                                    <div class="col-md-5 text-right">
+                                    <!-- <div class="col-md-5 text-right">
                                         <div class="bredcum-right">
                                             <a href="#" class="btn-round btn-hover">In progress <span></span></a>
 
@@ -34,7 +34,7 @@
                                                 <li><a href="#"><i class="fal fa-angle-right"></i></a></li>
                                             </ul>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 

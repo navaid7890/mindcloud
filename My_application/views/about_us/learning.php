@@ -53,7 +53,7 @@
       <div class="abtBox">
          <div class="row">
             <div class="col-md-6 flex-center">
-               <div class="abtContent">
+               <div class="abtContent" id="aboutExpertSection">
                   <h3><span><?= html_entity_decode($contd['cms_page_title']) ?></span> </h3>
                   <? //=html_entity_decode($contd['cms_page_content'])
                   ?>
@@ -102,7 +102,7 @@
          <? foreach ($learn_cat as $key => $value) : ?>
             <div class="jrnyFaq">
                <h5><i><img src="<?= g('db.admin.bucketimg') . $value['learning_journey_category_image'] ?>" alt=""></i>
-                  <?= $value['learning_journey_category_name'] ?>
+                  <?= html_entity_decode($value['learning_journey_category_name']) ?>
                </h5>
                <?
                $al = array();
