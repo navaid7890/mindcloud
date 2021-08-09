@@ -1508,7 +1508,7 @@ class Contact_us extends MY_Controller
                     //$this->model_email->bookingInquiry($data);
                     //debug($this->model_email,1);
 
-                    //parent::book($data);
+                    parent::book($data);
         
 
                  //   debug(parent::book($data),1);
