@@ -565,6 +565,7 @@ class MY_Controller extends MY_Controller_Admin
         $param['msg'] = 'Dear Expert,<br> <br>
         We have received a booking in your website, detail is given below:<br><br>';
 
+        
         $from_email = $data['booking_email']; 
         $to_email = 'madiha@alphacandy.com';            
         $this->email->from($from_email, 'Booking Confirmation'); 
@@ -573,17 +574,16 @@ class MY_Controller extends MY_Controller_Admin
         $this->email->subject('Booking Confirmation'); 
         $this->email->message($this->load->view('_layout/email_template/default_template', $param , true));   
         $this->email->send();
-        //debug($from_email);
-        
-    //    debug($this->email);
-    //    debug($data,1);
-    //    debug("ok");
-        if($this->email->send()){            
-         echo "Mail Sent";
-        }else{ 
-            echo $this->email->print_debugger();
 
-       }
+        if(! $this->email->send()){
+
+            echo $this->email->print_debugger();
+        }
+
+        else
+        {
+            echo 'send';
+        }
 
       //  die();
 
