@@ -105,7 +105,7 @@ $route['user-detail/(:any)'] = "about_us/userprofile/$1";
 $route['subscription'] = "about_us/trial";
 
 $route['account-expert'] = "account/profile/expert";
-
+$route['thankyou'] = "about_us/thankyou";
 
 
 //PACKAGE

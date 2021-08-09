@@ -986,10 +986,10 @@ var Form = function () {
         Toastr.success(s.msg.desc, s.msg.title, { positionClass: "toast-bottom-right" });
 
         if (s.redirect.status) {
-          // setTimeout(function(){
-          //     window.location.href = s.redirect.link;
-          // },4000);
-          //must verify link first
+          setTimeout(function(){
+              window.location.href = 'account-area';
+          },4000);
+ 
 
         }
 

@@ -101,24 +101,24 @@ class Model_logo extends MY_Model {
                      'rules'   => 'trim|htmlentities'
                   ),
 
-               // 'logo_footer_image' => array(
-               //       'table'   => $this->_table,
-               //       'name'   => 'logo_footer_image',
-               //       'label'   => 'Footer Image',
-               //       'name_path'   => 'logo_image_path',
-               //       'upload_config'   => 'site_upload_logo',
-               //       'type'   => 'fileupload',
-               //       'type_dt'   => 'image',
-               //        'attributes'   => array(
-               //            'image_size_recommended'=>'212px × 121px',
-               //            'allow_ext'=>'png|jpeg|jpg',
-               //        ),
-               //       'randomize' => true,
-               //       'preview'   => 'true',
-               //       //'attributes'   => array('label'=>'width = 260, Height = 43'),
-               //       'dt_attributes'   => array("width"=>"10%"),
-               //       'rules'   => 'trim|htmlentities'
-               //    ),
+               'logo_footer_image' => array(
+                     'table'   => $this->_table,
+                     'name'   => 'logo_footer_image',
+                     'label'   => 'Footer Image',
+                     'name_path'   => 'logo_image_path',
+                     'upload_config'   => 'site_upload_logo',
+                     'type'   => 'fileupload',
+                     'type_dt'   => 'image',
+                      'attributes'   => array(
+                          'image_size_recommended'=>'212px × 121px',
+                          'allow_ext'=>'png|jpeg|jpg',
+                      ),
+                     'randomize' => true,
+                     'preview'   => 'true',
+                     //'attributes'   => array('label'=>'width = 260, Height = 43'),
+                     'dt_attributes'   => array("width"=>"10%"),
+                     'rules'   => 'trim|htmlentities'
+                  ),
 
               'logo_favicon' => array(
                      'table'   => $this->_table,

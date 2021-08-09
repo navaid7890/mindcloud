@@ -948,18 +948,18 @@ class About_us extends MY_Controller
         $data['faq'] = $this->model_faq->find_all_active($fa);
 
 
-        $id = $this->userid;
+        // $id = $this->userid;
 
-        $pars=array(); 
-        $pars['fields'] = "user_id,user_paid";
-        $pars['where']['user_id']=$this->userid;
+        // $pars=array(); 
+        // $pars['fields'] = "user_id,user_paid";
+        // $pars['where']['user_id']=$this->userid;
 
-        $u=$this->model_user->find_one_active($pars);
-       //debug($u);
+        // $u=$this->model_user->find_one_active($pars);
 
-        $u['user_paid']=1;
-        $test=$this->model_user->update_by_pk($id, $u);
-        // debug($test);
+
+        // $u['user_paid']=1;
+        // $test=$this->model_user->update_by_pk($id, $u);
+        
 
            
             
@@ -1272,12 +1272,34 @@ class About_us extends MY_Controller
         $page = ($this->uri->segment(3))? $this->uri->segment(3) : 0;
 
         // $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"]);
-           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"],$paginate_param);
+           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-2):($page)) * $pagination["per_page"],$paginate_param);
 
         $vars["links"] = $this->mypagination->create_links();
         
         //.debug($vars,1); 
         return $vars;
+    }
+
+    
+    public function thankyou()
+	{
+        global $config;
+        $data = array();
+
+        $id = $this->userid;
+
+        $pars=array(); 
+        $pars['fields'] = "user_id,user_paid";
+        $pars['where']['user_id']=$this->userid;
+
+        $u=$this->model_user->find_one_active($pars);
+
+
+        $u['user_paid']=1;
+        $test=$this->model_user->update_by_pk($id, $u);
+        
+        $this->load_view("thankyou",$data);
+   
     }
 
 

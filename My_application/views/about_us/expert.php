@@ -85,8 +85,9 @@
    }
 
    .pagination li.first a {
-      padding: 6px 12px;
-   }
+    padding: 6px 12px;
+}
+
 </style>
 
 <div class="mainBanner home-banner para" style="background-image:url('<?= g('db.admin.bucketimg') . "cms_image/" . $con1['cms_page_image'] ?>');">

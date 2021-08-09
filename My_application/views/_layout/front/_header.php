@@ -1,4 +1,9 @@
+<?
 
+$logo=$this->model_logo->find_all_active();
+//debug($logo);
+
+?>
 
 <header>
 
@@ -13,7 +18,7 @@
 			<div class="row align-items-center">
 				<div class="col-md-2 text-left">
 					<a href="<?= l('') ?>" class="logo">
-						<img src="<?= i('') ?>logo.png" alt="">
+						<img src="<?=get_image($logo[0]['logo_image'],$logo[0]['logo_image_path'])?>" alt="">
 					</a>
 				</div>
 				<div class="col-md-7">

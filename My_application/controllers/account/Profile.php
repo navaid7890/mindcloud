@@ -1675,7 +1675,7 @@ class Profile extends MY_Controller_Account
         $page = ($this->uri->segment(4))? $this->uri->segment(4) : 0;
 
         // $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"]);
-           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"],$paginate_param);
+           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-2):($page)) * $pagination["per_page"],$paginate_param);
 
         $vars["links"] = $this->mypagination->create_links();
         

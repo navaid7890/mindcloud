@@ -1,6 +1,8 @@
 <? 
 $footer = array();
 $footer = $this->model_config->find_all_active($footer);
+
+$logo=$this->model_logo->find_all_active();
 ?>
 
 <? // if ($this->router->fetch_class() == 'registration' && $this->router->fetch_method() == 'index') { ?>
@@ -11,7 +13,7 @@ $footer = $this->model_config->find_all_active($footer);
 
 				<a href="#top" class="b-top"><i class="fas fa-arrow-circle-up"></i></a>
 
-				<a href="./" class="footer-logo"><img src="<?= i('') ?>footer-logo.png" alt=""></a>
+				<a href="./" class="footer-logo"><img src="<?=get_image($logo[0]['logo_footer_image'],$logo[0]['logo_image_path'])?>" alt=""></a>
 				<div class="space"><br><br><br></div>
 
 				<div class="row">

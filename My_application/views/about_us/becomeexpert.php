@@ -29,7 +29,7 @@
     border: 1px solid rgba(0, 0, 0, .15);
   }
 
-  h2:after {
+  .para h2:after {
     content: "";
     height: 12px;
     width: 12px;

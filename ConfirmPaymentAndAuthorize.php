@@ -54,8 +54,8 @@ button#pause-cycle {
                     <div id="details-response"><pre><code>Waiting for details...</code></pre></div> -->
                     <!-- <h3>Authorize Response</h3>
                     <div id="authorize-response"><pre><code>Waiting for authorization...</code></pre></div> -->
-                    <h3>Confirm Response</h3>
-                    <div id="confirm-response"><pre><code></code></pre></div>
+                    <!-- <h3>Confirm Response</h3>
+                    <div id="confirm-response"><pre><code></code></pre></div> -->
                     <script type="text/javascript">
                         function confirm() {
                             $.post("ConfirmAndAuthorize.php", {
@@ -188,3 +188,13 @@ button#pause-cycle {
 
     </body>
 </html>
+<script>
+$( document ).ready(function() {
+    setTimeout(function(){
+              window.location.href = 'thankyou';
+          },11000);
+});
+
+
+
+</script>
