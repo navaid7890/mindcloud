@@ -54,7 +54,6 @@
     .video-box img {
         height: 233px;
     }
-
 </style>
 
 <div class="index-page">
@@ -317,9 +316,31 @@
                                                             </div>
                                                         </a>
                                                         <div class="vid-content">
+
+
+                                                            <div class="row align-items-center">
+                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+                                                                <div class="col-md-10">
+                                                                    <?
+                                                                    $exp_name = array();
+                                                                    $exp_name['where']['expert_id'] = $value['tutorial_expert_id'];
+                                                                    $exp_name = $this->model_expert->find_all_active($exp_name);
+
+                                                                    // debug($exp_name);
+                                                                    // debug($exp_name['expert_image']);
+                                                                    ?>
+                                                                    <ul class="login-btn">
+                                                                        <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <a href="#" class="arrow-links"><i class="far fa-arrow-right"></i></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="space"><br></div>
                                                             <div class="row align-items-center">
                                                                 <div class="col-md-12">
-                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+
 
                                                                     <ul class="rating">
                                                                         <?
@@ -344,25 +365,6 @@
                                                                 </div>
                                                             </div> -->
                                                             </div>
-                                                            <div class="space"><br></div>
-                                                            <div class="row align-items-center">
-                                                                <div class="col-md-10">
-                                                                    <?
-                                                                    $exp_name = array();
-                                                                    $exp_name['where']['expert_id'] = $value['tutorial_expert_id'];
-                                                                    $exp_name = $this->model_expert->find_all_active($exp_name);
-
-                                                                    // debug($exp_name);
-                                                                    // debug($exp_name['expert_image']);
-                                                                    ?>
-                                                                    <ul class="login-btn">
-                                                                        <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="col-md-2">
-                                                                    <a href="#" class="arrow-links"><i class="far fa-arrow-right"></i></a>
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -381,7 +383,7 @@
                                 <div class="tutorial-graph-box">
                                     <div class="certificate-box" id="yourExpertTutorial">
                                         <div class="exper-head">
-                                            <h2>What To Learn Next In<strong>Experts Tutorials</strong></h2>
+                                            <h2>What To Learn Next In <strong>Experts Tutorials</strong></h2>
                                         </div>
                                         <div class="space"><br><br></div>
                                         <ul class="courses-slide">
@@ -408,9 +410,31 @@
                                                                 </div>
                                                             </a>
                                                             <div class="vid-content">
+
+
+                                                                <div class="row align-items-center">
+                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+                                                                    <div class="col-md-10">
+                                                                        <?
+                                                                        $exp_name = array();
+                                                                        $exp_name['where']['expert_id'] = $value['tutorial_expert_id'];
+                                                                        $exp_name = $this->model_expert->find_all_active($exp_name);
+
+                                                                        // debug($exp_name);
+                                                                        // debug($exp_name['expert_image']);
+                                                                        ?>
+                                                                        <ul class="login-btn">
+                                                                            <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <a href="#" class="arrow-links"><i class="far fa-arrow-right"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="space"><br></div>
                                                                 <div class="row align-items-center">
                                                                     <div class="col-md-12">
-                                                                        <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+
 
                                                                         <ul class="rating">
                                                                             <?
@@ -434,25 +458,6 @@
                                                                     </div>
                                                                 </div>
                                                             </div> -->
-                                                                </div>
-                                                                <div class="space"><br></div>
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-md-10">
-                                                                        <?
-                                                                        $exp_name = array();
-                                                                        $exp_name['where']['expert_id'] = $value['tutorial_expert_id'];
-                                                                        $exp_name = $this->model_expert->find_all_active($exp_name);
-
-                                                                        // debug($exp_name);
-                                                                        // debug($exp_name['expert_image']);
-                                                                        ?>
-                                                                        <ul class="login-btn">
-                                                                            <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="col-md-2">
-                                                                        <a href="#" class="arrow-links"><i class="far fa-arrow-right"></i></a>
-                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
