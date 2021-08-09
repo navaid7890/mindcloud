@@ -40,9 +40,9 @@ input#forms-booking_us-btn {
                             <li data-toggle="tooltip" data-placement="top" title="Select Expert Topic" class="active"></li>
                             <li data-toggle="tooltip" data-placement="top" title="Select An Expert"></li>
                             <li data-toggle="tooltip" data-placement="top" title="Select Date & Time"></li>
-                            <li data-toggle="tooltip" data-placement="top" title="Enter Your Information"></li>
                             <li data-toggle="tooltip" data-placement="top" title="Verify Booking Detail"></li>
-                            <li data-toggle="tooltip" data-placement="top" title="Appointment Confirmation"></li>
+                            <!-- <li data-toggle="tooltip" data-placement="top" title="Enter Your Information"></li> -->
+                            <!-- <li data-toggle="tooltip" data-placement="top" title="Appointment Confirmation"></li> -->
                         </ul>
                     </div>
 
@@ -66,17 +66,17 @@ input#forms-booking_us-btn {
                                 <h3>Select Date & Time</h3>
                                 <p>Check the expert’s available time & date to book an appointment that works for you. The hourly rate is 300 AED.</p>
                             </li>
-
-                            <li>
-                                <img src="assets/images/contact.png" alt="">
-                                <h3>Enter your Information</h3>
-                                <p>Fill the fields on the right with your name, email, phone number. You can also add any comment relevant for the expert to read.</p>
-                            </li>
-
                             <li>
                                 <h3>Verify Booking Detail</h3>
                                 <p>Your booking is now received. Please wait to receive an email from your expert to confirm your booking and send you an invoice for the payment of 300 AED for one-hour session. Good luck!</p>
                             </li>
+                            <!-- <li>
+                                <img src="assets/images/contact.png" alt="">
+                                <h3>Enter your Information</h3>
+                                <p>Fill the fields on the right with your name, email, phone number. You can also add any comment relevant for the expert to read.</p>
+                            </li> -->
+
+                            
 
 
                         </ul>
@@ -728,9 +728,9 @@ return false;
     $('.finalResult').show();
     $('.selectAreaBoxInner').hide();
 
-     $('.navigator ul li:nth-child(5)').addClass('active');
-     $('.expertTopic ul li:nth-child(4)').hide();
-     $('.expertTopic ul li:nth-child(5)').show();
+     $('.navigator ul li:nth-child(4)').addClass('active');
+     $('.expertTopic ul li:nth-child(3)').hide();
+     $('.expertTopic ul li:nth-child(4)').show();
      
      $("#ones").val($('.calDate').html());
 

@@ -611,6 +611,7 @@ $my_tools = array(
       // PAGE IS FULLY LOADED  
       // FADE OUT YOUR OVERLAYING DIV
       $('#overlay').fadeOut();
+      $('body').removeClass('overFlowHide');
     });
   </script>
   <style>
@@ -626,6 +627,9 @@ $my_tools = array(
     flex-direction: column;
     height: 100vh;
 }
+.overFlowHide{
+  overflow: hidden !important;
+}
   </style>
 
 </head>
@@ -634,15 +638,10 @@ $my_tools = array(
 
 <!-- BEGIN BODY -->
 
-<body class="customeAccountList business-page" id="top" oncontextmenu="return false">
+<body class="overFlowHide customeAccountList business-page" id="top" oncontextmenu="return false">
 
 
   <div id="overlay">
-    <style>
-      body{
-        overflow: hidden!important;
-      }
-    </style>
     <img src="https://mindcloud-bucket.s3.amazonaws.com/assets/images/loader.gif" alt="Loading" />
     Loading...
   </div>
