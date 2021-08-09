@@ -565,6 +565,7 @@ class MY_Controller extends MY_Controller_Admin
         $param['msg'] = 'Dear Expert,<br> <br>
         We have received a booking in your website, detail is given below:<br><br>';
 
+        
         $from_email = $data['booking_email']; 
         $to_email = 'madiha@alphacandy.com';            
         $this->email->from($from_email, 'Booking Confirmation'); 
