@@ -543,7 +543,7 @@ class MY_Controller extends MY_Controller_Admin
         $this->load->library('email'); 
 
         $config['mailtype'] = 'html';
-        $config['smtp_port']='465';
+        $config['smtp_port']='587';
         $config['smtp_timeout']='30';
         $config['charset']='utf-8';
         $config['protocol'] = 'smtp';
