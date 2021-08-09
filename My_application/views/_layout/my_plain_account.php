@@ -1,497 +1,499 @@
-<?global $config;
+<? global $config;
 
 // $this->layout_data['additional_tools'];
 
 
 
-  $my_tools = array(
+$my_tools = array(
 
-            "datatables-front" => array(
+  "datatables-front" => array(
 
-                  "css" => array("responsive.bootstrap4.min.css",'dataTables.bootstrap4.min.css'),
+    "css" => array("responsive.bootstrap4.min.css", 'dataTables.bootstrap4.min.css'),
 
-                  "js" => array(
+    "js" => array(
 
-                    'jquery.dataTables.min.js',
+      'jquery.dataTables.min.js',
 
-                    'dataTables.bootstrap4.min.js',
+      'dataTables.bootstrap4.min.js',
 
-                    "dataTables.responsive.min.js",
+      "dataTables.responsive.min.js",
 
-                    "responsive.bootstrap4.min.js",
+      "responsive.bootstrap4.min.js",
 
-                    "script.js"
+      "script.js"
 
-                  ),
+    ),
 
-            ),
+  ),
 
 
 
-            "bootstrap-datetimepicker" => array(
+  "bootstrap-datetimepicker" => array(
 
-              "css" => array("css/datetimepicker.css"),
+    "css" => array("css/datetimepicker.css"),
 
-              "js" => array("js/bootstrap-datetimepicker.js"),
+    "js" => array("js/bootstrap-datetimepicker.js"),
 
-            ),
+  ),
 
-            
 
-            "chosen" => array(
 
-              "js" => array("chosen.jquery.min.js"),
+  "chosen" => array(
 
-              "css" => array("chosen.min.css"),
+    "js" => array("chosen.jquery.min.js"),
 
-            ),
+    "css" => array("chosen.min.css"),
 
-            "jquery-ui" => array(
+  ),
 
-              "css" => array('jquery-ui-1.10.3.custom.min.css'),
+  "jquery-ui" => array(
 
-              "js" => array("jquery-ui-1.10.3.custom.min.js"),
+    "css" => array('jquery-ui-1.10.3.custom.min.css'),
 
-            ),
+    "js" => array("jquery-ui-1.10.3.custom.min.js"),
 
-            "bootstrap" => array(
+  ),
 
-              "css" => array("css/bootstrap.min.css"),
+  "bootstrap" => array(
 
-              "js" => array("js/bootstrap.min.js"),
+    "css" => array("css/bootstrap.min.css"),
 
-            ),
+    "js" => array("js/bootstrap.min.js"),
 
-            "jquery-nouslider" => array(
+  ),
 
-              "js"  => array("js/jquery.nouislider.all.js","js/jquery.nouislider.js"),
+  "jquery-nouslider" => array(
 
-              "css"  => array("css/jquery.nouislider.css","css/jquery.nouislider.pips.css"),
+    "js"  => array("js/jquery.nouislider.all.js", "js/jquery.nouislider.js"),
 
-            ),
+    "css"  => array("css/jquery.nouislider.css", "css/jquery.nouislider.pips.css"),
 
-            "bootstrap-datepicker" => array(
+  ),
 
-              "css" => array("css/datepicker.css"),
+  "bootstrap-datepicker" => array(
 
-              "js" => array("js/bootstrap-datepicker.js"),
+    "css" => array("css/datepicker.css"),
 
-            ),
+    "js" => array("js/bootstrap-datepicker.js"),
 
+  ),
 
 
-            "bootstrap-toastr"=> array(
 
-              "css" => array("toastr.min.css"),
+  "bootstrap-toastr" => array(
 
-              "js" => array("toastr.min.js"),
+    "css" => array("toastr.min.css"),
 
-            ),
+    "js" => array("toastr.min.js"),
 
+  ),
 
 
-            "zabuto_calendar"=> array(
 
-              "css" => array("css/css.css"),
+  "zabuto_calendar" => array(
 
-              "js" => array("js/zabuto_calendar.min.js"),
+    "css" => array("css/css.css"),
 
-            ),
+    "js" => array("js/zabuto_calendar.min.js"),
 
+  ),
 
 
-            "my_cart"=> array(
 
-              'css' => array('css/cart_basket.css'),
+  "my_cart" => array(
 
-              "js" => array("js/script.js"),
+    'css' => array('css/cart_basket.css'),
 
-            ),
+    "js" => array("js/script.js"),
 
+  ),
 
 
-            "pretyphoto"=> array(
 
-              'css' => array('css/prettyPhoto.css'),
+  "pretyphoto" => array(
 
-              "js" => array('js/jquery.prettyPhoto.js'),
+    'css' => array('css/prettyPhoto.css'),
 
-            ),
+    "js" => array('js/jquery.prettyPhoto.js'),
 
+  ),
 
 
-            "common_files"=> array(
 
-              'css' => array('css/mystyle.css'),
+  "common_files" => array(
 
-              "js" => array('js/script.js' , 'js/forms.js'),
+    'css' => array('css/mystyle.css'),
 
-            ),
+    "js" => array('js/script.js', 'js/forms.js'),
 
+  ),
 
 
-            "bootstrap-fileupload" => array(
 
-              "js" => array("bootstrap-fileupload.js"), 
+  "bootstrap-fileupload" => array(
 
-              "css" => array("bootstrap-fileupload.css")
+    "js" => array("bootstrap-fileupload.js"),
 
-            ),
+    "css" => array("bootstrap-fileupload.css")
 
+  ),
 
 
-            // file upload new plugin install
 
-            "bootstrap-fileinput-master" => array(
+  // file upload new plugin install
 
-              "js" => array("js/plugins/sortable.js","js/fileinput.js","js/fileinput_locale_fr.js",
+  "bootstrap-fileinput-master" => array(
 
-                        "js/fileinput_locale_es.js","themes/explorer/theme.js","js/script.js"),
+    "js" => array(
+      "js/plugins/sortable.js", "js/fileinput.js", "js/fileinput_locale_fr.js",
 
-              "css" => array("css/fileinput.css","themes/explorer/theme.css","css/style.css"), 
+      "js/fileinput_locale_es.js", "themes/explorer/theme.js", "js/script.js"
+    ),
 
-            ),
+    "css" => array("css/fileinput.css", "themes/explorer/theme.css", "css/style.css"),
 
+  ),
 
 
-            "bootstrap-switch" => array(
 
-              "css" => array("css/bootstrap-switch.min.css"),
+  "bootstrap-switch" => array(
 
-              "js" => array("js/bootstrap-switch.min.js"),
+    "css" => array("css/bootstrap-switch.min.css"),
 
-            ),
+    "js" => array("js/bootstrap-switch.min.js"),
 
+  ),
 
 
-            // "bootstrap-datetimepicker1" => array(
 
-            //   "css" => array("css/css.css"),
+  // "bootstrap-datetimepicker1" => array(
 
-            //   "js" => array("js/bootstrap-datetimepicker.js"),
+  //   "css" => array("css/css.css"),
 
-            // ),
+  //   "js" => array("js/bootstrap-datetimepicker.js"),
 
-            "bootstrap-datetimepicker1" => array(
+  // ),
 
-              "css" => array("css/datetimepicker.css"),
+  "bootstrap-datetimepicker1" => array(
 
-              "js" => array("js/datetimepicker.js"),
+    "css" => array("css/datetimepicker.css"),
 
-            ),
+    "js" => array("js/datetimepicker.js"),
 
+  ),
 
 
-            "ckeditor"=> array(
 
-              "js" => array("ckeditor.js","config.js"),
+  "ckeditor" => array(
 
-            ),
+    "js" => array("ckeditor.js", "config.js"),
 
+  ),
 
 
-            
 
-            "owl-carousel" => array(
 
-              "css" => array("owl.carousel.css","owl.theme.css"),
 
-              "js" => array("owl.carousel.js" , 'script.js'),
+  "owl-carousel" => array(
 
-            ),
+    "css" => array("owl.carousel.css", "owl.theme.css"),
 
+    "js" => array("owl.carousel.js", 'script.js'),
 
+  ),
 
-            "owl-carousel1" => array(
 
-              "css" => array("owl.carousel.css","owl.theme.css"),
 
-              "js" => array("owl.carousel.js"),
+  "owl-carousel1" => array(
 
-            ),
+    "css" => array("owl.carousel.css", "owl.theme.css"),
 
+    "js" => array("owl.carousel.js"),
 
+  ),
 
-             "progress-bar" => array(
 
-              "css" => array("style.css"),
 
-              "js" => array("nprogress.js"),
+  "progress-bar" => array(
 
-            ),
+    "css" => array("style.css"),
 
+    "js" => array("nprogress.js"),
 
+  ),
 
-              "preloading" => array(
 
-              "css" => array("layout1/style.css"),
 
-              //"js" => array("nprogress.js"),
+  "preloading" => array(
 
-            ),
+    "css" => array("layout1/style.css"),
 
+    //"js" => array("nprogress.js"),
 
+  ),
 
-            "CustomFileInputs" => array(
 
-                "css" => array("css/normalize.css","css/demo.css","css/component.css",),
 
-                "js" => array("js/custom-file-input.js"),
+  "CustomFileInputs" => array(
 
-              ),
+    "css" => array("css/normalize.css", "css/demo.css", "css/component.css",),
 
+    "js" => array("js/custom-file-input.js"),
 
+  ),
 
-            "jquery-multiselect" => array(
 
-                "css" => array("jquery.multiselect.css",),
 
-                "js" => array("jquery.multiselect.js"),
+  "jquery-multiselect" => array(
 
-              ),
+    "css" => array("jquery.multiselect.css",),
 
-            
+    "js" => array("jquery.multiselect.js"),
 
-            "tooltipster-master" => array(
+  ),
 
-              "js" => array("dist/js/tooltipster.bundle.min.js"), 
 
-              "css" => array("dist/css/tooltipster.bundle.min.css")
 
-            ),
+  "tooltipster-master" => array(
 
+    "js" => array("dist/js/tooltipster.bundle.min.js"),
 
+    "css" => array("dist/css/tooltipster.bundle.min.css")
 
-            // "fancybox" => array(
+  ),
 
-            //   "js" => array("source/jquery.fancybox.js",'script.js'), 
 
-            //   "css" => array("source/jquery.fancybox.css")
 
-            // ),
+  // "fancybox" => array(
 
+  //   "js" => array("source/jquery.fancybox.js",'script.js'), 
 
+  //   "css" => array("source/jquery.fancybox.css")
 
-            "fancybox" => array(
+  // ),
 
-              "js" => array("jquery.mousewheel-3.0.6.pack.js","jquery.fancybox.pack.js"), 
 
-              "css" => array("jquery.fancybox.css")
 
-            ),
+  "fancybox" => array(
 
+    "js" => array("jquery.mousewheel-3.0.6.pack.js", "jquery.fancybox.pack.js"),
 
+    "css" => array("jquery.fancybox.css")
 
-            "emoji"=> array(
+  ),
 
-                      'css' => array(/*'css/stylesheet.css',*/'dist/emojionearea.min.css','css/tomorrow.css'),
 
-                      "js" => array(/*'dist/prettify.js',*/'dist/emojionearea.js'),
 
-                    ),
+  "emoji" => array(
 
+    'css' => array(/*'css/stylesheet.css',*/'dist/emojionearea.min.css', 'css/tomorrow.css'),
 
+    "js" => array(/*'dist/prettify.js',*/'dist/emojionearea.js'),
 
-         
+  ),
 
-            "wdt-emoji-bundle-master"=> array(
 
-                      'css' => array('wdt-emoji-bundle.css'),
 
-                      "js" => array('emoji.min.js','wdt-emoji-bundle.js'),
 
-                    ),
 
+  "wdt-emoji-bundle-master" => array(
 
+    'css' => array('wdt-emoji-bundle.css'),
 
-            "fb"=> array(
+    "js" => array('emoji.min.js', 'wdt-emoji-bundle.js'),
 
-                'css' => array('style.css'),
+  ),
 
-                "js" => array('script.js'),
 
-              ),
 
+  "fb" => array(
 
+    'css' => array('style.css'),
 
-            "jstar-rating" => array(
+    "js" => array('script.js'),
 
-            "js" => array("js/rating.js"),
+  ),
 
-            "css" => array("css/rating.css"),
 
-        ),
 
+  "jstar-rating" => array(
 
+    "js" => array("js/rating.js"),
 
+    "css" => array("css/rating.css"),
 
+  ),
 
-         "flag-icon-css-master" => array(
 
-            "css" => array("assets/docs.css","css/flag-icon.css"),
 
-            "js" => array("assets/docs.js"),
 
-          ),
 
+  "flag-icon-css-master" => array(
 
+    "css" => array("assets/docs.css", "css/flag-icon.css"),
 
-          "flag_sprites" => array(
+    "js" => array("assets/docs.js"),
 
-            "css" => array("flags.css"),
+  ),
 
-          ),
 
-           
 
+  "flag_sprites" => array(
 
+    "css" => array("flags.css"),
 
-         "owl-carousel"=>array(
+  ),
 
-            "css" => array("owl.carousel.css","owl.theme.css"),
 
-            "js" => array("owl.carousel.js"),
 
-          ),
 
 
+  "owl-carousel" => array(
 
+    "css" => array("owl.carousel.css", "owl.theme.css"),
 
+    "js" => array("owl.carousel.js"),
 
-         "bootstrap-star-rating-master" => array(
+  ),
 
-            "css" => array("css/star-rating.css"),
 
-            "js" => array("js/star-rating.js"),
 
-        ),
 
 
+  "bootstrap-star-rating-master" => array(
 
-          "my_cart"=> array(
+    "css" => array("css/star-rating.css"),
 
-              'css' => array('css/cart_basket.css'),
+    "js" => array("js/star-rating.js"),
 
-              "js" => array("js/script.js"),
+  ),
 
-            ),
 
 
+  "my_cart" => array(
 
+    'css' => array('css/cart_basket.css'),
 
+    "js" => array("js/script.js"),
 
-          "datatables2" => array(
+  ),
 
-              "css" => array("media/css/jquery.dataTables.css"),
 
-              "js" => array("media/js/jquery.dataTables.js"),
 
-            ),
 
 
+  "datatables2" => array(
 
+    "css" => array("media/css/jquery.dataTables.css"),
 
+    "js" => array("media/js/jquery.dataTables.js"),
 
-          "jquery-multi-select" => array(
+  ),
 
-              "js" => array("js/jquery.multi-select.js"), 
 
-              "css" => array("css/multi-select.css")
 
-            ),
 
-            "jquery-file-upload"=> array(
 
-              "js" => array(
+  "jquery-multi-select" => array(
 
-                  "js/vendor/jquery.ui.widget.js",
+    "js" => array("js/jquery.multi-select.js"),
 
-                  "js/vendor/tmpl.min.js",
+    "css" => array("css/multi-select.css")
 
-                  "js/vendor/load-image.min.js",
+  ),
 
-                  "js/vendor/canvas-to-blob.min.js",
+  "jquery-file-upload" => array(
 
-                  //"blueimp-gallery/jquery.blueimp-gallery.min.js",
+    "js" => array(
 
-                  "js/jquery.iframe-transport.js",
+      "js/vendor/jquery.ui.widget.js",
 
-                  "js/jquery.fileupload.js",
+      "js/vendor/tmpl.min.js",
 
-                  "js/jquery.fileupload-process.js",
+      "js/vendor/load-image.min.js",
 
-                  "js/jquery.fileupload-image.js",
+      "js/vendor/canvas-to-blob.min.js",
 
-                  "js/jquery.fileupload-audio.js",
+      //"blueimp-gallery/jquery.blueimp-gallery.min.js",
 
-                  "js/jquery.fileupload-video.js",
+      "js/jquery.iframe-transport.js",
 
-                  "js/jquery.fileupload-validate.js",
+      "js/jquery.fileupload.js",
 
-                  "js/jquery.fileupload-ui.js",
+      "js/jquery.fileupload-process.js",
 
-                    "bootstrap.min.js",
-                    "popper.js",
-                    "slick.min.js",
-                    "customize.js",
+      "js/jquery.fileupload-image.js",
 
-                ), 
+      "js/jquery.fileupload-audio.js",
 
-              "css" => array(
+      "js/jquery.fileupload-video.js",
 
-                  // "blueimp-gallery/blueimp-gallery.min.css",
+      "js/jquery.fileupload-validate.js",
 
-                  // "css/jquery.fileupload.css",
+      "js/jquery.fileupload-ui.js",
 
-                  // "bootstrap.min.css", 
-                  // "bootstrap3.3.7.css", 
-                  // "cdnbootstrap.css", 
-                  // "fontgoogleapis.css", 
-                  // "slick.css", 
-                  // "slick-theme.css", 
-                  // "fontawesomekit.css", 
-                  // "custom.css",  
+      "bootstrap.min.js",
+      "popper.js",
+      "slick.min.js",
+      "customize.js",
 
-                  //"css/jquery.fileupload-ui.css",
+    ),
 
-                  // "layout.css",
-                  // "style.css",
+    "css" => array(
 
-                ),
+      // "blueimp-gallery/blueimp-gallery.min.css",
 
-            ),
+      // "css/jquery.fileupload.css",
 
+      // "bootstrap.min.css", 
+      // "bootstrap3.3.7.css", 
+      // "cdnbootstrap.css", 
+      // "fontgoogleapis.css", 
+      // "slick.css", 
+      // "slick-theme.css", 
+      // "fontawesomekit.css", 
+      // "custom.css",  
 
+      //"css/jquery.fileupload-ui.css",
 
-            "bootstrap-switch" => array(
+      // "layout.css",
+      // "style.css",
 
-              "css" => array("css/bootstrap-switch.min.css"),
+    ),
 
-              "js" => array("js/bootstrap-switch.min.js"),
+  ),
 
-            ),
 
 
+  "bootstrap-switch" => array(
 
-            "select2" => array(
+    "css" => array("css/bootstrap-switch.min.css"),
 
-              "css" => array("select2.css"),
+    "js" => array("js/bootstrap-switch.min.js"),
 
-              "js" => array("select2.min.js"),
+  ),
 
-            ),
 
 
+  "select2" => array(
 
-            "bootbox"=> array(
+    "css" => array("select2.css"),
 
-              "js" => array("bootbox.min.js"),
+    "js" => array("select2.min.js"),
 
-            ),
+  ),
 
-            
 
-          );
+
+  "bootbox" => array(
+
+    "js" => array("bootbox.min.js"),
+
+  ),
+
+
+
+);
 
 
 
@@ -513,112 +515,118 @@
 
 <head>
 
-<meta charset="utf-8"/>
+  <meta charset="utf-8" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
-<link rel="shortcut icon" href="<?=get_image($this->layout_data['logo']['logo_favicon'],$this->layout_data['logo']['logo_image_path'])?>">
-
-
-
-<title><?=$title; ?></title>
-
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
-
-
-<link rel="stylesheet" href="<?=$config['base_url']?>assets/front_assets/css/account/layout.css" type="text/css" />
-
-<link rel="stylesheet" href="<?=$config['base_url']?>assets/front_assets/css/account/style.css" type="text/css" />
-
-<link rel="stylesheet" href="<?=$config['base_url']?>assets/front_assets/css/account/front.css" type="text/css" />
-
-<script src="<?=$config['base_url']?>assets/front_assets/js/account/jquery.js"></script>
-
-<?
-
-//Put Meta Data
-
-foreach ($meta_data AS $meta_name => $meta_val)
-
-echo '<meta name="' . $meta_name . '" content="' . $meta_val . '">';
-
-?>
+  <link rel="shortcut icon" href="<?= get_image($this->layout_data['logo']['logo_favicon'], $this->layout_data['logo']['logo_image_path']) ?>">
 
 
 
-<meta charset="<?=(isset($meta_charset)) ? $meta_charset : "UTF-8" ?>">
+  <title><?= $title; ?></title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+
+
+  <link rel="stylesheet" href="<?= $config['base_url'] ?>assets/front_assets/css/account/layout.css" type="text/css" />
+
+  <link rel="stylesheet" href="<?= $config['base_url'] ?>assets/front_assets/css/account/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="<?= $config['base_url'] ?>assets/front_assets/css/account/front.css" type="text/css" />
+
+  <script src="<?= $config['base_url'] ?>assets/front_assets/js/account/jquery.js"></script>
+
+  <?
+
+  //Put Meta Data
+
+  foreach ($meta_data as $meta_name => $meta_val)
+
+    echo '<meta name="' . $meta_name . '" content="' . $meta_val . '">';
+
+  ?>
+
+
+
+  <meta charset="<?= (isset($meta_charset)) ? $meta_charset : "UTF-8" ?>">
 
 
 
 
 
-<?
+  <?
 
 
 
-?>
+  ?>
 
 
 
-<?php
+  <?php
 
-// Add registered plugin if needed
+  // Add registered plugin if needed
 
-// include css files
+  // include css files
 
-if(is_array($additional_tools) && count($additional_tools))
+  if (is_array($additional_tools) && count($additional_tools)) {
 
-{
+    foreach ($additional_tools as $tool) {
 
-  foreach($additional_tools AS $tool){
+      if (is_array($my_tools[$tool]['css']))
 
-    if(is_array($my_tools[$tool]['css']))
+        foreach ($my_tools[$tool]['css'] as $script) {
 
-    foreach($my_tools[$tool]['css'] AS $script)
+          if ($script) {
 
-    {
+  ?>
+          <link rel="stylesheet" href="<?= g('plugins_root') . $tool . "/" . $script; ?>" /><?
 
-      if($script){
+                                                                                      }
+                                                                                    }
+                                                                                }
+                                                                              }
 
-        ?><link rel="stylesheet" href="<?=g('plugins_root') .$tool ."/". $script; ?>"/><?
+                                                                                        ?>
 
-      }
 
-      
 
-    }
+  <script type="text/javascript">
+    // Global Veriable use in js file
 
-  }
+    var base_url = "<?= $this->config->item('base_url') ?>";
 
+    var user_type = "<?= $this->session->userdata['logged_in_front']['user_type'] ?>";
+
+    //var price_value = "<?= isset($_GET['filter_price']) ? $_GET['filter_price'] : 0 ?>";
+  </script>
+
+  <script>
+    $(window).load(function() {
+      // PAGE IS FULLY LOADED  
+      // FADE OUT YOUR OVERLAYING DIV
+      $('#overlay').fadeOut();
+    });
+  </script>
+  <style>
+    div#overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    opacity: 0.7;
+    flex-direction: column;
+    height: 100vh;
 }
-
-?>
-
-
-
-<script type="text/javascript">
-
-  // Global Veriable use in js file
-
-  var base_url = "<?=$this->config->item('base_url')?>";
-
-  var user_type = "<?=$this->session->userdata['logged_in_front']['user_type']?>";
-
-  //var price_value = "<?=isset($_GET['filter_price']) ? $_GET['filter_price'] : 0?>";
-
-
-
-
-
-</script>
-
-
+  </style>
 
 </head>
 
@@ -628,23 +636,31 @@ if(is_array($additional_tools) && count($additional_tools))
 
 <body class="customeAccountList business-page" id="top">
 
-
+  <div id="overlay">
+    <style>
+      body{
+        overflow: hidden!important;
+      }
+    </style>
+    <img src="https://mindcloud-bucket.s3.amazonaws.com/assets/images/loader.gif" alt="Loading" />
+    Loading...
+  </div>
 
   <div class="dashBoard">
 
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    <div class="row">
+      <div class="row">
 
-      <!-- <div class="col-md-3 col-xs-12 col-sm-3 no-margin">
+        <!-- <div class="col-md-3 col-xs-12 col-sm-3 no-margin">
 
         <div class="profile">
 
           <div class="profileHead">
 
-            <a href="<?=l('')?>">
+            <a href="<?= l('') ?>">
 
-            <img src="<?=$this->layout_data['logo_image']?>" title='<?=g('site_title')?>' class="img-responsive">
+            <img src="<?= $this->layout_data['logo_image'] ?>" title='<?= g('site_title') ?>' class="img-responsive">
 
             </a>
 
@@ -652,17 +668,17 @@ if(is_array($additional_tools) && count($additional_tools))
 
             <span class="media-left">
 
-              <img src="<?=get_image($this->layout_data['user_data']['ui_profile_image'],$this->layout_data['user_data']['ui_profile_image_path'])?>" alt="user" style="display: none;">
+              <img src="<?= get_image($this->layout_data['user_data']['ui_profile_image'], $this->layout_data['user_data']['ui_profile_image_path']) ?>" alt="user" style="display: none;">
 
             </span>
 
             <span class="media-body">
 
-              <h5> <?=ucfirst($this->layout_data['user_data']['user_firstname']." " . $this->layout_data['user_data']['user_lastname'])?> </h5>
+              <h5> <?= ucfirst($this->layout_data['user_data']['user_firstname'] . " " . $this->layout_data['user_data']['user_lastname']) ?> </h5>
 
-              <p> From: <?=$this->layout_data['country']?></p>
+              <p> From: <?= $this->layout_data['country'] ?></p>
 
-              <a href="javascript:void();"><?=$this->layout_data['user_data']['user_email']?></a>
+              <a href="javascript:void();"><?= $this->layout_data['user_data']['user_email'] ?></a>
 
             </span>
 
@@ -674,7 +690,7 @@ if(is_array($additional_tools) && count($additional_tools))
 
             <div class="sideMenu">
 
-              <? $this->load->view('account/account_area_theme/_navigation');?>
+              <? $this->load->view('account/account_area_theme/_navigation'); ?>
 
             </div>
 
@@ -688,23 +704,25 @@ if(is_array($additional_tools) && count($additional_tools))
 
 
 
-      <div class="col-md-12 col-xs-12 col-sm-12 no-margin" style="padding:0;">
+        <div class="col-md-12 col-xs-12 col-sm-12 no-margin" style="padding:0;">
 
-        <div class="dashboardabout-div" >
-
-          
-
-          <? $this->load->view('account/account_area_theme/_inner_header');?>
+          <div class="dashboardabout-div">
 
 
 
-          <div class="dashboardabout whatpeopleSayDiv scrollbar-inner">
-
-            
-
-            <?=$content_block; ?>
+            <? $this->load->view('account/account_area_theme/_inner_header'); ?>
 
 
+
+            <div class="dashboardabout whatpeopleSayDiv scrollbar-inner">
+
+
+
+              <?= $content_block; ?>
+
+
+
+            </div>
 
           </div>
 
@@ -716,19 +734,17 @@ if(is_array($additional_tools) && count($additional_tools))
 
   </div>
 
-</div>
 
 
+  <!--- footer code -->
 
-<!--- footer code -->
 
-
-<!-- <footer>
+  <!-- <footer>
    <div class="container">
 
    <a href="#top" class="b-top"><i class="fas fa-arrow-circle-up"></i></a>
 
-	<a href="./" class="footer-logo"><img src="<?=i('')?>footer-logo.png" alt=""></a>
+	<a href="./" class="footer-logo"><img src="<?= i('') ?>footer-logo.png" alt=""></a>
 	<div class="space"><br><br><br></div>
 
    	<div class="row">
@@ -783,7 +799,7 @@ if(is_array($additional_tools) && count($additional_tools))
      
    </div>
 </footer> -->
-<!-- 
+  <!-- 
 <div class="copyright-top">
  	<div class="container">
 		<div class="row align-items-center">
@@ -824,39 +840,41 @@ if(is_array($additional_tools) && count($additional_tools))
 
 
 
-<div class="popup-main" style="display:none;" id="popup-down">
-	<div class="popup-head text-center">
-		<h5>Congratulations!</h5>
-		<div class="space"><br></div>
-		<p>We are very happy that you have successfully completed your Tutorial. Please receive this Certificate as acknowledgment for your effort. Wishing you a lot of success from Mind Cloud Tribe family!</p>
-	</div>
-	<div class="space"><br><br></div>
-	<div class="popup-content text-center">
-		<div class="certificate-modal">
-			<img src="<?=i('')?>dashboard/certificate.png" alt="">
-		</div>
-	</div>
-	<div class="space"><br></div>
-	<div class="popup-footer">
-		<div class="row align-items-center">
-			<div class="col-md-6">
-				<ul class="social-links">
-					<li><p> Share on:</p></li>
-					<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-				</ul>
-			</div>
-			<div class="col-md-6">
-				<div class="popup-col">
-					<p>Download Certificate:</p>
-					<a href="#"><img src="<?=i('')?>dashboard/home/icons/4.svg" alt=""></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+  <div class="popup-main" style="display:none;" id="popup-down">
+    <div class="popup-head text-center">
+      <h5>Congratulations!</h5>
+      <div class="space"><br></div>
+      <p>We are very happy that you have successfully completed your Tutorial. Please receive this Certificate as acknowledgment for your effort. Wishing you a lot of success from Mind Cloud Tribe family!</p>
+    </div>
+    <div class="space"><br><br></div>
+    <div class="popup-content text-center">
+      <div class="certificate-modal">
+        <img src="<?= i('') ?>dashboard/certificate.png" alt="">
+      </div>
+    </div>
+    <div class="space"><br></div>
+    <div class="popup-footer">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <ul class="social-links">
+            <li>
+              <p> Share on:</p>
+            </li>
+            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="popup-col">
+            <p>Download Certificate:</p>
+            <a href="#"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 </body>
@@ -872,156 +890,156 @@ if(is_array($additional_tools) && count($additional_tools))
 <script src="https://gromo.github.io/jquery.scrollbar/jquery.scrollbar.js "></script>
 
 
-<script src="<?=$config['base_url']?>assets/front_assets/js/account/custom.js"></script>
- 
+<script src="<?= $config['base_url'] ?>assets/front_assets/js/account/custom.js"></script>
+
 
 <script>
-var currentTab = 0; 
-showTab(currentTab); 
-
-function showTab(n) { 
-  var x = document.getElementsByClassName("tab");
-  x[n].style.display = "block";
-  if (n == 0) {
-    document.getElementById("prevBtn").style.display = "none";
-  } else {
-    document.getElementById("prevBtn").style.display = "inline";
-  }
-  if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
-  } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
-  }
-  fixStepIndicator(n)
-}
-
-function nextPrev(n) { 
-  var x = document.getElementsByClassName("tab");
-  x[currentTab].style.display = "none";
-  currentTab = currentTab + n;
-  if(n==1){ 
-  document.getElementById("forms-tool_builder-btn"+currentTab).click();
-  }
-  
-  if (currentTab >= x.length) { 
-   document.getElementById("forms-tool_builder-btn"+currentTab).click();
-
-    return false;
-  }
+  var currentTab = 0;
   showTab(currentTab);
-}
 
-function calc_tfc(){ 
+  function showTab(n) {
+    var x = document.getElementsByClassName("tab");
+    x[n].style.display = "block";
+    if (n == 0) {
+      document.getElementById("prevBtn").style.display = "none";
+    } else {
+      document.getElementById("prevBtn").style.display = "inline";
+    }
+    if (n == (x.length - 1)) {
+      document.getElementById("nextBtn").innerHTML = "Submit";
+    } else {
+      document.getElementById("nextBtn").innerHTML = "Next";
+    }
+    fixStepIndicator(n)
+  }
+
+  function nextPrev(n) {
+    var x = document.getElementsByClassName("tab");
+    x[currentTab].style.display = "none";
+    currentTab = currentTab + n;
+    if (n == 1) {
+      document.getElementById("forms-tool_builder-btn" + currentTab).click();
+    }
+
+    if (currentTab >= x.length) {
+      document.getElementById("forms-tool_builder-btn" + currentTab).click();
+
+      return false;
+    }
+    showTab(currentTab);
+  }
+
+  function calc_tfc() {
 
     var total = 0;
     var tfc_total = document.querySelectorAll('.tfc_total');
     for (var i = 0; i < tfc_total.length; i++) {
-        if (tfc_total[i].value > 0) {
-            var tfc_val = tfc_total[i];
-            total += parseFloat(tfc_val.value);
-        }
-    } 
+      if (tfc_total[i].value > 0) {
+        var tfc_val = tfc_total[i];
+        total += parseFloat(tfc_val.value);
+      }
+    }
     document.getElementById('tfc_total').value = total;
-}
+  }
 
-function calc_v(){ 
+  function calc_v() {
 
     var total = 0;
     var v_total = document.querySelectorAll('.v_total');
     for (var i = 0; i < v_total.length; i++) {
-        if (v_total[i].value > 0) {
-            var v_val = v_total[i];
-            total += parseFloat(v_val.value);
-        }
-    } 
+      if (v_total[i].value > 0) {
+        var v_val = v_total[i];
+        total += parseFloat(v_val.value);
+      }
+    }
     document.getElementById('v_total').value = total;
 
     var per_unit = document.getElementById('price_per_unit').value;
 
     var cm_total = document.getElementById('cm_total').value = Number(per_unit) - Number(total);
 
-    document.getElementById('cmr_total').value = 1 -  Number(total) / Number(per_unit);
+    document.getElementById('cmr_total').value = 1 - Number(total) / Number(per_unit);
 
     var tfc_total = document.getElementById('tfc_total').value;
 
     var x_total = document.getElementById('x_total').value = tfc_total / cm_total;
 
     document.getElementById('s_total').value = x_total * per_unit;
-}
+  }
 
-function calc_current_asset(){ 
+  function calc_current_asset() {
 
     var total = 0;
     var current_asset_total = document.querySelectorAll('.current_assets_total');
     for (var i = 0; i < current_asset_total.length; i++) {
-        if (current_asset_total[i].value > 0) {
-            var current_asset_val = current_asset_total[i];
-            total += parseFloat(current_asset_val.value);
-        }
-    } 
+      if (current_asset_total[i].value > 0) {
+        var current_asset_val = current_asset_total[i];
+        total += parseFloat(current_asset_val.value);
+      }
+    }
     document.getElementById('current_assets_total').value = total;
-}
+  }
 
-function calc_fixed_assets(){ 
+  function calc_fixed_assets() {
 
     var total = 0;
     var fixed_assets_total = document.querySelectorAll('.fixed_assets_total');
     for (var i = 0; i < fixed_assets_total.length; i++) {
-        if (fixed_assets_total[i].value > 0) {
-            var fixed_assets_val = fixed_assets_total[i];
-            total += parseFloat(fixed_assets_val.value);
-        }
-    } 
+      if (fixed_assets_total[i].value > 0) {
+        var fixed_assets_val = fixed_assets_total[i];
+        total += parseFloat(fixed_assets_val.value);
+      }
+    }
     document.getElementById('fixed_assets_total').value = total;
-}
+  }
 
-function calc_other_assets(){ 
+  function calc_other_assets() {
 
     var total = 0;
     var other_assets_total = document.querySelectorAll('.other_assets_total');
     for (var i = 0; i < other_assets_total.length; i++) {
-        if (other_assets_total[i].value > 0) {
-            var other_assets_val = other_assets_total[i];
-            total += parseFloat(other_assets_val.value);
-        }
-    } 
+      if (other_assets_total[i].value > 0) {
+        var other_assets_val = other_assets_total[i];
+        total += parseFloat(other_assets_val.value);
+      }
+    }
     document.getElementById('other_assets_total').value = total;
-}
+  }
 
 
-  function calc_cfs_values(id, sum_val, total_receipt){ 
+  function calc_cfs_values(id, sum_val, total_receipt) {
 
-    var current_period = document.getElementById(id+'1').value;
-    var previous_period = document.getElementById(id+'2').value;
+    var current_period = document.getElementById(id + '1').value;
+    var previous_period = document.getElementById(id + '2').value;
 
-    var increase = document.getElementById(id+'3');
+    var increase = document.getElementById(id + '3');
 
     increase.value = current_period - previous_period;
 
     var total = 0;
-    var other_assets_total = document.querySelectorAll('.'+sum_val);
+    var other_assets_total = document.querySelectorAll('.' + sum_val);
     for (var i = 0; i < other_assets_total.length; i++) {
-        if (other_assets_total[i].value > 0) {
-            var other_assets_val = other_assets_total[i];
-            total += parseFloat(other_assets_val.value);
-        }
-    } 
-    document.getElementById(sum_val).value = total; 
+      if (other_assets_total[i].value > 0) {
+        var other_assets_val = other_assets_total[i];
+        total += parseFloat(other_assets_val.value);
+      }
+    }
+    document.getElementById(sum_val).value = total;
 
     get_cfs_total(total_receipt);
- 
-  } 
+
+  }
 
 
-  function get_cfs_total(id){  
+  function get_cfs_total(id) {
     var total_i = 0;
 
     var get_id = document.getElementsByClassName(id);
 
-    for (var i = 0; i < get_id.length; i++) { 
+    for (var i = 0; i < get_id.length; i++) {
       total_i += Number(get_id[i].value);
-    } 
-    document.getElementById(id).value = total_i;  
+    }
+    document.getElementById(id).value = total_i;
 
     var tool_builder_total_cash_payments_current = document.getElementById('tool_builder_total_cash_payments_current');
     var tool_builder_total_cash_payments_previous = document.getElementById('tool_builder_total_cash_payments_previous');
@@ -1051,82 +1069,80 @@ function calc_other_assets(){
 
 
 
-function calc_tool_income_values(id){ 
-
-      var total = 0;
-      var other_assets_total = document.querySelectorAll('.'+id);
-      for (var i = 0; i < other_assets_total.length; i++) {
-          if (other_assets_total[i].value > 0) {
-              var other_assets_val = other_assets_total[i];
-              total += parseFloat(other_assets_val.value);
-          }
-      } 
-      document.getElementById(id).value = total; 
-
-
-      var revenues_year_1 = document.getElementById('revenues_total_year_1').value;
-      var revenues_year_2 = document.getElementById('revenues_total_year_2').value;
-      var revenues_year_3 = document.getElementById('revenues_total_year_3').value;
-
-      var expenses_year_1 = document.getElementById('expenses_total_year_1').value;
-      var expenses_year_2 = document.getElementById('expenses_total_year_2').value;
-      var expenses_year_3 = document.getElementById('expenses_total_year_3').value;
-
-      var tax_total_year_1 = document.getElementById('tax_total_year_1').value;
-      var tax_total_year_2 = document.getElementById('tax_total_year_2').value;
-      var tax_total_year_3 = document.getElementById('tax_total_year_3').value;
-  
-      var net_income_before_tax_year_1 = document.getElementById('net_income_before_tax_year_1');
-      var net_income_before_tax_year_2 = document.getElementById('net_income_before_tax_year_2');
-      var net_income_before_tax_year_3 = document.getElementById('net_income_before_tax_year_3');
-
-      var net_income_year_1 = document.getElementById('net_income_year_1');
-      var net_income_year_2 = document.getElementById('net_income_year_2');
-      var net_income_year_3 = document.getElementById('net_income_year_3');
-
-      net_income_before_tax_year_1.value = Number(revenues_year_1) - Number(expenses_year_1);
-      net_income_before_tax_year_2.value = Number(revenues_year_2) - Number(expenses_year_2);
-      net_income_before_tax_year_3.value = Number(revenues_year_3) - Number(expenses_year_3);
-
-      net_income_year_1.value = Number(net_income_before_tax_year_1.value) - Number(tax_total_year_1);
-      net_income_year_2.value = Number(net_income_before_tax_year_2.value) - Number(tax_total_year_2);
-      net_income_year_3.value = Number(net_income_before_tax_year_3.value) - Number(tax_total_year_3);
-
- 
- 
-}
-
-
-function calc_tool_bss_values(id,total_value){ 
+  function calc_tool_income_values(id) {
 
     var total = 0;
-    var other_assets_total = document.querySelectorAll('.'+id);
+    var other_assets_total = document.querySelectorAll('.' + id);
     for (var i = 0; i < other_assets_total.length; i++) {
-        if (other_assets_total[i].value > 0) {
-            var other_assets_val = other_assets_total[i];
-            total += parseFloat(other_assets_val.value);
-        }
-    } 
+      if (other_assets_total[i].value > 0) {
+        var other_assets_val = other_assets_total[i];
+        total += parseFloat(other_assets_val.value);
+      }
+    }
     document.getElementById(id).value = total;
 
-    if(total_value == "tool_builder_total_assets"){
-        var other_assets_total = document.getElementById('other_assets_total').value;
-        var fixed_assets_total = document.getElementById('fixed_assets_total').value;
-        var current_assets_total = document.getElementById('current_assets_total').value;
 
-        document.getElementById('tool_builder_total_assets').value = Number(other_assets_total) + Number(fixed_assets_total) + Number(current_assets_total);
+    var revenues_year_1 = document.getElementById('revenues_total_year_1').value;
+    var revenues_year_2 = document.getElementById('revenues_total_year_2').value;
+    var revenues_year_3 = document.getElementById('revenues_total_year_3').value;
+
+    var expenses_year_1 = document.getElementById('expenses_total_year_1').value;
+    var expenses_year_2 = document.getElementById('expenses_total_year_2').value;
+    var expenses_year_3 = document.getElementById('expenses_total_year_3').value;
+
+    var tax_total_year_1 = document.getElementById('tax_total_year_1').value;
+    var tax_total_year_2 = document.getElementById('tax_total_year_2').value;
+    var tax_total_year_3 = document.getElementById('tax_total_year_3').value;
+
+    var net_income_before_tax_year_1 = document.getElementById('net_income_before_tax_year_1');
+    var net_income_before_tax_year_2 = document.getElementById('net_income_before_tax_year_2');
+    var net_income_before_tax_year_3 = document.getElementById('net_income_before_tax_year_3');
+
+    var net_income_year_1 = document.getElementById('net_income_year_1');
+    var net_income_year_2 = document.getElementById('net_income_year_2');
+    var net_income_year_3 = document.getElementById('net_income_year_3');
+
+    net_income_before_tax_year_1.value = Number(revenues_year_1) - Number(expenses_year_1);
+    net_income_before_tax_year_2.value = Number(revenues_year_2) - Number(expenses_year_2);
+    net_income_before_tax_year_3.value = Number(revenues_year_3) - Number(expenses_year_3);
+
+    net_income_year_1.value = Number(net_income_before_tax_year_1.value) - Number(tax_total_year_1);
+    net_income_year_2.value = Number(net_income_before_tax_year_2.value) - Number(tax_total_year_2);
+    net_income_year_3.value = Number(net_income_before_tax_year_3.value) - Number(tax_total_year_3);
+
+
+
+  }
+
+
+  function calc_tool_bss_values(id, total_value) {
+
+    var total = 0;
+    var other_assets_total = document.querySelectorAll('.' + id);
+    for (var i = 0; i < other_assets_total.length; i++) {
+      if (other_assets_total[i].value > 0) {
+        var other_assets_val = other_assets_total[i];
+        total += parseFloat(other_assets_val.value);
+      }
     }
-    else if(total_value == "tool_builder_total_liabilities"){
-        var current_liabilities_total = document.getElementById('current_liabilities_total').value;
-        var other_current_liabilities_total = document.getElementById('other_current_liabilities_total').value;
-        var owners_equity_total = document.getElementById('owners_equity_total').value;
+    document.getElementById(id).value = total;
 
-        document.getElementById('tool_builder_total_liabilities').value = Number(current_liabilities_total) + Number(other_current_liabilities_total) + Number(owners_equity_total);
-    }
-    else{}
-}
+    if (total_value == "tool_builder_total_assets") {
+      var other_assets_total = document.getElementById('other_assets_total').value;
+      var fixed_assets_total = document.getElementById('fixed_assets_total').value;
+      var current_assets_total = document.getElementById('current_assets_total').value;
 
-function calc_tool_dcvm_values(){
+      document.getElementById('tool_builder_total_assets').value = Number(other_assets_total) + Number(fixed_assets_total) + Number(current_assets_total);
+    } else if (total_value == "tool_builder_total_liabilities") {
+      var current_liabilities_total = document.getElementById('current_liabilities_total').value;
+      var other_current_liabilities_total = document.getElementById('other_current_liabilities_total').value;
+      var owners_equity_total = document.getElementById('owners_equity_total').value;
+
+      document.getElementById('tool_builder_total_liabilities').value = Number(current_liabilities_total) + Number(other_current_liabilities_total) + Number(owners_equity_total);
+    } else {}
+  }
+
+  function calc_tool_dcvm_values() {
     var net_profit = document.getElementById('net_profit').value;
     var growth_rate = document.getElementById('growth_rate').value;
 
@@ -1157,90 +1173,90 @@ function calc_tool_dcvm_values(){
     discount_rate_year_5.value = Math.ceil(net_profit_year_5.value / Math.pow((1 + discount_rate / 100), 5));
 
     dcf_value.value = Number(discount_rate_year_1.value) + Number(discount_rate_year_2.value) + Number(discount_rate_year_3.value) + Number(discount_rate_year_4.value) + Number(discount_rate_year_5.value);
-}
- 
-// function nextPrev(n) {
-//   var x = document.getElementsByClassName("tab");
-//   x[currentTab].style.display = "none";
-//   currentTab = currentTab + n;
-//   if (currentTab >= x.length) {
-//     document.getElementById("form-send_us").submit();
-//     return false;
-//   }
-//   showTab(currentTab);
-// }
-
-function fixStepIndicator(n) {
-  var i, x = document.getElementsByClassName("step");
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" active", "");
   }
-  x[n].className += " active";
-}
+
+  // function nextPrev(n) {
+  //   var x = document.getElementsByClassName("tab");
+  //   x[currentTab].style.display = "none";
+  //   currentTab = currentTab + n;
+  //   if (currentTab >= x.length) {
+  //     document.getElementById("form-send_us").submit();
+  //     return false;
+  //   }
+  //   showTab(currentTab);
+  // }
+
+  function fixStepIndicator(n) {
+    var i, x = document.getElementsByClassName("step");
+    for (i = 0; i < x.length; i++) {
+      x[i].className = x[i].className.replace(" active", "");
+    }
+    x[n].className += " active";
+  }
 </script>
 
 
 
 
 <script>
-var currentTab1 = 0; 
-showTab1(currentTab1);
+  var currentTab1 = 0;
+  showTab1(currentTab1);
 
-function showTab1(n) {
-  var x = document.getElementsByClassName("tab1");
-  x[n].style.display = "block";
-  if (n == 0) {
-    document.getElementById("prevBtn1").style.display = "none";
-  } else {
-    document.getElementById("prevBtn1").style.display = "inline";
+  function showTab1(n) {
+    var x = document.getElementsByClassName("tab1");
+    x[n].style.display = "block";
+    if (n == 0) {
+      document.getElementById("prevBtn1").style.display = "none";
+    } else {
+      document.getElementById("prevBtn1").style.display = "inline";
+    }
+    if (n == (x.length - 1)) {
+      document.getElementById("nextBtn1").innerHTML = "Submit";
+    } else {
+      document.getElementById("nextBtn1").innerHTML = "Next";
+    }
+    fixStepIndicator1(n)
   }
-  if (n == (x.length - 1)) {
-    document.getElementById("nextBtn1").innerHTML = "Submit";
-  } else {
-    document.getElementById("nextBtn1").innerHTML = "Next";
-  }
-  fixStepIndicator1(n)
-}
 
-function nextPrev1(n) {
+  function nextPrev1(n) {
 
-  var x = document.getElementsByClassName("tab1");
-  x[currentTab].style.display = "none";
-  currentTab = currentTab + n;
-  if(n==1){
-  document.getElementById("form-tool-builder-multi-btn"+currentTab).click();
-  }
-  
-  if (currentTab >= x.length) {
-  
-   document.getElementById("form-tool-builder-multi-btn"+currentTab).click();
+    var x = document.getElementsByClassName("tab1");
+    x[currentTab].style.display = "none";
+    currentTab = currentTab + n;
+    if (n == 1) {
+      document.getElementById("form-tool-builder-multi-btn" + currentTab).click();
+    }
 
-    return false;
-  }
-  showTab1(currentTab);
- 
- 
-}
+    if (currentTab >= x.length) {
 
-function fixStepIndicator1(n) {
-  var i, x = document.getElementsByClassName("step1");
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" active", "");
+      document.getElementById("form-tool-builder-multi-btn" + currentTab).click();
+
+      return false;
+    }
+    showTab1(currentTab);
+
+
   }
-  x[n].className += " active";
-}
+
+  function fixStepIndicator1(n) {
+    var i, x = document.getElementsByClassName("step1");
+    for (i = 0; i < x.length; i++) {
+      x[i].className = x[i].className.replace(" active", "");
+    }
+    x[n].className += " active";
+  }
 </script>
 
- 
-<?foreach($js_files AS $file){
+
+<? foreach ($js_files as $file) {
 
 ?>
 
-<script src="<?=$config['js_root'] . $file; ?>"></script>
+  <script src="<?= $config['js_root'] . $file; ?>"></script>
 
 <?
 
-}?>
+} ?>
 
 <!-- END PAGE LEVEL SCRIPTS -->
 
@@ -1254,30 +1270,24 @@ function fixStepIndicator1(n) {
 
 // include js files
 
-if(array_filled($additional_tools))
+if (array_filled($additional_tools)) {
 
-{
+  foreach ($additional_tools as $tool) {
 
-  foreach($additional_tools AS $tool){
+    if (is_array($my_tools[$tool]['js']))
 
-    if(is_array($my_tools[$tool]['js']))
+      foreach ($my_tools[$tool]['js'] as $script) {
 
-    foreach($my_tools[$tool]['js'] AS $script)
+        $tool_activators .= "var tool_" . str_replace("-", "_", $tool) . " = true;";
 
-    {
+?>
 
-      $tool_activators .= "var tool_".str_replace("-","_",$tool)." = true;";
+      <script src="<?= $config['plugins_root'] . $tool . "/" . $script; ?>"></script>
 
-      ?>
+<?
 
-      <script src="<?=$config['plugins_root'] .$tool."/". $script; ?>"></script>
-
-      <?
-
-    }
-
+      }
   }
-
 }
 
 ?>
@@ -1300,21 +1310,21 @@ jQuery(document).ready(function(){
 
 
 
-  <script>
+<script>
+  <?= $tool_activators ?>
 
-    <?=$tool_activators?>
+  $(document).ready(function() {
 
-    $(document).ready(function(){
+    <? if ($_GET['msgtype'] && $_GET['msg']) { ?>
 
-      <?if($_GET['msgtype'] && $_GET['msg']){?>
+      Toastr.<?= $_GET['msgtype'] ?>("<?= ucfirst($_GET['msg']) ?>", "", {
+        positionClass: "toast-bottom-right"
+      });
 
-        Toastr.<?=$_GET['msgtype']?>("<?=ucfirst($_GET['msg'])?>", "" , {positionClass:"toast-bottom-right"} );
+    <? } ?>
 
-      <?}?>
-
-    });
-
-  </script>
+  });
+</script>
 
 
 

@@ -50,6 +50,11 @@
         font-size: 20px;
         font-weight: 600;
     }
+
+    .video-box img {
+        height: 233px;
+    }
+
 </style>
 
 <div class="index-page">
@@ -295,7 +300,7 @@
                                                     <div class="vid-box">
                                                         <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
                                                             <div class="video-box">
-                                                                <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
+                                                                <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
                                                                 <span><i class="fas fa-play"></i>
                                                                     <p>Preview Course</p>
                                                                 </span>
@@ -323,7 +328,7 @@
                                                                         <?php
                                                                         for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
                                                                             "
-                                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                                            <li><img src="<?= i('') ?>icons/rat-d.svg" loading="lazy"></li>
                                                                             ";
                                                                         <? } ?>
                                                                     </ul>
@@ -351,7 +356,7 @@
                                                                     // debug($exp_name['expert_image']);
                                                                     ?>
                                                                     <ul class="login-btn">
-                                                                        <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                                        <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                                     </ul>
                                                                 </div>
                                                                 <div class="col-md-2">
@@ -386,7 +391,7 @@
                                                         <div class="vid-box">
                                                             <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
                                                                 <div class="video-box">
-                                                                    <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
+                                                                    <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
                                                                     <span><i class="fas fa-play"></i>
                                                                         <p>Preview Course</p>
                                                                     </span>
@@ -414,7 +419,7 @@
                                                                             <?php
                                                                             for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
                                                                                 "
-                                                                                <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                                                <li><img src="<?= i('') ?>icons/rat-d.svg" loading="lazy"></li>
                                                                                 ";
                                                                             <? } ?>
                                                                         </ul>
@@ -442,7 +447,7 @@
                                                                         // debug($exp_name['expert_image']);
                                                                         ?>
                                                                         <ul class="login-btn">
-                                                                            <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                                            <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
                                                                         </ul>
                                                                     </div>
                                                                     <div class="col-md-2">
@@ -515,15 +520,15 @@
 
                                                             <div style="display: flex;justify-content: space-between; align-items: center;">
                                                                 <div>
-                                                                    <span><img src="<?= base_url() ?>assets/front_assets/images/logo.png" alt=""></span>
+                                                                    <span><img src="<?= base_url() ?>assets/front_assets/images/logo.png" alt="" loading="lazy"></span>
                                                                 </div>
 
                                                                 <div>
-                                                                    <span><img src="<?= base_url() ?>assets/front_assets/images/certificate.png" alt=""></span>
+                                                                    <span><img src="<?= base_url() ?>assets/front_assets/images/certificate.png" alt="" loading="lazy"></span>
                                                                 </div>
 
                                                                 <div>
-                                                                    <img src="<?= base_url() ?>assets/front_assets/images/signature.jpg" alt="" style="text-align: left; mix-blend-mode: darken;">
+                                                                    <img src="<?= base_url() ?>assets/front_assets/images/signature.jpg" loading="lazy" alt="" style="text-align: left; mix-blend-mode: darken;">
                                                                     <h6 style="font-weight: 600;padding-bottom: 4px;text-transform: capitalize;font-size: 16px;">genny ghanimeh</h6>
                                                                     <p style="font-style: italic;text-transform: capitalize;font-size: 13px;font-weight: 300;">founder mind cloud tribe</p>
                                                                 </div>
@@ -608,7 +613,7 @@
                                                     <? foreach ($dashCatV as $key => $value) : ?>
                                                         <li>
                                                             <a href="<?= l('booking') ?>">
-                                                                <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> <?= $value['category_name'] ?> </p>
+                                                                <p><span><img src="<?= i('') ?>icons/category/1.svg" loading="lazy"></span> <?= $value['category_name'] ?> </p>
                                                             </a>
                                                         </li>
                                                     <? endforeach; ?>

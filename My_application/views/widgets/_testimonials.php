@@ -58,7 +58,7 @@
 
     $('article').readmore({
             speed: 100,
-            collapsedHeight: 140,
+            collapsedHeight: 180,
             heightMargin: 16,
             moreLink: '<a href="#" class="">Read More</a>',
             lessLink: '<a href="#" class="">Read Less</a>',
