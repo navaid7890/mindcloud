@@ -84,58 +84,55 @@
                         <div class="experttut-Sec">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <div class="side-bar">
-                                        <div class="searchBox">
-                                            <h4>What do you want to learn?</h4>
-                                            <form action="" method="GET">
-                                                <div class="fld-search">
-                                                    <input type="text" name="search" placeholder="Search Expert Tutorials">
-                                                    <button type="submit"><i class="fal fa-search"></i></button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="space"><br><br><br></div>
+                                <div class="side-bar sticky-top">
+                  <div class="searchBox">
+                     <h4>What do you want to learn?</h4>
 
-                                        <div class="select-cate">
+                     <form action="" method="GET">
+                        <div class="fld-search">
+                           <input type="text" name="search" placeholder="Search by Keyword">
+                           <button type="submit"><i class="fal fa-search"></i></button>
+                        </div>
+                     </form>
+                  </div>
+                  <div class="space"><br><br><br></div>
+                  <div class="select-cate">
+                     <h4>Select by Expert </h4>
+                     <div class="fld-select">
+                        <select id='forum_category'>
+                           <option>All Experts</option>
+                           <? if (isset($ex) and array_filled($ex)) : ?>
+                              <? foreach ($ex as $key => $value) : ?>
+                                 <option value="<?= $value['expert_id'] ?>" <?= $this->input->get('expert') == $value['expert_id'] ? 'selected=""' : '' ?>>
+                                    <?= $value['expert_name'] ?>
+                                 </option>
+                              <? endforeach; ?>
+                           <? endif; ?>
+                        </select>
+                        <span><i class="fal fa-angle-down"></i></span>
+                     </div>
+                  </div>
+                  <div class="sapce"><br><br><br></div>
+                  <div class="cate-wrap">
+                     <h4>Select by Category</h4>
+                     <div class="cate-box">
+                        <h5>All Categories</h5>
+                        <ul>
+                           <? if (isset($main_categories) and array_filled($main_categories)) : ?>
+                              <? foreach ($main_categories as $key => $value) : ?>
+                                 <?
+                                 $a = $value['category_id'];
 
-                                            <h4>Select by Expert</h4>
-                                            <div class="fld-select">
-                                                <select id='forum_category'>
-                                                    <option>All Experts</option>
-                                                    <? if (isset($ex) and array_filled($ex)) : ?>
-                                                        <? foreach ($ex as $key => $value) : ?>
-                                                            <option value="<?= $value['expert_id'] ?>" <?= $this->input->get('expert') == $value['expert_id'] ? 'selected=""' : '' ?>>
-                                                                <?= $value['expert_name'] ?>
-                                                            </option>
-                                                        <? endforeach; ?>
-                                                    <? endif; ?>
-                                                </select>
-                                                <span><i class="fal fa-angle-down"></i></span>
-                                            </div>
-                                        </div>
-                                        <div class="sapce"><br><br><br></div>
-
-                                        <div class="cate-wrap">
-                                            <h4>Select by Category</h4>
-
-                                            <div class="cate-box">
-                                                <h5>All Categories</h5>
-
-                                                <ul>
-                                                    <? if (isset($main_categories) and array_filled($main_categories)) : ?>
-                                                        <? foreach ($main_categories as $key => $value) : ?>
-                                                            <?
-                                                            $a = $value['category_id'];
-                                                            ?>
-                                                            <!-- (<? // = $value['tutorials'] 
-                                                                    ?>) -->
-                                                            <li><a href="<?= l('account/profile/expert') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?> (<?= $value['tutorials'] ?>)</a> </li>
-                                                        <? endforeach; ?>
-                                                    <? endif; ?>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                 ?>
+                                 <!-- ( <? //= $value['tutorials'] 
+                                          ?> ) -->
+                                 <li><a href="<?= l('account/profile/expert') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?> ( <?= $value['tutorials'] ?> )</a> </li>
+                              <? endforeach; ?>
+                           <? endif; ?>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
                                 </div>
 
                                 <div class="col-md-8">
@@ -176,8 +173,8 @@
                                                                     </a>
 
                                                                     <div class="vid-content">
-                                                                        <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
-                                                                        <div class="row align-items-center pt-60 ">
+                                                                        <h4><a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+                                                                        <div class="row align-items-center pt-60">
                                                                             <div class="col-md-12">
                                                                                 <ul class="login-btn pb-10">
                                                                                     <li><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $value['expert_image'] ?>"></span> <?= $value['expert_name'] ?> </a></li>
@@ -205,9 +202,13 @@
                                                         <?php endforeach; ?>
                                                     <?php endif ?>
                                                 </ul>
+
+  
+
+
                                             <? } ?>
 
-                                            <? if (empty(isset($_GET['cat']) || isset($_GET['expert']))) { ?>
+                                            <? if (empty(isset($_GET['cat']) || isset($_GET['expert']) || isset($_GET['search']))) { ?>
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="text-center">
@@ -221,10 +222,8 @@
                                                 </div>
 
                                             <? } ?>
-                                            <!-- <div class="space"><br><br></div>
-                     <a href="#" class="btn-links">See more Experts Tutorials</a>
-                     
-                     </div> -->
+
+
                                         </div>
                                     </div>
                                 </div>

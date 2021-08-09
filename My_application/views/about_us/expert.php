@@ -241,7 +241,7 @@
                         </ul>
                      <? } ?>
 
-                     <? if (empty(isset($_GET['cat']) || isset($_GET['expert']))) { ?>
+                     <? if (empty(isset($_GET['cat']) || isset($_GET['expert']) || isset($_GET['search']) )) { ?>
                         <div class="row">
                            <div class="col-md-12">
                               <div class="text-center">
@@ -315,22 +315,11 @@
                            <div class="consult-left-content">
                               <?= html_entity_decode($con2['cms_page_content']) ?>
                            </div>
+                           <a href="<?=l('booking')?>" class="btn-theme" style="margin-top: 60px;padding: 22px;">Start Consulting <span style="top: 194.7px; left: 165.303px;"></span></a>
+                      
                         </li>
-                        <!-- <li>
-                           <div class="consult-left-content">
-                              <?= html_entity_decode($con3['cms_page_content']) ?>
-                           </div>
-                        </li>
-                        <li>
-                           <div class="consult-left-content">
-                              <?= html_entity_decode($con4['cms_page_content']) ?>
-                           </div>
-                        </li>
-                        <li>
-                           <div class="consult-left-content">
-                              <?= html_entity_decode($con5['cms_page_content']) ?>
-                           </div>
-                        </li> -->
+
+          
                      </ul>
                   </div>
                </div>

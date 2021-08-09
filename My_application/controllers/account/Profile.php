@@ -528,10 +528,7 @@ class Profile extends MY_Controller_Account
             $all[] = $value['cp_course_id'];
         }
 
-		$params = array();
-		$params['limit']=3;
-		$params['where_in']['tutorial_id'] = $all;
-		$data['tut'] = $this->model_tutorial->find_all_active($params);
+
 
 
         $param['order'] = "tutorial_id ASC";
@@ -560,7 +557,10 @@ class Profile extends MY_Controller_Account
         $param['where']['category_featured'] = 1;
         $data['category'] = $this->model_category->find_all_active($param);
 
-
+		$params = array();
+		$params['limit']=3;
+		$params['where_in']['tutorial_id'] = $all;
+		$data['tut'] = $this->model_tutorial->find_all_active($params);
 
 		$exp1 = $this->model_cms_page->get_page(26);
 
@@ -1662,17 +1662,17 @@ class Profile extends MY_Controller_Account
       
         // $pagination["base_url"] = g('base_url')."shop-category/".$method_name."/page/";
 
-        $pagination["base_url"] = g('base_url') . "about_us/expert/";
+        $pagination["base_url"] = g('base_url') . "account/profile/expert/";
 
         $pagination["total_rows"] = $model_obj->get_pagination_total_count();
         $pagination["per_page"] = (ENVIRONMENT == 'development') ? $per_page : $per_page;
         $pagination['use_page_numbers']  = TRUE;
-        $pagination["uri_segment"] = 3;
+        $pagination["uri_segment"] = 4;
         $pagination["suffix"] = $suffix;
         $pagination['last_tag_open'] = '';
         $this->mypagination->initialize($pagination);
 
-        $page = ($this->uri->segment(3))? $this->uri->segment(3) : 0;
+        $page = ($this->uri->segment(4))? $this->uri->segment(4) : 0;
 
         // $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"]);
            $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"],$paginate_param);
