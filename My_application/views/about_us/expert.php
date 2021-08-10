@@ -88,6 +88,19 @@
     padding: 6px 12px;
 }
 
+.my h1:after {
+    content: "";
+    height: 12px;
+    display: block;
+    width: 12px;
+    border: 3px solid #356da2;
+    background: #1d90d9;
+    position: absolute;
+    bottom: -14px;
+    border-radius: 100px;
+    right: -4px;
+}
+
 </style>
 
 <div class="mainBanner home-banner para" style="background-image:url('<?= g('db.admin.bucketimg') . "cms_image/" . $con1['cms_page_image'] ?>');">
