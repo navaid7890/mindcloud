@@ -13,7 +13,7 @@ $logo=$this->model_logo->find_all_active();
 
 				<a href="#top" class="b-top"><i class="fas fa-arrow-circle-up"></i></a>
 
-				<a href="./" class="footer-logo"><img src="<?=get_image($logo[0]['logo_footer_image'],$logo[0]['logo_image_path'])?>" alt=""></a>
+				<a href="./" class="footer-logo"><img src="<?=i('')?>test2.png" alt=""></a>
 				<div class="space"><br><br><br></div>
 
 				<div class="row">
