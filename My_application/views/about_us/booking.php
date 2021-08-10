@@ -745,6 +745,8 @@ return false;
       $('.resultMain').show();
     $('.finalResult').hide();
     $('.selectAreaBoxInner').show();
+    $('.expertTopic ul li:nth-child(4)').hide();
+    $('.expertTopic ul li:nth-child(3)').show();
  });
 
 //  $('.selectTimeSlot li').on('click', function(){
