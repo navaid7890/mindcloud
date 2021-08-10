@@ -42,65 +42,36 @@
       display: inline-block;
    }
 
-   .pagination {
-      display: table;
-      margin: 20px auto;
-   }
-
-   .pagination {
-      display: inline-block;
-      padding-left: 0;
-      margin: 20px 0;
-      border-radius: 4px;
-   }
-
-   .pagination>li {
-      display: inline;
-   }
-
-   .pagination>.active>a,
-   .pagination>.active>a:focus,
-   .pagination>.active>a:hover,
-   .pagination>.active>span,
-   .pagination>.active>span:focus,
-   .pagination>.active>span:hover {
-      z-index: 3;
+   ul.paginationMC>li.active a {
+      background: #fdbe41;
       color: #fff;
-      cursor: default;
-      background-color: #FDBE41;
-      border-color: #FDBE41;
    }
 
-   .pagination>li>a,
-   .pagination>li>span {
-      position: relative;
-      float: left;
-      padding: 6px 12px;
-      margin-left: -1px;
-      line-height: 1.42857143;
-      color: #FDBE41;
-      text-decoration: none;
-      background-color: #fff;
-      border: 1px solid #ddd;
+   ul.paginationMC>li>a {
+      padding: 15px;
+      background: #fff;
+      border-radius: 5px;
+      color: #000;
    }
 
-   .pagination li.first a {
-    padding: 6px 12px;
-}
-
-.my h1:after {
-    content: "";
-    height: 12px;
-    display: block;
-    width: 12px;
-    border: 3px solid #356da2;
-    background: #1d90d9;
-    position: absolute;
-    bottom: -14px;
-    border-radius: 100px;
-    right: -4px;
-}
-
+   ul.paginationMC>li {
+      display: inline-block;
+      margin-right: 15px;
+   }
+   ul.paginationMC li.first{display: none;}
+   ul.paginationMC li.first.active{display: inline-block;}
+   .my h1:after {
+      content: "";
+      height: 12px;
+      display: block;
+      width: 12px;
+      border: 3px solid #356da2;
+      background: #1d90d9;
+      position: absolute;
+      bottom: -14px;
+      border-radius: 100px;
+      right: -4px;
+   }
 </style>
 
 <div class="mainBanner home-banner para" style="background-image:url('<?= g('db.admin.bucketimg') . "cms_image/" . $con1['cms_page_image'] ?>');">
@@ -118,7 +89,7 @@
                      <?= html_entity_decode($cont2['cms_page_content']) ?>
                      <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/HOW_IT_WORKS_COMPLETE.mp4" class="btn-links" data-fancybox="media" style="color: #fff;margin-top: 10px;float: right;"><i class="fas fa-play-circle"></i> watch how it works</a>
                   </div>
-                  
+
                </div>
                <div class="space"><br><br></div>
 
@@ -255,12 +226,12 @@
                         </ul>
                      <? } ?>
 
-                     <? if (empty(isset($_GET['cat']) || isset($_GET['expert']) || isset($_GET['search']) )) { ?>
+                     <? if (empty(isset($_GET['cat']) || isset($_GET['expert']) || isset($_GET['search']))) { ?>
                         <div class="row">
                            <div class="col-md-12">
                               <div class="text-center">
-                                 <nav aria-label="Page navigation example"><br>
-                                    <ul class="pagination">
+                                 <nav>
+                                    <ul class="paginationMC">
                                        <?= $links ?>
                                     </ul>
                                  </nav>
@@ -329,11 +300,11 @@
                            <div class="consult-left-content">
                               <?= html_entity_decode($con2['cms_page_content']) ?>
                            </div>
-                           <a href="<?=l('booking')?>" class="btn-theme" style="margin-top: 60px;padding: 22px;">Start Consulting <span style="top: 194.7px; left: 165.303px;"></span></a>
-                      
+                           <a href="<?= l('booking') ?>" class="btn-theme" style="margin-top: 60px;padding: 22px;">Start Consulting <span style="top: 194.7px; left: 165.303px;"></span></a>
+
                         </li>
 
-          
+
                      </ul>
                   </div>
                </div>
@@ -345,7 +316,7 @@
                      <? if (isset($main_categories) and array_filled($main_categories)) : ?>
                         <? foreach ($main_categories as $key => $value) : ?>
                            <li>
-                              <a href="<?=l('booking')?>">
+                              <a href="<?= l('booking') ?>">
                                  <p><span><img src="<?= i('') ?>icons/category/1.svg"></span> <?= $value['category_name'] ?> </p>
                               </a>
                            </li>

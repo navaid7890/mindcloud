@@ -18,48 +18,42 @@
         height: 53px !important;
     }
 
-
-
-    .pagination {
-        display: table;
-        margin: 20px auto;
-    }
-
-    .pagination {
-        display: inline-block;
-        padding-left: 0;
-        margin: 20px 0;
-        border-radius: 4px;
-    }
-
-    .pagination>li {
-        display: inline;
-    }
-
-    .pagination>.active>a,
-    .pagination>.active>a:focus,
-    .pagination>.active>a:hover,
-    .pagination>.active>span,
-    .pagination>.active>span:focus,
-    .pagination>.active>span:hover {
-        z-index: 3;
+    ul.paginationMC>li.active a {
+        background: #fdbe41;
         color: #fff;
-        cursor: default;
-        background-color: #FDBE41;
-        border-color: #FDBE41;
     }
 
-    .pagination>li>a,
-    .pagination>li>span {
-        position: relative;
-        float: left;
-        padding: 6px 12px;
-        margin-left: -1px;
-        line-height: 1.42857143;
-        color: #FDBE41;
-        text-decoration: none;
-        background-color: #fff;
-        border: 1px solid #ddd;
+    ul.paginationMC>li>a {
+        padding: 15px;
+        background: #fff;
+        border-radius: 5px;
+        color: #000;
+    }
+
+    ul.paginationMC>li {
+        display: inline-block;
+        margin-right: 15px;
+    }
+
+    ul.paginationMC li.first {
+        display: none;
+    }
+
+    ul.paginationMC li.first.active {
+        display: inline-block;
+    }
+
+    .my h1:after {
+        content: "";
+        height: 12px;
+        display: block;
+        width: 12px;
+        border: 3px solid #356da2;
+        background: #1d90d9;
+        position: absolute;
+        bottom: -14px;
+        border-radius: 100px;
+        right: -4px;
     }
 
     .pb-10 {
@@ -84,55 +78,55 @@
                         <div class="experttut-Sec">
                             <div class="row">
                                 <div class="col-md-4">
-                                <div class="side-bar sticky-top">
-                  <div class="searchBox">
-                     <h4>What do you want to learn?</h4>
+                                    <div class="side-bar sticky-top">
+                                        <div class="searchBox">
+                                            <h4>What do you want to learn?</h4>
 
-                     <form action="" method="GET">
-                        <div class="fld-search">
-                           <input type="text" name="search" placeholder="Search by Keyword">
-                           <button type="submit"><i class="fal fa-search"></i></button>
-                        </div>
-                     </form>
-                  </div>
-                  <div class="space"><br><br><br></div>
-                  <div class="select-cate">
-                     <h4>Select by Expert </h4>
-                     <div class="fld-select">
-                        <select id='forum_category'>
-                           <option>All Experts</option>
-                           <? if (isset($ex) and array_filled($ex)) : ?>
-                              <? foreach ($ex as $key => $value) : ?>
-                                 <option value="<?= $value['expert_id'] ?>" <?= $this->input->get('expert') == $value['expert_id'] ? 'selected=""' : '' ?>>
-                                    <?= $value['expert_name'] ?>
-                                 </option>
-                              <? endforeach; ?>
-                           <? endif; ?>
-                        </select>
-                        <span><i class="fal fa-angle-down"></i></span>
-                     </div>
-                  </div>
-                  <div class="sapce"><br><br><br></div>
-                  <div class="cate-wrap">
-                     <h4>Select by Category</h4>
-                     <div class="cate-box">
-                        <h5>All Categories</h5>
-                        <ul>
-                           <? if (isset($main_categories) and array_filled($main_categories)) : ?>
-                              <? foreach ($main_categories as $key => $value) : ?>
-                                 <?
-                                 $a = $value['category_id'];
+                                            <form action="" method="GET">
+                                                <div class="fld-search">
+                                                    <input type="text" name="search" placeholder="Search by Keyword">
+                                                    <button type="submit"><i class="fal fa-search"></i></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="space"><br><br><br></div>
+                                        <div class="select-cate">
+                                            <h4>Select by Expert </h4>
+                                            <div class="fld-select">
+                                                <select id='forum_category'>
+                                                    <option>All Experts</option>
+                                                    <? if (isset($ex) and array_filled($ex)) : ?>
+                                                        <? foreach ($ex as $key => $value) : ?>
+                                                            <option value="<?= $value['expert_id'] ?>" <?= $this->input->get('expert') == $value['expert_id'] ? 'selected=""' : '' ?>>
+                                                                <?= $value['expert_name'] ?>
+                                                            </option>
+                                                        <? endforeach; ?>
+                                                    <? endif; ?>
+                                                </select>
+                                                <span><i class="fal fa-angle-down"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="sapce"><br><br><br></div>
+                                        <div class="cate-wrap">
+                                            <h4>Select by Category</h4>
+                                            <div class="cate-box">
+                                                <h5>All Categories</h5>
+                                                <ul>
+                                                    <? if (isset($main_categories) and array_filled($main_categories)) : ?>
+                                                        <? foreach ($main_categories as $key => $value) : ?>
+                                                            <?
+                                                            $a = $value['category_id'];
 
-                                 ?>
-                                 <!-- ( <? //= $value['tutorials'] 
-                                          ?> ) -->
-                                 <li><a href="<?= l('account/profile/expert') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?> ( <?= $value['tutorials'] ?> )</a> </li>
-                              <? endforeach; ?>
-                           <? endif; ?>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
+                                                            ?>
+                                                            <!-- ( <? //= $value['tutorials'] 
+                                                                    ?> ) -->
+                                                            <li><a href="<?= l('account/profile/expert') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?> ( <?= $value['tutorials'] ?> )</a> </li>
+                                                        <? endforeach; ?>
+                                                    <? endif; ?>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="col-md-8">
@@ -203,7 +197,7 @@
                                                     <?php endif ?>
                                                 </ul>
 
-  
+
 
 
                                             <? } ?>
@@ -212,8 +206,8 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="text-center">
-                                                            <nav aria-label="Page navigation example"><br>
-                                                                <ul class="pagination">
+                                                            <nav><br/><br/>
+                                                                <ul class="paginationMC">
                                                                     <?= $links ?>
                                                                 </ul>
                                                             </nav>
