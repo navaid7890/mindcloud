@@ -99,7 +99,7 @@
             <div class="readySec para hding-1 n">
 
               <div class="redyContent text-center">
-                <h1><?= html_entity_decode($con1['cms_page_title']) ?></h1>
+                <?= html_entity_decode($con1['cms_page_title']) ?>
                 <?= html_entity_decode($con1['cms_page_content']) ?>
 
 
@@ -115,8 +115,6 @@
 
               <div class="redyContent text-center">
                 <h1>Contact Us</h1>
-
-
               </div>
 
             </div>
