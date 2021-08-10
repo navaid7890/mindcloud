@@ -1,19 +1,20 @@
-
 <style>
-   
    .joinSec {
-   background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(<?= g('db.admin.bucketimg') . "cms_image/" . $cont15['cms_page_image'] ?>);
+      background-image: linear-gradient(to left, rgba(8, 74, 147, 0.8), rgba(8, 74, 147, 0.8)), url(<?= g('db.admin.bucketimg') . "cms_image/" . $cont15['cms_page_image'] ?>);
    }
-   .home-banner{
-   background-image:url('<?= g('db.admin.bucketimg') . "cms_image/" . $banner['inner_banner_image'] ?>');
+
+   .home-banner {
+      background-image: url('<?= g('db.admin.bucketimg') . "cms_image/" . $banner['inner_banner_image'] ?>');
    }
+
    .readySec strong {
-    font-weight: 700;
-}
-.whyHead strong,
-.expertSec strong {
-    font-weight: 700;
-}
+      font-weight: 700;
+   }
+
+   .whyHead strong,
+   .expertSec strong {
+      font-weight: 700;
+   }
 </style>
 
 
@@ -24,7 +25,7 @@
             <div>
                <h1><?= html_entity_decode($banner['inner_banner_title']) ?></h1>
                <div class="space"><br><br></div>
-               <?= html_entity_decode($banner['inner_banner_content']) ?>  
+               <?= html_entity_decode($banner['inner_banner_content']) ?>
                <div class="space"><br><br></div>
                <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/HOW_IT_WORKS_COMPLETE.mp4" class="btn-links" data-fancybox="media"><i class="fas fa-play-circle"></i> watch how it works</a>
             </div>
@@ -43,16 +44,16 @@
                         <p>Gain <strong> 7-day free </strong> limited access to Learning Journey and Experts Tutorials.</p>
                      </div>
                      <div class="space"><br></div>
-               
-<?if ($this->userid > 0) {
-$usdata = $this->layout_data['user_data'];
-}?>
- <? if($usdata['user_paid']==0){?>
-                     <div class="fld-btn">
-                        <input type="submit" id="forms-newsletter-btn" value="Proceed to Free Trial">
-                     </div>
-                 
-    <? }?>
+
+                     <? if ($this->userid > 0) {
+                        $usdata = $this->layout_data['user_data'];
+                     } ?>
+                     <? if ($usdata['user_paid'] == 0) { ?>
+                        <div class="fld-btn">
+                           <input type="submit" id="forms-newsletter-btn" value="Proceed to Free Trial">
+                        </div>
+
+                     <? } ?>
 
                   </form>
                </div>
@@ -68,27 +69,27 @@ $usdata = $this->layout_data['user_data'];
             <div class="iconBox">
                <span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont1['cms_page_image'] ?>"></span>
                <div class="space"><br></div>
-               <h3 class="home-h3"><?=html_entity_decode($cont1['cms_page_title'])?></h3>
+               <h3 class="home-h3"><?= html_entity_decode($cont1['cms_page_title']) ?></h3>
                <div class="space"><br></div>
-               <?=html_entity_decode($cont1['cms_page_content'])?> 
+               <?= html_entity_decode($cont1['cms_page_content']) ?>
             </div>
          </div>
          <div class="col-md-4">
             <div class="iconBox">
                <span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont2['cms_page_image'] ?>"></span>
                <div class="space"><br></div>
-               <h3 class="home-h3"><?=html_entity_decode($cont2['cms_page_title'])?></h3>
+               <h3 class="home-h3"><?= html_entity_decode($cont2['cms_page_title']) ?></h3>
                <div class="space"><br></div>
-               <?=html_entity_decode($cont2['cms_page_content'])?> 
+               <?= html_entity_decode($cont2['cms_page_content']) ?>
             </div>
          </div>
          <div class="col-md-4">
             <div class="iconBox">
                <span><img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont3['cms_page_image'] ?>"></span>
                <div class="space"><br></div>
-               <h3 class="home-h3"><?=html_entity_decode($cont3['cms_page_title'])?></h3>
+               <h3 class="home-h3"><?= html_entity_decode($cont3['cms_page_title']) ?></h3>
                <div class="space"><br></div>
-               <?=html_entity_decode($cont3['cms_page_content'])?> 
+               <?= html_entity_decode($cont3['cms_page_content']) ?>
             </div>
          </div>
       </div>
@@ -98,8 +99,8 @@ $usdata = $this->layout_data['user_data'];
 <section class="readySec para hding-1">
    <div class="container">
       <div class="redyContent text-center">
-         <h1><?=html_entity_decode($cont4['cms_page_title'])?></h1>
-         <?=html_entity_decode($cont4['cms_page_content'])?>
+         <h1><?= html_entity_decode($cont4['cms_page_title']) ?></h1>
+         <?= html_entity_decode($cont4['cms_page_content']) ?>
          <div class="space"><br><br></div>
          <a href="<?= l('about-us') ?>" class="btn-theme btn-hover">About Mind Cloud Tribe <span></span></a>
       </div>
@@ -109,42 +110,43 @@ $usdata = $this->layout_data['user_data'];
    <div class="container">
       <div class="expertSec hding-1 para">
          <div class="expertHead">
-            <h1><?=html_entity_decode($cont5['cms_page_title'])?></strong></h1>
+            <h1><?= html_entity_decode($cont5['cms_page_title']) ?></strong></h1>
          </div>
          <div class="space"><br><br></div>
          <div class="row">
             <div class="col-md-6">
-               <?=html_entity_decode($cont5['cms_page_content'])?>
+               <?= html_entity_decode($cont5['cms_page_content']) ?>
             </div>
             <div class="col-md-6">
-               <?=html_entity_decode($cont6['cms_page_content'])?>
+               <?= html_entity_decode($cont6['cms_page_content']) ?>
             </div>
          </div>
       </div>
-      <? $this->load->view('widgets/_most_watched_tutorials'); ?> 
-      <? $this->load->view('widgets/_most_popular_categories'); ?> 
+      <? $this->load->view('widgets/_most_watched_tutorials'); ?>
+      <? $this->load->view('widgets/_most_popular_categories'); ?>
    </div>
 </section>
-<? $this->load->view('widgets/_learning_journey'); ?> 
+<? $this->load->view('widgets/_learning_journey'); ?>
 <? $this->load->view('widgets/_learning_journey_content'); ?>
-<? $this->load->view('widgets/_who_is_it_for'); ?> 
+<? $this->load->view('widgets/_who_is_it_for'); ?>
 
 <section class="whyjoinSec hding-1 para">
    <div class="container">
       <div class="whyHead">
-         <h1><?=html_entity_decode($cont13['cms_page_title'])?></h1>
+         <h1><?= html_entity_decode($cont13['cms_page_title']) ?></h1>
       </div>
       <div class="space"><br><br></div>
       <div class="row">
          <div class="col-md-6">
-            <?=html_entity_decode($cont13['cms_page_content'])?>
+            <?= html_entity_decode($cont13['cms_page_content']) ?>
          </div>
          <div class="col-md-6">
-            <?=html_entity_decode($cont14['cms_page_content'])?>
+            <?= html_entity_decode($cont14['cms_page_content']) ?>
          </div>
       </div>
       <div class="space"><br><br><br><br></div>
-      <?//= g('db.admin.bucket') . $cont13['tutorial_video'] ?>
+      <? //= g('db.admin.bucket') . $cont13['tutorial_video'] 
+      ?>
       <a href="<?= g('db.admin.bucket') . $cont13['tutorial_video'] ?>" data-fancybox="media">
          <div class="video-box">
             <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont13['cms_page_image'] ?>" />
