@@ -94,7 +94,6 @@
 <section class="InnerBanner hding-1 para">
   <div class="container">
     <div class="bannerContent" style="text-align: center;">
-      <h1></h1>
       <h1><span style="font-size: 79px;text-align: center;font-weight: 700;">Become An Expert</span></h1>
       <div class="space"><br><br></div>
     </div>
