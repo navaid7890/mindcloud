@@ -16,6 +16,7 @@ Settings::loadConfig();
 class Profile extends MY_Controller_Account
 {
 
+	
 	/**
 	 * Profile Controller. - The deafult controller
 	 *
