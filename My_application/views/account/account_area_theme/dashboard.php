@@ -1,3 +1,4 @@
+
 <style>
     .progres-dark {
         width: 10%;
@@ -636,10 +637,13 @@
         </ul>
     </section>
 </div>
-
-
+<iframe src="<?= l('account/profile/learning') ?>" style="display: none;" ></iframe>
 <script>
     $(document).ready(function() {
+
+        setTimeout(load_data,2000)
+        function load_data(){
+            
         // Learing Journey Percentage
         $("#LearingJourney .progres-dark").css("width", "100%");
         $("#LearingJourney .progres-percentage span").text("100%");
@@ -698,6 +702,7 @@
         $("#circlePercent .prec").html(ExptotalPerc);
 
         console.log("all sum", ExptotalPerc);
+        }
 
     });
 </script>
