@@ -68,7 +68,7 @@ class Model_tutorial extends MY_Model
     public function get_experts_by_category($cat_id){
 
         $this->db->select('expert.*,course_category.*,category.category_name');
-		$this->db->from('tutorial');
+		$this->db->from('course_category');
 		$this->db->join('tutorial', 'tutorial.tutorial_id = course_category.cp_course_id');
 		$this->db->join('category', 'category.category_id = course_category.cp_category_id');
 		$this->db->join('expert', 'tutorial.tutorial_expert_id = expert.expert_id');
