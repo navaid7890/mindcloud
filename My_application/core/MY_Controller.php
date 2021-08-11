@@ -539,7 +539,8 @@ class MY_Controller extends MY_Controller_Admin
 
     public function book($data){
        
-       // $config['mailtype'] = 'html';    
+       // $config['mailtype'] = 'html';   
+        
         $this->load->library('email'); 
 
         $config['mailtype'] = 'html';
