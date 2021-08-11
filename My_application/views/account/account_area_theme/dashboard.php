@@ -637,11 +637,11 @@
         </ul>
     </section>
 </div>
-<iframe src="<?= l('account/profile/learning') ?>" style="display: none;" ></iframe>
+<iframe src="<?= l('account/profile/learning') ?>" style="display: none;" onload="load_data()" ></iframe>
 <script>
-    $(document).ready(function() {
+    // $(document).ready(function() {
 
-        setTimeout(load_data,2000)
+        // setTimeout(load_data,2000)
         function load_data(){
             
         // Learing Journey Percentage
@@ -704,5 +704,5 @@
         console.log("all sum", ExptotalPerc);
         }
 
-    });
+    // });
 </script>
