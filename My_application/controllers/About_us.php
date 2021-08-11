@@ -1135,16 +1135,17 @@ class About_us extends MY_Controller
         $config['mailtype']  = 'html';
         $config['newline']   = "\r"; 
 
-            $message = '';
+            $message = 'Dear Expert,<br> <br>
+            We have received a booking in your website, detail is given below:<br><br>';
             $this->load->library('email', $config);
           $this->email->set_newline("\r\n");
           $this->email->from('m.fazal@manageglobally.io'); // change it to yours
           $this->email->to('navaid@manageglobally.io');// change it to yours
           $this->email->subject('sending from live now for your Job posting');
-          $this->email->message($message);
+          $this->email->message($this->load->view('_layout/email_template/default_template', $message , true));
           if($this->email->send())
          {
-            echo $this->email->print_debugger();
+            echo "Email Sent";
          }
          else
         {

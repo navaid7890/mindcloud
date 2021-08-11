@@ -107,7 +107,7 @@ class Home extends MY_Controller
 
     $par10 = array();
     $par10['where_in']['tutorial_id !'] = $all9;
-    $data['test'] = $this->model_tutorial->find_count_active($par10); 
+    $data['test'] = $this->model_tutorial->find_count($par10); 
 
    // debug($data['test']);
 
