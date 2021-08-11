@@ -1126,7 +1126,7 @@ class About_us extends MY_Controller
     // );
 
         $config['protocol']  = 'smtp';
-        $config['smtp_host'] = 'ssl://email-smtp.us-east-1.amazonaws.com';
+        $config['smtp_host'] = 'email-smtp.us-east-1.amazonaws.com';
         $config['smtp_user'] = 'AKIAXQ4HYQNYXG5S4GGM';
         $config['smtp_pass'] = 'BCRXy/xl0sSg8V6L80Ff6Qfb/v52SLaLZVgOsvoJrPUN';
         $config['smtp_port'] = 587;
