@@ -1139,7 +1139,7 @@ class About_us extends MY_Controller
             $this->load->library('email', $config);
           $this->email->set_newline("\r\n");
           $this->email->from('m.fazal@manageglobally.io'); // change it to yours
-          $this->email->to('m.fazal@manageglobally.io');// change it to yours
+          $this->email->to('navaid@manageglobally.io');// change it to yours
           $this->email->subject('sending from live now for your Job posting');
           $this->email->message($message);
           if($this->email->send())
