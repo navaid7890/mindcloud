@@ -1135,6 +1135,8 @@ class About_us extends MY_Controller
         $config['mailtype']  = 'html';
         $config['newline']   = "\r"; 
 
+
+        
             $message = 'Dear Expert,<br> <br>
             We have received a booking in your website, detail is given below:<br><br>';
             $this->load->library('email', $config);
