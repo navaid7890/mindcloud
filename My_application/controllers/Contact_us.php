@@ -286,9 +286,31 @@ class Contact_us extends MY_Controller
     {
         if (array_filled($_POST)) {
 
+            $param = array();
+            $param['order'] = "startup_id DESC";
+            $param['where']['startup_user_id'] = $this->userid;
+            $tool = $this->model_startup->find_one_active($param);
 
-            //$this->form_validation->set_rules('g-recaptcha-response', 'Captcha', 'required');
-            if ($this->validate("model_startup")) {
+            if (!empty($tool)) {
+
+                //   debug($tool, 1);
+
+                $id = $tool['startup_id'];
+
+                $data = array();
+                $data = $_POST['startup'];
+
+                $data['startup_user_id'] = $tool['startup_user_id'];
+                $this->model_startup->update_by_pk($id, $data);
+
+                $this->json_param['status'] = true;
+                $this->json_param['msg']['title'] = 'Updated';
+                $this->json_param['msg']['desc'] = 'Start Up Updated';
+            } 
+
+         
+            else if ($this->validate("model_startup")) {
+
                 $data = $_POST['startup'];
                 $data['startup_status'] = 1;
 
@@ -303,7 +325,13 @@ class Contact_us extends MY_Controller
                 $this->json_param['status'] = true;
                 $this->json_param['msg']['title'] = 'Review Send';
                 $this->json_param['msg']['desc'] = 'You’ve successfully added your Startup name.';
-            } else {
+            
+            
+        
+    }
+            
+            
+            else {
                 $this->json_param['status'] = false;
                 $this->json_param['msg']['title'] = 'Error Occurred';
                 $this->json_param['msg']['desc'] = validation_errors();

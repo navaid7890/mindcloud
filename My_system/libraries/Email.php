@@ -177,7 +177,7 @@ class CI_Email {
 	 * @link	http://www.ietf.org/rfc/rfc822.txt
 	 * @var	string	"\r\n" or "\n"
 	 */
-	public $newline		= "\n";			// Default newline. "\r\n" or "\n" (Use "\r\n" to comply with RFC 822)
+	public $newline		= "\r\n";			// Default newline. "\r\n" or "\n" (Use "\r\n" to comply with RFC 822)
 
 	/**
 	 * CRLF character sequence
@@ -2091,7 +2091,7 @@ class CI_Email {
 			 *
 			 * We want the negotiation, so we'll force it below ...
 			 */
-			$method = is_php('5.6')
+			$method = is_php('7.4')
 				? STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT | STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT | STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT
 				: STREAM_CRYPTO_METHOD_TLS_CLIENT;
 			$crypto = stream_socket_enable_crypto($this->_smtp_connect, TRUE, $method);

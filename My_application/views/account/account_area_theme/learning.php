@@ -101,6 +101,15 @@
                         </li>
                      </ul>
                   </div>
+                  <?
+
+$param = array();
+$param['order'] = "startup_id DESC";
+$param['where']['startup_user_id'] = $this->userid;
+$tool = $this->model_startup->find_one_active($param);
+//debug($tool);
+
+?>
                   <div class="tutorial-footer hding-4">
                      <div class="tutorial-footer-content">
                         <h4>What is the name of your Startup?</h4>
@@ -108,7 +117,7 @@
                         <form id="forms-content-statup">
                         <input type="hidden" name="startup[startup_user_id]" value="<?= $this->userid ?>">
                            <div class="fld-email">
-                              <input type="text" name="startup[startup_name]" placeholder="Write Startup name here" required="">
+                              <input type="text" name="startup[startup_name]" placeholder="Write Startup name here" required="" value="<?=$tool['startup_name']?>">
                            </div>
                            <div class="fld-btn">
                               <input type="submit" value="Confirm" id="forms-startup-btn">
