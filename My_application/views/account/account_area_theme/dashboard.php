@@ -111,7 +111,7 @@
                                             </div>
 
                                             <div class="progres-percentage">
-                                                <span>12%</span>
+                                                <span>0%</span>
                                             </div>
                                         </div>
                                         <div class="space"><br><br></div>
@@ -258,7 +258,7 @@
                                             <div class="space"><br><br></div>
                                             <div id="activeBorder2" class="active-border">
                                                 <div id="circle2" class="circle">
-                                                    <span class="prec">8.45</span>
+                                                    <span class="prec">0</span>
                                                     <span id="startDeg2" class="8"></span>
                                                 </div>
                                             </div>
@@ -865,6 +865,7 @@
 
 
         var ExpAllsum = 0;
+        // var ExptotalPerc = 0;
         $('#expertGraph .progres-percentage').each(function() {
             ExpAllsum += +$(this).text() || 0;
         });
@@ -882,5 +883,19 @@
 
     $(document).ready(function() {
         $(".allpercent").text(localStorage.getItem("learingPercent"));
+
+        var ExpAllsum = 0;
+        // var ExptotalPerc = 0;
+        $('#expertGraph .progres-percentage').each(function() {
+            ExpAllsum += +$(this).text() || 0;
+        });
+        var countTutorials = <?= count($art) ?> * 100;
+        var ExptotalPerc = Math.round((ExpAllsum / countTutorials) * 100);
+
+
+
+        $("#circlePercent .prec").html(ExptotalPerc);
+
+        console.log("all sum", ExptotalPerc);
     });
 </script>
