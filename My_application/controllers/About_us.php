@@ -1125,15 +1125,15 @@ class About_us extends MY_Controller
     //     'wordwrap' => TRUE
     // );
 
-        $config['protocol']  = 'smtp';
-        $config['smtp_host'] = 'ssl://email-smtp.us-east-1.amazonaws.com';
+        $config['protocol']  = 'mail';
+        $config['smtp_host'] = 'email-smtp.us-east-1.amazonaws.com';
         $config['smtp_user'] = 'AKIAXQ4HYQNYXG5S4GGM';
         $config['smtp_pass'] = 'BCRXy/xl0sSg8V6L80Ff6Qfb/v52SLaLZVgOsvoJrPUN';
         $config['smtp_port'] = 587;
         // $config['smtp_crypto'] = 'tls';
         $config['charset']   = 'utf-8';
         $config['mailtype']  = 'html';
-        $config['newline']   = "\r\n"; 
+        $config['newline']   = "\r"; 
 
             $message = '';
             $this->load->library('email', $config);
