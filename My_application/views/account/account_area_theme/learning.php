@@ -87,6 +87,18 @@
                               </div>
                            </a>
                         </li>
+                        <li style="display: none;">
+                           <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/Video_Fundraising_Entrepreneur_Intro_4.mp4" data-fancybox="media">
+                              <div class="tutorial-list-box">
+                                 <div class="tutorial-box-content">
+                                    <span><img src="<?= i('') ?>dashboard/home/icons/6.png"></span>
+                                    <div class="space"><br></div>
+                                    <h3>Growth</h3>
+                                    <p>Entrepreneur</p>
+                                 </div>
+                              </div>
+                           </a>
+                        </li>
                      </ul>
                   </div>
                   <div class="tutorial-footer hding-4">

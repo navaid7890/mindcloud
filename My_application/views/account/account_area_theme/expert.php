@@ -59,6 +59,10 @@
     .pb-10 {
         padding-bottom: 20px;
     }
+
+    ul.login-btn {
+        margin-bottom: 10px;
+    }
 </style>
 
 
@@ -206,7 +210,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="text-center">
-                                                            <nav><br/><br/>
+                                                            <nav><br /><br />
                                                                 <ul class="paginationMC">
                                                                     <?= $links ?>
                                                                 </ul>

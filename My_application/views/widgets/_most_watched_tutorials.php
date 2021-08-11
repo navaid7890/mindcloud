@@ -2,6 +2,7 @@
     .whoSec .login-btn li a {
         color: #000 !important;
     }
+    
 </style>
 <?php if (isset($tut) && array_filled($tut)) : ?>
 
@@ -80,9 +81,7 @@
                                     <? }
                                     } ?>
                                 </ul>
-                                <? if (!empty($rating[0]['starCount'])) { ?>
-                                    <div style="margin-left: 5px;">( <?= $rating[0]['starCount'] ?> )</div>
-                                <? } ?>
+                                
                             </div>
 
                             <div class="col-md-3 text-right">
