@@ -1144,7 +1144,7 @@ class About_us extends MY_Controller
           $this->email->message($message);
           if($this->email->send())
          {
-            $this->email->print_debugger();
+            echo $this->email->print_debugger();
          }
          else
         {

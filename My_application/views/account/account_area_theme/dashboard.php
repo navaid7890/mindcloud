@@ -705,4 +705,8 @@
         }
 
     // });
+
+    $(document).ready(function() {
+        $(".allpercent").text(localStorage.getItem("learingPercent"));
+    });
 </script>
