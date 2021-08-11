@@ -598,7 +598,7 @@
 
 
                                                             <div class="row align-items-center">
-                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $remainTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= $paidTut[0]['tutorial_name'] ?></a></h4>
+                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $remainTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= $remainTut[0]['tutorial_name'] ?></a></h4>
                                                                 <div class="col-md-10">
                                                                     <?
                                                                     $exp_name = array();
