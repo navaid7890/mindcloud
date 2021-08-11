@@ -786,11 +786,11 @@ ul.dashboard-layout {
     width: 16%;
 }
 
-.dashboard-links ul>li {
+.dashboard-links ul li {
     position: relative;
 }
 
-.dashboard-links ul>li>a {
+.dashboard-links ul li a {
     font-size: 16px;
     color: #fff;
     display: block;
@@ -801,11 +801,11 @@ ul.dashboard-layout {
     padding-right: 15px;
 }
 
-.dashboard-child-links ul>li>a>span {
+.dashboard-child-links ul li a span {
     left: 40px!important;
 }
 
-.dashboard-links ul>li>a>span {
+.dashboard-links ul li a span {
     vertical-align: middle;
     width: 22px;
     position: absolute;
@@ -816,11 +816,11 @@ ul.dashboard-layout {
     align-items: center;
     display: flex;
 }
-.dashboard-menu-box.open .dashboard-links ul>li>a {
+.dashboard-menu-box.open .dashboard-links ul li a {
     font-size: 14px;
 }
-.dashboard-links ul>li>a:hover,
-.dashboard-links ul>li.active>a {
+.dashboard-links ul li a:hover,
+.dashboard-links ul li.active a {
     background: #F4C150;
 }
 
@@ -831,9 +831,10 @@ ul.dashboard-layout>li {
     transition: 0.4s;
 }
 
-.dashboard-child-links ul>li>a {
+.dashboard-child-links ul li a {
     padding-left: 73px;
 }
+.dash-scroll{height:500px;}
 
 .progressBox h6 {
     width: 70px;
@@ -3443,7 +3444,7 @@ ul.dashboard-layout>li:nth-child(2) {
         width: 32%;
     }
     .tutorialSec a.cate-tag {
-        top: 42%;
+        /* top: 42%; */
     }
     .fld-search,
     .fld-select,
@@ -3516,14 +3517,14 @@ ul.dashboard-layout>li:nth-child(2) {
     .home-banner {
         background-position: bottom;
     }
-    .abt-tut-page .dashboard-links ul>li>a{font-size:0;}
-    .dashboard-links ul>li>a {
+    .abt-tut-page .dashboard-links ul li a{font-size:0;}
+    .dashboard-links ul li a {
         font-size: 0;
     }
-    .dashboard-child-links ul>li>a {
+    .dashboard-child-links ul li a {
         padding-left: 65px;
     }
-    .dashboard-child-links ul>li>a>span {
+    .dashboard-child-links ul li a span {
         left: 33px;
     }
     .course-list ul li a {

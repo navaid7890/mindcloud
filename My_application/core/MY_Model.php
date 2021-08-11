@@ -315,7 +315,7 @@ class MY_Model extends CI_Model
 			// ^Assuming there has to be a primary key - Assumptions... leads to hope , and hope leads to 500 ;)
 			// But developers have to assume since Maths is mother of all sciences
 		}
-		if (isset($params['return_count']) && $params['return_count'])
+		if (isset($params['return_count']) && $params['return_having'])
 			return array("count" => $find_all_rs['count'], "data" => $resultant);
 		else;
 		return $resultant;

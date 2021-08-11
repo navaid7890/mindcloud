@@ -634,6 +634,10 @@
     
     .video-box {
         position: relative;
+        min-height: 235px;
+    }
+    .video-box img {
+        min-height: 235px;
     }
     
     .video-box span {

@@ -68,7 +68,7 @@ class Model_tutorial extends MY_Model
     public function get_experts_by_category($cat_id){
 
         $this->db->select('expert.*,course_category.*,category.category_name');
-		$this->db->from('tutorial');
+		$this->db->from('course_category');
 		$this->db->join('tutorial', 'tutorial.tutorial_id = course_category.cp_course_id');
 		$this->db->join('category', 'category.category_id = course_category.cp_category_id');
 		$this->db->join('expert', 'tutorial.tutorial_expert_id = expert.expert_id');
@@ -108,6 +108,22 @@ class Model_tutorial extends MY_Model
 		return $query->result_array() ;
 
     }
+
+    public function test_query_1($id)
+    {
+      
+
+       $sql="SELECT tutorial_name, tutorial_id ,tutorial_slug ,tutorial_status,md_mytutorial.mytutorial_user_id FROM md_tutorial
+        LEFT JOIN md_mytutorial on md_tutorial.tutorial_id = md_mytutorial.mytutorial_tutorial_id and mytutorial_user_id =$id 
+        WHERE md_mytutorial.mytutorial_tutorial_id IS NULL and tutorial_status=1";   
+
+        $query = $this->db->query($sql);
+       
+       
+		return $query->result_array() ;
+
+    }
+    
 
     private function _pagination_filter($paginate_param = array())
     {

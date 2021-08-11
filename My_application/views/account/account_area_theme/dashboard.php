@@ -1,4 +1,3 @@
-
 <style>
     .progres-dark {
         width: 10%;
@@ -285,77 +284,78 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Your Experts Tutorials -->
-                            <div class="space"><br><br></div>
-                            <div class="tutorial-graph-box">
-                                <div class="certificate-box" id="yourExpertTutorial">
-                                    <div class="exper-head">
-                                        <h2>Your <strong>Experts Tutorials</strong></h2>
-                                    </div>
-                                    <div class="space"><br><br></div>
-                                    <ul class="courses-slide">
-                                        <?php if (isset($your_tut) && array_filled($your_tut)) : ?>
-                                            <?php foreach ($your_tut as $key => $value) : ?>
-                                                <li>
-                                                    <div class="vid-box">
-                                                        <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
-                                                            <div class="video-box">
-                                                                <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
-                                                                <span><i class="fas fa-play"></i>
-                                                                    <p>Preview Course</p>
-                                                                </span>
-                                                                <?
-                                                                $coursecat = array();
-                                                                $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
-                                                                $cate = $this->model_course_category->find_all_active($coursecat);
-
-                                                                $cat_name = array();
-                                                                $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
-                                                                $cat_name = $this->model_category->find_all_active($cat_name);
-                                                                ?>
-                                                                <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
-                                                            </div>
-                                                        </a>
-                                                        <div class="vid-content">
-
-
-                                                            <div class="row align-items-center">
-                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
-                                                                <div class="col-md-10">
+                            <?php if ($nextutshow[0]['user_paid'] == 0) : ?>
+                                <!-- Your Experts Tutorials -->
+                                <div class="space"><br><br></div>
+                                <div class="tutorial-graph-box">
+                                    <div class="certificate-box" id="yourExpertTutorial">
+                                        <div class="exper-head">
+                                            <h2>Your <strong>Experts Tutorials</strong></h2>
+                                        </div>
+                                        <div class="space"><br><br></div>
+                                        <ul class="courses-slide">
+                                            <?php if (isset($your_tut) && array_filled($your_tut)) : ?>
+                                                <?php foreach ($your_tut as $key => $value) : ?>
+                                                    <li>
+                                                        <div class="vid-box">
+                                                            <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
+                                                                <div class="video-box">
+                                                                    <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
+                                                                    <span><i class="fas fa-play"></i>
+                                                                        <p>Preview Course</p>
+                                                                    </span>
                                                                     <?
-                                                                    $exp_name = array();
-                                                                    $exp_name['where']['expert_id'] = $value['tutorial_expert_id'];
-                                                                    $exp_name = $this->model_expert->find_all_active($exp_name);
+                                                                    $coursecat = array();
+                                                                    $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
+                                                                    $cate = $this->model_course_category->find_all_active($coursecat);
 
-                                                                    // debug($exp_name);
-                                                                    // debug($exp_name['expert_image']);
+                                                                    $cat_name = array();
+                                                                    $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                                                    $cat_name = $this->model_category->find_all_active($cat_name);
                                                                     ?>
-                                                                    <ul class="login-btn">
-                                                                        <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
-                                                                    </ul>
+                                                                    <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
                                                                 </div>
-                                                                <div class="col-md-2">
-                                                                    <a href="#" class="arrow-links"><i class="far fa-arrow-right"></i></a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="space"><br></div>
-                                                            <div class="row align-items-center">
-                                                                <div class="col-md-12">
+                                                            </a>
+                                                            <div class="vid-content">
 
 
-                                                                    <ul class="rating">
+                                                                <div class="row align-items-center">
+                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+                                                                    <div class="col-md-10">
                                                                         <?
-                                                                        $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
+                                                                        $exp_name = array();
+                                                                        $exp_name['where']['expert_id'] = $value['tutorial_expert_id'];
+                                                                        $exp_name = $this->model_expert->find_all_active($exp_name);
+
+                                                                        // debug($exp_name);
+                                                                        // debug($exp_name['expert_image']);
                                                                         ?>
-                                                                        <?php
-                                                                        for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
-                                                                            "
-                                                                            <li><img src="<?= i('') ?>icons/rat-d.svg" loading="lazy"></li>
-                                                                            ";
-                                                                        <? } ?>
-                                                                    </ul>
+                                                                        <ul class="login-btn">
+                                                                            <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <a href="#" class="arrow-links"><i class="far fa-arrow-right"></i></a>
+                                                                    </div>
                                                                 </div>
-                                                                <!-- <div class="col-md-4">
+                                                                <div class="space"><br></div>
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-md-12">
+
+
+                                                                        <ul class="rating">
+                                                                            <?
+                                                                            $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
+                                                                            ?>
+                                                                            <?php
+                                                                            for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
+                                                                                "
+                                                                                <li><img src="<?= i('') ?>icons/rat-d.svg" loading="lazy"></li>
+                                                                                ";
+                                                                            <? } ?>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <!-- <div class="col-md-4">
                                                                 <div class="progres-box">
                                                                     <div id="activeBorder1" class="active-border">
                                                                         <div id="circle1" class="circle">
@@ -365,20 +365,20 @@
                                                                     </div>
                                                                 </div>
                                                             </div> -->
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </li>
-                                            <?php endforeach; ?>
-                                        <?php endif ?>
-                                    </ul>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            <?php endif ?>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="space"><br><br></div>
+                                <div class="space"><br><br></div>
 
-                            <!-- testing -->
-                            <?php if ($nextutshow[0]['user_paid'] == 0) : ?>
+                                <!-- testing -->
+
 
 
                                 <div class="tutorial-graph-box">
@@ -468,6 +468,180 @@
                                         </ul>
                                     </div>
                                 </div>
+                            <?php else : ?>
+                                <!-- my tutorials For paid user -->
+                                <div class="tutorial-graph-box">
+                                    <div class="certificate-box" id="yourExpertTutorial">
+                                    <h2>Your <strong>Experts Tutorials</strong></h2>
+                                        <?//= count($mytutorialpaid) 
+                                        ?>
+                                        <div class="space"><br><br></div>
+                                        <ul class="courses-slide">
+
+                                            <?php foreach ($mytutorialpaid as $key => $value) : ?>
+                                                <? //= debug($value['tutorial_id']) 
+                                                ?>
+
+                                                <?
+                                                $paidTutuorial = array();
+                                                $paidTutuorial['where']['tutorial_id'] = $value['tutorial_id'];
+                                                $paidTut = $this->model_tutorial->find_all_active($paidTutuorial);
+                                                ?>
+                                                <li>
+                                                    <div class="vid-box">
+                                                        <a href="<?= g('db.admin.bucket') . $paidTut[0]['tutorial_video'] ?>" data-fancybox="media">
+                                                            <div class="video-box">
+                                                                <img src="<?= g('db.admin.bucketimg') . $paidTut[0]['tutorial_image2'] ?>" loading="lazy">
+                                                                <span><i class="fas fa-play"></i>
+                                                                    <p>Preview Course</p>
+                                                                </span>
+                                                                <?
+                                                                $coursecat = array();
+                                                                $coursecat['where']['cp_course_id'] = $paidTut[0]['tutorial_id'];
+                                                                $cate = $this->model_course_category->find_all_active($coursecat);
+
+                                                                $cat_name = array();
+                                                                $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                                                $cat_name = $this->model_category->find_all_active($cat_name);
+                                                                ?>
+                                                                <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                                                            </div>
+                                                        </a>
+                                                        <div class="vid-content">
+
+
+                                                            <div class="row align-items-center">
+                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $paidTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= $paidTut[0]['tutorial_name'] ?></a></h4>
+                                                                <div class="col-md-10">
+                                                                    <?
+                                                                    $exp_name = array();
+                                                                    $exp_name['where']['expert_id'] = $paidTut[0]['tutorial_expert_id'];
+                                                                    $exp_name = $this->model_expert->find_all_active($exp_name);
+
+                                                                    // debug($exp_name);
+                                                                    // debug($exp_name['expert_image']);
+                                                                    ?>
+                                                                    <ul class="login-btn">
+                                                                        <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <a href="#" class="arrow-links"><i class="far fa-arrow-right"></i></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="space"><br></div>
+                                                            <div class="row align-items-center">
+                                                                <div class="col-md-12">
+
+
+                                                                    <ul class="rating">
+                                                                        <?
+                                                                        $rating = $this->model_learning_journey_course_review->get_avg_reating($paidTut[0]['tutorial_id']);
+                                                                        ?>
+                                                                        <?php
+                                                                        for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
+                                                                            "
+                                                                            <li><img src="<?= i('') ?>icons/rat-d.svg" loading="lazy"></li>
+                                                                            ";
+                                                                        <? } ?>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- my tutorials For paid user -->
+
+                                <!-- my tutorials remaining Next for paid user -->
+                                <div class="tutorial-graph-box">
+                                    <div class="certificate-box" id="yourExpertTutorial">
+                                    <h2>What To Learn Next In <strong>Experts Tutorials</strong></h2>
+                                        <?//= count($mytutorialremain) 
+                                        ?>
+                                        <div class="space"><br><br></div>
+                                        <ul class="courses-slide">
+
+                                            <?php foreach ($mytutorialremain as $key => $value) : ?>
+                                                <? //= debug($value['tutorial_id']) 
+                                                ?>
+
+                                                <?
+                                                $remainTutuorial = array();
+                                                $remainTutuorial['where']['tutorial_id'] = $value['tutorial_id'];
+                                                $remainTut = $this->model_tutorial->find_all_active($remainTutuorial);
+                                                ?>
+                                                <li>
+                                                    <div class="vid-box">
+                                                        <a href="<?= g('db.admin.bucket') . $remainTut[0]['tutorial_video'] ?>" data-fancybox="media">
+                                                            <div class="video-box">
+                                                                <img src="<?= g('db.admin.bucketimg') . $remainTut[0]['tutorial_image2'] ?>" loading="lazy">
+                                                                <span><i class="fas fa-play"></i>
+                                                                    <p>Preview Course</p>
+                                                                </span>
+                                                                <?
+                                                                $coursecat = array();
+                                                                $coursecat['where']['cp_course_id'] = $remainTut[0]['tutorial_id'];
+                                                                $cate = $this->model_course_category->find_all_active($coursecat);
+
+                                                                $cat_name = array();
+                                                                $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                                                $cat_name = $this->model_category->find_all_active($cat_name);
+                                                                ?>
+                                                                <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                                                            </div>
+                                                        </a>
+                                                        <div class="vid-content">
+
+
+                                                            <div class="row align-items-center">
+                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $remainTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= $paidTut[0]['tutorial_name'] ?></a></h4>
+                                                                <div class="col-md-10">
+                                                                    <?
+                                                                    $exp_name = array();
+                                                                    $exp_name['where']['expert_id'] = $remainTut[0]['tutorial_expert_id'];
+                                                                    $exp_name = $this->model_expert->find_all_active($exp_name);
+
+                                                                    // debug($exp_name);
+                                                                    // debug($exp_name['expert_image']);
+                                                                    ?>
+                                                                    <ul class="login-btn">
+                                                                        <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <a href="#" class="arrow-links"><i class="far fa-arrow-right"></i></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="space"><br></div>
+                                                            <div class="row align-items-center">
+                                                                <div class="col-md-12">
+
+
+                                                                    <ul class="rating">
+                                                                        <?
+                                                                        $rating = $this->model_learning_journey_course_review->get_avg_reating($remainTut[0]['tutorial_id']);
+                                                                        ?>
+                                                                        <?php
+                                                                        for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
+                                                                            "
+                                                                            <li><img src="<?= i('') ?>icons/rat-d.svg" loading="lazy"></li>
+                                                                            ";
+                                                                        <? } ?>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- my tutorials remaining Next for paid user -->
                             <?php endif ?>
                             <div class="space"><br><br><br></div>
                             <div class="LinkCustom">
@@ -637,13 +811,13 @@
         </ul>
     </section>
 </div>
-<iframe src="<?= l('account/profile/learning') ?>" style="display: none;" onload="load_data()" ></iframe>
+<iframe src="<?= l('account/profile/learning') ?>" style="display: none;" onload="load_data()"></iframe>
 <script>
     // $(document).ready(function() {
 
-        // setTimeout(load_data,2000)
-        function load_data(){
-            
+    // setTimeout(load_data,2000)
+    function load_data() {
+
         // Learing Journey Percentage
         $("#LearingJourney .progres-dark").css("width", "100%");
         $("#LearingJourney .progres-percentage span").text("100%");
@@ -702,7 +876,7 @@
         $("#circlePercent .prec").html(ExptotalPerc);
 
         console.log("all sum", ExptotalPerc);
-        }
+    }
 
     // });
 

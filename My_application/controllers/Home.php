@@ -97,19 +97,7 @@ class Home extends MY_Controller
     $data['main_categories'] = $categories;
 
 
-    $v = $this->model_tutorial->test_query(41);
-       
-		foreach ($v as $key => $value) {
-			$all9[] = $value['tutorial_id'];
-		}
 
-//    debug($all9);
-
-    $par10 = array();
-    $par10['where_in']['tutorial_id !'] = $all9;
-    $data['test'] = $this->model_tutorial->find_count_active($par10); 
-
-   // debug($data['test']);
 
 
 
