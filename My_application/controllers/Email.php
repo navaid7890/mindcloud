@@ -1,36 +1,56 @@
-<?php 
-   class Email extends CI_Controller { 
- 
-      function __construct() { 
-         parent::__construct(); 
-         $this->load->library('session'); 
-         $this->load->helper('form'); 
-      } 
-		
-      public function index() { 
-	
-         $this->load->helper('form'); 
-         $this->load->view('email_form'); 
-      } 
-  
-      public function send_mail() { 
-         $from_email = "your@example.com"; 
-         $to_email = $this->input->post('email'); 
-   
-         //Load email library 
-         $this->load->library('email'); 
-   
-         $this->email->from($from_email, 'Your Name'); 
-         $this->email->to($to_email);
-         $this->email->subject('Email Test'); 
-         $this->email->message('Testing the email class.'); 
-   
-         //Send mail 
-         if($this->email->send()) 
-         $this->session->set_flashdata("email_sent","Email sent successfully."); 
-         else 
-         $this->session->set_flashdata("email_sent","Error in sending Email."); 
-         $this->load->view('email_form'); 
-      } 
-   } 
-?>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Email extends CI_Controller{
+    
+    function  __construct(){
+        parent::__construct();
+    }
+    
+    function send(){
+        // Load PHPMailer library
+        $this->load->library('phpmailer_lib');
+        
+        // PHPMailer object
+        $mail = $this->phpmailer_lib->load();
+        
+        // SMTP configuration
+        $mail->isSMTP();
+        $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+        $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port     = 465;
+        
+        $mail->setFrom('madiha@alphacandy.com', 'Madiha');
+        $mail->addReplyTo('madiha@alphacandy.com', 'Madiha');
+        
+        // Add a recipient
+        $mail->addAddress('navaid@manageglobally.io');
+        
+        // Add cc or bcc 
+        // $mail->addCC('cc@example.com');
+        // $mail->addBCC('bcc@example.com');
+        
+        // Email subject
+        $mail->Subject = 'Send Email in CodeIgniter';
+        
+        // Set email format to HTML
+        $mail->isHTML(true);
+        
+        // Email body content
+        $mailContent = "<h1>Send HTML Email in CodeIgniter</h1>
+            <p>This is a test email sending.</p>";
+        $mail->Body = $mailContent;
+        
+        // Send email
+        if(!$mail->send()){
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+        }else{
+            echo 'Message has been sent';
+        }
+    }
+    
+}
