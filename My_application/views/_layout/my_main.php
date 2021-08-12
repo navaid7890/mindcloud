@@ -268,7 +268,7 @@ if(is_array($additional_tools) && count($additional_tools))
 
 
 <!--<body class="responsive" <?=$this->layout_data['method_name'] == "quiz" ? 'oncontextmenu="return false;" onkeydown="return false;" onmousedown="return false;"' : ''?>>-->
-<body class="responsive" oncontextmenu="return false">
+<body class="responsive" oncontextmenu="return true">
   <div class="login-page"> 
 
   <!--[Start Loading Div]-->
@@ -347,23 +347,23 @@ if(array_filled($additional_tools))
 
 <script>
 
-document.onkeydown = function(e) {
-  if(event.keyCode == 123) {
-     return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-     return false;
-  }
-}
+// document.onkeydown = function(e) {
+//   if(event.keyCode == 123) {
+//      return false;
+//   }
+//   if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+//      return false;
+//   }
+//   if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+//      return false;
+//   }
+//   if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+//      return false;
+//   }
+//   if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+//      return false;
+//   }
+// }
 
 
 
