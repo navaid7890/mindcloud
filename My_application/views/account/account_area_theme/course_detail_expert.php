@@ -294,7 +294,7 @@
             <div class="col-lg-10 col-md-10 offset-lg-1 offset-md-1">
 
                <div class="faqHead">
-                  <h2>FAQs about <strong>Expert Tutorials</strong></h2>
+                  <h2>FAQs about <strong>Experts Tutorials</strong></h2>
                </div>
                <ul class="colasebar">
                   <? if (isset($faq) and array_filled($faq)) : ?>

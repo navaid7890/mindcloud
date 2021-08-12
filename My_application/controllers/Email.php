@@ -8,13 +8,12 @@ class Email extends CI_Controller{
     }
     
     function send(){
-        // Load PHPMailer library
+    
         $this->load->library('phpmailer_lib');
         
-        // PHPMailer object
         $mail = $this->phpmailer_lib->load();
         
-        // SMTP configuration
+      
         $mail->isSMTP();
         $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
         $mail->SMTPAuth = true;
@@ -25,26 +24,24 @@ class Email extends CI_Controller{
         
         $mail->setFrom('madiha@alphacandy.com', 'Madiha');
         $mail->addReplyTo('madiha@alphacandy.com', 'Madiha');
-        
-        // Add a recipient
+
         $mail->addAddress('navaid@manageglobally.io');
         
-        // Add cc or bcc 
+   
         // $mail->addCC('madiha@alphacandy.com');
         // $mail->addBCC('madiha@alphacandy.com');
         
-        // Email subject
+
         $mail->Subject = 'Send Email in CodeIgniter';
         
-        // Set email format to HTML
+        
         $mail->isHTML(true);
         
-        // Email body content
+     
         $mailContent = "<h1>Send HTML Email in CodeIgniter</h1>
             <p>This is a test email sending.</p>";
         $mail->Body = $mailContent;
-        
-        // Send email
+ 
         if(!$mail->send()){
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;

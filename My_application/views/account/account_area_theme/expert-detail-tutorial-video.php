@@ -183,7 +183,8 @@
                            <input type="hidden" name="mytutorial[mytutorial_video_percent]" value="1">
                            <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-expert-tutorial-video-btn">
                         </form>
-                        <p>Complete this tutorial to receive Certificate.</p>
+                     
+                        <p>Complete this tutorial and write a review in order to receive Certificate</p>
                         <div classs="space"><br><br></div>
                         <form id="forms-tutorial-review_us">
                            <div class="fld-textarea">
@@ -200,7 +201,7 @@
 
                            <div class="row align-items-center">
                               <div class="col-md-4">
-                                 <!-- <ul class="rating">
+                                 <!-- <ul class="rating"
                                        <li><span>1</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                        <li><span>2</span><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                        <li><span>3</span><img src="<?= i('') ?>icons/rat-d.svg"></li>

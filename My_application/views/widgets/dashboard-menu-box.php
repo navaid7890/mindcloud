@@ -92,12 +92,12 @@
                            Password Change
                         </a>
                      </li>
-                     <li>
+                     <!-- <li>
                         <a href="<?= l('account-area/address-info') ?>">
                            <span><img src="<?= i('') ?>dashboard/menu/dot.png" style="width: 60%;"></span>
                            Address Info
                         </a>
-                     </li>
+                     </li> -->
 
                      <li>
                         <a href="<?= l('account-area/change-profile') ?>">

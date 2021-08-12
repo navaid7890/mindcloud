@@ -199,10 +199,12 @@ var Form = function () {
 
         Toastr.success(response.msg.desc, 'Success');
         $("#forms-content-statup").find('input[type=text],input[type=email],textarea').val('');
-        //FOR GOOGLE CAPTCHA RESET:
-        // grecaptcha.reset();
-        //  $(".openBtn").click();
-        // return false;
+        
+        setTimeout(function(){
+        location.reload();
+      },2000);
+
+
       }
       else {
         Toastr.error(response.msg.desc, 'Error');
