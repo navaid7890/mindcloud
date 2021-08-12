@@ -623,7 +623,7 @@ $my_tools = array(
     align-items: center;
     justify-content: center;
     background: #fff;
-    opacity: 0.7;
+    opacity: 0.95;
     flex-direction: column;
     height: 100vh;
 }
@@ -638,7 +638,7 @@ $my_tools = array(
 
 <!-- BEGIN BODY -->
 
-<body class="overFlowHide customeAccountList business-page" id="top" oncontextmenu="return true">
+<body class="overFlowHide customeAccountList business-page" id="top" oncontextmenu="return false">
 
 
   <div id="overlay">

@@ -472,8 +472,8 @@
                                 <!-- my tutorials For paid user -->
                                 <div class="tutorial-graph-box">
                                     <div class="certificate-box" id="yourExpertTutorial">
-                                    <h2>Your <strong>Experts Tutorials</strong></h2>
-                                        <?//= count($mytutorialpaid) 
+                                        <h2>Your <strong>Experts Tutorials</strong></h2>
+                                        <? //= count($mytutorialpaid) 
                                         ?>
                                         <div class="space"><br><br></div>
                                         <ul class="courses-slide">
@@ -559,8 +559,8 @@
                                 <!-- my tutorials remaining Next for paid user -->
                                 <div class="tutorial-graph-box">
                                     <div class="certificate-box" id="yourExpertTutorial">
-                                    <h2>What To Learn Next In <strong>Experts Tutorials</strong></h2>
-                                        <?//= count($mytutorialremain) 
+                                        <h2>What To Learn Next In <strong>Experts Tutorials</strong></h2>
+                                        <? //= count($mytutorialremain) 
                                         ?>
                                         <div class="space"><br><br></div>
                                         <ul class="courses-slide">
@@ -817,7 +817,15 @@
 
     // setTimeout(load_data,2000)
     function load_data() {
-
+        if (document.URL.indexOf("#") == -1) {
+            // Set the URL to whatever it was plus "#loaded".
+            url = document.URL + "#loaded";
+            location = "#loaded";
+            //Reload the page using reload() method
+            location.reload(true);
+        }
+        // location.reload();
+        // setTimeout(load_data,2000);
         // Learing Journey Percentage
         $("#LearingJourney .progres-dark").css("width", "100%");
         $("#LearingJourney .progres-percentage span").text("100%");
@@ -882,6 +890,8 @@
     // });
 
     $(document).ready(function() {
+        // location.reload();
+        // setTimeout(load_data,5000);
         $(".allpercent").text(localStorage.getItem("learingPercent"));
 
         var ExpAllsum = 0;
