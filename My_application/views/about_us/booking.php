@@ -436,7 +436,7 @@ var now = new Date();
             date: new Date(year, month - 1, date + 1),
            // value: 'Eat sleep play Peas'
         }, {
-            date: '2021-06-31',
+            date: new Date(now.date),
             //value: '2021-06-31'
         }];
 
@@ -449,7 +449,7 @@ var now = new Date();
             // selectedRang: [new Date(), null],
             data: data,
             monthArray: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-            date: new Date(2021, 6, 31),
+            date: new Date(),
             onSelected: function (view, date, data) {
                 console.log('view:' + view)
                 console.log('date:' + date)
@@ -749,11 +749,23 @@ return false;
     $('.expertTopic ul li:nth-child(3)').show();
  });
 
-//  $('.selectTimeSlot li').on('click', function(){
-//     $(this).removeClass('selected');
-//     alert('Hello')
-//     $(this).addClass('selected');
+//  $('.days li').on('click', function(){
+//     // $(this).removeClass('selected');
+//     // alert('Hello')
+//     $(this).toggleClass('selected');
 // });
+
+
+// $('.days li').on('click', function () {
+//     $(this).toggleClass('selected')
+// });
+
+var selector = '.days li';
+
+$(selector).on('click', function(){
+    $(selector).removeClass('selected');
+    $(this).addClass('selected');
+});
  
   
 });
