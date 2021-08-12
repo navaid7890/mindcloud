@@ -27,8 +27,33 @@
                   Advisory
                </a>
             </li>
-            <li class="dropdown-toggle">
+            <li>
                <a href="<?= l('account/profile/learning') ?>">
+                  <span><img src="<?= i('') ?>dashboard/menu/2.svg"></span>
+                  My Learning Journey
+               </a>
+            </li>
+            <li>
+               <?
+               $startup = array();
+               $startup['where']['startup_user_id'] = $this->userid;
+               $startupdata = $this->model_startup->find_all_active($startup);
+               // debug($startupdata[0]['startup_name']);
+               ?>
+               <a href="<?= l('account/profile/startup') ?>">
+                  <span><img src="<?= i('') ?>dashboard/menu/3.svg"></span>
+                  My Startup:
+                  <? if (!empty($startupdata)) : ?>
+                     <?= $startupdata[0]['startup_name'] ?>
+                  <? else : ?>
+                     -- -- --
+                  <? endif; ?>
+               </a>
+            </li>
+
+
+            <!-- <li class="dropdown-toggle">
+               <a href="<?//= l('account/profile/learning') ?>">
                   <span><img src="<?= i('') ?>dashboard/menu/2.svg"></span>
                   My Learning Journey
                </a>
@@ -36,25 +61,22 @@
                <div class="dashboard-child-links">
                   <ul>
                      <?
-                     $startup = array();
-                     $startup['where']['startup_user_id'] = $this->userid;
-                     $startupdata = $this->model_startup->find_all_active($startup);
-                     // debug($startupdata[0]['startup_name']);
+                     // $startup = array();
+                     // $startup['where']['startup_user_id'] = $this->userid;
+                     // $startupdata = $this->model_startup->find_all_active($startup);
                      ?>
 
-                     <li><a href="<?= l('account/profile/startup') ?>"> <span><img src="<?= i('') ?>dashboard/menu/3.svg"></span> My Startup:
-                           <? if (!empty($startupdata)) : ?>
-                              <?= $startupdata[0]['startup_name'] ?>
-                           <? else : ?>
+                     <li><a href="<?//= l('account/profile/startup') ?>"> <span><img src="<?//= i('') ?>dashboard/menu/3.svg"></span> My Startup:
+                           <?// if (!empty($startupdata)) : ?>
+                              <?//= $startupdata[0]['startup_name'] ?>
+                           <?// else : ?>
                               -- -- --
-                           <? endif; ?>
+                           <?// endif; ?>
                         </a>
                      </li>
-                     <!-- <li><a href="<? //= l('account/profile/learning') 
-                                       ?>"> <span><img src="<?= i('') ?>dashboard/menu/3.svg"></span> New Startup</a></li> -->
                   </ul>
                </div>
-            </li>
+            </li> -->
 
             <li class="dropdown-toggle">
                <a href="<?= l('account-area/profile/edit') ?>">
