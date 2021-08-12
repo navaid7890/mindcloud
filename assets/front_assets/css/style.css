@@ -1774,6 +1774,10 @@ ul.login-btn>li>a>span {
     overflow: hidden;
 }
 
+.vid-content ul.login-btn>li>a>span {
+    height: auto !important;
+}
+
 
 @media (min-width:768px) {
     .copyright-top .col-md-9 { flex: 0 0 92% !important; max-width: 100%; }
