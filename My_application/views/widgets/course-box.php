@@ -55,7 +55,7 @@
                 // debug($startupdata[0]['startup_name']);
                 ?>
                 <ul class="login-btn">
-                    <li><a href="#"><span><img src="<?= get_image($this->layout_data['user_data']['ui_profile_image'], $this->layout_data['user_data']['ui_profile_image_path']) ?>"></span>
+                    <li><a href="#">
                             <? if (!empty($startupdata)) : ?>
                                 <?= $startupdata[0]['startup_name'] ?>
                             <? else : ?>
