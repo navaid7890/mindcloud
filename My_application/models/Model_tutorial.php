@@ -109,6 +109,22 @@ class Model_tutorial extends MY_Model
 
     }
 
+    public function test_query_1($id)
+    {
+      
+
+       $sql="SELECT tutorial_name, tutorial_id ,tutorial_slug ,tutorial_status,md_mytutorial.mytutorial_user_id FROM md_tutorial
+        LEFT JOIN md_mytutorial on md_tutorial.tutorial_id = md_mytutorial.mytutorial_tutorial_id and mytutorial_user_id =$id 
+        WHERE md_mytutorial.mytutorial_tutorial_id IS NULL and tutorial_status=1";   
+
+        $query = $this->db->query($sql);
+       
+       
+		return $query->result_array() ;
+
+    }
+    
+
     private function _pagination_filter($paginate_param = array())
     {
         //  Filters Start

@@ -2,7 +2,7 @@
 <div class="dashboard-menu-box">
    <div class="dashboar-menu">
       <div class="dashboard-links">
-         <ul class="dashboard-nav">
+         <ul class="dashboard-nav dash-scroll">
             <li>
                <a href="<?= l('account-area') ?>" class="active">
                   <span><img src="<?= i('') ?>dashboard/menu/1.svg"></span>

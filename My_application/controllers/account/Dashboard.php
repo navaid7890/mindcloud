@@ -131,6 +131,14 @@ class Dashboard extends MY_Controller_Account
 		$nextut['where']['user_id'] = $this->userid;
 		$data['nextutshow'] = $this->model_user->find_all_active($nextut);
 
+
+		$data['mytutorialpaid'] = $this->model_tutorial->test_query($this->userid);
+
+		$data['mytutorialremain'] = $this->model_tutorial->test_query_1($this->userid);
+
+		
+		//  debug($data['mytutorialremain']);
+
 		$this->load_view("dashboard", $data);
 	}
 }
