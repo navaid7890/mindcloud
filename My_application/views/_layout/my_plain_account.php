@@ -623,7 +623,7 @@ $my_tools = array(
     align-items: center;
     justify-content: center;
     background: #fff;
-    opacity: 0.7;
+    opacity: 0.95;
     flex-direction: column;
     height: 100vh;
 }
@@ -638,7 +638,7 @@ $my_tools = array(
 
 <!-- BEGIN BODY -->
 
-<body class="overFlowHide customeAccountList business-page" id="top" oncontextmenu="return true">
+<body class="overFlowHide customeAccountList business-page" id="top" oncontextmenu="return false">
 
 
   <div id="overlay">
@@ -1340,6 +1340,9 @@ document.onkeydown = function(e) {
      return false;
   }
   if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'S'.charCodeAt(0)) {
      return false;
   }
   if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
