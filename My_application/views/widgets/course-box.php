@@ -214,7 +214,7 @@ $upaid = array();
 $upaid['where']['user_id'] = $this->userid;
 $datapaid = $this->model_user->find_all_active($upaid);
 
-debug($datapaid[0]['user_paid']);
+// debug($datapaid[0]['user_paid']);
 
 ?>
 

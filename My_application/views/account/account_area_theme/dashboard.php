@@ -54,7 +54,10 @@
     .video-box img {
         height: 233px;
     }
-    
+
+    strong.locked {
+        display: none;
+    }
 </style>
 
 <div class="index-page">
@@ -87,6 +90,7 @@
                                             <div class="progres-percentage">
                                                 <span>100%</span>
                                             </div>
+
                                         </div>
                                         <div class="space"><br><br></div>
                                         <div class="progres-bar" id="businessCalculate">
@@ -114,6 +118,7 @@
                                             <div class="progres-percentage">
                                                 <span>0%</span>
                                             </div>
+                                            <strong class="locked"><i class="fas fa-lock"></i></strong>
                                         </div>
                                         <div class="space"><br><br></div>
                                         <div class="progres-bar" id="Financ_management">
@@ -128,6 +133,7 @@
                                             <div class="progres-percentage">
                                                 <span>0%</span>
                                             </div>
+                                            <strong class="locked"><i class="fas fa-lock"></i></strong>
                                         </div>
                                         <div class="space"><br><br></div>
                                         <div class="progres-bar" id="L_Structure">
@@ -142,6 +148,7 @@
                                             <div class="progres-percentage">
                                                 <span>0%</span>
                                             </div>
+                                            <strong class="locked"><i class="fas fa-lock"></i></strong>
                                         </div>
                                         <div class="space"><br><br></div>
                                         <div class="progres-bar" id="Invest_Deck">
@@ -156,6 +163,7 @@
                                             <div class="progres-percentage">
                                                 <span>0%</span>
                                             </div>
+                                            <strong class="locked"><i class="fas fa-lock"></i></strong>
                                         </div>
                                     </div>
                                     <div class="progress-btn btn-group">
@@ -813,6 +821,21 @@
     </section>
 </div>
 <iframe src="<?= l('account/profile/learning') ?>" style="display: none;" onload="load_data()"></iframe>
+<?
+$upaid = array();
+$upaid['where']['user_id'] = $this->userid;
+$datapaid = $this->model_user->find_all_active($upaid);
+?>
+<? if ($datapaid[0]['user_paid'] == 0) : ?>
+    <style>
+        strong.locked {
+            margin-left: 12px;
+            display: initial;
+        }
+    </style>
+
+
+<? endif; ?>
 <script>
     // $(document).ready(function() {
 
