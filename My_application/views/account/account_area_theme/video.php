@@ -131,7 +131,7 @@
                            </div>
                         </div>
                         <div class="space"><br><br></div>
-                        <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p>
+                        <p><?=html_entity_decode($learn_content[0]['learning_journey_content_legal_terms'])?></p>
                      </div>
                      <? //= debug($learn_content) 
                      ?>
