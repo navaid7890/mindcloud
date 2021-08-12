@@ -30,8 +30,8 @@ class Email extends CI_Controller{
         $mail->addAddress('navaid@manageglobally.io');
         
         // Add cc or bcc 
-        // $mail->addCC('cc@example.com');
-        // $mail->addBCC('bcc@example.com');
+        // $mail->addCC('madiha@alphacandy.com');
+        // $mail->addBCC('madiha@alphacandy.com');
         
         // Email subject
         $mail->Subject = 'Send Email in CodeIgniter';
