@@ -188,6 +188,7 @@
 
 
             <div class="jrnyFaq col-lg-10 col-md-10 offset-lg-1 offset-md-1">
+            <div class="space"><br><br><br></div>
                <h2>Tutorial Content</h2>
                <div class="sapace"><br><br></div>
                <?php if ($datapaid[0]['user_paid'] == 0  && $datacourfreecheck[0]['tutorial_free_status'] == 0) : ?>
