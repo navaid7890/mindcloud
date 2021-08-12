@@ -54,6 +54,7 @@
     .video-box img {
         height: 233px;
     }
+    
 </style>
 
 <div class="index-page">

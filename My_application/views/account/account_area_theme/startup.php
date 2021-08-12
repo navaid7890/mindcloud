@@ -374,7 +374,7 @@
                                             <span><img src="<?= i('') ?>logo.png" alt=""></span>
                                             <h6>Investment<br> Deck<br> Slides</h6>
                                             <div class="work-prew">
-                                                <img src="<?= i('') ?>dashboard/work/Investment_Deck.png" alt="">
+                                                <img src="<?= i('') ?>dashboard/work/investment.png" alt="">
                                             </div>
                                         </div>
                                     </div>

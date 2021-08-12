@@ -89,7 +89,15 @@ class Model_learning_journey_content extends MY_Model {
                      'rules'   => 'required|trim|htmlentities'
                   ),
 
-              
+                  'learning_journey_content_legal_terms' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'learning_journey_content_legal_terms',
+                    'label'   => 'Legal Terms Text',
+                    'type'   => 'editor',
+                    'attributes'   => array(),
+                    'js_rules'   => '',
+                    'rules'   => 'trim|htmlentities'
+                 ),
       
                'learning_journey_content_desc' => array(
                      'table'   => $this->_table,

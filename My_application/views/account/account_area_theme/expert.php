@@ -63,6 +63,10 @@
     ul.login-btn {
         margin-bottom: 10px;
     }
+
+    .xpert-box {
+        margin-right: 40px;
+    }
 </style>
 
 
