@@ -625,6 +625,7 @@ class MY_Controller extends MY_Controller_Admin
         
         $mail->isHTML(true);
         
+        
      
         $mailContent = $this->load->view('_layout/email_template/default_template', $param , true);
         $mail->Body = $mailContent;
