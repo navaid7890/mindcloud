@@ -537,23 +537,63 @@ class MY_Controller extends MY_Controller_Admin
     }
 
 
-    public function book($data){
-       
-       // $config['mailtype'] = 'html';   
-        
-        $this->load->library('email'); 
-
-        $config['mailtype'] = 'html';
-        $config['smtp_port']='587';
-        $config['smtp_timeout']='30';
-        $config['charset']='utf-8';
-        $config['protocol'] = 'smtp';
-        $config['mailpath'] = '/usr/sbin/sendmail';
-        $config['charset'] = 'iso-8859-1';
-        $config['wordwrap'] = TRUE;
-
+    //     function send(){
     
-       // $u=$this->model_booking->find_by_pk($data['booking_expert_id']);
+    //     $this->load->library('phpmailer_lib');
+        
+    //     $mail = $this->phpmailer_lib->load();
+        
+      
+    //     $mail->isSMTP();
+    //     $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    //     $mail->SMTPAuth = true;
+    //     $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+    //     $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    //     $mail->SMTPSecure = 'ssl';
+    //     $mail->Port     = 465;
+        
+    //     $mail->setFrom('madiha@alphacandy.com', 'Madiha');
+    //     $mail->addReplyTo('madiha@alphacandy.com', 'Madiha');
+
+    //     $mail->addAddress('navaid@manageglobally.io');
+        
+   
+    //     // $mail->addCC('madiha@alphacandy.com');
+    //     // $mail->addBCC('madiha@alphacandy.com');
+        
+
+    //     $mail->Subject = 'Send Email in CodeIgniter';
+        
+        
+    //     $mail->isHTML(true);
+        
+     
+    //     $mailContent = "<h1>Send HTML Email in CodeIgniter</h1>
+    //         <p>This is a test email sending.</p>";
+    //     $mail->Body = $mailContent;
+ 
+    //     if(!$mail->send()){
+    //         echo 'Message could not be sent.';
+    //         echo 'Mailer Error: ' . $mail->ErrorInfo;
+    //     }else{
+    //         echo 'Message has been sent';
+    //     }
+    // }
+
+
+    public function book($data){
+
+        $this->load->library('phpmailer_lib');
+        $mail = $this->phpmailer_lib->load();
+        
+      
+        $mail->isSMTP();
+        $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+        $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port     = 465;
         $param = array();
         if(isset($data) && array_filled($data))
         {
@@ -563,30 +603,39 @@ class MY_Controller extends MY_Controller_Admin
             }
         
         }
-        $param['msg'] = 'Dear Expert,<br> <br>
-        We have received a booking in your website, detail is given below:<br><br>';
+        // $param['msg'] = 'Dear Expert,<br> <br>
+        // We have received a booking in your website, detail is given below:<br><br>';
 
         
-        $from_email = $data['booking_email']; 
-        $to_email = 'madiha@alphacandy.com';            
-        $this->email->from($from_email, 'Booking Confirmation'); 
-        $this->email->to($to_email);
-        $this->email->set_header('Content-Type', 'text/html');
-        $this->email->subject('Booking Confirmation'); 
-        $this->email->message($this->load->view('_layout/email_template/default_template', $param , true));   
-        $this->email->send();
+        // $from_email = $data['booking_email']; 
+        // $to_email = 'madiha@alphacandy.com';            
+        // $this->email->from($from_email, 'Booking Confirmation'); 
+        // $this->email->to($to_email);
+        // $this->email->set_header('Content-Type', 'text/html');
+        // $this->email->subject('Booking Confirmation'); 
+        // $this->email->message($this->load->view('_layout/email_template/default_template', $param , true));   
+        // $this->email->send();
 
-        if(! $this->email->send()){
+        $mail->setFrom($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
+        $mail->addReplyTo('madiha@alphacandy.com', 'Madiha');
 
-            echo $this->email->print_debugger();
-        }
+        $mail->addAddress('madiha@alphacandy.com');
+        $mail->Subject = 'Booking Confirmation';
+        
+        
+        $mail->isHTML(true);
+        
+     
+        $mailContent = $this->load->view('_layout/email_template/default_template', $param , true);
+        $mail->Body = $mailContent;
+ 
+        // if(!$mail->send()){
+        //     echo 'Message could not be sent.';
+        //     echo 'Mailer Error: ' . $mail->ErrorInfo;
+        // }else{
+        //     echo 'Message has been sent';
+        // }
 
-        else
-        {
-            echo 'send';
-        }
-
-      //  die();
 
 }
 

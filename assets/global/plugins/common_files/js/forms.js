@@ -119,7 +119,7 @@ var Form = function () {
       $('#forms-book_us-btn').prop('disabled', true);
       var data = form.serialize();
       response = AjaxRequest.fire(urls.book_review, data);
-     //return false;  
+      //return false;  
       $('#forms-book_us-btn').prop('disabled', false);
 
       if (response.status) {
