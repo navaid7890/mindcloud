@@ -21,7 +21,7 @@ $logo = $this->model_logo->find_one(
                             else
                             {
                             ?>
-                     	        Dear {User},<br> <br>
+                     	        Dear <?=$form_input['Full Name']?>,<br> <br>
                      	        Welcome to <?=g('site_title')?>!<br> <br>
                      	        We have received booking inquiry in your website, detail is given below:<br><br>
                             <?php

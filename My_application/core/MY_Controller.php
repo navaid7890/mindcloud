@@ -585,7 +585,7 @@ class MY_Controller extends MY_Controller_Admin
 
         $this->load->library('phpmailer_lib');
         $mail = $this->phpmailer_lib->load();
-        
+        $a= $this->model_expert->find_by_pk($data['booking_expert_id']);
       
         $mail->isSMTP();
         $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
@@ -601,29 +601,20 @@ class MY_Controller extends MY_Controller_Admin
             {
                 $param['form_input'][$kye] = htmlentities(trim($value));
             }
-        
+         
+           $param['form_input']['Full Name']=$a['expert_name'];
         }
-        // $param['msg'] = 'Dear Expert,<br> <br>
-        // We have received a booking in your website, detail is given below:<br><br>';
-
-        
-        // $from_email = $data['booking_email']; 
-        // $to_email = 'madiha@alphacandy.com';            
-        // $this->email->from($from_email, 'Booking Confirmation'); 
-        // $this->email->to($to_email);
-        // $this->email->set_header('Content-Type', 'text/html');
-        // $this->email->subject('Booking Confirmation'); 
-        // $this->email->message($this->load->view('_layout/email_template/default_template', $param , true));   
-        // $this->email->send();
-
+   
         $mail->setFrom($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
-        $mail->addReplyTo('madiha@alphacandy.com', 'Madiha');
+        $mail->addReplyTo($a['expert_email'], $a['expert_name']);
 
-        $mail->addAddress('madiha@alphacandy.com');
+        $mail->addAddress($a['expert_email']);
         $mail->Subject = 'Booking Confirmation';
         
         
         $mail->isHTML(true);
+
+      //  debug($param,1);
 
         
      
@@ -632,12 +623,6 @@ class MY_Controller extends MY_Controller_Admin
 
         $mail->send();
  
-        // if(!$mail->send()){
-        //     echo 'Message could not be sent.';
-        //     echo 'Mailer Error: ' . $mail->ErrorInfo;
-        // }else{
-        //     echo 'Message has been sent';
-        // }
 
 
 }
