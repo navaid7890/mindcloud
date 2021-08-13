@@ -1530,14 +1530,16 @@ class Contact_us extends MY_Controller
                     $data['booking_status'] = 1;
         
                     // debug($data);
-                    
+                
                     $this->model_booking->set_attributes($data);
                     $inserted_id = $this->model_booking->save();
+
+                        parent::book($data);
                     
                     //$this->model_email->bookingInquiry($data);
                     //debug($this->model_email,1);
 
-                    //parent::book($data);
+         
         
 
                  //   debug(parent::book($data),1);

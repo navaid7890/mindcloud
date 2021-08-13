@@ -9,7 +9,7 @@ $logo = $this->model_logo->find_one(
         <div align="center">
              <div style="max-width: 680px; min-width: 500px; border: 2px solid #e3e3e3; border-radius:5px; margin-top: 20px">   
         	    <div style="background: #f3f3f3">
-        	        <img src="<?=get_image($logo['logo_image'],$logo['logo_image_path'])?>" width="250" alt="<?=g('site_title')?>" border="0" style='width: 25%; padding: 15px; margin: 0px auto; display: table;' />
+        	        <img src="<?=i('')?>test1.png" width="250" alt="<?=g('site_title')?>" border="0" style='width: 25%; padding: 15px; margin: 0px auto; display: table;' />
         	    </div> 
         	    <div  style="background-color: #fbfcfd; border-top: thick double #cccccc; text-align: left;">
         	        <div style="margin: 30px;">
@@ -21,9 +21,9 @@ $logo = $this->model_logo->find_one(
                             else
                             {
                             ?>
-                     	        Dear {CANDIDATE_NAME},<br> <br>
+                     	        Dear {User},<br> <br>
                      	        Welcome to <?=g('site_title')?>!<br> <br>
-                     	        {YOUR MESSAGE HERE}<br><br>
+                     	        We have received booking inquiry in your website, detail is given below:<br><br>
                             <?php
                             }
                             ?>
