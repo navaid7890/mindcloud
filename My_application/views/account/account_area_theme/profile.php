@@ -69,7 +69,7 @@
           <div class="col-md-12 col-xs-12 col-sm-12">
             <form id='update-contact_info-form'>
               <input type="hidden" name="user[user_id]" value="<?= $this->userid ?>">
-              <h2> Personal Info </h2>
+              <h2> Personal Info</h2>
 
               <div class="row">
                 <div class="col-md-3 col-xs-12 col-sm-2 no-margin">
