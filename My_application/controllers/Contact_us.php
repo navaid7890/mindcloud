@@ -1016,6 +1016,68 @@ class Contact_us extends MY_Controller
 
 
 
+    public function cancle_subscribe()
+    {
+        if (array_filled($_POST)) {
+
+            $param = array();
+            $param['order'] = "user_id DESC";
+            $param['where']['user_id'] = $this->userid;
+            $tool = $this->model_user->find_one_active($param);
+
+            if (!empty($tool)) {
+
+                //   debug($tool, 1);
+
+                $id = $tool['user_id'];
+
+                $data = array();
+                $data = $_POST['user'];
+
+                $data['user_id'] = $tool['user_id'];
+                $this->model_user->update_by_pk($id, $data);
+
+                $this->json_param['status'] = true;
+                $this->json_param['msg']['title'] = 'Updated';
+                $this->json_param['msg']['desc'] = 'Subscription canceled';
+            } 
+
+         
+            else if ($this->validate("model_user")) {
+
+                $data = $_POST['user'];
+                $data['user_status'] = 1;
+
+
+                $this->model_user->set_attributes($data);
+                $inserted_id = $this->model_user->save();
+
+
+                $form_data = $this->model_user->find_by_pk($inserted_id);
+                // $this->model_email->contactInquiry($form_data);  
+
+                $this->json_param['status'] = true;
+                $this->json_param['msg']['title'] = 'Subscription canceled';
+                $this->json_param['msg']['desc'] = 'Subscription canceled.';
+            
+            
+        
+    }
+            
+            
+            else {
+                $this->json_param['status'] = false;
+                $this->json_param['msg']['title'] = 'Error Occurred';
+                $this->json_param['msg']['desc'] = validation_errors();
+            }
+
+
+            echo json_encode($this->json_param);
+        }
+    }
+
+
+
     public function tool_cfs_formsend()
     {
         if (array_filled($_POST)) {

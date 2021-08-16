@@ -141,12 +141,13 @@
         <label>Profession License Number *</label>
       </div>
       <div class="col-md-8 col-xs-12 col-sm-10 no-margin">
-        <input type="text"  value="<?= $user_data['ui_profession_license'] ?>"  required name='user_info[ui_profession_license]'  placeholder="Profession" class="form-control">
+        <input type="text"  value="<? //= $user_data['ui_profession_license'] 
+                                    ?>"  required name='user_info[ui_profession_license]'  placeholder="Profession" class="form-control">
       </div>
     </div>      
            -->
               <div class="row">
-                <div class="col-md-4"></div>
+                <div class="col-md-3"></div>
                 <div class="col-md-4">
                   <button id='update-contact_info-btn' type="submit">Update Info</button>
                 </div>
@@ -154,6 +155,36 @@
               </div>
 
             </form>
+            <?
+            $upaid = array();
+            $upaid['where']['user_id'] = $this->userid;
+            $datapaid = $this->model_user->find_all_active($upaid);
+            ?>
+            <? if ($datapaid[0]['user_paid'] == 1) : ?>
+              <form id="canclesubscribeform">
+                <div class="row">
+                  <div class="col-md-3">Subscription</div>
+                  <!-- <div class="col-md-4">
+                  <button id='subscription' class="btn btn-primary" type="submit">subscribe now</button>
+                </div> -->
+                  <input type="hidden" name="user[user_id]" value="<?= $this->userid ?>">
+                  <input type="hidden" name="user[user_paid]" value="0">
+
+                  <div class="col-md-4">
+                    <button id='cancle-subscription' class="btn btn-danger" type="submit">Cancle Subscription</button>
+                  </div>
+                </div>
+              </form>
+
+            <? else : ?>
+              <div class="row">
+                <div class="col-md-3">Subscription</div>
+                <div class="col-md-4">
+                  <a href="<?= l('subscription') ?>" class="btn btn-primary">Subscribe</a>
+                </div>
+              </div>
+            <? endif; ?>
+
           </div>
         </div>
       </li>
