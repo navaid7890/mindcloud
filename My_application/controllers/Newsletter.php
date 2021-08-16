@@ -40,7 +40,10 @@ class Newsletter extends MY_Controller {
 					$inserted_id = $this->model_newsletter->save();
 
 					// Newsletter Email
-					$this->model_email->subscribe_newsletter($inserted_id);
+					//$this->model_email->subscribe_newsletter($inserted_id);
+
+							
+				     parent::newsletter($newsletter_data);
 
 					$this->json_param['status'] = 1;
 					$this->json_param['txt'] = "Congratulations! You have successfully subscribed.";
