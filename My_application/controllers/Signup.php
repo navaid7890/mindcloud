@@ -80,6 +80,7 @@ class Signup extends MY_Controller {
 				$this->model_user->set_attributes($user_param);
 				$user_id = $this->model_user->save();
 
+
 				//USER INFORMATION //SAVE INFORMATION TABLE
 					// $user_info_post = $this->input->post('ui');
 					
@@ -95,16 +96,19 @@ class Signup extends MY_Controller {
 
 				if($user_id > 0)
 				{
-					if(ENVIRONMENT != 'development')
-					{
-						// sent email to user for info and email verification
-						$this->model_email->notification_register($user_id , 'user');
+					// if(ENVIRONMENT != 'development')
+					// {
 
-						// sent email to admin for one user added
-						$this->model_email->notification_register($user_id , 'admin');
-					}
+						
+				    //  parent::signup($user_param);
+					// 	// sent email to user for info and email verification
+					// 	// $this->model_email->notification_register($user_id , 'user');
 
+					// 	// // sent email to admin for one user added
+					// 	// $this->model_email->notification_register($user_id , 'admin');
+					// }
 
+                    parent::signup($user_param);
 					$msg = "You have been successfully registered and logged in.";//, please fill the more information".g('site_title');
 					// $msg = "Verification Link is sent to registerd email address.";//, please fill the more information".g('site_title');
 					

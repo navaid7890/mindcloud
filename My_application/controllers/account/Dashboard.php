@@ -136,8 +136,41 @@ class Dashboard extends MY_Controller_Account
 
 		$data['mytutorialremain'] = $this->model_tutorial->test_query_1($this->userid);
 
+
+	
+
+		$dat=date('Y-m-d', strtotime($data['user_data']['user_createdon']));
+		$date = strtotime($dat);
+        $date = strtotime("+7 day", $date);
+        $a= date('Y-m-d',$date);
+
+    	//debug($a);
+
+		if(date('Y-m-d')==$a && $data['user_data']['user_paid']==0)
+		{
+
+      
+		parent::renewal();
+
+   
+		}
+
+		$dat1=date('Y-m-d', strtotime($data['user_data']['user_createdon']));
+		$date1 = strtotime($dat1);
+        $date1 = strtotime("+2 day", $date1);
+        $ab= date('Y-m-d',$date1);
+	//	debug($ab);
+
+		if(date('Y-m-d')==$ab && $data['user_data']['user_paid']==0)
+		{
+
+      
+		parent::renewal_two();
+
+   
+		}
+
 		
-		//  debug($data['mytutorialremain']);
 
 		$this->load_view("dashboard", $data);
 	}

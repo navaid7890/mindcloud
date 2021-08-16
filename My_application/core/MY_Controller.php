@@ -609,7 +609,7 @@ class MY_Controller extends MY_Controller_Admin
         $mail->addReplyTo($a['expert_email'], $a['expert_name']);
 
         $mail->addAddress($a['expert_email']);
-        $mail->Subject = 'Booking Confirmation';
+        $mail->Subject = 'Thank you for the Expert Booking';
         
         
         $mail->isHTML(true);
@@ -673,6 +673,181 @@ class MY_Controller extends MY_Controller_Admin
 
 
 }
+
+
+public function signup($data){
+
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+
+  
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
+
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->addReplyTo($data['user_email'], $data['user_firtsname']);
+
+    $mail->addAddress($data['user_email']);
+
+    $param = array();
+    if(isset($data) && array_filled($data))
+    {
+        foreach($data as $kye=>$value)
+        {
+            $param['form_input'][$kye] = htmlentities(trim($value));
+        }
+        $param['form_input']['Full Name']=$data['user_firstname'];
+      
+    }
+
+    $mail->Subject = 'Member Welcome to Mind Cloud Tribe!';
+        
+    $mail->isHTML(true);
+
+    $mailContent = $this->load->view('_layout/email_template/signup', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
+
+
+
+}
+
+
+
+
+public function newsletter($data){
+
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+  
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
+
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->addReplyTo($data['newsletter_email']);
+
+    $mail->addAddress($data['newsletter_email']);
+
+    $param = array();
+    if(isset($data) && array_filled($data))
+    {
+        foreach($data as $kye=>$value)
+        {
+            $param['form_input'][$kye] = htmlentities(trim($value));
+        }
+  
+      
+    }
+
+    $mail->Subject = 'Thank You for Subscribing to Mind Cloud Tribe!';
+        
+    $mail->isHTML(true);
+
+    $mailContent = $this->load->view('_layout/email_template/newsletter', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
+
+}
+
+
+
+
+public function renewal(){
+
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+  
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
+
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
+
+    $mail->addAddress($this->session->userdata['logged_in_front']['email']);
+
+    $param = array();
+    // if(isset($data) && array_filled($data))
+    // {
+    //     foreach($data as $kye=>$value)
+    //     {
+    //         $param['form_input'][$kye] = htmlentities(trim($value));
+    //     }
+  
+      
+    // }
+
+    $mail->Subject = 'Mind Cloud Tribe - 15 days before Renewal Date';
+        
+    $mail->isHTML(true);
+
+    $mailContent = $this->load->view('_layout/email_template/renewal', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
+
+}
+
+
+
+public function renewal_two(){
+
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+  
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
+
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
+
+    $mail->addAddress($this->session->userdata['logged_in_front']['email']);
+
+    $param = array();
+    // if(isset($data) && array_filled($data))
+    // {
+    //     foreach($data as $kye=>$value)
+    //     {
+    //         $param['form_input'][$kye] = htmlentities(trim($value));
+    //     }
+  
+      
+    // }
+
+    $mail->Subject = 'Mind Cloud Tribe – Invitation to join the Tribe!';
+        
+    $mail->isHTML(true);
+
+    $mailContent = $this->load->view('_layout/email_template/renewal_two', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
+
+}
+
+
+
 
 
 
