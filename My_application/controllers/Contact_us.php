@@ -1020,8 +1020,6 @@ class Contact_us extends MY_Controller
     {
         if (array_filled($_POST)) {
 
-            $param = array();
-            $param['order'] = "user_id DESC";
             $param['where']['user_id'] = $this->userid;
             $tool = $this->model_user->find_one_active($param);
 
@@ -1036,6 +1034,8 @@ class Contact_us extends MY_Controller
 
                 $data['user_id'] = $tool['user_id'];
                 $this->model_user->update_by_pk($id, $data);
+                parent::cancle_sub_email($data);
+                // exit();
 
                 $this->json_param['status'] = true;
                 $this->json_param['msg']['title'] = 'Updated';
@@ -1043,26 +1043,26 @@ class Contact_us extends MY_Controller
             } 
 
          
-            else if ($this->validate("model_user")) {
+    //         else if ($this->validate("model_user")) {
 
-                $data = $_POST['user'];
-                $data['user_status'] = 1;
-
-
-                $this->model_user->set_attributes($data);
-                $inserted_id = $this->model_user->save();
+    //             $data = $_POST['user'];
+    //             $data['user_status'] = 1;
 
 
-                $form_data = $this->model_user->find_by_pk($inserted_id);
-                // $this->model_email->contactInquiry($form_data);  
+    //             $this->model_user->set_attributes($data);
+    //             $inserted_id = $this->model_user->save();
+    //             parent::book($data);
 
-                $this->json_param['status'] = true;
-                $this->json_param['msg']['title'] = 'Subscription canceled';
-                $this->json_param['msg']['desc'] = 'Subscription canceled.';
+    //             $form_data = $this->model_user->find_by_pk($inserted_id);
+    //             // $this->model_email->contactInquiry($form_data);  
+
+    //             $this->json_param['status'] = true;
+    //             $this->json_param['msg']['title'] = 'Subscription canceled';
+    //             $this->json_param['msg']['desc'] = 'Subscription canceled.';
             
             
         
-    }
+    // }
             
             
             else {

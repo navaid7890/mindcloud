@@ -1260,11 +1260,11 @@ var Form = function () {
       response = AjaxRequest.fire(urls.cancle_subscribe, data);
 
       $('#cancle-subscription').prop('disabled', false);
-      Toastr.success(response.msg.desc, 'You Have Cancled Your Subscription');
+      //Toastr.success(response.msg.desc, 'You Have Cancled Your Subscription');
 
-      setTimeout(function () {
-        location.reload();
-      }, 1000);
+      // setTimeout(function () {
+      //   location.reload();
+      // }, 1000);
        return false ;
 
       if (response.status) {

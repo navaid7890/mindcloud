@@ -169,7 +169,7 @@
                 </div> -->
                   <input type="hidden" name="user[user_id]" value="<?= $this->userid ?>">
                   <input type="hidden" name="user[user_paid]" value="0">
-
+                  <input type="hidden" name="user[user_email]" value=<?=$datapaid[0]['user_email'] ?>>
                   <div class="col-md-4">
                     <button id='cancle-subscription' class="btn btn-danger" type="submit">Cancle Subscription</button>
                   </div>

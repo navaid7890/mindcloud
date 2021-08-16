@@ -626,6 +626,53 @@ class MY_Controller extends MY_Controller_Admin
 
 
 }
+    public function cancle_sub_email($data){
+
+        $this->load->library('phpmailer_lib');
+        $mail = $this->phpmailer_lib->load();
+        $a= $this->model_user->find_by_pk($data['user_id']);
+      
+        $mail->isSMTP();
+        $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+        $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port     = 465;
+        $param = array();
+        if(isset($data) && array_filled($data))
+        {
+            foreach($data as $kye=>$value)
+            {
+                $param['form_input'][$kye] = htmlentities(trim($value));
+            }
+         
+           $param['form_input']['Full Name']=$a['expert_name'];
+        }
+   
+        // debug($data,1);
+        // die();
+        $mail->setFrom(g('db.admin.email_contact_us'), "Unsubscribed");
+        $mail->addReplyTo($data['user_email'], $this->session->userdata['logged_in_front']['first_name']);
+
+        $mail->addAddress($data['user_email']);
+        $mail->Subject = 'Sorry to Say Goodbye!';
+        
+        
+        $mail->isHTML(true);
+
+      //  debug($param,1);
+
+        
+     
+        $mailContent = $this->load->view('_layout/email_template/cancel_subscription', $param , true);
+        $mail->Body = $mailContent;
+
+        $mail->send();
+ 
+
+
+}
 
 
 
