@@ -45,6 +45,8 @@ class Profile extends MY_Controller_Account
 
 		$data['country'] = $this->model_country->find_all_list(array('order' => 'country ASC'), 'country');
 
+		// debug($data['country']);
+
 		$this->load_view('profile', $data);
 	}
 

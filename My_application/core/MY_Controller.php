@@ -537,23 +537,63 @@ class MY_Controller extends MY_Controller_Admin
     }
 
 
-    public function book($data){
-       
-       // $config['mailtype'] = 'html';   
-        
-        $this->load->library('email'); 
-
-        $config['mailtype'] = 'html';
-        $config['smtp_port']='587';
-        $config['smtp_timeout']='30';
-        $config['charset']='utf-8';
-        $config['protocol'] = 'smtp';
-        $config['mailpath'] = '/usr/sbin/sendmail';
-        $config['charset'] = 'iso-8859-1';
-        $config['wordwrap'] = TRUE;
-
+    //     function send(){
     
-       // $u=$this->model_booking->find_by_pk($data['booking_expert_id']);
+    //     $this->load->library('phpmailer_lib');
+        
+    //     $mail = $this->phpmailer_lib->load();
+        
+      
+    //     $mail->isSMTP();
+    //     $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    //     $mail->SMTPAuth = true;
+    //     $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+    //     $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    //     $mail->SMTPSecure = 'ssl';
+    //     $mail->Port     = 465;
+        
+    //     $mail->setFrom('madiha@alphacandy.com', 'Madiha');
+    //     $mail->addReplyTo('madiha@alphacandy.com', 'Madiha');
+
+    //     $mail->addAddress('navaid@manageglobally.io');
+        
+   
+    //     // $mail->addCC('madiha@alphacandy.com');
+    //     // $mail->addBCC('madiha@alphacandy.com');
+        
+
+    //     $mail->Subject = 'Send Email in CodeIgniter';
+        
+        
+    //     $mail->isHTML(true);
+        
+     
+    //     $mailContent = "<h1>Send HTML Email in CodeIgniter</h1>
+    //         <p>This is a test email sending.</p>";
+    //     $mail->Body = $mailContent;
+ 
+    //     if(!$mail->send()){
+    //         echo 'Message could not be sent.';
+    //         echo 'Mailer Error: ' . $mail->ErrorInfo;
+    //     }else{
+    //         echo 'Message has been sent';
+    //     }
+    // }
+
+
+    public function book($data){
+
+        $this->load->library('phpmailer_lib');
+        $mail = $this->phpmailer_lib->load();
+        $a= $this->model_expert->find_by_pk($data['booking_expert_id']);
+      
+        $mail->isSMTP();
+        $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+        $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port     = 465;
         $param = array();
         if(isset($data) && array_filled($data))
         {
@@ -561,34 +601,253 @@ class MY_Controller extends MY_Controller_Admin
             {
                 $param['form_input'][$kye] = htmlentities(trim($value));
             }
+         
+           $param['form_input']['Full Name']=$a['expert_name'];
+        }
+   
+        $mail->setFrom($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
+        $mail->addReplyTo($a['expert_email'], $a['expert_name']);
+
+        $mail->addAddress($a['expert_email']);
+        $mail->Subject = 'Thank you for the Expert Booking';
         
-        }
-        $param['msg'] = 'Dear Expert,<br> <br>
-        We have received a booking in your website, detail is given below:<br><br>';
+        
+        $mail->isHTML(true);
+
+      //  debug($param,1);
 
         
-        $from_email = $data['booking_email']; 
-        $to_email = 'madiha@alphacandy.com';            
-        $this->email->from($from_email, 'Booking Confirmation'); 
-        $this->email->to($to_email);
-        $this->email->set_header('Content-Type', 'text/html');
-        $this->email->subject('Booking Confirmation'); 
-        $this->email->message($this->load->view('_layout/email_template/default_template', $param , true));   
-        $this->email->send();
+     
+        $mailContent = $this->load->view('_layout/email_template/default_template', $param , true);
+        $mail->Body = $mailContent;
 
-        if(! $this->email->send()){
+        $mail->send();
+ 
 
-            echo $this->email->print_debugger();
-        }
-
-        else
-        {
-            echo 'send';
-        }
-
-      //  die();
 
 }
+    public function cancle_sub_email($data){
+
+        $this->load->library('phpmailer_lib');
+        $mail = $this->phpmailer_lib->load();
+        $a= $this->model_user->find_by_pk($data['user_id']);
+      
+        $mail->isSMTP();
+        $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+        $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port     = 465;
+        $param = array();
+        if(isset($data) && array_filled($data))
+        {
+            foreach($data as $kye=>$value)
+            {
+                $param['form_input'][$kye] = htmlentities(trim($value));
+            }
+         
+           $param['form_input']['Full Name']=$a['expert_name'];
+        }
+   
+        // debug($data,1);
+        // die();
+        $mail->setFrom(g('db.admin.email_contact_us'), "Unsubscribed");
+        $mail->addReplyTo($data['user_email'], $this->session->userdata['logged_in_front']['first_name']);
+
+        $mail->addAddress($data['user_email']);
+        $mail->Subject = 'Sorry to Say Goodbye!';
+        
+        
+        $mail->isHTML(true);
+
+      //  debug($param,1);
+
+        
+     
+        $mailContent = $this->load->view('_layout/email_template/cancel_subscription', $param , true);
+        $mail->Body = $mailContent;
+
+        $mail->send();
+ 
+
+
+}
+
+
+public function signup($data){
+
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+
+  
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
+
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->addReplyTo($data['user_email'], $data['user_firtsname']);
+
+    $mail->addAddress($data['user_email']);
+
+    $param = array();
+    if(isset($data) && array_filled($data))
+    {
+        foreach($data as $kye=>$value)
+        {
+            $param['form_input'][$kye] = htmlentities(trim($value));
+        }
+        $param['form_input']['Full Name']=$data['user_firstname'];
+      
+    }
+
+    $mail->Subject = 'Member Welcome to Mind Cloud Tribe!';
+        
+    $mail->isHTML(true);
+
+    $mailContent = $this->load->view('_layout/email_template/signup', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
+
+
+
+}
+
+
+
+
+public function newsletter($data){
+
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+  
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
+
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->addReplyTo($data['newsletter_email']);
+
+    $mail->addAddress($data['newsletter_email']);
+
+    $param = array();
+    if(isset($data) && array_filled($data))
+    {
+        foreach($data as $kye=>$value)
+        {
+            $param['form_input'][$kye] = htmlentities(trim($value));
+        }
+  
+      
+    }
+
+    $mail->Subject = 'Thank You for Subscribing to Mind Cloud Tribe!';
+        
+    $mail->isHTML(true);
+
+    $mailContent = $this->load->view('_layout/email_template/newsletter', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
+
+}
+
+
+
+
+public function renewal(){
+
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+  
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
+
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
+
+    $mail->addAddress($this->session->userdata['logged_in_front']['email']);
+
+    $param = array();
+    // if(isset($data) && array_filled($data))
+    // {
+    //     foreach($data as $kye=>$value)
+    //     {
+    //         $param['form_input'][$kye] = htmlentities(trim($value));
+    //     }
+  
+      
+    // }
+
+    $mail->Subject = 'Mind Cloud Tribe - 15 days before Renewal Date';
+        
+    $mail->isHTML(true);
+
+    $mailContent = $this->load->view('_layout/email_template/renewal', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
+
+}
+
+
+
+public function renewal_two(){
+
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+  
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
+
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
+
+    $mail->addAddress($this->session->userdata['logged_in_front']['email']);
+
+    $param = array();
+    // if(isset($data) && array_filled($data))
+    // {
+    //     foreach($data as $kye=>$value)
+    //     {
+    //         $param['form_input'][$kye] = htmlentities(trim($value));
+    //     }
+  
+      
+    // }
+
+    $mail->Subject = 'Mind Cloud Tribe – Invitation to join the Tribe!';
+        
+    $mail->isHTML(true);
+
+    $mailContent = $this->load->view('_layout/email_template/renewal_two', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
+
+}
+
+
+
 
 
 

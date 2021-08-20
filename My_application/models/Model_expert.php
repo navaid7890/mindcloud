@@ -99,6 +99,17 @@ class Model_expert extends MY_Model {
                      'rules'   => 'required|trim|htmlentities|numeric'
                   ),
 
+
+                  'expert_email' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'expert_email',
+                    'label'   => 'Email',
+                    'type'   => 'text',
+                    'attributes'   => array(),
+                    'js_rules'   => 'required',
+                    'rules'   => 'required|valid_email|strtolower|trim|htmlentities|is_unique['.$this->_table.'.'.$this->_field_prefix.'email]'
+                 ),
+
                'expert_desc' => array(
                      'table'   => $this->_table,
                      'name'   => 'expert_desc',

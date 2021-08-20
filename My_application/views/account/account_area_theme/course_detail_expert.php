@@ -250,7 +250,7 @@
                      <div class="row">
                         <div class="col-lg-1 col-md-12">
                            <div class="profile-img">
-                              <img src="<?= i('') ?>/profile/profile.png" alt="">
+                           <img src="<?=get_image($this->layout_data['user_data']['ui_profile_image'],$this->layout_data['user_data']['ui_profile_image_path'])?>">
                            </div>
                         </div>
 
