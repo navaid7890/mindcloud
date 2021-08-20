@@ -81,8 +81,10 @@ class Booking extends MY_Controller {
 
         if($_POST['booking']['booking_expert_approval']==1)
         {
-           $this->model_email->request_payment($_POST['booking']['booking_user_id'],$_POST['booking']['booking_expert_id']);
-        //  debug( $this->model_email,1);
+            $all=$this->model_booking->find_by_pk($_POST['booking']['booking_id']);
+            parent::confirm_expert($all);
+         
+                    
 
         }
         parent::add($id, $data);
