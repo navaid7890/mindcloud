@@ -23,8 +23,8 @@
 						<li><a class="<?=($this->uri->segment(1) =='expert-tutorial')  ? 'active' : ''?>" href="<?=l('expert-tutorial')?>">Experts Tutorials</a></li>
 						<li><a class="<?=($this->uri->segment(2) =='learing-journey')  ? 'active' : ''?>" href="<?=l('account/profile/learning')?>">Learning Journey</a></li>
 						<li><a href="<?=l('booking')?>">Consult with Experts</a></li>
-						<li><a href="#"> Community</a></li>
-						<li><a href="https://mindcloudacademy.com/">The Academy</a></li>
+						<li><a href="<?=l('newsfeed')?>"> Community</a></li>
+						<li><a href="https://mindcloudacademy.com/" target="_blank">The Academy</a></li>
 						<!-- <li><a href="https://mindcloudacademy.com/"> The Academy</a></li> -->
 						<!-- <li><a href="#"><span><img src="<?//=i('')?><?//= $this->session_data['profile_image'] ?>"></span> <?//= $this->session_data['username'] ?> <i class="fal fa-angle-down"></i></a></li> -->
 						<li><a href="#"><i class="fal fa-envelope-open-text"></i></a></li>
