@@ -10,6 +10,7 @@ $(document).ready(function() {
         $('.menuWrap').toggleClass('open');
         $('body').toggleClass('ovr-hiddn');
     });
+    
 
     $('a.menu-dash, .menu-dash-front').click(function() {
         $(this).toggleClass('open');

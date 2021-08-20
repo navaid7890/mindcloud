@@ -10,7 +10,7 @@ $logo=$this->model_logo->find_all_active();
 
 	<div class="main-header">
 		<div class="container-fluid">
-			<div class="menu-Bar">
+			<div class="menu-Bar homeArea">
 				<span></span>
 				<span></span>
 				<span></span>

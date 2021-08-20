@@ -58,7 +58,7 @@
                         ?>
                         <div class="row align-items-center pt-40">
                             <div class="col-md-12">
-                                <ul class="login-btn">
+                                <ul class="login-btnExpert">
                                     <li><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $expt_name[0]['expert_image'] ?>"></span> <?= $expt_name[0]['expert_name'] ?> </a></li>
                                 </ul>
                             </div>

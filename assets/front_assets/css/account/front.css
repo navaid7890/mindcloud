@@ -2430,7 +2430,19 @@
         padding-left: 65px;
         position: relative;
     }
-    
+    ul.login-btnExpert>li>a>span {
+        width: 38px;
+        border-radius: 100%;
+        vertical-align: middle;
+        overflow: hidden;
+        margin-right: 10px;
+        height: 32px;
+        overflow: hidden;
+    }
+    ul.login-btnExpert a {
+        color: #33415C;
+        font-size: 12px;
+    }
     @media (max-width: 1200px) {
         img {
             max-width: 100%;
@@ -2556,6 +2568,8 @@
     }
     
     @media (max-width: 824px) {
+
+        
         .front-dashboard.open .dashboard-menu-box{width:100%;}
         .front-dashboard .dashboard-menu-box{width:0px;}
         footer {
@@ -2706,7 +2720,7 @@
             font-size: 24px;
         }
         .vid-content h4 {
-            font-size: 18px;
+            font-size: 16px;
         }
         .vid-box {
             min-height: auto;
@@ -2779,7 +2793,7 @@
             margin-right: 10px;
         }
         .faqBox span {
-            font-size: 14px;
+            font-size: 20px;
         }
         .space>br+br {
             display: none;

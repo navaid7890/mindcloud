@@ -1777,8 +1777,19 @@ ul.login-btn>li>a>span {
 .vid-content ul.login-btn>li>a>span {
     height: auto !important;
 }
-
-
+ul.login-btnExpert>li>a>span {
+    width: 38px;
+    border-radius: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 10px;
+    height: 32px;
+    overflow: hidden;
+}
+ul.login-btnExpert a {
+    color: #33415C;
+    font-size: 12px;
+}
 @media (min-width:768px) {
     .copyright-top .col-md-9 { flex: 0 0 92% !important; max-width: 100%; }
 }
@@ -1796,6 +1807,14 @@ ul.login-btn>li>a>span {
     header .main-header ul.menu>li { display: block; margin: 0px; padding: 0; }
     header .main-header ul.menu>li a { color: #fff; font-size: 22px; }
     header .main-header ul.menu>li a:before { display: none; }
+    .menu {
+        font-size: 0px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+
+
 }
 @media (max-width:1440px) {
     .login-mdl span img { width: 100%; height: 100%; position: absolute; }

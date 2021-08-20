@@ -100,7 +100,7 @@
                                         <div class="video-box">
 
 
-                                            <video width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $vid_name[0]['videos_image2'] ?>" controls>
+                                            <video controlsList="nodownload" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $vid_name[0]['videos_image2'] ?>" controls>
                                                 <source src="<?= g('db.admin.bucket') . $expert_course['tutorial_video'] ?>" type="video/mp4">
                                                 <source src="<?= g('db.admin.bucket') . $expert_course['tutorial_video'] ?>" type="video/ogg">
                                                 Your browser does not support the video tag.

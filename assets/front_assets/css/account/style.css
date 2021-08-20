@@ -1835,9 +1835,9 @@ ul.form-tabing>li.current:after {
     border-color: #2590d9;
 }
 
-ul.form-tabing .fld-html,
-ul.form-tabing {
+ul.form-tabing .fld-html, ul.form-tabing {
     margin-bottom: 30px;
+    margin-top: 80px;
 }
 
 ul.fld-progress {
@@ -2850,7 +2850,19 @@ ul.login-btn .dropdown-box {
     z-index: 999;
     width: 200px;
 }
-
+ul.login-btnExpert>li>a>span {
+    width: 38px;
+    border-radius: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 10px;
+    height: 32px;
+    overflow: hidden;
+}
+ul.login-btnExpert a {
+    color: #33415C;
+    font-size: 12px;
+}
 ul.user-links>li>a:hover {
     background: #2da8e8;
     color: #fff;
@@ -3313,6 +3325,7 @@ button.cart-trim:hover {
 .progress-btn a.btn-theme {
     padding: 22px 28px;
     text-align: center;
+    margin: 10px 15px;
 }
 .table td, .table th{vertical-align: middle;}
 .fancybox-slide video {
@@ -3544,6 +3557,23 @@ ul.dashboard-layout>li:nth-child(2) {
 }
 
 @media (max-width: 824px) {
+    .vid-content .arrow-links {
+        display: none;
+    }
+    .faqBoxLock {
+        width: 100%;
+        padding: 25px 20px;
+    }
+    .faqBoxLock i {
+        margin-right: 14px;
+        line-height: 33px;
+    }
+    .topCircle .percent2 {
+        margin-right: auto !important;
+        margin-left: auto !important;
+        text-align: center;
+        justify-content: center;
+    }
     .fld-text input{padding: 0 10px!important;}
 
     .row-box .text-right,
@@ -3922,7 +3952,19 @@ ul.dashboard-layout>li:nth-child(2) {
         z-index: 1;
     }
     .vid-tran .fld-btn {
-        width: 65%;
+        width: 100%;
+        margin-top: 30px;
+    }
+    .btnArea {
+        display: block !important;
+    }
+    input#forms-expert-tutorial-video-btn {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .btnArea .btn-dashboard {
+        width: 100%;
+        text-align: center;
     }
     .fld-btn input {
         font-size: 16px;
@@ -4032,6 +4074,9 @@ ul.dashboard-layout>li:nth-child(2) {
 }
 
 @media (max-width: 767px) {
+    .vid-content .arrow-links {
+        display: none;
+    }
     .oder-detail ul>li {
         margin-right: 0;
         display: block;

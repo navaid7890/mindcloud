@@ -196,9 +196,9 @@
 
                                        <div class="vid-content">
                                           <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
-                                          <div class="row align-items-center pt-70">
+                                          <div class="row align-items-center">
                                              <div class="col-md-12">
-                                                <ul class="login-btn">
+                                                <ul class="login-btnExpert">
                                                    <li><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $value['expert_image'] ?>"></span> <?= $value['expert_name'] ?> </a></li>
                                                 </ul>
                                              </div>

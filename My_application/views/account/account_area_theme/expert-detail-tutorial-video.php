@@ -154,7 +154,7 @@
                            <div class="col-md-7">
                               <? if ($tutorial_detail['videos_ppt_status'] == 1) : ?>
                                  <div class="video-box">
-                                    <video onclick="plusOne(<?= $tutorial_detail['videos_views']; ?>)" ontimeupdate="myPPTTime(this)" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
+                                    <video controlsList="nodownload" onclick="plusOne(<?= $tutorial_detail['videos_views']; ?>)" ontimeupdate="myPPTTime(this)" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
                                        <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/mp4">
                                        <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/ogg">
                                        Your browser does not support the video tag.
@@ -162,7 +162,7 @@
                                  </div>
                               <? else : ?>
                                  <div class="video-box">
-                                    <video onclick="plusOne(<?= $tutorial_detail['videos_views']; ?>)" ontimeupdate="myFunction(this)" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
+                                    <video controlsList="nodownload" onclick="plusOne(<?= $tutorial_detail['videos_views']; ?>)" ontimeupdate="myFunction(this)" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $tutorial_detail['videos_image2'] ?>" controls>
                                        <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/mp4">
                                        <source src="<?= g('db.admin.bucket') . 'videos/' . $tutorial_detail['videos_image'] ?>" type="video/ogg">
                                        Your browser does not support the video tag.

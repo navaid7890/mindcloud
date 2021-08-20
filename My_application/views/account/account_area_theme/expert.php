@@ -178,7 +178,7 @@
                                                                         <h4><a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
                                                                         <div class="row align-items-center pt-60">
                                                                             <div class="col-md-12">
-                                                                                <ul class="login-btn pb-10">
+                                                                                <ul class="login-btnExpert pb-10">
                                                                                     <li><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $value['expert_image'] ?>"></span> <?= $value['expert_name'] ?> </a></li>
                                                                                 </ul>
                                                                             </div>
