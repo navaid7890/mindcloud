@@ -1988,6 +1988,18 @@ ul.login-btnExpert a {
     .faqBox { width: 100%; padding: 20px 15px; }
     .faqBox span>i { opacity: 0.5; margin-right: 10px; }
     .faqBox span { font-size: 14px; }
+    .faqBox span {
+        font-size: 20px;
+    }
+    .faqBox,
+    .faqBoxLock {
+        width: 100% !important;
+        padding: 25px 20px;
+    }
+    .faqBoxLock i {
+        margin-right: 14px;
+        line-height: 33px;
+    }
     .space>br+br { display: none; }
     .joinSec {padding: 40px 15px;}
     .faqBar span { font-size: 15px; width: 100%; line-height: 22px; padding-right: 25px; }
