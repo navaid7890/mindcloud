@@ -506,9 +506,9 @@ a.btn-theme>span {
     font-weight: 300;
 }
 
-.menu li:nth-last-child(-n+3) {
+/* .menu li:nth-last-child(-n+3) {
     display: none;
-}
+} */
 
 .menu li:nth-child(4) {
     margin-right: 0;
@@ -563,7 +563,7 @@ ul.dropdown li a {
     line-height: normal;
 }
 
-ul.dropdown li a:before {
+/* ul.dropdown li a:before {
     content: "\f570";
     position: absolute;
     left: 12px;
@@ -581,7 +581,7 @@ ul.dropdown li a:before {
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
-}
+} */
 
 ul.dropdown li:hover a,
 ul.dropdown li.active a {

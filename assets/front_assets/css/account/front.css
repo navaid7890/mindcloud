@@ -295,7 +295,7 @@
         -moz-transition: all 0.4s ease-In-out;
         -o-transition: all 0.4s ease-In-out;
         transition: all 0.4s ease-In-out;
-        padding: 30px 0%;
+        padding: 16px 0%;
         box-shadow: 0px 3px 6px #00000029;
         position: relative;
         position: fixed;
@@ -535,7 +535,7 @@
         line-height: normal;
     }
     
-    ul.dropdown li a:before {
+    /* ul.dropdown li a:before {
         content: "\f570";
         position: absolute;
         left: 12px;
@@ -553,7 +553,7 @@
         -moz-transition: all 0.4s ease-in-out;
         -o-transition: all 0.4s ease-in-out;
         transition: all 0.4s ease-in-out;
-    }
+    } */
     
     ul.dropdown li:hover a,
     ul.dropdown li.active a {
@@ -1974,7 +1974,7 @@
         bottom: 0;
     }
     
-    .login-page header {
+    /* .login-page header {
         box-shadow: 0px 3px 6px #00000029;
         background: #fff;
         padding: 30px 8%;
@@ -1982,7 +1982,7 @@
         left: 0;
         right: 0;
         z-index: 1;
-    }
+    } */
     
     .login-wrap {
         max-width: 565px;
@@ -2558,10 +2558,10 @@
         .login-page .login-banner {
             padding-top: 112px;
         }
-        header,
+        /* header,
         .login-page header {
             padding: 30px 0;
-        }
+        } */
         .home-banner {
             background-position: bottom;
         }
