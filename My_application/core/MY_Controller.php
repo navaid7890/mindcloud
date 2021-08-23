@@ -632,7 +632,6 @@ class MY_Controller extends MY_Controller_Admin
 public function confirm_expert($data){
 
 
-   // debug($data,1);
 
     $this->load->library('phpmailer_lib');
     $mail = $this->phpmailer_lib->load();
@@ -852,6 +851,49 @@ public function renewal_two(){
 
 }
 
+
+
+public function inquiry($data){
+
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
+
+    $mail->setFrom($data['inquiry_email'], $data['inquiry_name']);
+    $mail->addReplyTo('madiha@alphacandy.com', 'Genny');
+
+    $mail->addAddress('madiha@alphacandy.com');
+
+    $param = array();
+    if(isset($data) && array_filled($data))
+    {
+        foreach($data as $kye=>$value)
+        {
+            $param['form_input'][$kye] = htmlentities(trim($value));
+        }
+     //   $param['form_input']['Full Name']=$data['user_firstname'];
+      
+    }
+
+    $mail->Subject = 'Contact us Inquiry';
+        
+    $mail->isHTML(true);
+
+    $mailContent = $this->load->view('_layout/email_template/inquiry', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
+
+
+
+}
 
 
 
