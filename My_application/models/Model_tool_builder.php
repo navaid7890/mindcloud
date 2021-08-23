@@ -153,7 +153,7 @@ class Model_tool_builder extends MY_Model {
                      'table'   => $this->_table,
                      'name'   => 'tool_builder_customer_segments',
                      'label'   => 'Customer Segments',
-                     'type'   => 'textarea',
+                     'type'   => 'editor',
                      'attributes'   => array(),
                      'js_rules'   => '',
                      'rules'   => 'trim|htmlentities'

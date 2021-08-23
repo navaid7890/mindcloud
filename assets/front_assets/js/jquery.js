@@ -2724,7 +2724,7 @@ if (n) {
                       a.showLoading(t), i = n.ajax(n.extend({}, t.opts.ajax.settings, { url: t.src, success: function(e, n) { "success" === n && a.setContent(t, e) }, error: function(e, n) { e && "abort" !== n && a.setError(t) } })), o.one("onReset", function() { i.abort() });
                       break;
                   case "video":
-                      a.setContent(t, '<video controls><source src="' + t.src + '" type="' + t.opts.videoFormat + "\">Your browser doesn't support HTML5 video</video>");
+                      a.setContent(t, '<video controls controlsList="nodownload" ><source src="' + t.src + '" type="' + t.opts.videoFormat + "\">Your browser doesn't support HTML5 video</video>");
                       break;
                   default:
                       a.setError(t)
