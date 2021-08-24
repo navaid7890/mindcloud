@@ -69,6 +69,8 @@ p.pro-info {
 
 p.pro-name {
     font-size: 18px;
+    padding-top: 10px;
+    color: #33415C;
 }
 .pad-sec {
     padding: 0px;
