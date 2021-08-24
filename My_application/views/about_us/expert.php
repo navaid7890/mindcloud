@@ -58,8 +58,15 @@
       display: inline-block;
       margin-right: 15px;
    }
-   ul.paginationMC li.first{display: none;}
-   ul.paginationMC li.first.active{display: inline-block;}
+
+   ul.paginationMC li.first {
+      display: none;
+   }
+
+   ul.paginationMC li.first.active {
+      display: inline-block;
+   }
+
    .my h1:after {
       content: "";
       height: 12px;
@@ -71,6 +78,18 @@
       bottom: -14px;
       border-radius: 100px;
       right: -4px;
+   }
+
+   .btnExpertWatch {
+      color: #fff;
+      margin-top: 10px;
+      float: right;
+   }
+
+   @media (max-width:1200px) {
+      .btnExpertWatch {
+         float: none;
+      }
    }
 </style>
 
@@ -87,7 +106,7 @@
                   </div>
                   <div class="col-lg-6 col-md-12 bannerSeactionArea">
                      <?= html_entity_decode($cont2['cms_page_content']) ?>
-                     <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/HOW_IT_WORKS_COMPLETE.mp4" class="btn-links" data-fancybox="media" style="color: #fff;margin-top: 10px;float: right;"><i class="fas fa-play-circle"></i> watch how it works</a>
+                     <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/HOW_IT_WORKS_COMPLETE.mp4" class="btn-links btnExpertWatch" data-fancybox="media"><i class="fas fa-play-circle"></i> watch how it works</a>
                   </div>
 
                </div>
@@ -230,7 +249,7 @@
                         <div class="row">
                            <div class="col-md-12">
                               <div class="text-center">
-                                 <nav><br/><br/>
+                                 <nav><br /><br />
                                     <ul class="paginationMC">
                                        <?= $links ?>
                                     </ul>

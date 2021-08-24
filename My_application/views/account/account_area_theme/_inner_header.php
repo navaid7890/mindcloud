@@ -47,6 +47,28 @@ ul.dropdown li a:after{ display: none;}
 .menu li:nth-last-child(-n+3) {
     display: block;
 }
+@media (max-width:1200px) {
+    img { max-width: 100%; height: auto; }
+    .menu-Bar { display: block; top: 0px; }
+    .menuWrap.open { display: flex; left: 0px; z-index: 1; }
+    .menuWrap { position: fixed; left: -210%; right: 0; top: 0; bottom: 0; margin: auto; background: #0f4c97; height: 100vh; display: flex; align-items: center; justify-content: center; flex-flow: column; transition: all 0.4s ease; z-index: 3; width: 100vw; }
+    a.b-top { font-size: 40px; position: absolute; right: 0; color: #fdbe41; box-shadow: 0px 3px 6px #00000029; border-radius: 100px; right: 28px; }
+    ul.menu li { display: block; }
+    ul.menu li a { margin-bottom: 10px; padding: 0; display: block; text-align: center; margin-bottom: 15px; padding-right: 0px; margin-right: 0px; color: #fff; font-size: 15px; text-transform: capitalize; }
+    .logo img { max-width: 50%; }
+    .container { position: relative; }
+    header .main-header ul.menu>li { display: block; margin: 0px; padding: 0; }
+    header .main-header ul.menu>li a { color: #fff; font-size: 22px; }
+    header .main-header ul.menu>li a:before { display: none; }
+    .menu {
+        font-size: 0px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+
+
+}
 </style>
 <header>
 	<div class="main-header">

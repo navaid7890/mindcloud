@@ -284,13 +284,13 @@
                   <div class="space"><br><br></div>
                   <?php foreach ($review as $key => $value) : ?>
                      <div class="row">
-                        <div class="col-lg-1 col-md-12">
+                        <div class="col-lg-1 col-md-2 col-3">
                            <div class="profile-img">
                            <img src="<?=get_image($this->layout_data['user_data']['ui_profile_image'],$this->layout_data['user_data']['ui_profile_image_path'])?>">
                            </div>
                         </div>
 
-                        <div class="col-lg-11 col-md-12">
+                        <div class="col-lg-11 col-md-10 col-9">
 
                            <div class="usr-review">
                               <?
@@ -306,7 +306,7 @@
                                     <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                  <? } ?>
                               </ul>
-                              <p><?= $review[$key]['learning_journey_course_review_createdon'] ?></p>
+                              <!-- <p><?//= $review[$key]['learning_journey_course_review_createdon'] ?></p> -->
                            </div>
                            <div class="user-content">
                               <p><?= $review[$key]['learning_journey_course_review_desc'] ?></p>
