@@ -1,7 +1,7 @@
 <style>
    .mainBanner {
       background: transparent linear-gradient(180deg, #FFFFFF00 0%, #F3F7FB 100%) 0% 0% no-repeat padding-box;
-      height: 586px;
+      /* height: 586px; */
       align-items: center;
       display: flex;
    }
@@ -9,6 +9,7 @@
    .lrnjSec .mainBanner {
       height: inherit;
       background: #f3f7fb;
+      padding: 50px 0px;
    }
 
    .lrnjSec {

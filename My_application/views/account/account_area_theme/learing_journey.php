@@ -51,6 +51,12 @@
     .mainBanner .video-box {
         width: 340px !important;
     }
+
+    @media (max-width: 824px) {
+        .lrnjSec .mainBanner {
+            height: inherit !important;
+        }
+    }
 </style>
 <div class="index-page">
     <section class="dashboard">

@@ -3560,6 +3560,7 @@ ul.dashboard-layout>li:nth-child(2) {
     .vid-content .arrow-links {
         display: none;
     }
+    .faqBox,
     .faqBoxLock {
         width: 100% !important;
         padding: 25px 20px;
