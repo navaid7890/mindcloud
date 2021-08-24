@@ -19,6 +19,8 @@
     strong.locked {
         display: none;
     }
+
+    
 </style>
 
 <div class="course-box hding-3 CboxLJ">
@@ -54,8 +56,8 @@
                 $startupdata = $this->model_startup->find_all_active($startup);
                 // debug($startupdata[0]['startup_name']);
                 ?>
-                <ul class="login-btn">
-                    <li><a href="#">
+                <ul class="startUpname">
+                    <li>
                             <? if (!empty($startupdata)) : ?>
                                 <?= $startupdata[0]['startup_name'] ?>
                             <? else : ?>
@@ -63,7 +65,7 @@
                             <? endif; ?>
                             <? //=$this->session->userdata['logged_in_front']['first_name']
                             ?>
-                        </a>
+                        
                     </li>
                 </ul>
             </div>

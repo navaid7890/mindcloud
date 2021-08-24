@@ -228,7 +228,9 @@ button {
 .hding-5 h5 {}
 
 .hding-6 h6 {}
-
+ul.startUpname {
+    text-align: left;
+}
 .para p {
     font-size: 20px;
     line-height: normal;
@@ -3557,6 +3559,10 @@ ul.dashboard-layout>li:nth-child(2) {
 }
 
 @media (max-width: 824px) {
+    ul.startUpname {
+        text-align: center;
+        margin-top: 10px;
+    }
     .vid-content .arrow-links {
         display: none;
     }
@@ -3647,7 +3653,7 @@ ul.dashboard-layout>li:nth-child(2) {
         display: none;
     }
     .tutorialSec a.cate-tag {
-        top: 44%;
+        top: auto;
     }
     .tutorialSec ul.tut-list .vid-content {
         padding: 40px 15px;
@@ -3655,9 +3661,9 @@ ul.dashboard-layout>li:nth-child(2) {
     .tutorialSec ul.rating {
         justify-content: flex-start;
     }
-    ul.tut-list h6 {
+    /* ul.tut-list h6 {
         text-align: left;
-    }
+    } */
     .tutorialSec .pt-70 {
         padding-top: 0;
     }

@@ -62,6 +62,13 @@
     #expertGraph .index-page-wrap {
         height: 400px !important;
     }
+
+
+    @media (max-width:1200px) {
+        #expertGraph .expertCount {
+            top: 67px;
+        }
+    }
 </style>
 
 <div class="index-page">

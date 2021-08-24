@@ -86,6 +86,10 @@
       float: right;
    }
 
+   .expert-page-Sec ul.who-list>li:nth-last-child(-n+3) {
+      margin-bottom: 15px;
+   }
+
    @media (max-width:1200px) {
       .btnExpertWatch {
          float: none;
