@@ -10,7 +10,7 @@ $logo=$this->model_logo->find_all_active();
 
 	<div class="main-header">
 		<div class="container-fluid">
-			<div class="menu-Bar">
+			<div class="menu-Bar homeArea">
 				<span></span>
 				<span></span>
 				<span></span>
@@ -63,7 +63,7 @@ $logo=$this->model_logo->find_all_active();
 				</div>
 				<div class="col-md-3 text-right">
 					<ul class="login-btn">
-						<li><a href="<?= l('cart') ?>" class="cart-icon"><i class="fas fa-shopping-cart"><sup class="cart_body">0</sup></i> </a></li>
+						<!-- <li><a href="<?//= l('cart') ?>" class="cart-icon"><i class="fas fa-shopping-cart"><sup class="cart_body">0</sup></i> </a></li> -->
 						<?php if (isset($this->session->userdata['logged_in_front']) and array_filled($this->session->userdata['logged_in_front'])) : ?>
 							<li class="dropdown-toggle"><a href="#"><span><img src="<?= get_image($this->layout_data['user_data']['ui_profile_image'], $this->layout_data['user_data']['ui_profile_image_path']) ?>"></span> <?=$this->session->userdata['logged_in_front']['first_name']?> <i class="fal fa-angle-down"></i></a>
 								<div class="dropdown-box">

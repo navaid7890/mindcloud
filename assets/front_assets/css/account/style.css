@@ -228,7 +228,9 @@ button {
 .hding-5 h5 {}
 
 .hding-6 h6 {}
-
+ul.startUpname {
+    text-align: left;
+}
 .para p {
     font-size: 20px;
     line-height: normal;
@@ -506,9 +508,9 @@ a.btn-theme>span {
     font-weight: 300;
 }
 
-.menu li:nth-last-child(-n+3) {
+/* .menu li:nth-last-child(-n+3) {
     display: none;
-}
+} */
 
 .menu li:nth-child(4) {
     margin-right: 0;
@@ -563,7 +565,7 @@ ul.dropdown li a {
     line-height: normal;
 }
 
-ul.dropdown li a:before {
+/* ul.dropdown li a:before {
     content: "\f570";
     position: absolute;
     left: 12px;
@@ -581,7 +583,7 @@ ul.dropdown li a:before {
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
-}
+} */
 
 ul.dropdown li:hover a,
 ul.dropdown li.active a {
@@ -1835,9 +1837,9 @@ ul.form-tabing>li.current:after {
     border-color: #2590d9;
 }
 
-ul.form-tabing .fld-html,
-ul.form-tabing {
+ul.form-tabing .fld-html, ul.form-tabing {
     margin-bottom: 30px;
+    margin-top: 80px;
 }
 
 ul.fld-progress {
@@ -2850,7 +2852,19 @@ ul.login-btn .dropdown-box {
     z-index: 999;
     width: 200px;
 }
-
+ul.login-btnExpert>li>a>span {
+    width: 38px;
+    border-radius: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 10px;
+    height: 32px;
+    overflow: hidden;
+}
+ul.login-btnExpert a {
+    color: #33415C;
+    font-size: 12px;
+}
 ul.user-links>li>a:hover {
     background: #2da8e8;
     color: #fff;
@@ -3313,6 +3327,7 @@ button.cart-trim:hover {
 .progress-btn a.btn-theme {
     padding: 22px 28px;
     text-align: center;
+    margin: 10px 15px;
 }
 .table td, .table th{vertical-align: middle;}
 .fancybox-slide video {
@@ -3544,6 +3559,28 @@ ul.dashboard-layout>li:nth-child(2) {
 }
 
 @media (max-width: 824px) {
+    ul.startUpname {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .vid-content .arrow-links {
+        display: none;
+    }
+    .faqBox,
+    .faqBoxLock {
+        width: 100% !important;
+        padding: 25px 20px;
+    }
+    .faqBoxLock i {
+        margin-right: 14px;
+        line-height: 33px;
+    }
+    .topCircle .percent2 {
+        margin-right: auto !important;
+        margin-left: auto !important;
+        text-align: center;
+        justify-content: center;
+    }
     .fld-text input{padding: 0 10px!important;}
 
     .row-box .text-right,
@@ -3616,7 +3653,7 @@ ul.dashboard-layout>li:nth-child(2) {
         display: none;
     }
     .tutorialSec a.cate-tag {
-        top: 44%;
+        top: auto;
     }
     .tutorialSec ul.tut-list .vid-content {
         padding: 40px 15px;
@@ -3624,9 +3661,9 @@ ul.dashboard-layout>li:nth-child(2) {
     .tutorialSec ul.rating {
         justify-content: flex-start;
     }
-    ul.tut-list h6 {
+    /* ul.tut-list h6 {
         text-align: left;
-    }
+    } */
     .tutorialSec .pt-70 {
         padding-top: 0;
     }
@@ -3922,7 +3959,19 @@ ul.dashboard-layout>li:nth-child(2) {
         z-index: 1;
     }
     .vid-tran .fld-btn {
-        width: 65%;
+        width: 100%;
+        margin-top: 30px;
+    }
+    .btnArea {
+        display: block !important;
+    }
+    input#forms-expert-tutorial-video-btn {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .btnArea .btn-dashboard {
+        width: 100%;
+        text-align: center;
     }
     .fld-btn input {
         font-size: 16px;
@@ -4032,6 +4081,9 @@ ul.dashboard-layout>li:nth-child(2) {
 }
 
 @media (max-width: 767px) {
+    .vid-content .arrow-links {
+        display: none;
+    }
     .oder-detail ul>li {
         margin-right: 0;
         display: block;

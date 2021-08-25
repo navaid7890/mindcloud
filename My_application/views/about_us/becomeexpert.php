@@ -40,6 +40,9 @@
     border-radius: 100px;
     right: -4px;
 }
+.hding-2 h2 {
+    text-transform: inherit !important;
+}
 </style>
 
 

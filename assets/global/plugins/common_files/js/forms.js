@@ -67,6 +67,7 @@ var Form = function () {
     tool_fm_cfs: base_url + "contact_us/tool_cfs_formsend",
     tool_fm_beps: base_url + "contact_us/tool_beps_formsend",
     tool_fm_dcvm: base_url + "contact_us/tool_dcvm_formsend",
+    cancle_subscribe: base_url + "contact_us/cancle_subscribe",
     get_transcript_percent: base_url + "contact_us/get_transcript_percent",
     //account_activate_process : base_url + "account/active_account/process",
     //review : base_url + "customer_review",
@@ -1081,7 +1082,7 @@ var Form = function () {
     },
 
 
-
+    
 
     update_profile: function (form) {
 
@@ -1102,6 +1103,7 @@ var Form = function () {
         return false;
       }
     },
+
 
 
     update_about: function (form) {
@@ -1236,6 +1238,39 @@ var Form = function () {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
         $("#form-beps").find('input[type=text],input[type=email],textarea').val('');
+
+        return false;
+      }
+      else {
+        Toastr.error(response.msg.desc, 'Error');
+
+        return false;
+      }
+      return false;
+    },
+   
+   
+   
+    cancle_subscribe: function (form) {
+
+
+      $('#cancle-subscription').prop('disabled', true);
+
+      var data = form.serialize();
+      response = AjaxRequest.fire(urls.cancle_subscribe, data);
+
+      $('#cancle-subscription').prop('disabled', false);
+      //Toastr.success(response.msg.desc, 'You Have Cancled Your Subscription');
+
+      // setTimeout(function () {
+      //   location.reload();
+      // }, 1000);
+       return false ;
+
+      if (response.status) {
+
+        Toastr.success(response.msg.desc, 'You Have Cancled Your Subscription');
+        $("#canclesubscribeform").find('input[type=text],input[type=email],textarea,input[type=hidden]').val('');
 
         return false;
       }
@@ -1970,7 +2005,13 @@ $("#post_job-btn").click(function () {
   }, 3000);
 });
 
-
+$(function () {
+  var $form = $('#canclesubscribeform');
+  $form.submit(function (event) {
+    Form.cancle_subscribe($form);
+    return false;
+  });
+});
 
 /*###########
 Resume Ajax Script END
@@ -2251,7 +2292,6 @@ $(function () {
     return false;
   });
 });
-
 /*###########
 Update User Information Ajax Script END
 ###########*/

@@ -109,7 +109,7 @@ $menu_links = array(
             array("link"=>"videos","title"=>"Manage Videos", "icon"=>" fa fa-angle-right"),
             array("link"=>"language","title"=>"Manage Language", "icon"=>" fa fa-angle-right"),
             array("link"=>"learning_journey_course_review","title"=>"Tutorial Reviews", "icon"=>" fa fa-angle-right"),
-            array("link"=>"expert_tutorial_review","title"=>"Videos Reviews", "icon"=>" fa fa-angle-right"),
+            // array("link"=>"expert_tutorial_review","title"=>"Videos Reviews", "icon"=>" fa fa-angle-right"),
             // array("link"=>"states","title"=>"Manage State", "icon"=>" fa fa-angle-right")            
         ),
     ),

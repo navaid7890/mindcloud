@@ -411,7 +411,7 @@ class Model_tutorial extends MY_Model
                 'type'   => 'text',
                 'attributes'   => array(),
                 'js_rules'   => 'required',
-                'rules'   => 'required|trim|htmlentities|numeric'
+                'rules'   => 'required|trim|htmlentities'
             ),
 
             'tutorial_duration' => array(

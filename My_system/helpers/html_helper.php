@@ -467,7 +467,7 @@ if( ! function_exists("create_modal_html_video") )
                             <h4 class="modal-title"><?=$title?></h4>
                         </div>
                         <div class="modal-body">
-                            <video width="100%" controls>
+                            <video controlsList="nodownload" width="100%" controls>
                                 <source src="" type="video/mp4" id="video-play">
                             </video>
                         </div>

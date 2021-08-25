@@ -40,7 +40,7 @@ Select file</a>
 <!-- <script type="text/javascript" src="https://www.plupload.com/plupload/js/plupload.full.min.js" charset="UTF-8"></script> -->
 
 <? if(!empty($video_url)) :?>
-<video src="<?=$video_url?>" width="50%" controls></video>
+<video controlsList="nodownload" src="<?=$video_url?>" width="50%" controls></video>
 <? endif;?>
 
 </div>

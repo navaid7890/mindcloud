@@ -5,9 +5,13 @@ $(document).ready(function() {
 
     $('[href="#"]').attr("href", "javascript:;");
 
+    $('.menu-Bar.homeArea').click(function() {
+        $(this).toggleClass('open');
+        $('.menuWrap').toggleClass('open');
+        $('body').toggleClass('ovr-hiddn');
+    });
+
   
-
-
    
 
     // $("ul.login-btn .dropdown-toggle > a").click(function(e) {

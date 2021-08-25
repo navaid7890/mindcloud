@@ -23,6 +23,10 @@
     div#Profile h2 {
         margin-top: 30px;
     }
+    .ExpertTextArea h1{
+        font-weight: 700;
+        font-size: 22px;
+    }
 </style>
 
 <!-- $profile['user_username'] -->

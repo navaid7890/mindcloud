@@ -268,7 +268,7 @@ if(is_array($additional_tools) && count($additional_tools))
 
 
 <!--<body class="responsive" <?=$this->layout_data['method_name'] == "quiz" ? 'oncontextmenu="return false;" onkeydown="return false;" onmousedown="return false;"' : ''?>>-->
-<body class="responsive" oncontextmenu="return false">
+<body class="responsive" oncontextmenu="return true">
   <div class="login-page"> 
 
   <!--[Start Loading Div]-->

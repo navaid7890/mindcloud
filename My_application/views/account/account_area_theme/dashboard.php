@@ -37,8 +37,8 @@
         margin-bottom: 30px;
         border-bottom: 1px solid #dfefff;
         height: 400px;
-        overflow: scroll;
-        overflow-x: hidden;
+        /* overflow: scroll;
+        overflow-x: hidden; */
     }
 
     ul.rating {
@@ -57,6 +57,17 @@
 
     strong.locked {
         display: none;
+    }
+
+    #expertGraph .index-page-wrap {
+        height: 400px !important;
+    }
+
+
+    @media (max-width:1200px) {
+        #expertGraph .expertCount {
+            top: 67px;
+        }
     }
 </style>
 
@@ -80,7 +91,7 @@
                                     <div class="progress-box">
                                         <h2>My <strong> Learning Journey </strong></h2>
                                         <div class="space"><br><br><br></div>
-                                        <div class="progres-bar" id="LearingJourney">
+                                        <!-- <div class="progres-bar" id="LearingJourney">
                                             <div class="progres-text">
                                                 <p>Intro to Learning Journey</p>
                                             </div>
@@ -91,7 +102,7 @@
                                                 <span>100%</span>
                                             </div>
 
-                                        </div>
+                                        </div> -->
                                         <div class="space"><br><br></div>
                                         <div class="progres-bar" id="businessCalculate">
                                             <div class="progres-text">
@@ -203,8 +214,8 @@
                         <div class="space"><br><br></div>
                         <div class="index-graph-box">
                             <div class="row graph-box-2" id="expertGraph">
-                                <div class="col-lg-7 col-md-12">
-                                    <div class="progress-box">
+                                <div class="col-lg-7 col-md-12 ">
+                                    <div class="progress-box index-page-wrap">
                                         <h2>My <strong> Experts Tutorials </strong></h2>
                                         <?php if (isset($art) && array_filled($art)) : ?>
                                             <?php foreach ($art as $key => $value) : ?>
@@ -339,8 +350,8 @@
                                                                         // debug($exp_name);
                                                                         // debug($exp_name['expert_image']);
                                                                         ?>
-                                                                        <ul class="login-btn">
-                                                                            <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                                        <ul class="login-btnExpert">
+                                                                            <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> </a></li>
                                                                         </ul>
                                                                     </div>
                                                                     <div class="col-md-2">
@@ -433,8 +444,8 @@
                                                                         // debug($exp_name);
                                                                         // debug($exp_name['expert_image']);
                                                                         ?>
-                                                                        <ul class="login-btn">
-                                                                            <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                                        <ul class="login-btnExpert">
+                                                                            <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> </a></li>
                                                                         </ul>
                                                                     </div>
                                                                     <div class="col-md-2">
@@ -530,8 +541,8 @@
                                                                     // debug($exp_name);
                                                                     // debug($exp_name['expert_image']);
                                                                     ?>
-                                                                    <ul class="login-btn">
-                                                                        <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                                    <ul class="login-btnExpert">
+                                                                        <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> </a></li>
                                                                     </ul>
                                                                 </div>
                                                                 <div class="col-md-2">
@@ -617,8 +628,8 @@
                                                                     // debug($exp_name);
                                                                     // debug($exp_name['expert_image']);
                                                                     ?>
-                                                                    <ul class="login-btn">
-                                                                        <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> <i class="fal fa-angle-down"></i></a></li>
+                                                                    <ul class="login-btnExpert">
+                                                                        <li><a href="#"><span><img src="<?= g('db.admin.bucketimg') . $exp_name[0]['expert_image'] ?>" loading="lazy"></span> <?= $exp_name[0]['expert_name'] ?> </a></li>
                                                                     </ul>
                                                                 </div>
                                                                 <div class="col-md-2">
