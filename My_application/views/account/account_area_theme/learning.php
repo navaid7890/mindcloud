@@ -36,7 +36,7 @@
                         </div> -->
                      </div>
                   </div>
-                  
+
                   <div class="tutorial-mid hding-4 hding-3 para">
                      <div class="tutorial-mid-content">
                         <h4>What kind of Entrepreneur are you?</h4>
@@ -45,12 +45,12 @@
                      </div>
                      <div class="space"><br><br></div>
                      <?
-                     
+
                      // debug($startup);
                      ?>
                      <ul class="tutorial-box-list">
                         <li>
-                           <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/Learning Journey_Intro 1_New Entrepreneur_Social Cut.mp4" data-fancybox="media">
+                           <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/Learning Journey_Intro 1_New Entrepreneur_Social Cut.mp4" data-fancybox>
                               <div class="tutorial-list-box">
                                  <div class="tutorial-box-content">
                                     <span><img src="<?= i('') ?>dashboard/home/icons/1.svg"></span>
@@ -63,7 +63,7 @@
                         </li>
 
                         <li>
-                           <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/Learning Journey_Intro 2_Corporate Intrapreneur_Social Cut.mp4" data-fancybox="media">
+                           <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/Learning Journey_Intro 2_Corporate Intrapreneur_Social Cut.mp4" data-fancybox>
                               <div class="tutorial-list-box">
                                  <div class="tutorial-box-content">
                                     <span><img src="<?= i('') ?>dashboard/home/icons/5.svg"></span>
@@ -103,21 +103,21 @@
                   </div>
                   <?
 
-$param = array();
-$param['order'] = "startup_id DESC";
-$param['where']['startup_user_id'] = $this->userid;
-$tool = $this->model_startup->find_one_active($param);
-//debug($tool);
+                  $param = array();
+                  $param['order'] = "startup_id DESC";
+                  $param['where']['startup_user_id'] = $this->userid;
+                  $tool = $this->model_startup->find_one_active($param);
+                  //debug($tool);
 
-?>
+                  ?>
                   <div class="tutorial-footer hding-4">
                      <div class="tutorial-footer-content">
                         <h4>What is the name of your Startup?</h4>
                         <div classs="space"><br><br></div>
                         <form id="forms-content-statup">
-                        <input type="hidden" name="startup[startup_user_id]" value="<?= $this->userid ?>">
+                           <input type="hidden" name="startup[startup_user_id]" value="<?= $this->userid ?>">
                            <div class="fld-email">
-                              <input type="text" name="startup[startup_name]" placeholder="Write Startup name here" required="" value="<?=$tool['startup_name']?>">
+                              <input type="text" name="startup[startup_name]" placeholder="Write Startup name here" required="" value="<?= $tool['startup_name'] ?>">
                            </div>
                            <div class="fld-btn">
                               <input type="submit" value="Confirm" id="forms-startup-btn">
