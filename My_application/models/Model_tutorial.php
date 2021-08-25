@@ -171,7 +171,7 @@ class Model_tutorial extends MY_Model
             $all[] = $value['cp_course_id'];
         }
         
-        $param['order'] = 'tutorial_id DESC';
+        $param['order'] = 'tutorial_name ASC';
         $param['where_in']['tutorial_id'] = $all;
 
 

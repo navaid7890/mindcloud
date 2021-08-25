@@ -22,8 +22,6 @@ button#pause-cycle {
     text-align: center;
 }
 
-
-
 </style>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -184,7 +182,7 @@ button#pause-cycle {
         });
         </script>
 
-        <script async="async" type='text/javascript' src="<?php echo getWidgetsJsURL($amazonpay_config); ?>"></script>
+ <script async="async" type='text/javascript' src="<?php echo getWidgetsJsURL($amazonpay_config); ?>"></script>
 
     </body>
 </html>
@@ -194,7 +192,5 @@ $( document ).ready(function() {
               window.location.href = 'thankyou';
           },11000);
 });
-
-
 
 </script>

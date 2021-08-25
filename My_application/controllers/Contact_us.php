@@ -59,7 +59,10 @@ class Contact_us extends MY_Controller
                     // debug($data,1);
 
                     $form_data = $this->model_inquiry->find_by_pk($inserted_id);
-                    $this->model_email->contactInquiry($form_data);
+
+                    parent::inquiry($data);
+                  
+                  //  $this->model_email->contactInquiry($form_data);
 
                     // debug($this->model_email);
 
