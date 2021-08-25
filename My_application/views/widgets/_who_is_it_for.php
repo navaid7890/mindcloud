@@ -23,7 +23,7 @@
         <ul class="who-list" id="whoIsitFor">
             <li>
                 <div class="vid-box">
-                    <a href="<?= g('db.admin.bucket') . $cont10['tutorial_video'] ?>" data-fancybox="media">
+                    <a href="<?= g('db.admin.bucket') . $cont10['tutorial_video'] ?>" data-fancybox>
                     <div class="video-box">
                         <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont10['cms_page_image'] ?>">
                         <span><i class="fas fa-play"></i></span>
@@ -39,7 +39,7 @@
 
             <li>
                 <div class="vid-box">
-                    <a href="<?= g('db.admin.bucket') . $cont11['tutorial_video'] ?>" data-fancybox="media">
+                    <a href="<?= g('db.admin.bucket') . $cont11['tutorial_video'] ?>" data-fancybox>
                     <div class="video-box">
                         <img src="<?= g('db.admin.bucketimg') . "cms_image/" . $cont11['cms_page_image'] ?>">
                         <span><i class="fas fa-play"></i></span>

@@ -22,7 +22,7 @@
             <li>
 
                 <div class="vid-box">
-                    <a controlsList="nodownload" href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
+                    <a controlsList="nodownload" href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox>
                         <div class="video-box">
                             <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
                             <span><i class="fas fa-play"></i>
@@ -49,7 +49,7 @@
                         <?
                         $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
                         ?>
-                        <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+                        <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= short_text($value['tutorial_name'],30)  ?></a></h4>
                         <?
                         $exp_name = array();
                         $exp_name['where']['expert_id'] = $value["tutorial_expert_id"];

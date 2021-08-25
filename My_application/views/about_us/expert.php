@@ -110,7 +110,7 @@
                   </div>
                   <div class="col-lg-6 col-md-12 bannerSeactionArea">
                      <?= html_entity_decode($cont2['cms_page_content']) ?>
-                     <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/HOW_IT_WORKS_COMPLETE.mp4" class="btn-links btnExpertWatch" data-fancybox="media"><i class="fas fa-play-circle"></i> watch how it works</a>
+                     <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/HOW_IT_WORKS_COMPLETE.mp4" class="btn-links btnExpertWatch" data-fancybox><i class="fas fa-play-circle"></i> watch how it works</a>
                   </div>
 
                </div>
@@ -196,7 +196,7 @@
                                  <li>
                                     <div class="vid-box">
 
-                                       <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
+                                       <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox>
                                           <div class="video-box">
                                              <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
                                              <span><i class="fas fa-play"></i> </span>
@@ -218,7 +218,7 @@
                                        </a>
 
                                        <div class="vid-content">
-                                          <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+                                          <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= short_text($value['tutorial_name'],30) ?></a></h4>
                                           <div class="row align-items-center">
                                              <div class="col-md-12">
                                                 <ul class="login-btnExpert">

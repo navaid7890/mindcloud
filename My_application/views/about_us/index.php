@@ -67,7 +67,7 @@
                   <div class="space"><br></div>
                   <p><?= html_entity_decode($con1['cms_page_content']) ?></p>
                   <div class="space"><br></div>
-                  <a href="#" class="btn-theme btn-hover">Explore Experts Tutorials <span></span></a>
+                  <a href="<?= l('expert-tutorial') ?>" class="btn-theme btn-hover">Explore Experts Tutorials <span></span></a>
                </div>
             </div>
          </div>
@@ -79,7 +79,7 @@
                   <div class="space"><br></div>
                   <p><?= html_entity_decode($con2['cms_page_content']) ?></p>
                   <div class="space"><br></div>
-                  <a href="#" class="btn-theme btn-hover">Explore Experts Tutorials <span></span></a>
+                  <a href="<?= l('learning-journey') ?>" class="btn-theme btn-hover">Explore Learning Journey <span></span></a>
                </div>
             </div>
 

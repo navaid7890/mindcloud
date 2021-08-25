@@ -267,9 +267,12 @@
                                             <?php endforeach; ?>
                                         <?php endif ?>
                                     </div>
-                                    <div class="progress-btn btn-group">
-                                        <a href="<?= l('account/profile/expert') ?>" class="btn-theme btn-hover">Continue Experts Tutorials <span></span></a>
-                                    </div>
+                                    <?php if ($nextutshow[0]['user_paid'] == 1) : ?>
+                                        <div class="progress-btn btn-group">
+                                            <a href="<?= l('account/profile/expert') ?>" class="btn-theme btn-hover">Continue Experts Tutorials <span></span></a>
+                                        </div>
+                                    <?php endif ?>
+
                                 </div>
                                 <div class="col-lg-5 col-md-12">
                                     <div class="progress-wrap">
@@ -318,7 +321,7 @@
                                                 <?php foreach ($your_tut as $key => $value) : ?>
                                                     <li>
                                                         <div class="vid-box">
-                                                            <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
+                                                            <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox>
                                                                 <div class="video-box">
                                                                     <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
                                                                     <span><i class="fas fa-play"></i>
@@ -340,7 +343,7 @@
 
 
                                                                 <div class="row align-items-center">
-                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?=  short_text($value['tutorial_name'],30) ?></a></h4>
                                                                     <div class="col-md-10">
                                                                         <?
                                                                         $exp_name = array();
@@ -412,7 +415,7 @@
                                                 <?php foreach ($next_tut as $key => $value) : ?>
                                                     <li>
                                                         <div class="vid-box">
-                                                            <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
+                                                            <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox>
                                                                 <div class="video-box">
                                                                     <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
                                                                     <span><i class="fas fa-play"></i>
@@ -434,7 +437,7 @@
 
 
                                                                 <div class="row align-items-center">
-                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?=  short_text($value['tutorial_name'],30) ?></a></h4>
                                                                     <div class="col-md-10">
                                                                         <?
                                                                         $exp_name = array();
@@ -509,7 +512,7 @@
                                                 ?>
                                                 <li>
                                                     <div class="vid-box">
-                                                        <a href="<?= g('db.admin.bucket') . $paidTut[0]['tutorial_video'] ?>" data-fancybox="media">
+                                                        <a href="<?= g('db.admin.bucket') . $paidTut[0]['tutorial_video'] ?>" data-fancybox>
                                                             <div class="video-box">
                                                                 <img src="<?= g('db.admin.bucketimg') . $paidTut[0]['tutorial_image2'] ?>" loading="lazy">
                                                                 <span><i class="fas fa-play"></i>
@@ -530,8 +533,8 @@
                                                         <div class="vid-content">
 
 
-                                                            <div class="row align-items-center">
-                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $paidTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= $paidTut[0]['tutorial_name'] ?></a></h4>
+                                                            <div class="row align-items-center"> 
+                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $paidTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= short_text($paidTut[0]['tutorial_name'],30) ?></a></h4>
                                                                 <div class="col-md-10">
                                                                     <?
                                                                     $exp_name = array();
@@ -596,7 +599,7 @@
                                                 ?>
                                                 <li>
                                                     <div class="vid-box">
-                                                        <a href="<?= g('db.admin.bucket') . $remainTut[0]['tutorial_video'] ?>" data-fancybox="media">
+                                                        <a href="<?= g('db.admin.bucket') . $remainTut[0]['tutorial_video'] ?>" data-fancybox>
                                                             <div class="video-box">
                                                                 <img src="<?= g('db.admin.bucketimg') . $remainTut[0]['tutorial_image2'] ?>" loading="lazy">
                                                                 <span><i class="fas fa-play"></i>
@@ -618,7 +621,7 @@
 
 
                                                             <div class="row align-items-center">
-                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $remainTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= $remainTut[0]['tutorial_name'] ?></a></h4>
+                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $remainTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= short_text($remainTut[0]['tutorial_name'],30) ?></a></h4>
                                                                 <div class="col-md-10">
                                                                     <?
                                                                     $exp_name = array();

@@ -1568,7 +1568,7 @@ ul.fld-progress li:before {
 .work-prew {
     position: absolute;
     bottom: 0;
-    width: 170px;
+    width: 66%;
     right: -50px;
     top: 0;
     margin: auto;

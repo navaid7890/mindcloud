@@ -325,7 +325,7 @@
 				<div class="col-md-7 text-center">
 					<div class="menuWrap">
 						<ul class="menu">
-							<li><a class="<?= ($this->uri->segment(1) == 'expert-tutorial')  ? 'active' : '' ?>" href="<?= l('expert-tutorial') ?>">Experts Tutorials</a></li>
+							<li><a class="<?= ($this->uri->segment(1) == 'expert-tutorial')  ? 'active' : '' ?>" href="<?= l('account/profile/expert') ?>">Experts Tutorials</a></li>
 							<li><a class="<?= ($this->uri->segment(2) == 'learing-journey')  ? 'active' : '' ?>" href="<?= l('account/profile/learning') ?>">Learning Journey</a></li>
 							<li class="dropdown-nav"><a class="<?= ($this->uri->segment(1) == 'booking')  ? 'active' : '' ?>" href="<?= l('booking') ?>">Consult with Experts</a>
 								<ul class="dropdownWrap dropdown ">
@@ -344,7 +344,14 @@
 														?>">Booking</a></li><?= l('') ?> -->
 								</ul>
 							</li>
-							<li><a href="https://mindcloudacademy.com/" target="_blank">The Academy</a></li>
+							<li class="dropdown-nav"><a href="<?= l('about-us') ?>">About us</a>
+								<ul class="dropdownWrap dropdown ">
+									<li><a href="<?= l('about-us') ?>">About us</a></li>
+									<li><a href="https://mindcloudacademy.com/" target="_blank">The Academy</a></li>
+									<li><a href="<?= l('enterprise-partners') ?>">Enterprise Partners</a></li>
+									<li><a href="<?= l('faq') ?>">FAQs</a></li>
+								</ul>
+							</li>
 							<!-- <li><a href="https://mindcloudacademy.com/"> The Academy</a></li> -->
 							<!-- <li><a href="#"><span><img src="<? //=i('')
 																	?><? //= $this->session_data['profile_image'] 

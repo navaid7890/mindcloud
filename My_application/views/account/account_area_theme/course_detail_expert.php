@@ -130,7 +130,7 @@
 
                ?>
                <div class="video-card">
-                  <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox="media">
+                  <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox>
                      <div class="video-box">
                         <img src="<?= g('db.admin.bucketimg') . $vid_name[0]['videos_image2'] ?>" />
                         <span><i class="fas fa-play"></i></span>

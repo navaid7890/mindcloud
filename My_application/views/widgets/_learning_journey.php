@@ -44,7 +44,7 @@ if ($this->userid > 0) {
                 <div class="col-lg-4 col-md-12">
                     <div class="video-card"><? //= g('db.admin.bucket') . $cont8['tutorial_video'] 
                                             ?>
-                        <a href="<?= g('db.admin.bucket') . $cont8['tutorial_video'] ?>" data-fancybox="media">
+                        <a href="<?= g('db.admin.bucket') . $cont8['tutorial_video'] ?>" data-fancybox>
                             <div class="video-box">
                                 <div class="tutorialTitle">
                                     Learning Journey - How It Works

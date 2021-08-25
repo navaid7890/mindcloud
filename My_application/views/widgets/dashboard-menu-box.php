@@ -102,7 +102,7 @@
                      <li>
                         <a href="<?= l('account-area/change-profile') ?>">
                            <span><img src="<?= i('') ?>dashboard/menu/dot.png" style="width: 60%;"></span>
-                           About
+                           About My Startup
                         </a>
                      </li>
 

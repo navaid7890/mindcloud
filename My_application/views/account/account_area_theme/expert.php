@@ -175,7 +175,7 @@
                                                                     </a>
 
                                                                     <div class="vid-content">
-                                                                        <h4><a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+                                                                        <h4><a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= short_text($value['tutorial_name'],30) ?></a></h4>
                                                                         <div class="row align-items-center pt-60">
                                                                             <div class="col-md-12">
                                                                                 <ul class="login-btnExpert pb-10">

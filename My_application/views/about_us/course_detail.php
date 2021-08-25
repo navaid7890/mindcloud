@@ -152,7 +152,7 @@
 
                ?>
                <div class="video-card">
-                  <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox="media">
+                  <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox>
                      <div class="video-box">
                         <img src="<?= g('db.admin.bucketimg') . $vid_name[0]['videos_image2'] ?>" />
                         <span><i class="fas fa-play"></i></span>
@@ -347,14 +347,14 @@
                      <li>
 
                         <div class="vid-box">
-                           <a href="<?= get_image($value['tutorial_video'], $value['tutorial_video_path']) ?>" data-fancybox="media">
+                           <a href="<?= get_image($value['tutorial_video'], $value['tutorial_video_path']) ?>" data-fancybox>
                               <div class="video-box">
                                  <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
                                  <span><i class="fas fa-play"></i></span>
                               </div>
                            </a>
                            <div class="vid-content">
-                              <h4 style="color: #000;"><?= $value['tutorial_name'] ?></h4>
+                              <h4 style="color: #000;"><?= short_text($value['tutorial_name'],30)  ?></h4>
                               <div class="row align-items-center pt-70">
                                  <div class="col-md-8">
                                     <ul class="rating">

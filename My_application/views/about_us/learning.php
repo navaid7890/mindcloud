@@ -74,7 +74,7 @@
                   ?>
             <div class="col-md-6 text-right"><? //=$contd['cms_page_url']
                                              ?>
-               <a href="<?= $contd['cms_page_url'] ?>" data-fancybox="media">
+               <a href="<?= $contd['cms_page_url'] ?>" data-fancybox>
                   <div class="video-box">
                      <img src="<?= get_image($contd['cms_page_image'], $contd['cms_page_image_path']) ?>">
                      <span><i class="fas fa-play"></i></span>
