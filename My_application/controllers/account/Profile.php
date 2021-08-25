@@ -534,7 +534,7 @@ class Profile extends MY_Controller_Account
 
 
 
-        $param['order'] = "tutorial_id ASC";
+        $param['order'] = "tutorial_name ASC";
         $param['where_in']['tutorial_id'] = $all;
 
         $art = $this->model_tutorial->get_details($param);
@@ -697,14 +697,17 @@ class Profile extends MY_Controller_Account
 		$vp['where']['tool_builder_user_id'] = $this->userid;
 		$data['tootl'] = $this->model_tool_builder->find_all_active($vp);
 		$tootl = $data['tootl'];
-		// debug( $tootl);
-		// die;
+		//$tootl[0]['tool_builder_customer_segments']=html_entity_decode($data['tootl'][0]['tool_builder_customer_segments']);
+		// debug(html_entity_decode($tootl[0]['tool_builder_customer_segments']));
+	    // die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/business_model_canvus.docx');
 		// debug($tootl);
 		// die();
 		foreach ($tootl[0] as $column_name => $value) {
 			$templateProcessor->setValue($column_name, $value);
+			//debug($value);
 		}
+		//die;
 		$filename = 'Business Model Canvas.docx';
 		$templateProcessor->saveAs($filename);
 		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
@@ -713,7 +716,7 @@ class Profile extends MY_Controller_Account
 		// $targetFile = "./global/uploads/";
 		// $filename = 'Value Proposition Canvas.docx';
 		header('Content-Description: File Transfer');
-		header('Content-Type: application/octet-stream');
+		header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
 		header('Content-Disposition: attachment; filename=' . $filename);
 		header('Content-Transfer-Encoding: binary');
 		header('Expires: 0');
@@ -1678,7 +1681,7 @@ class Profile extends MY_Controller_Account
         $page = ($this->uri->segment(4))? $this->uri->segment(4) : 0;
 
         // $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"]);
-           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-2):($page)) * $pagination["per_page"],$paginate_param);
+           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"],$paginate_param);
 
         $vars["links"] = $this->mypagination->create_links();
         

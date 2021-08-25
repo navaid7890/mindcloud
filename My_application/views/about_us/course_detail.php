@@ -165,16 +165,11 @@
                         <ul class="tut-info">
                            <li><i><img src="<?= i('') ?>icons/1.png"></i> Professional Certification </li>
                            <li><a href="javascript:void(0)" data-fancybox data-src="#hidden-content-1">1-Year Access <span>$20/ month</span></a></li>
-                           <form>
-                              <input type="hidden" name="product_qty" class="qtystyle" value="1" min="1" max="1">
-                              <input type="hidden" name="product_img" value="<?= g('db.admin.bucketimg') . $course[0]['tutorial_image2'] ?>" class="productimage" value="">
-                              <input type="hidden" name="product_price" value="0" class="productprice">
-                              <input type="hidden" name="product_id" value="<?= $course[0]['tutorial_id'] ?>" class="productid">
-                              <input type="hidden" name="product_name" value="7- Day Access to Mind Cloud Tribe: allows you to see 7 tutorial" class="productname">
-                              <li><a href="javascript:void(0)" class="add_cart">7 Days Free Trial <span></span>
-                                    <!--  -->
-                                 </a></li>
-                           </form>
+
+                           <? if (empty($this->userid )) {?>
+      
+                           <li><a href="<?=l('signup')?>">7 Days Free Trial <span></span></a></li>
+                           <?}?>
                         </ul>
                      </div>
                   </div>
@@ -327,7 +322,9 @@
          <div class="space"><br></div>
          <?= html_entity_decode($con1['cms_page_content']) ?>
          <div class="space"><br><br></div>
-         <a href="javascript:void(0)" class="btn-theme btn-hover">Start Free Trial <span></span></a>
+         <? if (empty($this->userid )) {?>
+         <a href="<?=l('signup')?>" class="btn-theme btn-hover">Start Free Trial <span></span></a>
+         <?}?>
       </div>
    </section>
    <div class="space"><br><br><br><br></div>
@@ -419,7 +416,11 @@
       <div class="joinContent">
          <?= html_entity_decode($con3['cms_page_content']) ?>
          <div class="space"><br><br></div>
-         <a href="javascript:void(0)" class="btn-theme btn-hover">Start Free Trial <span></span></a>
+
+         <? if (empty($this->userid )) {?>
+      
+         <a href="<?=l('signup')?>" class="btn-theme btn-hover">Start Free Trial <span></span></a>
+    <?}?>
       </div>
    </section>
 </div>

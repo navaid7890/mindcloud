@@ -415,7 +415,7 @@ class About_us extends MY_Controller
             $all[] = $value['cp_course_id'];
         }
 
-        $param['order'] = "tutorial_id ASC";
+        $param['order'] = "tutorial_name ASC";
         $param['where_in']['tutorial_id'] = $all;
 
         $art = $this->model_tutorial->get_details($param);
@@ -1275,7 +1275,7 @@ class About_us extends MY_Controller
         $page = ($this->uri->segment(3))? $this->uri->segment(3) : 0;
 
         // $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"]);
-           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-2):($page)) * $pagination["per_page"],$paginate_param);
+           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"],$paginate_param);
 
         $vars["links"] = $this->mypagination->create_links();
         

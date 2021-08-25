@@ -35,8 +35,8 @@ if ($this->userid > 0) {
 
                         <?= html_entity_decode($cont7['cms_page_content']) ?>
                         <div class="space"><br><br></div>
-                        <? if ($usdata['user_paid'] == 0) { ?>
-                            <a href="<?= l('learning-journey') ?>" class="btn-theme btn-hover">Start your Free Trial <span></span></a>
+                        <? if (empty($this->userid )) {?>
+                            <a href="<?= l('signup') ?>" class="btn-theme btn-hover">Start your Free Trial <span></span></a>
                         <? } ?>
                     </div>
                 </div>

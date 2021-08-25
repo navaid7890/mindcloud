@@ -15,6 +15,15 @@
    .expertSec strong {
       font-weight: 700;
    }
+
+   a#forms-newsletter-btn {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+    padding-top: 20px;
+}
 </style>
 
 
@@ -32,6 +41,7 @@
          </div>
          <div class="col-lg-4 col-md-12">
             <div class="form-card">
+            <? if (empty($this->userid )) {?>
                <div>
                   <h2>Get <strong>Started</strong></h2>
                   <div class="space"><br></div>
@@ -45,18 +55,14 @@
                      </div>
                      <div class="space"><br></div>
 
-                     <? if ($this->userid > 0) {
-                        $usdata = $this->layout_data['user_data'];
-                     } ?>
-                     <? if ($usdata['user_paid'] == 0) { ?>
+                 
                         <div class="fld-btn">
-                           <input type="submit" id="forms-newsletter-btn" value="Proceed to Free Trial">
+                          <a href="<?=l('signup')?>" id="forms-newsletter-btn"> Proceed to Free Trial</a>
                         </div>
-
-                     <? } ?>
-
                   </form>
                </div>
+               <? } ?>
+
             </div>
          </div>
       </div>

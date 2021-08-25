@@ -325,7 +325,7 @@
 				<div class="col-md-7 text-center">
 					<div class="menuWrap">
 						<ul class="menu">
-							<li><a class="<?= ($this->uri->segment(1) == 'expert-tutorial')  ? 'active' : '' ?>" href="<?= l('expert-tutorial') ?>">Experts Tutorials</a></li>
+							<li><a class="<?= ($this->uri->segment(1) == 'expert-tutorial')  ? 'active' : '' ?>" href="<?= l('account/profile/expert') ?>">Experts Tutorials</a></li>
 							<li><a class="<?= ($this->uri->segment(2) == 'learing-journey')  ? 'active' : '' ?>" href="<?= l('account/profile/learning') ?>">Learning Journey</a></li>
 							<li class="dropdown-nav"><a class="<?= ($this->uri->segment(1) == 'booking')  ? 'active' : '' ?>" href="<?= l('booking') ?>">Consult with Experts</a>
 								<ul class="dropdownWrap dropdown ">
