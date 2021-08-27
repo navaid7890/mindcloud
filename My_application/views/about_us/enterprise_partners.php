@@ -159,14 +159,14 @@
               <div class="col-lg-4 col-md-12">
                 <div class="arrowmdl-box mt-100">
                   <div class="arrowmdl-content">
-                    <h6><?= html_entity_decode($con12['cms_page_title']) ?></h6>
+                    <!-- <h6><?//= html_entity_decode($con12['cms_page_title']) ?></h6> -->
                     <div class="space"><br></div>
                     <?= html_entity_decode($con12['cms_page_content']) ?>
                   </div>
                   <div class="space"><br><br></div>
 
                   <div class="arrowmdl-content">
-                    <h6><?= html_entity_decode($con13['cms_page_title']) ?></h6>
+                    <!-- <h6><?//= html_entity_decode($con13['cms_page_title']) ?></h6> -->
                     <div class="space"><br></div>
                     <?= html_entity_decode($con13['cms_page_content']) ?>
                   </div>
@@ -174,7 +174,7 @@
 
 
                   <div class="arrowmdl-content">
-                    <h6><?= html_entity_decode($con14['cms_page_title']) ?></h6>
+                    <!-- <h6><?//= html_entity_decode($con14['cms_page_title']) ?></h6> -->
                     <div class="space"><br></div>
                     <?= html_entity_decode($con14['cms_page_content']) ?>
                   </div>
@@ -182,7 +182,7 @@
 
 
                   <div class="arrowmdl-content">
-                    <h6><?= html_entity_decode($con15['cms_page_title']) ?></h6>
+                    <!-- <h6><?//= html_entity_decode($con15['cms_page_title']) ?></h6> -->
                     <div class="space"><br></div>
                     <?= html_entity_decode($con15['cms_page_content']) ?>
                   </div>
@@ -194,14 +194,14 @@
               <div class="col-lg-4 col-md-12">
                 <div class="arrowmdl-box mt-60  ">
                   <div class="arrowmdl-content">
-                    <h6><?= html_entity_decode($con16['cms_page_title']) ?></h6>
+                    <!-- <h6><?//= html_entity_decode($con16['cms_page_title']) ?></h6> -->
                     <div class="space"><br></div>
                     <?= html_entity_decode($con16['cms_page_content']) ?>
                   </div>
                   <div class="space"><br><br></div>
 
                   <div class="arrowmdl-content">
-                    <h6><?= html_entity_decode($con17['cms_page_title']) ?></h6>
+                    <!-- <h6><?//= html_entity_decode($con17['cms_page_title']) ?></h6> -->
                     <div class="space"><br></div>
                     <?= html_entity_decode($con17['cms_page_content']) ?>
                   </div>
@@ -209,7 +209,7 @@
 
 
                   <div class="arrowmdl-content">
-                    <h6><?= html_entity_decode($con18['cms_page_title']) ?></h6>
+                    <!-- <h6><?//= html_entity_decode($con18['cms_page_title']) ?></h6> -->
                     <div class="space"><br></div>
                     <?= html_entity_decode($con18['cms_page_content']) ?>
                   </div>
@@ -217,7 +217,7 @@
 
 
                   <div class="arrowmdl-content">
-                    <h6><?= html_entity_decode($con19['cms_page_title']) ?></h6>
+                    <!-- <h6><?//= html_entity_decode($con19['cms_page_title']) ?></h6> -->
                     <div class="space"><br></div>
                     <?= html_entity_decode($con19['cms_page_content']) ?>
                   </div>
