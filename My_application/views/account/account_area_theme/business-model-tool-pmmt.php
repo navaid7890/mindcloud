@@ -60,7 +60,6 @@
                            <ul class="form-tabing">
                               <div class="fld-html">
                                  <p>Positioning and Marketing Mix</p>
-                                 <p>Positioning</p>
                               </div>
                            </ul>
 
