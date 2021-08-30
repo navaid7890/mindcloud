@@ -16,7 +16,7 @@ Settings::loadConfig();
 class Profile extends MY_Controller_Account
 {
 
-	
+
 	/**
 	 * Profile Controller. - The deafult controller
 	 *
@@ -479,7 +479,7 @@ class Profile extends MY_Controller_Account
 
 	public function expert()
 	{
-		
+
 		$data = array();
 		global $config;
 
@@ -501,67 +501,67 @@ class Profile extends MY_Controller_Account
 		$data['con5'] = $contss['child'][4];
 
 		$par = array();
-        $par['order'] = "category_id ASC";
-        $data['main_categories'] = $this->model_category->find_all_active($par);
+		$par['order'] = "category_id ASC";
+		$data['main_categories'] = $this->model_category->find_all_active($par);
 
-        $coursecat = array();
-        $coursecat['where']['cp_category_id'] = intval($this->input->get('cat'));
-        $cate = $this->model_course_category->find_all_active($coursecat);
-
-  
-
-        $categories = $this->model_category->get_category_tutorials();
-        $data['main_categories'] = $categories;
-
-        $par2 = array();
-        $par2['order'] = "expert_id ASC";
-        $data['ex'] = $this->model_expert->find_all_active($par2);
-     
-
-        $param = array();
-        if (isset($_GET['expert']) and intval($_GET['expert']) > 0) {
-            $param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
-        }
-        if (isset($_GET['search'])) {
-    
-            $param['where_like'][] = array('column' => 'tutorial_name', 'value' => $_GET['search']);
-        }
-
-        foreach ($cate as $key => $value) {
-            $all[] = $value['cp_course_id'];
-        }
+		$coursecat = array();
+		$coursecat['where']['cp_category_id'] = intval($this->input->get('cat'));
+		$cate = $this->model_course_category->find_all_active($coursecat);
 
 
 
+		$categories = $this->model_category->get_category_tutorials();
+		$data['main_categories'] = $categories;
 
-        $param['order'] = "tutorial_name ASC";
-        $param['where_in']['tutorial_id'] = $all;
-
-        $art = $this->model_tutorial->get_details($param);
-
-        $product_data = $this->_paginations('tutorial',$art);
-        $data['art'] = $product_data['data'];
-        $data['links'] = $product_data['links']; 
-
-	//	debug($this->db->last_query());
-      
-     
-        $pop = array();
-        $pop['where']['category_featured'] = 1;
-        $data['popular'] = $this->model_category->find_all_active($pop);
-
-        $fa = array();
-        $fa['where']['faq_category'] = 1;
-        $fa['order'] = "faq_id ASC";
-        $data['faq'] = $this->model_faq->find_all_active($fa);
+		$par2 = array();
+		$par2['order'] = "expert_id ASC";
+		$data['ex'] = $this->model_expert->find_all_active($par2);
 
 
-        $param = array();
-        $param['where']['category_featured'] = 1;
-        $data['category'] = $this->model_category->find_all_active($param);
+		$param = array();
+		if (isset($_GET['expert']) and intval($_GET['expert']) > 0) {
+			$param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
+		}
+		if (isset($_GET['search'])) {
+
+			$param['where_like'][] = array('column' => 'tutorial_name', 'value' => $_GET['search']);
+		}
+
+		foreach ($cate as $key => $value) {
+			$all[] = $value['cp_course_id'];
+		}
+
+
+
+
+		$param['order'] = "tutorial_name ASC";
+		$param['where_in']['tutorial_id'] = $all;
+
+		$art = $this->model_tutorial->get_details($param);
+
+		$product_data = $this->_paginations('tutorial', $art);
+		$data['art'] = $product_data['data'];
+		$data['links'] = $product_data['links'];
+
+		//	debug($this->db->last_query());
+
+
+		$pop = array();
+		$pop['where']['category_featured'] = 1;
+		$data['popular'] = $this->model_category->find_all_active($pop);
+
+		$fa = array();
+		$fa['where']['faq_category'] = 1;
+		$fa['order'] = "faq_id ASC";
+		$data['faq'] = $this->model_faq->find_all_active($fa);
+
+
+		$param = array();
+		$param['where']['category_featured'] = 1;
+		$data['category'] = $this->model_category->find_all_active($param);
 
 		$params = array();
-		$params['limit']=3;
+		$params['limit'] = 3;
 		$params['where_in']['tutorial_id'] = $all;
 		$data['tut'] = $this->model_tutorial->find_all_active($params);
 
@@ -697,17 +697,17 @@ class Profile extends MY_Controller_Account
 		$vp['where']['tool_builder_user_id'] = $this->userid;
 		$data['tootl'] = $this->model_tool_builder->find_all_active($vp);
 		$tootl = $data['tootl'];
-		//$tootl[0]['tool_builder_customer_segments']=html_entity_decode($data['tootl'][0]['tool_builder_customer_segments']);
-		// debug(html_entity_decode($tootl[0]['tool_builder_customer_segments']));
-	    // die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/business_model_canvus.docx');
-		// debug($tootl);
-		// die();
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
-			//debug($value);
 		}
-		//die;
 		$filename = 'Business Model Canvas.docx';
 		$templateProcessor->saveAs($filename);
 		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
@@ -741,8 +741,18 @@ class Profile extends MY_Controller_Account
 		// debug($tootl);
 		// die();
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 		$filename = 'Business Model Canvas.docx';
 		$templateProcessor->saveAs($filename);
 		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
@@ -791,10 +801,19 @@ class Profile extends MY_Controller_Account
 		// debug( $tootl_vp);
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/value_proposition_canvas.docx');
-
 		foreach ($tootl_vp[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl_vp[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'Value Proposition Canvas.docx';
 		$templateProcessor->saveAs($filename);
@@ -842,8 +861,18 @@ class Profile extends MY_Controller_Account
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/swot_analysis.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'SWOT Analysis.docx';
 		$templateProcessor->saveAs($filename);
@@ -890,8 +919,18 @@ class Profile extends MY_Controller_Account
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/positioning_marketing_mix.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'Positioning and Marketing Mix.docx';
 		$templateProcessor->saveAs($filename);
@@ -935,8 +974,18 @@ class Profile extends MY_Controller_Account
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/strategic_marketing_plan.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'Strategic Marketing Plan.docx';
 		$templateProcessor->saveAs($filename);
@@ -979,8 +1028,18 @@ class Profile extends MY_Controller_Account
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/customer_journey_demand_generation.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'Customer Journey Demand Generation.docx';
 		$templateProcessor->saveAs($filename);
@@ -1023,8 +1082,18 @@ class Profile extends MY_Controller_Account
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/marketing_campaign_model_canvas.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 
 		$filename = 'Marketing Campaign Model Canvas.docx';
@@ -1068,8 +1137,18 @@ class Profile extends MY_Controller_Account
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/online_sales_funnel.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'Online Sales Funnel.docx';
 		$templateProcessor->saveAs($filename);
@@ -1114,8 +1193,18 @@ class Profile extends MY_Controller_Account
 
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/legal_term_sheet.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'Legal Term Sheet.docx';
 		$templateProcessor->saveAs($filename);
@@ -1170,10 +1259,19 @@ class Profile extends MY_Controller_Account
 		// html_entity_decode();
 
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/investment_deck_slides.docx');
-
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'Investment Deck Slides.docx';
 		$templateProcessor->saveAs($filename);
@@ -1370,7 +1468,7 @@ class Profile extends MY_Controller_Account
 
 		$data['review'] = $review_data;
 
-		
+
 
 		//  debug($coursecat[0]['cp_course_id']);
 		//  debug($review_data);
@@ -1646,50 +1744,46 @@ class Profile extends MY_Controller_Account
 		return $data;
 	}
 
-	    // this is test
-    
-    public function _paginations($model_name='',$paginate_param)
-    {
-        $per_page = 12;
-        $this->load->library('mypagination');
+	// this is test
 
-        $class_name = $this->router->fetch_class();
-        // $method_name = $slug;
-         $method_name = $this->router->fetch_method();
+	public function _paginations($model_name = '', $paginate_param)
+	{
+		$per_page = 12;
+		$this->load->library('mypagination');
 
-        // Model get
-        $model_name = empty($model_name) ? $class_name : $model_name;
-        $model_name = "model_".$model_name;
-        $model_obj = $this->$model_name ;
-        // Model get
+		$class_name = $this->router->fetch_class();
+		// $method_name = $slug;
+		$method_name = $this->router->fetch_method();
 
-        $suffix = empty($_SERVER['QUERY_STRING']) ? '' : '?'.$_SERVER['QUERY_STRING'];
+		// Model get
+		$model_name = empty($model_name) ? $class_name : $model_name;
+		$model_name = "model_" . $model_name;
+		$model_obj = $this->$model_name;
+		// Model get
 
-      
-        // $pagination["base_url"] = g('base_url')."shop-category/".$method_name."/page/";
-
-        $pagination["base_url"] = g('base_url') . "account/profile/expert/";
-
-        $pagination["total_rows"] = $model_obj->get_pagination_total_count();
-        $pagination["per_page"] = (ENVIRONMENT == 'development') ? $per_page : $per_page;
-        $pagination['use_page_numbers']  = TRUE;
-        $pagination["uri_segment"] = 4;
-        $pagination["suffix"] = $suffix;
-        $pagination['last_tag_open'] = '';
-        $this->mypagination->initialize($pagination);
-
-        $page = ($this->uri->segment(4))? $this->uri->segment(4) : 0;
-
-        // $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"]);
-           $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"],$paginate_param);
-
-        $vars["links"] = $this->mypagination->create_links();
-        
-        //.debug($vars,1); 
-        return $vars;
-    }
+		$suffix = empty($_SERVER['QUERY_STRING']) ? '' : '?' . $_SERVER['QUERY_STRING'];
 
 
+		// $pagination["base_url"] = g('base_url')."shop-category/".$method_name."/page/";
 
+		$pagination["base_url"] = g('base_url') . "account/profile/expert/";
+
+		$pagination["total_rows"] = $model_obj->get_pagination_total_count();
+		$pagination["per_page"] = (ENVIRONMENT == 'development') ? $per_page : $per_page;
+		$pagination['use_page_numbers']  = TRUE;
+		$pagination["uri_segment"] = 4;
+		$pagination["suffix"] = $suffix;
+		$pagination['last_tag_open'] = '';
+		$this->mypagination->initialize($pagination);
+
+		$page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+
+		// $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"]);
+		$vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0) ? ($page - 1) : ($page)) * $pagination["per_page"], $paginate_param);
+
+		$vars["links"] = $this->mypagination->create_links();
+
+		//.debug($vars,1); 
+		return $vars;
+	}
 }
-
