@@ -15,8 +15,12 @@ $logo = $this->model_logo->find_one(
         	        <div style="margin: 30px;">
              	        <p>
                             <?php
+
+$a=$form_input['booking_user_id'];
+$b=$form_input['booking_expert_id'];
                             if(isset($msg)) {
                                 echo $msg;
+                      
                             }
                             else
                             {
@@ -26,6 +30,8 @@ $logo = $this->model_logo->find_one(
 
                      	        <br> <br>We have sent an email to the expert and awaiting a confirmation email.<br> As soon as it is confirmed, we will send you an email to make the<br>
                                   payment for the session, and give you instructions on the call. <br> <br>
+
+                                  <a href="<?=l('contact_us/emailtest/'.$a.'/'.$b)?>">Clicl Here For Confirmation</a><br><br>
                      	        See you soon,<br><br>
                             <?php
                             }

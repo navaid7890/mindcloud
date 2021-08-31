@@ -695,6 +695,7 @@ class Profile extends MY_Controller_Account
 		// $this->load->library('phpword');
 		$vp = array();
 		$vp['where']['tool_builder_user_id'] = $this->userid;
+<<<<<<< HEAD
 		$data['tootl'] = $this->model_tool_builder->find_all_active($vp);
 		$tootl = $data['tootl'];
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/business_model_canvus.docx');
@@ -706,6 +707,17 @@ class Profile extends MY_Controller_Account
 					$value = $value . $line . '</w:t><w:br/><w:t>';
 				}
 			}
+=======
+		$tool = $this->model_tool_builder->find_one_active($vp);
+		// $tootl = $data['tootl'];
+		// $tootl[0]['tool_builder_customer_segments']=($data['tootl'][0]['tool_builder_customer_segments']);
+		//  //debug(html_entity_decode($tootl[0]['tool_builder_customer_segments']));
+		 //die;
+		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/business_model_canvus.docx');
+		// debug($tootl);
+		// die();
+		foreach ($tool as $column_name => $value) {
+>>>>>>> dev/madiha
 			$templateProcessor->setValue($column_name, $value);
 		}
 		$filename = 'Business Model Canvas.docx';
@@ -716,7 +728,7 @@ class Profile extends MY_Controller_Account
 		// $targetFile = "./global/uploads/";
 		// $filename = 'Value Proposition Canvas.docx';
 		header('Content-Description: File Transfer');
-		header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+		header('Content-Type: application/octet-stream');
 		header('Content-Disposition: attachment; filename=' . $filename);
 		header('Content-Transfer-Encoding: binary');
 		header('Expires: 0');
@@ -1778,8 +1790,57 @@ class Profile extends MY_Controller_Account
 
 		$page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 
+<<<<<<< HEAD
 		// $vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0)?($page-1):($page)) * $pagination["per_page"]);
 		$vars["data"] = $model_obj->get_pagination_data($pagination["per_page"], (($page > 0) ? ($page - 1) : ($page)) * $pagination["per_page"], $paginate_param);
+=======
+	public function dl_tools_test()
+	{
+		// $this->load->library('phpword');
+		$vp = array();
+		$vp['where']['tool_builder_user_id'] = $this->userid;
+		$data['tootl'] = $this->model_tool_builder->find_all_active($vp);
+		$tootl = $data['tootl'];
+		$tootl[0]['tool_builder_customer_segments']=($data['tootl'][0]['tool_builder_customer_segments']);
+		 //debug(html_entity_decode($tootl[0]['tool_builder_customer_segments']));
+		 //die;
+		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/business_model_canvus.docx');
+		// debug($tootl);
+		// die();
+		foreach ($tootl[0] as $column_name => $value) {
+			$templateProcessor->setValue($column_name, $value);
+		}
+		$filename = 'Business Model Canvas.docx';
+		$templateProcessor->saveAs($filename);
+
+
+		// $phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
+		// $xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($filename, 'Word2007');
+		
+
+		$inputFileType = 'Word2007';
+        $inputFileName = $filename;
+		
+		$objReader = \PhpOffice\PhpWord\IOFactory::createReader($inputFileType);
+        $objPHPExcelReader = $objReader->load($inputFileName);
+
+
+		$object_writer = \PhpOffice\PhpWord\IOFactory::createWriter($objPHPExcelReader, 'Word2007');
+        header('Content-Type: application/vnd.ms-word');
+        header('Content-Disposition: attachment;filename="Test.docx"');
+
+    
+        $object_writer->save('php://output');
+
+		
+
+
+
+	}
+
+	
+
+>>>>>>> dev/madiha
 
 		$vars["links"] = $this->mypagination->create_links();
 
