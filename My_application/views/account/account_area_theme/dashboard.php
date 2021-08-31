@@ -668,7 +668,7 @@
                             <?php endif ?>
                             <div class="space"><br><br><br></div>
                             <div class="LinkCustom">
-                                <a href="<?= l('expert-tutorial') ?>" class="btn-links">See All Experts Tutorials</a>
+                                <a href="<?= l('account/profile/expert') ?>" class="btn-links">See All Experts Tutorials</a>
                             </div>
 
 
