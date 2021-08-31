@@ -741,7 +741,7 @@ public function signup($data){
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('m.fazal@manageglobally.io', 'Genny');
     $mail->addReplyTo($data['user_email'], $data['user_firtsname']);
 
     $mail->addAddress($data['user_email']);
@@ -786,7 +786,7 @@ public function newsletter($data){
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('m.fazal@manageglobally.io', 'Genny');
     $mail->addReplyTo($data['newsletter_email']);
 
     $mail->addAddress($data['newsletter_email']);
@@ -829,7 +829,7 @@ public function renewal(){
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('m.fazal@manageglobally.io', 'Genny');
     $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
 
     $mail->addAddress($this->session->userdata['logged_in_front']['email']);
@@ -871,7 +871,7 @@ public function renewal_two(){
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('m.fazal@manageglobally.io', 'Genny');
     $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
 
     $mail->addAddress($this->session->userdata['logged_in_front']['email']);
@@ -914,9 +914,9 @@ public function inquiry($data){
     $mail->Port     = 465;
 
     $mail->setFrom($data['inquiry_email'], $data['inquiry_name']);
-    $mail->addReplyTo('madiha@alphacandy.com', 'Genny');
+    $mail->addReplyTo('m.fazal@manageglobally.io', 'Genny');
 
-    $mail->addAddress('madiha@alphacandy.com');
+    $mail->addAddress('m.fazal@manageglobally.io');
 
     $param = array();
     if(isset($data) && array_filled($data))
