@@ -1644,5 +1644,26 @@ class Contact_us extends MY_Controller
         // $data['tool_builder_lts_step_id'] = $tool['tool_builder_lts_step_id'] + 1;
     }
 
+
+
+
+    public function emailtest($a='',$b='')
+    {
+
+        $data = array();
+
+        $data['where']['booking_user_id'] =$a ;
+        $data['where']['booking_expert_id'] =$b ;
+        $all=$this->model_booking->find_one_active($data);
+
+
+        $all['booking_expert_approval']=1;
+        $this->model_booking->update_by_pk($all['booking_id'], $all);
+        parent::confirm_expert($all);
+
+
+       redirect(l(''));
+    }
+
     
 }
