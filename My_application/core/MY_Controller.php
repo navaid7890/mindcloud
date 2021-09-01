@@ -652,7 +652,8 @@ class MY_Controller extends MY_Controller_Admin
    
         // debug($data,1);
         // die();
-        $mail->setFrom(g('db.admin.email_contact_us'), "Unsubscribed");
+        // $mail->setFrom(g('db.admin.email_contact_us'), "Unsubscribed");
+        $mail->setFrom('m.fazal@manageglobally.io', 'Unsubscribed');
         $mail->addReplyTo($data['user_email'], $this->session->userdata['logged_in_front']['first_name']);
 
         $mail->addAddress($data['user_email']);

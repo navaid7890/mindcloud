@@ -56,7 +56,7 @@ $this->load->view('_widget-inner_banner',array('is_title'=>$title)); */?>
                                     <br> 
                                     We have successfully process your subscription 
 
-                                    Meanwhile, if you have any questions or concerns, <br> <br>please feel free to give us a call (<?=g('db.admin.email_contact_us')?>).
+                                    Meanwhile, if you have any questions or concerns, <br> <br>please feel free to Email us at (<?=g('db.admin.email_contact_us')?>).
                                     
                                 </h2>
                             </div>
