@@ -1287,6 +1287,8 @@ class About_us extends MY_Controller
     public function thankyou()
 	{
         global $config;
+        if($this->userid > 0){
+
         $data = array();
 
         $id = $this->userid;
@@ -1300,8 +1302,20 @@ class About_us extends MY_Controller
 
         $u['user_paid']=1;
         $test=$this->model_user->update_by_pk($id, $u);
+
+        parent::newsletter();
+     
         
         $this->load_view("thankyou",$data);
+        
+    }
+
+    else
+    { 
+     redirect(l('login?msgtype=error&msg='.urlencode('Please login first')) , true);
+
+
+    }
    
     }
 

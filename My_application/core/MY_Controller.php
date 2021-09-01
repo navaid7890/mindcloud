@@ -773,7 +773,7 @@ public function signup($data){
 
 
 
-public function newsletter($data){
+public function newsletter(){
 
     $this->load->library('phpmailer_lib');
     $mail = $this->phpmailer_lib->load();
@@ -786,21 +786,21 @@ public function newsletter($data){
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('m.fazal@manageglobally.io', 'Genny');
-    $mail->addReplyTo($data['newsletter_email']);
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
 
-    $mail->addAddress($data['newsletter_email']);
+    $mail->addAddress($this->session->userdata['logged_in_front']['email']);
 
     $param = array();
-    if(isset($data) && array_filled($data))
-    {
-        foreach($data as $kye=>$value)
-        {
-            $param['form_input'][$kye] = htmlentities(trim($value));
-        }
+    // if(isset($data) && array_filled($data))
+    // {
+    //     foreach($data as $kye=>$value)
+    //     {
+    //         $param['form_input'][$kye] = htmlentities(trim($value));
+    //     }
   
       
-    }
+    // }
 
     $mail->Subject = 'Thank You for Subscribing to Mind Cloud Tribe!';
         
