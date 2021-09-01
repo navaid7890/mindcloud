@@ -22,7 +22,8 @@ $logo = $this->model_logo->find_one(
                             {
                             ?>
                      	        Hi <?=$this->session->userdata['logged_in_front']['first_name']?>,<br> <br>
-                     	        Welcome to <?=g('site_title')?>!<br> <br>
+                     	        <!-- Welcome to <?//=g('site_title')?>! -->
+								 <br> <br>
                                 As you requested, we’ve cancelled your subscription, effective <?=date("Y-m-d")?>.
                                 Obviously, we’d love to have you back. If you change your mind, you can restart your membership to enjoy all the tutorials and resources we have on Mind Cloud Tribe.<br><br>
                                 We’re here to help if you need it, and you can contact us back anytime at support@mindcloudtribe.com.
@@ -30,9 +31,9 @@ $logo = $this->model_logo->find_one(
                             }
                             ?>
              	        </p>
-             	       
-             	            Please Contact <?=g('site_title')?> if you have any questions<br><br>
-                            Once again, thank you!!!<br><br>
+<!--              	       
+             	            Please Contact <?//=g('site_title')?> if you have any questions<br><br>
+                            Once again, thank you!!!<br><br> -->
                         
              	        <div style="text-align: Right;">
              	            With warm regards,<br>
