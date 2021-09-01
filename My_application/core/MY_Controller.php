@@ -787,7 +787,7 @@ public function newsletter(){
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('m.fazal@manageglobally.io', 'Genny');
     $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
 
     $mail->addAddress($this->session->userdata['logged_in_front']['email']);
