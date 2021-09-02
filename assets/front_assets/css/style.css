@@ -1825,7 +1825,7 @@ ul.login-btnExpert a {
 @media (max-width:1440px) {
     .login-mdl span img { width: 100%; height: 100%; position: absolute; }
     header,
-    .login-page header { padding: 30px 0; }
+    /* .login-page header { padding: 30px 0; } */
     .home-banner { background-position: bottom;padding: 50px 0px; }
     .form-card {
     position: relative;
