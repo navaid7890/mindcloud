@@ -34,7 +34,7 @@ $logo = $this->model_logo->find_one(
                      	      Dear <?=$this->session->userdata['logged_in_front']['first_name']?>,<br><br>
 
                                Your Mind Cloud Tribe subscription expires on <?=$a?>, and we sincerely hope that you will join us for another outstanding year of great tutorials and personal / professional development.<br><br>
-                               Your subscription is automatically renewed. If you wish to cancel your subscription, please click on <a href="https://mindcloud.tk/subscription">Subscription</a> <br><br>
+                               Your subscription is automatically renewed. If you wish to cancel your subscription, please click on <a href="https://mindcloudtribe.com/subscription">Subscription</a> <br><br>
                                Mind Cloud Tribe values you and aims to support you on your personal and professional growth journey. Our Tribe is constantly being updated with new experts, new tutorials, new podcasts and new resources.<br><br>
 
                      	   

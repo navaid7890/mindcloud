@@ -153,7 +153,7 @@
                                                             <li>
                                                                 <div class="vid-box">
 
-                                                                    <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox="media">
+                                                                    <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox>
                                                                         <div class="video-box">
                                                                             <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
                                                                             <span><i class="fas fa-play"></i> </span>

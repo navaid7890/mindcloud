@@ -172,7 +172,7 @@
                           </div>
                        </div>
                        <div class="col-lg-6 col-md-12 text-right">
-                          <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox="media">
+                          <a href="https://www.youtube.com/watch?v=XIMLoLxmTDw" data-fancybox>
                              <div class="video-box">
                                 <img src="assets/images/abt/1.png">
                                 <span><i class="fas fa-play"></i></span>
