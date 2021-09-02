@@ -458,7 +458,7 @@ ul.cate-list img {
 .abt-tut-page .jrnyFaq ul { margin: 0; }
 .jr-top { margin-bottom: 80px; padding-bottom: 80px; position: relative; }
 .jr-top:after { content: ""; width: 855px; background: #DCE7F0; height: 1px; position: absolute; bottom: 0; }
-.login-page header { box-shadow: 0px 3px 6px #00000029; background: #fff; padding: 10px 8%; position: relative; left: 0; right: 0; z-index: 1; }
+.login-page header { box-shadow: 0px 3px 6px #00000029; background: #fff; padding: 10px 2%; position: relative; left: 0; right: 0; z-index: 1; }
 .login-wrap { max-width: 565px; margin: auto; align-items: center; display: flex; justify-content: center; height: 900px; }
 .login-content h4 { color: #1D90D9; font-size: 34px; font-weight: 600; }
 .login-content p { color: #5C677D; font-size: 18px; }
