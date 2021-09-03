@@ -1,3 +1,9 @@
+<style>
+    .tutorial-mid p:last-child,
+    .tutorial-mid p:last-child a {
+        min-height: 66px;
+    }
+</style>
 <section class="dashboard">
 
     <ul class="dashboard-layout">
@@ -412,12 +418,12 @@ $datapaid = $this->model_user->find_all_active($upaid);
 
 <? if ($datapaid[0]['user_paid'] == 0) : ?>
     <style>
-       
+
     </style>
     <script>
         // $('.catLj12').click(false);
         // $(".lockedItem a").removeAttr("href");
-        var newUrl = "<?=l('subscription')?>";
+        var newUrl = "<?= l('subscription') ?>";
         $(".lockedItem a").attr('href', newUrl);
     </script>
     <? // else : 
