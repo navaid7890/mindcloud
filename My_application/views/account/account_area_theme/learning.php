@@ -53,7 +53,7 @@
                            <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/Learning Journey_Intro 1_New Entrepreneur_Social Cut.mp4" data-fancybox>
                               <div class="tutorial-list-box">
                                  <div class="tutorial-box-content">
-                                    <span><img src="<?= i('') ?>dashboard/home/icons/1.svg"></span>
+                                    <span><img src="<?= i('') ?>dashboard/home/icons/1.svg" style="margin-top: 5px;"></span>
                                     <div class="space"><br></div>
                                     <h3>New</h3>
                                     <p>Entrepreneur</p>
@@ -69,7 +69,7 @@
                                     <span><img src="<?= i('') ?>dashboard/home/icons/5.svg"></span>
                                     <div class="space"><br></div>
                                     <h3>Corporate</h3>
-                                    <p>Entrepreneur</p>
+                                    <p>Intrapreneurs</p>
                                  </div>
                               </div>
                            </a>
