@@ -10,8 +10,8 @@
  * file that was distributed with this source code. For the full list of
  * contributors, visit https://github.com/PHPOffice/PHPWord/contributors.
  *
- * @see         https://github.com/PHPOffice/PHPWord
- * @copyright   2010-2018 PHPWord contributors
+ * @link        https://github.com/PHPOffice/PHPWord
+ * @copyright   2010-2014 PHPWord contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
@@ -71,7 +71,7 @@ abstract class AbstractStyle
     /**
      * Get Style
      *
-     * @return string|\PhpOffice\PhpWord\Style\AbstractStyle
+     * @return \PhpOffice\PhpWord\Style\AbstractStyle
      */
     protected function getStyle()
     {
@@ -88,15 +88,15 @@ abstract class AbstractStyle
     protected function convertTwip($value, $default = 0)
     {
         $factors = array(
-            Settings::UNIT_CM    => 567,
-            Settings::UNIT_MM    => 56.7,
-            Settings::UNIT_INCH  => 1440,
+            Settings::UNIT_CM => 567,
+            Settings::UNIT_MM => 56.7,
+            Settings::UNIT_INCH => 1440,
             Settings::UNIT_POINT => 20,
-            Settings::UNIT_PICA  => 240,
+            Settings::UNIT_PICA => 240,
         );
         $unit = Settings::getMeasurementUnit();
         $factor = 1;
-        if (array_key_exists($unit, $factors) && $value != $default) {
+        if (in_array($unit, $factors) && $value != $default) {
             $factor = $factors[$unit];
         }
 
@@ -109,31 +109,17 @@ abstract class AbstractStyle
      * @param \PhpOffice\PhpWord\Shared\XMLWriter $xmlWriter
      * @param string $name
      * @param mixed $value
+     * @return void
      */
     protected function writeChildStyle(XMLWriter $xmlWriter, $name, $value)
     {
         if ($value !== null) {
-            $class = 'PhpOffice\\PhpWord\\Writer\\Word2007\\Style\\' . $name;
+            $class = "PhpOffice\\PhpWord\\Writer\\Word2007\\Style\\" . $name;
 
             /** @var \PhpOffice\PhpWord\Writer\Word2007\Style\AbstractStyle $writer */
             $writer = new $class($xmlWriter, $value);
             $writer->write();
         }
-    }
-
-    /**
-     * Writes boolean as 0 or 1
-     *
-     * @param bool $value
-     * @return null|string
-     */
-    protected function writeOnOf($value = null)
-    {
-        if ($value === null) {
-            return null;
-        }
-
-        return $value ? '1' : '0';
     }
 
     /**

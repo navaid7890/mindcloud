@@ -10,8 +10,8 @@
  * file that was distributed with this source code. For the full list of
  * contributors, visit https://github.com/PHPOffice/PHPWord/contributors.
  *
- * @see         https://github.com/PHPOffice/PHPWord
- * @copyright   2010-2018 PHPWord contributors
+ * @link        https://github.com/PHPOffice/PHPWord
+ * @copyright   2010-2014 PHPWord contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
@@ -33,6 +33,8 @@ class TOC extends AbstractElement
 {
     /**
      * Write element.
+     *
+     * @return void
      */
     public function write()
     {
@@ -68,6 +70,7 @@ class TOC extends AbstractElement
      * @param \PhpOffice\PhpWord\Element\TOC $element
      * @param \PhpOffice\PhpWord\Element\Title $title
      * @param bool $writeFieldMark
+     * @return void
      */
     private function writeTitle(XMLWriter $xmlWriter, TOCElement $element, $title, $writeFieldMark)
     {
@@ -97,8 +100,8 @@ class TOC extends AbstractElement
             $styleWriter->write();
         }
         $xmlWriter->startElement('w:t');
-        $this->writeText($title->getText());
-        $xmlWriter->endElement(); // w:t
+        $xmlWriter->writeRaw($title->getText());
+        $xmlWriter->endElement();
         $xmlWriter->endElement(); // w:r
 
         $xmlWriter->startElement('w:r');
@@ -114,7 +117,7 @@ class TOC extends AbstractElement
         $xmlWriter->startElement('w:r');
         $xmlWriter->startElement('w:instrText');
         $xmlWriter->writeAttribute('xml:space', 'preserve');
-        $xmlWriter->text("PAGEREF _Toc{$rId} \h");
+        $xmlWriter->writeRaw("PAGEREF _Toc{$rId} \h");
         $xmlWriter->endElement();
         $xmlWriter->endElement();
 
@@ -135,6 +138,7 @@ class TOC extends AbstractElement
      * @param \PhpOffice\PhpWord\Shared\XMLWriter $xmlWriter
      * @param \PhpOffice\PhpWord\Element\TOC $element
      * @param int $indent
+     * @return void
      */
     private function writeStyle(XMLWriter $xmlWriter, TOCElement $element, $indent)
     {
@@ -180,6 +184,7 @@ class TOC extends AbstractElement
      *
      * @param \PhpOffice\PhpWord\Shared\XMLWriter $xmlWriter
      * @param \PhpOffice\PhpWord\Element\TOC $element
+     * @return void
      */
     private function writeFieldMark(XMLWriter $xmlWriter, TOCElement $element)
     {
@@ -195,7 +200,7 @@ class TOC extends AbstractElement
         $xmlWriter->startElement('w:r');
         $xmlWriter->startElement('w:instrText');
         $xmlWriter->writeAttribute('xml:space', 'preserve');
-        $xmlWriter->text("TOC \o {$minDepth}-{$maxDepth} \h \z \u");
+        $xmlWriter->writeRaw("TOC \o {$minDepth}-{$maxDepth} \h \z \u");
         $xmlWriter->endElement();
         $xmlWriter->endElement();
 

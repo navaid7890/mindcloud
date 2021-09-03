@@ -10,8 +10,8 @@
  * file that was distributed with this source code. For the full list of
  * contributors, visit https://github.com/PHPOffice/PHPWord/contributors.
  *
- * @see         https://github.com/PHPOffice/PHPWord
- * @copyright   2010-2018 PHPWord contributors
+ * @link        https://github.com/PHPOffice/PHPWord
+ * @copyright   2010-2014 PHPWord contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
@@ -30,8 +30,8 @@ class Settings
      * @const string
      */
     const ZIPARCHIVE = 'ZipArchive';
-    const PCLZIP = 'PclZip';
-    const OLD_LIB = 'PhpOffice\\PhpWord\\Shared\\ZipArchive'; // @deprecated 0.11
+    const PCLZIP     = 'PclZip';
+    const OLD_LIB    = 'PhpOffice\\PhpWord\\Shared\\ZipArchive'; // @deprecated 0.11
 
     /**
      * PDF rendering libraries
@@ -39,8 +39,8 @@ class Settings
      * @const string
      */
     const PDF_RENDERER_DOMPDF = 'DomPDF';
-    const PDF_RENDERER_TCPDF = 'TCPDF';
-    const PDF_RENDERER_MPDF = 'MPDF';
+    const PDF_RENDERER_TCPDF  = 'TCPDF';
+    const PDF_RENDERER_MPDF   = 'MPDF';
 
     /**
      * Measurement units multiplication factor
@@ -53,12 +53,12 @@ class Settings
      *
      * @const string
      */
-    const UNIT_TWIP = 'twip'; // = 1/20 point
-    const UNIT_CM = 'cm';
-    const UNIT_MM = 'mm';
-    const UNIT_INCH = 'inch';
+    const UNIT_TWIP  = 'twip'; // = 1/20 point
+    const UNIT_CM    = 'cm';
+    const UNIT_MM    = 'mm';
+    const UNIT_INCH  = 'inch';
     const UNIT_POINT = 'point'; // = 1/72 inch
-    const UNIT_PICA = 'pica'; // = 1/6 inch = 12 points
+    const UNIT_PICA  = 'pica'; // = 1/6 inch = 12 points
 
     /**
      * Default font settings
@@ -70,7 +70,6 @@ class Settings
     const DEFAULT_FONT_SIZE = 10;
     const DEFAULT_FONT_COLOR = '000000';
     const DEFAULT_FONT_CONTENT_TYPE = 'default'; // default|eastAsia|cs
-    const DEFAULT_PAPER = 'A4';
 
     /**
      * Compatibility option for XMLWriter
@@ -121,25 +120,11 @@ class Settings
     private static $defaultFontSize = self::DEFAULT_FONT_SIZE;
 
     /**
-     * Default paper
-     * @var string
-     */
-    private static $defaultPaper = self::DEFAULT_PAPER;
-
-    /**
      * The user defined temporary directory.
      *
      * @var string
      */
     private static $tempDir = '';
-
-    /**
-     * Enables built-in output escaping mechanism.
-     * Default value is `false` for backward compatibility with versions below 0.13.0.
-     *
-     * @var bool
-     */
-    private static $outputEscapingEnabled = false;
 
     /**
      * Return the compatibility option used by the XMLWriter
@@ -161,7 +146,7 @@ class Settings
      */
     public static function setCompatibility($compatibility)
     {
-        $compatibility = (bool) $compatibility;
+        $compatibility = (bool)$compatibility;
         self::$xmlWriterCompatibility = $compatibility;
 
         return true;
@@ -187,7 +172,6 @@ class Settings
     {
         if (in_array($zipClass, array(self::PCLZIP, self::ZIPARCHIVE, self::OLD_LIB))) {
             self::$zipClass = $zipClass;
-
             return true;
         }
 
@@ -237,6 +221,7 @@ class Settings
         return true;
     }
 
+
     /**
      * Return the directory path to the PDF Rendering Library.
      *
@@ -282,7 +267,7 @@ class Settings
     public static function setMeasurementUnit($value)
     {
         $units = array(self::UNIT_TWIP, self::UNIT_CM, self::UNIT_MM, self::UNIT_INCH,
-            self::UNIT_POINT, self::UNIT_PICA, );
+            self::UNIT_POINT, self::UNIT_PICA);
         if (!in_array($value, $units)) {
             return false;
         }
@@ -296,7 +281,8 @@ class Settings
      *
      * @since 0.12.0
      *
-     * @param string $tempDir The user defined path to temporary directory
+     * @param string $tempDir The user defined path to temporary directory.
+     * @return void
      */
     public static function setTempDir($tempDir)
     {
@@ -312,33 +298,13 @@ class Settings
      */
     public static function getTempDir()
     {
+        $tempDir = sys_get_temp_dir();
+
         if (!empty(self::$tempDir)) {
             $tempDir = self::$tempDir;
-        } else {
-            $tempDir = sys_get_temp_dir();
         }
 
         return $tempDir;
-    }
-
-    /**
-     * @since 0.13.0
-     *
-     * @return bool
-     */
-    public static function isOutputEscapingEnabled()
-    {
-        return self::$outputEscapingEnabled;
-    }
-
-    /**
-     * @since 0.13.0
-     *
-     * @param bool $outputEscapingEnabled
-     */
-    public static function setOutputEscapingEnabled($outputEscapingEnabled)
-    {
-        self::$outputEscapingEnabled = $outputEscapingEnabled;
     }
 
     /**
@@ -361,7 +327,6 @@ class Settings
     {
         if (is_string($value) && trim($value) !== '') {
             self::$defaultFontName = $value;
-
             return true;
         }
 
@@ -371,7 +336,7 @@ class Settings
     /**
      * Get default font size
      *
-     * @return int
+     * @return integer
      */
     public static function getDefaultFontSize()
     {
@@ -386,10 +351,9 @@ class Settings
      */
     public static function setDefaultFontSize($value)
     {
-        $value = (int) $value;
+        $value = intval($value);
         if ($value > 0) {
             self::$defaultFontSize = $value;
-
             return true;
         }
 
@@ -440,37 +404,9 @@ class Settings
     }
 
     /**
-     * Get default paper
-     *
-     * @return string
-     */
-    public static function getDefaultPaper()
-    {
-        return self::$defaultPaper;
-    }
-
-    /**
-     * Set default paper
-     *
-     * @param string $value
-     * @return bool
-     */
-    public static function setDefaultPaper($value)
-    {
-        if (is_string($value) && trim($value) !== '') {
-            self::$defaultPaper = $value;
-
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
      * Return the compatibility option used by the XMLWriter
      *
      * @deprecated 0.10.0
-     *
      * @codeCoverageIgnore
      */
     public static function getCompatibility()
