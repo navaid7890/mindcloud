@@ -704,9 +704,19 @@ class Profile extends MY_Controller_Account
 		// debug($tootl);
 		// die();
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
-			//debug($value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// 	//debug($value);
+		// }
 		//die;
 		$filename = 'Business Model Canvas.docx';
 		$templateProcessor->saveAs($filename);
@@ -741,8 +751,18 @@ class Profile extends MY_Controller_Account
 		// debug($tootl);
 		// die();
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 		$filename = 'Business Model Canvas.docx';
 		$templateProcessor->saveAs($filename);
 		$phpWord = \PhpOffice\PhpWord\IOFactory::load($filename); // Read the temp file
@@ -793,6 +813,13 @@ class Profile extends MY_Controller_Account
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/value_proposition_canvas.docx');
 
 		foreach ($tootl_vp[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
 
@@ -842,8 +869,18 @@ class Profile extends MY_Controller_Account
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/swot_analysis.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'SWOT Analysis.docx';
 		$templateProcessor->saveAs($filename);
@@ -890,8 +927,18 @@ class Profile extends MY_Controller_Account
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/positioning_marketing_mix.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'Positioning and Marketing Mix.docx';
 		$templateProcessor->saveAs($filename);
@@ -935,8 +982,18 @@ class Profile extends MY_Controller_Account
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/strategic_marketing_plan.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'Strategic Marketing Plan.docx';
 		$templateProcessor->saveAs($filename);
@@ -979,8 +1036,18 @@ class Profile extends MY_Controller_Account
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/customer_journey_demand_generation.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'Customer Journey Demand Generation.docx';
 		$templateProcessor->saveAs($filename);
@@ -1023,8 +1090,18 @@ class Profile extends MY_Controller_Account
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/marketing_campaign_model_canvas.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 
 		$filename = 'Marketing Campaign Model Canvas.docx';
@@ -1068,8 +1145,18 @@ class Profile extends MY_Controller_Account
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/online_sales_funnel.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'Online Sales Funnel.docx';
 		$templateProcessor->saveAs($filename);
@@ -1114,8 +1201,18 @@ class Profile extends MY_Controller_Account
 
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/legal_term_sheet.docx');
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'Legal Term Sheet.docx';
 		$templateProcessor->saveAs($filename);
@@ -1170,10 +1267,19 @@ class Profile extends MY_Controller_Account
 		// html_entity_decode();
 
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/investment_deck_slides.docx');
-
 		foreach ($tootl[0] as $column_name => $value) {
+			$textlines = explode("\n", $value);
+			if (sizeof($textlines) > 1) {
+				$value = '';
+				foreach ($textlines as $line) {
+					$value = $value . $line . '</w:t><w:br/><w:t>';
+				}
+			}
 			$templateProcessor->setValue($column_name, $value);
 		}
+		// foreach ($tootl[0] as $column_name => $value) {
+		// 	$templateProcessor->setValue($column_name, $value);
+		// }
 
 		$filename = 'Investment Deck Slides.docx';
 		$templateProcessor->saveAs($filename);
