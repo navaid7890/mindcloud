@@ -33,7 +33,11 @@
    }
 </style>
 <div class="abt-tut-page">
-
+<?
+   $upaid = array();
+   $upaid['where']['user_id'] = $this->userid;
+   $datapaid = $this->model_user->find_all_active($upaid);
+   ?>
 
    <div class="front-dashboard">
       <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
@@ -141,7 +145,11 @@
                         <span><?= html_entity_decode($course[0]['tutorial_duration']) ?></span>
                         <ul class="tut-info">
                            <li><i><img src="<?= i('') ?>icons/1.png"></i> Professional Certification </li>
-                           <li><a href="<?= l('subscription') ?>">1-Year Access </a></li>
+                          
+                           <? if ($datapaid[0]['user_paid'] == 0) : ?>
+                              <li><a href="<?= l('subscription') ?>">1-Year Access </a></li>
+                           <? endif; ?>
+
                            <!-- <form> -->
                            <input type="hidden" name="product_qty" class="qtystyle" value="1" min="1" max="1">
                            <input type="hidden" name="product_img" value="<?= get_image($course[0]['tutorial_image'], $course[0]['tutorial_image_path']) ?>" class="productimage" value="">
@@ -161,11 +169,7 @@
          </div>
       </div>
    </div>
-   <?
-   $upaid = array();
-   $upaid['where']['user_id'] = $this->userid;
-   $datapaid = $this->model_user->find_all_active($upaid);
-   ?>
+  
    <?//= debug($datapaid[0]['user_paid']) ?>
    <?
    $courfreecheck = array();
