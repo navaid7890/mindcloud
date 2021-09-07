@@ -141,7 +141,7 @@
                         <span><?= html_entity_decode($course[0]['tutorial_duration']) ?></span>
                         <ul class="tut-info">
                            <li><i><img src="<?= i('') ?>icons/1.png"></i> Professional Certification </li>
-                           <li><a href="javascript:void(0)">1-Year Access </a></li>
+                           <li><a href="<?= l('subscription') ?>">1-Year Access </a></li>
                            <!-- <form> -->
                            <input type="hidden" name="product_qty" class="qtystyle" value="1" min="1" max="1">
                            <input type="hidden" name="product_img" value="<?= get_image($course[0]['tutorial_image'], $course[0]['tutorial_image_path']) ?>" class="productimage" value="">

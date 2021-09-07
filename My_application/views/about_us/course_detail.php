@@ -164,7 +164,7 @@
                         <span><?= html_entity_decode($course[0]['tutorial_duration']) ?></span>
                         <ul class="tut-info">
                            <li><i><img src="<?= i('') ?>icons/1.png"></i> Professional Certification </li>
-                           <li><a href="javascript:void(0)" data-fancybox data-src="#hidden-content-1">1-Year Access <span>$20/ month</span></a></li>
+                           <li><a href="<?= l('subscription') ?>" data-fancybox data-src="#hidden-content-1">1-Year Access <span>$20/ month</span></a></li>
 
                            <? if (empty($this->userid )) {?>
       
