@@ -51,6 +51,11 @@
       display: none;
    }
 </style>
+<?
+   $upaid = array();
+   $upaid['where']['user_id'] = $this->userid;
+   $datapaid = $this->model_user->find_all_active($upaid);
+   ?>
 <div class="abt-tut-page">
    <div class="mainBanner hding-1 para">
       <div class="container">
@@ -164,12 +169,13 @@
                         <span><?= html_entity_decode($course[0]['tutorial_duration']) ?></span>
                         <ul class="tut-info">
                            <li><i><img src="<?= i('') ?>icons/1.png"></i> Professional Certification </li>
-                           <li><a href="javascript:void(0)" data-fancybox data-src="#hidden-content-1">1-Year Access <span>$20/ month</span></a></li>
+                           <? if ($datapaid[0]['user_paid'] == 0) : ?>
+                              <li><a href="<?= l('subscription') ?>" >1-Year Access <span>$20/ month</span></a></li>
+                           <? endif; ?>
+                           <? if (empty($this->userid)) { ?>
 
-                           <? if (empty($this->userid )) {?>
-      
-                           <li><a href="<?=l('signup')?>">7 Days Free Trial <span></span></a></li>
-                           <?}?>
+                              <li><a href="<?= l('signup') ?>">7 Days Free Trial <span></span></a></li>
+                           <? } ?>
                         </ul>
                      </div>
                   </div>
@@ -178,19 +184,16 @@
          </div>
       </div>
    </div>
-   <?
-   $upaid = array();
-   $upaid['where']['user_id'] = $this->userid;
-   $datapaid = $this->model_user->find_all_active($upaid);
-   ?>
-   <?//= debug($datapaid[0]['user_paid'])
+
+   <? //= debug($datapaid[0]['user_paid'])
    ?>
    <?
    $courfreecheck = array();
    $courfreecheck['where']['tutorial_id'] = $course[0]['tutorial_id'];
    $datacourfreecheck = $this->model_tutorial->find_all_active($courfreecheck);
    ?>
-   <?//= $datacourfreecheck[0]['tutorial_free_status'] ?>
+   <? //= $datacourfreecheck[0]['tutorial_free_status'] 
+   ?>
 
    <section class="jrnySec hding-2 pad-sec para">
       <div class="container">
@@ -281,7 +284,7 @@
                      <div class="row">
                         <div class="col-lg-1 col-md-2 col-3">
                            <div class="profile-img">
-                           <img src="<?=get_image($this->layout_data['user_data']['ui_profile_image'],$this->layout_data['user_data']['ui_profile_image_path'])?>">
+                              <img src="<?= get_image($this->layout_data['user_data']['ui_profile_image'], $this->layout_data['user_data']['ui_profile_image_path']) ?>">
                            </div>
                         </div>
 
@@ -301,7 +304,8 @@
                                     <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
                                  <? } ?>
                               </ul>
-                              <!-- <p><?//= $review[$key]['learning_journey_course_review_createdon'] ?></p> -->
+                              <!-- <p><? //= $review[$key]['learning_journey_course_review_createdon'] 
+                                       ?></p> -->
                            </div>
                            <div class="user-content">
                               <p><?= $review[$key]['learning_journey_course_review_desc'] ?></p>
@@ -322,9 +326,9 @@
          <div class="space"><br></div>
          <?= html_entity_decode($con1['cms_page_content']) ?>
          <div class="space"><br><br></div>
-         <? if (empty($this->userid )) {?>
-         <a href="<?=l('signup')?>" class="btn-theme btn-hover">Start Free Trial <span></span></a>
-         <?}?>
+         <? if (empty($this->userid)) { ?>
+            <a href="<?= l('signup') ?>" class="btn-theme btn-hover">Start Free Trial <span></span></a>
+         <? } ?>
       </div>
    </section>
    <div class="space"><br><br><br><br></div>
@@ -351,7 +355,7 @@
                               </div>
                            </a>
                            <div class="vid-content">
-                              <h4 style="color: #000;"><?= short_text($value['tutorial_name'],30)  ?></h4>
+                              <h4 style="color: #000;"><?= short_text($value['tutorial_name'], 30)  ?></h4>
                               <div class="row align-items-center pt-70">
                                  <div class="col-md-8">
                                     <ul class="rating">
@@ -386,8 +390,10 @@
          <?= html_entity_decode($con2['cms_page_content']) ?>
          <div class="space"><br><br></div>
          <div class="btn-group">
-            <a href="javascript:void(0)" class="btn-theme btn-hover">1-Year Access $20/ month <span></span></a>
-            <a href="javascript:void(0)" class="btn-theme btn-transparent btn-hover">Take this Tutorial for $15 <span></span></a>
+         <? if ($datapaid[0]['user_paid'] == 0) : ?>
+            <a href="<?= l('subscription') ?>" class="btn-theme btn-hover">1-Year Access $20/ month <span></span></a>
+            <a href="<?= l('subscription') ?>" class="btn-theme btn-transparent btn-hover">Take this Tutorial for $15 <span></span></a>
+            <? endif; ?>
          </div>
       </div>
    </section>
@@ -417,10 +423,10 @@
          <?= html_entity_decode($con3['cms_page_content']) ?>
          <div class="space"><br><br></div>
 
-         <? if (empty($this->userid )) {?>
-      
-         <a href="<?=l('signup')?>" class="btn-theme btn-hover">Start Free Trial <span></span></a>
-    <?}?>
+         <? if (empty($this->userid)) { ?>
+
+            <a href="<?= l('signup') ?>" class="btn-theme btn-hover">Start Free Trial <span></span></a>
+         <? } ?>
       </div>
    </section>
 </div>
