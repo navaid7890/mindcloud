@@ -780,6 +780,8 @@ public function newsletter(){
 
     $this->load->library('phpmailer_lib');
     $mail = $this->phpmailer_lib->load();
+
+    
   
     $mail->isSMTP();
     $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
