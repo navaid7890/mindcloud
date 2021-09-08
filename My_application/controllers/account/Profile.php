@@ -695,19 +695,6 @@ class Profile extends MY_Controller_Account
 		// $this->load->library('phpword');
 		$vp = array();
 		$vp['where']['tool_builder_user_id'] = $this->userid;
-<<<<<<< HEAD
-		$data['tootl'] = $this->model_tool_builder->find_all_active($vp);
-		$tootl = $data['tootl'];
-		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/business_model_canvus.docx');
-		foreach ($tootl[0] as $column_name => $value) {
-			$textlines = explode("\n", $value);
-			if (sizeof($textlines) > 1) {
-				$value = '';
-				foreach ($textlines as $line) {
-					$value = $value . $line . '</w:t><w:br/><w:t>';
-				}
-			}
-=======
 		$tool = $this->model_tool_builder->find_one_active($vp);
 		// $tootl = $data['tootl'];
 		// $tootl[0]['tool_builder_customer_segments']=($data['tootl'][0]['tool_builder_customer_segments']);
@@ -717,7 +704,6 @@ class Profile extends MY_Controller_Account
 		// debug($tootl);
 		// die();
 		foreach ($tool as $column_name => $value) {
->>>>>>> dev/madiha
 			$templateProcessor->setValue($column_name, $value);
 		}
 		$filename = 'Business Model Canvas.docx';
