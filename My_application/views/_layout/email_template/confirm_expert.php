@@ -15,6 +15,9 @@ $logo = $this->model_logo->find_one(
         	        <div style="margin: 30px;">
              	        <p>
                             <?php
+
+$a=$form_input['booking_user_id'];
+$b=$form_input['booking_expert_id'];
                             if(isset($msg)) {
                                 echo $msg;
                             }
