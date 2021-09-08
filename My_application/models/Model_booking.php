@@ -237,6 +237,22 @@ class Model_booking extends MY_Model
             ),
 
 
+
+            'booking_expert_rejection' => array(
+                'table' => $this->_table,
+                'name' => 'booking_expert_rejection',
+                'label' => 'Expert Rejection',
+                'type' => 'switch',
+                'type_dt' => 'switch',
+                'type_filter_dt' => 'dropdown',
+                'list_data' => array(),
+                'default' => '1',
+                'attributes' => array(),
+                'dt_attributes' => array("width" => "7%"),
+                'rules' => 'trim'
+            ),
+
+
              'booking_admin_approval' => array(
                 'table' => $this->_table,
                 'name' => 'booking_admin_approval',

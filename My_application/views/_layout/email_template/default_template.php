@@ -25,13 +25,12 @@ $b=$form_input['booking_expert_id'];
                             else
                             {
                             ?>
-                     	        Hi <?=$form_input['Full Name']?>,<br> <br>
+                     	        Hi <?=$this->session->userdata['logged_in_front']['first_name']?>,<br> <br>
                                  Thank you for the booking on date <?=$form_input['booking_date']?> and time <?=$form_input['booking_time']?> with expert <?=$form_input['Full Name']?> 
 
-                     	        <br> <br>We have sent an email to the expert and awaiting a confirmation email.<br> As soon as it is confirmed, we will send you an email to make the<br>
+                     	        <br> <br>We have sent an email to the expert and awaiting a confirmation email.<br><br> As soon as it is confirmed, we will send you an email to make the<br><br>
                                   payment for the session, and give you instructions on the call. <br> <br>
 
-                                  <a href="<?=l('contact_us/emailtest/'.$a.'/'.$b)?>">Clicl Here For Confirmation</a><br><br>
                      	        See you soon,<br><br>
                             <?php
                             }
