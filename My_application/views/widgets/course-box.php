@@ -112,7 +112,7 @@
                                 // debug($value); 
                                 $a = $value['learning_journey_content_id'];
                             ?>
-                                <li class="dropdown-toggle b-child catLj<?= $a ?>">
+                                <li class="dropdown-toggle b-child catLj<?= $a ?> subclass">
                                     <a href="javascript:;"><?= $value['learning_journey_content_name'] ?>
                                         <div class="percent" id="played<?= $a ?>">
                                             <p style="display:none;"></p>
@@ -243,35 +243,36 @@ $datapaid = $this->model_user->find_all_active($upaid);
     <script>
         var newUrl = "<?= l('subscription') ?>";
 
-        $('.catLj12').click(false);
+        
         $(".catLj12 a").attr('href', newUrl);
 
-        $('.catLj13').click(false);
+        // $('.catLj13').click(false);
         $(".catLj13 a").attr('href', newUrl);
-        $('.catLj14').click(false);
+        // $('.catLj14').click(false);
         $(".catLj14 a").attr('href', newUrl);
-        $('.catLj15').click(false);
+        // $('.catLj15').click(false);
         $(".catLj15 a").attr('href', newUrl);
-        $('.catLj16').click(false);
+        // $('.catLj16').click(false);
         $(".catLj16 a").attr('href', newUrl);
-        $('.catLj17').click(false);
+        // $('.catLj17').click(false);
         $(".catLj17 a").attr('href', newUrl);
-        $('.catLj18').click(false);
+        // $('.catLj18').click(false);
         $(".catLj18 a").attr('href', newUrl);
-        $('.catLj20').click(false);
+        // $('.catLj20').click(false);
         $(".catLj20 a").attr('href', newUrl);
-        $('.catLj21').click(false);
+        // $('.catLj21').click(false);
         $(".catLj21 a").attr('href', newUrl);
-        $('.catLj22').click(false);
+        // $('.catLj22').click(false);
         $(".catLj22 a").attr('href', newUrl);
-        $('.catLj23').click(false);
+        // $('.catLj23').click(false);
         $(".catLj23 a").attr('href', newUrl);
-        $('.catLj24').click(false);
+        // $('.catLj24').click(false);
         $(".catLj24 a").attr('href', newUrl);
-        $('.catLj25').click(false);
+        // $('.catLj25').click(false);
         $(".catLj25 a").attr('href', newUrl);
-        $('.catLj26').click(false);
+        // $('.catLj26').click(false);
         $(".catLj26 a").attr('href', newUrl);
+        $(".subclass>a").click(false);
     </script>
 
 <? endif; ?>
