@@ -985,8 +985,8 @@ var Form = function () {
         form.find('#signup-btn').prop('disabled', false);
 
         form[0].reset();
-
-        Toastr.success(s.msg.desc, s.msg.title, { positionClass: "toast-bottom-right" });
+      alert("You have been successfully registered and logged in as a free user for 7 days with limited access so you can try the platform.");
+       // Toastr.success(s.msg.desc, s.msg.title, { positionClass: "toast-bottom-right" });
 
         if (s.redirect.status) {
           setTimeout(function(){

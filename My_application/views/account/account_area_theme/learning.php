@@ -41,7 +41,7 @@
                      <div class="tutorial-mid-content">
                         <h4>What kind of Entrepreneur are you?</h4>
                         <div class="space"><br></div>
-                        <p>Our Learning Journey is designed for entrepreneurs at all different stages </p>
+                        <p>Our Learning Journey is designed for entrepreneurs at all different stages. Click below on the type of entrepreneur that fits you best to watch the corresponding video</p>
                      </div>
                      <div class="space"><br><br></div>
                      <?
