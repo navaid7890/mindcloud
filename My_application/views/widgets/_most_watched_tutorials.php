@@ -49,7 +49,7 @@
                         <?
                         $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
                         ?>
-                        <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= short_text($value['tutorial_name'],30)  ?></a></h4>
+                        <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= short_text($value['tutorial_name'],20)  ?></a></h4>
                         <?
                         $exp_name = array();
                         $exp_name['where']['expert_id'] = $value["tutorial_expert_id"];

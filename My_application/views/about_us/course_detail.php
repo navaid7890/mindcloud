@@ -355,7 +355,7 @@
                               </div>
                            </a>
                            <div class="vid-content">
-                              <h4 style="color: #000;"><?= short_text($value['tutorial_name'], 30)  ?></h4>
+                              <h4 style="color: #000;"><?= short_text($value['tutorial_name'], 20)  ?></h4>
                               <div class="row align-items-center pt-70">
                                  <div class="col-md-8">
                                     <ul class="rating">
