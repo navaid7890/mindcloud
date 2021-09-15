@@ -512,9 +512,11 @@
    $(".singlemarket").click(function() {
       $(".singlemarketdiv").show();
       $(".multiMarketdiv").hide();
+      // location.reload();
    });
    $(".multiMarket").click(function() {
       $(".multiMarketdiv").show();
       $(".singlemarketdiv").hide();
+      // location.reload();
    });
 </script>

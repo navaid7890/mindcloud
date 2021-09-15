@@ -396,7 +396,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        // $("#regForm").find('input[type=text],input[type=email],textarea').val('');
+        $("#regForm").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
