@@ -1502,7 +1502,9 @@ ul.login-btn .dropdown-box {background: #fff;position: absolute;left: 0;right: 0
     border-radius: 100px;
     right: -4px;
 }
-
+.arrowmdl-content p {
+    min-height: 65px;
+}
 .arrowmdl-content h6, .arrowmdl-content p {
     color: #33415C;
     font-size: 15px;

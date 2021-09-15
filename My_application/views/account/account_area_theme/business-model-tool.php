@@ -49,14 +49,14 @@
                         <div class="tutorial-mid-content">
                            <div class="row align-items-center">
                               <div class="col-lg-9 col-md-12">
-                              
+
                                  <h4>Tool and Tool Builder - Business Model Canvas</h4>
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> Business Model Canvas. </strong></p>
                               </div>
                               <div class="col-lg-3 col-md-12 text-right">
-                                 <a href="<?= base_url() ?>account/profile/dl_tools"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                                 <a href="<?= base_url() ?>account/profile/dl_tools_multi"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 <a href="<?= base_url() ?>account/profile/dl_tools" class="singlemarketdiv"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 <a href="<?= base_url() ?>account/profile/dl_tools_multi" class="multiMarketdiv" style="display: none;"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
                               </div>
                            </div>
                         </div>
@@ -70,9 +70,11 @@
                               <div class="fld-html">
                                  <p>Do you have a <strong>Single</strong> or <strong>Multi-Sided Market</strong>?</p>
                               </div>
-                              <li data-targetit="box-1" class="current"><a href="#">Single Market</a></li>
-                              <li data-targetit="box-2"><a href="#">Multi-Sided Market</a></li>
+                              <li data-targetit="box-1" class="current singlemarket"><a href="#">Single Market</a></li>
+                              <li data-targetit="box-2" class="multiMarket"><a href="#">Multi-Sided Market</a></li>
                            </ul>
+
+
 
                            <div class="box-1 showfirst" style="">
 
@@ -504,3 +506,15 @@
       </ul>
    </section>
 </div>
+
+
+<script>
+   $(".singlemarket").click(function() {
+      $(".singlemarketdiv").show();
+      $(".multiMarketdiv").hide();
+   });
+   $(".multiMarket").click(function() {
+      $(".multiMarketdiv").show();
+      $(".singlemarketdiv").hide();
+   });
+</script>
