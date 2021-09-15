@@ -396,7 +396,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#regForm").find('input[type=text],input[type=email],textarea').val('');
+        // $("#regForm").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -426,7 +426,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-vp").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-vp").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -455,7 +455,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-send_swot").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-send_swot").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -485,7 +485,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-smp").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-smp").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -518,7 +518,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-cjdg").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-cjdg").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -546,7 +546,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-mcmc").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-mcmc").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -574,7 +574,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-osf").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-osf").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -635,7 +635,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-pmmt").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-pmmt").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -694,7 +694,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-lts").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-lts").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -742,7 +742,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-ids").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-ids").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
