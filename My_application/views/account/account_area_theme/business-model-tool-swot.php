@@ -110,17 +110,17 @@
                                           <textarea name="tool_builder_swot[tool_builder_threats]"><?= $tool['tool_builder_threats'] ?></textarea>
                                        </div>
 
-                                       <div style="display:none">
-                                          <button type="submit" id="forms-tool_builder-btn1">SUBMIT</button>
+                                       <div >
+                                          <button type="submit" class="btn btn-primary btn-lg" id="forms-tool_builder-btn1" style="float: right;">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
-                                 <div style="overflow:auto;">
+                                 <!-- <div style="overflow:auto;">
                                     <div class="next-prevBtn" style="float:right;">
                                        <button type="button" id="nextBtn1" onclick="nextPrev(1)">Submit</button>
                                     </div>
-                                 </div>
+                                 </div> -->
 
                               </div>
 

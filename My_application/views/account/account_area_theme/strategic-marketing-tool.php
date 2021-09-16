@@ -116,7 +116,7 @@
                                        </div>
 
                                        <div>
-                                          <button type="submit" class="btn btn-primary btn-lg" id="forms-tool_builder-btn1">SUBMIT</button>
+                                          <button type="submit" class="btn btn-primary btn-lg" style="float: right;" id="forms-tool_builder-btn1">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
