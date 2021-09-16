@@ -316,7 +316,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj12 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('cat is 12', totalseprate);
         <? else : ?>
             $(".catLj12 #played12 p").html('0');
         <? endif; ?>

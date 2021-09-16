@@ -96,7 +96,7 @@
 
                                     <form id="form-vp1">
                                        <input type="hidden" name="tool_builder_vp[tool_builder_vp_user_id]" value="<?= ($this->userid) ?>">
-                                       <input type="hidden" name="tool_builder_vp[tool_builder_percent]" value="1">
+                                       <input type="hidden" name="tool_builder_vp[tool_builder_percent]" value="1" >
                                        <div class="fld-textarea">
                                           <label for="">Jobs <span>List all the jobs your customers are trying to get done (jobs can be functional, emotional, or social ones)</span></label>
                                           <div class="space"><br></div>

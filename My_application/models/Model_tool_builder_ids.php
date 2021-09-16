@@ -136,6 +136,17 @@ class Model_tool_builder_ids extends MY_Model {
                      'js_rules'   => '',
                      'rules'   => 'trim'
                 ),
+                'tool_builder_percent' => array(
+                    'table'   => $this->_table,
+                    'name'   => 'tool_builder_percent',
+                    'label'   => 'PERCENT',
+                    'type'   => 'hidden',
+                    'type_filter_dt'   => 'dropdown',
+                    'attributes'   => array(),
+                    'dt_attributes'   => array("width"=>"10%"),
+                    'js_rules'   => '',
+                    'rules'   => 'trim'
+               ),
 
               'tool_builder_ids_value_proposition' => array(
                      'table'   => $this->_table,
