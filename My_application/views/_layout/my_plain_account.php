@@ -587,12 +587,12 @@ $my_tools = array(
   ?>
           <link rel="stylesheet" href="<?= g('plugins_root') . $tool . "/" . $script; ?>" /><?
 
-                                                                                      }
+                                                                                          }
+                                                                                        }
                                                                                     }
-                                                                                }
-                                                                              }
+                                                                                  }
 
-                                                                                        ?>
+                                                                                            ?>
 
 
 
@@ -616,20 +616,21 @@ $my_tools = array(
   </script>
   <style>
     div#overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    opacity: 0.95;
-    flex-direction: column;
-    height: 100vh;
-}
-.overFlowHide{
-  overflow: hidden !important;
-}
+      position: absolute;
+      inset: 0;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      opacity: 0.95;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .overFlowHide {
+      overflow: hidden !important;
+    }
   </style>
 
 </head>
@@ -907,25 +908,34 @@ $my_tools = array(
     }
     if (n == (x.length - 1)) {
       document.getElementById("nextBtn").innerHTML = "Submit";
+      // alert("there");
     } else {
       document.getElementById("nextBtn").innerHTML = "Next";
     }
+
     fixStepIndicator(n)
   }
 
-  function nextPrev(n) {
+  function nextPrev(n, url) { 
     var x = document.getElementsByClassName("tab");
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
-    if (n == 1) {
-      document.getElementById("forms-tool_builder-btn" + currentTab).click();
-    }
+    console.log('n===', x.length);
 
-    if (currentTab >= x.length) {
-      document.getElementById("forms-tool_builder-btn" + currentTab).click();
-
-      return false;
+    if (n == 1) { 
+      document.getElementById("forms-tool_builder-btn" + currentTab).click(); 
     }
+    
+    if(currentTab == x.length){
+      window.open(url,"_self");
+    }
+    
+    // if (currentTab >= x.length) {
+    //   document.getElementById("forms-tool_builder-btn" + currentTab).click();   
+    //   return false; 
+    // }
+    
+
     showTab(currentTab);
   }
 
@@ -1326,34 +1336,28 @@ jQuery(document).ready(function(){
   });
 </script>
 
-  <script>
-
-
-document.onkeydown = function(e) {
-  if(event.keyCode == 123) {
-     return false;
+<script>
+  document.onkeydown = function(e) {
+    if (event.keyCode == 123) {
+      return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+      return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+      return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+      return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'S'.charCodeAt(0)) {
+      return false;
+    }
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+      return false;
+    }
   }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'S'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-     return false;
-  }
-}
-
-
-
-
-  </script>
+</script>
 
 
 

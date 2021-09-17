@@ -69,7 +69,7 @@
                               <div class="fld-html">
                                  <ul class="fld-progress">
                                     <li class="step">
-                                       <p>Customer Segments</p>
+                                       <p>Customer Profile</p>
                                     </li>
                                     <li class="step">
                                        <p>Value Propositions</p>
@@ -152,8 +152,8 @@
 
                               <div class="next-prevBtn" style="overflow:auto;">
                                  <div style="float:right;">
-                                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
-                                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    <button type="button" id="prevBtn" onclick="nextPrev(-1,'your_work?tool=1&cat=12')">Back</button>
+                                    <button type="button" id="nextBtn" onclick="nextPrev(1,'your_work?tool=1&cat=12')">Next</button>
                                  </div>
                               </div>
 

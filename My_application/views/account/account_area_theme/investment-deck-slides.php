@@ -54,17 +54,49 @@
                      </div>
 
                      <div class="tutorial-footer tool-footer vid-tran para">
-                        <div class="tutorial-footer-content" style="padding: 0;">
+                        <div class="tutorial-footer-content">
 
 
-                           <ul class="form-tabing">
-                              <div class="fld-html">
-                                 <p>Investment Deck Slides</p>
-                              </div>
-                           </ul>
+                        
 
                            <div class="box-1 showfirst" style="">
-
+                           <div class="fld-html">
+                                 <ul class="fld-progress">
+                                    <li class="step">
+                                       <p>Value Proposition</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>The Problem</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>The Solution</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>The Market Target & Size</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Go-To-Market Strategies</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Competitive Landscape</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Business / Revenue Model</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Traction & Timeline</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Execution Team</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Financial Data</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Your ASK</p>
+                                    </li>
+                                 </ul>
+                              </div>
                               <div id="radio1" class="multi-fld">
 
                                  <div class="tab">
@@ -340,8 +372,8 @@
 
                               <div class="next-prevBtn" style="overflow:auto;">
                                  <div style="float:right;">
-                                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
-                                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    <button type="button" id="prevBtn" onclick="nextPrev(-1,'your_work?tool=15&cat=26')">Back</button>
+                                    <button type="button" id="nextBtn" onclick="nextPrev(1,'your_work?tool=15&cat=26')">Next</button>
                                  </div>
                               </div>
 

@@ -169,7 +169,7 @@
                                                             </tr>
 
                                                             <tr class="align-items-center">
-                                                                <th>Property Plantand Equipment</th>
+                                                                <th>Property Plant and Equipment</th>
                                                                 <td>
                                                                     <div class="fld-text mb-0">
                                                                         <input type="number" class="fixed_assets_total" onkeyup="calc_tool_bss_values('fixed_assets_total','tool_builder_total_assets')" name="tool_builder_fm_bss[tool_builder_property_planted]" value="<?= $tool['tool_builder_property_planted'] ?>" placeholder="0">

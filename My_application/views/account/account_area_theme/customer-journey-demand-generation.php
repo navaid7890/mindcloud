@@ -56,25 +56,28 @@
                         <div class="tutorial-footer-content" style="padding-top: 22%;">
 
 
-                           <ul class="form-tabing">
+                           <!-- <ul class="form-tabing">
                               <div class="fld-html">
                                  <p>Customer Journey</p>
                                  <p>Demand Generation</p>
                               </div>
-                           </ul>
+                           </ul> -->
 
                            <div class="box-1 showfirst" style="">
 
                               <div class="fld-html">
                                  <ul class="fld-progress">
                                     <li class="step">
-                                       <p>Customer Segments</p>
+                                       <p>Demand Generation</p>
                                     </li>
                                     <li class="step">
-                                       <p>Value Propositions</p>
+                                       <p>Conversion</p>
                                     </li>
                                     <li class="step">
-                                       <p>Customer Segments</p>
+                                       <p>Relationship Management</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Propagation</p>
                                     </li>
                                  </ul>
                               </div>
@@ -125,6 +128,13 @@
                                           <div class="space"><br></div>
                                           <textarea name="tool_builder_cj_dg[tool_builder_cj_dg_purchase]"><?= $tool['tool_builder_cj_dg_purchase'] ?></textarea>
                                        </div>
+                                       <div style="display:none;">
+                                          <button id="forms-tool_builder-btn2" type="submit">SUBMIT</button>
+                                       </div>
+                                    </form>
+                                 </div>
+                                 <div class="tab">
+                                    <form id="form-cjdg3" class="next-prevBtn">
 
                                        <div class="fld-textarea">
                                           <label for="">5. Activation Phase<span>Formalize further the relationship with your actual buyers or users by developing trust. Examples are Excellent customer service after sale, Product/services integrity, ethical standards and consistency, show your customers that they are important to you through emails, follow-up, etc.</span></label>
@@ -138,14 +148,14 @@
                                           <textarea name="tool_builder_cj_dg[tool_builder_cj_dg_repeat]"><?= $tool['tool_builder_cj_dg_repeat'] ?></textarea>
                                        </div>
                                        <div style="display:none;">
-                                          <button id="forms-tool_builder-btn2" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn3" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
 
                                  <div class="tab">
-                                    <form id="form-cjdg3" class="next-prevBtn">
+                                    <form id="form-cjdg4" class="next-prevBtn">
                                        <div class="fld-textarea">
                                           <label for="">7. Loyalty Phase <span>How will you further reward your loyal customers? Examples are Loyalty coupons, easy payment plans, special offers.</span></label>
                                           <div class="space"><br></div>
@@ -158,7 +168,7 @@
                                           <textarea name="tool_builder_cj_dg[tool_builder_cj_dg_advocacy]"><?= $tool['tool_builder_cj_dg_advocacy'] ?></textarea>
                                        </div>
                                        <div style="display:none;">
-                                          <button id="forms-tool_builder-btn3" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn4" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -168,8 +178,8 @@
 
                               <div class="next-prevBtn" style="overflow:auto;">
                                  <div style="float:right;">
-                                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
-                                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    <button type="button" id="prevBtn" onclick="nextPrev(-1, 'your_work?tool=5&cat=16')">Back</button>
+                                    <button type="button" id="nextBtn" onclick="nextPrev(1, 'your_work?tool=5&cat=16')">Next</button>
                                  </div>
                               </div>
 

@@ -6,16 +6,24 @@
         font-weight: 700;
         color: #F8F9FA;
         text-transform: uppercase;
-        border-radius: 25px;    }
+        border-radius: 25px;
+    }
 
     input#forms-expert-tutorial-video-btn:hover {
         position: static;
         display: block;
         background-color: #e28f26;
     }
+
     .btnArea {
-    display: flex;
-}
+        display: flex;
+    }
+
+    .para p {
+        font-size: 20px !important;
+        line-height: normal;
+        color: hsl(220, 29%, 28%) !important;
+    }
 </style>
 <div class="business-page">
     <section class="dashboard">
@@ -58,7 +66,7 @@
                                     </div>
                                     <div class="col-md-5 text-right">
                                         <div class="bredcum-right">
-                                        <?
+                                            <?
                                             $completTut = array();
                                             $completTut['where']['mytutorial_user_id'] = $this->userid;
                                             $completTut['where']['mytutorial_tutorial_id'] = $_GET['courseid'];
@@ -80,7 +88,7 @@
 
                             <div class="tutorial-mid hding-4 hding-3 para">
                                 <div class="tutorial-mid-content">
-                                    <h4>Tutorial Contents:</h4>
+                                    <h4>Tutorial Content:</h4>
                                 </div>
                                 <div class="space"><br><br></div>
                                 <p><strong>In this tutorial, you will learn:</strong></p>
@@ -141,7 +149,7 @@
             <div>
                 <h2>certificate of completion</h2>
                 <div class="space"><br><br></div>
-                <h3><?=$this->session->userdata['logged_in_front']['first_name']?></h3>
+                <h3><?= $this->session->userdata['logged_in_front']['first_name'] ?></h3>
                 <div class="space"><br></div>
                 <p>has successfully completed on the <?= date("jS \of F Y") ?> the tutorial</p>
                 <div class="space"><br></div>
@@ -193,4 +201,3 @@
         </div>
     </div>
 </div>
-

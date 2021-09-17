@@ -505,6 +505,7 @@ var Form = function () {
       $('#forms-tool_builder-btn1').prop('disabled', true);
       $('#forms-tool_builder-btn2').prop('disabled', true);
       $('#forms-tool_builder-btn3').prop('disabled', true);
+      $('#forms-tool_builder-btn4').prop('disabled', true);
 
       var data = form.serialize();
       response = AjaxRequest.fire(urls.tools_cjdg, data);
@@ -512,6 +513,7 @@ var Form = function () {
       $('#forms-tool_builder-btn1').prop('disabled', false);
       $('#forms-tool_builder-btn2').prop('disabled', false);
       $('#forms-tool_builder-btn3').prop('disabled', false);
+      $('#forms-tool_builder-btn4').prop('disabled', false);
 
       // return false ;
 
@@ -1493,6 +1495,13 @@ $(function () {
 
 $(function () {
   var $form = $('#form-cjdg3');
+  $form.submit(function (event) {
+    Form.tools_cjdg($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#form-cjdg4');
   $form.submit(function (event) {
     Form.tools_cjdg($form);
     return false;

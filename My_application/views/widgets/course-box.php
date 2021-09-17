@@ -4,11 +4,19 @@
     }
 
     li.dropdown-toggle.b-child.catLj19 ul {
-        display: none !important;
+        /* display: none !important; */
     }
 
     .course-list ul li.dropdown-toggle.catLj19>a:after {
-        content: "";
+        /* content: ""; */
+    }
+
+    li.toolbuilder-19 {
+        display: none;
+    }
+
+    li.mywork-19 {
+        display: none;
     }
 
     .catLj19 #activeBorder,
@@ -19,8 +27,6 @@
     strong.locked {
         display: none;
     }
-
-    
 </style>
 
 <div class="course-box hding-3 CboxLJ">
@@ -58,14 +64,14 @@
                 ?>
                 <ul class="startUpname">
                     <li>
-                            <? if (!empty($startupdata)) : ?>
-                                <?= $startupdata[0]['startup_name'] ?>
-                            <? else : ?>
-                                -- -- --
-                            <? endif; ?>
-                            <? //=$this->session->userdata['logged_in_front']['first_name']
-                            ?>
-                        
+                        <? if (!empty($startupdata)) : ?>
+                            <?= $startupdata[0]['startup_name'] ?>
+                        <? else : ?>
+                            -- -- --
+                        <? endif; ?>
+                        <? //=$this->session->userdata['logged_in_front']['first_name']
+                        ?>
+
                     </li>
                 </ul>
             </div>
@@ -243,7 +249,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
     <script>
         var newUrl = "<?= l('subscription') ?>";
 
-        
+
         $(".catLj12 a").attr('href', newUrl);
 
         // $('.catLj13').click(false);

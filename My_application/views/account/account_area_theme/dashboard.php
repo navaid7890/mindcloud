@@ -119,7 +119,7 @@
                                         <div class="space"><br><br></div>
                                         <div class="progres-bar" id="Goto_market_strategies">
                                             <div class="progres-text">
-                                                <p>Go-to market strategies</p>
+                                                <p>Go-to-market strategies</p>
                                             </div>
 
                                             <div class="progres-gray">

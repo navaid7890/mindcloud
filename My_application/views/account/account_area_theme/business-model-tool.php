@@ -89,25 +89,25 @@
                                        <p>Value Propositions</p>
                                     </li>
                                     <li class="step">
-                                       <p>Channels and Customer Relationship</p>
+                                       <p>Channels</p>
                                     </li>
                                     <li class="step">
-                                       <p>Key Resources, Activities and Partners</p>
+                                       <p>Customer Relationships</p>
                                     </li>
                                     <li class="step">
-                                       <p>Revenue Models and Cost Structures</p>
+                                       <p>Revenue Stream</p>
                                     </li>
                                     <li class="step">
-                                       <p>Revenue Models and Cost Structures</p>
+                                       <p>Key Resources </p>
                                     </li>
                                     <li class="step">
-                                       <p>Key Resources, Activities and Partners</p>
+                                       <p>Key Activities</p>
                                     </li>
                                     <li class="step">
-                                       <p>Revenue Models and Cost Structures</p>
+                                       <p>Key Partners</p>
                                     </li>
                                     <li class="step">
-                                       <p>Revenue Models and Cost Structures</p>
+                                       <p>Cost Structure</p>
                                     </li>
                                  </ul>
                               </div>
@@ -272,8 +272,8 @@
 
                               <div class="next-prevBtn" style="overflow:auto;">
                                  <div style="float:right;">
-                                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
-                                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    <button type="button" id="prevBtn" onclick="nextPrev(-1,'your_work?tool=0&cat=11')">Back</button>
+                                    <button type="button" id="nextBtn" onclick="nextPrev(1,'your_work?tool=0&cat=11')">Next</button>
                                  </div>
                               </div>
 
@@ -284,32 +284,32 @@
 
                               <div class="fld-html">
                                  <ul class="fld-progress">
-                                    <li class="step1">
+                                    <li class="step">
                                        <p>Customer Segments</p>
                                     </li>
-                                    <li class="step1">
+                                    <li class="step">
                                        <p>Value Propositions</p>
                                     </li>
-                                    <li class="step1">
-                                       <p>Channels and Customer Relationship</p>
+                                    <li class="step">
+                                       <p>Channels</p>
                                     </li>
-                                    <li class="step1">
-                                       <p>Key Resources, Activities and Partners</p>
+                                    <li class="step">
+                                       <p>Customer Relationships</p>
                                     </li>
-                                    <li class="step1">
-                                       <p>Revenue Models and Cost Structures</p>
+                                    <li class="step">
+                                       <p>Revenue Stream</p>
                                     </li>
-                                    <li class="step1">
-                                       <p>Revenue Models and Cost Structures</p>
+                                    <li class="step">
+                                       <p>Key Resources </p>
                                     </li>
-                                    <li class="step1">
-                                       <p>Key Resources, Activities and Partners</p>
+                                    <li class="step">
+                                       <p>Key Activities</p>
                                     </li>
-                                    <li class="step1">
-                                       <p>Revenue Models and Cost Structures</p>
+                                    <li class="step">
+                                       <p>Key Partners</p>
                                     </li>
-                                    <li class="step1">
-                                       <p>Revenue Models and Cost Structures</p>
+                                    <li class="step">
+                                       <p>Cost Structure</p>
                                     </li>
                                  </ul>
                               </div>

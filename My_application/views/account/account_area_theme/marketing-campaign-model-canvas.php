@@ -57,11 +57,11 @@
                         <div class="tutorial-footer-content" style="padding: 0;">
 
 
-                           <ul class="form-tabing">
+                           <!-- <ul class="form-tabing">
                               <div class="fld-html">
                                  <p>Marketing Campaign Model Canvas</p>
                               </div>
-                           </ul>
+                           </ul> -->
 
                            <div class="box-1 showfirst" style="">
 
@@ -132,12 +132,16 @@
                                           <textarea name="tool_builder_mc_mc[tool_builder_mc_mc_roi]"><?= $tool['tool_builder_mc_mc_roi'] ?></textarea>
                                        </div>
 
-                                       <div>
-                                          <button type="submit" class="btn btn-primary btn-lg" id="forms-tool_builder-btn1">SUBMIT</button>
+                                       <div style="display:none;">
+                                          <button type="submit" class="btn btn-primary btn-lg" style="float: right;" id="forms-tool_builder-btn1">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
-
+                                 <div style="overflow:auto;">
+                                    <div class="next-prevBtn" style="float:right;">
+                                       <button type="button" id="nextBtn1" onclick="nextPrev(1,'your_work?tool=6&cat=17')">Submit</button>
+                                    </div>
+                                 </div>
                               </div>
 
 

@@ -1154,7 +1154,7 @@ ul.tutorial-box-list>li:nth-child(3) {
 }
 
 .tutorial-footer {
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 }
 
 ul.dashboard-layout>li:nth-child(1) {
@@ -1416,6 +1416,7 @@ ul.fld-progress li {
     margin-right: 30px;
     position: relative;
     padding-top: 40px;
+    padding-bottom: 20px;
 }
 
 ul.fld-progress li p {

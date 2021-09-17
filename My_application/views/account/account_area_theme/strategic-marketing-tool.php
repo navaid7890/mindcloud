@@ -57,11 +57,11 @@
                         <div class="tutorial-footer-content" style="padding: 0;">
 
 
-                           <ul class="form-tabing">
+                           <!-- <ul class="form-tabing">
                               <div class="fld-html">
                                  <p>Strategic Marketing Plan</p>
                               </div>
-                           </ul>
+                           </ul> -->
 
                            <div class="box-1 showfirst" style="">
 
@@ -115,12 +115,16 @@
                                           <textarea oninput="this.className = ''" name="tool_builder_strg_mkt[tool_builder_strg_mkt_evaluation]"><?= $tool['tool_builder_strg_mkt_evaluation'] ?></textarea>
                                        </div>
 
-                                       <div>
+                                       <div style="display:none;">
                                           <button type="submit" class="btn btn-primary btn-lg" style="float: right;" id="forms-tool_builder-btn1">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
-
+                                 <div style="overflow:auto;">
+                                    <div class="next-prevBtn" style="float:right;">
+                                       <button type="button" id="nextBtn1" onclick="nextPrev(1,'your_work?tool=4&cat=15')">Submit</button>
+                                    </div>
+                                 </div>
                               </div>
 
 

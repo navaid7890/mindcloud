@@ -57,11 +57,11 @@
                         <div class="tutorial-footer-content" style="padding: 0;">
 
 
-                           <ul class="form-tabing">
+                           <!-- <ul class="form-tabing">
                               <div class="fld-html">
                                  <p>Legal Term Sheet </p>
                               </div>
-                           </ul>
+                           </ul> -->
 
                            <div class="box-1 showfirst" style="">
 
@@ -831,8 +831,8 @@
 
                               <div class="next-prevBtn" style="overflow:auto;">
                                  <div style="float:right;">
-                                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
-                                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    <button type="button" id="prevBtn" onclick="nextPrev(-1,'your_work?tool=8&cat=25')">Back</button>
+                                    <button type="button" id="nextBtn" onclick="nextPrev(1,'your_work?tool=8&cat=25')">Next</button>
                                  </div>
                               </div>
 

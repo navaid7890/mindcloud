@@ -55,11 +55,11 @@
                      <div class="tutorial-footer tool-footer vid-tran para">
                         <div class="tutorial-footer-content" style="padding: 0;">
 
-                           <ul class="form-tabing">
+                           <!-- <ul class="form-tabing">
                               <div class="fld-html">
                                  <p>SWOT Analysis</p>
                               </div>
-                           </ul>
+                           </ul> -->
 
                            <div class="box-1 showfirst" style="">
 
@@ -110,17 +110,17 @@
                                           <textarea name="tool_builder_swot[tool_builder_threats]"><?= $tool['tool_builder_threats'] ?></textarea>
                                        </div>
 
-                                       <div >
+                                       <div style="display:none;">
                                           <button type="submit" class="btn btn-primary btn-lg" id="forms-tool_builder-btn1" style="float: right;">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
 
-                                 <!-- <div style="overflow:auto;">
+                                 <div style="overflow:auto;">
                                     <div class="next-prevBtn" style="float:right;">
-                                       <button type="button" id="nextBtn1" onclick="nextPrev(1)">Submit</button>
+                                       <button type="button" id="nextBtn1" onclick="nextPrev(1,'your_work?tool=2&cat=13')">Submit</button>
                                     </div>
-                                 </div> -->
+                                 </div>
 
                               </div>
 

@@ -2,7 +2,7 @@
     .video-box {
         position: relative;
         width: 100%;
-        height: 450px;
+        /* height: 450px; */
         overflow: hidden;
     }
 
@@ -51,7 +51,7 @@
             ?>
             <li>
                 <div class="tutorial-box">
-                    <div class="tutorial-scroll-content">
+                    <div class="">
                         <div class="tutorial-content">
                             <div class="tutorial-head">
                                 <div class="row align-items-center">
@@ -108,14 +108,11 @@
                                         </div>
 
                                     </div>
+                                    
                                 </div>
-                                <div class="space"><br><br></div>
-                                <!-- <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p> -->
-                            </div>
-
-                            <div class="tutorial-footer vid-tran para">
+                                <div class="tutorial-footer vid-tran para">
                                 <div class="tutorial-footer-content">
-                                    <p>Complete all tutorial to receive Certificate.</p>
+                                    <!-- <p>Complete all tutorial to receive Certificate.</p> -->
                                     <div classs="space"><br><br></div>
                                     <form id="forms-expert-tutorial-video">
                                         <input type="hidden" name="mytutorial[mytutorial_user_id]" value="<?= ($this->userid) ?>">
@@ -123,55 +120,13 @@
                                         <input type="hidden" name="mytutorial[mytutorial_intro_percent]" value="1">
                                         <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-expert-tutorial-video-btn">
                                     </form>
-
-                                    <!-- <form id="forms-review_us">
-                                        <div class="fld-textarea">
-
-                                            <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_user_id]" value="<?= ($this->userid) ?>">
-
-                                            <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_course_id]" value="<?= $_GET['courseid'] ?>">
-                                            <input type="hidden" name="learning_journey_course_review[learning_journey_course_review_stars]" id="reviewId" value="">
-                                        </div>
-                                        <div class="fld-textarea">
-                                            <textarea name="learning_journey_course_review[learning_journey_course_review_desc]" placeholder="Write a Review…"></textarea>
-                                        </div>
-                                        <div class="space"><br></div>
-
-                                        <div class="row align-items-center">
-                                            <div class="col-md-4">
-                                                <section class='rating-widget'>
-                                                  
-                                                    <div class='rating-stars'>
-                                                        <ul id='stars'>
-                                                            <li class='star' title='Poor' data-value='1'>
-                                                                <i class='fa fa-star fa-fw'></i>
-                                                            </li>
-                                                            <li class='star' title='Fair' data-value='2'>
-                                                                <i class='fa fa-star fa-fw'></i>
-                                                            </li>
-                                                            <li class='star' title='Good' data-value='3'>
-                                                                <i class='fa fa-star fa-fw'></i>
-                                                            </li>
-                                                            <li class='star' title='Excellent' data-value='4'>
-                                                                <i class='fa fa-star fa-fw'></i>
-                                                            </li>
-                                                            <li class='star' title='WOW!!!' data-value='5'>
-                                                                <i class='fa fa-star fa-fw'></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-
-                                                </section>
-                                            </div>
-                                            <div class="col-md-8 text-right">
-                                                <div class="fld-btn">
-                                                    <input type="submit" value="Submit Your Review" id="forms-review_us-btn">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form> -->
                                 </div>
                             </div>
+                                <div class="space"><br><br></div>
+                                <!-- <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p> -->
+                            </div>
+
+                            
                         </div>
                     </div>
                 </div>
