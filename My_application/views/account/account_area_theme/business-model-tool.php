@@ -312,7 +312,7 @@
 <script>
    $(".singlemarket").click(function() {
       $(".singlemarketdiv").toggle();
-      // $(".multiMarketdiv").hide();
+      $(".multiMarketdiv").hide();
 
       $("#multimarketval1").val('');
       $("#multimarketval2").val('');
@@ -322,7 +322,7 @@
    });
    $(".multiMarket").click(function() {
       $(".multiMarketdiv").toggle();
-      // $(".singlemarketdiv").hide();
+      $(".singlemarketdiv").hide();
       $("#singlemarketval").val('');
 
       // location.reload();
