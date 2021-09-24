@@ -1,5 +1,6 @@
 <?
-class Model_tool_builder_fm_income extends MY_Model {
+class Model_tool_builder_fm_income extends MY_Model
+{
     /**
      * tool_builder MODEL
      *
@@ -17,16 +18,15 @@ class Model_tool_builder_fm_income extends MY_Model {
     public $pagination_params = array();
     public $dt_params = array();
     public $_per_page    = 20;
-    
+
     function __construct()
     {
         // Call the Model construtool_builderr
         $this->pagination_params['fields'] = "tool_builder_id,tool_builder_user_id,tool_builder_sales_1,tool_builder_advertising_1,tool_builder_approval_status,tool_builder_status";
-        
+
         //$this->pagination_params['joins'][] = $this->join_user("LEFT");
 
         parent::__construct();
-
     }
 
 
@@ -94,71 +94,237 @@ class Model_tool_builder_fm_income extends MY_Model {
     *                   -----Incase list_data_key is not defined, it will look for field_name as a $key
     *                   -----USED IN ADMIN_CONTROLLER AND admin's database.php
     */
-    public function get_fields( $specific_field = "" )
+    public function get_fields($specific_field = "")
     {
 
         $fields = array(
-        
-              'tool_builder_id' => array(
-                     'table'   => $this->_table,
-                     'name'   => 'tool_builder_id',
-                     'label'   => 'id #',
-                     'type'   => 'hidden',
-                     'type_dt'   => 'text',
-                     'attributes'   => array(),
-                     'dt_attributes'   => array("width"=>"5%"),
-                     'js_rules'   => '',
-                     'rules'   => 'trim'
-                ),
 
-                'tool_builder_user_id' => array(
-                     'table'   => $this->_table,
-                     'name'   => 'tool_builder_user_id',
-                     'label'   => 'User ID',
-                     'type'   => 'hidden',
-                     'type_filter_dt'   => 'dropdown',
-                     'attributes'   => array(),
-                     'dt_attributes'   => array("width"=>"10%"),
-                     'js_rules'   => '',
-                     'rules'   => 'trim'
-                ),
+            'tool_builder_id' => array(
+                'table'   => $this->_table,
+                'name'   => 'tool_builder_id',
+                'label'   => 'id #',
+                'type'   => 'hidden',
+                'type_dt'   => 'text',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "5%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+
+            'tool_builder_user_id' => array(
+                'table'   => $this->_table,
+                'name'   => 'tool_builder_user_id',
+                'label'   => 'User ID',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
 
 
 
-                'tool_builder_step_id' => array(
-                     'table'   => $this->_table,
-                     'name'   => 'tool_builder_step_id',
-                     'label'   => 'Step ID',
-                     'type'   => 'hidden',
-                     'type_filter_dt'   => 'dropdown',
-                     'attributes'   => array(),
-                     'dt_attributes'   => array("width"=>"10%"),
-                     'js_rules'   => '',
-                     'rules'   => 'trim'
-                ),
-                'tool_builder_percent' => array(
-                    'table'   => $this->_table,
-                    'name'   => 'tool_builder_percent',
-                    'label'   => 'PERCENT',
-                    'type'   => 'hidden',
-                    'type_filter_dt'   => 'dropdown',
-                    'attributes'   => array(),
-                    'dt_attributes'   => array("width"=>"10%"),
-                    'js_rules'   => '',
-                    'rules'   => 'trim'
-               ),
+            'tool_builder_step_id' => array(
+                'table'   => $this->_table,
+                'name'   => 'tool_builder_step_id',
+                'label'   => 'Step ID',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'tool_builder_percent' => array(
+                'table'   => $this->_table,
+                'name'   => 'tool_builder_percent',
+                'label'   => 'PERCENT',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
 
-              'tool_builder_currency' => array(
-                     'table'   => $this->_table,
-                     'name'   => 'tool_builder_currency',
-                     'label'   => 'Currency',
-                     'type'   => 'text',
-                     'attributes'   => array(),
-                     'js_rules'   => '',
-                     'rules'   => 'trim|htmlentities'
-                  ),
-         
-                'tool_builder_sales_1' => array(
+            'total_tax_year_1' => array(
+                'table'   => $this->_table,
+                'name'   => 'total_tax_year_1',
+                'label'   => 'total_tax_year_1',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'total_tax_year_2' => array(
+                'table'   => $this->_table,
+                'name'   => 'total_tax_year_2',
+                'label'   => 'total_tax_year_2',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'total_tax_year_3' => array(
+                'table'   => $this->_table,
+                'name'   => 'total_tax_year_3',
+                'label'   => 'total_tax_year_3',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'net_income_before_taxes_year_1' => array(
+                'table'   => $this->_table,
+                'name'   => 'net_income_before_taxes_year_1',
+                'label'   => 'net_income_before_taxes_year_1',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'net_income_before_taxes_year_2' => array(
+                'table'   => $this->_table,
+                'name'   => 'net_income_before_taxes_year_2',
+                'label'   => 'net_income_before_taxes_year_2',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'net_income_before_taxes_year_3' => array(
+                'table'   => $this->_table,
+                'name'   => 'net_income_before_taxes_year_3',
+                'label'   => 'net_income_before_taxes_year_3',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'net_income_year_1' => array(
+                'table'   => $this->_table,
+                'name'   => 'net_income_year_1',
+                'label'   => 'net_income_year_1',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'net_income_year_2' => array(
+                'table'   => $this->_table,
+                'name'   => 'net_income_year_2',
+                'label'   => 'net_income_year_2',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'net_income_year_3' => array(
+                'table'   => $this->_table,
+                'name'   => 'net_income_year_3',
+                'label'   => 'net_income_year_3',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'total_revenues_year_1' => array(
+                'table'   => $this->_table,
+                'name'   => 'total_revenues_year_1',
+                'label'   => 'total_revenues_year_1',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'total_revenues_year_2' => array(
+                'table'   => $this->_table,
+                'name'   => 'total_revenues_year_2',
+                'label'   => 'total_revenues_year_2',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'total_revenues_year_3' => array(
+                'table'   => $this->_table,
+                'name'   => 'total_revenues_year_3',
+                'label'   => 'total_revenues_year_3',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'total_expenses_year_1' => array(
+                'table'   => $this->_table,
+                'name'   => 'total_expenses_year_1',
+                'label'   => 'total_expenses_year_1',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'total_expenses_year_2' => array(
+                'table'   => $this->_table,
+                'name'   => 'total_expenses_year_2',
+                'label'   => 'total_expenses_year_2',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+            'total_expenses_year_3' => array(
+                'table'   => $this->_table,
+                'name'   => 'total_expenses_year_3',
+                'label'   => 'total_expenses_year_3',
+                'type'   => 'hidden',
+                'type_filter_dt'   => 'dropdown',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "10%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
+
+            'tool_builder_currency' => array(
+                'table'   => $this->_table,
+                'name'   => 'tool_builder_currency',
+                'label'   => 'Currency',
+                'type'   => 'text',
+                'attributes'   => array(),
+                'js_rules'   => '',
+                'rules'   => 'trim|htmlentities'
+            ),
+
+            'tool_builder_sales_1' => array(
                 'table' => $this->_table,
                 'name' => '	tool_builder_sales_1',
                 'label' => 'Sales Revenue Year 1',
@@ -258,8 +424,8 @@ class Model_tool_builder_fm_income extends MY_Model {
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
-             
-               'tool_builder_interest_1' => array(
+
+            'tool_builder_interest_1' => array(
                 'table' => $this->_table,
                 'name' => 'tool_builder_interest_1',
                 'label' => 'Interest Revenue Year 1',
@@ -1122,9 +1288,9 @@ class Model_tool_builder_fm_income extends MY_Model {
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
- 
 
-             'tool_builder_approval_status' => array(
+
+            'tool_builder_approval_status' => array(
                 'table' => $this->_table,
                 'name' => 'tool_builder_vp_approval_status',
                 'label' => 'Approval Status',
@@ -1134,7 +1300,7 @@ class Model_tool_builder_fm_income extends MY_Model {
                 'rules' => 'trim'
             ),
 
-           'tool_builder_status' => array(
+            'tool_builder_status' => array(
                 'table' => $this->_table,
                 'name' => 'tool_builder_vp_status',
                 'label' => 'Status?',
@@ -1144,16 +1310,14 @@ class Model_tool_builder_fm_income extends MY_Model {
                 'rules' => 'trim'
             ),
 
-              
-              
-              
-            );
-        
-        if($specific_field)
-            return $fields[ $specific_field ];
+
+
+
+        );
+
+        if ($specific_field)
+            return $fields[$specific_field];
         else
             return $fields;
     }
-
 }
-?>

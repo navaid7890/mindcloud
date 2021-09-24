@@ -353,12 +353,16 @@
                                                         </tbody>
                                                     </table>
 
-                                                    <div>
+                                                    <div style="display:none;">
                                                         <button id="forms-tool_builder-btn1" type="submit">SUBMIT</button>
                                                     </div>
                                                 </form>
                                             </div>
-
+                                            <div style="overflow:auto;">
+                                                <div class="next-prevBtn" style="float:right;">
+                                                    <button type="button" id="nextBtn1" onclick="nextPrev(1,'your_work?tool=13&cat=23')">Submit</button>
+                                                </div>
+                                            </div>
                                         </div>
 
 

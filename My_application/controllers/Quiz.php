@@ -588,23 +588,18 @@ class Quiz extends MY_Controller {
        $objPHPExcelReader->getActiveSheet()->setCellValue('C32', $employee_data['total_expenses_year_1']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('D32', $employee_data['total_expenses_year_2']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('E32', $employee_data['total_expenses_year_3']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C34', $employee_data['net_income_year_1']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D34', $employee_data['net_income_year_1']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('E34', $employee_data['net_income_year_1']);
 
-       $objPHPExcelReader->getActiveSheet()->setCellValue('C34', $employee_data['net_income_before_taxes_year_1']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('D34', $employee_data['net_income_before_taxes_year_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E34', $employee_data['net_income_before_taxes_year_3']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('C35', $employee_data['total_expenses_year_1']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('D35', $employee_data['total_expenses_year_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E35', $employee_data['total_expenses_year_3']);
-       
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C35', $employee_data['net_income_before_taxes_year_1']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D35', $employee_data['net_income_before_taxes_year_2']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('E35', $employee_data['net_income_before_taxes_year_3']);
 
-       $objPHPExcelReader->getActiveSheet()->setCellValue('C37', $employee_data['net_income_year_1']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('D37', $employee_data['net_income_year_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E37', $employee_data['net_income_year_3']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C34', $employee_data['net_income_year_1']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D34', $employee_data['net_income_year_2']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('E34', $employee_data['net_income_year_3']);
 
-
-       $objPHPExcelReader->getActiveSheet()->setCellValue('C39', $employee_data['net_income_year_1']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('D39', $employee_data['net_income_year_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E39', $employee_data['net_income_year_3']);
 
        $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
        header('Content-Type: application/vnd.ms-excel');
