@@ -218,6 +218,7 @@ $param['where']['learning_journey_transcript_percent'] = 1;
 // $param['where']['learning_journey_transcript_content_id'] = $_GET['cat'];
 $videoTranscript = $this->model_learning_journey_transcript->find_all_active($param);
 
+
 $upaid = array();
 $upaid['where']['user_id'] = $this->userid;
 $datapaid = $this->model_user->find_all_active($upaid);
@@ -235,6 +236,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
         .catLj16 strong.locked,
         .catLj17 strong.locked,
         .catLj18 strong.locked,
+        .catLj19 strong.locked,
         .catLj20 strong.locked,
         .catLj21 strong.locked,
         .catLj22 strong.locked,
@@ -264,6 +266,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
         $(".catLj17 a").attr('href', newUrl);
         // $('.catLj18').click(false);
         $(".catLj18 a").attr('href', newUrl);
+        $(".catLj19 a").attr('href', newUrl);
         // $('.catLj20').click(false);
         $(".catLj20 a").attr('href', newUrl);
         // $('.catLj21').click(false);
@@ -488,14 +491,23 @@ $datapaid = $this->model_user->find_all_active($upaid);
             ?>
             <? $a = $value['learning_journey_transcript_content_id'] ?>
             var transcriptTotalcheck = parseInt($(".catLj<?= $a ?> #played<?= $a ?> p").html());
-            if (transcriptTotalcheck < 100) {
-
+            <? if ($a == 19) : ?>
                 $(".videoScript-<?= $a ?>").addClass('active');
-                var transcriptTotal = 0;
-                var transcriptTotal = parseInt($(".catLj<?= $a ?> #played<?= $a ?> p").html()) + 34;
-                $("#played<?= $a ?> p").html(transcriptTotal);
+                    var transcriptTotal = 0;
+                    var transcriptTotal = parseInt($(".catLj<?= $a ?> #played<?= $a ?> p").html()) + 100;
+                    $("#played<?= $a ?> p").html(transcriptTotal);
+            <? else : ?>
+                if (transcriptTotalcheck < 100) {
 
-            }
+                    $(".videoScript-<?= $a ?>").addClass('active');
+                    var transcriptTotal = 0;
+                    var transcriptTotal = parseInt($(".catLj<?= $a ?> #played<?= $a ?> p").html()) + 34;
+                    $("#played<?= $a ?> p").html(transcriptTotal);
+
+                }
+            <? endif; ?>
+
+
             // else {
             //     $("#forms-mark-complete-btn").attr("disabled", "disabled");
             // }
