@@ -56,9 +56,6 @@
                               </div>
                               <div class="col-lg-3 col-md-12 text-right">
                                  <a href="<?= base_url() ?>account/profile/dl_tools" class=""><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                                 <!-- <a href="<? //= base_url() 
-                                                ?>account/profile/dl_tools_multi" class="" style="display: none;"><img src="<? //= base_url() 
-                                                                                                                                             ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a> -->
                               </div>
                            </div>
                         </div>
@@ -67,7 +64,12 @@
                      <div class="tutorial-footer tool-footer vid-tran para">
                         <div class="tutorial-footer-content">
 
-
+                           <?
+                           $param = array();
+                           $param['order'] = "tool_builder_id DESC";
+                           $param['where']['tool_builder_user_id'] = $this->userid;
+                           $tool = $this->model_tool_builder->find_one_active($param);
+                           ?>
 
                            <div class="box-1 showfirst" style="">
                               <div class="fld-html">
@@ -104,14 +106,7 @@
 
                               <div id="radio1" class="multi-fld">
                                  <div class="tab">
-                                    <?
 
-                                    $param = array();
-                                    $param['order'] = "tool_builder_id DESC";
-                                    $param['where']['tool_builder_user_id'] = $this->userid;
-                                    $tool = $this->model_tool_builder->find_one_active($param);
-
-                                    ?>
                                     <ul class="form-tabing">
                                        <div class="fld-html">
                                           <p>Do you have a <strong>Single</strong> or <strong>Multi-Sided Market</strong>?</p>
@@ -122,7 +117,7 @@
 
 
                                     <form id="form-send_us1">
-                                       <input type="hidden" name="tool_builder[tool_builder_user_id]" value="<?= ($this->userid) ?>">
+                                       <input type="hidden" id="toolBuilderId" name="tool_builder[tool_builder_user_id]" value="<?= ($this->userid) ?>">
                                        <input type="hidden" name="tool_builder[tool_builder_percent]" value="1">
                                        <div class="singlemarketdiv" style="display: none;">
                                           <div class="fld-textarea">

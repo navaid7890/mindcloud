@@ -46,6 +46,7 @@
                       <div class="space"><br></div>
                       <p>Complete these steps to build your <strong> Cash Flow Statement. </strong></p>
                     </div>
+                    
                     <div class="col-lg-3 col-md-12 text-right">
                       <a href="<?= base_url() ?>quiz/cash"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
                     </div>
@@ -1318,12 +1319,16 @@
 
 
 
-                          <div>
+                          <div style="display:none;">
                             <button id="forms-tool_builder-btn1" type="submit">SUBMIT</button>
                           </div>
                         </form>
                       </div>
-
+                      <div style="overflow:auto;">
+                        <div class="next-prevBtn" style="float:right;">
+                          <button type="button" id="nextBtn1" onclick="nextPrev(1,'your_work?tool=12&cat=22')">Submit</button>
+                        </div>
+                      </div>
                     </div>
 
 
