@@ -927,7 +927,7 @@ $my_tools = array(
     }
     
     if(currentTab == x.length){
-      window.open(url,"_self");
+      window.open(url);
     }
     
     // if (currentTab >= x.length) {
