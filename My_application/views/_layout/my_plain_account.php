@@ -920,14 +920,16 @@ $my_tools = array(
     var x = document.getElementsByClassName("tab");
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
-    console.log('n===', x.length);
-
     if (n == 1) { 
       document.getElementById("forms-tool_builder-btn" + currentTab).click(); 
     }
     
     if(currentTab == x.length){
-      window.open(url);
+      window.open(url,"_self");
+    }
+
+    else{
+      showTab(currentTab);
     }
     
     // if (currentTab >= x.length) {
@@ -936,7 +938,7 @@ $my_tools = array(
     // }
     
 
-    showTab(currentTab);
+    
   }
 
   function calc_tfc() {
@@ -1112,17 +1114,13 @@ $my_tools = array(
     var net_income_year_2 = document.getElementById('net_income_year_2');
     var net_income_year_3 = document.getElementById('net_income_year_3');
 
-    net_income_before_tax_year_1.value = ((Number(revenues_year_1) - Number(expenses_year_1))*0.2);
-    net_income_before_tax_year_2.value = ((Number(revenues_year_2) - Number(expenses_year_2))*0.2);
-    net_income_before_tax_year_3.value = ((Number(revenues_year_3) - Number(expenses_year_3))*0.2);
+    net_income_before_tax_year_1.value = Number(revenues_year_1) - Number(expenses_year_1);
+    net_income_before_tax_year_2.value = Number(revenues_year_2) - Number(expenses_year_2);
+    net_income_before_tax_year_3.value = Number(revenues_year_3) - Number(expenses_year_3);
 
-    // net_income_year_1.value = Number(net_income_before_tax_year_1.value) - Number(tax_total_year_1);
-    // net_income_year_2.value = Number(net_income_before_tax_year_2.value) - Number(tax_total_year_2);
-    // net_income_year_3.value = Number(net_income_before_tax_year_3.value) - Number(tax_total_year_3);
-// total Amount
-    net_income_year_1.value = ((Number(revenues_year_1) - Number(expenses_year_1)));
-    net_income_year_2.value = ((Number(revenues_year_2) - Number(expenses_year_2)));
-    net_income_year_3.value = ((Number(revenues_year_3) - Number(expenses_year_3)));
+    net_income_year_1.value = Number(net_income_before_tax_year_1.value) - Number(tax_total_year_1);
+    net_income_year_2.value = Number(net_income_before_tax_year_2.value) - Number(tax_total_year_2);
+    net_income_year_3.value = Number(net_income_before_tax_year_3.value) - Number(tax_total_year_3);
 
 
 
@@ -1180,11 +1178,11 @@ $my_tools = array(
     net_profit_year_4.value = Math.round((Number(net_profit_year_3.value) / 100 * growth_rate) + Number(net_profit_year_3.value));
     net_profit_year_5.value = Math.round((Number(net_profit_year_4.value) / 100 * growth_rate) + Number(net_profit_year_4.value));
 
-    discount_rate_year_1.value = (net_profit / (1 + discount_rate / 100)).toFixed(4);
-    discount_rate_year_2.value = (net_profit_year_2.value / Math.pow((1 + discount_rate / 100), 2)).toFixed(4);
-    discount_rate_year_3.value = (net_profit_year_3.value / Math.pow((1 + discount_rate / 100), 3)).toFixed(4);
-    discount_rate_year_4.value = (net_profit_year_4.value / Math.pow((1 + discount_rate / 100), 4)).toFixed(4);
-    discount_rate_year_5.value = (net_profit_year_5.value / Math.pow((1 + discount_rate / 100), 5)).toFixed(4);
+    discount_rate_year_1.value = Math.ceil(net_profit / (1 + discount_rate / 100));
+    discount_rate_year_2.value = Math.ceil(net_profit_year_2.value / Math.pow((1 + discount_rate / 100), 2));
+    discount_rate_year_3.value = Math.ceil(net_profit_year_3.value / Math.pow((1 + discount_rate / 100), 3));
+    discount_rate_year_4.value = Math.ceil(net_profit_year_4.value / Math.pow((1 + discount_rate / 100), 4));
+    discount_rate_year_5.value = Math.ceil(net_profit_year_5.value / Math.pow((1 + discount_rate / 100), 5));
 
     dcf_value.value = Number(discount_rate_year_1.value) + Number(discount_rate_year_2.value) + Number(discount_rate_year_3.value) + Number(discount_rate_year_4.value) + Number(discount_rate_year_5.value);
   }
