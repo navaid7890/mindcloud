@@ -566,7 +566,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
 
 
         // Financial management
-        var fm1 = $("#played20 p").html();
+        var fm1 = $("#played19 p").html();
         var fm2 = $("#played20 p").html();
         var fm3 = $("#played21 p").html();
         var fm4 = $("#played22 p").html();

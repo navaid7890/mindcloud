@@ -20,7 +20,7 @@
                            <div class="col-md-12">
                               <ul class="bredcum-links">
                                  <li><a href="#">Learning Journey</a></li>
-                                 <li><a href="#">Customer Journey</a></li>
+                                 <li><a href="#">Customer Journey Template</a></li>
                                  <li><a href="#">Tool and Tool Builder</a></li>
                               </ul>
                            </div>
@@ -41,9 +41,9 @@
                         <div class="tutorial-mid-content">
                            <div class="row align-items-center">
                               <div class="col-lg-9 col-md-12">
-                                 <h4>Tool and Tool Builder - Customer Journey</h4>
+                                 <h4>Tool and Tool Builder - Customer Journey Template</h4>
                                  <div class="space"><br></div>
-                                 <p>Complete these steps to build your <strong> Customer Journey. </strong></p>
+                                 <p>Complete these steps to build your <strong> Customer Journey Template.  </strong></p>
                               </div>
                               <div class="col-lg-3 col-md-12 text-right">
                               <a href="<?= base_url()?>account/profile/dl_tools_cjdg"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
