@@ -566,14 +566,15 @@ $datapaid = $this->model_user->find_all_active($upaid);
 
 
         // Financial management
+        var fm1 = $("#played20 p").html();
         var fm2 = $("#played20 p").html();
         var fm3 = $("#played21 p").html();
         var fm4 = $("#played22 p").html();
         var fm5 = $("#played23 p").html();
         var fm6 = $("#played24 p").html();
-        var fmTotal = parseInt(fm2) + parseInt(fm3) + parseInt(fm4) + parseInt(fm5) + parseInt(fm6);
+        var fmTotal = parseInt(fm1) +parseInt(fm2) + parseInt(fm3) + parseInt(fm4) + parseInt(fm5) + parseInt(fm6);
         // var fmTotal = fm2 + fm3 + fm4 + fm5 + fm6;
-        var TotalfmPercent = Math.round((fmTotal / 500) * 100);
+        var TotalfmPercent = Math.round((fmTotal / 600) * 100);
         localStorage.setItem("Financial_management", parseInt(TotalfmPercent));
 
         //  console.log("Financial management", parseInt(TotalfmPercent));
