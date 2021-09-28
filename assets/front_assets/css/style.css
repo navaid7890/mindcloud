@@ -188,7 +188,7 @@ ul.learn-process { display: flex; justify-content: space-between; flex-wrap: wra
 .learnContentBox:hover i { filter: brightness(100); }
 .whoSec { padding-bottom: 100px; }
 .vid-content { padding: 40px 75px 75px 40px; }
-.vid-content h4 { font-size: 20px;
+.vid-content h4 { font-size: 16px;
     font-weight: 700;
     color: #33415C;
     text-transform: uppercase;
@@ -199,7 +199,9 @@ ul.learn-process { display: flex; justify-content: space-between; flex-wrap: wra
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     display: -webkit-box;
-    min-height: auto; }
+    min-height: auto;
+    word-wrap: break-word;
+}
 .vid-content p { font-weight: 300; }
 .vid-box { max-width: 370px; border-radius: 15px; overflow: hidden; background: #fff; min-height: 507px; position: relative; }
 .who-list .vid-box {
@@ -421,7 +423,7 @@ ul.cate-list img {
 .expert-page-Sec ul.who-list>li { width: 32%; margin-right: 15px; margin-bottom: 15px; }
 .expert-page-Sec ul.who-list>li:nth-last-child(-n+3) { margin-bottom: 0; }
 .expert-page-Sec ul.who-list>li:nth-child(3n) { margin-right: 0; }
-.expert-page-Sec .vid-content h4 {font-size: 18px;text-transform: capitalize;height: 69px;line-height: normal;overflow: hidden;-webkit-line-clamp: 3;-webkit-box-orient: vertical;text-overflow: ellipsis;display: block;display: -webkit-box;}
+.expert-page-Sec .vid-content h4 {font-size: 16px;text-transform: capitalize;height: 69px;line-height: normal;overflow: hidden;-webkit-line-clamp: 3;-webkit-box-orient: vertical;text-overflow: ellipsis;display: block;display: -webkit-box;}
 .expert-page-Sec ul.tut-list .vid-content { padding: 20px; }
 .expert-page-Sec .vid-box { min-height: auto; }
 .expert-page-Sec .pt-70 {padding-top: 20px;}
@@ -1977,7 +1979,7 @@ ul.login-btnExpert a {
     ul.learn-process>li:nth-child(2) .learnContentBox,
     ul.learn-process>li:nth-child(3) .learnContentBox { min-height: 385px; }
     .hding-2 h2 { font-size: 24px; }
-    .vid-content h4 { font-size: 18px; }
+    .vid-content h4 { font-size: 16px; }
     .vid-box { min-height: auto; max-width: 100%; }
     ul.who-list { display: block; }
     ul.who-list>li { margin-bottom: 30px; width: 46%; display: inline-block; margin-right: 10px; margin: 0 auto; margin-bottom: 30px; margin-right: 15px; }

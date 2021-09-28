@@ -46,9 +46,22 @@
                       <div class="space"><br></div>
                       <p>Complete these steps to build your <strong> Discounted Cash Flow Valuation. </strong></p>
                     </div>
-                    <div class="col-lg-3 col-md-12 text-right">
-                      <a href="<?= base_url() ?>quiz/cashflow"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                    </div>
+                    <?
+                    $param = array();
+                    $param['order'] = "tool_builder_id DESC";
+                    $param['where']['tool_builder_user_id'] = $this->userid;
+                    $tool = $this->model_tool_builder_fm_dcvm->find_one_active($param);
+                    ?>
+                    <? if ($tool == "") : ?>
+                      <div class="col-lg-3 col-md-12 text-right">
+                        <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                      </div>
+                    <? else : ?>
+                      <div class="col-lg-3 col-md-12 text-right">
+                        <a href="<?= base_url() ?>quiz/cashflow"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                      </div>
+                    <? endif; ?>
+
                   </div>
                 </div>
               </div>
@@ -70,12 +83,7 @@
 
                     <div class="tab">
 
-                      <?
-                      $param = array();
-                      $param['order'] = "tool_builder_id DESC";
-                      $param['where']['tool_builder_user_id'] = $this->userid;
-                      $tool = $this->model_tool_builder_fm_dcvm->find_one_active($param);
-                      ?>
+
 
                       <form id="form-dcvm" class="next-prevBtn">
                         <input type="hidden" name="tool_builder_fm_dcvm[tool_builder_user_id]" value="<?= ($this->userid) ?>">

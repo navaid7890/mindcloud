@@ -46,9 +46,24 @@
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> Investment Deck Slides. </strong></p>
                               </div>
-                              <div class="col-lg-3 col-md-12 text-right">
-                              <a href="<?= base_url()?>account/profile/dl_tools_ids"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                              </div>
+                              <?
+
+                              $param = array();
+                              $param['order'] = "tool_builder_ids_id DESC";
+                              $param['where']['tool_builder_ids_user_id'] = $this->userid;
+                              $tool = $this->model_tool_builder_ids->find_one_active($param);
+                              // debug($tool);
+                              ?>
+                              <? if ($tool == "") : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? else : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="<?= base_url() ?>account/profile/dl_tools_ids"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? endif; ?>
+
                            </div>
                         </div>
                      </div>
@@ -57,10 +72,10 @@
                         <div class="tutorial-footer-content">
 
 
-                        
+
 
                            <div class="box-1 showfirst" style="">
-                           <div class="fld-html">
+                              <div class="fld-html">
                                  <ul class="fld-progress">
                                     <li class="step">
                                        <p>Value Proposition</p>
@@ -100,17 +115,10 @@
                               <div id="radio1" class="multi-fld">
 
                                  <div class="tab">
-                                    <?
 
-                                    $param = array();
-                                    $param['order'] = "tool_builder_ids_id DESC";
-                                    $param['where']['tool_builder_ids_user_id'] = $this->userid;
-                                    $tool = $this->model_tool_builder_ids->find_one_active($param);
-                                    // debug($tool);
-                                    ?>
 
                                     <form id="form-ids1" class="next-prevBtn">
-                                    <input type="hidden" name="tool_builder_ids[tool_builder_percent]" value="1">
+                                       <input type="hidden" name="tool_builder_ids[tool_builder_percent]" value="1">
                                        <div class="fld-textarea">
                                           <label for="">Slide One: Value Proposition <span>Tell what you are doing
                                                 <br>

@@ -696,11 +696,11 @@ class Profile extends MY_Controller_Account
 		$vp['where']['tool_builder_user_id'] = $this->userid;
 		$data['tootl'] = $this->model_tool_builder->find_all_active($vp);
 		$tootl = $data['tootl'];
-		$toolurl= l('account/profile/tools?cat=11');
+		// $toolurl= l('account/profile/tools?cat=11');
 
-		if (empty($tootl)) {
-			header('Location:'.$toolurl);
-		} else {
+		// if (empty($tootl)) {
+		// 	header('Location:'.$toolurl);
+		// } else {
 			// $this->load->library('phpword');
 
 			$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/business_model_canvus.docx');
@@ -733,7 +733,7 @@ class Profile extends MY_Controller_Account
 			readfile($filename);
 			unlink($filename); // deletes the temporary file
 			exit;
-		}
+		// }
 	}
 	public function dl_tools_multi()
 	{
@@ -805,11 +805,11 @@ class Profile extends MY_Controller_Account
 		$vp['where']['tool_builder_vp_user_id'] = $this->userid;
 		$data['tootl_vp'] = $this->model_tool_builder_vp->find_all_active($vp);
 		$tootl_vp = $data['tootl_vp'];
-		$toolurl= l('account/profile/tools_vp?cat=12');
+		// $toolurl= l('account/profile/tools_vp?cat=12');
 
-		if (empty($tootl_vp)) {
-			header('Location:'.$toolurl);
-		} else {
+		// if (empty($tootl_vp)) {
+		// 	header('Location:'.$toolurl);
+		// } else {
 
 
 		// debug( $tootl_vp);
@@ -848,7 +848,7 @@ class Profile extends MY_Controller_Account
 		readfile($filename);
 		unlink($filename); // deletes the temporary file
 		exit;
-	}
+	// }
 }
 
 
@@ -872,11 +872,11 @@ class Profile extends MY_Controller_Account
 		$vp['where']['tool_builder_user_id'] = $this->userid;
 		$data['tootl'] = $this->model_tool_builder_swot->find_all_active($vp);
 		$tootl = $data['tootl'];
-		$toolurl= l('account/profile/tools_swot?cat=13');
+		// $toolurl= l('account/profile/tools_swot?cat=13');
 
-		if (empty($tootl)) {
-			header('Location:'.$toolurl);
-		} else {
+		// if (empty($tootl)) {
+		// 	header('Location:'.$toolurl);
+		// } else {
 		// debug( $tootl);
 		// die;
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/swot_analysis.docx');
@@ -913,7 +913,7 @@ class Profile extends MY_Controller_Account
 		readfile($filename);
 		unlink($filename); // deletes the temporary file
 		exit;
-	}
+	// }
 }
 
 	public function tools_pmmt()
@@ -938,11 +938,11 @@ class Profile extends MY_Controller_Account
 		$tootl = $data['tootl'];
 		// debug( $tootl);
 		// die;
-		$toolurl= l('account/profile/tools_pmmt?cat=14');
+		// $toolurl= l('account/profile/tools_pmmt?cat=14');
 
-		if (empty($tootl)) {
-			header('Location:'.$toolurl);
-		} else {
+		// if (empty($tootl)) {
+		// 	header('Location:'.$toolurl);
+		// } else {
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/positioning_marketing_mix.docx');
 		foreach ($tootl[0] as $column_name => $value) {
 			$textlines = explode("\n", $value);
@@ -977,7 +977,7 @@ class Profile extends MY_Controller_Account
 		readfile($filename);
 		unlink($filename); // deletes the temporary file
 		exit;
-		}
+		// }
 	}
 
 	public function tools_smp()
@@ -999,11 +999,11 @@ class Profile extends MY_Controller_Account
 		$tootl = $data['tootl'];
 		// debug( $tootl);
 		// die;
-		$toolurl= l('account/profile/tools_smp?cat=15');
+		// $toolurl= l('account/profile/tools_smp?cat=15');
 
-		if (empty($tootl)) {
-			header('Location:'.$toolurl);
-		} else {
+		// if (empty($tootl)) {
+		// 	header('Location:'.$toolurl);
+		// } else {
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/strategic_marketing_plan.docx');
 		foreach ($tootl[0] as $column_name => $value) {
 			$textlines = explode("\n", $value);
@@ -1038,7 +1038,7 @@ class Profile extends MY_Controller_Account
 		readfile($filename);
 		unlink($filename); // deletes the temporary file
 		exit;
-	}
+	// }
 }
 	public function tools_cjdg()
 	{
@@ -1059,11 +1059,11 @@ class Profile extends MY_Controller_Account
 		$tootl = $data['tootl'];
 		// debug( $tootl);
 		// die;
-		$toolurl= l('account/profile/tools_cjdg?cat=16');
+		// $toolurl= l('account/profile/tools_cjdg?cat=16');
 
-		if (empty($tootl)) {
-			header('Location:'.$toolurl);
-		} else {
+		// if (empty($tootl)) {
+		// 	header('Location:'.$toolurl);
+		// } else {
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/customer_journey_demand_generation.docx');
 		foreach ($tootl[0] as $column_name => $value) {
 			$textlines = explode("\n", $value);
@@ -1098,7 +1098,7 @@ class Profile extends MY_Controller_Account
 		readfile($filename);
 		unlink($filename); // deletes the temporary file
 		exit;
-	}
+	// }
 }
 	public function tools_mc()
 	{
@@ -1119,10 +1119,10 @@ class Profile extends MY_Controller_Account
 		$tootl = $data['tootl'];
 		// debug( $tootl);
 		// die;
-		$toolurl= l('account/profile/tools_mc?cat=17');
-		if (empty($tootl)) {
-			header('Location:'.$toolurl);
-		} else {
+		// $toolurl= l('account/profile/tools_mc?cat=17');
+		// if (empty($tootl)) {
+		// 	header('Location:'.$toolurl);
+		// } else {
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/marketing_campaign_model_canvas.docx');
 		foreach ($tootl[0] as $column_name => $value) {
 			$textlines = explode("\n", $value);
@@ -1158,7 +1158,7 @@ class Profile extends MY_Controller_Account
 		readfile($filename);
 		unlink($filename); // deletes the temporary file
 		exit;
-	}
+	// }
 }
 	public function tools_osf()
 	{
@@ -1179,10 +1179,10 @@ class Profile extends MY_Controller_Account
 		$tootl = $data['tootl'];
 		// debug( $tootl);
 		// die;
-		$toolurl= l('account/profile/tools_osf?cat=18');
-		if (empty($tootl)) {
-			header('Location:'.$toolurl);
-		} else {
+		// $toolurl= l('account/profile/tools_osf?cat=18');
+		// if (empty($tootl)) {
+		// 	header('Location:'.$toolurl);
+		// } else {
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/online_sales_funnel.docx');
 		foreach ($tootl[0] as $column_name => $value) {
 			$textlines = explode("\n", $value);
@@ -1217,7 +1217,7 @@ class Profile extends MY_Controller_Account
 		readfile($filename);
 		unlink($filename); // deletes the temporary file
 		exit;
-	}
+	// }
 }
 	public function tools_lts()
 	{
@@ -1239,10 +1239,10 @@ class Profile extends MY_Controller_Account
 		// debug( $tootl[0]['tool_builder_lts_structure_settingup_jv_company']);
 		// die;
 		// html_entity_decode();
-		$toolurl= l('account/profile/tools_lts?cat=25');
-		if (empty($tootl)) {
-			header('Location:'.$toolurl);
-		} else {
+		// $toolurl= l('account/profile/tools_lts?cat=25');
+		// if (empty($tootl)) {
+		// 	header('Location:'.$toolurl);
+		// } else {
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/legal_term_sheet.docx');
 		foreach ($tootl[0] as $column_name => $value) {
 			$textlines = explode("\n", $value);
@@ -1277,7 +1277,7 @@ class Profile extends MY_Controller_Account
 		readfile($filename);
 		unlink($filename); // deletes the temporary file
 		exit;
-	}
+	// }
 }
 
 	public function tools_fm_income()
@@ -1310,10 +1310,10 @@ class Profile extends MY_Controller_Account
 		// debug( $tootl[0]['tool_builder_lts_structure_settingup_jv_company']);
 		// die;
 		// html_entity_decode();
-		$toolurl= l('account/profile/tools_ids?cat=26');
-		if (empty($tootl)) {
-			header('Location:'.$toolurl);
-		} else {
+		// $toolurl= l('account/profile/tools_ids?cat=26');
+		// if (empty($tootl)) {
+		// 	header('Location:'.$toolurl);
+		// } else {
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/investment_deck_slides.docx');
 		foreach ($tootl[0] as $column_name => $value) {
 			$textlines = explode("\n", $value);
@@ -1348,7 +1348,7 @@ class Profile extends MY_Controller_Account
 		readfile($filename);
 		unlink($filename); // deletes the temporary file
 		exit;
-	}
+	// }
 	}
 
 	public function tools_fm_bss()

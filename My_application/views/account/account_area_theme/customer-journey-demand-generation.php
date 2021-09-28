@@ -43,11 +43,28 @@
                               <div class="col-lg-9 col-md-12">
                                  <h4>Tool and Tool Builder - Customer Journey Template</h4>
                                  <div class="space"><br></div>
-                                 <p>Complete these steps to build your <strong> Customer Journey Template.  </strong></p>
+                                 <p>Complete these steps to build your <strong> Customer Journey Template. </strong></p>
                               </div>
-                              <div class="col-lg-3 col-md-12 text-right">
-                              <a href="<?= base_url()?>account/profile/dl_tools_cjdg"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                              </div>
+                              <?
+
+                              $param = array();
+                              $param['order'] = "tool_builder_cj_dg_id DESC";
+                              $param['where']['tool_builder_cj_dg_user_id'] = $this->userid;
+                              $tool = $this->model_tool_builder_cj_dg->find_one_active($param);
+
+                              // debug($tool);
+
+                              ?>
+                              <? if ($tool == "") : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? else : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="<?= base_url() ?>account/profile/dl_tools_cjdg"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? endif; ?>
+
                            </div>
                         </div>
                      </div>
@@ -85,19 +102,10 @@
                               <div id="radio1" class="multi-fld">
 
                                  <div class="tab">
-                                 <?
 
-                                    $param = array();
-                                    $param['order'] = "tool_builder_cj_dg_id DESC";
-                                    $param['where']['tool_builder_cj_dg_user_id'] = $this->userid;
-                                    $tool = $this->model_tool_builder_cj_dg->find_one_active($param);
-
-                                    // debug($tool);
-
-                                    ?>
                                     <form id="form-cjdg1" class="next-prevBtn">
-                                    <input type="hidden" name="tool_builder_cj_dg[tool_builder_cj_dg_user_id]" value="<?= ($this->userid) ?>">
-                                    <input type="hidden" name="tool_builder_cj_dg[tool_builder_percent]" value="1">
+                                       <input type="hidden" name="tool_builder_cj_dg[tool_builder_cj_dg_user_id]" value="<?= ($this->userid) ?>">
+                                       <input type="hidden" name="tool_builder_cj_dg[tool_builder_percent]" value="1">
                                        <div class="fld-textarea">
                                           <label for="">1. Awareness & Knowledge Phase <span>How will you attract attention, gain visibility, and show customers how you can help them reach their goals and get what they want and need? Examples are SEO, Interesting Content, YouTube Videos, FB Ads, Influencers Campaigns, Events.</span></label>
                                           <div class="space"><br></div>

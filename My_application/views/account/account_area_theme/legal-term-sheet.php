@@ -46,9 +46,24 @@
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> Legal Term Sheet. </strong></p>
                               </div>
-                              <div class="col-lg-3 col-md-12 text-right">
-                              <a href="<?= base_url()?>account/profile/dl_tools_lts"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                              </div>
+                              <?
+
+                              $param = array();
+                              $param['order'] = "tool_builder_lts_id DESC";
+                              $param['where']['tool_builder_lts_user_id'] = $this->userid;
+                              $tool = $this->model_tool_builder_lts->find_one_active($param);
+
+                              ?>
+                              <? if ($tool == "") : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? else : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="<?= base_url() ?>account/profile/dl_tools_lts"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? endif; ?>
+
                            </div>
                         </div>
                      </div>
@@ -68,14 +83,7 @@
                               <div id="radio1" class="multi-fld">
 
                                  <div class="tab">
-                                    <?
 
-                                    $param = array();
-                                    $param['order'] = "tool_builder_lts_id DESC";
-                                    $param['where']['tool_builder_lts_user_id'] = $this->userid;
-                                    $tool = $this->model_tool_builder_lts->find_one_active($param);
-
-                                    ?>
                                     <form id="form-lts1" class="next-prevBtn">
                                        <input type="hidden" name="tool_builder_lts[tool_builder_lts_user_id]" value="<?= ($this->userid) ?>">
                                        <input type="hidden" name="tool_builder_lts[tool_builder_percent]" value="1">
@@ -106,7 +114,7 @@
                                        </div>
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn1" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn1" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -145,7 +153,7 @@
                                           <textarea name="tool_builder_lts[tool_builder_lts_business_based]"><?= $tool['tool_builder_lts_business_based'] ?></textarea>
                                        </div>
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn2" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn2" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -178,7 +186,7 @@
                                        </div>
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn3" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn3" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -225,7 +233,7 @@
                                        </div>
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn4" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn4" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -277,7 +285,7 @@
                                        </div>
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn5" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn5" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -314,7 +322,7 @@
 
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn6" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn6" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -360,7 +368,7 @@
 
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn7" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn7" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -402,7 +410,7 @@
 
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn8" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn8" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -435,7 +443,7 @@
                                        </div>
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn9" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn9" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -474,7 +482,7 @@
                                        </div>
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn10" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn10" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -555,7 +563,7 @@
                                        </div>
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn11" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn11" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -600,7 +608,7 @@
                                        </div>
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn12" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn12" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -636,7 +644,7 @@
                                           <textarea name="tool_builder_lts[tool_builder_lts_flow_of_information]"><?= $tool['tool_builder_lts_flow_of_information'] ?></textarea>
                                        </div>
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn13" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn13" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -679,7 +687,7 @@
                                        </div>
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn14" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn14" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -719,7 +727,7 @@
                                        </div>
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn15" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn15" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -770,7 +778,7 @@
                                        </div>
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn16" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn16" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
@@ -822,7 +830,7 @@
                                        </div>
 
                                        <div style="display:none;">
-                                       <button id="forms-tool_builder-btn17" type="submit">SUBMIT</button>
+                                          <button id="forms-tool_builder-btn17" type="submit">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>

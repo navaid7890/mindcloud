@@ -877,7 +877,10 @@ $my_tools = array(
     </div>
   </div>
 
+<!-- <style>
+.page21 div#mCSB_2_container{top: -763px;}
 
+</style> -->
 </body>
 
 
@@ -892,13 +895,6 @@ $my_tools = array(
 
 
 <script src="<?= $config['base_url'] ?>assets/front_assets/js/account/custom.js"></script>
-
-<script>
-  $(document).ready(function() {
-
-    document.getElementById('mCSB_2_container').style.top = -913;
-  });
-</script>
 
 <script>
   var currentTab = 0;

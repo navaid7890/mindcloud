@@ -46,9 +46,22 @@
                                             <div class="space"><br></div>
                                             <p>Complete these steps to build your <strong> Balance Sheet. </strong></p>
                                         </div>
-                                        <div class="col-lg-3 col-md-12 text-right">
-                                            <a href="<?= base_url() ?>quiz/balance"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                                        </div>
+                                        <?
+                                        $param = array();
+                                        $param['order'] = "tool_builder_id DESC";
+                                        $param['where']['tool_builder_user_id'] = $this->userid;
+                                        $tool = $this->model_tool_builder_fm_bss->find_one_active($param);
+                                        ?>
+                                        <? if ($tool == "") : ?>
+                                            <div class="col-lg-3 col-md-12 text-right">
+                                            <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                            </div>
+                                        <? else : ?>
+                                            <div class="col-lg-3 col-md-12 text-right">
+                                                <a href="<?= base_url() ?>quiz/balance"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                            </div>
+                                        <? endif; ?>
+
                                     </div>
                                 </div>
                             </div>
@@ -479,3 +492,5 @@
         </ul>
     </section>
 </div>
+
+

@@ -337,7 +337,18 @@ class Quiz extends MY_Controller {
       $param['where']['tool_builder_user_id']=$this->userid; 
       $employee_data = $this->model_tool_builder_fm_bss->find_one_active($param);
       //debug($employee_data);
+      // $toolurl= l('account/profile/tools_fm_bss?cat=21');
+      // if (empty($employee_data)) {
+      //   // header('Location:'.$toolurl);
 
+      //   echo '<script type="text/javascript">'; 
+      //   echo 'alert("Fill out the ToolBuilder First To download the Document");';
+      //   echo 'window.location.href = "'.l('account/profile/tools_fm_bss?cat=21').'";';
+      //   echo '</script>';
+
+      //   // header('Location:'.$toolurl);
+
+      // } else {
      
 
 
@@ -399,6 +410,7 @@ class Quiz extends MY_Controller {
       $object_writer->save('php://output');
 
       }
+    // }
  
      }
 

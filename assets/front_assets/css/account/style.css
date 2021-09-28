@@ -2011,7 +2011,7 @@ ul.fld-progress {
 }
 
 .vid-content h4 {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     color: #33415C;
     text-transform: uppercase;
@@ -2023,6 +2023,8 @@ ul.fld-progress {
     display: block;
     display: -webkit-box;
     width: 100%;
+    word-wrap: break-word;
+
 }
 
 .vid-content p {
@@ -2218,7 +2220,7 @@ ul.cate-list {
 }
 
 .expert-tut-sec .vid-content h4 {
-    font-size: 18px;
+    font-size: 16px;
     line-height: normal;
     padding-bottom: 5px;
 }

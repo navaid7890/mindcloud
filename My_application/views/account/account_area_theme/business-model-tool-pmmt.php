@@ -38,7 +38,7 @@
                         </div>
                      </div>
 
-                     <div class="tutorial-mid tool-mid hding-4 hding-3 para" >
+                     <div class="tutorial-mid tool-mid hding-4 hding-3 para">
                         <div class="tutorial-mid-content">
                            <div class="row align-items-center">
                               <div class="col-lg-9 col-md-12">
@@ -46,9 +46,23 @@
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> Positioning and Marketing Mix. </strong></p>
                               </div>
-                              <div class="col-lg-3 col-md-12 text-right">
-                                 <a href="<?= base_url() ?>account/profile/dl_tools_pmmt"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                              </div>
+                              <?
+
+                              $param = array();
+                              $param['order'] = "tool_builder_id DESC";
+                              $param['where']['tool_builder_user_id'] = $this->userid;
+                              $tool = $this->model_tool_builder_pmmt->find_one_active($param);
+                              ?>
+                              <? if ($tool == "") : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? else : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="<?= base_url() ?>account/profile/dl_tools_pmmt"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? endif; ?>
+
                            </div>
                         </div>
                      </div>
@@ -71,13 +85,7 @@
 
                                  <div class="tab">
 
-                                    <?
 
-                                    $param = array();
-                                    $param['order'] = "tool_builder_id DESC";
-                                    $param['where']['tool_builder_user_id'] = $this->userid;
-                                    $tool = $this->model_tool_builder_pmmt->find_one_active($param);
-                                    ?>
 
                                     <form id="form-pmmt1">
                                        <input type="hidden" name="tool_builder_pmmt[tool_builder_user_id]" value="<?= ($this->userid) ?>">

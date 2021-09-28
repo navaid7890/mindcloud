@@ -595,4 +595,5 @@ $datapaid = $this->model_user->find_all_active($upaid);
 
     });
 </script>
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js'></script>
