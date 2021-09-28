@@ -44,7 +44,7 @@
                      </div>
                      <div class="tutorial-mid hding-4 hding-3 para">
                         <div class="tutorial-mid-content">
-                           <h4>Tutorial Contents:</h4>
+                           <h4>Tutorial Content:</h4>
                         </div>
                         <div class="space"><br><br></div>
 
