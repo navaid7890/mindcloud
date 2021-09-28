@@ -181,7 +181,7 @@
                                                                 <th>(Less Accumulated Depreciation)</th>
                                                                 <td>
                                                                     <div class="fld-text mb-0">
-                                                                        <input type="number" id="fixed_assets_total2" class="fixed_assets_total1" onkeyup="calc_tool_bss_values('fixed_assets_total','fixed_assets_total2')" name="tool_builder_fm_bss[tool_builder_less_accumulated]" value="<?= $tool['tool_builder_less_accumulated'] ?>" placeholder="0">
+                                                                        <input type="number" id="fixed_assets_total2" class="fixed_assets_total1" onkeyup="calc_tool_bss_values('fixed_assets_total','tool_builder_total_assets')" name="tool_builder_fm_bss[tool_builder_less_accumulated]" value="<?= $tool['tool_builder_less_accumulated'] ?>" placeholder="0">
                                                                     </div>
                                                                 </td>
                                                             </tr>

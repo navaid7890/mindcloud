@@ -894,12 +894,10 @@ $my_tools = array(
 <script src="<?= $config['base_url'] ?>assets/front_assets/js/account/custom.js"></script>
 
 <script>
-
-  $(document).ready(function() { 
+  $(document).ready(function() {
 
     document.getElementById('mCSB_2_container').style.top = -913;
-   });
-
+  });
 </script>
 
 <script>
@@ -922,36 +920,34 @@ $my_tools = array(
     }
 
     fixStepIndicator(n)
-  } 
+  }
 
-  function nextPrev(n, url) { 
+  function nextPrev(n, url) {
     var x = document.getElementsByClassName("tab");
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
-    if (n == 1) { 
-      document.getElementById("forms-tool_builder-btn" + currentTab).click();  
+    if (n == 1) {
+      document.getElementById("forms-tool_builder-btn" + currentTab).click();
       document.getElementById('mCSB_3_container').style.top = 0;
-  
-    }
-    
-    if(currentTab == x.length){
-      window.open(url,"_self");
+
     }
 
-    else{
+    if (currentTab == x.length) {
+      window.open(url, "_self");
+    } else {
       showTab(currentTab);
     }
-    
+
     // if (currentTab >= x.length) {
     //   document.getElementById("forms-tool_builder-btn" + currentTab).click();   
     //   return false; 
     // }
-    
 
-    
+
+
   }
 
-  
+
 
   function calc_tfc() {
 
@@ -1126,14 +1122,14 @@ $my_tools = array(
     var net_income_year_2 = document.getElementById('net_income_year_2');
     var net_income_year_3 = document.getElementById('net_income_year_3');
 
-    net_income_before_tax_year_1.value = ((Number(revenues_year_1) - Number(expenses_year_1))*0.2);
-    net_income_before_tax_year_2.value = ((Number(revenues_year_2) - Number(expenses_year_2))*0.2);
-    net_income_before_tax_year_3.value = ((Number(revenues_year_3) - Number(expenses_year_3))*0.2);
+    net_income_before_tax_year_1.value = ((Number(revenues_year_1) - Number(expenses_year_1)) * 0.2);
+    net_income_before_tax_year_2.value = ((Number(revenues_year_2) - Number(expenses_year_2)) * 0.2);
+    net_income_before_tax_year_3.value = ((Number(revenues_year_3) - Number(expenses_year_3)) * 0.2);
 
     // net_income_year_1.value = Number(net_income_before_tax_year_1.value) - Number(tax_total_year_1);
     // net_income_year_2.value = Number(net_income_before_tax_year_2.value) - Number(tax_total_year_2);
     // net_income_year_3.value = Number(net_income_before_tax_year_3.value) - Number(tax_total_year_3);
-// total Amount
+    // total Amount
     net_income_year_1.value = ((Number(revenues_year_1) - Number(expenses_year_1)));
     net_income_year_2.value = ((Number(revenues_year_2) - Number(expenses_year_2)));
     net_income_year_3.value = ((Number(revenues_year_3) - Number(expenses_year_3)));
@@ -1145,40 +1141,42 @@ $my_tools = array(
 
   function calc_tool_bss_values(id, total_value) {
 
-var sub_value = 0;
-var total = 0;
-var other_assets_total = document.querySelectorAll('.' + id);
-for (var i = 0; i < other_assets_total.length; i++) {
-  if (other_assets_total[i].value > 0) {
-    var other_assets_val = other_assets_total[i];
-    total += parseFloat(other_assets_val.value);
+    var sub_value = 0;
+    var total = 0;
+    var other_assets_total = document.querySelectorAll('.' + id);
+    for (var i = 0; i < other_assets_total.length; i++) {
+      // console.log('other_assets_total', other_assets_total[i]);
+      if (other_assets_total[i].value > 0) {
+        var other_assets_val = other_assets_total[i];
+        total += parseFloat(other_assets_val.value);
+      }
+    }
+    // console.log('check total', total);
+    if (id == 'fixed_assets_total') {
+      sub_value = document.getElementById('fixed_assets_total2').value;
+      document.getElementById(id).value = total - Number(sub_value);
+    } else {
+      document.getElementById(id).value = total;
+    }
+    console.log('document.getElementById(id).value',document.getElementById(id).value)
+
+    if (total_value == "tool_builder_total_assets" ) {
+      console.log('herererer123',sub_value)
+      var other_assets_total = document.getElementById('other_assets_total').value;
+      var fixed_assets_total = document.getElementById('fixed_assets_total').value;
+      var current_assets_total = document.getElementById('current_assets_total').value;
+
+      console.log('herererer')
+      document.getElementById('tool_builder_total_assets').value = Number(other_assets_total) + Number(fixed_assets_total) + Number(current_assets_total);
+      console.log('value isss', document.getElementById('tool_builder_total_assets').value)
+    } else if (total_value == "tool_builder_total_liabilities") {
+      var current_liabilities_total = document.getElementById('current_liabilities_total').value;
+      var other_current_liabilities_total = document.getElementById('other_current_liabilities_total').value;
+      var owners_equity_total = document.getElementById('owners_equity_total').value;
+
+      document.getElementById('tool_builder_total_liabilities').value = Number(current_liabilities_total) + Number(other_current_liabilities_total) + Number(owners_equity_total);
+    } else {}
   }
-}
-if(total_value == 'fixed_assets_total2'){  
-  sub_value = document.getElementById('fixed_assets_total2').value; 
-    document.getElementById(id).value = total - Number(sub_value);  
-}
-else{  
-  document.getElementById(id).value = total;
-}
-
-if (total_value == "tool_builder_total_assets") {
-  console.log('herererer123')
-  var other_assets_total = document.getElementById('other_assets_total').value;
-  var fixed_assets_total = document.getElementById('fixed_assets_total').value - Number(sub_value);
-  var current_assets_total = document.getElementById('current_assets_total').value;
-
-  console.log('herererer')
-  document.getElementById('tool_builder_total_assets').value = Number(other_assets_total) + Number(fixed_assets_total) + Number(current_assets_total);
-  console.log('value isss',document.getElementById('tool_builder_total_assets').value)
-} else if (total_value == "tool_builder_total_liabilities") {
-  var current_liabilities_total = document.getElementById('current_liabilities_total').value;
-  var other_current_liabilities_total = document.getElementById('other_current_liabilities_total').value;
-  var owners_equity_total = document.getElementById('owners_equity_total').value;
-
-  document.getElementById('tool_builder_total_liabilities').value = Number(current_liabilities_total) + Number(other_current_liabilities_total) + Number(owners_equity_total);
-} else {}
-}
 
   function calc_tool_dcvm_values() {
     var net_profit = document.getElementById('net_profit').value;
