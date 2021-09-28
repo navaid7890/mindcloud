@@ -1126,13 +1126,17 @@ $my_tools = array(
     var net_income_year_2 = document.getElementById('net_income_year_2');
     var net_income_year_3 = document.getElementById('net_income_year_3');
 
-    net_income_before_tax_year_1.value = Number(revenues_year_1) - Number(expenses_year_1);
-    net_income_before_tax_year_2.value = Number(revenues_year_2) - Number(expenses_year_2);
-    net_income_before_tax_year_3.value = Number(revenues_year_3) - Number(expenses_year_3);
+    net_income_before_tax_year_1.value = ((Number(revenues_year_1) - Number(expenses_year_1))*0.2);
+    net_income_before_tax_year_2.value = ((Number(revenues_year_2) - Number(expenses_year_2))*0.2);
+    net_income_before_tax_year_3.value = ((Number(revenues_year_3) - Number(expenses_year_3))*0.2);
 
-    net_income_year_1.value = Number(net_income_before_tax_year_1.value) - Number(tax_total_year_1);
-    net_income_year_2.value = Number(net_income_before_tax_year_2.value) - Number(tax_total_year_2);
-    net_income_year_3.value = Number(net_income_before_tax_year_3.value) - Number(tax_total_year_3);
+    // net_income_year_1.value = Number(net_income_before_tax_year_1.value) - Number(tax_total_year_1);
+    // net_income_year_2.value = Number(net_income_before_tax_year_2.value) - Number(tax_total_year_2);
+    // net_income_year_3.value = Number(net_income_before_tax_year_3.value) - Number(tax_total_year_3);
+// total Amount
+    net_income_year_1.value = ((Number(revenues_year_1) - Number(expenses_year_1)));
+    net_income_year_2.value = ((Number(revenues_year_2) - Number(expenses_year_2)));
+    net_income_year_3.value = ((Number(revenues_year_3) - Number(expenses_year_3)));
 
 
 
