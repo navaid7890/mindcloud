@@ -596,9 +596,9 @@ class Quiz extends MY_Controller {
        $objPHPExcelReader->getActiveSheet()->setCellValue('D35', $employee_data['net_income_before_taxes_year_2']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('E35', $employee_data['net_income_before_taxes_year_3']);
 
-       $objPHPExcelReader->getActiveSheet()->setCellValue('C34', $employee_data['net_income_year_1']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('D34', $employee_data['net_income_year_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E34', $employee_data['net_income_year_3']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('C34', $employee_data['net_income_year_1']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('D34', $employee_data['net_income_year_2']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('E34', $employee_data['net_income_year_3']);
 
 
        $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');

@@ -13,7 +13,7 @@
             <? $this->load->view("widgets/course-box"); ?>
          </li>
          <li>
-            <div class="tutorial-box">
+            <div class="tutorial-box" id="topOfDiv">
                <div class="tutorial-scroll-content">
                   <div class="tutorial-content">
                      <div class="tutorial-head">
@@ -38,7 +38,7 @@
                         </div>
                      </div>
 
-                     <div class="tutorial-mid tool-mid hding-4 hding-3 para">
+                     <div class="tutorial-mid tool-mid hding-4 hding-3 para" >
                         <div class="tutorial-mid-content">
                            <div class="row align-items-center">
                               <div class="col-lg-9 col-md-12">

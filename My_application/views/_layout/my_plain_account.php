@@ -893,6 +893,14 @@ $my_tools = array(
 
 <script src="<?= $config['base_url'] ?>assets/front_assets/js/account/custom.js"></script>
 
+<script>
+
+  $(document).ready(function() { 
+
+    document.getElementById('mCSB_2_container').style.top = -913;
+   });
+
+</script>
 
 <script>
   var currentTab = 0;
@@ -914,14 +922,16 @@ $my_tools = array(
     }
 
     fixStepIndicator(n)
-  }
+  } 
 
   function nextPrev(n, url) { 
     var x = document.getElementsByClassName("tab");
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
     if (n == 1) { 
-      document.getElementById("forms-tool_builder-btn" + currentTab).click(); 
+      document.getElementById("forms-tool_builder-btn" + currentTab).click();  
+      document.getElementById('mCSB_3_container').style.top = 0;
+  
     }
     
     if(currentTab == x.length){
@@ -940,6 +950,8 @@ $my_tools = array(
 
     
   }
+
+  
 
   function calc_tfc() {
 
@@ -1129,40 +1141,40 @@ $my_tools = array(
 
   function calc_tool_bss_values(id, total_value) {
 
-    var sub_value = 0;
-    var total = 0;
-    var other_assets_total = document.querySelectorAll('.' + id);
-    for (var i = 0; i < other_assets_total.length; i++) {
-      if (other_assets_total[i].value > 0) {
-        var other_assets_val = other_assets_total[i];
-        total += parseFloat(other_assets_val.value);
-      }
-    }
-    if(total_value == 'fixed_assets_total2'){  
-      sub_value = document.getElementById('fixed_assets_total2').value; 
-        document.getElementById(id).value = total - Number(sub_value);  
-    }
-    else{  
-      document.getElementById(id).value = total;
-    }
-
-    if (total_value == "tool_builder_total_assets") {
-      console.log('herererer123')
-      var other_assets_total = document.getElementById('other_assets_total').value;
-      var fixed_assets_total = document.getElementById('fixed_assets_total').value - Number(sub_value);
-      var current_assets_total = document.getElementById('current_assets_total').value;
-
-      console.log('herererer')
-      document.getElementById('tool_builder_total_assets').value = Number(other_assets_total) + Number(fixed_assets_total) + Number(current_assets_total);
-      console.log('value isss',document.getElementById('tool_builder_total_assets').value)
-    } else if (total_value == "tool_builder_total_liabilities") {
-      var current_liabilities_total = document.getElementById('current_liabilities_total').value;
-      var other_current_liabilities_total = document.getElementById('other_current_liabilities_total').value;
-      var owners_equity_total = document.getElementById('owners_equity_total').value;
-
-      document.getElementById('tool_builder_total_liabilities').value = Number(current_liabilities_total) + Number(other_current_liabilities_total) + Number(owners_equity_total);
-    } else {}
+var sub_value = 0;
+var total = 0;
+var other_assets_total = document.querySelectorAll('.' + id);
+for (var i = 0; i < other_assets_total.length; i++) {
+  if (other_assets_total[i].value > 0) {
+    var other_assets_val = other_assets_total[i];
+    total += parseFloat(other_assets_val.value);
   }
+}
+if(total_value == 'fixed_assets_total2'){  
+  sub_value = document.getElementById('fixed_assets_total2').value; 
+    document.getElementById(id).value = total - Number(sub_value);  
+}
+else{  
+  document.getElementById(id).value = total;
+}
+
+if (total_value == "tool_builder_total_assets") {
+  console.log('herererer123')
+  var other_assets_total = document.getElementById('other_assets_total').value;
+  var fixed_assets_total = document.getElementById('fixed_assets_total').value - Number(sub_value);
+  var current_assets_total = document.getElementById('current_assets_total').value;
+
+  console.log('herererer')
+  document.getElementById('tool_builder_total_assets').value = Number(other_assets_total) + Number(fixed_assets_total) + Number(current_assets_total);
+  console.log('value isss',document.getElementById('tool_builder_total_assets').value)
+} else if (total_value == "tool_builder_total_liabilities") {
+  var current_liabilities_total = document.getElementById('current_liabilities_total').value;
+  var other_current_liabilities_total = document.getElementById('other_current_liabilities_total').value;
+  var owners_equity_total = document.getElementById('owners_equity_total').value;
+
+  document.getElementById('tool_builder_total_liabilities').value = Number(current_liabilities_total) + Number(other_current_liabilities_total) + Number(owners_equity_total);
+} else {}
+}
 
   function calc_tool_dcvm_values() {
     var net_profit = document.getElementById('net_profit').value;
