@@ -124,7 +124,7 @@
                                             <p style="display:none;"></p>
                                         </div>
 
-                                        <small>0/3</small>
+                                        <!-- <small>0/3</small> -->
                                     </a>
                                     <ul class="dropdown-box">
                                         <li><a href="description?cat=<?= $a ?>"><i class="fas fa-info-circle"></i>Intro<strong class="locked"><i class="fas fa-lock"></i></strong><span><i class="far fa-check"></i></span></a></li>

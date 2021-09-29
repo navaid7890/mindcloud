@@ -1564,13 +1564,14 @@ ul.fld-progress li:before {
     font-size: 16px;
     line-height: normal;
     text-transform: capitalize;
+    width: 77%;
 }
 
 .work-prew {
     position: absolute;
     bottom: 0;
     width: 66%;
-    right: -50px;
+    right: -75px;
     top: 0;
     margin: auto;
     align-items: center;
@@ -4258,7 +4259,7 @@ body.page26 li.dropdown-toggle.catLj26 > a:after{ transform: rotate(90deg);}
 	height:26px;
     margin-right: 20px;
     position: absolute;
-    right: 30px;
+    right: 10px;
     top: 20px;
 }
 
