@@ -312,7 +312,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj11 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('1', totalseprate);
         <? else : ?>
             var percVal = parseInt('0');
             $(".catLj11 .percent p").html(percVal);
@@ -325,7 +325,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj12 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('cat is 12', totalseprate);
+            console.log('2', totalseprate);
         <? else : ?>
             $(".catLj12 #played12 p").html('0');
         <? endif; ?>
@@ -336,7 +336,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj13 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('3', totalseprate);
         <? else : ?>
             $(".catLj13 #played13 p").html('0');
         <? endif; ?>
@@ -347,7 +347,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj14 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('4', totalseprate);
         <? else : ?>
             $(".catLj14 #played14 p").html('0');
         <? endif; ?>
@@ -358,7 +358,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj15 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('5', totalseprate);
         <? else : ?>
             $(".catLj15 #played15 p").html('0');
         <? endif; ?>
@@ -369,7 +369,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj16 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('6', totalseprate);
         <? else : ?>
             $(".catLj16 #played16 p").html('0');
         <? endif; ?>
@@ -380,7 +380,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj17 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('7', totalseprate);
         <? else : ?>
             $(".catLj17 #played17 p").html('0');
         <? endif; ?>
@@ -391,21 +391,11 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj18 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('8', totalseprate);
         <? else : ?>
             $(".catLj18 #played18 p").html('0');
         <? endif; ?>
-        <? if ($tool_osf['tool_builder_percent'] == 1) : ?>
-            $(".toolbuilder-19").addClass('active');
-            $(".mywork-19").addClass('active');
-            // $(".catLj18 #played18").html('66');
-            var percVal = parseInt('66');
-            $(".catLj19 .percent p").html(percVal);
-            var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
-        <? else : ?>
-            $(".catLj19 #played19 p").html('0');
-        <? endif; ?>
+       
         <? if ($tool_lts['tool_builder_percent'] == 1) : ?>
             $(".toolbuilder-25").addClass('active');
             $(".mywork-25").addClass('active');
@@ -413,7 +403,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj25 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('9', totalseprate);
         <? else : ?>
             $(".catLj25 #played25 p").html('0');
         <? endif; ?>
@@ -424,7 +414,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj20 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('10', totalseprate);
         <? else : ?>
             $(".catLj20 #played20 p").html('0');
         <? endif; ?>
@@ -435,7 +425,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj21 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('11', totalseprate);
         <? else : ?>
             $(".catLj21 #played21 p").html('0');
         <? endif; ?>
@@ -446,7 +436,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj22 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('12', totalseprate);
 
         <? else : ?>
             $(".catLj22 #played22 p").html('0');
@@ -458,7 +448,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj23 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('13', totalseprate);
         <? else : ?>
             $(".catLj23 #played23 p").html('0');
         <? endif; ?>
@@ -469,7 +459,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj24 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('14', totalseprate);
         <? else : ?>
             $(".catLj24 #played24 p").html('0');
         <? endif; ?>
@@ -480,22 +470,26 @@ $datapaid = $this->model_user->find_all_active($upaid);
             var percVal = parseInt('66');
             $(".catLj26 .percent p").html(percVal);
             var totalseprate = percVal;
-            console.log('value anil is', totalseprate);
+            console.log('15', totalseprate);
         <? else : ?>
             $(".catLj26 #played26 p").html('0');
         <? endif; ?>
 
-
+        $("#played19 p").html('0');
         <? foreach ($videoTranscript as $vt => $value) : ?>
             <? // if ($value['learning_journey_transcript_content_id'] == 1) : 
             ?>
             <? $a = $value['learning_journey_transcript_content_id'] ?>
             var transcriptTotalcheck = parseInt($(".catLj<?= $a ?> #played<?= $a ?> p").html());
-            <? if ($a == 19) : ?>
+            var transcriptTotal = 0;
+            console.log("financial Percentage",transcriptTotalcheck );
+            <? if ($a == "19") : ?>
                 $(".videoScript-<?= $a ?>").addClass('active');
                     var transcriptTotal = 0;
-                    var transcriptTotal = parseInt($(".catLj<?= $a ?> #played<?= $a ?> p").html()) + 100;
-                    $("#played<?= $a ?> p").html(transcriptTotal);
+                    var transcriptTotal = parseInt($(".catLj19 #played19 p").html())+100;
+                    $("#played19 p").html(transcriptTotal);
+                    console.log("financial Percentage",transcriptTotal );
+                    
             <? else : ?>
                 if (transcriptTotalcheck < 100) {
 
@@ -503,6 +497,8 @@ $datapaid = $this->model_user->find_all_active($upaid);
                     var transcriptTotal = 0;
                     var transcriptTotal = parseInt($(".catLj<?= $a ?> #played<?= $a ?> p").html()) + 34;
                     $("#played<?= $a ?> p").html(transcriptTotal);
+
+                    // console.log("financial Percentage",transcriptTotal );
 
                 }
             <? endif; ?>
@@ -517,13 +513,15 @@ $datapaid = $this->model_user->find_all_active($upaid);
         <? endforeach; ?>
 
 
-        console.log('all value', totalseprate);
+        
 
         var sum = totalseprate;
+        
         $('.percent p').each(function() {
             sum += +$(this).text() || 0;
         });
-        var total = Math.round((sum / 1500) * 100);
+        console.log('all value of percentage', sum);
+        var total = Math.round((sum / 1666) * 100);
 
         $('.allpercent').text(total);
 
@@ -566,18 +564,18 @@ $datapaid = $this->model_user->find_all_active($upaid);
 
 
         // Financial management
-        var fm1 = $("#played19 p").html();
+        // var fm1 = $("#played19 p").html();
         var fm2 = $("#played20 p").html();
         var fm3 = $("#played21 p").html();
         var fm4 = $("#played22 p").html();
         var fm5 = $("#played23 p").html();
         var fm6 = $("#played24 p").html();
-        var fmTotal = parseInt(fm1) +parseInt(fm2) + parseInt(fm3) + parseInt(fm4) + parseInt(fm5) + parseInt(fm6);
+        var fmTotal = parseInt(fm2) + parseInt(fm3) + parseInt(fm4) + parseInt(fm5) + parseInt(fm6);
         // var fmTotal = fm2 + fm3 + fm4 + fm5 + fm6;
-        var TotalfmPercent = Math.round((fmTotal / 600) * 100);
+        var TotalfmPercent = Math.round((fmTotal / 500) * 100);
         localStorage.setItem("Financial_management", parseInt(TotalfmPercent));
 
-        //  console.log("Financial management", parseInt(TotalfmPercent));
+          console.log("Financial management", parseInt(TotalfmPercent));
 
 
         // Legal Structure
