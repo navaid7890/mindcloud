@@ -114,7 +114,7 @@
                               <div class="video-box">
                               <!-- poster="<?//= g('db.admin.bucket') . 'images/learning_journey_content/' . $learn_content['0']['learning_journey_content_image'] ?>" -->
                                  <video controlsList="nodownload" width="100%" ontimeupdate="myFunction(this)" controls="true" id="video" height="100%" >
-                                    <source src="<?= g('db.admin.bucket') . 'videos/' . $learn_content[0]['learning_journey_video'] ?>#t=1" type="video/mp4">
+                                    <source src="<?= g('db.admin.bucket') . 'videos/' . $learn_content[0]['learning_journey_video'] ?>#t=4" type="video/mp4">
                                     <source src="<?= g('db.admin.bucket') . 'videos/' . $learn_content[0]['learning_journey_video'] ?>" type="video/ogg">
                                     Your browser does not support the video tag.
                                  </video>
