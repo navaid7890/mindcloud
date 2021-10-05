@@ -75,12 +75,12 @@
     <section class="dashboard">
         <ul class="dashboard-layout">
             <li>
-                <div class="front-dashboard">
-                    <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+                <div class="front-dashboard open">
+                    <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                     <? $this->load->view("widgets/dashboard-menu-box"); ?>
                 </div>
             </li>
-            <li>
+            <li class="open">
                 <div class="index-page-wrap">
                     <div class="index-page-content hding-2">
                         <h2>Welcome <strong><?= $this->session->userdata['logged_in_front']['first_name'] ?></strong></h2>

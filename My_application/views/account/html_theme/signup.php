@@ -52,7 +52,7 @@
 
                                     <div class="fld-html row">
                                         <div class="col-md-12">
-                                            <label for="checkbox"><input type="checkbox" id="checkbox" required> Terms And Conditions & Privacy Policy</label>
+                                            <label for="checkbox" style="color: #5C677D;"><input type="checkbox" id="checkbox" required> I agree to the MindCloudTribe <a href="<?= l('terms-and-conditions') ?>" target="_blank">Terms of Service</a> and <a href="<?= l('privacy-policy') ?>" target="_blank">Privacy Policy</a></label>
                                         </div>
                                     </div>
 

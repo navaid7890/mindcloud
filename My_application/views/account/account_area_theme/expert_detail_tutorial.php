@@ -30,13 +30,13 @@
 
         <ul class="dashboard-layout">
             <li>
-                <div class="front-dashboard">
-                    <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+                <div class="front-dashboard open">
+                    <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                     <? $this->load->view("widgets/dashboard-menu-box"); ?>
                 </div>
             </li>
 
-            <li>
+            <li class="open">
                 <? $this->load->view("widgets/expert-course-box"); ?>
             </li>
             <?
@@ -50,7 +50,7 @@
             $vid_name = $this->model_videos->find_all_active($vid_name);
             // debug($vid_name[0]['videos_name']);
             ?>
-            <li>
+            <li class="open">
 
                 <div class="tutorial-box">
                     <div class="tutorial-scroll-content">

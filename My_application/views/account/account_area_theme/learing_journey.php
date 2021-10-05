@@ -51,6 +51,7 @@
     .mainBanner .video-box {
         width: 340px !important;
     }
+    
 
     @media (max-width: 824px) {
         .lrnjSec .mainBanner {
@@ -62,13 +63,13 @@
     <section class="dashboard">
         <ul class="dashboard-layout">
             <li>
-                <div class="front-dashboard">
-                    <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+                <div class="front-dashboard open">
+                    <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                     <? $this->load->view("widgets/dashboard-menu-box"); ?>
                 </div>
             </li>
 
-            <li>
+            <li class="open">
                 <div class="index-page-wrap">
                     <!-- learing page starts here -->
                     <div class="mainBanner hding-1 para">

@@ -1,6 +1,6 @@
 <style>
     ul.work-list>li {
-        width: 50.7%;
+        width: 60.7%;
     }
 
     .work-box {
@@ -11,19 +11,19 @@
 
     <ul class="dashboard-layout">
         <li>
-            <div class="front-dashboard">
-                <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+            <div class="front-dashboard open">
+                <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                 <? $this->load->view("widgets/dashboard-menu-box"); ?>
             </div>
         </li>
 
-        <li>
+        <li class="open">
             <div class="yourWork">
                 <? $this->load->view("widgets/course-box"); ?>
             </div>
         </li>
 
-        <li>
+        <li class="open">
 
             <?
             $dt = array(

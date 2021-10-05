@@ -18,6 +18,8 @@ $(document).ready(function() {
         $('.dashboard-menu-box, .front-dashboard, .dashboard-layout>li:nth-child(2), .dashboard-layout>li:nth-child(3)').toggleClass('open');
     });
 
+    
+
    
 
 
