@@ -27,7 +27,7 @@ $b=$form_input['booking_expert_id'];
                             ?>
                      	        Hi <?=$form_input['Full Name']?>,<br> <br>
                                  A Mind Cloud Tribe User has requested an expert booking on date  <?=$form_input['booking_date']?> and time <?=$form_input['booking_time']?><br><br>
-                                 Please respond to the user via email {<?=$form_input['booking_email']?>} for booking confirmation and send them a zoom/google meet link accordingly.<br><br>
+                                 Please respond to the user via email <?=$form_input['booking_email']?> for booking confirmation and send them a zoom/google meet link accordingly.<br><br>
                                  If the date and time are not suitable for you, please email the user with a suggested date and time.
                      	      
                                <br> <br>
