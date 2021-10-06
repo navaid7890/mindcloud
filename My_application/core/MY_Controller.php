@@ -608,8 +608,8 @@ class MY_Controller extends MY_Controller_Admin
         $mail->setFrom($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
         $mail->addReplyTo($a['expert_email'], $a['expert_name']);
 
-        $mail->addAddress($a['expert_email']);
-        $mail->Subject = 'Thank you for the Expert Booking';
+        $mail->addAddress($data['booking_email']);
+        $mail->Subject = 'Request for Expert Booking';
         
         
         $mail->isHTML(true);
@@ -626,6 +626,8 @@ class MY_Controller extends MY_Controller_Admin
 
 
 }
+
+
     public function cancle_sub_email($data){
 
         $this->load->library('phpmailer_lib');
@@ -705,11 +707,11 @@ public function confirm_expert($data){
        $param['form_input']['User Name']=$b['user_firstname'];
     }
 
-    $mail->setFrom($a['expert_email'], $a['expert_name']);
-    $mail->addReplyTo($b['user_email'], $b['user_firstname']);
+    $mail->setFrom($b['user_email'], $b['user_firstname']);
+    $mail->addReplyTo($a['expert_email'], $a['expert_name']);
 
-    $mail->addAddress($b['user_email']);
-    $mail->Subject = 'Confirmation of the Expert Booking';
+    $mail->addAddress($a['expert_email']);
+    $mail->Subject = 'Request for Expert Booking';
     
     
     $mail->isHTML(true);
@@ -778,6 +780,8 @@ public function newsletter(){
 
     $this->load->library('phpmailer_lib');
     $mail = $this->phpmailer_lib->load();
+
+    
   
     $mail->isSMTP();
     $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
@@ -935,6 +939,101 @@ public function inquiry($data){
     $mail->isHTML(true);
 
     $mailContent = $this->load->view('_layout/email_template/inquiry', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
+
+
+
+}
+
+
+public function reject_expert($data){
+
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+    $a= $this->model_expert->find_by_pk($data['booking_expert_id']);
+    $b= $this->model_user->find_by_pk($data['booking_user_id']);
+  
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
+    $param = array();
+    if(isset($data) && array_filled($data))
+    {
+        foreach($data as $kye=>$value)
+        {
+            $param['form_input'][$kye] = htmlentities(trim($value));
+        }
+     
+       $param['form_input']['Full Name']=$a['expert_name'];
+       $param['form_input']['User Name']=$b['user_firstname'];
+    }
+
+    $mail->setFrom($a['expert_email'], $a['expert_name']);
+    $mail->addReplyTo($b['user_email'], $b['user_firstname']);
+
+    $mail->addAddress($b['user_email']);
+    $mail->Subject = 'Rejection of the Expert Booking';
+    
+    
+    $mail->isHTML(true);
+
+  //  debug($param,1);
+
+    
+ 
+    $mailContent = $this->load->view('_layout/email_template/reject_expert', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
+
+
+
+}
+
+
+
+
+public function confirm_by_expert($data){
+
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+    $a= $this->model_expert->find_by_pk($data['booking_expert_id']);
+  
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
+    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
+    $param = array();
+    if(isset($data) && array_filled($data))
+    {
+        foreach($data as $kye=>$value)
+        {
+            $param['form_input'][$kye] = htmlentities(trim($value));
+        }
+     
+       $param['form_input']['Full Name']=$a['expert_name'];
+    }
+
+    $mail->setFrom($a['expert_email'], $a['expert_name']);
+    $mail->addReplyTo($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
+
+    $mail->addAddress($data['booking_email']);
+    $mail->Subject = 'Confirmation of the Expert Booking';
+    
+    $mail->isHTML(true);
+
+  //  debug($param,1);
+
+    $mailContent = $this->load->view('_layout/email_template/confirm_by_expert', $param , true);
     $mail->Body = $mailContent;
 
     $mail->send();

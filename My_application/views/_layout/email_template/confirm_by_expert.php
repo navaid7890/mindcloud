@@ -20,21 +20,15 @@ $a=$form_input['booking_user_id'];
 $b=$form_input['booking_expert_id'];
                             if(isset($msg)) {
                                 echo $msg;
+                      
                             }
                             else
                             {
                             ?>
-                     	        Hi <?=$form_input['Full Name']?>,<br> <br>
-                                 A Mind Cloud Tribe User has requested an expert booking on date <?=$form_input['booking_date']?> and time <?=$form_input['booking_time']?><br> <br>
+                     	        Hi <?=$this->session->userdata['logged_in_front']['first_name']?>,<br> <br>
+                                 Your booking on date <?=$form_input['booking_date']?> and time <?=$form_input['booking_time']?> with expert <?=$form_input['Full Name']?> is confirmed. <br> <br>
 
-                                 We are awaiting a confirmation email from you or a suggestion of a date <?=$form_input['booking_date']?> and time <?=$form_input['booking_time']?>. <br> <br>As soon as it is confirmed, we will send the user an email to make the payment for the session, and give you instructions on the call. <br><br>
-
-                                          <a href="<?=l('contact_us/emailtest/'.$a.'/'.$b)?>">Click here to approve</a><br><br>
-
-                                  
-                                           <a href="<?=l('contact_us/emailtestreject/'.$a.'/'.$b)?>">Click here to reject</a><br><br>
-
-                                 To suggest another date and time, please email admin/support team at <a href="mailto:info@mindcloudtribe.com">info@mindcloudtribe.com</a> with the suggested date and time.<br> <br>
+                                 Please proceed to make a payment on ------, so you can start your session with the expert.<br> <br>
 
                      	        See you soon,<br><br>
                             <?php

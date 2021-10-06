@@ -1600,6 +1600,8 @@ class Contact_us extends MY_Controller
                     $inserted_id = $this->model_booking->save();
 
                      parent::book($data);
+
+                     //parent::confirm_expert($data);
                     
                     //$this->model_email->bookingInquiry($data);
                     //debug($this->model_email,1);
@@ -1659,7 +1661,26 @@ class Contact_us extends MY_Controller
 
         $all['booking_expert_approval']=1;
         $this->model_booking->update_by_pk($all['booking_id'], $all);
-        parent::confirm_expert($all);
+        parent::confirm_by_expert($all);
+
+
+       redirect(l(''));
+    }
+
+
+    public function emailtestreject($a='',$b='')
+    {
+
+        $data = array();
+
+        $data['where']['booking_user_id'] =$a ;
+        $data['where']['booking_expert_id'] =$b ;
+        $all=$this->model_booking->find_one_active($data);
+
+
+        $all['booking_expert_approval']=0;
+        $this->model_booking->update_by_pk($all['booking_id'], $all);
+        parent::reject_expert($all);
 
 
        redirect(l(''));
