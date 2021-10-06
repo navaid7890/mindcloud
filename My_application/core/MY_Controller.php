@@ -608,8 +608,8 @@ class MY_Controller extends MY_Controller_Admin
         $mail->setFrom($a['expert_email'], $a['expert_name']);
         $mail->addReplyTo($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
 
-        $mail->addAddress($data['booking_email']);
-        $mail->Subject = 'Thank you for the Expert Booking';
+        $mail->addAddress($a['expert_email']);
+        $mail->Subject = ' Request for Expert Booking';
         
         
         $mail->isHTML(true);

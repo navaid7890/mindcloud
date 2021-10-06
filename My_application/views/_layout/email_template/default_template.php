@@ -25,11 +25,13 @@ $b=$form_input['booking_expert_id'];
                             else
                             {
                             ?>
-                     	        Hi <?=$this->session->userdata['logged_in_front']['first_name']?>,<br> <br>
-                                 Thank you for the booking on date <?=$form_input['booking_date']?> and time <?=$form_input['booking_time']?> with expert <?=$form_input['Full Name']?> 
+                     	        Hi <?=$form_input['Full Name']?>,<br> <br>
+                                 A Mind Cloud Tribe User has requested an expert booking on date  <?=$form_input['booking_date']?> and time <?=$form_input['booking_time']?><br><br>
+                                 Please respond to the user via email {<?=$form_input['booking_email']?>} for booking confirmation and send them a zoom/google meet link accordingly.<br><br>
+                                 If the date and time are not suitable for you, please email the user with a suggested date and time.
+                     	      
+                               <br> <br>
 
-                     	        <br> <br>We have sent an email to the expert and awaiting a confirmation email.<br><br> As soon as it is confirmed, we will send you an email to make the<br><br>
-                                  payment for the session, and give you instructions on the call. <br> <br>
 
                      	        See you soon,<br><br>
                             <?php
