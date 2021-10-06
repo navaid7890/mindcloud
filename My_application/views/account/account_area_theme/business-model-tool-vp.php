@@ -3,16 +3,16 @@
 
       <ul class="dashboard-layout">
          <li>
-            <div class="front-dashboard">
-               <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+            <div class="front-dashboard open">
+               <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                <? $this->load->view("widgets/dashboard-menu-box"); ?>
             </div>
          </li>
 
-         <li>
+         <li class="open">
             <? $this->load->view("widgets/course-box"); ?>
          </li>
-         <li>
+         <li class="open">
             <div class="tutorial-box">
                <div class="tutorial-scroll-content">
                   <div class="tutorial-content">
@@ -46,9 +46,22 @@
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> Value Proposition Canvas. </strong></p>
                               </div>
-                              <div class="col-lg-3 col-md-12 text-right">
-                                 <a href="<?= base_url()?>account/profile/dl_tools_vp"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                              </div>
+                              <?
+                              $param = array();
+                              $param['order'] = "tool_builder_vp_id DESC";
+                              $param['where']['tool_builder_vp_user_id'] = $this->userid;
+                              $tool = $this->model_tool_builder_vp->find_one_active($param);
+                              ?>
+                              <? if ($tool == "") : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? else : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="<?= base_url() ?>account/profile/dl_tools_vp"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? endif; ?>
+
                            </div>
                         </div>
                      </div>
@@ -69,7 +82,7 @@
                               <div class="fld-html">
                                  <ul class="fld-progress">
                                     <li class="step">
-                                       <p>Customer Segments</p>
+                                       <p>Customer Profile</p>
                                     </li>
                                     <li class="step">
                                        <p>Value Propositions</p>
@@ -82,16 +95,7 @@
                                  <div class="tab">
 
 
-                                    <?
 
-                                    $param = array();
-                                    $param['order'] = "tool_builder_vp_id DESC";
-                                    $param['where']['tool_builder_vp_user_id'] = $this->userid;
-                                    $tool = $this->model_tool_builder_vp->find_one_active($param);
-
-                                    // debug($tool);
-
-                                    ?>
 
 
                                     <form id="form-vp1">
@@ -152,8 +156,8 @@
 
                               <div class="next-prevBtn" style="overflow:auto;">
                                  <div style="float:right;">
-                                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
-                                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    <button type="button" id="prevBtn" onclick="nextPrev(-1,'your_work?tool=1&cat=12')">Back</button>
+                                    <button type="button" id="nextBtn" onclick="nextPrev(1,'your_work?tool=1&cat=12')">Next</button>
                                  </div>
                               </div>
 

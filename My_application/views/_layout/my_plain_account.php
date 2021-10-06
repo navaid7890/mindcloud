@@ -587,12 +587,12 @@ $my_tools = array(
   ?>
           <link rel="stylesheet" href="<?= g('plugins_root') . $tool . "/" . $script; ?>" /><?
 
-                                                                                      }
+                                                                                          }
+                                                                                        }
                                                                                     }
-                                                                                }
-                                                                              }
+                                                                                  }
 
-                                                                                        ?>
+                                                                                            ?>
 
 
 
@@ -616,20 +616,21 @@ $my_tools = array(
   </script>
   <style>
     div#overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    opacity: 0.95;
-    flex-direction: column;
-    height: 100vh;
-}
-.overFlowHide{
-  overflow: hidden !important;
-}
+      position: absolute;
+      inset: 0;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      opacity: 0.95;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .overFlowHide {
+      overflow: hidden !important;
+    }
   </style>
 
 </head>
@@ -638,7 +639,7 @@ $my_tools = array(
 
 <!-- BEGIN BODY -->
 
-<body class="overFlowHide customeAccountList business-page" id="top" oncontextmenu="return true">
+<body class="overFlowHide customeAccountList business-page" id="top" oncontextmenu="return false">
 
 
   <div id="overlay">
@@ -876,7 +877,10 @@ $my_tools = array(
     </div>
   </div>
 
+<!-- <style>
+.page21 div#mCSB_2_container{top: -763px;}
 
+</style> -->
 </body>
 
 
@@ -892,7 +896,6 @@ $my_tools = array(
 
 <script src="<?= $config['base_url'] ?>assets/front_assets/js/account/custom.js"></script>
 
-
 <script>
   var currentTab = 0;
   showTab(currentTab);
@@ -907,27 +910,40 @@ $my_tools = array(
     }
     if (n == (x.length - 1)) {
       document.getElementById("nextBtn").innerHTML = "Submit";
+      // alert("there");
     } else {
       document.getElementById("nextBtn").innerHTML = "Next";
     }
+
     fixStepIndicator(n)
   }
 
-  function nextPrev(n) {
+  function nextPrev(n, url) {
     var x = document.getElementsByClassName("tab");
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
     if (n == 1) {
       document.getElementById("forms-tool_builder-btn" + currentTab).click();
+      document.getElementById('mCSB_3_container').style.top = 0;
+
     }
 
-    if (currentTab >= x.length) {
-      document.getElementById("forms-tool_builder-btn" + currentTab).click();
-
-      return false;
+    if (currentTab == x.length) {
+      window.open(url, "_self");
+    } else {
+      showTab(currentTab);
     }
-    showTab(currentTab);
+
+    // if (currentTab >= x.length) {
+    //   document.getElementById("forms-tool_builder-btn" + currentTab).click();   
+    //   return false; 
+    // }
+
+
+
   }
+
+
 
   function calc_tfc() {
 
@@ -1102,13 +1118,17 @@ $my_tools = array(
     var net_income_year_2 = document.getElementById('net_income_year_2');
     var net_income_year_3 = document.getElementById('net_income_year_3');
 
-    net_income_before_tax_year_1.value = Number(revenues_year_1) - Number(expenses_year_1);
-    net_income_before_tax_year_2.value = Number(revenues_year_2) - Number(expenses_year_2);
-    net_income_before_tax_year_3.value = Number(revenues_year_3) - Number(expenses_year_3);
+    net_income_before_tax_year_1.value = ((Number(revenues_year_1) - Number(expenses_year_1)) * 0.2);
+    net_income_before_tax_year_2.value = ((Number(revenues_year_2) - Number(expenses_year_2)) * 0.2);
+    net_income_before_tax_year_3.value = ((Number(revenues_year_3) - Number(expenses_year_3)) * 0.2);
 
-    net_income_year_1.value = Number(net_income_before_tax_year_1.value) - Number(tax_total_year_1);
-    net_income_year_2.value = Number(net_income_before_tax_year_2.value) - Number(tax_total_year_2);
-    net_income_year_3.value = Number(net_income_before_tax_year_3.value) - Number(tax_total_year_3);
+    // net_income_year_1.value = Number(net_income_before_tax_year_1.value) - Number(tax_total_year_1);
+    // net_income_year_2.value = Number(net_income_before_tax_year_2.value) - Number(tax_total_year_2);
+    // net_income_year_3.value = Number(net_income_before_tax_year_3.value) - Number(tax_total_year_3);
+    // total Amount
+    net_income_year_1.value = ((Number(revenues_year_1) - Number(expenses_year_1)));
+    net_income_year_2.value = ((Number(revenues_year_2) - Number(expenses_year_2)));
+    net_income_year_3.value = ((Number(revenues_year_3) - Number(expenses_year_3)));
 
 
 
@@ -1117,22 +1137,34 @@ $my_tools = array(
 
   function calc_tool_bss_values(id, total_value) {
 
+    var sub_value = 0;
     var total = 0;
     var other_assets_total = document.querySelectorAll('.' + id);
     for (var i = 0; i < other_assets_total.length; i++) {
+      // console.log('other_assets_total', other_assets_total[i]);
       if (other_assets_total[i].value > 0) {
         var other_assets_val = other_assets_total[i];
         total += parseFloat(other_assets_val.value);
       }
     }
-    document.getElementById(id).value = total;
+    // console.log('check total', total);
+    if (id == 'fixed_assets_total') {
+      sub_value = document.getElementById('fixed_assets_total2').value;
+      document.getElementById(id).value = total - Number(sub_value);
+    } else {
+      document.getElementById(id).value = total;
+    }
+    console.log('document.getElementById(id).value',document.getElementById(id).value)
 
-    if (total_value == "tool_builder_total_assets") {
+    if (total_value == "tool_builder_total_assets" ) {
+      console.log('herererer123',sub_value)
       var other_assets_total = document.getElementById('other_assets_total').value;
       var fixed_assets_total = document.getElementById('fixed_assets_total').value;
       var current_assets_total = document.getElementById('current_assets_total').value;
 
+      console.log('herererer')
       document.getElementById('tool_builder_total_assets').value = Number(other_assets_total) + Number(fixed_assets_total) + Number(current_assets_total);
+      console.log('value isss', document.getElementById('tool_builder_total_assets').value)
     } else if (total_value == "tool_builder_total_liabilities") {
       var current_liabilities_total = document.getElementById('current_liabilities_total').value;
       var other_current_liabilities_total = document.getElementById('other_current_liabilities_total').value;
@@ -1166,11 +1198,11 @@ $my_tools = array(
     net_profit_year_4.value = Math.round((Number(net_profit_year_3.value) / 100 * growth_rate) + Number(net_profit_year_3.value));
     net_profit_year_5.value = Math.round((Number(net_profit_year_4.value) / 100 * growth_rate) + Number(net_profit_year_4.value));
 
-    discount_rate_year_1.value = Math.ceil(net_profit / (1 + discount_rate / 100));
-    discount_rate_year_2.value = Math.ceil(net_profit_year_2.value / Math.pow((1 + discount_rate / 100), 2));
-    discount_rate_year_3.value = Math.ceil(net_profit_year_3.value / Math.pow((1 + discount_rate / 100), 3));
-    discount_rate_year_4.value = Math.ceil(net_profit_year_4.value / Math.pow((1 + discount_rate / 100), 4));
-    discount_rate_year_5.value = Math.ceil(net_profit_year_5.value / Math.pow((1 + discount_rate / 100), 5));
+    discount_rate_year_1.value = (net_profit / (1 + discount_rate / 100)).toFixed(4);
+    discount_rate_year_2.value = (net_profit_year_2.value / Math.pow((1 + discount_rate / 100), 2)).toFixed(4);
+    discount_rate_year_3.value = (net_profit_year_3.value / Math.pow((1 + discount_rate / 100), 3)).toFixed(4);
+    discount_rate_year_4.value = (net_profit_year_4.value / Math.pow((1 + discount_rate / 100), 4)).toFixed(4);
+    discount_rate_year_5.value = (net_profit_year_5.value / Math.pow((1 + discount_rate / 100), 5)).toFixed(4);
 
     dcf_value.value = Number(discount_rate_year_1.value) + Number(discount_rate_year_2.value) + Number(discount_rate_year_3.value) + Number(discount_rate_year_4.value) + Number(discount_rate_year_5.value);
   }
@@ -1326,34 +1358,28 @@ jQuery(document).ready(function(){
   });
 </script>
 
-  <script>
-
-
-document.onkeydown = function(e) {
-  if(event.keyCode == 123) {
-     return false;
+<script>
+  document.onkeydown = function(e) {
+    if (event.keyCode == 123) {
+      return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+      return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+      return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+      return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'S'.charCodeAt(0)) {
+      return false;
+    }
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+      return false;
+    }
   }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'S'.charCodeAt(0)) {
-     return false;
-  }
-  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-     return false;
-  }
-}
-
-
-
-
-  </script>
+</script>
 
 
 

@@ -1,18 +1,32 @@
+<style>
+.playArea {
+    position: absolute;
+    bottom: 6%;
+    font-size: 10px;
+    right: 5%;
+    border: 1px solid #000;
+    padding: 8px;
+    border-radius: 100%;
+}
+.tutorial-list-box {
+    position: relative;
+}
+</style>
 <section class="dashboard">
 
    <ul class="dashboard-layout">
       <li>
-         <div class="front-dashboard">
-            <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+         <div class="front-dashboard open">
+            <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
             <? $this->load->view("widgets/dashboard-menu-box"); ?>
          </div>
       </li>
 
-      <li>
+      <li class="open">
          <? $this->load->view("widgets/course-box"); ?>
       </li>
 
-      <li>
+      <li class="open">
          <div class="tutorial-box">
             <div class="tutorial-scroll-content">
                <div class="tutorial-content">
@@ -41,7 +55,7 @@
                      <div class="tutorial-mid-content">
                         <h4>What kind of Entrepreneur are you?</h4>
                         <div class="space"><br></div>
-                        <p>Our Learning Journey is designed for entrepreneurs at all different stages </p>
+                        <p>Our Learning Journey is designed for entrepreneurs at all different stages. Click below on the type of entrepreneur that fits you best to watch the corresponding video</p>
                      </div>
                      <div class="space"><br><br></div>
                      <?
@@ -57,6 +71,7 @@
                                     <div class="space"><br></div>
                                     <h3>New</h3>
                                     <p>Entrepreneur</p>
+                                    <div class="playArea"><i class="fas fa-play"></i> </div>
                                  </div>
                               </div>
                            </a>
@@ -70,6 +85,7 @@
                                     <div class="space"><br></div>
                                     <h3>Corporate</h3>
                                     <p>Intrapreneurs</p>
+                                    <div class="playArea"><i class="fas fa-play"></i> </div>
                                  </div>
                               </div>
                            </a>
@@ -83,6 +99,7 @@
                                     <div class="space"><br></div>
                                     <h3>Growth</h3>
                                     <p>Entrepreneur</p>
+                                    <div class="playArea"><i class="fas fa-play"></i> </div>
                                  </div>
                               </div>
                            </a>
@@ -95,6 +112,7 @@
                                     <div class="space"><br></div>
                                     <h3>Growth</h3>
                                     <p>Entrepreneur</p>
+                                    <div class="playArea"><i class="fas fa-play"></i> </div>
                                  </div>
                               </div>
                            </a>

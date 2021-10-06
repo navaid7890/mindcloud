@@ -337,7 +337,18 @@ class Quiz extends MY_Controller {
       $param['where']['tool_builder_user_id']=$this->userid; 
       $employee_data = $this->model_tool_builder_fm_bss->find_one_active($param);
       //debug($employee_data);
+      // $toolurl= l('account/profile/tools_fm_bss?cat=21');
+      // if (empty($employee_data)) {
+      //   // header('Location:'.$toolurl);
 
+      //   echo '<script type="text/javascript">'; 
+      //   echo 'alert("Fill out the ToolBuilder First To download the Document");';
+      //   echo 'window.location.href = "'.l('account/profile/tools_fm_bss?cat=21').'";';
+      //   echo '</script>';
+
+      //   // header('Location:'.$toolurl);
+
+      // } else {
      
 
 
@@ -399,6 +410,7 @@ class Quiz extends MY_Controller {
       $object_writer->save('php://output');
 
       }
+    // }
  
      }
 
@@ -588,23 +600,18 @@ class Quiz extends MY_Controller {
        $objPHPExcelReader->getActiveSheet()->setCellValue('C32', $employee_data['total_expenses_year_1']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('D32', $employee_data['total_expenses_year_2']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('E32', $employee_data['total_expenses_year_3']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C34', $employee_data['net_income_year_1']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D34', $employee_data['net_income_year_2']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('E34', $employee_data['net_income_year_3']);
 
-       $objPHPExcelReader->getActiveSheet()->setCellValue('C34', $employee_data['net_income_before_taxes_year_1']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('D34', $employee_data['net_income_before_taxes_year_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E34', $employee_data['net_income_before_taxes_year_3']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('C35', $employee_data['total_expenses_year_1']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('D35', $employee_data['total_expenses_year_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E35', $employee_data['total_expenses_year_3']);
-       
+       $objPHPExcelReader->getActiveSheet()->setCellValue('C35', $employee_data['net_income_before_taxes_year_1']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('D35', $employee_data['net_income_before_taxes_year_2']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('E35', $employee_data['net_income_before_taxes_year_3']);
 
-       $objPHPExcelReader->getActiveSheet()->setCellValue('C37', $employee_data['net_income_year_1']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('D37', $employee_data['net_income_year_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E37', $employee_data['net_income_year_3']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('C34', $employee_data['net_income_year_1']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('D34', $employee_data['net_income_year_2']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('E34', $employee_data['net_income_year_3']);
 
-
-       $objPHPExcelReader->getActiveSheet()->setCellValue('C39', $employee_data['net_income_year_1']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('D39', $employee_data['net_income_year_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E39', $employee_data['net_income_year_3']);
 
        $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
        header('Content-Type: application/vnd.ms-excel');

@@ -7,17 +7,17 @@
    <section class="dashboard">
       <ul class="dashboard-layout">
          <li>
-            <div class="front-dashboard">
-               <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+            <div class="front-dashboard open">
+               <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                <? $this->load->view("widgets/dashboard-menu-box"); ?>
             </div>
          </li>
-         <li>
+         <li class="open">
             <div class="descPage">
             <? $this->load->view("widgets/course-box"); ?>
             </div>
          </li>
-         <li>
+         <li class="open">
             <div class="tutorial-box">
                <div class="tutorial-scroll-content">
                   <div class="tutorial-content">
@@ -44,7 +44,7 @@
                      </div>
                      <div class="tutorial-mid hding-4 hding-3 para">
                         <div class="tutorial-mid-content">
-                           <h4>Tutorial Contents:</h4>
+                           <h4>Tutorial Content:</h4>
                         </div>
                         <div class="space"><br><br></div>
 

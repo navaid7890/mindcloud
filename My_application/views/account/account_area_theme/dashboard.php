@@ -75,12 +75,12 @@
     <section class="dashboard">
         <ul class="dashboard-layout">
             <li>
-                <div class="front-dashboard">
-                    <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+                <div class="front-dashboard open">
+                    <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                     <? $this->load->view("widgets/dashboard-menu-box"); ?>
                 </div>
             </li>
-            <li>
+            <li class="open">
                 <div class="index-page-wrap">
                     <div class="index-page-content hding-2">
                         <h2>Welcome <strong><?= $this->session->userdata['logged_in_front']['first_name'] ?></strong></h2>
@@ -119,7 +119,7 @@
                                         <div class="space"><br><br></div>
                                         <div class="progres-bar" id="Goto_market_strategies">
                                             <div class="progres-text">
-                                                <p>Go-to market strategies</p>
+                                                <p>Go-to-market strategies</p>
                                             </div>
 
                                             <div class="progres-gray">
@@ -343,7 +343,7 @@
 
 
                                                                 <div class="row align-items-center">
-                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?=  short_text($value['tutorial_name'],30) ?></a></h4>
+                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?=  $value['tutorial_name'] ?></a></h4>
                                                                     <div class="col-md-10">
                                                                         <?
                                                                         $exp_name = array();
@@ -437,7 +437,7 @@
 
 
                                                                 <div class="row align-items-center">
-                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?=  short_text($value['tutorial_name'],30) ?></a></h4>
+                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
                                                                     <div class="col-md-10">
                                                                         <?
                                                                         $exp_name = array();
@@ -534,7 +534,7 @@
 
 
                                                             <div class="row align-items-center"> 
-                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $paidTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= short_text($paidTut[0]['tutorial_name'],30) ?></a></h4>
+                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $paidTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= $paidTut[0]['tutorial_name'] ?></a></h4>
                                                                 <div class="col-md-10">
                                                                     <?
                                                                     $exp_name = array();
@@ -621,7 +621,7 @@
 
 
                                                             <div class="row align-items-center">
-                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $remainTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= short_text($remainTut[0]['tutorial_name'],30) ?></a></h4>
+                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $remainTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?=$remainTut[0]['tutorial_name'] ?></a></h4>
                                                                 <div class="col-md-10">
                                                                     <?
                                                                     $exp_name = array();

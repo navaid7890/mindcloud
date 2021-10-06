@@ -29,17 +29,17 @@
    <section class="dashboard">
       <ul class="dashboard-layout">
          <li>
-            <div class="front-dashboard">
-               <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+            <div class="front-dashboard open">
+               <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                <? $this->load->view("widgets/dashboard-menu-box"); ?>
             </div>
          </li>
-         <li>
+         <li class="open">
             <div class="videoPage">
                <? $this->load->view("widgets/course-box"); ?>
             </div>
          </li>
-         <li>
+         <li class="open">
             <div class="tutorial-box">
 
                <div class="tutorial-scroll-content">
@@ -112,8 +112,9 @@
                            </div>
                            <div class="col-md-7">
                               <div class="video-box">
-                                 <video controlsList="nodownload" width="100%" ontimeupdate="myFunction(this)" controls="true" id="video" height="100%" poster="<?= g('db.admin.bucket') . 'images/learning_journey_content/' . $learn_content['0']['learning_journey_content_image'] ?>">
-                                    <source src="<?= g('db.admin.bucket') . 'videos/' . $learn_content[0]['learning_journey_video'] ?>" type="video/mp4">
+                              <!-- poster="<?//= g('db.admin.bucket') . 'images/learning_journey_content/' . $learn_content['0']['learning_journey_content_image'] ?>" -->
+                                 <video controlsList="nodownload" width="100%" ontimeupdate="myFunction(this)" controls="true" id="video" height="100%" >
+                                    <source src="<?= g('db.admin.bucket') . 'videos/' . $learn_content[0]['learning_journey_video'] ?>#t=2" type="video/mp4">
                                     <source src="<?= g('db.admin.bucket') . 'videos/' . $learn_content[0]['learning_journey_video'] ?>" type="video/ogg">
                                     Your browser does not support the video tag.
                                  </video>

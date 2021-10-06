@@ -1,6 +1,6 @@
 <style>
     ul.work-list>li {
-        width: 50.7%;
+        width: 60.7%;
     }
 
     .work-box {
@@ -11,19 +11,19 @@
 
     <ul class="dashboard-layout">
         <li>
-            <div class="front-dashboard">
-                <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+            <div class="front-dashboard open">
+                <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                 <? $this->load->view("widgets/dashboard-menu-box"); ?>
             </div>
         </li>
 
-        <li>
+        <li class="open">
             <div class="yourWork">
                 <? $this->load->view("widgets/course-box"); ?>
             </div>
         </li>
 
-        <li>
+        <li class="open">
 
             <?
             $dt = array(
@@ -48,15 +48,15 @@
             ?>
             <?
             $toolName = array(
-                'Business Model Canvas.',
-                'Value Proposition Canvas ',
-                'SWOT Analysis.',
-                'Positioning and Marketing Mix.',
-                'Strategic Marketing Plan.',
-                'Customer Journey Demand Generation.',
-                'Marketing Campaign Model Canvas.',
-                'Online Sales Funnel.',
-                'Legal Term Sheet.',
+                'Business Model Canvas',
+                'Value Proposition Canvas',
+                'SWOT Analysis',
+                'Positioning and Marketing Mix',
+                'Strategic Marketing Plan',
+                'Customer Journey Demand Generation',
+                'Marketing Campaign Model Canvas',
+                'Online Sales Funnel',
+                'Legal Term Sheet',
                 '',
                 'Income Statement',
                 'Balance Sheet',
@@ -168,7 +168,7 @@
                                     <div class="work-footer">
                                         <div class="row align-items-center">
                                             <div class="col-md-9">
-                                                <p>My <?= $toolName[$_GET['tool']] ?>.</p>
+                                                <p>My <?= $toolName[$_GET['tool']] ?></p>
                                             </div>
                                             <div class="col-md-3 d-flex">
                                                 <a href="<?= base_url() ?><?= $dt[$_GET['tool']] ?>"><img src="<?= i('') ?>dashboard/home/icons/4.svg" alt=""></a>

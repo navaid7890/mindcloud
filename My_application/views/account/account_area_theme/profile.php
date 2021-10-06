@@ -57,13 +57,13 @@
   <section class="dashboard">
     <ul class="dashboard-layout">
       <li>
-        <div class="front-dashboard">
-          <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+        <div class="front-dashboard open">
+          <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
           <? $this->load->view("widgets/dashboard-menu-box"); ?>
         </div>
       </li>
 
-      <li>
+      <li class="open">
         <div class="aboutForm">
 
           <div class="col-md-12 col-xs-12 col-sm-12">
@@ -171,7 +171,7 @@
                   <input type="hidden" name="user[user_paid]" value="0">
                   <input type="hidden" name="user[user_email]" value=<?=$datapaid[0]['user_email'] ?>>
                   <div class="col-md-4">
-                    <button id='cancle-subscription' class="btn btn-danger" type="submit">Cancle Subscription</button>
+                    <button id='cancle-subscription' class="btn btn-danger" type="submit">Cancel Subscription</button>
                   </div>
                 </div>
               </form>

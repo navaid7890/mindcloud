@@ -426,7 +426,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-vp").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-vp").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -455,7 +455,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-send_swot").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-send_swot").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -485,7 +485,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-smp").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-smp").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -505,6 +505,7 @@ var Form = function () {
       $('#forms-tool_builder-btn1').prop('disabled', true);
       $('#forms-tool_builder-btn2').prop('disabled', true);
       $('#forms-tool_builder-btn3').prop('disabled', true);
+      $('#forms-tool_builder-btn4').prop('disabled', true);
 
       var data = form.serialize();
       response = AjaxRequest.fire(urls.tools_cjdg, data);
@@ -512,13 +513,14 @@ var Form = function () {
       $('#forms-tool_builder-btn1').prop('disabled', false);
       $('#forms-tool_builder-btn2').prop('disabled', false);
       $('#forms-tool_builder-btn3').prop('disabled', false);
+      $('#forms-tool_builder-btn4').prop('disabled', false);
 
       // return false ;
 
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-cjdg").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-cjdg").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -546,7 +548,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-mcmc").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-mcmc").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -574,7 +576,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-osf").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-osf").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -635,7 +637,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-pmmt").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-pmmt").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -694,7 +696,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-lts").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-lts").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -742,7 +744,7 @@ var Form = function () {
       if (response.status) {
 
         Toastr.success(response.msg.desc, 'Go To Next Step');
-        $("#form-ids").find('input[type=text],input[type=email],textarea').val('');
+        // $("#form-ids").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -1493,6 +1495,13 @@ $(function () {
 
 $(function () {
   var $form = $('#form-cjdg3');
+  $form.submit(function (event) {
+    Form.tools_cjdg($form);
+    return false;
+  });
+});
+$(function () {
+  var $form = $('#form-cjdg4');
   $form.submit(function (event) {
     Form.tools_cjdg($form);
     return false;

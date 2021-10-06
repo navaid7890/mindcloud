@@ -1,5 +1,5 @@
-<a href="#" class="menu-dash">MENU<i class="fal fa-bars"></i></a>
-<div class="dashboard-menu-box">
+<!-- <a href="#" class="menu-dash">MENU<i class="fal fa-bars"></i></a> -->
+<div class="dashboard-menu-box open">
    <div class="dashboar-menu">
       <div class="dashboard-links">
          <ul class="dashboard-nav dash-scroll">
@@ -15,18 +15,18 @@
                   My Experts Tutorials
                </a>
             </li>
-            <li>
-               <a href="<?= l('booking') ?>">
+            <!-- <li>
+               <a href="<?//= l('booking') ?>">
                   <span><img src="<?= i('') ?>dashboard/menu/Group516.svg"></span>
                   Consult with Experts
                </a>
-            </li>
-            <li>
-               <a href="<?= l('consult-advisors') ?>">
+            </li> -->
+            <!-- <li>
+               <a href="<?//= l('consult-advisors') ?>">
                   <span><img src="<?= i('') ?>dashboard/menu/Group547.svg"></span>
                   Advisory
                </a>
-            </li>
+            </li> -->
             <li>
                <a href="<?= l('account/profile/learning') ?>">
                   <span><img src="<?= i('') ?>dashboard/menu/2.svg"></span>

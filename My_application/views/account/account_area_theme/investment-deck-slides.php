@@ -3,16 +3,16 @@
 
       <ul class="dashboard-layout">
          <li>
-            <div class="front-dashboard">
+            <div class="front-dashboard open">
                <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
                <? $this->load->view("widgets/dashboard-menu-box"); ?>
             </div>
          </li>
 
-         <li>
+         <li class="open">
             <? $this->load->view("widgets/course-box"); ?>
          </li>
-         <li>
+         <li class="open">
             <div class="tutorial-box">
                <div class="tutorial-scroll-content">
                   <div class="tutorial-content">
@@ -46,39 +46,79 @@
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> Investment Deck Slides. </strong></p>
                               </div>
-                              <div class="col-lg-3 col-md-12 text-right">
-                              <a href="<?= base_url()?>account/profile/dl_tools_ids"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                              </div>
+                              <?
+
+                              $param = array();
+                              $param['order'] = "tool_builder_ids_id DESC";
+                              $param['where']['tool_builder_ids_user_id'] = $this->userid;
+                              $tool = $this->model_tool_builder_ids->find_one_active($param);
+                              // debug($tool);
+                              ?>
+                              <? if ($tool == "") : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? else : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="<?= base_url() ?>account/profile/dl_tools_ids"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? endif; ?>
+
                            </div>
                         </div>
                      </div>
 
                      <div class="tutorial-footer tool-footer vid-tran para">
-                        <div class="tutorial-footer-content" style="padding: 0;">
+                        <div class="tutorial-footer-content">
 
 
-                           <ul class="form-tabing">
-                              <div class="fld-html">
-                                 <p>Investment Deck Slides</p>
-                              </div>
-                           </ul>
+
 
                            <div class="box-1 showfirst" style="">
-
+                              <div class="fld-html">
+                                 <ul class="fld-progress">
+                                    <li class="step">
+                                       <p>Value Proposition</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>The Problem</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>The Solution</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>The Market Target & Size</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Go-To-Market Strategies</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Competitive Landscape</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Business / Revenue Model</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Traction & Timeline</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Execution Team</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Financial Data</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Your ASK</p>
+                                    </li>
+                                 </ul>
+                              </div>
                               <div id="radio1" class="multi-fld">
 
                                  <div class="tab">
-                                    <?
 
-                                    $param = array();
-                                    $param['order'] = "tool_builder_ids_id DESC";
-                                    $param['where']['tool_builder_ids_user_id'] = $this->userid;
-                                    $tool = $this->model_tool_builder_ids->find_one_active($param);
-                                    // debug($tool);
-                                    ?>
 
                                     <form id="form-ids1" class="next-prevBtn">
-                                    <input type="hidden" name="tool_builder_ids[tool_builder_percent]" value="1">
+                                       <input type="hidden" name="tool_builder_ids[tool_builder_percent]" value="1">
                                        <div class="fld-textarea">
                                           <label for="">Slide One: Value Proposition <span>Tell what you are doing
                                                 <br>
@@ -340,8 +380,8 @@
 
                               <div class="next-prevBtn" style="overflow:auto;">
                                  <div style="float:right;">
-                                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
-                                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    <button type="button" id="prevBtn" onclick="nextPrev(-1,'your_work?tool=15&cat=26')">Back</button>
+                                    <button type="button" id="nextBtn" onclick="nextPrev(1,'your_work?tool=15&cat=26')">Next</button>
                                  </div>
                               </div>
 

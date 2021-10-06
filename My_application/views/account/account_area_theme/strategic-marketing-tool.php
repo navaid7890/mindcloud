@@ -3,16 +3,16 @@
 
       <ul class="dashboard-layout">
          <li>
-            <div class="front-dashboard">
+            <div class="front-dashboard open">
                <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
                <? $this->load->view("widgets/dashboard-menu-box"); ?>
             </div>
          </li>
 
-         <li>
+         <li class="open">
             <? $this->load->view("widgets/course-box"); ?>
          </li>
-         <li>
+         <li class="open">
             <div class="tutorial-box">
                <div class="tutorial-scroll-content">
                   <div class="tutorial-content">
@@ -46,9 +46,23 @@
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> Strategic Marketing Plan. </strong></p>
                               </div>
-                              <div class="col-lg-3 col-md-12 text-right">
-                              <a href="<?= base_url()?>account/profile/dl_tools_smp"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                              </div>
+                              <?
+
+                              $param = array();
+                              $param['order'] = "tool_builder_strg_mkt_id DESC";
+                              $param['where']['tool_builder_strg_mkt_user_id'] = $this->userid;
+                              $tool = $this->model_tool_builder_strg_mkt->find_one_active($param);
+
+                              ?>
+                              <? if ($tool == "") : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? else : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="<?= base_url() ?>account/profile/dl_tools_smp"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? endif; ?>
                            </div>
                         </div>
                      </div>
@@ -57,25 +71,18 @@
                         <div class="tutorial-footer-content" style="padding: 0;">
 
 
-                           <ul class="form-tabing">
+                           <!-- <ul class="form-tabing">
                               <div class="fld-html">
                                  <p>Strategic Marketing Plan</p>
                               </div>
-                           </ul>
+                           </ul> -->
 
                            <div class="box-1 showfirst" style="">
 
                               <div id="radio1" class="multi-fld">
 
                                  <div class="tab">
-                                    <?
 
-                                    $param = array();
-                                    $param['order'] = "tool_builder_strg_mkt_id DESC";
-                                    $param['where']['tool_builder_strg_mkt_user_id'] = $this->userid;
-                                    $tool = $this->model_tool_builder_strg_mkt->find_one_active($param);
-
-                                    ?>
                                     <form id="form-smp">
                                        <input type="hidden" name="tool_builder_strg_mkt[tool_builder_strg_mkt_user_id]" value="<?= ($this->userid) ?>">
                                        <input type="hidden" name="tool_builder_strg_mkt[tool_builder_percent]" value="1">
@@ -115,12 +122,16 @@
                                           <textarea oninput="this.className = ''" name="tool_builder_strg_mkt[tool_builder_strg_mkt_evaluation]"><?= $tool['tool_builder_strg_mkt_evaluation'] ?></textarea>
                                        </div>
 
-                                       <div>
-                                          <button type="submit" class="btn btn-primary btn-lg" id="forms-tool_builder-btn1">SUBMIT</button>
+                                       <div style="display:none;">
+                                          <button type="submit" class="btn btn-primary btn-lg" style="float: right;" id="forms-tool_builder-btn1">SUBMIT</button>
                                        </div>
                                     </form>
                                  </div>
-
+                                 <div style="overflow:auto;">
+                                    <div class="next-prevBtn" style="float:right;">
+                                       <button type="button" id="nextBtn1" onclick="nextPrev(1,'your_work?tool=4&cat=15')">Submit</button>
+                                    </div>
+                                 </div>
                               </div>
 
 

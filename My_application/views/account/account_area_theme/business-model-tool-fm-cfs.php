@@ -3,16 +3,16 @@
 
     <ul class="dashboard-layout">
       <li>
-        <div class="front-dashboard">
-          <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+        <div class="front-dashboard open">
+          <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
           <? $this->load->view("widgets/dashboard-menu-box"); ?>
         </div>
       </li>
 
-      <li>
+      <li class="open">
         <? $this->load->view("widgets/course-box"); ?>
       </li>
-      <li>
+      <li class="open">
         <div class="tutorial-box">
           <div class="tutorial-scroll-content">
             <div class="tutorial-content">
@@ -46,9 +46,21 @@
                       <div class="space"><br></div>
                       <p>Complete these steps to build your <strong> Cash Flow Statement. </strong></p>
                     </div>
-                    <div class="col-lg-3 col-md-12 text-right">
-                      <a href="<?= base_url() ?>quiz/cash"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                    </div>
+                    <?
+                    $param = array();
+                    $param['order'] = "tool_builder_id DESC";
+                    $param['where']['tool_builder_user_id'] = $this->userid;
+                    $tool = $this->model_tool_builder_fm_cfs->find_one_active($param);
+                    ?>
+                    <? if ($tool == "") : ?>
+                      <div class="col-lg-3 col-md-12 text-right">
+                        <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                      </div>
+                    <? else : ?>
+                      <div class="col-lg-3 col-md-12 text-right">
+                        <a href="<?= base_url() ?>quiz/cash"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                      </div>
+                    <? endif; ?>
                   </div>
                 </div>
               </div>
@@ -64,12 +76,7 @@
                     <div id="radio1" class="multi-fld">
                       <div class="tab">
 
-                        <?
-                        $param = array();
-                        $param['order'] = "tool_builder_id DESC";
-                        $param['where']['tool_builder_user_id'] = $this->userid;
-                        $tool = $this->model_tool_builder_fm_cfs->find_one_active($param);
-                        ?>
+
                         <form id="form-cfs" class="next-prevBtn">
                           <input type="hidden" name="tool_builder_fm_cfs[tool_builder_user_id]" value="<?= ($this->userid) ?>">
                           <input type="hidden" name="tool_builder_fm_cfs[tool_builder_percent]" value="1">
@@ -1318,12 +1325,16 @@
 
 
 
-                          <div>
+                          <div style="display:none;">
                             <button id="forms-tool_builder-btn1" type="submit">SUBMIT</button>
                           </div>
                         </form>
                       </div>
-
+                      <div style="overflow:auto;">
+                        <div class="next-prevBtn" style="float:right;">
+                          <button type="button" id="nextBtn1" onclick="nextPrev(1,'your_work?tool=12&cat=22')">Submit</button>
+                        </div>
+                      </div>
                     </div>
 
 

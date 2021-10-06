@@ -3,17 +3,17 @@
 
       <ul class="dashboard-layout">
          <li>
-            <div class="front-dashboard">
-               <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+            <div class="front-dashboard open">
+               <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                <? $this->load->view("widgets/dashboard-menu-box"); ?>
             </div>
          </li>
 
-         <li>
+         <li class="open">
             <? $this->load->view("widgets/course-box"); ?>
          </li>
-         <li>
-            <div class="tutorial-box">
+         <li class="open">
+            <div class="tutorial-box" id="topOfDiv">
                <div class="tutorial-scroll-content">
                   <div class="tutorial-content">
                      <div class="tutorial-head">
@@ -46,40 +46,50 @@
                                  <div class="space"><br></div>
                                  <p>Complete these steps to build your <strong> Positioning and Marketing Mix. </strong></p>
                               </div>
-                              <div class="col-lg-3 col-md-12 text-right">
-                              <a href="<?= base_url()?>account/profile/dl_tools_pmmt"><img src="<?= base_url()?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                              </div>
+                              <?
+
+                              $param = array();
+                              $param['order'] = "tool_builder_id DESC";
+                              $param['where']['tool_builder_user_id'] = $this->userid;
+                              $tool = $this->model_tool_builder_pmmt->find_one_active($param);
+                              ?>
+                              <? if ($tool == "") : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? else : ?>
+                                 <div class="col-lg-3 col-md-12 text-right">
+                                    <a href="<?= base_url() ?>account/profile/dl_tools_pmmt"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                 </div>
+                              <? endif; ?>
+
                            </div>
                         </div>
                      </div>
 
                      <div class="tutorial-footer tool-footer vid-tran para">
-                        <div class="tutorial-footer-content" style="padding: 0;">
-
-
-                           <ul class="form-tabing">
-                              <div class="fld-html">
-                                 <p>Positioning and Marketing Mix</p>
-                              </div>
-                           </ul>
+                        <div class="tutorial-footer-content">
 
                            <div class="box-1 showfirst" style="">
-
+                              <div class="fld-html">
+                                 <ul class="fld-progress">
+                                    <li class="step">
+                                       <p>Positioning</p>
+                                    </li>
+                                    <li class="step">
+                                       <p>Marketing Mix</p>
+                                    </li>
+                                 </ul>
+                              </div>
                               <div id="radio1" class="multi-fld">
 
                                  <div class="tab">
 
-                                    <?
 
-                                    $param = array();
-                                    $param['order'] = "tool_builder_id DESC";
-                                    $param['where']['tool_builder_user_id'] = $this->userid;
-                                    $tool = $this->model_tool_builder_pmmt->find_one_active($param);
-                                    ?>
 
                                     <form id="form-pmmt1">
-                                    <input type="hidden" name="tool_builder_pmmt[tool_builder_user_id]" value="<?= ($this->userid) ?>">
-                                    <input type="hidden" name="tool_builder_pmmt[tool_builder_percent]" value="1">
+                                       <input type="hidden" name="tool_builder_pmmt[tool_builder_user_id]" value="<?= ($this->userid) ?>">
+                                       <input type="hidden" name="tool_builder_pmmt[tool_builder_percent]" value="1">
                                        <div class="fld-textarea">
                                           <label for="">1. Who/where are your Target Customers? </label>
                                           <div class="space"><br></div>
@@ -177,8 +187,8 @@
 
                               <div class="next-prevBtn" style="overflow:auto;">
                                  <div style="float:right;">
-                                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
-                                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    <button type="button" id="prevBtn" onclick="nextPrev(-1,'your_work?tool=3&cat=14')">Back</button>
+                                    <button type="button" id="nextBtn" onclick="nextPrev(1,'your_work?tool=3&cat=14')">Next</button>
                                  </div>
                               </div>
 

@@ -1154,7 +1154,7 @@ ul.tutorial-box-list>li:nth-child(3) {
 }
 
 .tutorial-footer {
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 }
 
 ul.dashboard-layout>li:nth-child(1) {
@@ -1401,7 +1401,7 @@ ul.rating {
 
 ul.fld-progress {
     font-size: 0;
-    width: 932px;
+    width: 100%;
     counter-reset: my-sec-counter;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -1411,11 +1411,12 @@ ul.fld-progress {
 
 ul.fld-progress li {
     display: inline-block;
-    width: 12%;
+    width: 15%;
     vertical-align: top;
     margin-right: 30px;
     position: relative;
     padding-top: 40px;
+    padding-bottom: 20px;
 }
 
 ul.fld-progress li p {
@@ -1563,13 +1564,14 @@ ul.fld-progress li:before {
     font-size: 16px;
     line-height: normal;
     text-transform: capitalize;
+    width: 77%;
 }
 
 .work-prew {
     position: absolute;
     bottom: 0;
     width: 66%;
-    right: -50px;
+    right: -75px;
     top: 0;
     margin: auto;
     align-items: center;
@@ -1581,7 +1583,7 @@ ul.fld-progress li:before {
 }
 
 ul.work-list>li {
-    width: 25.7%;
+    width: 36.7%;
     display: inline-block;
     margin-right: 75px;
     margin-bottom: 55px;
@@ -1801,7 +1803,7 @@ form#regForm1 button#prevBtn1 {
 
 ul.form-tabing>li {
     display: inline-block;
-    width: 23%;
+    width: 30%;
     position: relative;
     padding-left: 35px;
 }
@@ -2010,7 +2012,7 @@ ul.fld-progress {
 }
 
 .vid-content h4 {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     color: #33415C;
     text-transform: uppercase;
@@ -2022,6 +2024,8 @@ ul.fld-progress {
     display: block;
     display: -webkit-box;
     width: 100%;
+    word-wrap: break-word;
+
 }
 
 .vid-content p {
@@ -2217,7 +2221,7 @@ ul.cate-list {
 }
 
 .expert-tut-sec .vid-content h4 {
-    font-size: 18px;
+    font-size: 16px;
     line-height: normal;
     padding-bottom: 5px;
 }
@@ -4255,7 +4259,7 @@ body.page26 li.dropdown-toggle.catLj26 > a:after{ transform: rotate(90deg);}
 	height:26px;
     margin-right: 20px;
     position: absolute;
-    right: 30px;
+    right: 10px;
     top: 20px;
 }
 

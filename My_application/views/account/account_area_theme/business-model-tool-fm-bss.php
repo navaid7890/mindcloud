@@ -3,16 +3,16 @@
 
         <ul class="dashboard-layout">
             <li>
-                <div class="front-dashboard">
-                    <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+                <div class="front-dashboard open">
+                    <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                     <? $this->load->view("widgets/dashboard-menu-box"); ?>
                 </div>
             </li>
 
-            <li>
+            <li class="open">
                 <? $this->load->view("widgets/course-box"); ?>
             </li>
-            <li>
+            <li class="open">
                 <div class="tutorial-box">
                     <div class="tutorial-scroll-content">
                         <div class="tutorial-content">
@@ -46,9 +46,22 @@
                                             <div class="space"><br></div>
                                             <p>Complete these steps to build your <strong> Balance Sheet. </strong></p>
                                         </div>
-                                        <div class="col-lg-3 col-md-12 text-right">
-                                            <a href="<?= base_url() ?>quiz/balance"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
-                                        </div>
+                                        <?
+                                        $param = array();
+                                        $param['order'] = "tool_builder_id DESC";
+                                        $param['where']['tool_builder_user_id'] = $this->userid;
+                                        $tool = $this->model_tool_builder_fm_bss->find_one_active($param);
+                                        ?>
+                                        <? if ($tool == "") : ?>
+                                            <div class="col-lg-3 col-md-12 text-right">
+                                            <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                            </div>
+                                        <? else : ?>
+                                            <div class="col-lg-3 col-md-12 text-right">
+                                                <a href="<?= base_url() ?>quiz/balance"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                            </div>
+                                        <? endif; ?>
+
                                     </div>
                                 </div>
                             </div>
@@ -169,7 +182,7 @@
                                                             </tr>
 
                                                             <tr class="align-items-center">
-                                                                <th>Property Plantand Equipment</th>
+                                                                <th>Property Plant and Equipment</th>
                                                                 <td>
                                                                     <div class="fld-text mb-0">
                                                                         <input type="number" class="fixed_assets_total" onkeyup="calc_tool_bss_values('fixed_assets_total','tool_builder_total_assets')" name="tool_builder_fm_bss[tool_builder_property_planted]" value="<?= $tool['tool_builder_property_planted'] ?>" placeholder="0">
@@ -181,7 +194,7 @@
                                                                 <th>(Less Accumulated Depreciation)</th>
                                                                 <td>
                                                                     <div class="fld-text mb-0">
-                                                                        <input type="number" class="fixed_assets_total" onkeyup="calc_tool_bss_values('fixed_assets_total','tool_builder_total_assets')" name="tool_builder_fm_bss[tool_builder_less_accumulated]" value="<?= $tool['tool_builder_less_accumulated'] ?>" placeholder="0">
+                                                                        <input type="number" id="fixed_assets_total2" class="fixed_assets_total1" onkeyup="calc_tool_bss_values('fixed_assets_total','tool_builder_total_assets')" name="tool_builder_fm_bss[tool_builder_less_accumulated]" value="<?= $tool['tool_builder_less_accumulated'] ?>" placeholder="0">
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -452,12 +465,16 @@
 
 
 
-                                                    <div>
+                                                    <div style="display:none;">
                                                         <button id="forms-tool_builder-btn1" type="submit">SUBMIT</button>
                                                     </div>
                                                 </form>
                                             </div>
-
+                                            <div style="overflow:auto;">
+                                                <div class="next-prevBtn" style="float:right;">
+                                                    <button type="button" id="nextBtn1" onclick="nextPrev(1,'your_work?tool=11&cat=21')">Submit</button>
+                                                </div>
+                                            </div>
                                         </div>
 
 
@@ -475,3 +492,5 @@
         </ul>
     </section>
 </div>
+
+
