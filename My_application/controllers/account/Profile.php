@@ -1307,14 +1307,17 @@ class Profile extends MY_Controller_Account
 		$vp['where']['tool_builder_ids_user_id'] = $this->userid;
 		$data['tootl'] = $this->model_tool_builder_ids->find_all_active($vp);
 		$tootl = $data['tootl'];
-		// debug( $tootl[0]['tool_builder_lts_structure_settingup_jv_company']);
-		// die;
-		// html_entity_decode();
-		// $toolurl= l('account/profile/tools_ids?cat=26');
-		// if (empty($tootl)) {
-		// 	header('Location:'.$toolurl);
-		// } else {
+
+		$startup = array();
+		$startup['where']['startup_user_id'] = $this->userid;
+		$data['startupname'] = $this->model_startup->find_all_active($startup);
+
+
+		if (empty($data['startupname'][0]["startup_name"])) {
+			$data['startupname'][0]["startup_name"] = " ";
+		}
 		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(APPPATH . '/third_party/PhpWord/templates/investment_deck_slides.docx');
+		$templateProcessor->setValue('startup_name', $data['startupname'][0]["startup_name"]);
 		foreach ($tootl[0] as $column_name => $value) {
 			$textlines = explode("\n", $value);
 			if (sizeof($textlines) > 1) {
@@ -1323,11 +1326,10 @@ class Profile extends MY_Controller_Account
 					$value = $value . $line . '</w:t><w:br/><w:t>';
 				}
 			}
+			
 			$templateProcessor->setValue($column_name, $value);
+
 		}
-		// foreach ($tootl[0] as $column_name => $value) {
-		// 	$templateProcessor->setValue($column_name, $value);
-		// }
 
 		$filename = 'Investment Deck Slides.docx';
 		$templateProcessor->saveAs($filename);
@@ -1348,7 +1350,6 @@ class Profile extends MY_Controller_Account
 		readfile($filename);
 		unlink($filename); // deletes the temporary file
 		exit;
-	// }
 	}
 
 	public function tools_fm_bss()

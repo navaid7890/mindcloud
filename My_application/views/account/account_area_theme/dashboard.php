@@ -343,7 +343,7 @@
 
 
                                                                 <div class="row align-items-center">
-                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?=  $value['tutorial_name'] ?></a></h4>
+                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
                                                                     <div class="col-md-10">
                                                                         <?
                                                                         $exp_name = array();
@@ -533,7 +533,7 @@
                                                         <div class="vid-content">
 
 
-                                                            <div class="row align-items-center"> 
+                                                            <div class="row align-items-center">
                                                                 <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $paidTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= $paidTut[0]['tutorial_name'] ?></a></h4>
                                                                 <div class="col-md-10">
                                                                     <?
@@ -621,7 +621,7 @@
 
 
                                                             <div class="row align-items-center">
-                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $remainTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?=$remainTut[0]['tutorial_name'] ?></a></h4>
+                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $remainTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= $remainTut[0]['tutorial_name'] ?></a></h4>
                                                                 <div class="col-md-10">
                                                                     <?
                                                                     $exp_name = array();
@@ -769,7 +769,8 @@
                                                 <ul class="consult-left-slideasd">
                                                     <li>
                                                         <div class="consult-left-contentasd">
-                                                            <p> <?= html_entity_decode($con2['cms_page_content']) ?></p>
+                                                            <!-- <p> <?//= html_entity_decode($con2['cms_page_content']) ?></p> -->
+                                                            <p>choose the expertise topic you are interested in.</p>
                                                         </div>
                                                     </li>
                                                     <a href="<?= l('booking') ?>" class="btn-theme" style="margin-top: 60px;padding: 22px;">Start Consulting <span style="top: 194.7px; left: 165.303px;"></span></a>
@@ -815,9 +816,9 @@
                                                 <? if (isset($dashCatV) and array_filled($dashCatV)) : ?>
                                                     <? foreach ($dashCatV as $key => $value) : ?>
                                                         <li>
-                                                            <a href="<?= l('booking') ?>">
-                                                                <p><span><img src="<?= i('') ?>icons/category/1.svg" loading="lazy"></span> <?= $value['category_name'] ?> </p>
-                                                            </a>
+
+                                                            <p><span><img src="<?= i('') ?>icons/category/1.svg" loading="lazy"></span> <?= $value['category_name'] ?> </p>
+
                                                         </li>
                                                     <? endforeach; ?>
                                                 <? endif; ?>

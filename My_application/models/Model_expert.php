@@ -96,7 +96,7 @@ class Model_expert extends MY_Model {
                      'type'   => 'text',
                      'attributes'   => array(),
                      'js_rules'   => 'required',
-                     'rules'   => 'required|trim|htmlentities|numeric'
+                     'rules'   => 'required|trim|htmlentities'
                   ),
 
 

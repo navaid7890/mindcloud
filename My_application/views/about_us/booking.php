@@ -64,11 +64,11 @@ input#forms-booking_us-btn {
                             <li>
                                 <img src="assets/images/datepicker.png" alt="">
                                 <h3>Select Date & Time</h3>
-                                <p>Check the expert’s available time & date to book an appointment that works for you. The hourly rate is 300 AED.</p>
+                                <p>Check the expert’s available time & date to book an appointment that works for you. </p>
                             </li>
                             <li>
                                 <h3>Verify Booking Detail</h3>
-                                <p>Your booking is now received. Please wait to receive an email from your expert to confirm your booking and send you an invoice for the payment of 300 AED for one-hour session. Good luck!</p>
+                                <p>Your booking is now received. Please wait to receive an email from your expert to confirm your booking . Good luck!</p>
                             </li>
                             <!-- <li>
                                 <img src="assets/images/contact.png" alt="">
