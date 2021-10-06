@@ -1601,7 +1601,7 @@ class Contact_us extends MY_Controller
 
                      parent::book($data);
 
-                     parent::confirm_expert($data);
+                     //parent::confirm_expert($data);
                     
                     //$this->model_email->bookingInquiry($data);
                     //debug($this->model_email,1);

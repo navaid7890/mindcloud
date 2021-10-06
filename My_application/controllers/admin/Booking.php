@@ -79,19 +79,19 @@ class Booking extends MY_Controller {
 
     public function add($id=0 , $data = array()) {
 
-        if($_POST['booking']['booking_expert_approval']==1)
-        {
-            $all=$this->model_booking->find_by_pk($_POST['booking']['booking_id']);
-            parent::confirm_by_expert($all);
+        // if($_POST['booking']['booking_expert_approval']==1)
+        // {
+        //     $all=$this->model_booking->find_by_pk($_POST['booking']['booking_id']);
+        //     parent::confirm_by_expert($all);
                     
-        }
+        // }
 
-        if($_POST['booking']['booking_expert_rejection']==1)
-        {
-            $all=$this->model_booking->find_by_pk($_POST['booking']['booking_id']);
-            parent::reject_expert($all);
+        // if($_POST['booking']['booking_expert_rejection']==1)
+        // {
+        //     $all=$this->model_booking->find_by_pk($_POST['booking']['booking_id']);
+        //     parent::reject_expert($all);
          
-        }
+        // }
         
         parent::add($id, $data);
 
