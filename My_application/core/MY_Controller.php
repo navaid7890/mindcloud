@@ -605,11 +605,11 @@ class MY_Controller extends MY_Controller_Admin
            $param['form_input']['Full Name']=$a['expert_name'];
         }
    
-        $mail->setFrom($a['expert_email'], $a['expert_name']);
-        $mail->addReplyTo($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
+        $mail->setFrom($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
+        $mail->addReplyTo($a['expert_email'], $a['expert_name']);
 
-        $mail->addAddress($a['expert_email']);
-        $mail->Subject = ' Request for Expert Booking';
+        $mail->addAddress($data['booking_email']);
+        $mail->Subject = 'Request for Expert Booking';
         
         
         $mail->isHTML(true);
