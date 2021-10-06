@@ -609,7 +609,7 @@ class MY_Controller extends MY_Controller_Admin
         $mail->addReplyTo($a['expert_email'], $a['expert_name']);
 
         $mail->addAddress($a['expert_email']);
-        $mail->Subject = 'Thank you for the Expert Booking';
+        $mail->Subject = ' Request for Expert Booking';
         
         
         $mail->isHTML(true);
