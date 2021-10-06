@@ -33,7 +33,7 @@ $b=$form_input['booking_expert_id'];
                                <br> <br>
 
 
-                     	        See you soon,<br><br>
+                     	      
                             <?php
                             }
                             ?>
@@ -88,7 +88,7 @@ $b=$form_input['booking_expert_id'];
 
 
 
-             	       
+                        See you soon,<br><br>
                         Genny Ghanimeh<br><br>
                         Mind Cloud Tribe Founder.
                         
