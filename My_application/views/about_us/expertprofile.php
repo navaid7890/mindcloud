@@ -39,14 +39,14 @@
                         <div class="row">
                             <div class="col-lg-2 col-md-3 col-12">
                                 <div class="ExpertImg">
-                                    <img src="<?= get_image($profile['ui_profile_image'], $profile['ui_profile_image_path']) ?>" class="img-fluid">
+                                    <img src="https://mindcloud-bucket.s3.amazonaws.com/assets/images/<?=$profile['expert_image']?>" class="img-fluid">
                                 </div>
                             </div>
                             <div class="col-lg-10 col-md-9 col-12">
                                 <div class="ExpertTextArea">
-                                    <h1><?= $profile['user_firstname'] ?> <?= $profile['user_lastname'] ?></h1>
+                                    <h1><?= $profile['expert_name'] ?></h1>
                                     <br/>
-                                    <h3 class="badge btn btn-danger">Student</h3>
+                                    <h3 class="badge btn btn-danger">Expert</h3>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                                     <h3>Company</h3>
                                 </div>
                                 <div class="col-lg-9 col-md-8 col-6">
-                                    <h3><?= $profile['ui_exp_company'] ?></h3>
+                                    <h3><?//= $profile['ui_exp_company'] ?></h3>
                                 </div>
                             </div>
                             <div class="row">
@@ -96,35 +96,35 @@
                                     <h3>Description</h3>
                                 </div>
                                 <div class="col-lg-9 col-md-8 col-6">
-                                    <h3> <?= $profile['ui_exp_desc'] ?></h3>
+                                    <h3> <?= html_entity_decode($profile['expert_desc']) ?></h3>
                                 </div>
                             </div>
                             <h2>Details</h2>
                             <hr />
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 col-6">
-                                    <h3>First Name</h3>
+                                    <h3> Name</h3>
                                 </div>
                                 <div class="col-lg-9 col-md-8 col-6">
-                                    <h3><?= $profile['user_firstname'] ?></h3>
+                                    <h3><?= $profile['expert_name'] ?></h3>
                                 </div>
                             </div>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-lg-3 col-md-4 col-6">
                                     <h3>Last Name</h3>
                                 </div>
                                 <div class="col-lg-9 col-md-8 col-6">
                                     <h3> <?= $profile['user_lastname'] ?></h3>
                                 </div>
-                            </div>
-                            <div class="row">
+                            </div> -->
+                            <!-- <div class="row">
                                 <div class="col-lg-3 col-md-4 col-6">
                                     <h3>User Name</h3>
                                 </div>
                                 <div class="col-lg-9 col-md-8 col-6">
-                                    <h3><?= $profile['user_username'] ?> </h3>
+                                    <h3><?//= $profile['user_username'] ?> </h3>
                                 </div>
-                            </div>
+                            </div> -->
                             <h2>Education</h2>
                             <hr />
                             <div class="row">
