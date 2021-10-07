@@ -1167,7 +1167,13 @@ class About_us extends MY_Controller
 
         //INNER BANNER
 
-        $data['exp'] = $this->model_user->find_all();
+        $data['user'] = $this->model_user->find_all();
+        
+        $expert = array();
+		$expert['where']['expert_status'] = 1;
+		$data['exp'] = $this->model_expert->find_all_active($expert);
+
+        // $data['exp'] = $this->model_expert->find_all();
 
         $this->load_view("member", $data);
     }
@@ -1189,6 +1195,23 @@ class About_us extends MY_Controller
         $data['profile'] = $this->model_user->find_one_active($par);
 
         $this->load_view("userprofile", $data);
+    }
+    public function expertprofile($id = '')
+    {
+        global $config;
+        $data = array();
+
+        //TAB TITLE
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+
+        //INNER BANNER
+
+        $par = array();
+        $par['where']['expert_id'] = $id;
+        $data['profile'] = $this->model_expert->find_one_active($par);
+
+        $this->load_view("expertprofile", $data);
     }
     public function privacy()
     {

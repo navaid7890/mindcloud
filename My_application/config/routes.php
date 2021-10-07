@@ -102,6 +102,7 @@ $route['newsfeed'] = "about_us/newsfeed";
 $route['member'] = "about_us/member";
 $route['booking'] = "about_us/booking";
 $route['user-detail/(:any)'] = "about_us/userprofile/$1";
+$route['expert-detail/(:any)'] = "about_us/expertprofile/$1";
 $route['subscription'] = "about_us/trial";
 
 $route['account-expert'] = "account/profile/expert";
