@@ -41,18 +41,26 @@
     }
 
     .product-img-home {
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        height: 155px;
-        margin: 0;
-        text-align: center;
-        width: 155px;
-        margin-bottom: 5%;
-        border-radius: 50%;
-        margin-top: 10px;
-        margin: 0 auto;
-    }
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 190px;
+    margin: 0;
+    text-align: center;
+    width: 245px;
+    margin-bottom: 5%;
+    /* border-radius: 50%; */
+    margin-top: 10px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+    .product-img-home img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+}
 
     .membersBox a {
         width: 100%;
