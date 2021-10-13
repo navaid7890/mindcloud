@@ -1,12 +1,13 @@
 <style>
 .playArea {
     position: absolute;
-    bottom: 6%;
+    bottom: 54%;
     font-size: 10px;
     right: 5%;
-    border: 1px solid #000;
+    border: 1px solid #208fd3;
     padding: 8px;
     border-radius: 100%;
+    /* top: 0%; */
 }
 .tutorial-list-box {
     position: relative;

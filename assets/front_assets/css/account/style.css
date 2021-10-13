@@ -892,6 +892,7 @@ ul.course-scroll h5 {
     color: #fff;
     background: #1D90D9;
     box-shadow: 0px 12px 24px #1D90D942;
+    border: 1px solid #fff;
 }
 
 .course-list ul li.active>a .percent svg tspan{ fill: #fff !important;}
