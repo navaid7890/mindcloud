@@ -1,12 +1,16 @@
 <style>
+
+
 .playArea {
     position: absolute;
-    bottom: 54%;
+    bottom: 83%;
     font-size: 10px;
-    right: 5%;
+    right:9%;
     border: 1px solid #208fd3;
     padding: 8px;
     border-radius: 100%;
+    /* top: 0%; */
+    /* bottom: 0; */
     /* top: 0%; */
 }
 .tutorial-list-box {
@@ -18,6 +22,7 @@
    <ul class="dashboard-layout">
       <li>
          <div class="front-dashboard open">
+         <a href="javascript:;" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
             <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
             <? $this->load->view("widgets/dashboard-menu-box"); ?>
          </div>

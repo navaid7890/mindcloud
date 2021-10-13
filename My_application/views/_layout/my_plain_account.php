@@ -639,7 +639,7 @@ $my_tools = array(
 
 <!-- BEGIN BODY -->
 
-<body class="overFlowHide customeAccountList business-page" id="top" oncontextmenu="return false">
+<body class="overFlowHide customeAccountList business-page" id="top" oncontextmenu="return true">
 
 
   <div id="overlay">
