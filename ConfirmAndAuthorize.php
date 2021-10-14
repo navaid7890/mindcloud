@@ -28,7 +28,7 @@ if ($_POST['action'] == 'authorize') {
     // Required parameters
     $requestParameters['amazon_billing_agreement_id'] = $_SESSION['amazon_billing_agreement_id'];
     $requestParameters['mws_auth_token']              = null;
-    $requestParameters['authorization_amount']        = '20.00';
+    $requestParameters['authorization_amount']        = '240.00';
     $requestParameters['authorization_reference_id']  = uniqid('A01_REF_');
     
     // Optional parameters

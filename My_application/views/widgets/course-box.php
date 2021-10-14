@@ -19,6 +19,8 @@
         display: none;
     }
 
+
+
     .catLj19 #activeBorder,
     .catLj19 small {
         display: none;
@@ -27,6 +29,18 @@
     strong.locked {
         display: none;
     }
+
+
+   #d a.active {
+    background: #33415C;
+    display: block;
+    color:#fff;
+}
+
+#d a{
+
+    color: #33415C;
+}
 </style>
 
 <div class="course-box hding-3 CboxLJ">
@@ -77,7 +91,8 @@
             </div>
         </div>
         <ul>
-            <li style="text-align: left;"><a href="<?= l('account/profile/learning') ?>" class="active" style="font-size: 15px;color: #122B46;font-weight: 700;padding: 18px 15px;">Intro to Learning Journey </a></li>
+           
+            <li id="d"  style="text-align: left;"><a href="<?= l('account/profile/learning') ?>" class="<?= ($this->uri->segment(3) == 'learning')  ? 'active' : '' ?>"  style="font-size: 15px;font-weight: 700;padding: 18px 15px;">Intro to Learning Journey </a></li>
         </ul>
         <?
         $dt = array(
@@ -595,3 +610,4 @@ $datapaid = $this->model_user->find_all_active($upaid);
 </script>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js'></script>
+

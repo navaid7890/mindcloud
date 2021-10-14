@@ -37,7 +37,7 @@ button#pause-cycle {
                 <div id="section-content">
                 
                     <h2>Recurring Simulation</h2>
-                    <p style="margin-top:40px;">This will make authorizations on the billing agreement every <strong>1</strong> year. We will authorize <strong>£20.00</strong> to simulate the recurring charge.</p>
+                    <p style="margin-top:40px;">This will make authorizations on the billing agreement every <strong>1</strong> year. We will authorize <strong>£240.00</strong> to simulate the recurring charge.</p>
                     <div class="text-center" style="margin-top:10px;">
                         <button id="pause-cycle" class="btn btn-danger">Pause</button>
                     </div>

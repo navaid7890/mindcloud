@@ -216,7 +216,7 @@ foreach ($meta_data AS $meta_name => $meta_val){?>
 <?}?>
 <!-- [METAS TAG END] -->
 <!-- [favicon Start] -->
-<link rel="icon" type="image/png" sizes="16x16" href="<?=$this->layout_data['faviconlogo']?>">
+<link rel="icon" type="image/png" sizes="16x16" href="<?=i('')?>favicon.png">
 
 <!-- [favicon End] -->
 

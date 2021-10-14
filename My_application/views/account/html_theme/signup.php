@@ -32,14 +32,14 @@
                                         <label>Full Name</label>
                                         <input type="text" placeholder="Full Name" name='user[user_firstname]' required>
                                     </div>
-                                    <div class="fld-login">
+                                    <!-- <div class="fld-login">
                                         <label>Select Type</label>
                                         <select name='user[user_type]' id="mySelectboxsituation_found">
                                             <option value="">Select Type</option>
                                             <option value="0">User</option>
                                             <option value="2">Epert</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                     <div class="fld-login">
                                         <label>Email Address</label>
                                         <input type="email" placeholder="someexample@gmail.com" name='user[user_email]' required>

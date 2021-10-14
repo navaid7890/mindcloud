@@ -525,7 +525,7 @@ $my_tools = array(
 
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
-  <link rel="shortcut icon" href="<?= get_image($this->layout_data['logo']['logo_favicon'], $this->layout_data['logo']['logo_image_path']) ?>">
+  <link rel="shortcut icon" href="<?=i('')?>favicon.png">
 
 
 
@@ -639,7 +639,7 @@ $my_tools = array(
 
 <!-- BEGIN BODY -->
 
-<body class="overFlowHide customeAccountList business-page" id="top" oncontextmenu="return true">
+<body class="overFlowHide customeAccountList business-page" id="top" oncontextmenu="return false">
 
 
   <div id="overlay">
@@ -1379,6 +1379,13 @@ jQuery(document).ready(function(){
       return false;
     }
   }
+
+
+// $( "li.first.last a" ).click(function() {
+//   alert( "Handler for .click() called." );
+// });
+
+    
 </script>
 
 

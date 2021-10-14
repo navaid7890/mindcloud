@@ -157,7 +157,7 @@
 <meta content="" name="description"/>
 
 <!-- Favicon -->
-<link rel="shortcut icon" type="image/png" href="<?=get_image($this->layout_data['logo']['logo_favicon'],$this->layout_data['logo']['logo_image_path'])?>">
+<link rel="shortcut icon" type="image/png" href="<?=base_url()?>assets/front_assets/images/favicon.png">
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <?	
