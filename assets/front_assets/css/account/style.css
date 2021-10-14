@@ -886,13 +886,12 @@ ul.course-scroll h5 {
 
 .course-list ul li>a:hover,
 .course-list ul li>a.open,
-.course-list ul li>a.active,
-.course-list ul li.active>a,
+
 .course-list ul li.dropdown-toggle.active>a.open {
     color: #fff;
     background: #1D90D9;
     box-shadow: 0px 12px 24px #1D90D942;
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
 }
 
 .course-list ul li.active>a .percent svg tspan{ fill: #fff !important;}
@@ -3445,6 +3444,9 @@ ul.dashboard-layout>li:nth-child(2) {
     .order-confirm,
     .place-order {
         height: 500px;
+    }
+    .page26 .tool-footer .tutorial-footer-content {
+        padding-top: 83%!important;
     }
     .tool-footer .tutorial-footer-content {
         padding-top: 45%;
