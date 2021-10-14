@@ -78,7 +78,7 @@ class MY_Controller extends MY_Controller_Admin
             $this->login_redirect_check("logged_in", "is_admin");
 
             $title = $config['admin_title'] . " - Admin Panel";
-            $meta_data = array("keywords" => "$title", "description" => "$title", "robots" => "noindex, nofollow");
+            $meta_data = array("keywords" => "$title", "description" => "$title", "robots" => "index, follow");
 
             $this->layout_data['css_files'] = array(
                 "pages/tasks.css",
