@@ -249,7 +249,7 @@ $(window).scroll(function() {
     }
 });
 
-$("ul.course-scroll, ul.dash-scroll, .tutorial-scroll-content, .video-caption, .index-page-wrap, .order-confirm, .place-order ").mCustomScrollbar({
+$(" ul.dash-scroll, .tutorial-scroll-content, .video-caption, .index-page-wrap, .order-confirm, .place-order ").mCustomScrollbar({
     scrollButtons: { enable: true },
     theme: "dark",
 });

@@ -99,7 +99,8 @@ $route['step-1'] = "account/profile/tools";
 
 $route['faq'] = "about_us/faq";
 $route['newsfeed'] = "about_us/newsfeed";
-$route['member'] = "about_us/member";
+$route['expert'] = "about_us/member";
+$route['student'] = "about_us/student";
 $route['booking'] = "about_us/booking";
 $route['user-detail/(:any)'] = "about_us/userprofile/$1";
 $route['expert-detail/(:any)'] = "about_us/expertprofile/$1";

@@ -245,7 +245,7 @@ $(window).scroll(function() {
     }
 });
 
-$("ul.course-scroll, .tutorial-scroll-content, .video-caption, .index-page-wrap, .order-confirm, .place-order ").mCustomScrollbar({
+$(".tutorial-scroll-content, .video-caption, .index-page-wrap, .order-confirm, .place-order ").mCustomScrollbar({
     scrollButtons: { enable: true },
     theme: "dark"
 });

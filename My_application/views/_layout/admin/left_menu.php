@@ -151,11 +151,11 @@ $menu_links = array(
 // ),
 
 
-array("title"=>"Order Management", "icon"=>"basket" ,"action" => array("shop_order") ,
-"additionals"=>array(
-    array("link"=>"shop_order","title"=>"Manage Orders", "icon"=>"bar-chart"),
-),
-),
+// array("title"=>"Order Management", "icon"=>"basket" ,"action" => array("shop_order") ,
+// "additionals"=>array(
+//     array("link"=>"shop_order","title"=>"Manage Orders", "icon"=>"bar-chart"),
+// ),
+// ),
     
 
    // array("title"=>"Stock Management", "icon"=>" fa fa-angle-right" ,"action" => array("category","product") ,

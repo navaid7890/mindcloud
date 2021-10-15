@@ -133,7 +133,7 @@
                                 // debug($value); 
                                 $a = $value['learning_journey_content_id'];
                             ?>
-                                <li class="dropdown-toggle b-child catLj<?= $a ?> subclass">
+                                <li id="<?= $a ?>" class="dropdown-toggle b-child catLj<?= $a ?> subclass">
                                     <a href="javascript:;"><?= $value['learning_journey_content_name'] ?>
                                         <div class="percent" id="played<?= $a ?>">
                                             <p style="display:none;"></p>
@@ -142,10 +142,23 @@
                                         <!-- <small>0/3</small> -->
                                     </a>
                                     <ul class="dropdown-box">
-                                        <li><a href="description?cat=<?= $a ?>"><i class="fas fa-info-circle"></i>Intro<strong class="locked"><i class="fas fa-lock"></i></strong><span><i class="far fa-check"></i></span></a></li>
-                                        <li class="videoScript-<?= $a ?>"><a href="<?= l('account/profile/video') ?>?cat=<?= $a ?>"><i class="fad fa-video"></i> Tutorial Video & Transcript <strong class="locked"><i class="fas fa-lock"></i></strong><span><i class="far fa-check"></i></span></a></li>
-                                        <li class="toolbuilder-<?= $a ?>"><a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>?cat=<?= $a ?>"><i class="fas fa-tools"></i> Tool & Tool Builder <strong class="locked"><i class="fas fa-lock"></i></strong> <span><i class="far fa-check"></i></span></a></li>
-                                        <li class="mywork-<?= $a ?>"><a href="your_work?tool=<?= $dt_index ?>&cat=<?= $a ?>"><i class="fas fa-briefcase"></i> My Work <strong class="locked"><i class="fas fa-lock"></i></strong><span><i class="far fa-check"></i></span></a></li>
+                                        <li>
+                                            <a href="description?cat=<?= $a ?>#<?= $a ?>">
+                                                <i class="fas fa-info-circle"></i>Intro<strong class="locked"><i class="fas fa-lock"></i></strong><span><i class="far fa-check"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="videoScript-<?= $a ?>">
+                                            <a href="<?= l('account/profile/video') ?>?cat=<?= $a ?>#<?= $a ?>"><i class="fad fa-video"></i> Tutorial Video & Transcript <strong class="locked"><i class="fas fa-lock"></i></strong><span><i class="far fa-check"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="toolbuilder-<?= $a ?>">
+                                            <a href="<?= l('account/profile/') ?><?= $dt[$dt_index] ?>?cat=<?= $a ?>#<?= $a ?>"><i class="fas fa-tools"></i> Tool & Tool Builder <strong class="locked"><i class="fas fa-lock"></i></strong> <span><i class="far fa-check"></i></span
+                                            ></a>
+                                        </li>
+                                        <li class="mywork-<?= $a ?>">
+                                            <a href="your_work?tool=<?= $dt_index ?>&cat=<?= $a ?>#<?= $a ?>"><i class="fas fa-briefcase"></i> My Work <strong class="locked"><i class="fas fa-lock"></i></strong><span><i class="far fa-check"></i></span>
+                                            </a>
+                                        </li>
                                         <?php $dt_index = $dt_index + 1; ?>
                                     </ul>
                                 </li>

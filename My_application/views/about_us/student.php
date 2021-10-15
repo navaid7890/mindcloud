@@ -112,33 +112,13 @@
                     </select>
                 </div>
             </div> -->
-            <div class="col-md-12 red pb-0">
-                <div class="row">
-                    <? if (isset($exp) and array_filled($exp)) : ?>
-                        <? foreach ($exp as $key => $value) : ?>
-
-                            <div class="col-lg-3 col-md-4 col-xs-12 membersBox">
-                                <a href="<?= l('expert-detail') . '/' . $value['expert_id'] ?> ">
-                                    <div class="single-item">
-                                        <div class="product-img-home">
-                                            <img src="https://mindcloud-bucket.s3.amazonaws.com/assets/images/<?= $value['expert_image'] ?>" class="img-responsive">
-                                        </div>
-
-                                        <p class="pro-name"><b><?= $value['expert_name'] ?></b></p>
-                                        <p class="pro-info">Expert</p>
-                                    </div>
-                                </a>
-                            </div>
-                        <? endforeach; ?>
-                    <? endif; ?>
-                </div>
-            </div>
-            <div class="col-md-12 green box pt-0">
+ 
+            <div class="col-md-12 green  pt-0">
                 <div class="row">
                     <? if (isset($user) and array_filled($user)) : ?>
                         <? foreach ($user as $key => $value) : ?>
                             <div class="col-lg-3 col-md-4 col-xs-12 membersBox">
-                                <!-- <a href="<?//= l('user-detail') . '/' . $value['user_id'] ?> "> -->
+                                <a href="<?= l('user-detail') . '/' . $value['user_id'] ?> "> 
                                     <div class="single-item">
 
                                         <div class="product-img-home">
@@ -148,7 +128,7 @@
                                         <p class="pro-name"><b><?= $value['user_firstname'] ?></b></p>
                                         <p class="pro-info">User</p>
                                     </div>
-                                <!-- </a> -->
+                                </a>
                             </div>
                         <? endforeach; ?>
                     <? endif; ?>

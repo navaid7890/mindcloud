@@ -36,7 +36,8 @@
                <div class="space"><br><br></div>
                <?= html_entity_decode($banner['inner_banner_content']) ?>
                <div class="space"><br><br></div>
-               <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/HOW_IT_WORKS_COMPLETE.mp4" class="btn-links" data-fancybox><i class="fas fa-play-circle"></i> watch how it works</a>
+               <a href="https://www.youtube.com/watch?v=EguHzvHS8j4?autoplay=1&showinfo=0&controls=0"  class="btn-links" data-fancybox><i class="fas fa-play-circle"></i> watch how it works</a>
+          
             </div>
          </div>
          <div class="col-lg-4 col-md-12">

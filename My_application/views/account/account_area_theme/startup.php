@@ -3,6 +3,12 @@
     .tutorial-mid p:last-child a {
         min-height: 66px;
     }
+
+
+    ul.dashboard-layout>li:nth-child(2).open {
+    width: 82%;
+    margin-left: auto;
+}
 </style>
 <section class="dashboard">
 
@@ -14,9 +20,7 @@
             </div>
         </li>
 
-        <li class="open">
-            <? $this->load->view("widgets/course-box"); ?>
-        </li>
+       
 
         <li class="open">
             <div class="tutorial-box">

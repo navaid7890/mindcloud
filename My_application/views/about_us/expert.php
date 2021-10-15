@@ -110,7 +110,7 @@
                   </div>
                   <div class="col-lg-6 col-md-12 bannerSeactionArea">
                      <?= html_entity_decode($cont2['cms_page_content']) ?>
-                     <a href="https://mindcloud-bucket.s3.amazonaws.com/assets/HOW_IT_WORKS_COMPLETE.mp4" class="btn-links btnExpertWatch" data-fancybox><i class="fas fa-play-circle"></i> watch how it works</a>
+                     <a href="https://www.youtube.com/watch?v=EguHzvHS8j4?autoplay=1&showinfo=0&controls=0" class="btn-links btnExpertWatch" data-fancybox><i class="fas fa-play-circle"></i> watch how it works</a>
                   </div>
 
                </div>

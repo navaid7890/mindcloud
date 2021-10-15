@@ -11,16 +11,16 @@ class Model_email extends MY_Model {
      */
 
     private $to;
-    private $from = 'madiha@alphacandy.com';
+    private $from = 'info@mindcloudtribe.com';
     private $subject;
     private $msg;
 
 
-    private $billingEmail = 'madiha@alphacandy.com';//'billing@chemco.com';
-    private $customerSupportEmail = 'madiha@alphacandy.com';//'cs@chemco.com';
-    private $salesEmail = 'madiha@alphacandy.com';//'sales@chemco.com';
-    private $technicalEmail = 'madiha@alphacandy.com';//'technical@chemco.com';
-    private $developerEmail = 'madiha@alphacandy.com';//'devemail0909@gmail.com';
+    private $billingEmail = 'info@mindcloudtribe.com';//'billing@chemco.com';
+    private $customerSupportEmail = 'info@mindcloudtribe.com';//'cs@chemco.com';
+    private $salesEmail = 'info@mindcloudtribe.com';//'sales@chemco.com';
+    private $technicalEmail = 'info@mindcloudtribe.com';//'technical@chemco.com';
+    private $developerEmail = 'info@mindcloudtribe.com';//'devemail0909@gmail.com';
 
     private $_template = 'default_template';//'query';
 

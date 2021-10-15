@@ -1178,6 +1178,7 @@ ul.dashboard-layout>li:nth-child(3) {
 
 .course-scroll {
     height: 75%;
+    overflow: auto;
 }
 .course-box-content {
     height: 100%;
@@ -1589,7 +1590,7 @@ ul.work-list>li {
     margin-bottom: 55px;
 }
 
-ul.work-list>li:nth-child(3n) {
+ul.work-list>li:nth-child(2n) {
     margin-right: 0;
 }
 
@@ -3527,6 +3528,7 @@ ul.dashboard-layout>li:nth-child(2) {
     }
     .course-scroll {
         height: 75%;
+        overflow: auto;
     }
     .tutorial-scroll-content {
         height: 100%;
@@ -4279,3 +4281,6 @@ body.page26 li.dropdown-toggle.catLj26 > a:after{ transform: rotate(90deg);}
 }
 
 .topCircle .percent2{ width: 70px; height: 70px; margin-right: 0; margin-left: auto;}
+.page20 .course-scroll  .mCSB_container {
+    top: -821px;
+}
