@@ -67,11 +67,13 @@ color: #5C677D;
 
                      <div class="t-bannerBox text-center">
                         <div class="bannerHead">
-                            <h2>Annually</h2>
-                            <div class="space"><br></div>
-                            <p>One week free trial,<br> then £20/month</p>
-                            <div class="space"><br><br></div>
-                            <div class="text-center" style="margin-top:40px;" id="AmazonPayButton"></div>
+                            <h2>Annually</h2><br>
+                          
+                            <p>One week free trial,<br>
+then £20/month.<br>
+Charged annually<br> $240/year</p><br>
+                          
+                            <div class="text-center"  id="AmazonPayButton"></div>
                             <!-- <a href="#" id="AmazonPayButton" data-fancybox data-src="#trial-popup" class="btn-hover">Subscribe Now <span></span></a> -->
                         </div>
                         
