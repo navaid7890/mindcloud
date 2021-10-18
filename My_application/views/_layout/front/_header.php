@@ -37,7 +37,7 @@ $logo=$this->model_logo->find_all_active();
 							<li class="dropdown-nav"><a href="#">Community</a>
 								<ul class="dropdownWrap dropdown ">
 									<li><a href="<?= l('expert') ?>">Expert</a></li>
-									<li><a href="<?= l('student') ?>">Student</a></li>
+									<li><a href="<?= l('student') ?>">Members</a></li>
 									<li><a href="<?= l('newsfeed') ?>">News feed</a></li>
 									<!-- <li><a href="<?//= l('booking') ?>">Booking</a></li><?= l('') ?> -->
 								</ul>

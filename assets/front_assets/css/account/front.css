@@ -2536,7 +2536,7 @@
         }
     }
     
-    @media (max-width: 1440px) {
+    /* @media (max-width: 1440px) { */
         .front-dashboard .dashboard-child-links ul>li>a {
     padding-left: 0;
     left: 0;
@@ -2586,7 +2586,7 @@
         .home-banner {
             background-position: bottom;
         }
-    }
+    /* } */
     
     @media (max-width: 824px) {
 

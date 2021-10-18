@@ -337,7 +337,7 @@
 							</li>
 							<li class="dropdown-nav"><a href="<?= l('member') ?>">Community</a>
 								<ul class="dropdownWrap dropdown ">
-									<li><a href="<?= l('member') ?>">Members</a></li>
+									<li><a href="<?= l('student') ?>">Members</a></li>
 									<li><a href="<?= l('newsfeed') ?>">News feed</a></li>
 
 									<!-- <li><a href="<? //= l('booking') 
@@ -360,8 +360,8 @@
 
 
 							<li id="logoutM"><a href="<?= l('signout') ?>"> <i class="far fa-sign-out-alt"></i> Logout</a></li>
-							<li><a href="#" data-fancybox data-src="#video-intro"><i class="fal fa-bell"></i></a></li>
-							<li><a href="#" data-fancybox data-src="#video-intro"><i class="fal fa-bell"></i></a></li>
+							<!-- <li><a href="#" data-fancybox data-src="#video-intro"><i class="fal fa-bell"></i></a></li>
+							<li><a href="#" data-fancybox data-src="#video-intro"><i class="fal fa-bell"></i></a></li> -->
 						</ul>
 					</div>
 				</div>
@@ -375,8 +375,8 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="#"><i class="fal fa-envelope-open-text"></i></a></li>
-						<li><a href="#" data-fancybox data-src="#video-intro"><i class="fal fa-bell"></i></a></li>
+						<!-- <li><a href="#"><i class="fal fa-envelope-open-text"></i></a></li>
+						<li><a href="#" data-fancybox data-src="#video-intro"><i class="fal fa-bell"></i></a></li> -->
 					</ul>
 				</div>
 			</div>
