@@ -43,6 +43,14 @@ $menu_links = array(
     //     ),
     // ),
 
+
+    array("title"=>"Promo Code Management", "icon"=>" feather icon-image" ,"action" => array("coupon") ,
+        "additionals"=>array(
+             array("link"=>"coupon","title"=>"Manage Promo Code", "icon"=>" fa fa-angle-right"),
+        ),
+    ),
+
+
     array("title"=>"Testimonials Management", "icon"=>" feather icon-image" ,"action" => array("testimonials") ,
         "additionals"=>array(
              array("link"=>"testimonials","title"=>"Manage Testimonials", "icon"=>" fa fa-angle-right"),

@@ -63,6 +63,29 @@ class Cart extends MY_Controller {
 		return $coupon_discount;
 	}
 
+	// public function get_total_amounts()
+    // {   
+        
+    //     //$data = ($this->cart->total() - $this->coupon_discount) + $this->shipping + $this->bundle_price;
+    //     $data = ($this->cart->total() - $this->coupon_discount) + $this->shipping;
+    //     return $data;
+    // }
+    
+    public function get_coupon_discount(){
+    $data = 0;
+    if (isset($_GET['coupon'])) {
+        $dt=array();
+		$dt['where']['coupon_code']=$_GET['coupon'];
+		$dt['fields']="coupon_id,coupon_code,coupon_discount";
+		$s= $this->model_coupon->find_one_active();
+
+        $dis = $s['coupon_discount'];
+        $data = 240*$dis/100; 
+    }
+	//echo $data;
+    return $data;
+    }
+
 	private function get_shipping_charges()
 	{
 		$charges = SHIPPING_CHARGES;

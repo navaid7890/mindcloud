@@ -8,8 +8,8 @@
         'access_key'    => 'AKIAI5D4Z5GAWA3HD43A', // MWS Access Key
         'secret_key'    => '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', // MWS Secret Key
         'client_id'     => 'amzn1.application-oa2-client.12aacd6441274cf0a658552a4afc523a', // Login With Amazon Client ID
-        'region'        => 'us',  // us, de, uk, jp
-        'currency_code' => 'USD', // USD, EUR, GBP, JPY
+        'region'        => 'uk',  // us, de, uk, jp
+        'currency_code' => 'GBP', // USD, EUR, GBP, JPY
         'sandbox'       => true); // Use sandbox test mode
 
 function getWidgetsJsURL($config)

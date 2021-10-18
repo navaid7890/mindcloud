@@ -192,12 +192,12 @@ include 'config.php';
 
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Enter PromoCode :</label>
-                            <input type="text" class="form-control" id="" name="">
+                            <input type="text" class="form-control" id="udt">
                         </div>
                     </div>
                     <div class="modal-footer">
                         <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
-                        <button type="submit" class="btn btn-primary" id="">Submit</button>
+                        <button type="button" class="btn btn-primary" id="stdt">Submit</button>
                     </div>
                 </form>
             </div>
@@ -242,3 +242,31 @@ include 'config.php';
     };
 </script>
 <script async="async" type='text/javascript' src="<?php echo getWidgetsJsURL($amazonpay_config); ?>"></script>
+
+
+<script>
+
+$("#stdt").click(function(e) {
+    e.preventDefault();
+    var a= $('#udt').val();
+    //alert(a);
+    $.ajax({
+        type: "GET",
+        url: "<?=l('cart/get_coupon_discount')?>?coupon="+a,
+        data: { 
+            id: $(this).val(), // < note use of 'this' here
+            access_token: $("#access_token").val() 
+        },
+        success: function(result) {
+            alert(result);
+        },
+        error: function(result) {
+            alert('error');
+        }
+    });
+});
+
+
+
+
+</script>
