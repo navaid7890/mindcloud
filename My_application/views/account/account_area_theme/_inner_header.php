@@ -337,6 +337,7 @@
 							</li>
 							<li class="dropdown-nav"><a href="<?= l('member') ?>">Community</a>
 								<ul class="dropdownWrap dropdown ">
+								<li><a href="<?= l('expert') ?>">Expert</a></li>
 									<li><a href="<?= l('student') ?>">Members</a></li>
 									<li><a href="<?= l('newsfeed') ?>">News feed</a></li>
 

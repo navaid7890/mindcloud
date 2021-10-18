@@ -66,11 +66,12 @@
 <div class="index-page">
   <section class="dashboard">
     <ul class="dashboard-layout">
-      <li>
-        <div class="front-dashboard open">
-          <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
-          <? $this->load->view("widgets/dashboard-menu-box"); ?>
-        </div>
+    <li>
+         <div class="front-dashboard open">
+         <a href="javascript:;" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+            <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
+            <? $this->load->view("widgets/dashboard-menu-box"); ?>
+         </div>
       </li>
 
       <li class="open">
