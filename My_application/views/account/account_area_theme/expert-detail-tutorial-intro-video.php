@@ -30,6 +30,7 @@
         <ul class="dashboard-layout">
             <li>
                 <div class="front-dashboard open">
+                    <a href="javascript:;" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
                     <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                     <? $this->load->view("widgets/dashboard-menu-box"); ?>
                 </div>
@@ -90,7 +91,8 @@
                                 </div>
                             </div>
 
-                            <?//= debug($completTutProgress); ?>
+                            <? //= debug($completTutProgress); 
+                            ?>
 
                             <div class="tutorial-mid hding-4 hding-3 para">
                                 <div class="row">
@@ -109,25 +111,25 @@
                                         </div>
 
                                     </div>
-                                    
+
                                 </div>
                                 <div class="tutorial-footer vid-tran para">
-                                <div class="tutorial-footer-content">
-                                    <!-- <p>Complete all tutorial to receive Certificate.</p> -->
-                                    <div classs="space"><br><br></div>
-                                    <form id="forms-expert-tutorial-video">
-                                        <input type="hidden" name="mytutorial[mytutorial_user_id]" value="<?= ($this->userid) ?>">
-                                        <input type="hidden" name="mytutorial[mytutorial_tutorial_id]" value="<?= $_GET['courseid'] ?>">
-                                        <input type="hidden" name="mytutorial[mytutorial_intro_percent]" value="1">
-                                        <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-expert-tutorial-video-btn">
-                                    </form>
+                                    <div class="tutorial-footer-content">
+                                        <!-- <p>Complete all tutorial to receive Certificate.</p> -->
+                                        <div classs="space"><br><br></div>
+                                        <form id="forms-expert-tutorial-video">
+                                            <input type="hidden" name="mytutorial[mytutorial_user_id]" value="<?= ($this->userid) ?>">
+                                            <input type="hidden" name="mytutorial[mytutorial_tutorial_id]" value="<?= $_GET['courseid'] ?>">
+                                            <input type="hidden" name="mytutorial[mytutorial_intro_percent]" value="1">
+                                            <input type="submit" class="btn-round btn-hover" value="Mark As Complete" id="forms-expert-tutorial-video-btn">
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
                                 <div class="space"><br><br></div>
                                 <!-- <p>All rights belong to their respective owners. The Business Model Canvas was created and owned by <a href="https://www.strategyzer.com/">Strategyzer</a></p> -->
                             </div>
 
-                            
+
                         </div>
                     </div>
                 </div>

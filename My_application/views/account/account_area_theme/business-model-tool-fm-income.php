@@ -4,6 +4,7 @@
         <ul class="dashboard-layout">
             <li>
                 <div class="front-dashboard open">
+                    <a href="javascript:;" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
                     <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                     <? $this->load->view("widgets/dashboard-menu-box"); ?>
                 </div>
@@ -54,7 +55,7 @@
                                         ?>
                                         <? if ($tool == "") : ?>
                                             <div class="col-lg-3 col-md-12 text-right">
-                                            <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                                <a href="#" onClick='alert("Please fill-out the fields at Toolbuilder in order to download the document")'><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
                                             </div>
                                         <? else : ?>
                                             <div class="col-lg-3 col-md-12 text-right">

@@ -58,7 +58,8 @@
     <ul class="dashboard-layout">
       <li>
         <div class="front-dashboard open">
-          <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+          <a href="javascript:;" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+          <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
           <? $this->load->view("widgets/dashboard-menu-box"); ?>
         </div>
       </li>
@@ -169,7 +170,7 @@
                 </div> -->
                   <input type="hidden" name="user[user_id]" value="<?= $this->userid ?>">
                   <input type="hidden" name="user[user_paid]" value="0">
-                  <input type="hidden" name="user[user_email]" value=<?=$datapaid[0]['user_email'] ?>>
+                  <input type="hidden" name="user[user_email]" value=<?= $datapaid[0]['user_email'] ?>>
                   <div class="col-md-4">
                     <button id='cancle-subscription' class="btn btn-danger" type="submit">Cancel Subscription</button>
                   </div>
