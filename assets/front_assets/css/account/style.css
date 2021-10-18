@@ -3566,7 +3566,10 @@ ul.dashboard-layout>li:nth-child(2) {
         font-size: 16px;
     }
 }
-
+.abt-tut-page .dashboard-links ul li a{font-size:0;}
+    .dashboard-links ul li a {
+        font-size: 0;
+    }
 @media (max-width: 824px) {
     ul.startUpname {
         text-align: center;

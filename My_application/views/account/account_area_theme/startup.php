@@ -6,21 +6,22 @@
 
 
     ul.dashboard-layout>li:nth-child(2).open {
-    width: 82%;
-    margin-left: auto;
-}
+        width: 82%;
+        margin-left: auto;
+    }
 </style>
 <section class="dashboard">
 
     <ul class="dashboard-layout">
         <li>
             <div class="front-dashboard open">
-                <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+                <a href="javascript:;" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+                <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                 <? $this->load->view("widgets/dashboard-menu-box"); ?>
             </div>
         </li>
 
-       
+
 
         <li class="open">
             <div class="tutorial-box">

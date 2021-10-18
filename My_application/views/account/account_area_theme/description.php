@@ -6,15 +6,17 @@
 <div class="business-page">
    <section class="dashboard">
       <ul class="dashboard-layout">
+
          <li>
             <div class="front-dashboard open">
+               <a href="javascript:;" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
                <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                <? $this->load->view("widgets/dashboard-menu-box"); ?>
             </div>
          </li>
          <li class="open">
             <div class="descPage">
-            <? $this->load->view("widgets/course-box"); ?>
+               <? $this->load->view("widgets/course-box"); ?>
             </div>
          </li>
          <li class="open">
@@ -26,7 +28,7 @@
                            <div class="col-md-7">
                               <ul class="bredcum-links">
                                  <li><a href="#">Learning Journey</a></li>
-                                 <li><a href="#"><?=$learn_content[0]['learning_journey_content_name']?></a></li>
+                                 <li><a href="#"><?= $learn_content[0]['learning_journey_content_name'] ?></a></li>
                                  <li><a href="#">Introduction</a></li>
                               </ul>
                            </div>
@@ -185,12 +187,14 @@
       //    var abc = "catLj" + xyz;
       //    $("." + abc).addClass('active');
       //    $("." + abc + " ul").attr("style", "display:block");
-      //    <? //if ($tool['tool_builder_percent'] == 1) : ?>
+      //    <? //if ($tool['tool_builder_percent'] == 1) : 
+            ?>
       //       if ("toolbuilder-11") {
       //          var tool = "toolbuilder-11";
       //          $("." + tool).addClass('active');
       //       }
-      //    <?// endif; ?>
+      //    <? // endif; 
+            ?>
       //    
       // }
 

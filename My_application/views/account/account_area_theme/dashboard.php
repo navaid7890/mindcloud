@@ -76,7 +76,8 @@
         <ul class="dashboard-layout">
             <li>
                 <div class="front-dashboard open">
-                    <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+                    <a href="javascript:;" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+                    <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                     <? $this->load->view("widgets/dashboard-menu-box"); ?>
                 </div>
             </li>
@@ -769,7 +770,8 @@
                                                 <ul class="consult-left-slideasd">
                                                     <li>
                                                         <div class="consult-left-contentasd">
-                                                            <!-- <p> <?//= html_entity_decode($con2['cms_page_content']) ?></p> -->
+                                                            <!-- <p> <? //= html_entity_decode($con2['cms_page_content']) 
+                                                                        ?></p> -->
                                                             <p>choose the expertise topic you are interested in.</p>
                                                         </div>
                                                     </li>

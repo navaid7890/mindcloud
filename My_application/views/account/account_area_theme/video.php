@@ -8,6 +8,7 @@
       font-size: 13px;
       font-weight: 500;
    }
+
    input#forms-mark-complete-btn {
       padding: 13px 26px;
       background: #FDBE41;
@@ -23,13 +24,13 @@
       display: block;
       background-color: #e28f26;
    }
-
 </style>
 <div class="business-page">
    <section class="dashboard">
       <ul class="dashboard-layout">
          <li>
             <div class="front-dashboard open">
+               <a href="javascript:;" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
                <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                <? $this->load->view("widgets/dashboard-menu-box"); ?>
             </div>
@@ -49,7 +50,7 @@
                            <div class="col-md-7">
                               <ul class="bredcum-links">
                                  <li><a href="#">Learning Journey</a></li>
-                                 <li><a href="#"><?=$learn_content[0]['learning_journey_content_name']?></a></li>
+                                 <li><a href="#"><?= $learn_content[0]['learning_journey_content_name'] ?></a></li>
                                  <li><a href="#">Video and Transcript</a></li>
 
                               </ul>
@@ -77,7 +78,7 @@
                                     <div class="space"><br></div>
 
                                     <div id="video_text">
-                                       
+
                                     </div>
 
                                     <?php
@@ -112,8 +113,9 @@
                            </div>
                            <div class="col-md-7">
                               <div class="video-box">
-                              <!-- poster="<?//= g('db.admin.bucket') . 'images/learning_journey_content/' . $learn_content['0']['learning_journey_content_image'] ?>" -->
-                                 <video controlsList="nodownload" width="100%" ontimeupdate="myFunction(this)" controls="true" id="video" height="100%" >
+                                 <!-- poster="<? //= g('db.admin.bucket') . 'images/learning_journey_content/' . $learn_content['0']['learning_journey_content_image'] 
+                                                ?>" -->
+                                 <video controlsList="nodownload" width="100%" ontimeupdate="myFunction(this)" controls="true" id="video" height="100%">
                                     <source src="<?= g('db.admin.bucket') . 'videos/' . $learn_content[0]['learning_journey_video'] ?>#t=2" type="video/mp4">
                                     <source src="<?= g('db.admin.bucket') . 'videos/' . $learn_content[0]['learning_journey_video'] ?>" type="video/ogg">
                                     Your browser does not support the video tag.
@@ -132,7 +134,7 @@
                            </div>
                         </div>
                         <div class="space"><br><br></div>
-                        <p><?=html_entity_decode($learn_content[0]['learning_journey_content_legal_terms'])?></p>
+                        <p><?= html_entity_decode($learn_content[0]['learning_journey_content_legal_terms']) ?></p>
                      </div>
                      <? //= debug($learn_content) 
                      ?>
