@@ -200,7 +200,7 @@
                                         <div class="progress-footer">
                                             <h6>My Certificate</h6>
                                             <div id="certificateBtn" style="display: none;">
-                                                <a href="">Download Learing Journey Certificate</a>
+                                                <a href="javascript:;" data-fancybox data-src="#LearingCertificate" class="">Download Certificate <span></span></a>
                                             </div>
                                             <div id="certificateNotComplete" style="display: block;">
                                                 <p>Complete your Learning<br> Journey to receive Certificate</p>
@@ -210,7 +210,72 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- <certificateArea> -->
+                        <div class="popup-main" style="display:none;" id="LearingCertificate">
+                            <div class="popup-head text-center">
+                                <h5>Congratulations!</h5>
+                                <div class="space"><br></div>
+                                <p>We are very happy that you have successfully completed your Tutorial. Please receive this Certificate as acknowledgment for your effort. Wishing you a lot of success from Mind Cloud Tribe family!</p>
+                            </div>
+                            <div class="space"><br><br></div>
+                            <div class="popup-content text-center">
+                                <div class="certificate-modal">
+                                    <div>
+                                        <h2>certificate of completion</h2>
+                                        <div class="space"><br><br></div>
+                                        <h3><?= $this->session->userdata['logged_in_front']['first_name'] ?></h3>
+                                        <div class="space"><br></div>
+                                        <p>has successfully completed on the <?= date("jS \of F Y") ?> the tutorial</p>
+                                        <div class="space"><br></div>
+                                        <h3 style="text-transform: uppercase;">"Business Model Canvas"</h3>
+                                        <div class="space"><br></div>
+                                        <h6>by Expert <span> Genny Ghanimeh</span></h6>
+                                        <div class="space"><br><br></div>
+                                        <div class="space"><br><br></div>
 
+                                        <div class="row align-items-center">
+                                            <div class="col-md-4">
+                                                <span><img src="<?= base_url() ?>assets/front_assets/images/logo.png" alt=""></span>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <span><img src="<?= base_url() ?>assets/front_assets/images/certificate.png" alt=""></span>
+                                            </div>
+
+                                            <div class="col-md-4 text-left">
+                                                <img src="<?= base_url() ?>assets/front_assets/images/signature.jpg" alt="" style="text-align: left; mix-blend-mode: darken;">
+                                                <h6>genny ghanimeh</h6>
+                                                <p>founder mind cloud tribe</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="space"><br></div>
+                            <div class="popup-footer">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <ul class="social-links">
+                                            <li>
+                                                <p> Share on:</p>
+                                            </li>
+                                            <li><a href="<?= g('db.admin.linkedin_id') ?>" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a href="<?= g('db.admin.twitter_id') ?>" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="<?= g('db.admin.facebook_id') ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="<?= g('db.admin.instagram_id') ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="popup-col">
+
+                                            <a href="<?= base_url() ?>account/profile/learning_certificate" target="_blank"><img src="<?= base_url() ?>/assets/front_assets/images/dashboard/home/icons/dl.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </certificateArea> -->
 
                         <div class="space"><br><br></div>
                         <div class="index-graph-box">
@@ -900,18 +965,20 @@ $datapaid = $this->model_user->find_all_active($upaid);
         $("#Invest_Deck .progres-percentage span").text(localStorage.getItem("Investment_Desk") + "%");
 
 
+        <? if ($datapaid[0]['user_paid'] == 1) : ?>
 
-        if (localStorage.getItem("learingPercent") < "100") {
-            $("#certificateBtn").css("display", "block");
-            $("#certificateNotComplete").css("display", "none");
-        } else {
+            if (localStorage.getItem("learingPercent") <= "100") {
+                $("#certificateBtn").css("display", "block");
+                $("#certificateNotComplete").css("display", "none");
+            } else {
 
-            $("#certificateBtn").css("display", "none");
-            $("#certificateNotComplete").css("display", "block");
-        }
+                $("#certificateBtn").css("display", "none");
+                $("#certificateNotComplete").css("display", "block");
+            }
 
-        $(".allpercent").text(localStorage.getItem("learingPercent"));
+            $(".allpercent").text(localStorage.getItem("learingPercent"));
 
+        <? endif; ?>
 
         var ExpAllsum = 0;
         // var ExptotalPerc = 0;
