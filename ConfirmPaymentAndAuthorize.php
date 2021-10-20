@@ -2,6 +2,8 @@
     session_start();
 
 include 'config.php';
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,9 +37,9 @@ button#pause-cycle {
 
             <div class="jumbotron jumbotroncolor" style="padding-top:25px;" id="api-content">
                 <div id="section-content">
-                
+           
                     <h2>Recurring Simulation</h2>
-                    <p style="margin-top:40px;">This will make authorizations on the billing agreement every <strong>1</strong> year. We will authorize <strong>£240.00</strong> to simulate the recurring charge.</p>
+                    <p style="margin-top:40px;">This will make authorizations on the billing agreement every <strong>1</strong> year. We will authorize <strong>£ <span id="submittername"></span></strong> to simulate the recurring charge.</p>
                     <div class="text-center" style="margin-top:10px;">
                         <button id="pause-cycle" class="btn btn-danger">Pause</button>
                     </div>
@@ -174,6 +176,11 @@ button#pause-cycle {
 
         <script type='text/javascript'>
         $(document).ready(function() {
+ 
+      var ab=240-localStorage.getItem('user_name');
+      $("#submittername").text(ab);
+
+
             $('.start-over').on('click', function() {
                 amazon.Login.logout();
                 document.cookie = "amazon_Login_accessToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
@@ -187,10 +194,10 @@ button#pause-cycle {
     </body>
 </html>
 <script>
-$( document ).ready(function() {
+$(document).ready(function() {
     setTimeout(function(){
-              window.location.href = 'thankyou';
-          },11000);
+              window.location = 'thankyou';
+          },9000);
 });
 
 </script>

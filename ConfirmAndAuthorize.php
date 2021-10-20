@@ -4,6 +4,13 @@ session_start();
 
 include 'amazon-pay.phar';
 include 'config.php';
+     
+$abs=240-$_COOKIE["u"];
+
+//echo $abs;
+
+
+
 
 // Instantiate the client object with the configuration
 $client = new AmazonPay\Client($amazonpay_config);
@@ -28,7 +35,7 @@ if ($_POST['action'] == 'authorize') {
     // Required parameters
     $requestParameters['amazon_billing_agreement_id'] = $_SESSION['amazon_billing_agreement_id'];
     $requestParameters['mws_auth_token']              = null;
-    $requestParameters['authorization_amount']        = '240.00';
+    $requestParameters['authorization_amount']        = $abs;
     $requestParameters['authorization_reference_id']  = uniqid('A01_REF_');
     
     // Optional parameters
@@ -50,7 +57,7 @@ if ($_POST['action'] == 'authorize') {
     // Display the Billing Agreement Details Result with the below parameters
     $requestParameters = array();
     $requestParameters['amazon_billing_agreement_id'] = $_SESSION['amazon_billing_agreement_id'];
-    $requestParameters['address_consent_token']       = $_SESSION['access_token'];
+    $requestParameters['address_consent_token'] = $_SESSION['access_token'];
     
     $response = $client->getBillingAgreementDetails($requestParameters);
     $responsearray['details'] = json_decode($response->toJson());

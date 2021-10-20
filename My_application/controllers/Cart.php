@@ -81,8 +81,19 @@ class Cart extends MY_Controller {
 
         $dis = $s['coupon_discount'];
         $data = 240*$dis/100; 
+        
+		// $per=array();
+		// $per['where']['user_id']=$this->userid;
+		// $ut= $this->model_user->find_one_active($per);
+
+		// $ut['user_discount']=$data;
+        // $test=$this->model_user->update_by_pk($ut['user_id'], $ut);
+
+       
+		// debug($ut,1);
+
     }
-	//echo $data;
+	echo $data;
     return $data;
     }
 

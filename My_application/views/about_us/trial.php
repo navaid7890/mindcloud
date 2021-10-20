@@ -1,3 +1,4 @@
+
 <style>
     .trial-page .t-profile h5,
     .trial-page .t-profile h5>span {
@@ -57,9 +58,13 @@
         border: 1px solid rgba(0, 0, 0, .15);
     }
 </style>
+<script source="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 <?php
+
 session_start();
 include 'config.php';
+
+$_COOKIE['user_name'];
 //include 'db/db.php';
 
 //     $amazonpay_config = array(
@@ -246,24 +251,41 @@ include 'config.php';
 
 <script>
 
+$( document ).ready(function() {
+    localStorage.setItem('user_name', '');
+});
+
 $("#stdt").click(function(e) {
     e.preventDefault();
     var a= $('#udt').val();
+
+    if ($('#udt').val() == ''){
+        Toastr.error('Enter Promo Code', 'Error');
+
+    }
+
+    else{
     //alert(a);
     $.ajax({
         type: "GET",
         url: "<?=l('cart/get_coupon_discount')?>?coupon="+a,
-        data: { 
-            id: $(this).val(), // < note use of 'this' here
-            access_token: $("#access_token").val() 
-        },
+        // data: { 
+        //     id: $(this).val(), // < note use of 'this' here
+        //     access_token: $("#access_token").val() 
+        // },
         success: function(result) {
-            alert(result);
+           // setcookie("user_name", result, 3600000);
+           document.cookie='u='+result; 
+            localStorage.setItem('user_name', result);
+            Toastr.success('Promo Code Accepted', 'Success');
+            $('#promoModal').modal('hide'); 
         },
         error: function(result) {
             alert('error');
         }
-    });
+    })
+ }
+
 });
 
 
