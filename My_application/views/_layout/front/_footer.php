@@ -85,7 +85,7 @@ $logo=$this->model_logo->find_all_active();
 							<li><a href="<?= g('db.admin.facebook_id') ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 							<li><a href="<?= g('db.admin.instagram_id') ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
 							<li><a href="<?= g('db.admin.linkedin_id') ?>" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-							<li><a href="<?= g('db.admin.youtube_id') ?>" target="_blank"><i class="fab fa-youtube"></i></a></li>
+							<li><a href="<?= g('db.admin.twitter_id') ?>" target="_blank"><i class="fab fa-twitter"></i></a></li>
 							</ul>
 
 							<ul class="social-links">

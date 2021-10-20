@@ -160,7 +160,14 @@ $('.colasebar li .faqBar').click(function() {
     $(this).parent('li').find('.expandable').slideDown();
     $(this).parent('li').siblings().find('.expandable').slideUp();
 });
-
+$('[data-fancybox]').fancybox({
+    buttons : [ 
+      'close'
+    ],
+    thumbs : {
+      autoStart : false
+    }
+  });
 
 $('.certificate-slide').slick({
     infinite: true,

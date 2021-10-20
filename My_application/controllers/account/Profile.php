@@ -1627,6 +1627,61 @@ class Profile extends MY_Controller_Account
 			$this->dompdf->stream("{$filename}.pdf");
 		}
 	}
+	public function learning_certificate($tutorialid = '', $view = 0)
+	{
+		$view = 1;
+
+		$this->layout_data['template_config']['show_toolbar'] = false;
+
+		$logodata = $this->model_logo->find_by_pk(1);
+		$logo = Links::img($logodata['logo_image_path'], $logodata['logo_image']);
+
+		$pu = array();
+		$pu['fields'] = "user_firstname,user_lastname";
+		$user_data = $this->model_user->find_by_pk($this->userid, false, $pu);
+		$data['course_title'] = "Business Model Canvas";
+		$data['expert_name'] = "Genny Ghanimeh";
+		// $data['course_tracking_number'] = $course['tutorial_identity'];
+		$data['username'] = $user_data['user_firstname'] . ' ' . $user_data['user_lastname'];
+		$data['ce_provider'] = '110221021';
+
+		$data['logo'] = g('dirname') . 'assets/front_assets/images/logo.png';    //for PDF
+		$data['certificate'] = g('dirname') . 'assets/front_assets/images/certificate.png';    //for PDF
+		$data['signature'] = g('dirname') . 'assets/front_assets/images/signature.jpg';    //for PDF
+
+		$filename = "Certificate";
+
+		$this->load->view("widgets/pdf_certificate", $data);
+
+		// // Get output html
+		$html = $this->output->get_output();
+		// debug($html , 1);
+
+		// Load library
+		$this->load->library('dompdf_gen');
+
+		// $dompdf = new Dompdf();
+		//     $options = $dompdf->getOptions();
+		//     $options->set(array('isRemoteEnabled' => true));
+		//     $dompdf->setOptions($options);
+		//     $dompdf->loadHtml($html);
+
+		// Convert to PDF
+		$this->dompdf->load_html($html);
+		//$paper_size = array(0,0,1050.72,800);
+		// $paper_size = array(0,0,1050.72,841.42);
+		//$this->dompdf->set_paper($paper_size);
+		$this->dompdf->set_paper('A4', 'portrait');
+		$this->dompdf->render();
+
+		// if(isset($_GET['view']) AND ($_GET['view'] == 1)) { // just view certificates
+		if (isset($view) and ($view == 1)) { // just view certificates
+			$this->dompdf->stream("{$filename}.pdf", array("Attachment" => false));
+			exit(0);
+		} else { // download certificates
+			$this->dompdf->stream("{$filename}.pdf");
+		}
+	}
 
 
 

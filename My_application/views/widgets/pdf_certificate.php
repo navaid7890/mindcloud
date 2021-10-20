@@ -24,7 +24,7 @@
             <div class="space"><br></div>
             <p style="margin:0;font-family: 'Open Sans';font-size: 14px;color: #4b647a;">has successfully completed on the <?= date("jS \of F Y") ?> the tutorial</p>
             <div class="space"><br></div>
-            <h3 style="margin:0;font-family: 'Open Sans';color: #425c73; font-weight: 700;text-transform: capitalize;font-size: 32px;">"<?= $course_title ?>"</h3>
+            <h3 style="margin:0;font-family: 'Open Sans';color: #425c73; font-weight: 700;text-transform: uppercase;font-size: 32px;">"<?= $course_title ?>"</h3>
             <div class="space"><br></div>
             <h6 style="margin:0;font-family: 'Open Sans';font-style: italic;font-size: 18px;color: #4b647a;">by Expert <span> <?= $expert_name ?></span></h6>
             <div class="space"><br><br></div>
