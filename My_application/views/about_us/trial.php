@@ -1,5 +1,17 @@
 
 <style>
+
+span#abt
+{
+
+    color: #196aa5 !important;
+    text-align: center;
+ 
+    padding-bottom: 10px;
+    font-size: 17px;
+
+    
+}
     .trial-page .t-profile h5,
     .trial-page .t-profile h5>span {
         color: #5C677D;
@@ -124,9 +136,13 @@ $_COOKIE['user_name'];
                                     <p>One week free trial,<br>
                                         then £20/month.<br>
                                         Charged annually<br> $240/year</p><br>
+                                        <span id="abt"></span>
+                                        <button type="button" class="btn btn-primary" id="con">Confirm Subscription</button>
 
                                     <div class="text-center" id="AmazonPayButton"></div>
                                     <!-- <a href="#" id="AmazonPayButton" data-fancybox data-src="#trial-popup" class="btn-hover">Subscribe Now <span></span></a> -->
+                              
+                              <br><br>
                                 </div>
                             </div>
                             <div class="banner-down">
@@ -253,6 +269,7 @@ $_COOKIE['user_name'];
 
 $( document ).ready(function() {
     localStorage.setItem('user_name', '');
+    $("#con").hide();
 });
 
 $("#stdt").click(function(e) {
@@ -274,11 +291,26 @@ $("#stdt").click(function(e) {
         //     access_token: $("#access_token").val() 
         // },
         success: function(result) {
-           // setcookie("user_name", result, 3600000);
+
            document.cookie='u='+result; 
             localStorage.setItem('user_name', result);
             Toastr.success('Promo Code Accepted', 'Success');
             $('#promoModal').modal('hide'); 
+            $("#abt").text("Discount:    "+'$' +result);
+            $('#udt').val('');
+            if(result=="240")
+            {
+                $("#con").show();
+                $("img#OffAmazonPaymentsWidgets0").hide();
+
+            }
+            else
+            {
+
+                $("#con").hide();
+                $("img#OffAmazonPaymentsWidgets0").show();
+            }
+
         },
         error: function(result) {
             alert('error');
@@ -288,6 +320,15 @@ $("#stdt").click(function(e) {
 
 });
 
+
+
+$("#con").click(function(e) {
+    e.preventDefault();
+    setTimeout(function(){
+              window.location = 'thankyou';
+          },000);
+
+});
 
 
 

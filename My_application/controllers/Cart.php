@@ -72,12 +72,15 @@ class Cart extends MY_Controller {
     // }
     
     public function get_coupon_discount(){
-    $data = 0;
+  //  $data = 0;
     if (isset($_GET['coupon'])) {
         $dt=array();
 		$dt['where']['coupon_code']=$_GET['coupon'];
 		$dt['fields']="coupon_id,coupon_code,coupon_discount";
-		$s= $this->model_coupon->find_one_active();
+		$dt['order']="coupon_id ASC";
+		$s= $this->model_coupon->find_one_active($dt);
+
+		//debug($s);
 
         $dis = $s['coupon_discount'];
         $data = 240*$dis/100; 
@@ -90,7 +93,7 @@ class Cart extends MY_Controller {
         // $test=$this->model_user->update_by_pk($ut['user_id'], $ut);
 
        
-		// debug($ut,1);
+		// debug($s,1);
 
     }
 	echo $data;

@@ -5539,12 +5539,12 @@ AngularJS Basic Animations
 /* Button */
 .btn.default {
   color: #333333;
-  background-color: #e5e5e5;
+  background-color: #37b2dc !important;
   border-color: "";
 }
 .btn.default:hover, .btn.default:focus, .btn.default:active, .btn.default.active {
   color: #333333;
-  background-color: lightgray;
+ background-color: #37b2dc !important;
 }
 .open .btn.default.dropdown-toggle {
   color: #333333;
@@ -5555,7 +5555,7 @@ AngularJS Basic Animations
   background-color: #c6c6c6;
 }
 .btn.default:active:hover, .btn.default.active:hover {
-  background-color: #cccccc;
+  background-color: #37b2dc;
 }
 .open .btn.default.dropdown-toggle {
   background-image: none;
@@ -8906,12 +8906,13 @@ Grey Salt
 /* Button */
 .grey-salt.btn {
   color: #fafcfb;
-  background-color: #bfcad1;
+  
+  background-color: #2485c3;
   border-color: "";
 }
 .grey-salt.btn:hover, .grey-salt.btn:focus, .grey-salt.btn:active, .grey-salt.btn.active {
   color: #fafcfb;
-  background-color: #aab9c2;
+  background-color: #2485c3;
 }
 .open .grey-salt.btn.dropdown-toggle {
   color: #fafcfb;
