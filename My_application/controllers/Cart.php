@@ -76,14 +76,22 @@ class Cart extends MY_Controller {
     if (isset($_GET['coupon'])) {
         $dt=array();
 		$dt['where']['coupon_code']=$_GET['coupon'];
-		$dt['fields']="coupon_id,coupon_code,coupon_discount";
+		// $dt['fields']="coupon_id,coupon_code,coupon_discount";
 		$dt['order']="coupon_id ASC";
 		$s= $this->model_coupon->find_one_active($dt);
 
-		//debug($s);
+	    //	debug($s);
 
         $dis = $s['coupon_discount'];
         $data = 240*$dis/100; 
+
+		$s['coupon_count']=$s['coupon_count']+1;
+        $test=$this->model_coupon->update_by_pk($s['coupon_id'], $s);
+
+
+		//debug($test);
+
+
         
 		// $per=array();
 		// $per['where']['user_id']=$this->userid;

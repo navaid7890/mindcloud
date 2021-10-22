@@ -22,7 +22,7 @@ class Model_coupon extends MY_Model
     function __construct()
     {
         // Call the Model constructor
-        $this->pagination_params['fields'] = "coupon_id,coupon_code,coupon_discount,coupon_status";
+        $this->pagination_params['fields'] = "coupon_id,coupon_affiliate,coupon_code,coupon_discount,coupon_count,coupon_status";
 
         parent::__construct();
     }
@@ -67,6 +67,18 @@ class Model_coupon extends MY_Model
                 'rules' => 'trim'
             ),
 
+            'coupon_affiliate' => array(
+                'table' => $this->_table,
+                'name' => 'coupon_affiliate',
+                'label' => 'Affiliate Name',
+                'type' => 'text',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'required|trim|htmlentities'
+            ),
+
+   
+
             'coupon_code' => array(
                 'table' => $this->_table,
                 'name' => 'coupon_code',
@@ -74,7 +86,7 @@ class Model_coupon extends MY_Model
                 'type' => 'text',
                 'attributes' => array(),
                 'js_rules' => '',
-                'rules' => 'trim|htmlentities'
+                'rules' => 'required|trim|htmlentities'
             ),
 
             'coupon_discount' => array(
@@ -84,10 +96,19 @@ class Model_coupon extends MY_Model
                 'type' => 'text',
                 'attributes' => array(),
                 'js_rules' => '',
-                'rules' => 'trim|htmlentities'
+                'rules' => 'required|trim|htmlentities'
             ),
 
-            
+            'coupon_count' => array(
+                'table' => $this->_table,
+                'name' => 'coupon_count',
+                'label' => 'Total Count',
+                'type' => 'text',
+                'attributes' => array(),
+                'js_rules' => '',
+                'default'=>'0',
+                'rules' => 'trim|htmlentities'
+            ),
 
             /*'coupon_url' => array(
                 'table'   => $this->_table,
