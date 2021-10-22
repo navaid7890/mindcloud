@@ -52,19 +52,16 @@
    }
 </style>
 <?
-   $upaid = array();
-   $upaid['where']['user_id'] = $this->userid;
-   $datapaid = $this->model_user->find_all_active($upaid);
-   ?>
+$upaid = array();
+$upaid['where']['user_id'] = $this->userid;
+$datapaid = $this->model_user->find_all_active($upaid);
+?>
 <div class="abt-tut-page">
    <div class="mainBanner hding-1 para">
       <div class="container">
          <div class="row">
             <div class="col-lg-7 col-md-12">
                <div>
-
-
-
                   <?
                   //debug($ct);
                   // $ct[0]['category_name'] ;
@@ -84,7 +81,6 @@
                                  echo " , ";
                               }
                               echo $value['category_name'];
-
                            ?>
                            <? endforeach; ?>
                         </a>
@@ -143,7 +139,6 @@
             </div>
 
             <div class="col-lg-5 col-md-12">
-
                <?
                // debug($value);
                $vidcat = array();
@@ -154,10 +149,13 @@
                $vid_name['where']['videos_id'] = $vidcat[0]['cp_tutorial_id'];
                $vid_name = $this->model_videos->find_all_active($vid_name);
                //  debug($vid_name[0]['videos_image2']) ;
-
                ?>
                <div class="video-card">
-                  <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox>
+                  <? if (!empty($course[0]['tutorial_youtube_video'])) : ?>
+                     <a href="<?= $course[0]['tutorial_youtube_video'] ?>" data-fancybox>
+                  <? else : ?>
+                     <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox>
+                  <? endif; ?>
                      <div class="video-box">
                         <img src="<?= g('db.admin.bucketimg') . $vid_name[0]['videos_image2'] ?>" />
                         <span><i class="fas fa-play"></i></span>
@@ -170,7 +168,7 @@
                         <ul class="tut-info">
                            <li><i><img src="<?= i('') ?>icons/1.png"></i> Professional Certification </li>
                            <? if ($datapaid[0]['user_paid'] == 0) : ?>
-                              <li><a href="<?= l('subscription') ?>" >1-Year Access <span>$20/ month</span></a></li>
+                              <li><a href="<?= l('subscription') ?>">1-Year Access <span>$20/ month</span></a></li>
                            <? endif; ?>
                            <? if (empty($this->userid)) { ?>
 
@@ -344,18 +342,16 @@
             <ul class="who-list tut-list">
                <?php if (isset($popular) && array_filled($popular)) : ?>
                   <?php foreach ($popular as $key => $value) : ?>
-
                      <li>
-
-                        <div class="vid-box">
-                           <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox>
-                              <div class="video-box">
-                                 <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
-                                 <span><i class="fas fa-play"></i></span>
-                              </div>
-                           </a>
+                        <div class="vid-box" onclick="location.href='<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>';" style="cursor: pointer;">
+                           <!-- <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox> -->
+                           <div class="video-box">
+                              <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
+                              <!-- <span><i class="fas fa-play"></i></span> -->
+                           </div>
+                           <!-- </a> -->
                            <div class="vid-content">
-                              <h4 style="color: #000;"><?= short_text($value['tutorial_name'], 20)  ?></h4>
+                              <h4 style="color: #000;"><?= $value['tutorial_name']  ?></h4>
                               <div class="row align-items-center pt-70">
                                  <div class="col-md-8">
                                     <ul class="rating">
@@ -370,9 +366,10 @@
                                        <? } ?>
                                     </ul>
                                  </div>
-                                 <div class="col-md-4 text-right">
-                                    <h6><?= price($value['tutorial_price']) ?></h6>
-                                 </div>
+                                 <!-- <div class="col-md-4 text-right">
+                                    <h6><? //= price($value['tutorial_price']) 
+                                          ?></h6>
+                                 </div> -->
                               </div>
                            </div>
                         </div>
@@ -390,9 +387,9 @@
          <?= html_entity_decode($con2['cms_page_content']) ?>
          <div class="space"><br><br></div>
          <div class="btn-group">
-         <? if ($datapaid[0]['user_paid'] == 0) : ?>
-            <a href="<?= l('subscription') ?>" class="btn-theme btn-hover">1-Year Access $20/ month <span></span></a>
-            <a href="<?= l('subscription') ?>" class="btn-theme btn-transparent btn-hover">Take this Tutorial for $15 <span></span></a>
+            <? if ($datapaid[0]['user_paid'] == 0) : ?>
+               <a href="<?= l('subscription') ?>" class="btn-theme btn-hover">1-Year Access $20/ month <span></span></a>
+               <a href="<?= l('subscription') ?>" class="btn-theme btn-transparent btn-hover">Take this Tutorial for $15 <span></span></a>
             <? endif; ?>
          </div>
       </div>
