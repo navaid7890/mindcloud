@@ -20,14 +20,13 @@
     <ul class="who-list tut-list pb-100 homeWho">
         <?php foreach ($tut as $key => $value) : ?>
             <li>
-
-                <div class="vid-box">
-                    <a controlsList="nodownload" href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox>
+                <div class="vid-box" onclick="location.href='<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>';" style="cursor: pointer;">
+                    <!-- <a controlsList="nodownload" href="<?//= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox> -->
                         <div class="video-box">
                             <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>">
-                            <span><i class="fas fa-play"></i>
+                            <!-- <span><i class="fas fa-play"></i>
                                 <p>Preview Course</p>
-                            </span>
+                            </span> -->
                             <?
                             // debug($value);
                             $coursecat = array();
@@ -42,9 +41,7 @@
                             <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
                             
                         </div>
-                    </a>
-
-
+                    <!-- </a> -->
                     <div class="vid-content">
                         <?
                         $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
@@ -84,9 +81,9 @@
                                 
                             </div>
 
-                            <div class="col-md-3 text-right">
-                                <h6>$<?= $value["tutorial_price"] ?></h6>
-                            </div>
+                            <!-- <div class="col-md-3 text-right">
+                                <h6>$<?//= $value["tutorial_price"] ?></h6>
+                            </div> -->
                         </div>
                     </div>
                 </div>
