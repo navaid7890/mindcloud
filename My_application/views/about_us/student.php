@@ -120,11 +120,9 @@
                             <div class="col-lg-3 col-md-4 col-xs-12 membersBox">
                                 <a href="<?= l('user-detail') . '/' . $value['user_id'] ?> "> 
                                     <div class="single-item">
-
                                         <div class="product-img-home">
                                             <img src="<?= get_image($value['ui_profile_image'], $value['ui_profile_image_path']) ?>" class="img-responsive">
                                         </div>
-
                                         <p class="pro-name"><b><?= $value['user_firstname'] ?></b></p>
                                         <p class="pro-info">User</p>
                                     </div>
@@ -134,11 +132,8 @@
                     <? endif; ?>
                 </div>
             </div>
-
         </div>
     </div>
-
-
 </section>
 
 <? $this->load->view('widgets/_clients'); ?>

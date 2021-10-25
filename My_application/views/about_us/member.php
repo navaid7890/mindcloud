@@ -133,27 +133,27 @@
                     <? endif; ?>
                 </div>
             </div>
-            <div class="col-md-12 green box pt-0">
+            <!-- <div class="col-md-12 green box pt-0">
                 <div class="row">
-                    <? if (isset($user) and array_filled($user)) : ?>
-                        <? foreach ($user as $key => $value) : ?>
+                    <?// if (isset($user) and array_filled($user)) : ?>
+                        <?// foreach ($user as $key => $value) : ?>
                             <div class="col-lg-3 col-md-4 col-xs-12 membersBox">
-                                <!-- <a href="<?//= l('user-detail') . '/' . $value['user_id'] ?> "> -->
+                                <a href="<?//= l('user-detail') . '/' . $value['user_id'] ?> ">
                                     <div class="single-item">
 
                                         <div class="product-img-home">
-                                            <img src="<?= get_image($value['ui_profile_image'], $value['ui_profile_image_path']) ?>" class="img-responsive">
+                                            <img src="<?//= get_image($value['ui_profile_image'], $value['ui_profile_image_path']) ?>" class="img-responsive">
                                         </div>
 
-                                        <p class="pro-name"><b><?= $value['user_firstname'] ?></b></p>
+                                        <p class="pro-name"><b><?//= $value['user_firstname'] ?></b></p>
                                         <p class="pro-info">User</p>
                                     </div>
-                                <!-- </a> -->
+                                 </a>
                             </div>
-                        <? endforeach; ?>
-                    <? endif; ?>
+                        <?// endforeach; ?>
+                    <?// endif; ?>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
