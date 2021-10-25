@@ -295,14 +295,14 @@ class Quiz extends MY_Controller {
       $objPHPExcelReader->getActiveSheet()->setCellValue('C8', $employee_data['tool_builder_discount_rate']);
 
       
-      $objPHPExcelReader->getActiveSheet()->setCellValue('C10', $employee_data['tool_builder_discount_rate_year_1']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('D10', $employee_data['tool_builder_discount_rate_year_2']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('E10', $employee_data['tool_builder_discount_rate_year_3']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('F10', $employee_data['tool_builder_discount_rate_year_4']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G10', $employee_data['tool_builder_discount_rate_year_5']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('C10', $employee_data['tool_builder_discount_rate_year_1']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('D10', $employee_data['tool_builder_discount_rate_year_2']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('E10', $employee_data['tool_builder_discount_rate_year_3']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('F10', $employee_data['tool_builder_discount_rate_year_4']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('G10', $employee_data['tool_builder_discount_rate_year_5']);
 
       
-      $objPHPExcelReader->getActiveSheet()->setCellValue('H11', $employee_data['tool_builder_dcf_value']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('H11', $employee_data['tool_builder_dcf_value']);
   
       $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
       
@@ -365,20 +365,20 @@ class Quiz extends MY_Controller {
       $objPHPExcelReader->getActiveSheet()->setCellValue('C6', $employee_data['tool_builder_inventory']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('C7', $employee_data['tool_builder_prepaid_expenses']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('C8', $employee_data['tool_builder_short_term']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('C9', $employee_data['tool_builder_total_current_assets']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('C9', $employee_data['tool_builder_total_current_assets']);
 
       $objPHPExcelReader->getActiveSheet()->setCellValue('C12', $employee_data['tool_builder_long_term']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('C13', $employee_data['tool_builder_property_planted']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('C14', $employee_data['tool_builder_less_accumulated']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('C15', $employee_data['tool_builder_intangible_assets']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('C16', $employee_data['tool_builder_total_fixed_assets']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('C16', $employee_data['tool_builder_total_fixed_assets']);
 
 
       $objPHPExcelReader->getActiveSheet()->setCellValue('C19', $employee_data['tool_builder_deffered_income']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('C20', $employee_data['tool_builder_other_assets_2']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('C21', $employee_data['tool_builder_other_assets_4']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('C22', $employee_data['tool_builder_total_other_assets']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('C24', $employee_data['tool_builder_total_assets']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('C22', $employee_data['tool_builder_total_other_assets']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('C24', $employee_data['tool_builder_total_assets']);
 
       $objPHPExcelReader->getActiveSheet()->setCellValue('G4', $employee_data['tool_builder_accounts_payable']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('G5', $employee_data['tool_builder_short_term_loans']);
@@ -386,22 +386,22 @@ class Quiz extends MY_Controller {
       $objPHPExcelReader->getActiveSheet()->setCellValue('G7', $employee_data['tool_builder_accrued_salaries']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('G8', $employee_data['tool_builder_unearned_revenue']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('G9', $employee_data['tool_builder_current_portion']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G10', $employee_data['tool_builder_total_current_liabilities']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('G10', $employee_data['tool_builder_total_current_liabilities']);
      
      
      
       $objPHPExcelReader->getActiveSheet()->setCellValue('G13', $employee_data['tool_builder_long_term_debt']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('G14', $employee_data['tool_builder_deffered_income_tax']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('G15', $employee_data['tool_builder_other_long_term_liabilities_2']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G16', $employee_data['tool_builder_total_long_term_liabilities']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('G16', $employee_data['tool_builder_total_long_term_liabilities']);
 
       $objPHPExcelReader->getActiveSheet()->setCellValue('G19', $employee_data['tool_builder_owners_investment']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('G20', $employee_data['tool_builder_retained_earnings']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('G21', $employee_data['tool_builder_other_equity_2']);
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G22', $employee_data['tool_builder_total_owners_equity']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('G22', $employee_data['tool_builder_total_owners_equity']);
 
 
-      $objPHPExcelReader->getActiveSheet()->setCellValue('G24', $employee_data['tool_builder_total_liabilities']);
+      // $objPHPExcelReader->getActiveSheet()->setCellValue('G24', $employee_data['tool_builder_total_liabilities']);
 
       $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
       header('Content-Type: application/vnd.ms-excel');
@@ -457,20 +457,20 @@ class Quiz extends MY_Controller {
        $objPHPExcelReader->getActiveSheet()->setCellValue('F13', $employee_data['tool_builder_other']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('F14', $employee_data['tool_builder_other_1']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('F15', $employee_data['tool_builder_other_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('F16', $employee_data['tool_builder_total']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('F16', $employee_data['tool_builder_total']);
       
        $objPHPExcelReader->getActiveSheet()->setCellValue('E20', $employee_data['tool_builder_cost_of_goods_sold']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('E21', $employee_data['tool_builder_direct_labour']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('E22', $employee_data['tool_builder_overhead']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('E23', $employee_data['tool_builder_commisions']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E24', $employee_data['tool_builder_total_1']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('E24', $employee_data['tool_builder_total_1']);
  
-          $objPHPExcelReader->getActiveSheet()->setCellValue('F26', $employee_data['tool_builder_total_1']);
-          $objPHPExcelReader->getActiveSheet()->setCellValue('F27', $employee_data['tool_builder_cm']);
-          $objPHPExcelReader->getActiveSheet()->setCellValue('F28', $employee_data['tool_builder_cmr']);
+          // $objPHPExcelReader->getActiveSheet()->setCellValue('F26', $employee_data['tool_builder_total_1']);
+          // $objPHPExcelReader->getActiveSheet()->setCellValue('F27', $employee_data['tool_builder_cm']);
+          // $objPHPExcelReader->getActiveSheet()->setCellValue('F28', $employee_data['tool_builder_cmr']);
          
-          $objPHPExcelReader->getActiveSheet()->setCellValue('F31', $employee_data['tool_builder_x']);
-          $objPHPExcelReader->getActiveSheet()->setCellValue('F32', $employee_data['tool_builder_s']);
+          // $objPHPExcelReader->getActiveSheet()->setCellValue('F31', $employee_data['tool_builder_x']);
+          // $objPHPExcelReader->getActiveSheet()->setCellValue('F32', $employee_data['tool_builder_s']);
       
     
        $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
@@ -531,9 +531,9 @@ class Quiz extends MY_Controller {
        $objPHPExcelReader->getActiveSheet()->setCellValue('C8', $employee_data['tool_builder_other_r_1']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('D8', $employee_data['tool_builder_other_r_2']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('E8', $employee_data['tool_builder_other_r_3']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('C9', $employee_data['total_revenues_year_1']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('D9', $employee_data['total_revenues_year_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E9', $employee_data['total_revenues_year_3']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('C9', $employee_data['total_revenues_year_1']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('D9', $employee_data['total_revenues_year_2']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('E9', $employee_data['total_revenues_year_3']);
 
 
 
@@ -597,16 +597,16 @@ class Quiz extends MY_Controller {
        $objPHPExcelReader->getActiveSheet()->setCellValue('C31', $employee_data['tool_builder_other_e_1']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('D31', $employee_data['tool_builder_other_e_2']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('E31', $employee_data['tool_builder_other_e_3']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('C32', $employee_data['total_expenses_year_1']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('D32', $employee_data['total_expenses_year_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E32', $employee_data['total_expenses_year_3']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('C34', $employee_data['net_income_year_1']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('D34', $employee_data['net_income_year_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E34', $employee_data['net_income_year_3']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('C32', $employee_data['total_expenses_year_1']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('D32', $employee_data['total_expenses_year_2']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('E32', $employee_data['total_expenses_year_3']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('C34', $employee_data['net_income_year_1']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('D34', $employee_data['net_income_year_2']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('E34', $employee_data['net_income_year_3']);
 
-       $objPHPExcelReader->getActiveSheet()->setCellValue('C35', $employee_data['net_income_before_taxes_year_1']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('D35', $employee_data['net_income_before_taxes_year_2']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E35', $employee_data['net_income_before_taxes_year_3']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('C35', $employee_data['net_income_before_taxes_year_1']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('D35', $employee_data['net_income_before_taxes_year_2']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('E35', $employee_data['net_income_before_taxes_year_3']);
 
       //  $objPHPExcelReader->getActiveSheet()->setCellValue('C34', $employee_data['net_income_year_1']);
       //  $objPHPExcelReader->getActiveSheet()->setCellValue('D34', $employee_data['net_income_year_2']);

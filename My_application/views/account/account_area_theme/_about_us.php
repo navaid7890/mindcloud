@@ -58,17 +58,21 @@
     margin-bottom: 10px;
     color: #888686;
   }
-  .index-page ul.dashboard-layout>li.last{ height:80vh; overflow-y:scroll;}
+
+  .index-page ul.dashboard-layout>li.last {
+    height: 80vh;
+    overflow-y: scroll;
+  }
 </style>
 <div class="index-page">
   <section class="dashboard">
     <ul class="dashboard-layout">
-    <li>
-         <div class="front-dashboard open">
-         <a href="javascript:;" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
-            <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
-            <? $this->load->view("widgets/dashboard-menu-box"); ?>
-         </div>
+      <li>
+        <div class="front-dashboard open">
+          <a href="javascript:;" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+          <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
+          <? $this->load->view("widgets/dashboard-menu-box"); ?>
+        </div>
       </li>
 
       <li class="open">
@@ -97,6 +101,10 @@
                 <textarea id="description" rows="7" name="user_info[ui_description]" class="form-control" placeholder="Description"><?= $user_data['ui_description'] ?></textarea>
               </div>
               <div class="col-md-12">
+                <label>Work Designation </label>
+                <textarea id="ui_exp_title" rows="7" name="user_info[ui_exp_title]" class="form-control" placeholder="Description"><?= $user_data['ui_exp_title'] ?></textarea>
+              </div>
+              <div class="col-md-12">
                 <label>School </label>
                 <input name="user_info[ui_exp_school]" value='<?= $user_data['ui_exp_school'] ?>' type="text" class="form-control" placeholder="Your Title" />
               </div>
@@ -104,6 +112,19 @@
                 <label>Degree </label>
                 <input name="user_info[ui_exp_degree]" value='<?= $user_data['ui_exp_degree'] ?>' type="text" class="form-control" placeholder="Your Title" />
               </div>
+              <div class="col-md-12">
+                <label>Are you an </label>
+                <select class="form-control select2me " name="<?=$user_data['ui_are_you_an']?>">
+                  <option value="0">Are you an</option>
+                  <option value="Entrepreneur">Entrepreneur</option>
+                  <option value="Intrapreneur">Intrapreneur </option>
+                  <option value="Growth Entrepreneur">Growth Entrepreneur</option>
+                  <option value="Industry">Industry</option>
+
+                </select>
+              </div>
+
+
               <div class="col-md-3">
                 <div class="addfile">
                   <!-- <label class="custom-file-upload" style="margin-top: 5px;">

@@ -1,5 +1,6 @@
 <?
-class Model_expert extends MY_Model {
+class Model_expert extends MY_Model
+{
     /**
      *
      * @package     expert Model
@@ -16,15 +17,14 @@ class Model_expert extends MY_Model {
     public $pagination_params = array();
     public $dt_params = array();
     public $_per_page    = 20;
-    
+
     function __construct()
-        {
-            $s3path=g('db.admin.bucketimg');
+    {
+        $s3path = g('db.admin.bucketimg');
         // Call the Model constructor
         // $this->pagination_params['fields'] = "expert_id,expert_name,CONCAT(expert_image_path,expert_image) AS expert_image,expert_status";
         $this->pagination_params['fields'] = "expert_id,expert_name,expert_status";
         parent::__construct();
-
     }
 
 
@@ -48,37 +48,47 @@ class Model_expert extends MY_Model {
     *                   -----Incase list_data_key is not defined, it will look for field_name as a $key
     *                   -----USED IN ADMIN_CONTROLLER AND admin's database.php
     */
-    public function get_fields( $specific_field = "" )
+    public function get_fields($specific_field = "")
     {
 
         $fields = array(
-        
-              'expert_id' => array(
-                     'table'   => $this->_table,
-                     'name'   => 'expert_id',
-                     'label'   => 'id #',
-                     'type'   => 'hidden',
-                     'type_dt'   => 'text',
-                     'attributes'   => array(),
-                     'dt_attributes'   => array("width"=>"5%"),
-                     'js_rules'   => '',
-                     'rules'   => 'trim'
-                ),
 
-       
+            'expert_id' => array(
+                'table'   => $this->_table,
+                'name'   => 'expert_id',
+                'label'   => 'id #',
+                'type'   => 'hidden',
+                'type_dt'   => 'text',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "5%"),
+                'js_rules'   => '',
+                'rules'   => 'trim'
+            ),
 
-              'expert_name' => array(
-                     'table'   => $this->_table,
-                     'name'   => 'expert_name',
-                     'label'   => 'Name',
-                     'type'   => 'text',
-                     'attributes'   => array("additional"=>'slugify="#'.$this->_table.'-'.$this->_field_prefix.'slug"'),
-                     // 'attributes'   => array(),
-                     'js_rules'   => 'required',
-                     'rules'   => 'required|trim|htmlentities'
-                  ),
 
-              
+
+            'expert_name' => array(
+                'table'   => $this->_table,
+                'name'   => 'expert_name',
+                'label'   => 'Name',
+                'type'   => 'text',
+                'attributes'   => array("additional" => 'slugify="#' . $this->_table . '-' . $this->_field_prefix . 'slug"'),
+                // 'attributes'   => array(),
+                'js_rules'   => 'required',
+                'rules'   => 'required|trim|htmlentities'
+            ),
+            'expert_sur_name' => array(
+                'table'   => $this->_table,
+                'name'   => 'expert_sur_name',
+                'label'   => 'Sur Name',
+                'type'   => 'text',
+                'attributes'   => array("additional" => 'slugify="#' . $this->_table . '-' . $this->_field_prefix . 'slug"'),
+                // 'attributes'   => array(),
+                'js_rules'   => '',
+                'rules'   => 'trim|htmlentities'
+            ),
+
+
             //   'expert_slug'  => array(
             //       'table'   => $this->_table,
             //       'name'   => 'expert_slug',
@@ -88,39 +98,75 @@ class Model_expert extends MY_Model {
             //       'js_rules'   => array("is_slug" => array()),
             //       'rules'   => 'required|strtolower|htmlentities|is_unique['.$this->_table.'.'.$this->_field_prefix.'slug]|callback_is_slug'
             //   ),
-                  
-                  'expert_price' => array(
-                     'table'   => $this->_table,
-                     'name'   => 'expert_price',
-                     'label'   => 'Price',
-                     'type'   => 'text',
-                     'attributes'   => array(),
-                     'js_rules'   => 'required',
-                     'rules'   => 'required|trim|htmlentities'
-                  ),
+
+            'expert_price' => array(
+                'table'   => $this->_table,
+                'name'   => 'expert_price',
+                'label'   => 'Price',
+                'type'   => 'text',
+                'attributes'   => array(),
+                'js_rules'   => 'required',
+                'rules'   => 'required|trim|htmlentities'
+            ),
+            'expert_phone' => array(
+                'table'   => $this->_table,
+                'name'   => 'expert_phone',
+                'label'   => 'Phone',
+                'type'   => 'text',
+                'attributes'   => array(),
+                'js_rules'   => '',
+                'rules'   => 'trim|htmlentities'
+            ),
 
 
-                  'expert_email' => array(
-                    'table'   => $this->_table,
-                    'name'   => 'expert_email',
-                    'label'   => 'Email',
-                    'type'   => 'text',
-                    'attributes'   => array(),
-                    'js_rules'   => 'required',
-                    'rules'   => 'required|valid_email|strtolower|trim|htmlentities|is_unique['.$this->_table.'.'.$this->_field_prefix.'email]'
-                 ),
+            'expert_email' => array(
+                'table'   => $this->_table,
+                'name'   => 'expert_email',
+                'label'   => 'Email',
+                'type'   => 'text',
+                'attributes'   => array(),
+                'js_rules'   => 'required',
+                'rules'   => 'required|valid_email|strtolower|trim|htmlentities|is_unique[' . $this->_table . '.' . $this->_field_prefix . 'email]'
+            ),
 
-               'expert_desc' => array(
-                     'table'   => $this->_table,
-                     'name'   => 'expert_desc',
-                     'label'   => 'Description',
-                     'type'   => 'editor',
-                     'attributes'   => array(),
-                     'js_rules'   => '',
-                     'rules'   => 'trim|htmlentities'
-                  ),
+            'expert_desc' => array(
+                'table'   => $this->_table,
+                'name'   => 'expert_desc',
+                'label'   => 'Short Bio',
+                'type'   => 'editor',
+                'attributes'   => array(),
+                'js_rules'   => '',
+                'rules'   => 'trim|htmlentities'
+            ),
+            'expert_experties' => array(
+                'table'   => $this->_table,
+                'name'   => 'expert_experties',
+                'label'   => 'Experties',
+                'type'   => 'editor',
+                'attributes'   => array(),
+                'js_rules'   => '',
+                'rules'   => 'trim|htmlentities'
+            ),
+            'expert_school' => array(
+                'table'   => $this->_table,
+                'name'   => 'expert_school',
+                'label'   => 'School',
+                'type'   => 'editor',
+                'attributes'   => array(),
+                'js_rules'   => '',
+                'rules'   => 'trim|htmlentities'
+            ),
+            'expert_degree' => array(
+                'table'   => $this->_table,
+                'name'   => 'expert_degree',
+                'label'   => 'Degree',
+                'type'   => 'editor',
+                'attributes'   => array(),
+                'js_rules'   => '',
+                'rules'   => 'trim|htmlentities'
+            ),
 
-         
+
             //       'expert_image' => array(
             //     'table' => $this->_table,
             //     'name' => 'expert_image',
@@ -151,47 +197,42 @@ class Model_expert extends MY_Model {
                 'rules' => 'trim|htmlentities'
             ),
 
-
-
-      
             'expert_featured' => array(
-                     'table'   => $this->_table,
-                     'name'   => 'expert_featured',
-                     'label'   => 'Popular',
-                     'type'   => 'switch',
-                     'type_dt'   => 'dropdown',
-                     'type_filter_dt' => 'dropdown',
-                     'list_data_key' => "expert_featured" ,
-                     'list_data' => array(),
-                     'default'   => '1',
-                     'attributes'   => array(),
-                     'dt_attributes'   => array("width"=>"7%"),
-                     'rules'   => 'trim'
-                  ),
+                'table'   => $this->_table,
+                'name'   => 'expert_featured',
+                'label'   => 'Popular',
+                'type'   => 'switch',
+                'type_dt'   => 'dropdown',
+                'type_filter_dt' => 'dropdown',
+                'list_data_key' => "expert_featured",
+                'list_data' => array(),
+                'default'   => '1',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "7%"),
+                'rules'   => 'trim'
+            ),
 
-              'expert_status' => array(
-                     'table'   => $this->_table,
-                     'name'   => 'expert_status',
-                     'label'   => 'Status?',
-                     'type'   => 'switch',
-                     'type_dt'   => 'dropdown',
-                     'type_filter_dt' => 'dropdown',
-                     'list_data_key' => "expert_status" ,
-                     'list_data' => array(),
-                     'default'   => '1',
-                     'attributes'   => array(),
-                     'dt_attributes'   => array("width"=>"7%"),
-                     'rules'   => 'trim'
-                  ),
+            'expert_status' => array(
+                'table'   => $this->_table,
+                'name'   => 'expert_status',
+                'label'   => 'Status?',
+                'type'   => 'switch',
+                'type_dt'   => 'dropdown',
+                'type_filter_dt' => 'dropdown',
+                'list_data_key' => "expert_status",
+                'list_data' => array(),
+                'default'   => '1',
+                'attributes'   => array(),
+                'dt_attributes'   => array("width" => "7%"),
+                'rules'   => 'trim'
+            ),
 
-              
-            );
-        
-        if($specific_field)
-            return $fields[ $specific_field ];
+
+        );
+
+        if ($specific_field)
+            return $fields[$specific_field];
         else
             return $fields;
     }
-
 }
-?>
