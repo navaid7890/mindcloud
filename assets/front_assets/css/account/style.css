@@ -599,7 +599,9 @@ ul.dropdown li.active a:before {
 ul.dropdown li.last {
     margin-bottom: 0px;
 }
-
+button.fancybox-button.fancybox-button--share {
+    display: none;
+}
 
 /* Dropdown CSS*/
 
@@ -2555,7 +2557,7 @@ ul.cate-list {
 }
 
 .xpert-content .vid-box {
-    min-height: 470px;
+    /* min-height: 470px; */
 }
 
 .xpert-content>ul {
