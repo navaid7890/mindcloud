@@ -10,8 +10,6 @@ $abs=180-$_COOKIE["u"];
 //echo $abs;
 
 
-
-
 // Instantiate the client object with the configuration
 $client = new AmazonPay\Client($amazonpay_config);
 $requestParameters = array();
