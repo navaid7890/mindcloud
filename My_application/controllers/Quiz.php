@@ -445,8 +445,8 @@ class Quiz extends MY_Controller {
        $loadedSheetNames = $objPHPExcelReader->getSheetNames();
  
        $objPHPExcelReader->getActiveSheet()->setCellValue('E2', $employee_data['tool_builder_price_per_unit']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E3', $employee_data['tool_builder_x']);
-       $objPHPExcelReader->getActiveSheet()->setCellValue('E4', $employee_data['tool_builder_s']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('E3', $employee_data['tool_builder_x']);
+      //  $objPHPExcelReader->getActiveSheet()->setCellValue('E4', $employee_data['tool_builder_s']);
      
        $objPHPExcelReader->getActiveSheet()->setCellValue('F7', $employee_data['tool_builder_advertising']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('F8', $employee_data['tool_builder_accounting']);
