@@ -50,6 +50,12 @@
    .toBeLocked strong.locked {
       display: none;
    }
+
+   @media (max-width:824px) {
+      .abt-tut-page .mainBanner {
+         background-size: cover;
+      }
+   }
 </style>
 <?
 $upaid = array();
@@ -153,30 +159,30 @@ $datapaid = $this->model_user->find_all_active($upaid);
                <div class="video-card">
                   <? if (!empty($course[0]['tutorial_youtube_video'])) : ?>
                      <a href="<?= $course[0]['tutorial_youtube_video'] ?>" data-fancybox>
-                  <? else : ?>
-                     <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox>
-                  <? endif; ?>
-                     <div class="video-box">
-                        <img src="<?= g('db.admin.bucketimg') . $vid_name[0]['videos_image2'] ?>" />
-                        <span><i class="fas fa-play"></i></span>
-                     </div>
-                  </a>
+                     <? else : ?>
+                        <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox>
+                        <? endif; ?>
+                        <div class="video-box">
+                           <img src="<?= g('db.admin.bucketimg') . $vid_name[0]['videos_image2'] ?>" />
+                           <span><i class="fas fa-play"></i></span>
+                        </div>
+                        </a>
 
-                  <div class="video-content">
-                     <div>
-                        <span><?= html_entity_decode($course[0]['tutorial_duration']) ?></span>
-                        <ul class="tut-info">
-                           <li><i><img src="<?= i('') ?>icons/1.png"></i> Professional Certification </li>
-                           <? if ($datapaid[0]['user_paid'] == 0) : ?>
-                              <li><a href="<?= l('subscription') ?>">1-Year Access <span>$20/ month</span></a></li>
-                           <? endif; ?>
-                           <? if (empty($this->userid)) { ?>
+                        <div class="video-content">
+                           <div>
+                              <span><?= html_entity_decode($course[0]['tutorial_duration']) ?></span>
+                              <ul class="tut-info">
+                                 <li><i><img src="<?= i('') ?>icons/1.png"></i> Professional Certification </li>
+                                 <? if ($datapaid[0]['user_paid'] == 0) : ?>
+                                    <li><a href="<?= l('subscription') ?>">1-Year Access <span>$20/ month</span></a></li>
+                                 <? endif; ?>
+                                 <? if (empty($this->userid)) { ?>
 
-                              <li><a href="<?= l('signup') ?>">7 Days Free Trial <span></span></a></li>
-                           <? } ?>
-                        </ul>
-                     </div>
-                  </div>
+                                    <li><a href="<?= l('signup') ?>">7 Days Free Trial <span></span></a></li>
+                                 <? } ?>
+                              </ul>
+                           </div>
+                        </div>
                </div>
             </div>
          </div>
@@ -352,18 +358,37 @@ $datapaid = $this->model_user->find_all_active($upaid);
                            <!-- </a> -->
                            <div class="vid-content">
                               <h4 style="color: #000;"><?= $value['tutorial_name']  ?></h4>
-                              <div class="row align-items-center pt-70">
+                              <?
+                              $exp_name = array();
+                              $exp_name['where']['expert_id'] = $value["tutorial_expert_id"];
+                              $expt_name = $this->model_expert->find_all_active($exp_name);
+
+                              ?>
+                              <div class="row align-items-center pt-40">
+                                 <div class="col-md-12">
+                                    <ul class="login-btnExpert pb-10">
+                                       <li><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $expt_name[0]['expert_image'] ?>"></span> <?= $expt_name[0]['expert_name'] ?> </a></li>
+                                    </ul>
+                                 </div>
                                  <div class="col-md-8">
                                     <ul class="rating">
                                        <?
                                        $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
                                        ?>
-                                       <?php
-                                       for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
-                                          "
-                                          <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
-                                          ";
-                                       <? } ?>
+                                       <? if ($rating[0]['Rating'] == 0) { ?>
+                                          <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                          <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                          <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                          <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                          <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                          <?php
+                                       } else {
+                                          for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
+                                             "
+                                             <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                             ";
+                                       <? }
+                                       } ?>
                                     </ul>
                                  </div>
                                  <!-- <div class="col-md-4 text-right">
