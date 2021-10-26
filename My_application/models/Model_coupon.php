@@ -102,28 +102,28 @@ class Model_coupon extends MY_Model
             'coupon_count' => array(
                 'table' => $this->_table,
                 'name' => 'coupon_count',
-                'label' => 'Total Count',
-                'type' => 'text',
+                'label' => 'No. Utilized',
+                'type' => 'hidden',
                 'attributes' => array(),
                 'js_rules' => '',
                 'default'=>'0',
                 'rules' => 'trim|htmlentities'
             ),
 
-            /*'coupon_url' => array(
-                'table'   => $this->_table,
-                'name'   => 'coupon_url',
-                'label'   => 'Link',
-                'type'   => 'text',
-                'attributes'   => array(),
-                'js_rules'   => 'required',
-                'rules'   => 'required|trim|htmlentities'
-            ),*/
+        //    'coupon_url' => array(
+        //         'table'   => $this->_table,
+        //         'name'   => 'coupon_url',
+        //         'label'   => 'Link',
+        //         'type'   => 'text',
+        //         'attributes'   => array(),
+        //         'js_rules'   => 'required',
+        //         'rules'   => 'required|trim|htmlentities'
+        //     ),
 
             'coupon_status' => array(
                 'table' => $this->_table,
                 'name' => 'coupon_status',
-                'label' => 'Status?',
+                'label' => 'YES= Active NO= Inactive',
                 'type' => 'switch',
                 'type_dt' => 'switch',
                 'type_filter_dt' => 'dropdown',
