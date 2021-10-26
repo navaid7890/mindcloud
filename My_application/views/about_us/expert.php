@@ -148,6 +148,7 @@
                      <h4>Select by Expert </h4>
                      <div class="fld-select">
                         <select id='forum_category'>
+
                            <option>All Experts</option>
                            <? if (isset($ex) and array_filled($ex)) : ?>
                               <? foreach ($ex as $key => $value) : ?>
@@ -156,16 +157,21 @@
                                  </option>
                               <? endforeach; ?>
                            <? endif; ?>
+
                         </select>
                         <span><i class="fal fa-angle-down"></i></span>
                      </div>
                   </div>
+
+                  
                   <div class="select-level mt-3">
                      <h4>Select by Level </h4>
                      <div class="fld-select">
-                        <select id="forum_category">
+                        <select id="level_category" <?= $this->input->get('level')?>>
                            <option>All Level</option>
-                           <option value="14">Christian Farioli </option>
+                           <option value="BEGINNER" <?= $this->input->get('level') == 'BEGINNER' ? 'selected=""' : '' ?>>BEGINNER </option>
+                           <option value="MIDDLE" <?= $this->input->get('level') == 'MIDDLE' ? 'selected=""' : '' ?>>MIDDLE</option>
+                           <option value="ADVANCE" <?= $this->input->get('level') == 'ADVANCE' ? 'selected=""' : '' ?>>ADVANCE </option>
                         </select>
                         <span><i class="fal fa-angle-down"></i></span>
                      </div>
@@ -173,23 +179,31 @@
                   <div class="select-lang mt-3">
                      <h4>Select by Language </h4>
                      <div class="fld-select">
-                        <select id="forum_category">
-                           <option>All Languages</option>
-                           <option value="14">Christian Farioli </option>
+                        <select id="language_category">
+                        <option>All Languages</option>
+                           <? if (isset($lang) and array_filled($lang)) : ?>
+                              <? foreach ($lang as $key => $value) : ?>
+                                 <option value="<?= $value['language_id'] ?>" <?= $this->input->get('language') == $value['language_id'] ? 'selected=""' : '' ?>>
+                                    <?= $value['language_name'] ?>
+                                 </option>
+                              <? endforeach; ?>
+                           <? endif; ?>
                         </select>
                         <span><i class="fal fa-angle-down"></i></span>
                      </div>
                   </div>
-                  <div class="select-tags mt-3">
+
+
+                  <!-- <div class="select-tags mt-3">
                      <h4>Select by Tags </h4>
                      <div class="fld-select">
-                        <select id="forum_category">
+                        <select id="tags_category">
                            <option>All Tags</option>
                            <option value="14">Christian Farioli </option>
                         </select>
                         <span><i class="fal fa-angle-down"></i></span>
                      </div>
-                  </div>
+                  </div> -->
                   <div class="sapce"><br><br><br></div>
                   <div class="cate-wrap">
                      <h4>Select by Category</h4>
@@ -425,6 +439,8 @@
 </section>
 <? $this->load->view('widgets/_clients'); ?>
 <script type="text/javascript">
+
+
    $("body").on('change', '#forum_category', function() {
       var id = $(this).val();
       if (id > 0) {
@@ -433,4 +449,30 @@
          window.location.href = base_url + "expert-tutorial";
       }
    });
+
+
+   $("body").on('change', '#language_category', function() {
+      var id = $(this).val();
+      if (id > 0) {
+         window.location.href = base_url + "expert-tutorial?language=" + id;
+      } else {
+         window.location.href = base_url + "expert-tutorial";
+      }
+   });
+
+
+
+   $("body").on('change', '#level_category', function() {
+      var id = $(this).val();
+    //  alert(id);
+      if (id !='') {
+         window.location.href = base_url + "expert-tutorial?level=" + id;
+      } else {
+         window.location.href = base_url + "expert-tutorial";
+      }
+   });
+
+
+
+
 </script>

@@ -142,6 +142,14 @@ class Model_tutorial extends MY_Model
             $param['where']['tutorial_expert_id'] = intval($this->input->get('expert'));
         }
 
+        if (isset($_GET['language']) and intval($_GET['language']) > 0) {
+            $param['where']['tutorial_language_id'] = intval($this->input->get('language'));
+        }
+
+        if (isset($_GET['level'])) {
+            $param['where']['tutorial_level'] = $_GET['level'];
+        }
+
         return $param;
     }
 
@@ -276,7 +284,7 @@ class Model_tutorial extends MY_Model
 
     public function get_details($params = array())
     {
-        $params['fields'] = 'tutorial_id,tutorial_expert_id,tutorial_category_id,tutorial_slug,
+        $params['fields'] = 'tutorial_id,tutorial_expert_id,tutorial_level,tutorial_language_id,tutorial_category_id,tutorial_slug,
         tutorial_name,tutorial_level,tutorial_price,tutorial_video,tutorial_youtube_video,tutorial_video_path,tutorial_status,tutorial_createdon,tutorial_duration,tutorial_image2,tutorial_image,tutorial_image_path,expert_id,expert_name,expert_image,tutorial_featured,tutorial_rating,tutorial_keywords,language_id,language_name,tutorial_language_id, tutorial_desc,tutorial_desc2,tutorial_desc3';
        
 
