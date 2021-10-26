@@ -76,7 +76,7 @@
         <ul class="dashboard-layout">
             <li>
                 <div class="front-dashboard open">
-                    <a href="javascript:;" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a>
+                    <a href="javascript:;" class="menu-dash-front open">MENU<i class="fal fa-bars"></i></a>
                     <!-- <a href="#" class="menu-dash-front">MENU<i class="fal fa-bars"></i></a> -->
                     <? $this->load->view("widgets/dashboard-menu-box"); ?>
                 </div>
@@ -386,13 +386,13 @@
                                             <?php if (isset($your_tut) && array_filled($your_tut)) : ?>
                                                 <?php foreach ($your_tut as $key => $value) : ?>
                                                     <li>
-                                                        <div class="vid-box">
-                                                            <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox>
+                                                        <div class="vid-box " onclick="location.href='<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>';" style="cursor: pointer;">
+                                                            <!-- <a href="<?//= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox> -->
                                                                 <div class="video-box">
                                                                     <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
-                                                                    <span><i class="fas fa-play"></i>
+                                                                    <!-- <span><i class="fas fa-play"></i>
                                                                         <p>Preview Course</p>
-                                                                    </span>
+                                                                    </span> -->
                                                                     <?
                                                                     $coursecat = array();
                                                                     $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
@@ -404,12 +404,10 @@
                                                                     ?>
                                                                     <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
                                                                 </div>
-                                                            </a>
+                                                            <!-- </a> -->
                                                             <div class="vid-content">
-
-
                                                                 <div class="row align-items-center">
-                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+                                                                    <h4><a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
                                                                     <div class="col-md-10">
                                                                         <?
                                                                         $exp_name = array();
@@ -430,18 +428,24 @@
                                                                 <div class="space"><br></div>
                                                                 <div class="row align-items-center">
                                                                     <div class="col-md-12">
-
-
                                                                         <ul class="rating">
                                                                             <?
                                                                             $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
                                                                             ?>
-                                                                            <?php
-                                                                            for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
-                                                                                "
-                                                                                <li><img src="<?= i('') ?>icons/rat-d.svg" loading="lazy"></li>
-                                                                                ";
-                                                                            <? } ?>
+                                                                            <? if ($rating[0]['Rating'] == 0) { ?>
+                                                                                <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                <?php
+                                                                            } else {
+                                                                                for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
+                                                                                    "
+                                                                                    <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                                                    ";
+                                                                            <? }
+                                                                            } ?>
                                                                         </ul>
                                                                     </div>
                                                                     <!-- <div class="col-md-4">
@@ -463,9 +467,7 @@
                                         </ul>
                                     </div>
                                 </div>
-
                                 <div class="space"><br><br></div>
-
                                 <!-- testing -->
 
 
@@ -480,13 +482,13 @@
                                             <?php if (isset($next_tut) && array_filled($next_tut)) : ?>
                                                 <?php foreach ($next_tut as $key => $value) : ?>
                                                     <li>
-                                                        <div class="vid-box">
-                                                            <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox>
+                                                        <div class="vid-box" onclick="location.href='<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>';" style="cursor: pointer;">
+                                                            <!-- <a href="<?//= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox> -->
                                                                 <div class="video-box">
                                                                     <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
-                                                                    <span><i class="fas fa-play"></i>
+                                                                    <!-- <span><i class="fas fa-play"></i>
                                                                         <p>Preview Course</p>
-                                                                    </span>
+                                                                    </span> -->
                                                                     <?
                                                                     $coursecat = array();
                                                                     $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
@@ -498,12 +500,10 @@
                                                                     ?>
                                                                     <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
                                                                 </div>
-                                                            </a>
+                                                            <!-- </a> -->
                                                             <div class="vid-content">
-
-
                                                                 <div class="row align-items-center">
-                                                                    <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
+                                                                    <h4><a href="<?= l('course_detail_expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
                                                                     <div class="col-md-10">
                                                                         <?
                                                                         $exp_name = array();
@@ -524,18 +524,24 @@
                                                                 <div class="space"><br></div>
                                                                 <div class="row align-items-center">
                                                                     <div class="col-md-12">
-
-
                                                                         <ul class="rating">
                                                                             <?
                                                                             $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
                                                                             ?>
-                                                                            <?php
-                                                                            for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
-                                                                                "
-                                                                                <li><img src="<?= i('') ?>icons/rat-d.svg" loading="lazy"></li>
-                                                                                ";
-                                                                            <? } ?>
+                                                                            <? if ($rating[0]['Rating'] == 0) { ?>
+                                                                                <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                <?php
+                                                                            } else {
+                                                                                for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
+                                                                                    "
+                                                                                    <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                                                    ";
+                                                                            <? }
+                                                                            } ?>
                                                                         </ul>
                                                                     </div>
                                                                     <!-- <div class="col-md-4">
@@ -577,13 +583,13 @@
                                                 $paidTut = $this->model_tutorial->find_all_active($paidTutuorial);
                                                 ?>
                                                 <li>
-                                                    <div class="vid-box">
-                                                        <a href="<?= g('db.admin.bucket') . $paidTut[0]['tutorial_video'] ?>" data-fancybox>
+                                                    <div class="vid-box" onclick="location.href='<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>';" style="cursor: pointer;">
+                                                        <!-- <a href="<?//= g('db.admin.bucket') . $paidTut[0]['tutorial_video'] ?>" data-fancybox> -->
                                                             <div class="video-box">
                                                                 <img src="<?= g('db.admin.bucketimg') . $paidTut[0]['tutorial_image2'] ?>" loading="lazy">
-                                                                <span><i class="fas fa-play"></i>
+                                                                <!-- <span><i class="fas fa-play"></i>
                                                                     <p>Preview Course</p>
-                                                                </span>
+                                                                </span> -->
                                                                 <?
                                                                 $coursecat = array();
                                                                 $coursecat['where']['cp_course_id'] = $paidTut[0]['tutorial_id'];
@@ -595,12 +601,12 @@
                                                                 ?>
                                                                 <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
                                                             </div>
-                                                        </a>
+                                                        <!-- </a> -->
                                                         <div class="vid-content">
 
 
                                                             <div class="row align-items-center">
-                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $paidTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= $paidTut[0]['tutorial_name'] ?></a></h4>
+                                                                <h4><a href="<?= l('course-detail-expert') . '/' . $paidTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= $paidTut[0]['tutorial_name'] ?></a></h4>
                                                                 <div class="col-md-10">
                                                                     <?
                                                                     $exp_name = array();
@@ -627,12 +633,20 @@
                                                                         <?
                                                                         $rating = $this->model_learning_journey_course_review->get_avg_reating($paidTut[0]['tutorial_id']);
                                                                         ?>
-                                                                        <?php
-                                                                        for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
-                                                                            "
-                                                                            <li><img src="<?= i('') ?>icons/rat-d.svg" loading="lazy"></li>
-                                                                            ";
-                                                                        <? } ?>
+                                                                        <? if ($rating[0]['Rating'] == 0) { ?>
+                                                                            <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                            <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                            <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                            <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                            <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                            <?php
+                                                                        } else {
+                                                                            for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
+                                                                                "
+                                                                                <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                                                ";
+                                                                        <? }
+                                                                        } ?>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -664,13 +678,13 @@
                                                 $remainTut = $this->model_tutorial->find_all_active($remainTutuorial);
                                                 ?>
                                                 <li>
-                                                    <div class="vid-box">
-                                                        <a href="<?= g('db.admin.bucket') . $remainTut[0]['tutorial_video'] ?>" data-fancybox>
+                                                    <div class="vid-box" onclick="location.href='<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>';" style="cursor: pointer;">
+                                                        <!-- <a href="<?//= g('db.admin.bucket') . $remainTut[0]['tutorial_video'] ?>" data-fancybox> -->
                                                             <div class="video-box">
                                                                 <img src="<?= g('db.admin.bucketimg') . $remainTut[0]['tutorial_image2'] ?>" loading="lazy">
-                                                                <span><i class="fas fa-play"></i>
+                                                                <!-- <span><i class="fas fa-play"></i>
                                                                     <p>Preview Course</p>
-                                                                </span>
+                                                                </span> -->
                                                                 <?
                                                                 $coursecat = array();
                                                                 $coursecat['where']['cp_course_id'] = $remainTut[0]['tutorial_id'];
@@ -682,12 +696,12 @@
                                                                 ?>
                                                                 <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
                                                             </div>
-                                                        </a>
+                                                        <!-- </a> -->
                                                         <div class="vid-content">
 
 
                                                             <div class="row align-items-center">
-                                                                <h4><a href="<?= l('account/profile/course_detail_expert') . '/' . $remainTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= $remainTut[0]['tutorial_name'] ?></a></h4>
+                                                                <h4><a href="<?= l('course-detail-expert') . '/' . $remainTut[0]['tutorial_slug'] ?>" style="color:#33415C;"><?= $remainTut[0]['tutorial_name'] ?></a></h4>
                                                                 <div class="col-md-10">
                                                                     <?
                                                                     $exp_name = array();
@@ -714,12 +728,20 @@
                                                                         <?
                                                                         $rating = $this->model_learning_journey_course_review->get_avg_reating($remainTut[0]['tutorial_id']);
                                                                         ?>
-                                                                        <?php
-                                                                        for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
-                                                                            "
-                                                                            <li><img src="<?= i('') ?>icons/rat-d.svg" loading="lazy"></li>
-                                                                            ";
-                                                                        <? } ?>
+                                                                        <? if ($rating[0]['Rating'] == 0) { ?>
+                                                                            <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                            <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                            <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                            <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                            <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                            <?php
+                                                                        } else {
+                                                                            for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
+                                                                                "
+                                                                                <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                                                ";
+                                                                        <? }
+                                                                        } ?>
                                                                     </ul>
                                                                 </div>
                                                             </div>

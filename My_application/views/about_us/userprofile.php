@@ -23,7 +23,8 @@
     div#Profile h2 {
         margin-top: 30px;
     }
-    .ExpertTextArea h1{
+
+    .ExpertTextArea h1 {
         font-weight: 700;
         font-size: 22px;
     }
@@ -45,7 +46,7 @@
                             <div class="col-lg-10 col-md-9 col-12">
                                 <div class="ExpertTextArea">
                                     <h1><?= $profile['user_firstname'] ?> <?= $profile['user_lastname'] ?></h1>
-                                    <br/>
+                                    <br />
                                     <h3 class="badge btn btn-danger">Student</h3>
                                 </div>
                             </div>
@@ -73,35 +74,9 @@
                     <div id="Profile" class="tab-pane fade in active show card">
                         <div class="card-header">View Profile</div>
                         <div class="card-body">
-                            <h2>Experience</h2>
-                            <hr />
-                            <div class="row">
-                                <div class="col-lg-3 col-md-4 col-6">
-                                    <h3>Title</h3>
-                                </div>
-                                <div class="col-lg-9 col-md-8 col-6">
-                                    <h3><?= $profile['ui_exp_title'] ?></h3>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-3 col-md-4 col-6">
-                                    <h3>Company</h3>
-                                </div>
-                                <div class="col-lg-9 col-md-8 col-6">
-                                    <h3><?= $profile['ui_exp_company'] ?></h3>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-3 col-md-4 col-6">
-                                    <h3>Description</h3>
-                                </div>
-                                <div class="col-lg-9 col-md-8 col-6">
-                                    <h3> <?= $profile['ui_exp_desc'] ?></h3>
-                                </div>
-                            </div>
                             <h2>Details</h2>
                             <hr />
-                            <div class="row">
+                            <div class="row mb-2">
                                 <div class="col-lg-3 col-md-4 col-6">
                                     <h3>First Name</h3>
                                 </div>
@@ -109,25 +84,62 @@
                                     <h3><?= $profile['user_firstname'] ?></h3>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-2">
                                 <div class="col-lg-3 col-md-4 col-6">
-                                    <h3>Last Name</h3>
+                                    <h3>SurName</h3>
                                 </div>
                                 <div class="col-lg-9 col-md-8 col-6">
                                     <h3> <?= $profile['user_lastname'] ?></h3>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-2">
                                 <div class="col-lg-3 col-md-4 col-6">
-                                    <h3>User Name</h3>
+                                    <h3>Short Bio</h3>
                                 </div>
                                 <div class="col-lg-9 col-md-8 col-6">
-                                    <h3><?= $profile['user_username'] ?> </h3>
+                                    <h3> <?= $profile['ui_description'] ?></h3>
                                 </div>
                             </div>
+                            <h2>Experience</h2>
+                            <hr />
+                            
+                            <div class="row mb-2">
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <h3>Company</h3>
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-6">
+                                    <h3><?= $profile['ui_exp_company'] ?></h3>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-2">
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <h3>Description</h3>
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-6">
+                                    <h3> <?= $profile['ui_exp_desc'] ?></h3>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <h3>Work Designation</h3>
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-6">
+                                    <h3><?= $profile['ui_exp_title'] ?></h3>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <h3>You are an </h3>
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-6">
+                                    <h3><?= $profile['ui_are_you_an'] ?></h3>
+                                </div>
+                            </div>
+
                             <h2>Education</h2>
                             <hr />
-                            <div class="row">
+                            <div class="row mb-2">
                                 <div class="col-lg-3 col-md-4 col-6">
                                     <h3>School</h3>
                                 </div>
@@ -135,7 +147,7 @@
                                     <h3><?= $profile['ui_exp_school'] ?> </h3>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-2">
                                 <div class="col-lg-3 col-md-4 col-6">
                                     <h3>Degree</h3>
                                 </div>

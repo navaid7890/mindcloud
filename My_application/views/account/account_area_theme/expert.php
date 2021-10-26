@@ -68,8 +68,6 @@
         margin-right: 40px;
     }
 </style>
-
-
 <div class="index-page">
     <section class="dashboard">
         <ul class="dashboard-layout">
@@ -90,7 +88,6 @@
                                     <div class="side-bar sticky-top">
                                         <div class="searchBox">
                                             <h4>What do you want to learn?</h4>
-
                                             <form action="" method="GET">
                                                 <div class="fld-search">
                                                     <input type="text" name="search" placeholder="Search by Keyword">
@@ -115,6 +112,36 @@
                                                 <span><i class="fal fa-angle-down"></i></span>
                                             </div>
                                         </div>
+                                        <div class="select-level mt-3">
+                                            <h4>Select by Level </h4>
+                                            <div class="fld-select">
+                                                <select id="forum_category">
+                                                    <option>All Level</option>
+                                                    <option value="14">Christian Farioli </option>
+                                                </select>
+                                                <span><i class="fal fa-angle-down"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="select-lang mt-3">
+                                            <h4>Select by Language </h4>
+                                            <div class="fld-select">
+                                                <select id="forum_category">
+                                                    <option>All Languages</option>
+                                                    <option value="14">Christian Farioli </option>
+                                                </select>
+                                                <span><i class="fal fa-angle-down"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="select-tags mt-3">
+                                            <h4>Select by Tags </h4>
+                                            <div class="fld-select">
+                                                <select id="forum_category">
+                                                    <option>All Tags</option>
+                                                    <option value="14">Christian Farioli </option>
+                                                </select>
+                                                <span><i class="fal fa-angle-down"></i></span>
+                                            </div>
+                                        </div>
                                         <div class="sapce"><br><br><br></div>
                                         <div class="cate-wrap">
                                             <h4>Select by Category</h4>
@@ -123,10 +150,7 @@
                                                 <ul>
                                                     <? if (isset($main_categories) and array_filled($main_categories)) : ?>
                                                         <? foreach ($main_categories as $key => $value) : ?>
-                                                            <?
-                                                            $a = $value['category_id'];
-
-                                                            ?>
+                                                            <? $a = $value['category_id']; ?>
                                                             <!-- ( <? //= $value['tutorials'] 
                                                                     ?> ) -->
                                                             <li><a href="<?= l('account/profile/expert') ?>?cat=<?= $a ?>"><?= $value['category_name'] ?> ( <?= $value['tutorials'] ?> )</a> </li>
@@ -152,29 +176,27 @@
                                                     <?php if (isset($art) && array_filled($art)) : ?>
                                                         <?php foreach ($art as $key => $value) : ?>
                                                             <li>
-                                                                <div class="vid-box">
+                                                                <div class="vid-box" onclick="location.href='<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>';" style="cursor: pointer;">
+                                                                    <!-- <a href="<? //= g('db.admin.bucket') . $value['tutorial_video'] 
+                                                                                    ?>" data-fancybox> -->
+                                                                    <div class="video-box">
+                                                                        <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
+                                                                        <!-- <span><i class="fas fa-play"></i> </span> -->
+                                                                        <?
+                                                                        // debug($value);
+                                                                        $coursecat = array();
+                                                                        $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
+                                                                        $cate = $this->model_course_category->find_all_active($coursecat);
 
-                                                                    <a href="<?= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox>
-                                                                        <div class="video-box">
-                                                                            <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
-                                                                            <span><i class="fas fa-play"></i> </span>
-                                                                            <?
-                                                                            // debug($value);
-                                                                            $coursecat = array();
-                                                                            $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
-                                                                            $cate = $this->model_course_category->find_all_active($coursecat);
-
-                                                                            $cat_name = array();
-                                                                            $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
-                                                                            $cat_name = $this->model_category->find_all_active($cat_name);
-                                                                            ?>
-                                                                            <!-- <a href="javascript:;" class="cate-tag"><? // $value['tutorial_level'] 
-                                                                                                                            ?></a> -->
-                                                                            <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
-                                                                        </div>
-
-                                                                    </a>
-
+                                                                        $cat_name = array();
+                                                                        $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                                                        $cat_name = $this->model_category->find_all_active($cat_name);
+                                                                        ?>
+                                                                        <!-- <a href="javascript:;" class="cate-tag"><? // $value['tutorial_level'] 
+                                                                                                                        ?></a> -->
+                                                                        <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                                                                    </div>
+                                                                    <!-- </a> -->
                                                                     <div class="vid-content">
                                                                         <h4><a href="<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name'] ?></a></h4>
                                                                         <div class="row align-items-center pt-60">
@@ -186,18 +208,26 @@
                                                                             <div class="col-md-8 coutArea">
                                                                                 <ul class="rating">
                                                                                     <? $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']); ?>
-                                                                                    <?php
-                                                                                    for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
-                                                                                        "
-                                                                                        <li><img src="<?= i('') ?>icons/rat-d.svg" loading="lazy"></li>
-                                                                                        ";
-                                                                                    <? } ?>
+                                                                                    <? if ($rating[0]['Rating'] == 0) { ?>
+                                                                                        <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                        <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                        <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                        <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                        <li><img src="<?= i('') ?>icons/rat-l.svg"></li>
+                                                                                        <?php
+                                                                                    } else {
+                                                                                        for ($x = 1; $x <= $rating[0]['Rating']; $x++) { ?>
+                                                                                            "
+                                                                                            <li><img src="<?= i('') ?>icons/rat-d.svg"></li>
+                                                                                            ";
+                                                                                    <? }
+                                                                                    } ?>
                                                                                 </ul>
-
                                                                             </div>
-                                                                            <div class="col-md-4 text-right">
-                                                                                <h6><?= price($value['tutorial_price']) ?></h6>
-                                                                            </div>
+                                                                            <!-- <div class="col-md-4 text-right">
+                                                                                <h6><? //= price($value['tutorial_price']) 
+                                                                                    ?></h6>
+                                                                            </div> -->
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -330,13 +360,13 @@
                             <div class="space"><br><br></div>
 
 
-<? if ($this->userid > 0) {
-    $usdata = $this->layout_data['user_data'];
-} ?>
- <? if ($usdata['user_paid'] == 0) { ?>
+                            <?// if ($this->userid > 0) {
+                             //   $usdata = $this->layout_data['user_data'];
+                          //  } ?>
+                            <?// if ($usdata['user_paid'] == 0) { ?>
 
                             <a href="#" class="btn-theme btn-hover">Start Free Trial <span></span></a>
-                <? } ?>
+                            <?// } ?>
 
                         </div>
                     </section> -->

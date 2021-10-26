@@ -97,21 +97,18 @@
                             <div class="tutorial-mid hding-4 hding-3 para">
                                 <div class="row">
                                     <div class="col-md-12">
-
-
-
                                         <div class="video-box">
-
-
-                                            <video controlsList="nodownload" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $vid_name[0]['videos_image2'] ?>" controls>
-                                                <source src="<?= g('db.admin.bucket') . $expert_course['tutorial_video'] ?>" type="video/mp4">
-                                                <source src="<?= g('db.admin.bucket') . $expert_course['tutorial_video'] ?>" type="video/ogg">
-                                                Your browser does not support the video tag.
-                                            </video>
+                                            <? if (!empty($expert_course['tutorial_youtube_video'])) : ?>
+                                                <iframe width="100%" height="100%" src="<?= $expert_course['tutorial_youtube_video'] ?>"></iframe>
+                                            <? else : ?>
+                                                <video controlsList="nodownload" width="100%" height="100%" poster="<?= g('db.admin.bucketimg') . $vid_name[0]['videos_image2'] ?>" controls>
+                                                    <source src="<?= g('db.admin.bucket') . $expert_course['tutorial_video'] ?>" type="video/mp4">
+                                                    <source src="<?= g('db.admin.bucket') . $expert_course['tutorial_video'] ?>" type="video/ogg">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            <? endif; ?>
                                         </div>
-
                                     </div>
-
                                 </div>
                                 <div class="tutorial-footer vid-tran para">
                                     <div class="tutorial-footer-content">

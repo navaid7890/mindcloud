@@ -277,7 +277,7 @@ class Model_tutorial extends MY_Model
     public function get_details($params = array())
     {
         $params['fields'] = 'tutorial_id,tutorial_expert_id,tutorial_category_id,tutorial_slug,
-        tutorial_name,tutorial_level,tutorial_price,tutorial_video,tutorial_video_path,tutorial_status,tutorial_createdon,tutorial_duration,tutorial_image2,tutorial_image,tutorial_image_path,expert_id,expert_name,expert_image,tutorial_featured,tutorial_rating,tutorial_keywords,language_id,language_name,tutorial_language_id, tutorial_desc,tutorial_desc2,tutorial_desc3';
+        tutorial_name,tutorial_level,tutorial_price,tutorial_video,tutorial_youtube_video,tutorial_video_path,tutorial_status,tutorial_createdon,tutorial_duration,tutorial_image2,tutorial_image,tutorial_image_path,expert_id,expert_name,expert_image,tutorial_featured,tutorial_rating,tutorial_keywords,language_id,language_name,tutorial_language_id, tutorial_desc,tutorial_desc2,tutorial_desc3';
        
 
         $params['joins'][] = $this->join_expert();
@@ -579,6 +579,15 @@ class Model_tutorial extends MY_Model
                 'name' => 'tutorial_video',
                 'label' => 'Video',
                 'type' => 'hidden',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
+            'tutorial_youtube_video' => array(
+                'table' => $this->_table,
+                'name' => 'tutorial_youtube_video',
+                'label' => 'Youtube Video Link',
+                'type' => 'text',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'

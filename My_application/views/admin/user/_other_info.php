@@ -26,14 +26,6 @@
 				<input type="text" value="<?=$this->form_data['user']['ui_gender']?>" name="user_info[ui_gender]" id="user_info-ui_gender" class=" form-control ">
 			</div>
 		</div> -->
-
-		<!-- <div class="form-group">
-			<label for="" class="control-label col-md-2 "> Date Of Birth</label>
-			<div class="col-md-3">
-				<input type="date" value="<?=$this->form_data['user']['ui_dob']?>" name="user_info[ui_dob]" id="user_info-ui_dob" class=" form-control" >
-			</div>
-		</div> -->
-
 		
 		<!-- <div class="form-group">
 			<label for="" class="control-label col-md-2 ">Twitter Link</label>
@@ -76,6 +68,12 @@
 				<input type="text" value="<?=$this->form_data['user']['ui_phone']?>" name="user_info[ui_phone]" id="user_info-ui_phone" class=" form-control ">
 			</div>
 		</div>
+		<div class="form-group">
+			<label for="" class="control-label col-md-2 "> Date Of Birth</label>
+			<div class="col-md-3">
+				<input type="date" value="<?=$this->form_data['user']['ui_dob']?>" name="user_info[ui_dob]" id="user_info-ui_dob" class=" form-control" >
+			</div>
+		</div>
 
 		<!-- <div class="form-group ">
 			<label for="" class="control-label col-md-2 "> Mobile</label>
@@ -99,12 +97,8 @@
 			</div>
 		</div> -->
 
-		<!-- <div class="form-group ">
-			<label for="" class="control-label col-md-2 "> About us</label>
-			<div class="col-md-9">
-				<textarea name="user_info[ui_description]" rows="3" id="user_info-ui_description" class="form-control "><?=$this->form_data['user']['ui_description']?></textarea>
-			</div>
-		</div> -->
+
+		
 
 		<div class="form-group ">
 			<label for="" class="control-label col-md-2 "> Primary Address</label>
@@ -149,8 +143,44 @@
 				<input type="text" value="<?=$this->form_data['user']['ui_city']?>" name="user_info[ui_city]" id="user_info-ui_city" class=" form-control ">
 			</div>
 		</div>
-		
-		
+		<div class="form-group ">
+			<label for="" class="control-label col-md-2 "> School</label>
+			<div class="col-md-9">
+				<textarea name="user_info[ui_exp_school]" rows="3" id="user_ui_exp_school" class="form-control "><?=$this->form_data['user']['ui_exp_school']?></textarea>
+			</div>
+		</div>
+		<div class="form-group ">
+			<label for="" class="control-label col-md-2 "> Degree</label>
+			<div class="col-md-9">
+				<textarea name="user_info[ui_exp_degree]" rows="3" id="user_info-ui_exp_degree" class="form-control "><?=$this->form_data['user']['ui_exp_degree']?></textarea>
+			</div>
+		</div>
+		<div class="form-group ">
+			<label for="" class="control-label col-md-2 "> About us</label>
+			<div class="col-md-9">
+				<textarea name="user_info[ui_description]" rows="3" id="user_info-ui_description" class="form-control "><?=$this->form_data['user']['ui_description']?></textarea>
+			</div>
+		</div>
+		<div class="form-group ">
+			<label for="" class="control-label col-md-2 "> Work Designation</label>
+			<div class="col-md-9">
+				<textarea name="user_info[ui_exp_title]" rows="3" id="user_info-
+				" class="form-control "><?=$this->form_data['user']['ui_exp_title']?></textarea>
+			</div>
+		</div>
+		<div class="form-group ">
+			<label for="" class="control-label col-md-2 "> Are you an</label>
+			<div class="col-md-3">
+				<select class="form-control select2me " name="user_info[ui_are_you_an]">
+					<option value="0">Are you an</option>
+					<option value="Entrepreneur">Entrepreneur</option>
+					<option value="Intrapreneur">Intrapreneur </option>
+					<option value="Growth Entrepreneur">Growth Entrepreneur</option>
+					<option value="Industry">Industry</option>
+
+				</select>
+			</div>
+		</div>
 
 		
 

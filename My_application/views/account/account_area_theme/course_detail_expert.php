@@ -145,36 +145,40 @@
 
                            ?>
                            <div class="video-card">
-                              <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox>
-                                 <div class="video-box">
-                                    <img src="<?= g('db.admin.bucketimg') . $vid_name[0]['videos_image2'] ?>" />
-                                    <span><i class="fas fa-play"></i></span>
-                                 </div>
-                              </a>
-                              <div class="video-content">
-                                 <div>
-                                    <span><?= html_entity_decode($course[0]['tutorial_duration']) ?></span>
-                                    <ul class="tut-info">
-                                       <li><i><img src="<?= i('') ?>icons/1.png"></i> Professional Certification </li>
+                              <? if (!empty($course[0]['tutorial_youtube_video'])) : ?>
+                                 <a href="<?= $course[0]['tutorial_youtube_video'] ?>" data-fancybox>
+                                 <? else : ?>
+                                    <a href="<?= g('db.admin.bucket') . $course[0]['tutorial_video'] ?>" data-fancybox>
+                                    <? endif; ?>
+                                    <div class="video-box">
+                                       <img src="<?= g('db.admin.bucketimg') . $vid_name[0]['videos_image2'] ?>" />
+                                       <span><i class="fas fa-play"></i></span>
+                                    </div>
+                                    </a>
+                                    <div class="video-content">
+                                       <div>
+                                          <span><?= html_entity_decode($course[0]['tutorial_duration']) ?></span>
+                                          <ul class="tut-info">
+                                             <li><i><img src="<?= i('') ?>icons/1.png"></i> Professional Certification </li>
 
-                                       <? if ($datapaid[0]['user_paid'] == 0) : ?>
-                                          <li><a href="<?= l('subscription') ?>">1-Year Access </a></li>
-                                       <? endif; ?>
+                                             <? if ($datapaid[0]['user_paid'] == 0) : ?>
+                                                <li><a href="<?= l('subscription') ?>">1-Year Access </a></li>
+                                             <? endif; ?>
 
-                                       <!-- <form> -->
-                                       <input type="hidden" name="product_qty" class="qtystyle" value="1" min="1" max="1">
-                                       <input type="hidden" name="product_img" value="<?= get_image($course[0]['tutorial_image'], $course[0]['tutorial_image_path']) ?>" class="productimage" value="">
-                                       <input type="hidden" name="product_price" value="0" class="productprice">
-                                       <input type="hidden" name="product_id" value="<?= $course[0]['tutorial_id'] ?>" class="productid">
-                                       <input type="hidden" name="product_name" value="7- Day Access to Mind Cloud Tribe: allows you to see 7 tutorial" class="productname">
-                                       <li><a href="<?= l('account/profile/expert-detail-tutorial') ?>?courseid=<?= $course[0]['tutorial_id'] ?>">Continue Expert Tutorial
-                                             <!--  -->
-                                          </a></li>
-                                       <!-- 
+                                             <!-- <form> -->
+                                             <input type="hidden" name="product_qty" class="qtystyle" value="1" min="1" max="1">
+                                             <input type="hidden" name="product_img" value="<?= get_image($course[0]['tutorial_image'], $course[0]['tutorial_image_path']) ?>" class="productimage" value="">
+                                             <input type="hidden" name="product_price" value="0" class="productprice">
+                                             <input type="hidden" name="product_id" value="<?= $course[0]['tutorial_id'] ?>" class="productid">
+                                             <input type="hidden" name="product_name" value="7- Day Access to Mind Cloud Tribe: allows you to see 7 tutorial" class="productname">
+                                             <li><a href="<?= l('account/profile/expert-detail-tutorial') ?>?courseid=<?= $course[0]['tutorial_id'] ?>">Continue Expert Tutorial
+                                                   <!--  -->
+                                                </a></li>
+                                             <!-- 
                            </form> -->
-                                    </ul>
-                                 </div>
-                              </div>
+                                          </ul>
+                                       </div>
+                                    </div>
                            </div>
                         </div>
                      </div>
