@@ -160,6 +160,36 @@
                         <span><i class="fal fa-angle-down"></i></span>
                      </div>
                   </div>
+                  <div class="select-level mt-3">
+                     <h4>Select by Level </h4>
+                     <div class="fld-select">
+                        <select id="forum_category">
+                           <option>All Level</option>
+                           <option value="14">Christian Farioli </option>
+                        </select>
+                        <span><i class="fal fa-angle-down"></i></span>
+                     </div>
+                  </div>
+                  <div class="select-lang mt-3">
+                     <h4>Select by Language </h4>
+                     <div class="fld-select">
+                        <select id="forum_category">
+                           <option>All Languages</option>
+                           <option value="14">Christian Farioli </option>
+                        </select>
+                        <span><i class="fal fa-angle-down"></i></span>
+                     </div>
+                  </div>
+                  <div class="select-tags mt-3">
+                     <h4>Select by Tags </h4>
+                     <div class="fld-select">
+                        <select id="forum_category">
+                           <option>All Tags</option>
+                           <option value="14">Christian Farioli </option>
+                        </select>
+                        <span><i class="fal fa-angle-down"></i></span>
+                     </div>
+                  </div>
                   <div class="sapce"><br><br><br></div>
                   <div class="cate-wrap">
                      <h4>Select by Category</h4>
@@ -210,7 +240,8 @@
                                           $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
                                           $cat_name = $this->model_category->find_all_active($cat_name);
                                           ?>
-                                          <!-- <a href="javascript:;" class="cate-tag"><? // $value['tutorial_level']  ?></a> -->
+                                          <!-- <a href="javascript:;" class="cate-tag"><? // $value['tutorial_level']  
+                                                                                       ?></a> -->
                                           <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
                                        </div>
                                        <!-- </a> -->
