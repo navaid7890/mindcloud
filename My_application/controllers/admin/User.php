@@ -51,6 +51,8 @@ class User extends MY_Controller {
 
 		$this->_list_data['user_country'] = $this->model_country->find_all_list_active($param,"country");
 
+        $this->_list_data['user_corporate_id'] = $this->model_corporate->find_all_list_active(array(),
+            "corporate_name");
 		
 		$_POST = $this->input->post(NULL, true);
 

@@ -520,6 +520,28 @@ class Model_user extends MY_Model
                 'rules'   => 'required|trim|htmlentities|min_length[8]|max_length[100]'
             );
 
+            $fields['user_corporate_id'] = array(
+                'table'   => $this->_table,
+                'name'   => 'user_corporate_id',
+                'label'   => 'Corporate ID',
+                'type'   => 'dropdown',
+                'default'   => '',
+                'attributes'   => array(),
+                //'rules'   => 'required|trim|matches[retype]|md5'
+                'rules'   => 'trim|htmlentities|min_length[8]|max_length[100]'
+            );
+
+            // 'booking_user_id' => array(
+            //     'table'   => $this->_table,
+            //     'name'   => 'booking_user_id',
+            //     'label'   => 'User Name',
+            //     'type'   => 'dropdown',
+            //     'attributes'   => array(),
+            //     'js_rules'   => 'required',
+            //     'rules'   => 'required|trim',
+            //  ),
+
+
             $fields['user_type'] = array(
                 'table'   => $this->_table,
                 'name'   => 'user_type',
@@ -589,6 +611,17 @@ class Model_user extends MY_Model
                 'default'   => '',
                 'attributes'   => array(),
                 'rules'   => 'trim'
+            );
+
+            $fields['user_corporate_id'] = array(
+                'table'   => $this->_table,
+                'name'   => 'user_corporate_id',
+                'label'   => 'Corporate ID',
+                'type'   => 'dropdown',
+                'default'   => '',
+                'attributes'   => array(),
+                //'rules'   => 'required|trim|matches[retype]|md5'
+                'rules'   => 'trim|htmlentities|min_length[8]|max_length[100]'
             );
 
             $fields['user_points'] = array(

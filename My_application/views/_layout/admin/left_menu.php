@@ -51,6 +51,13 @@ $menu_links = array(
     ),
 
 
+    array("title"=>"Corporate Management", "icon"=>" feather icon-image" ,"action" => array("corporate") ,
+        "additionals"=>array(
+             array("link"=>"corporate","title"=>"Manage Corporate", "icon"=>" fa fa-angle-right"),
+        ),
+    ),
+
+
     array("title"=>"Testimonials Management", "icon"=>" feather icon-image" ,"action" => array("testimonials") ,
         "additionals"=>array(
              array("link"=>"testimonials","title"=>"Manage Testimonials", "icon"=>" fa fa-angle-right"),
