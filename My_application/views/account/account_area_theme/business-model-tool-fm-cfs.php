@@ -100,12 +100,12 @@
                               <tr class="align-items-center">
                                 <td>
                                   <div class="fld-text mb-0">
-                                    <input type="text" name="tool_builder_fm_cfs[tool_builder_begin_current_period]" value="<?= $tool['tool_builder_begin_current_period'] ?>" placeholder="What is your Begin Current Period ?">
+                                    <input type="date" name="tool_builder_fm_cfs[tool_builder_begin_current_period]" value="<?= $tool['tool_builder_begin_current_period'] ?>" placeholder="What is your Begin Current Period ?">
                                   </div>
                                 </td>
                                 <td>
                                   <div class="fld-text mb-0">
-                                    <input type="text" name="tool_builder_fm_cfs[tool_builder_begin_previous_period]" value="<?= $tool['tool_builder_begin_previous_period'] ?>" name="" placeholder="What is your Begin Previous Period ?">
+                                    <input type="date" name="tool_builder_fm_cfs[tool_builder_begin_previous_period]" value="<?= $tool['tool_builder_begin_previous_period'] ?>" name="" placeholder="What is your Begin Previous Period ?">
                                   </div>
                                 </td>
                               </tr>
@@ -113,12 +113,12 @@
                               <tr class="align-items-center">
                                 <td>
                                   <div class="fld-text mb-0">
-                                    <input type="text" name="tool_builder_fm_cfs[tool_builder_end_current_period]" value="<?= $tool['tool_builder_end_current_period'] ?>" name="" placeholder="What is your End Current Period ?">
+                                    <input type="date" name="tool_builder_fm_cfs[tool_builder_end_current_period]" value="<?= $tool['tool_builder_end_current_period'] ?>" name="" placeholder="What is your End Current Period ?">
                                   </div>
                                 </td>
                                 <td>
                                   <div class="fld-text mb-0">
-                                    <input type="text" name="tool_builder_fm_cfs[tool_builder_end_previous_period]" value="<?= $tool['tool_builder_end_previous_period'] ?>" name="" placeholder="What is your End Previous Period ?">
+                                    <input type="date" name="tool_builder_fm_cfs[tool_builder_end_previous_period]" value="<?= $tool['tool_builder_end_previous_period'] ?>" name="" placeholder="What is your End Previous Period ?">
                                   </div>
                                 </td>
                               </tr>

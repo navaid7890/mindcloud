@@ -301,8 +301,8 @@ class Quiz extends MY_Controller {
       // $objPHPExcelReader->getActiveSheet()->setCellValue('F10', $employee_data['tool_builder_discount_rate_year_4']);
       // $objPHPExcelReader->getActiveSheet()->setCellValue('G10', $employee_data['tool_builder_discount_rate_year_5']);
 
-      
       // $objPHPExcelReader->getActiveSheet()->setCellValue('H11', $employee_data['tool_builder_dcf_value']);
+      $objPHPExcelReader->getActiveSheet()->setCellValue('B12', $employee_data['tool_builder_currency']);
   
       $object_writer = PHPExcel_IOFactory::createWriter($objPHPExcelReader, 'Excel2007');
       
@@ -360,6 +360,7 @@ class Quiz extends MY_Controller {
   
       $loadedSheetNames = $objPHPExcelReader->getSheetNames();
 
+      $objPHPExcelReader->getActiveSheet()->setCellValue('G1', $employee_data['tool_builder_currency']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('C4', $employee_data['tool_builder_cash']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('C5', $employee_data['tool_builder_accounts_receivable']);
       $objPHPExcelReader->getActiveSheet()->setCellValue('C6', $employee_data['tool_builder_inventory']);
@@ -443,7 +444,8 @@ class Quiz extends MY_Controller {
        $objPHPExcelReader = $objReader->load($inputFileName);
    
        $loadedSheetNames = $objPHPExcelReader->getSheetNames();
- 
+
+       $objPHPExcelReader->getActiveSheet()->setCellValue('G1', $employee_data['tool_builder_currency']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('E2', $employee_data['tool_builder_price_per_unit']);
       //  $objPHPExcelReader->getActiveSheet()->setCellValue('E3', $employee_data['tool_builder_x']);
       //  $objPHPExcelReader->getActiveSheet()->setCellValue('E4', $employee_data['tool_builder_s']);
@@ -516,6 +518,7 @@ class Quiz extends MY_Controller {
    
        $loadedSheetNames = $objPHPExcelReader->getSheetNames();
  
+       $objPHPExcelReader->getActiveSheet()->setCellValue('F1', $employee_data['tool_builder_currency']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('C4', $employee_data['tool_builder_sales_1']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('D4', $employee_data['tool_builder_sales_2']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('E4', $employee_data['tool_builder_sales_3']);
@@ -654,7 +657,8 @@ class Quiz extends MY_Controller {
         $objPHPExcelReader = $objReader->load($inputFileName);
     
         $loadedSheetNames = $objPHPExcelReader->getSheetNames();
-  
+        $objPHPExcelReader->getActiveSheet()->setCellValue('G1', $employee_data['tool_builder_currency']);
+
         $objPHPExcelReader->getActiveSheet()->setCellValue('C5', $employee_data['tool_builder_begin_current_period']);
         $objPHPExcelReader->getActiveSheet()->setCellValue('D5', $employee_data['tool_builder_begin_previous_period']);
         $objPHPExcelReader->getActiveSheet()->setCellValue('E5', $employee_data['tool_builder_end_current_period']);

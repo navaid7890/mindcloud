@@ -684,7 +684,7 @@ button.cart-trim:hover { color: #000; }
 .fld-place input { background: #F3F6FA; width: 100%; height: 60px; padding: 0 15px; color: #5C677D; font-size: 15px; }
 .fld-place input::placeholder { color: #5C677D; }
 .fld-place { margin-bottom: 15px; }
-.abtBox .video-box { width: 100%; height: 410px; }
+.abtBox .video-box { width: 100%; height: 100%; }
 .xpert-content .video-box {width: 247px;height: 185px;overflow: hidden;position: relative;}
 .xpert-content ul.who-list.tut-list .video-box img {
     position: absolute;
@@ -2102,7 +2102,7 @@ ul.login-btnExpert a {
 	.criteriaSec span{display: none;}
 	
     .stepContent{height:325px;}
-    .abt-page .abtBox .video-box { height: 280px;}
+    .abt-page .abtBox .video-box { height: 100%;}
     .faq-page .faqSec h2 { text-align: center; padding-bottom: 20px; }
     .faq-tab-head ul>li { margin-bottom: 20px; }
     .faq-tab-head ul>li:after { display: none; }
