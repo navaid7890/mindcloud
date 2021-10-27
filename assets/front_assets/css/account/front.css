@@ -844,7 +844,7 @@
         overflow: hidden;
         background: #fff;
         /* min-height: 507px; */
-        min-height: 450px;
+        min-height: 430px;
         position: relative;
     }
     
@@ -1760,6 +1760,7 @@
         background: #fff;
         border-radius: 8px;
         position: relative;
+        line-height: 25px;
     }
     
     .fld-search input,

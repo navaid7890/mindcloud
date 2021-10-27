@@ -46,7 +46,7 @@
                         <?
                         $rating = $this->model_learning_journey_course_review->get_avg_reating($value['tutorial_id']);
                         ?>
-                        <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= short_text($value['tutorial_name'],20)  ?></a></h4>
+                        <h4><a href="<?= l('course-detail') . '/' . $value['tutorial_slug'] ?>" style="color:#33415C;"><?= $value['tutorial_name']  ?></a></h4>
                         <?
                         $exp_name = array();
                         $exp_name['where']['expert_id'] = $value["tutorial_expert_id"];
@@ -55,7 +55,7 @@
                         ?>
                         <div class="row align-items-center pt-40">
                             <div class="col-md-12">
-                                <ul class="login-btnExpert">
+                                <ul class="login-btnExpert pb-10">
                                     <li><a href="javascript:;"><span><img src="<?= g('db.admin.bucketimg') . $expt_name[0]['expert_image'] ?>"></span> <?= $expt_name[0]['expert_name'] ?> </a></li>
                                 </ul>
                             </div>
