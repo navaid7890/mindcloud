@@ -16,7 +16,7 @@ color: #fff;
                      <div class="space"><br><br></div>
 
                      <div class="row">
-                        <div class="col-lg-6 col-md-12">
+                        <div class="col-lg-12 col-md-12">
                         <?=html_entity_decode($contd['cms_page_title'])?>
                         </div>
                      </div>

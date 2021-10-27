@@ -6,6 +6,34 @@
       background-size: cover;
       background-position: center center;
    }
+   .home-banner h1:after {
+    content: "";
+    height: 12px;
+    display: block;
+    width: 12px;
+    border: 3px solid #356da2;
+    background: #1d90d9;
+    position: absolute;
+    bottom: -14px;
+    border-radius: 100px;
+    right: -4px;
+}
+.home-banner h1 {
+    font-size: 50px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 600;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.home-banner h1 {
+    border-bottom: 8px solid #F4C150;
+    display: inline;
+    padding-bottom: 0px;
+    position: relative;
+    top: -15px;
+}
 </style>
 
 <? $this->load->view('widgets/inner_banner'); ?>

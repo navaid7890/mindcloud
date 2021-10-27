@@ -2643,7 +2643,7 @@
         }
         a.menu-dash-front {
             /* display: block; */
-            display: none;
+            /* display: none; */
             left: 0;
             right: 0;
             width: 100%;
