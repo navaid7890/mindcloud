@@ -448,6 +448,8 @@ class About_us extends MY_Controller
         $data['lang'] = $this->model_language->find_all_active($par200);
      
 
+        
+
         $this->load_view("expert", $data);
     }
 
