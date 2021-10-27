@@ -36,20 +36,20 @@
               </div>
 
               <div class="row pt-70 align-items-center">
-                <div class="col-lg-6 col-md-12">
-                  <div class="fld-contact-radio">
+                <div class="col-lg-8 col-md-6">
+                  <div class="fld-contact-radio pb-10">
                     <label><input type="checkbox" name="inquiry[inquiry_terms]">Terms And Conditions & Privacy Policy</label>
                   </div>
                 </div>
 
-                <div class="col-lg-4 col-md-8">
-                  <!-- <div class="submit-msg">
+                <!-- <div class="col-lg-4 col-md-8">
+                  <div class="submit-msg">
                     <h6><i class="fas fa-check-circle"></i> Congrats, Your email was sent successfully!</h6>
-                  </div> -->
+                  </div>
                   
-                </div>
+                </div> -->
 
-                <div class="col-lg-2 col-md-4">
+                <div class="col-lg-4 col-md-6">
                   <div class="fld-btn">
                     <input type="submit" id="forms-contact_us-btn" value="Submit">
                   </div>
