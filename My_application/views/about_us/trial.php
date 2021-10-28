@@ -292,9 +292,18 @@ $("#stdt").click(function(e) {
         // },
         success: function(result) {
 
+           // alert(result);
+
            document.cookie='u='+result; 
             localStorage.setItem('user_name', result);
+            if(result==0)
+            {
+
+                Toastr.error('Invalid Promo Code Try Again', 'Error');
+            }            
+            else{
             Toastr.success('Promo Code Accepted', 'Success');
+            }
             $('#promoModal').modal('hide'); 
             $("#abt").text("Total Savings:    "+'$' +result);
             $('#udt').val('');
