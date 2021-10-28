@@ -363,7 +363,7 @@ $data  = $this->model_form->find_by_pk($id);
 
 
 
-		<h2>Driver’s License (list each drivers license held in the past three(3) years: </h2>
+		<h2>Driver's License (list each drivers license held in the past three(3) years: </h2>
 
 
 		<table style="width: 80%; border: 1px solid;">
