@@ -1253,6 +1253,36 @@ var Form = function () {
    
    
    
+    // cancle_subscribe: function (form) {
+
+
+    //   $('#cancle-subscription').prop('disabled', true);
+
+    //   var data = form.serialize();
+    //   response = AjaxRequest.fire(urls.cancle_subscribe, data);
+
+    //   $('#cancle-subscription').prop('disabled', false);
+
+
+    //   if (response.status) {
+
+    //     Toastr.success(response.msg.desc, 'You Have Cancled Your Subscription');
+    //     $("#canclesubscribeform").find('input[type=text],input[type=email],textarea,input[type=hidden]').val('');
+
+    //     return false;
+    //   }
+    //   else {
+    //     Toastr.error(response.msg.desc, 'Error');
+
+    //     return false;
+    //   }
+    //   return false;
+    // },
+
+
+
+
+
     cancle_subscribe: function (form) {
 
 
@@ -1262,17 +1292,13 @@ var Form = function () {
       response = AjaxRequest.fire(urls.cancle_subscribe, data);
 
       $('#cancle-subscription').prop('disabled', false);
-      //Toastr.success(response.msg.desc, 'You Have Cancled Your Subscription');
 
-      // setTimeout(function () {
-      //   location.reload();
-      // }, 1000);
-       return false ;
+      // return false ;
 
       if (response.status) {
 
-        Toastr.success(response.msg.desc, 'You Have Cancled Your Subscription');
-        $("#canclesubscribeform").find('input[type=text],input[type=email],textarea,input[type=hidden]').val('');
+        Toastr.success(response.msg.desc, 'You Have Canceled Your Subscription');
+        $("#canclesubscribeform").find('input[type=text],input[type=email],textarea').val('');
 
         return false;
       }
@@ -1283,6 +1309,18 @@ var Form = function () {
       }
       return false;
     },
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
