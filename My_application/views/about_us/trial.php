@@ -1,5 +1,17 @@
 
 <style>
+
+span#abt
+{
+
+    color: #196aa5 !important;
+    text-align: center;
+ 
+    padding-bottom: 10px;
+    font-size: 17px;
+
+    
+}
     .trial-page .t-profile h5,
     .trial-page .t-profile h5>span {
         color: #5C677D;
@@ -111,23 +123,27 @@ $_COOKIE['user_name'];
             <div class="row align-items-center">
                 <div class="col-lg-12 col-md-12">
                     <div>
-                        <h2>Select your learning journey for your <strong> 1-week free trial</strong>. Learn anywhere, cancel anytime. </h2>
+                        <h2> Learn anywhere, cancel anytime. </h2>
                         <div class="space"><br><br></div>
 
                         <div class="t-bannerBox text-center">
                             <div class="AllBtnArea">
                                 <div class="promoBtnArea">
-                                    <a href="#" class="btn-promo btn-hover" data-toggle="modal" data-target="#promoModal">Enter PromoCode</a>
+                                    <a href="#" class="btn-promo btn-hover" data-toggle="modal" data-target="#promoModal">Do you have a Promo Code?</a>
                                 </div>
                                 <div class="bannerHead">
                                     <h2>Annually</h2><br>
 
-                                    <p>One week free trial,<br>
-                                        then £20/month.<br>
-                                        Charged annually<br> $240/year</p><br>
+                                    <p>One year full access,<br>
+                                        only at $15/month.<br>
+                                        Charged annually<br> $180/year</p><br>
+                                        <span id="abt"></span>
+                                        <button type="button" class="btn btn-primary" id="con">Confirm Subscription</button>
 
                                     <div class="text-center" id="AmazonPayButton"></div>
                                     <!-- <a href="#" id="AmazonPayButton" data-fancybox data-src="#trial-popup" class="btn-hover">Subscribe Now <span></span></a> -->
+                              
+                              <br><br>
                                 </div>
                             </div>
                             <div class="banner-down">
@@ -254,6 +270,7 @@ $_COOKIE['user_name'];
 
 $( document ).ready(function() {
     localStorage.setItem('user_name', '');
+    $("#con").hide();
 });
 
 $("#stdt").click(function(e) {
@@ -275,11 +292,35 @@ $("#stdt").click(function(e) {
         //     access_token: $("#access_token").val() 
         // },
         success: function(result) {
-           // setcookie("user_name", result, 3600000);
+
+           // alert(result);
+
            document.cookie='u='+result; 
             localStorage.setItem('user_name', result);
+            if(result==0)
+            {
+
+                Toastr.error('Invalid Promo Code Try Again', 'Error');
+            }            
+            else{
             Toastr.success('Promo Code Accepted', 'Success');
+            }
             $('#promoModal').modal('hide'); 
+            $("#abt").text("Total Savings:    "+'$' +result);
+            $('#udt').val('');
+            if(result=="180")
+            {
+                $("#con").show();
+                $("img#OffAmazonPaymentsWidgets0").hide();
+
+            }
+            else
+            {
+
+                $("#con").hide();
+                $("img#OffAmazonPaymentsWidgets0").show();
+            }
+
         },
         error: function(result) {
             alert('error');
@@ -289,6 +330,15 @@ $("#stdt").click(function(e) {
 
 });
 
+
+
+$("#con").click(function(e) {
+    e.preventDefault();
+    setTimeout(function(){
+              window.location = 'thankyou';
+          },000);
+
+});
 
 
 

@@ -42,9 +42,9 @@ class Coupon extends MY_Controller {
 
 		parent::__construct();
 
-        $this->dt_params['dt_headings'] = "coupon_id,coupon_code, coupon_discount,coupon_status";
+        $this->dt_params['dt_headings'] = "coupon_id,coupon_affiliate,coupon_code,coupon_discount,coupon_count,coupon_status";
 
-        $this->dt_params['searchable'] = array("coupon_id","coupon_name","coupon_percent","coupon_status");
+        $this->dt_params['searchable'] = array("coupon_id","coupon_code","coupon_discount","coupon_status");
 
         $this->dt_params['action'] = array(
 

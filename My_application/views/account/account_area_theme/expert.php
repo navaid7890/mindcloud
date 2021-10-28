@@ -113,35 +113,47 @@
                                             </div>
                                         </div>
                                         <div class="select-level mt-3">
-                                            <h4>Select by Level </h4>
-                                            <div class="fld-select">
-                                                <select id="forum_category">
-                                                    <option>All Level</option>
-                                                    <option value="14">Christian Farioli </option>
-                                                </select>
-                                                <span><i class="fal fa-angle-down"></i></span>
-                                            </div>
-                                        </div>
-                                        <div class="select-lang mt-3">
-                                            <h4>Select by Language </h4>
-                                            <div class="fld-select">
-                                                <select id="forum_category">
-                                                    <option>All Languages</option>
-                                                    <option value="14">Christian Farioli </option>
-                                                </select>
-                                                <span><i class="fal fa-angle-down"></i></span>
-                                            </div>
-                                        </div>
-                                        <div class="select-tags mt-3">
-                                            <h4>Select by Tags </h4>
-                                            <div class="fld-select">
-                                                <select id="forum_category">
-                                                    <option>All Tags</option>
-                                                    <option value="14">Christian Farioli </option>
-                                                </select>
-                                                <span><i class="fal fa-angle-down"></i></span>
-                                            </div>
-                                        </div>
+                     <h4>Select by Level </h4>
+                     <div class="fld-select">
+                        <select id="level_category" <?= $this->input->get('level')?>>
+                           <option>All Level</option>
+                           <option value="BEGINNER" <?= $this->input->get('level') == 'BEGINNER' ? 'selected=""' : '' ?>>BEGINNER </option>
+                           <option value="MIDDLE" <?= $this->input->get('level') == 'MIDDLE' ? 'selected=""' : '' ?>>MIDDLE</option>
+                           <option value="ADVANCE" <?= $this->input->get('level') == 'ADVANCE' ? 'selected=""' : '' ?>>ADVANCE </option>
+                        </select>
+                        <span><i class="fal fa-angle-down"></i></span>
+                     </div>
+                  </div>
+                  <div class="select-lang mt-3">
+                     <h4>Select by Language </h4>
+                     <div class="fld-select">
+                        <select id="language_category">
+                        <option>All Languages</option>
+                           <? if (isset($lang) and array_filled($lang)) : ?>
+                              <? foreach ($lang as $key => $value) : ?>
+                                 <option value="<?= $value['language_id'] ?>" <?= $this->input->get('language') == $value['language_id'] ? 'selected=""' : '' ?>>
+                                    <?= $value['language_name'] ?>
+                                 </option>
+                              <? endforeach; ?>
+                           <? endif; ?>
+                        </select>
+                        <span><i class="fal fa-angle-down"></i></span>
+                     </div>
+                  </div>
+
+
+                  <!-- <div class="select-tags mt-3">
+                     <h4>Select by Tags </h4>
+                     <div class="fld-select">
+                        <select id="tags_category">
+                           <option>All Tags</option>
+                           <option value="14">Christian Farioli </option>
+                        </select>
+                        <span><i class="fal fa-angle-down"></i></span>
+                     </div>
+                  </div> -->
+
+
                                         <div class="sapce"><br><br><br></div>
                                         <div class="cate-wrap">
                                             <h4>Select by Category</h4>
@@ -414,4 +426,29 @@
             window.location.href = base_url + "account/profile/expert";
         }
     });
+
+
+
+
+   $("body").on('change', '#language_category', function() {
+      var id = $(this).val();
+      if (id > 0) {
+         window.location.href = base_url + "account/profile/expert?language=" + id;
+      } else {
+         window.location.href = base_url + "account/profile/expert";
+      }
+   });
+
+
+
+   $("body").on('change', '#level_category', function() {
+      var id = $(this).val();
+    //  alert(id);
+      if (id !='') {
+         window.location.href = base_url + "account/profile/expert?level=" + id;
+      } else {
+         window.location.href = base_url + "account/profile/expert";
+      }
+   });
+
 </script>

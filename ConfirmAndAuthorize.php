@@ -5,11 +5,9 @@ session_start();
 include 'amazon-pay.phar';
 include 'config.php';
      
-$abs=240-$_COOKIE["u"];
+$abs=180-$_COOKIE["u"];
 
 //echo $abs;
-
-
 
 
 // Instantiate the client object with the configuration

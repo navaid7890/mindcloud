@@ -39,7 +39,7 @@ button#pause-cycle {
                 <div id="section-content">
            
                     <h2>Recurring Simulation</h2>
-                    <p style="margin-top:40px;">This will make authorizations on the billing agreement every <strong>1</strong> year. We will authorize <strong>£ <span id="submittername"></span></strong> to simulate the recurring charge.</p>
+                    <p style="margin-top:40px;">This will make authorizations on the billing agreement every <strong>1</strong> year. We will authorize <strong>$<span id="submittername"></span></strong> to simulate the recurring charge.</p>
                     <div class="text-center" style="margin-top:10px;">
                         <button id="pause-cycle" class="btn btn-danger">Pause</button>
                     </div>
@@ -177,7 +177,7 @@ button#pause-cycle {
         <script type='text/javascript'>
         $(document).ready(function() {
  
-      var ab=240-localStorage.getItem('user_name');
+      var ab=180-localStorage.getItem('user_name');
       $("#submittername").text(ab);
 
 

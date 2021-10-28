@@ -443,6 +443,13 @@ class About_us extends MY_Controller
 
         $data['check'] = $exp1['child'][0];
 
+        $par200 = array();
+        $par200['order'] = "language_id ASC";
+        $data['lang'] = $this->model_language->find_all_active($par200);
+     
+
+        
+
         $this->load_view("expert", $data);
     }
 
