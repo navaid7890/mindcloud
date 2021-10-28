@@ -989,7 +989,7 @@ $datapaid = $this->model_user->find_all_active($upaid);
 
         <? if ($datapaid[0]['user_paid'] == 1) : ?>
 
-            if (localStorage.getItem("learingPercent") <= "100") {
+            if (localStorage.getItem("learingPercent") >= "100") {
                 $("#certificateBtn").css("display", "block");
                 $("#certificateNotComplete").css("display", "none");
             } else {

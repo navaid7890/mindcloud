@@ -24,6 +24,9 @@
     font-weight: 700;
     padding-top: 20px;
 }
+.home-banner ul {
+    display: inline-block;
+}
 </style>
 
 

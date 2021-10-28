@@ -46,6 +46,7 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+        padding: 10px 15px;
     }
 
     input[type=text] {
