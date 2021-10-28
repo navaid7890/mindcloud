@@ -1370,7 +1370,8 @@ class About_us extends MY_Controller
 
     }
    
-    }
+   
+}
 
 
 

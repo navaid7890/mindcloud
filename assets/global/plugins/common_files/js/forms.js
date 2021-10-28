@@ -1286,6 +1286,7 @@ var Form = function () {
     cancle_subscribe: function (form) {
 
 
+      
       $('#cancle-subscription').prop('disabled', true);
 
       var data = form.serialize();
