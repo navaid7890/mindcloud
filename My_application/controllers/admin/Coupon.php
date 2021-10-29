@@ -168,13 +168,15 @@ class Coupon extends MY_Controller {
 
 			if(isset($data) AND array_filled($data))
 			{
-				$result['record']['Record ID'] = $data['inquiry_id'];
-				$result['record']['Name Of Affiliate'] = $data['inquiry_name'];
-				$result['record']['Email'] = $data['inquiry_email'];
-				$result['record']['Phone'] = $data['inquiry_phone'];
+				$r=strtotime($data['coupon_created_on']);
+
+				$result['record']['COUPON ID'] = $data['coupon_id'];
+				$result['record']['NAME OF AFFILIATE'] = $data['coupon_affiliate'];
+				$result['record']['DISCOUNT CREATION DATE'] = date("M d,Y h:i:sa",$r);
+				$result['record']['REPORT DATE'] = date("M d,Y h:i:sa");
 				
 	
-			    $result['record']['Report Date/Time'] = $data['inquiry_createdon'];
+			    $result['record']['TOTAL NO. OF CONVERSIONS'] = $data['coupon_count'];
 
 				}
 		}

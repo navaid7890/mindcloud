@@ -90,7 +90,8 @@ if( ! function_exists("create_modal_html") )
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-								<h4 class="modal-title"><?=$title?></h4>
+								<!-- <h4 class="modal-title"><?=$title?></h4> -->
+								<img src="<?=base_url()?>assets/front_assets/images/logo.png" />
 							</div>
 							<div class="modal-body">
 								<?=$body?>

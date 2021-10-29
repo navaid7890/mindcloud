@@ -298,7 +298,7 @@ class MY_Controller_Admin extends CI_Controller {
 
 				// VIEW BUTTON
 				if((isset($dt_params['action']['show_view'])) && ($dt_params['action']['show_view']))
-					$edit_button = '<button title="View" data-href="'.$config['admin_base_url'].$class.'/ajax_view/'.$itemId.'/" class="btn-xs btn btn_view_product btn-primary" data-pk="'.$itemId.'"><i class="icon-picture"></i></button>';
+					$edit_button = '<button title="View" data-href="'.$config['admin_base_url'].$class.'/ajax_view/'.$itemId.'/" class="btn-xs btn btn_view_product btn-primary" data-pk="'.$itemId.'">Report</button>';
 				
 				$extra_buttons = '' ;
 				
