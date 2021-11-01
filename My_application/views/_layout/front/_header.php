@@ -76,7 +76,7 @@ $logo=$this->model_logo->find_all_active();
 							</li>
 						<? else : ?>
 							<li><a href="<?= l('login') ?>">Sign In</a></li>
-							<li><a href="<?= l('signup') ?>" class="btn-signup btn-hover">Register <span></span></a></li>
+							<li><a href="<?= l('sign-up') ?>" class="btn-signup btn-hover">Register <span></span></a></li>
 						<? endif; ?>
 					</ul>
 				</div>

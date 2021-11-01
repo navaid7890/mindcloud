@@ -133,6 +133,7 @@ $route['account-area'] = "account/dashboard";
 $route['login'] = "registration/login";
 // $route['signup'] = "registration/login";
 $route['signup'] = "registration";
+ $route['sign-up'] = "registration/sign_up";
 $route['signup-contributor'] = "registration/contributor_signup";
 $route['forgot-password'] = "registration/forgot_password";
 $route['ajax-save-signup'] = "signup/index";

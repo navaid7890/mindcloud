@@ -117,6 +117,48 @@ class Registration extends MY_Controller {
     }
 
 
+
+    public function sign_up()
+    {
+        
+
+        global $config;
+        $data = array();
+
+       
+        if ($this->userid > 0) {
+            $url = l('account-area');
+            redirect($url);
+        }
+
+        
+        $method_title = ucwords($this->uri->segment(1));
+        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+
+
+         $b = $this->get_ibanner(11);
+         $data['ititle'] = $b['ititle'];
+         $data['ibanner_img'] = $b['ibanner_img'];
+
+         $data['cms_data'] = $this->model_cms_page->get_page(19);
+        $data['cont0'] =  $data['cms_data']['child'][0];
+        $data['cont1'] =  $data['cms_data']['child'][1];
+        $data['cont2'] =  $data['cms_data']['child'][2];
+        $data['cont3'] =  $data['cms_data']['child'][3];
+        $data['cont4'] =  $data['cms_data']['child'][4];
+
+
+         $b = $this->get_banner(4);
+         $data['bcontent'] = $b['bcontent'];
+         $data['bimage'] = $b['bimage'];
+            
+
+        $data['title'] = "Registration";
+
+        $this->load_view("sign_up",$data);
+    }
+
+
     // forgot_password Page
     public function forgot_password()
     {
@@ -134,6 +176,10 @@ class Registration extends MY_Controller {
 
         $this->load_view("forgot_password",$data);
     }
+
+
+    
+
 
 
 
