@@ -590,8 +590,8 @@ class MY_Controller extends MY_Controller_Admin
         $mail->isSMTP();
         $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
-        $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+        $mail->Username = 'AKIA37YJHEJR2MKI7YMI';
+        $mail->Password = 'BHv8/PiNbgnCwezgJms9aFK6gXjfNYZP5VscHozBLRDv';
         $mail->SMTPSecure = 'ssl';
         $mail->Port     = 465;
         $param = array();
@@ -605,7 +605,9 @@ class MY_Controller extends MY_Controller_Admin
            $param['form_input']['Full Name']=$a['expert_name'];
         }
    
-        $mail->setFrom($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
+       // $mail->setFrom($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
+        $mail->setFrom('madiha@alphacandy.com', 'Genny');
+       
         $mail->addReplyTo($a['expert_email'], $a['expert_name']);
 
         $mail->addAddress($data['booking_email']);
@@ -637,8 +639,8 @@ class MY_Controller extends MY_Controller_Admin
         $mail->isSMTP();
         $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
-        $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+        $mail->Username = 'AKIA37YJHEJR2MKI7YMI';
+        $mail->Password = 'BHv8/PiNbgnCwezgJms9aFK6gXjfNYZP5VscHozBLRDv';
         $mail->SMTPSecure = 'ssl';
         $mail->Port     = 465;
         $param = array();
@@ -655,7 +657,7 @@ class MY_Controller extends MY_Controller_Admin
         // debug($data,1);
         // die();
         // $mail->setFrom(g('db.admin.email_contact_us'), "Unsubscribed");
-        $mail->setFrom('m.fazal@manageglobally.io', 'Unsubscribed');
+        $mail->setFrom('madiha@alphacandy.com', 'Genny');
         $mail->addReplyTo($data['user_email'], $this->session->userdata['logged_in_front']['first_name']);
 
         $mail->addAddress($data['user_email']);
@@ -691,8 +693,8 @@ public function confirm_expert($data){
     $mail->isSMTP();
     $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
-    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->Username = 'AKIA37YJHEJR2MKI7YMI';
+    $mail->Password = 'BHv8/PiNbgnCwezgJms9aFK6gXjfNYZP5VscHozBLRDv';
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
     $param = array();
@@ -707,7 +709,9 @@ public function confirm_expert($data){
        $param['form_input']['User Name']=$b['user_firstname'];
     }
 
-    $mail->setFrom($b['user_email'], $b['user_firstname']);
+   // $mail->setFrom($b['user_email'], $b['user_firstname']);
+
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
     $mail->addReplyTo($a['expert_email'], $a['expert_name']);
 
     $mail->addAddress($a['expert_email']);
@@ -739,12 +743,12 @@ public function signup($data){
     $mail->isSMTP();
     $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
-    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->Username = 'AKIA37YJHEJR2MKI7YMI';
+    $mail->Password = 'BHv8/PiNbgnCwezgJms9aFK6gXjfNYZP5VscHozBLRDv';
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('m.fazal@manageglobally.io', 'Genny');
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
     $mail->addReplyTo($data['user_email'], $data['user_firtsname']);
 
     $mail->addAddress($data['user_email']);
@@ -786,12 +790,12 @@ public function newsletter(){
     $mail->isSMTP();
     $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
-    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->Username = 'AKIA37YJHEJR2MKI7YMI';
+    $mail->Password = 'BHv8/PiNbgnCwezgJms9aFK6gXjfNYZP5VscHozBLRDv';
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('m.fazal@manageglobally.io', 'Genny');
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
     $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
 
     $mail->addAddress($this->session->userdata['logged_in_front']['email']);
@@ -829,12 +833,12 @@ public function renewal(){
     $mail->isSMTP();
     $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
-    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->Username = 'AKIA37YJHEJR2MKI7YMI';
+    $mail->Password = 'BHv8/PiNbgnCwezgJms9aFK6gXjfNYZP5VscHozBLRDv';
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('m.fazal@manageglobally.io', 'Genny');
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
     $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
 
     $mail->addAddress($this->session->userdata['logged_in_front']['email']);
@@ -871,12 +875,12 @@ public function renewal_two(){
     $mail->isSMTP();
     $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
-    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->Username = 'AKIA37YJHEJR2MKI7YMI';
+    $mail->Password = 'BHv8/PiNbgnCwezgJms9aFK6gXjfNYZP5VscHozBLRDv';
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('m.fazal@manageglobally.io', 'Genny');
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
     $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
 
     $mail->addAddress($this->session->userdata['logged_in_front']['email']);
@@ -913,15 +917,17 @@ public function inquiry($data){
     $mail->isSMTP();
     $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
-    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->Username = 'AKIA37YJHEJR2MKI7YMI';
+    $mail->Password = 'BHv8/PiNbgnCwezgJms9aFK6gXjfNYZP5VscHozBLRDv';
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom($data['inquiry_email'], $data['inquiry_name']);
-    $mail->addReplyTo('m.fazal@manageglobally.io', 'Genny');
+   // $mail->setFrom($data['inquiry_email'], $data['inquiry_name']);
 
-    $mail->addAddress('m.fazal@manageglobally.io');
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->addReplyTo('madiha@alphacandy.com', 'Genny');
+
+    $mail->addAddress('madiha@alphacandy.com');
 
     $param = array();
     if(isset($data) && array_filled($data))
@@ -958,8 +964,8 @@ public function reject_expert($data){
     $mail->isSMTP();
     $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
-    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->Username = 'AKIA37YJHEJR2MKI7YMI';
+    $mail->Password = 'BHv8/PiNbgnCwezgJms9aFK6gXjfNYZP5VscHozBLRDv';
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
     $param = array();
@@ -974,7 +980,8 @@ public function reject_expert($data){
        $param['form_input']['User Name']=$b['user_firstname'];
     }
 
-    $mail->setFrom($a['expert_email'], $a['expert_name']);
+   // $mail->setFrom($a['expert_email'], $a['expert_name']);
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
     $mail->addReplyTo($b['user_email'], $b['user_firstname']);
 
     $mail->addAddress($b['user_email']);
@@ -1008,8 +1015,8 @@ public function confirm_by_expert($data){
     $mail->isSMTP();
     $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'AKIAXQ4HYQNYTHYB6C5I';
-    $mail->Password = 'BHUn7SOdDMSo2cqV5AoRhYkUlt9TABFgi88ViJdLyOXi';
+    $mail->Username = 'AKIA37YJHEJR2MKI7YMI';
+    $mail->Password = 'BHv8/PiNbgnCwezgJms9aFK6gXjfNYZP5VscHozBLRDv';
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
     $param = array();
@@ -1023,7 +1030,8 @@ public function confirm_by_expert($data){
        $param['form_input']['Full Name']=$a['expert_name'];
     }
 
-    $mail->setFrom($a['expert_email'], $a['expert_name']);
+   // $mail->setFrom($a['expert_email'], $a['expert_name']);
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
     $mail->addReplyTo($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
 
     $mail->addAddress($data['booking_email']);
