@@ -22,7 +22,7 @@ class Model_coupon extends MY_Model
     function __construct()
     {
         // Call the Model constructor
-        $this->pagination_params['fields'] = "coupon_id,coupon_affiliate,coupon_code,coupon_discount,coupon_count,coupon_status";
+        $this->pagination_params['fields'] = "coupon_id,coupon_affiliate,coupon_code,coupon_discount,coupon_count,coupon_created_on,coupon_status";
 
         parent::__construct();
     }
@@ -110,6 +110,17 @@ class Model_coupon extends MY_Model
                 'rules' => 'trim|htmlentities'
             ),
 
+
+            'coupon_created_on' => array(
+                'table'   => $this->_table,
+                'name'   => 'coupon_created_on',
+                'label'   => 'Discount Creation Date',
+                'type'   => 'readonly',
+                'attributes'   => array(),
+                'js_rules'   => '',
+                'rules'   => ''
+             ), 
+
         //    'coupon_url' => array(
         //         'table'   => $this->_table,
         //         'name'   => 'coupon_url',
@@ -119,6 +130,9 @@ class Model_coupon extends MY_Model
         //         'js_rules'   => 'required',
         //         'rules'   => 'required|trim|htmlentities'
         //     ),
+
+        
+
 
             'coupon_status' => array(
                 'table' => $this->_table,
