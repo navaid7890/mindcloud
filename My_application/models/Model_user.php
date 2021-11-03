@@ -528,7 +528,7 @@ class Model_user extends MY_Model
                 'default'   => '',
                 'attributes'   => array(),
                 //'rules'   => 'required|trim|matches[retype]|md5'
-                'rules'   => 'trim|htmlentities|min_length[8]|max_length[100]'
+                'rules'   => 'trim|htmlentities'
             );
 
             // 'booking_user_id' => array(
@@ -621,7 +621,7 @@ class Model_user extends MY_Model
                 'default'   => '',
                 'attributes'   => array(),
                 //'rules'   => 'required|trim|matches[retype]|md5'
-                'rules'   => 'trim|htmlentities|min_length[8]|max_length[100]'
+                'rules'   => 'trim|htmlentities'
             );
 
             $fields['user_points'] = array(

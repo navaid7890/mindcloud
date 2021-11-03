@@ -1193,16 +1193,16 @@ $my_tools = array(
 
     var dcf_value = document.getElementById('dcf_value');
 
-    net_profit_year_2.value = Math.round((net_profit / 100 * growth_rate) + Number(net_profit));
-    net_profit_year_3.value = Math.round((Number(net_profit_year_2.value) / 100 * growth_rate) + Number(net_profit_year_2.value));
-    net_profit_year_4.value = Math.round((Number(net_profit_year_3.value) / 100 * growth_rate) + Number(net_profit_year_3.value));
-    net_profit_year_5.value = Math.round((Number(net_profit_year_4.value) / 100 * growth_rate) + Number(net_profit_year_4.value));
+    net_profit_year_2.value = ((net_profit / 100 * growth_rate) + Number(net_profit)).toFixed(2);
+    net_profit_year_3.value = ((Number(net_profit_year_2.value) / 100 * growth_rate) + Number(net_profit_year_2.value)).toFixed(2);
+    net_profit_year_4.value = ((Number(net_profit_year_3.value) / 100 * growth_rate) + Number(net_profit_year_3.value)).toFixed(2);
+    net_profit_year_5.value = ((Number(net_profit_year_4.value) / 100 * growth_rate) + Number(net_profit_year_4.value)).toFixed(2);
 
-    discount_rate_year_1.value = (net_profit / (1 + discount_rate / 100)).toFixed(4);
-    discount_rate_year_2.value = (net_profit_year_2.value / Math.pow((1 + discount_rate / 100), 2)).toFixed(4);
-    discount_rate_year_3.value = (net_profit_year_3.value / Math.pow((1 + discount_rate / 100), 3)).toFixed(4);
-    discount_rate_year_4.value = (net_profit_year_4.value / Math.pow((1 + discount_rate / 100), 4)).toFixed(4);
-    discount_rate_year_5.value = (net_profit_year_5.value / Math.pow((1 + discount_rate / 100), 5)).toFixed(4);
+    discount_rate_year_1.value = (net_profit / (1 + discount_rate / 100)).toFixed(2);
+    discount_rate_year_2.value = (net_profit_year_2.value / Math.pow((1 + discount_rate / 100), 2)).toFixed(2);
+    discount_rate_year_3.value = (net_profit_year_3.value / Math.pow((1 + discount_rate / 100), 3)).toFixed(2);
+    discount_rate_year_4.value = (net_profit_year_4.value / Math.pow((1 + discount_rate / 100), 4)).toFixed(2);
+    discount_rate_year_5.value = (net_profit_year_5.value / Math.pow((1 + discount_rate / 100), 5)).toFixed(2);
 
     dcf_value.value = Number(discount_rate_year_1.value) + Number(discount_rate_year_2.value) + Number(discount_rate_year_3.value) + Number(discount_rate_year_4.value) + Number(discount_rate_year_5.value);
   }
