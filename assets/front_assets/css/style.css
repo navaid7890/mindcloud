@@ -535,8 +535,8 @@ ul.tut-info>li:nth-child(3) a { background: #71C2FD; color: #fff; margin-top: 15
 .trial-page .home-banner:after { background: #186AA5; }
 .trial-page .home-banner h2 { color: #fff; text-align: center; }
 .trial-page .home-banner { height: 799px; }
-.t-bannerBox { background: #E8EFF7; width: 564px; height: 524px; margin: auto; }
-.bannerHead { background: #FFFFFF; width: 280px; height: 250px; margin-left: auto; align-items: center; display: flex; justify-content: center; flex-direction: column; }
+.t-bannerBox { background: #E8EFF7; width: 564px; height: 640px; margin: auto; }
+.bannerHead { background: #FFFFFF; width: 100%; height: 350px; margin-left: auto; align-items: center; display: flex; justify-content: center; flex-direction: column; }
 .banner-down { padding: 44px 100px; }
 .bannerHead>h2 { color: #196aa5 !important; }
 .bannerHead p { color: #196aa5 !important; }

@@ -1645,7 +1645,7 @@ class Profile extends MY_Controller_Account
 		$pu = array();
 		$pu['fields'] = "user_firstname,user_lastname";
 		$user_data = $this->model_user->find_by_pk($this->userid, false, $pu);
-		$data['course_title'] = "Business Model Canvas";
+		$data['course_title'] = "Business Plan & Investment Deck";
 		$data['expert_name'] = "Genny Ghanimeh";
 		// $data['course_tracking_number'] = $course['tutorial_identity'];
 		$data['username'] = $user_data['user_firstname'] . ' ' . $user_data['user_lastname'];

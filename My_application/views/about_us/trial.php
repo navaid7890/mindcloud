@@ -1,17 +1,15 @@
-
 <style>
+    span#abt {
 
-span#abt
-{
+        color: #196aa5 !important;
+        text-align: center;
 
-    color: #196aa5 !important;
-    text-align: center;
- 
-    padding-bottom: 10px;
-    font-size: 17px;
+        padding-bottom: 10px;
+        font-size: 17px;
 
-    
-}
+
+    }
+
     .trial-page .t-profile h5,
     .trial-page .t-profile h5>span {
         color: #5C677D;
@@ -69,6 +67,10 @@ span#abt
         font-weight: 400;
         color: #000;
         border: 1px solid rgba(0, 0, 0, .15);
+    }
+
+    .trial-page .home-banner {
+        height: 920px !important;
     }
 </style>
 <script source="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
@@ -128,26 +130,40 @@ $_COOKIE['user_name'];
 
                         <div class="t-bannerBox text-center">
                             <div class="AllBtnArea">
-                                <div class="promoBtnArea">
+                                <!-- <div class="promoBtnArea">
                                     <a href="#" class="btn-promo btn-hover" data-toggle="modal" data-target="#promoModal">Do you have a Promo Code?</a>
-                                </div>
+                                </div> -->
                                 <div class="bannerHead">
                                     <h2>Annually</h2><br>
 
-                                    <p>One year full access,<br>
-                                        only at $15/month.<br>
+                                    <p>One year full access, only at $15/month.</br>
                                         Charged annually<br> $180/year</p><br>
-                                        <span id="abt"></span>
-                                        <button type="button" class="btn btn-primary" id="con">Confirm Subscription</button>
+                                    <span id="abt"></span>
+                                    <button type="button" class="btn btn-primary" id="con">Confirm Subscription</button>
 
                                     <div class="text-center" id="AmazonPayButton"></div>
                                     <!-- <a href="#" id="AmazonPayButton" data-fancybox data-src="#trial-popup" class="btn-hover">Subscribe Now <span></span></a> -->
-                              
-                              <br><br>
+
+                                    <!-- <form id="form-expert_us">
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Enter PromoCode :</label>
+                                                <input type="text" class="form-control" id="udt">
+                                            </div>
+                                            <button type="button" class="btn btn-primary" id="stdt">Submit</button>
+   
+                                    </form> -->
+                                    <form id="form-expert_us" class="form-inline mt-10" style="margin-top: 15px;">
+                                        <div class="form-group">
+                                            <label for="email">Affiliate Promo Code  : </label>
+                                            <input type="text" id="udt" class="form-control" placeholder="Enter Promo Code">
+                                        </div>
+                                        <button type="button" class="btn btn-primary" id="stdt">APPLY</button>
+                                    </form>
                                 </div>
                             </div>
                             <div class="banner-down">
                                 <ul class="t-banner-list">
+                                <li class="first" style="text-shadow: 0 0 3px #186aa5;">Click on Amazon pay, to complete order.</li>
                                     <li>Learn on your mobile or computer.</li>
                                     <li>Access to Mind Cloud Experts tutorials.</li>
                                     <li>Personalized Course Recommendations. </li>
@@ -267,79 +283,68 @@ $_COOKIE['user_name'];
 
 
 <script>
+    $(document).ready(function() {
+        localStorage.setItem('user_name', '');
+        $("#con").hide();
+    });
 
-$( document ).ready(function() {
-    localStorage.setItem('user_name', '');
-    $("#con").hide();
-});
+    $("#stdt").click(function(e) {
+        e.preventDefault();
+        var a = $('#udt').val();
 
-$("#stdt").click(function(e) {
-    e.preventDefault();
-    var a= $('#udt').val();
+        if ($('#udt').val() == '') {
+            Toastr.error('Enter Promo Code', 'Error');
 
-    if ($('#udt').val() == ''){
-        Toastr.error('Enter Promo Code', 'Error');
+        } else {
+            //alert(a);
+            $.ajax({
+                type: "GET",
+                url: "<?= l('cart/get_coupon_discount') ?>?coupon=" + a,
+                // data: { 
+                //     id: $(this).val(), // < note use of 'this' here
+                //     access_token: $("#access_token").val() 
+                // },
+                success: function(result) {
 
-    }
+                    // alert(result);
 
-    else{
-    //alert(a);
-    $.ajax({
-        type: "GET",
-        url: "<?=l('cart/get_coupon_discount')?>?coupon="+a,
-        // data: { 
-        //     id: $(this).val(), // < note use of 'this' here
-        //     access_token: $("#access_token").val() 
-        // },
-        success: function(result) {
+                    document.cookie = 'u=' + result;
+                    localStorage.setItem('user_name', result);
+                    if (result == 0) {
 
-           // alert(result);
+                        Toastr.error('Invalid Promo Code Try Again', 'Error');
+                    } else {
+                        Toastr.success('Promo Code Accepted', 'Success');
+                    }
+                    $('#promoModal').modal('hide');
+                    $("#abt").text("Total Savings:    " + '$' + result);
+                    $('#udt').val('');
+                    if (result == "180") {
+                        $("#con").show();
+                        $("img#OffAmazonPaymentsWidgets0").hide();
 
-           document.cookie='u='+result; 
-            localStorage.setItem('user_name', result);
-            if(result==0)
-            {
+                    } else {
 
-                Toastr.error('Invalid Promo Code Try Again', 'Error');
-            }            
-            else{
-            Toastr.success('Promo Code Accepted', 'Success');
-            }
-            $('#promoModal').modal('hide'); 
-            $("#abt").text("Total Savings:    "+'$' +result);
-            $('#udt').val('');
-            if(result=="180")
-            {
-                $("#con").show();
-                $("img#OffAmazonPaymentsWidgets0").hide();
+                        $("#con").hide();
+                        $("img#OffAmazonPaymentsWidgets0").show();
+                    }
 
-            }
-            else
-            {
-
-                $("#con").hide();
-                $("img#OffAmazonPaymentsWidgets0").show();
-            }
-
-        },
-        error: function(result) {
-            alert('error');
+                },
+                error: function(result) {
+                    alert('error');
+                }
+            })
         }
-    })
- }
 
-});
+    });
 
 
 
-$("#con").click(function(e) {
-    e.preventDefault();
-    setTimeout(function(){
-              window.location = 'thankyou';
-          },000);
+    $("#con").click(function(e) {
+        e.preventDefault();
+        setTimeout(function() {
+            window.location = 'thankyou';
+        }, 000);
 
-});
-
-
-
+    });
 </script>

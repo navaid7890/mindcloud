@@ -227,7 +227,7 @@
                                         <div class="space"><br></div>
                                         <p>has successfully completed on the <?= date("jS \of F Y") ?> the tutorial</p>
                                         <div class="space"><br></div>
-                                        <h3 style="text-transform: uppercase;">"Business Model Canvas"</h3>
+                                        <h3 style="text-transform: uppercase;">"Business Plan & Investment Deck"</h3>
                                         <div class="space"><br></div>
                                         <h6>by Expert <span> Genny Ghanimeh</span></h6>
                                         <div class="space"><br><br></div>
