@@ -38,7 +38,7 @@ var Form = function () {
     // Account Script
     signup: base_url + "ajax-save-signup",
     signin: base_url + "signin",
-    signup1: base_url + "ajax-save-signup",
+    // signup1: base_url + "ajax-save-signup",
     forgot_password: base_url + "account/forgot_password",
     reset_password: base_url + "account/reset_password/process",
     update_profile: base_url + "account/profile/update",
@@ -978,6 +978,7 @@ var Form = function () {
 
     signup: function (form) {
       form.find('#signup-btn').prop('disabled', true);
+      form.find('#signup-btn1').prop('disabled', true);
 
       var data = form.serialize();
       var s = AjaxRequest.fire(urls.signup, data);
@@ -986,23 +987,45 @@ var Form = function () {
 
       if (s.status) {
         form.find('#signup-btn').prop('disabled', false);
+        form.find('#signup-btn1').prop('disabled', false);
 
         form[0].reset();
-      alert("You have been successfully registered and logged in as a free user for 7 days with limited access so you can try the platform.");
-       // Toastr.success(s.msg.desc, s.msg.title, { positionClass: "toast-bottom-right" });
 
-        if (s.redirect.status) {
+        if ($("#signup-btn").prop('disabled')==false)
+        {
+
+       //   alert("You have been successfully registered and logged in as a free user for 7 days with limited access so you can try the platform.");
+
           setTimeout(function(){
-              window.location.href = 'account-area';
-          },4000);
- 
+                    window.location.href = 'account-area';
+                },2000);
+       
+       }
 
-        }
+
+       if($("#signup-btn1").prop('disabled')==false)
+       {
+
+        setTimeout(function(){
+          window.location.href = 'subscription';
+      },2000);
+
+       }
+
+       else
+       {
+console.log("do thing");
+
+       }
+
+
+
 
       }
       else {
         //$("#signup-form_loading").show();
         form.find('#signup-btn').prop('disabled', false);
+        form.find('#signup-btn1').prop('disabled', false);
         Toastr.error(s.msg.desc, s.msg.title, { positionClass: "toast-bottom-right" });
       }
       return false;
@@ -1010,37 +1033,37 @@ var Form = function () {
 
 
 
-    signup1: function (form) {
-      form.find('#signup-btn1').prop('disabled', true);
+    // signup1: function (form) {
+    //   form.find('#signup-btn1').prop('disabled', true);
 
-      var data = form.serialize();
-      var s = AjaxRequest.fire(urls.signup1, data);
+    //   var data = form.serialize();
+    //   var s = AjaxRequest.fire(urls.signup1, data);
 
-      // return false;    //for debugging
+    //   // return false;    //for debugging
 
-      if (s.status) {
-        form.find('#signup-btn1').prop('disabled', false);
+    //   if (s.status) {
+    //     form.find('#signup-btn1').prop('disabled', false);
 
-        form[0].reset();
-    //  alert("You have been successfully registered and logged in as a free user for 7 days with limited access so you can try the platform.");
-        Toastr.success(s.msg.desc, s.msg.title, { positionClass: "toast-bottom-right" });
+    //     form[0].reset();
+    // //  alert("You have been successfully registered and logged in as a free user for 7 days with limited access so you can try the platform.");
+    //     Toastr.success(s.msg.desc, s.msg.title, { positionClass: "toast-bottom-right" });
 
-        if (s.redirect.status) {
-          setTimeout(function(){
-              window.location.href = 'subscription';
-          },4000);
+    //     if (s.redirect.status) {
+    //       setTimeout(function(){
+    //           window.location.href = 'subscription';
+    //       },4000);
  
 
-        }
+    //     }
 
-      }
-      else {
-        //$("#signup-form_loading").show();
-        form.find('#signup-btn1').prop('disabled', false);
-        Toastr.error(s.msg.desc, s.msg.title, { positionClass: "toast-bottom-right" });
-      }
-      return false;
-    },
+    //   }
+    //   else {
+    //     //$("#signup-form_loading").show();
+    //     form.find('#signup-btn1').prop('disabled', false);
+    //     Toastr.error(s.msg.desc, s.msg.title, { positionClass: "toast-bottom-right" });
+    //   }
+    //   return false;
+    // },
 
 
 
@@ -2270,15 +2293,15 @@ $(function () {
 
 });
 
-$(function () {
+// $(function () {
 
-  var $form = $('#forms-signup1');
-  $form.submit(function (event) {
-    Form.signup1($form);
-    return false;
-  });
+//   var $form = $('#forms-signup1');
+//   $form.submit(function (event) {
+//     Form.signup1($form);
+//     return false;
+//   });
 
-});
+// });
 
 if ($("#user_password").length > 0) {
   var password = document.getElementById("user_password")
