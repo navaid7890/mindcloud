@@ -6,6 +6,13 @@
     border-radius: 8px;
     padding: 0 15px;
 }
+
+button#signup-btn1 {
+    /* background: #000;
+    padding: 10px; */
+    -webkit-appearance: initial;
+    cursor: pointer;
+}
 </style>
 <div class="login-banner">
     <div class="container-fluid pad-zero para w-100">
@@ -57,8 +64,16 @@
                                     </div>
 
                                     <div class="fld-btn">
-                                        <input type="submit" value="Register">
+                                        <input type="submit" id="signup-btn" value="Proceed to our 7-Day Free Trial - Limited Access">
+                                    </div><br>
+
+                                    <div class="fld-btn">
+                                        <input type="submit" id="signup-btn1" value="Proceed to our Yearly Subscription - Full Access">
+<!-- 
+                                        <button type="button" class="abd" id="signup-btn1">Tset</button> -->
                                     </div>
+
+
                                 </form>
 
                                 <div class="for-register">
