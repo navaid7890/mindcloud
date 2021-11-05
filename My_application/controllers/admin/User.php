@@ -73,9 +73,11 @@ class User extends MY_Controller {
 
     	//$this->_list_data['credit_hisotry'] = $this->model_user_credit->get_data($id);
 
-
 		if(array_filled($_POST))
+		
 		{
+
+	
 			$_POST['user']['user_is_admin'] = 0;
 			
 			if($id)
@@ -113,9 +115,25 @@ class User extends MY_Controller {
                 "Take Quiz",
                 "Actions",
             );
-		$c = $this->model_tutorial->user_enrollcourses($id);
+
+
+		//$c = $this->model_tutorial->user_enrollcourses($id);
 		// debug($this->db->last_query());
 		// $data['enrolled_courses'] = $c;
+
+
+		
+		if(isset($_POST) AND array_filled($_POST)) {
+			if($_POST['user']['user_paid'] == 1  && !empty($_POST['user']['user_corporate_id']))
+			{
+
+				parent::corporate_create($_POST['user']);
+				// echo "ok";
+				// die();
+            
+			}
+
+		}
 
 		parent::add($id,$data);
 	}

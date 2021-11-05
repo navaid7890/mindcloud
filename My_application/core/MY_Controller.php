@@ -1052,6 +1052,52 @@ public function confirm_by_expert($data){
 
 
 
+public function corporate_create($data){
+
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+
+  
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIA37YJHEJR2MKI7YMI';
+    $mail->Password = 'BHv8/PiNbgnCwezgJms9aFK6gXjfNYZP5VscHozBLRDv';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
+
+    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->addReplyTo($data['user_email'], $data['user_firtsname']);
+
+    $mail->addAddress($data['user_email']);
+
+    $param = array();
+    if(isset($data) && array_filled($data))
+    {
+        foreach($data as $kye=>$value)
+        {
+            $param['form_input'][$kye] = htmlentities(trim($value));
+        }
+        $param['form_input']['Full Name']=$data['user_firstname'];
+      
+    }
+
+    $mail->Subject = 'Corporate Created';
+        
+    $mail->isHTML(true);
+
+    $mailContent = $this->load->view('_layout/email_template/corporate_create', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
+
+
+
+}
+
+
+
+
 
 
 

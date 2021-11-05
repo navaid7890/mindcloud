@@ -768,7 +768,7 @@ class Model_user extends MY_Model
                 'name'   => 'user_paid',
                 'label'   => 'User Subscribed',
                 'type'   => 'switch',
-                'default'   => '1',
+                'default'   => '0',
                 'attributes'   => array(),
                 'rules'   => 'trim'
             );
