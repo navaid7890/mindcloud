@@ -381,8 +381,8 @@ class Model_tutorial extends MY_Model
                 'list_data' => array(
                     "ALL LEVEL" => "ALL LEVEL",
                     "BEGINNER" => "BEGINNER",
-                    "MIDDLE" => "MIDDLE",
-                    "ADVANCE" => "ADVANCE",
+                    "MIDDLE" => "INTERMEDIATE",
+                    "ADVANCE" => "ADVANCED",
                 ),
                 'default'   => 'ALL LEVEL',
                 'attributes'   => array(),

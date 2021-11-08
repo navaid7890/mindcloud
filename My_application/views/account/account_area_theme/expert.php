@@ -118,8 +118,8 @@
                         <select id="level_category" <?= $this->input->get('level')?>>
                            <option>All Level</option>
                            <option value="BEGINNER" <?= $this->input->get('level') == 'BEGINNER' ? 'selected=""' : '' ?>>BEGINNER </option>
-                           <option value="MIDDLE" <?= $this->input->get('level') == 'MIDDLE' ? 'selected=""' : '' ?>>MIDDLE</option>
-                           <option value="ADVANCE" <?= $this->input->get('level') == 'ADVANCE' ? 'selected=""' : '' ?>>ADVANCE </option>
+                           <option value="INTERMEDIATE" <?= $this->input->get('level') == 'INTERMEDIATE' ? 'selected=""' : '' ?>>MIDDLE</option>
+                           <option value="ADVANCED" <?= $this->input->get('level') == 'ADVANCED' ? 'selected=""' : '' ?>>ADVANCE </option>
                         </select>
                         <span><i class="fal fa-angle-down"></i></span>
                      </div>
