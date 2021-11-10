@@ -209,6 +209,95 @@ class User extends MY_Controller {
 		}
 	}
 
+
+
+	public function bulk_uploading()
+	{
+
+         // debug($_POST['user[user_season_id]'],1);
+		// Load Library
+        $this->load->library('simplexlsx');
+        $json_param = array();
+        if(isset($_FILES) AND array_filled($_FILES)) {
+            if(empty($_FILES['file']['name'])){
+                $json_param['status'] = false;
+                $json_param['msg'] = 'Please select file';
+            }
+            else{
+                if($_FILES['file']['type'] == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+                {
+                    ini_set('MAX_EXECUTION_TIME', -1);
+
+                    // Get Post file
+                    $file = $_FILES['file'];
+                    // Create SimpleXLSX Obj
+                    $xlsx = new SimpleXLSX($file['tmp_name']);
+
+                    // Get file total Columns
+                    $bulk_leads = array();
+
+                    // Get total rows count in sheet with minus first row
+                    $total_sheet_rows = count($xlsx->rows());
+
+                    // NOTE : Tested per row insert and batch_insert (4.5836  ,  1.6655)
+                    // Loop each row start
+                    $data = $xlsx->rows();
+
+                    if(isset($data) AND array_filled($data)) {
+                        foreach($data as $k => $r) {
+                            $cl = array_filter($r);
+                            foreach($cl as $k1 => $v1) {
+
+                              
+                                if(($k1 <= 11)) 
+                                    $bulk_leads[$k][$k1] = $v1;
+                            }
+                        }   
+                    }
+
+                    unset($bulk_leads[0]);
+                    $post_values=$_POST['user'];
+                    if(isset($bulk_leads) AND array_filled($bulk_leads)) {
+                        foreach($bulk_leads as $value) {
+                            $save_param = array();
+                            $save_param['user_type'] =  isset($value[0]) ? $value[0] : 0;
+                            $save_param['user_corporate_id'] = isset($value[1]) ? $value[1] : 0;
+							$save_param['user_firstname'] =isset($value[2]) ? $value[2] : '';
+							$save_param['user_lastname'] =isset($value[3]) ? $value[3] : '';
+                            $save_param['user_email'] = isset($value[4]) ? $value[4] : '';
+                            $save_param['user_password'] = isset($value[5]) ? $value[5] : '';
+                            $save_param['user_status'] = 1;
+							$save_param['user_paid'] = 1;
+                            
+                            
+                              
+                            $this->model_user->set_attributes($save_param);                 
+                            $this->model_user->save();
+							// if ($inserted_id > 0) {
+							// 	// Send email to Admin for product Inquiry
+							// 	// $this->model_email->product_inquiry_mail($inserted_id);
+							// 	$json_param['status'] = true;
+							// 	$json_param['msg'] = ' successfully Uploaded';
+							// } else {
+							// 	$json_param['status'] = false;
+							// 	$json_param['msg'] = 'Fields are not correct or Duplicate Entry';
+							// }
+                        }
+                    }
+
+                    $json_param['status'] = TRUE;
+                	$json_param['msg'] = 'user Uploaded';
+                }
+                else {
+                	$json_param['status'] = false;
+                	$json_param['msg'] = 'Invalid Format';
+                }
+            }
+
+            echo json_encode($json_param);
+        }
+	}
+
 }
 
 /* End of file welcome.php */
