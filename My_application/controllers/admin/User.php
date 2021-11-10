@@ -123,7 +123,7 @@ class User extends MY_Controller {
 
 
 		
-		if(isset($_POST) AND array_filled($_POST)) {
+	    	if(isset($_POST) AND array_filled($_POST)) {
 			if($_POST['user']['user_paid'] == 1  && !empty($_POST['user']['user_corporate_id']))
 			{
 
