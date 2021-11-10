@@ -152,12 +152,13 @@ $_COOKIE['user_name'];
                                             <button type="button" class="btn btn-primary" id="stdt">Submit</button>
    
                                     </form> -->
-                                    <form id="form-expert_us" class="form-inline mt-10" style="margin-top: 15px;">
+                                    <label style="margin-top: 15px;margin-bottom: 10px;color: #196aa5 !important;">Affiliate Promo Code  : </label>
+                                    <form id="form-expert_us" class="form-inline mt-10" >
+                                    
                                         <div class="form-group">
-                                            <label for="email">Affiliate Promo Code  : </label>
                                             <input type="text" id="udt" class="form-control" placeholder="Enter Promo Code">
                                         </div>
-                                        <button type="button" class="btn btn-primary" id="stdt">APPLY</button>
+                                        <button type="button" class="btn btn-primary" style="margin-left: 5px;" id="stdt">APPLY</button>
                                     </form>
                                 </div>
                             </div>

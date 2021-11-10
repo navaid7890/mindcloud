@@ -23,10 +23,8 @@ echo create_modal_html("view_product", "Detail");
 
 
 				</div>
-				<form id='form-bulk_uploading' enctype="multipart/form-data" action="<?= la('user/bulk_uploading') ?>" method="POST" class="cmxform form-horizontal tasi-form" novalidate="novalidate">
+				<!-- <form id='form-bulk_uploading' enctype="multipart/form-data" action="<?//= la('user/bulk_uploading') ?>" method="POST" class="cmxform form-horizontal tasi-form" novalidate="novalidate">
 					<div class="row">
-
-
 						<div class="form-group ">
 							<label for="" class="control-label col-md-2 "> File</label>
 							<div class="col-md-3">
@@ -36,10 +34,7 @@ echo create_modal_html("view_product", "Detail");
 									<button class="btn green" value="Save" id='form-bulk_uploading_btn' name="submit" type="submit">Upload Users</button>
 								</div>
 						</div>
-
-								
-
-				</form>
+				</form> -->
 			</div>
 			<div class="portlet-body">
 				<div class="table-container">
