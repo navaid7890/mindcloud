@@ -606,7 +606,7 @@ class MY_Controller extends MY_Controller_Admin
         }
    
        // $mail->setFrom($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
-        $mail->setFrom('madiha@alphacandy.com', 'Genny');
+        $mail->setFrom('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
        
         $mail->addReplyTo($a['expert_email'], $a['expert_name']);
 
@@ -657,7 +657,7 @@ class MY_Controller extends MY_Controller_Admin
         // debug($data,1);
         // die();
         // $mail->setFrom(g('db.admin.email_contact_us'), "Unsubscribed");
-        $mail->setFrom('madiha@alphacandy.com', 'Genny');
+        $mail->setFrom('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
         $mail->addReplyTo($data['user_email'], $this->session->userdata['logged_in_front']['first_name']);
 
         $mail->addAddress($data['user_email']);
@@ -711,7 +711,7 @@ public function confirm_expert($data){
 
    // $mail->setFrom($b['user_email'], $b['user_firstname']);
 
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
     $mail->addReplyTo($a['expert_email'], $a['expert_name']);
 
     $mail->addAddress($a['expert_email']);
@@ -748,7 +748,7 @@ public function signup($data){
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
     $mail->addReplyTo($data['user_email'], $data['user_firtsname']);
 
     $mail->addAddress($data['user_email']);
@@ -795,7 +795,7 @@ public function newsletter(){
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
     $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
 
     $mail->addAddress($this->session->userdata['logged_in_front']['email']);
@@ -838,7 +838,7 @@ public function renewal(){
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
     $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
 
     $mail->addAddress($this->session->userdata['logged_in_front']['email']);
@@ -880,7 +880,7 @@ public function renewal_two(){
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
     $mail->addReplyTo($this->session->userdata['logged_in_front']['email']);
 
     $mail->addAddress($this->session->userdata['logged_in_front']['email']);
@@ -924,10 +924,10 @@ public function inquiry($data){
 
    // $mail->setFrom($data['inquiry_email'], $data['inquiry_name']);
 
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
-    $mail->addReplyTo('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
+    $mail->addReplyTo('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
 
-    $mail->addAddress('madiha@alphacandy.com');
+    $mail->addAddress('no-reply@mindcloudtribe.com');
 
     $param = array();
     if(isset($data) && array_filled($data))
@@ -981,7 +981,7 @@ public function reject_expert($data){
     }
 
    // $mail->setFrom($a['expert_email'], $a['expert_name']);
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
     $mail->addReplyTo($b['user_email'], $b['user_firstname']);
 
     $mail->addAddress($b['user_email']);
@@ -1031,7 +1031,7 @@ public function confirm_by_expert($data){
     }
 
    // $mail->setFrom($a['expert_email'], $a['expert_name']);
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
     $mail->addReplyTo($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
 
     $mail->addAddress($data['booking_email']);
@@ -1066,7 +1066,7 @@ public function corporate_create($data){
     $mail->SMTPSecure = 'ssl';
     $mail->Port     = 465;
 
-    $mail->setFrom('madiha@alphacandy.com', 'Genny');
+    $mail->setFrom('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
     $mail->addReplyTo($data['user_email'], $data['user_firtsname']);
 
     $mail->addAddress($data['user_email']);
