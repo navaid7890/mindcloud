@@ -3,14 +3,24 @@
     // Be sure your webserver is configured to never display the contents of this file under any circumstances.
     // The secret_key value below should be protected and never shared with anyone.
 
+
     $amazonpay_config = array(
-        'merchant_id'   => 'A1RX1ZEKJGE93B', // Merchant/SellerID
-        'access_key'    => 'AKIAI5D4Z5GAWA3HD43A', // MWS Access Key
+        'merchant_id'   => 'vHgjzRkl', // Merchant/SellerID
+        'access_key'    => 'j0EDelL8zOwb9bZEwpsr', // MWS Access Key
         'secret_key'    => 'rGTZr4GbBC6s+c1F7wUY4FsfBnP+ewea5qNVzWne', // MWS Secret Key
         'client_id'     => 'amzn1.application-oa2-client.12aacd6441274cf0a658552a4afc523a', // Login With Amazon Client ID
         'region'        => 'uk',  // us, de, uk, jp
         'currency_code' => 'GBP', // USD, EUR, GBP, JPY
         'sandbox'       => true); // Use sandbox test mode
+
+    // $amazonpay_config = array(
+    //     'merchant_id'   => 'A1RX1ZEKJGE93B', // Merchant/SellerID
+    //     'access_key'    => 'AKIAI5D4Z5GAWA3HD43A', // MWS Access Key
+    //     'secret_key'    => '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', // MWS Secret Key
+    //     'client_id'     => 'amzn1.application-oa2-client.12aacd6441274cf0a658552a4afc523a', // Login With Amazon Client ID
+    //     'region'        => 'uk',  // us, de, uk, jp
+    //     'currency_code' => 'GBP', // USD, EUR, GBP, JPY
+    //     'sandbox'       => true); // Use sandbox test mode
 
 function getWidgetsJsURL($config)
 {
