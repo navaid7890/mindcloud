@@ -19,8 +19,8 @@ class Model_corporate extends MY_Model {
     
     function __construct()
     {
-        // Call the Model constructor
-        $this->pagination_params['fields'] = "corporate_id,corporate_name,CONCAT(corporate_image_path,corporate_image) AS corporate_image,corporate_status";
+        // Call the Model constructor corporate_id,corporate_name,corporate_url,corporate_status
+        $this->pagination_params['fields'] = "corporate_id,corporate_name,corporate_url,corporate_status";
         parent::__construct();
 
     }

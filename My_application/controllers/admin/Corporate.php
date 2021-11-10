@@ -20,7 +20,7 @@ class Corporate extends MY_Controller {
         global $config;
 
         parent::__construct();
-        $this->dt_params['dt_headings'] = "corporate_id,corporate_name,corporate_image,corporate_status";
+        $this->dt_params['dt_headings'] = "corporate_id,corporate_name,corporate_url,corporate_status";
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
 
         $this->dt_params['action'] = array(
