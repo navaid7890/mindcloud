@@ -13,6 +13,13 @@ button#signup-btn1 {
     -webkit-appearance: initial;
     cursor: pointer;
 }
+
+.dt {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 10px;
+}
 </style>
 <div class="login-banner">
     <div class="container-fluid pad-zero para w-100">
@@ -30,7 +37,7 @@ button#signup-btn1 {
 
                         <div class="login-form signup-form">
                             <div>
-                                <form id="forms-signup">
+                                <form id="forms-signup" class="mform">
                                     <input type="hidden" name="user[user_type]" value='<?= NORMAL_USER ?>'>
                                     <? if (isset($_GET['url'])) : ?>
                                         <input type="hidden" name="url" value='<?= $_GET['url'] ?>'>
@@ -64,13 +71,19 @@ button#signup-btn1 {
                                     </div>
 
                                     <div class="fld-btn">
-                                        <input type="submit" id="signup-btn" value="Proceed to our 7-Day Free Trial - Limited Access">
+                                        <button type="submit"  id="signup-btn">Proceed to our 7-Day Free Trial - Limited Access</button>
+                                        <!-- <input type="submit" id="signup-btn" value="Proceed to our 7-Day Free Trial - Limited Access"> -->
                                     </div><br>
+                                    <div class="row">
 
+                                    <span class="dt">OR</span>
+                                    </div>
                                     <div class="fld-btn">
-                                        <input type="submit" id="signup-btn1" value="Proceed to our Yearly Subscription - Full Access">
-<!-- 
-                                        <button type="button" class="abd" id="signup-btn1">Tset</button> -->
+                                        <!-- <input type="submit" id="signup-btn1" value="Proceed to our Yearly Subscription - Full Access">
+  -->
+            
+
+                                        <button type="submit"  id="signup-btn1">Proceed to our Yearly Subscription - Full Access</button>
                                     </div>
 
 

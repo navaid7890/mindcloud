@@ -955,17 +955,7 @@ class About_us extends MY_Controller
         $data['faq'] = $this->model_faq->find_all_active($fa);
 
 
-        // $id = $this->userid;
-
-        // $pars=array(); 
-        // $pars['fields'] = "user_id,user_paid";
-        // $pars['where']['user_id']=$this->userid;
-
-        // $u=$this->model_user->find_one_active($pars);
-
-
-        // $u['user_paid']=1;
-        // $test=$this->model_user->update_by_pk($id, $u);
+     
         
 
            

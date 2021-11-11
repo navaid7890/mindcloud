@@ -978,54 +978,79 @@ var Form = function () {
 
     signup: function (form) {
       form.find('#signup-btn').prop('disabled', true);
-      form.find('#signup-btn1').prop('disabled', true);
+   
 
       var data = form.serialize();
       var s = AjaxRequest.fire(urls.signup, data);
 
-      // return false;    //for debugging
+  
 
       if (s.status) {
         form.find('#signup-btn').prop('disabled', false);
-        form.find('#signup-btn1').prop('disabled', false);
+        // form.find('#signup-btn1').prop('disabled', false);
 
         form[0].reset();
 
-        if ($("#signup-btn").prop('disabled')==false)
-        {
+     
 
-       //   alert("You have been successfully registered and logged in as a free user for 7 days with limited access so you can try the platform.");
+         alert("You have been successfully registered and logged in as a free user for 7 days with limited access so you can try the platform.");
 
-          setTimeout(function(){
+    
                     window.location.href = 'account-area';
-                },2000);
+              
+      
        
-       }
 
 
-       if($("#signup-btn1").prop('disabled')==false)
-       {
 
-        setTimeout(function(){
-          window.location.href = 'subscription';
-      },2000);
-
-       }
-
-       else
-       {
-       console.log("do thing");
-
-       }
-
-
+       
 
 
       }
       else {
-        //$("#signup-form_loading").show();
+      
         form.find('#signup-btn').prop('disabled', false);
+   
+        Toastr.error(s.msg.desc, s.msg.title, { positionClass: "toast-bottom-right" });
+      }
+      return false;
+    },
+
+
+
+    signup1: function (form) {
+      form.find('#signup-btn1').prop('disabled', true);
+   
+
+      var data = form.serialize();
+      var s = AjaxRequest.fire(urls.signup, data);
+
+  
+
+      if (s.status) {
         form.find('#signup-btn1').prop('disabled', false);
+     
+
+        form[0].reset();
+
+
+        // alert("You have been successfully registered and logged in as a free user for 7 days with limited access so you can try the platform.");
+
+
+                    window.location.href = 'subscription';
+             
+       
+
+
+
+       
+
+
+      }
+      else {
+      
+        form.find('#signup-btn1').prop('disabled', false);
+   
         Toastr.error(s.msg.desc, s.msg.title, { positionClass: "toast-bottom-right" });
       }
       return false;
@@ -2283,15 +2308,31 @@ Newsletter Ajax Script END
 /*###########
 Signup Ajax Script Start
 ###########*/
-$(function () {
 
+
+// $(function () {
+
+
+  $('#signup-btn').click(function() {
+    var $form = $('#forms-signup');
+    $form.submit(function (event) {
+      Form.signup($form);
+      return false;
+    });
+});
+
+
+$('#signup-btn1').click(function() {
   var $form = $('#forms-signup');
   $form.submit(function (event) {
-    Form.signup($form);
+    Form.signup1($form);
     return false;
   });
-
 });
+
+
+
+
 
 // $(function () {
 
@@ -2303,23 +2344,23 @@ $(function () {
 
 // });
 
-if ($("#user_password").length > 0) {
-  var password = document.getElementById("user_password")
-  var confirm_password = document.getElementById("user_confirm_password");
+// if ($("#user_password").length > 0) {
+//   var password = document.getElementById("user_password")
+//   var confirm_password = document.getElementById("user_confirm_password");
 
-  function validatePassword() {
+//   function validatePassword() {
 
-    if (password.value != confirm_password.value) {
-      confirm_password.setCustomValidity("Passwords Don't Match");
-    }
-    else {
-      confirm_password.setCustomValidity('');
-    }
-  }
+//     if (password.value != confirm_password.value) {
+//       confirm_password.setCustomValidity("Passwords Don't Match");
+//     }
+//     else {
+//       confirm_password.setCustomValidity('');
+//     }
+//   }
 
-  password.onchange = validatePassword;
-  confirm_password.onkeyup = validatePassword;
-}
+//   password.onchange = validatePassword;
+//   confirm_password.onkeyup = validatePassword;
+// }
 
 /*###########
 Signup Ajax Script END
