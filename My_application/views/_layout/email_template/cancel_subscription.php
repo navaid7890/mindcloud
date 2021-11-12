@@ -26,7 +26,7 @@ $logo = $this->model_logo->find_one(
 								 <br> <br>
                                 As you requested, we've cancelled your subscription, effective <?=date("Y-m-d")?>.
                                 Obviously, we'd love to have you back. If you change your mind, you can restart your membership to enjoy all the tutorials and resources we have on Mind Cloud Tribe.<br><br>
-                                We're here to help if you need it, and you can contact us back anytime at support@mindcloudtribe.com.
+                                We're here to help if you need it, and you can contact us back anytime at info@mindcloudtribe.com.
                             <?php
                             }
                             ?>

@@ -20,6 +20,18 @@ button#signup-btn1 {
     width: 100%;
     padding-bottom: 10px;
 }
+
+button#signup-btn,button#signup-btn1 {
+    text-align: center;
+    display: block;
+    font-size: 23px;
+    color: #fff;
+
+    width: 100%;
+    padding-top: 14px;
+}
+
+
 </style>
 <div class="login-banner">
     <div class="container-fluid pad-zero para w-100">
