@@ -1578,7 +1578,9 @@ class Contact_us extends MY_Controller
 
                      parent::book($data);
 
-                     //parent::confirm_expert($data);
+                     
+
+                     parent::confirm_by_expert($data);
                     
                     //$this->model_email->bookingInquiry($data);
                     //debug($this->model_email,1);
@@ -1661,6 +1663,19 @@ class Contact_us extends MY_Controller
 
 
        redirect(l(''));
+    }
+
+
+    public function cert()
+    {
+        parent::learning_certificate();
+        $this->json_param['status'] = true;
+        $this->json_param['msg']['title'] = 'Download Your Certificate';
+        $this->json_param['msg']['desc'] = 'Thank You !';
+        // echo json_encode($this->json_param);
+        // debug("ok");
+        //  redirect(l('account-area#loaded'));
+         
     }
 
     

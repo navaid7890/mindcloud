@@ -1365,30 +1365,20 @@ var Form = function () {
 
 
 
-
     cancle_subscribe: function (form) {
-
-
-      
       $('#cancle-subscription').prop('disabled', true);
-
       var data = form.serialize();
       response = AjaxRequest.fire(urls.cancle_subscribe, data);
-
       $('#cancle-subscription').prop('disabled', false);
-
       // return false ;
-
       if (response.status) {
-
         Toastr.success(response.msg.desc, 'You Have Canceled Your Subscription');
         $("#canclesubscribeform").find('input[type=text],input[type=email],textarea').val('');
-
+        $('#cancelModal').modal('hide');
         return false;
       }
       else {
         Toastr.error(response.msg.desc, 'Error');
-
         return false;
       }
       return false;
