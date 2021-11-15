@@ -200,7 +200,7 @@
                                         <div class="progress-footer">
                                             <h6>My Certificate</h6>
                                             <div id="certificateBtn" style="display: none;">
-                                                <a href="javascript:;" data-fancybox data-src="#LearingCertificate" class="">Download Certificate <span></span></a>
+                                                <a href="#"  data-fancybox data-src="#LearingCertificate" class="">Download Certificate <span></span></a>
                                             </div>
                                             <div id="certificateNotComplete" style="display: block;">
                                                 <p>Complete your Learning<br> Journey to receive Certificate</p>
@@ -210,6 +210,18 @@
                                 </div>
                             </div>
                         </div>
+                        <script>
+                            $(document).ready(function() {
+                                $("#certificateBtn a").click(function() {
+                                    $.ajax({
+                                        url: "<?= l('contact_us/cert') ?>",
+                                        success: function(result) {
+                                            Toastr.success(response.msg.desc, 'You Have Canceled Your Subscription');
+                                        }
+                                    });
+                                });
+                            });
+                        </script>
                         <!-- <certificateArea> -->
                         <div class="popup-main" style="display:none;" id="LearingCertificate">
                             <div class="popup-head text-center">
@@ -227,7 +239,7 @@
                                         <div class="space"><br></div>
                                         <p>has successfully completed on the <?= date("jS \of F Y") ?> the tutorial</p>
                                         <div class="space"><br></div>
-                                        <h3 style="text-transform: uppercase;">"Business Plan & Investment Deck"</h3>
+                                        <h3 style="text-transform: uppercase;">"LEARNING JOURNEY"</h3>
                                         <div class="space"><br></div>
                                         <h6>by Expert <span> Genny Ghanimeh</span></h6>
                                         <div class="space"><br><br></div>
@@ -387,23 +399,24 @@
                                                 <?php foreach ($your_tut as $key => $value) : ?>
                                                     <li>
                                                         <div class="vid-box " onclick="location.href='<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>';" style="cursor: pointer;">
-                                                            <!-- <a href="<?//= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox> -->
-                                                                <div class="video-box">
-                                                                    <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
-                                                                    <!-- <span><i class="fas fa-play"></i>
+                                                            <!-- <a href="<? //= g('db.admin.bucket') . $value['tutorial_video'] 
+                                                                            ?>" data-fancybox> -->
+                                                            <div class="video-box">
+                                                                <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
+                                                                <!-- <span><i class="fas fa-play"></i>
                                                                         <p>Preview Course</p>
                                                                     </span> -->
-                                                                    <?
-                                                                    $coursecat = array();
-                                                                    $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
-                                                                    $cate = $this->model_course_category->find_all_active($coursecat);
+                                                                <?
+                                                                $coursecat = array();
+                                                                $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
+                                                                $cate = $this->model_course_category->find_all_active($coursecat);
 
-                                                                    $cat_name = array();
-                                                                    $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
-                                                                    $cat_name = $this->model_category->find_all_active($cat_name);
-                                                                    ?>
-                                                                    <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
-                                                                </div>
+                                                                $cat_name = array();
+                                                                $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                                                $cat_name = $this->model_category->find_all_active($cat_name);
+                                                                ?>
+                                                                <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                                                            </div>
                                                             <!-- </a> -->
                                                             <div class="vid-content">
                                                                 <div class="row align-items-center">
@@ -483,23 +496,24 @@
                                                 <?php foreach ($next_tut as $key => $value) : ?>
                                                     <li>
                                                         <div class="vid-box" onclick="location.href='<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>';" style="cursor: pointer;">
-                                                            <!-- <a href="<?//= g('db.admin.bucket') . $value['tutorial_video'] ?>" data-fancybox> -->
-                                                                <div class="video-box">
-                                                                    <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
-                                                                    <!-- <span><i class="fas fa-play"></i>
+                                                            <!-- <a href="<? //= g('db.admin.bucket') . $value['tutorial_video'] 
+                                                                            ?>" data-fancybox> -->
+                                                            <div class="video-box">
+                                                                <img src="<?= g('db.admin.bucketimg') . $value['tutorial_image2'] ?>" loading="lazy">
+                                                                <!-- <span><i class="fas fa-play"></i>
                                                                         <p>Preview Course</p>
                                                                     </span> -->
-                                                                    <?
-                                                                    $coursecat = array();
-                                                                    $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
-                                                                    $cate = $this->model_course_category->find_all_active($coursecat);
+                                                                <?
+                                                                $coursecat = array();
+                                                                $coursecat['where']['cp_course_id'] = $value['tutorial_id'];
+                                                                $cate = $this->model_course_category->find_all_active($coursecat);
 
-                                                                    $cat_name = array();
-                                                                    $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
-                                                                    $cat_name = $this->model_category->find_all_active($cat_name);
-                                                                    ?>
-                                                                    <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
-                                                                </div>
+                                                                $cat_name = array();
+                                                                $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                                                $cat_name = $this->model_category->find_all_active($cat_name);
+                                                                ?>
+                                                                <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                                                            </div>
                                                             <!-- </a> -->
                                                             <div class="vid-content">
                                                                 <div class="row align-items-center">
@@ -584,23 +598,24 @@
                                                 ?>
                                                 <li>
                                                     <div class="vid-box" onclick="location.href='<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>';" style="cursor: pointer;">
-                                                        <!-- <a href="<?//= g('db.admin.bucket') . $paidTut[0]['tutorial_video'] ?>" data-fancybox> -->
-                                                            <div class="video-box">
-                                                                <img src="<?= g('db.admin.bucketimg') . $paidTut[0]['tutorial_image2'] ?>" loading="lazy">
-                                                                <!-- <span><i class="fas fa-play"></i>
+                                                        <!-- <a href="<? //= g('db.admin.bucket') . $paidTut[0]['tutorial_video'] 
+                                                                        ?>" data-fancybox> -->
+                                                        <div class="video-box">
+                                                            <img src="<?= g('db.admin.bucketimg') . $paidTut[0]['tutorial_image2'] ?>" loading="lazy">
+                                                            <!-- <span><i class="fas fa-play"></i>
                                                                     <p>Preview Course</p>
                                                                 </span> -->
-                                                                <?
-                                                                $coursecat = array();
-                                                                $coursecat['where']['cp_course_id'] = $paidTut[0]['tutorial_id'];
-                                                                $cate = $this->model_course_category->find_all_active($coursecat);
+                                                            <?
+                                                            $coursecat = array();
+                                                            $coursecat['where']['cp_course_id'] = $paidTut[0]['tutorial_id'];
+                                                            $cate = $this->model_course_category->find_all_active($coursecat);
 
-                                                                $cat_name = array();
-                                                                $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
-                                                                $cat_name = $this->model_category->find_all_active($cat_name);
-                                                                ?>
-                                                                <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
-                                                            </div>
+                                                            $cat_name = array();
+                                                            $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                                            $cat_name = $this->model_category->find_all_active($cat_name);
+                                                            ?>
+                                                            <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                                                        </div>
                                                         <!-- </a> -->
                                                         <div class="vid-content">
 
@@ -679,23 +694,24 @@
                                                 ?>
                                                 <li>
                                                     <div class="vid-box" onclick="location.href='<?= l('course-detail-expert') . '/' . $value['tutorial_slug'] ?>';" style="cursor: pointer;">
-                                                        <!-- <a href="<?//= g('db.admin.bucket') . $remainTut[0]['tutorial_video'] ?>" data-fancybox> -->
-                                                            <div class="video-box">
-                                                                <img src="<?= g('db.admin.bucketimg') . $remainTut[0]['tutorial_image2'] ?>" loading="lazy">
-                                                                <!-- <span><i class="fas fa-play"></i>
+                                                        <!-- <a href="<? //= g('db.admin.bucket') . $remainTut[0]['tutorial_video'] 
+                                                                        ?>" data-fancybox> -->
+                                                        <div class="video-box">
+                                                            <img src="<?= g('db.admin.bucketimg') . $remainTut[0]['tutorial_image2'] ?>" loading="lazy">
+                                                            <!-- <span><i class="fas fa-play"></i>
                                                                     <p>Preview Course</p>
                                                                 </span> -->
-                                                                <?
-                                                                $coursecat = array();
-                                                                $coursecat['where']['cp_course_id'] = $remainTut[0]['tutorial_id'];
-                                                                $cate = $this->model_course_category->find_all_active($coursecat);
+                                                            <?
+                                                            $coursecat = array();
+                                                            $coursecat['where']['cp_course_id'] = $remainTut[0]['tutorial_id'];
+                                                            $cate = $this->model_course_category->find_all_active($coursecat);
 
-                                                                $cat_name = array();
-                                                                $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
-                                                                $cat_name = $this->model_category->find_all_active($cat_name);
-                                                                ?>
-                                                                <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
-                                                            </div>
+                                                            $cat_name = array();
+                                                            $cat_name['where']['category_id'] = $cate[0]['cp_category_id'];
+                                                            $cat_name = $this->model_category->find_all_active($cat_name);
+                                                            ?>
+                                                            <a href="javascript:;" class="cate-tag"><?= $cat_name[0]['category_name'] ?></a>
+                                                        </div>
                                                         <!-- </a> -->
                                                         <div class="vid-content">
 
