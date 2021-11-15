@@ -76,6 +76,7 @@ class MY_Controller extends MY_Controller_Admin
             $this->view_pre = "admin/" . $this->router->class . "/";
             //IF Not logged in, redirect to login page.
             $this->login_redirect_check("logged_in", "is_admin");
+            
 
             $title = $config['admin_title'] . " - Admin Panel";
             $meta_data = array("keywords" => "$title", "description" => "$title", "robots" => "index, follow");
