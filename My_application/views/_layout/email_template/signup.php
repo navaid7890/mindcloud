@@ -34,51 +34,7 @@ $logo = $this->model_logo->find_one(
              	        </p>
 
 
-                        <? if(isset($form_input) && is_array($form_input)) {?>
-                        <table style="text-align: left;">
-                            <?if($title){?>
-                            <tr>
-                                <td colspan="2" <?=$body_att1?>>
-                                    <h3 style="color: rgb(25, 98, 203); font-size: 25px; padding: 0px; margin: 0px;">
-                                        <?=$title?>:
-                                    </h3>
-                                </td>
-                            </tr>
-                            <?}
-                            else
-                            {
-                            ?>
-                            <tr>
-                                <td colspan="2" <?=$body_att1?>>
-                                    <h3 style="color: rgb(25, 98, 203); font-size: 25px; padding: 0px; margin: 0px;">
-                                        User Input:
-                                    </h3>
-                                </td>
-                            </tr>
-                            <? } ?>
-                        <?php
-                        
-                            foreach ($form_input as $key => $value) {?>
-                                <tr>
-                                    <th><?=ucfirst(str_replace("_", " ", $key))?></th>
-                                    <td> :
-                                        <?
-                                            if(is_array($value))
-                                            {
-                                                foreach ($value as $sub_value) 
-                                                {
-                                                    echo $sub_value."<br/>";
-                                                }
-                                            }
-                                            else
-                                                echo $value;
-                                        ?>
-                                    </td>
-                                </tr>
-                            <?}?>
-                        </table>
-             	        <br>  <br>
-                        <? } ?>
+                     
 
 
 
@@ -86,14 +42,11 @@ $logo = $this->model_logo->find_one(
                         Genny Ghanimeh<br><br>
                         Mind Cloud Tribe Founder.
                         
-             	        <div style="text-align: Right;">
-             	            With warm regards,<br>
-                            <?=g('site_title')?> Team
-             	        </div>
+             	       
              	    </div>
         	    </div>   
         	</div>   
     	</div>
-  	    <center><?=date('Y')?> © <?=g('site_title')?>. ALL Rights Reserved.</center>
+  	  
     	</body>
 	</html>	

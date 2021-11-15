@@ -21,11 +21,12 @@ $logo = $this->model_logo->find_one(
                             else
                             {
                             ?>
-                     	        Hi <?=$this->session->userdata['logged_in_front']['first_name']?>,<br> <br>
-                     
-                                As you requested, we've cancelled your subscription, effective <?=date("Y-m-d")?>.<br><br>
-                                Obviously, we'd love to have you back. If you change your mind, you can restart your membership to enjoy all the tutorials and resources we have on Mind Cloud Tribe.<br><br>
-                                We're here to help if you need it, and you can contact us back anytime at support@mindcloudtribe.com.<br><br>
+                     	        Dear <?=$this->session->userdata['logged_in_front']['first_name']?>,<br> <br>
+
+                                 WOW - We are very proud to see you completing you Learning Journey on Mind Cloud Tribe. <br><br> 
+                                 We wish you all the success moving forward on your entrepreneurial journey.<br><br>
+                                 In recognition of your efforts, here is your Certificate of Completion. You rock!<br><br>
+                                Keep growing,<br><br>
                             <?php
                             }
                             ?>

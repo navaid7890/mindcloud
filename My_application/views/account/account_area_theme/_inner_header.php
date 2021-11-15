@@ -353,6 +353,7 @@
 									<li><a href="<?= l('faq') ?>">FAQs</a></li>
 								</ul>
 							</li>
+							<li>fsdf</li>
 							<!-- <li><a href="https://mindcloudacademy.com/"> The Academy</a></li> -->
 							<!-- <li><a href="#"><span><img src="<? //=i('')
 																	?><? //= $this->session_data['profile_image'] 

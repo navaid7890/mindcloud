@@ -71,7 +71,7 @@ class User extends MY_Controller {
         	'hide_save_new' => true
     	);
 
-    	
+    	//$this->_list_data['credit_hisotry'] = $this->model_user_credit->get_data($id);
 
 		if(array_filled($_POST))
 		
@@ -98,36 +98,42 @@ class User extends MY_Controller {
 			
 			
 		}
-	
-		//    $data['activity_headings'] = array(
-        //         "S.N.O",
-        //         "Thumbnail",
-        //         "Title",
-        //         "Total Lectures",
-        //         "Course ID",
-        //         "Hourse",
-        //         // "Status",
-        //         // "View Lectures",
-        //         "Take Quiz",
-        //         "Actions",
-        //     );
+		// $qp = array();
+		// $qp['where']['quiz_user_id'] = $id;
+		// $qp['where']
+		// $data['quiz'] = $this->model_quiz->find_all($qp);
+
+		   $data['activity_headings'] = array(
+                "S.N.O",
+                "Thumbnail",
+                "Title",
+                "Total Lectures",
+                "Course ID",
+                "Hourse",
+                // "Status",
+                // "View Lectures",
+                "Take Quiz",
+                "Actions",
+            );
 
 
-
+		//$c = $this->model_tutorial->user_enrollcourses($id);
+		// debug($this->db->last_query());
+		// $data['enrolled_courses'] = $c;
 
 
 		
-	    // 	if(isset($_POST) AND array_filled($_POST)) {
-		// 	if($_POST['user']['user_paid'] == 1  && !empty($_POST['user']['user_corporate_id']))
-		// 	{
+	    	if(isset($_POST) AND array_filled($_POST)) {
+			if($_POST['user']['user_paid'] == 1  && !empty($_POST['user']['user_corporate_id']))
+			{
 
-		// 		parent::corporate_create($_POST['user']);
-		// 		// echo "ok";
-		// 		// die();
+				parent::corporate_create($_POST['user']);
+				// echo "ok";
+				// die();
             
-		// 	}
+			}
 
-		// }
+		}
 
 		parent::add($id,$data);
 	}

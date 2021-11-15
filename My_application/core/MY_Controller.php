@@ -586,6 +586,8 @@ class MY_Controller extends MY_Controller_Admin
         $this->load->library('phpmailer_lib');
         $mail = $this->phpmailer_lib->load();
         $a= $this->model_expert->find_by_pk($data['booking_expert_id']);
+
+        // debug($a);
       
         $mail->isSMTP();
         $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
@@ -610,7 +612,7 @@ class MY_Controller extends MY_Controller_Admin
        
         $mail->addReplyTo($a['expert_email'], $a['expert_name']);
 
-        $mail->addAddress($data['booking_email']);
+        $mail->addAddress($a['expert_email']);
         $mail->Subject = 'Request for Expert Booking';
         
         
@@ -801,6 +803,7 @@ public function newsletter(){
     $mail->addAddress($this->session->userdata['logged_in_front']['email']);
 
     $param = array();
+    $param['form_input']['Full Name']=$this->session->userdata['logged_in_front']['first_name'];
     // if(isset($data) && array_filled($data))
     // {
     //     foreach($data as $kye=>$value)
@@ -896,7 +899,7 @@ public function renewal_two(){
       
     // }
 
-    $mail->Subject = 'Mind Cloud Tribe – Invitation to join the Tribe!';
+    $mail->Subject = 'Mind Cloud Tribe - Invitation to join the Tribe!';
         
     $mail->isHTML(true);
 
@@ -1035,7 +1038,7 @@ public function confirm_by_expert($data){
     $mail->addReplyTo($data['booking_email'], $this->session->userdata['logged_in_front']['first_name']);
 
     $mail->addAddress($data['booking_email']);
-    $mail->Subject = 'Confirmation of the Expert Booking';
+    $mail->Subject = 'Thank you for the Expert Booking ';
     
     $mail->isHTML(true);
 
@@ -1092,6 +1095,39 @@ public function corporate_create($data){
     $mail->send();
 
 
+
+}
+
+
+public function learning_certificate(){
+
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+  
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIA37YJHEJR2MKI7YMI';
+    $mail->Password = 'BHv8/PiNbgnCwezgJms9aFK6gXjfNYZP5VscHozBLRDv';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
+
+    $mail->setFrom('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
+    $mail->addReplyTo($this->session->userdata['logged_in_front']['email'],$this->session->userdata['logged_in_front']['first_name']);
+
+    $mail->addAddress($this->session->userdata['logged_in_front']['email']);
+
+    $param = array();
+ 
+
+    $mail->Subject = 'CONGRATULATIONS - Certificate of Completion for Learning Journey on Mind Cloud Tribe';
+        
+    $mail->isHTML(true);
+
+    $mailContent = $this->load->view('_layout/email_template/learning_certificate', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
 
 }
 

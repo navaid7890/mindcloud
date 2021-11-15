@@ -29,7 +29,7 @@ class Dashboard extends MY_Controller_Account
 	{
 		global $config;
 
-
+     // debug("ok");
 
 		$data['inner_banner'] = $this->layput_data['inner_banner'];
 		$data['title'] = 'Account Area';
@@ -39,18 +39,7 @@ class Dashboard extends MY_Controller_Account
 
 		$data['user_data'] = $this->model_user->find_by_pk($this->session->userdata['logged_in_front']['id']);
 
-		//$data['user_login_hisotry'] = $this->model_user->user_last_login_history($this->session->userdata['logged_in_front']['id'] , 3);
-
-		// $data['credit_hisotry'] = $this->model_user_credit->get_data(
-		// 	$this->session->userdata['logged_in_front']['id']);
-		//debug($data['credit_hisotry'] , 1);
-
-		// DOB String
-		// $dd = explode("-", $data['user_data']['ui_dob']);
-		// $data['dob']['year'] = $dd[0];
-		// $data['dob']['month'] = $dd[1];
-		// $data['dob']['day'] = $dd[2];
-		//debug($data['dob'] , 1);
+	
 
 		$pop = array();
 		$pop['where']['tutorial_free_status'] = '1';
@@ -58,7 +47,7 @@ class Dashboard extends MY_Controller_Account
 		$data['popular'] = $this->model_tutorial->find_all_active($pop);
 		$art = $data['popular'];
 
-		// debug($data['popular']);
+	
 
 
 		$cont = $this->model_cms_page->get_page(2);
@@ -77,16 +66,10 @@ class Dashboard extends MY_Controller_Account
 
 
 
-		// $yourt = array();
-		// $yourt['where']['tutorial_free_status'] = '1';
-		// // $yourt['limit'] = 3;
-		// $data['your_tut'] = $this->model_tutorial->find_all_active($yourt);
-
-		// debug($data['yourtutorial']);
-
+	
 		$nexttut = array();
 		$nexttut['where']['tutorial_free_status'] = '0';
-		// $nexttut['limit'] = 3;
+
 		$data['next_tut'] = $this->model_tutorial->find_all_active($nexttut);
 
 
@@ -102,21 +85,19 @@ class Dashboard extends MY_Controller_Account
 		if ($datapaid[0]['user_paid'] == 1) {
 
 			$param['order'] = "tutorial_id ASC";
-			// $param['where']['tutorial_free_status'] = 1;
-			// $param['where']['tutorial_free_status'] = 0;
-			// $param['where_in']['tutorial_id'] = $all;
+			
 			$data['art'] = $this->model_tutorial->find_all_active($param);
 			$data['your_tut'] = $this->model_tutorial->find_all_active($param);
-			// debug("user is paid");
+		
 		} else {
 			$param['order'] = "tutorial_id ASC";
 			$param['where']['tutorial_free_status'] = 1;
-			// $param['where_in']['tutorial_id'] = $all;
+
 			$data['art'] = $this->model_tutorial->find_all_active($param);
 			$data['your_tut'] = $this->model_tutorial->find_all_active($param);
-			// debug("user is Not paid");
+			
 		}
-		// debug($data['art']);
+	
 
 		$mytut = array();
 		$mytut['where']['mytutorial_user_id'] = $this->userid;
@@ -140,13 +121,15 @@ class Dashboard extends MY_Controller_Account
 	
 
 		$dat=date('Y-m-d', strtotime($data['user_data']['user_createdon']));
-		$date = strtotime($dat);
-        $date = strtotime("+7 day", $date);
+		$dates = strtotime($dat);
+        $date = strtotime("+350 days", $dates);
+
+	
         $a= date('Y-m-d',$date);
 
-    	//debug($a);
+    	// debug($a);
 
-		if(date('Y-m-d')==$a && $data['user_data']['user_paid']==0)
+		if(date('Y-m-d')==$a && $data['user_data']['user_paid']==1)
 		{
 
       
@@ -156,12 +139,12 @@ class Dashboard extends MY_Controller_Account
 		}
 
 		$dat1=date('Y-m-d', strtotime($data['user_data']['user_createdon']));
-		$date1 = strtotime($dat1);
-        $date1 = strtotime("+2 day", $date1);
+		$dates1 = strtotime($dat1);
+        $date1 = strtotime("+363 days", $dates1);
         $ab= date('Y-m-d',$date1);
-	//	debug($ab);
+		// debug($ab);
 
-		if(date('Y-m-d')==$ab && $data['user_data']['user_paid']==0)
+		if(date('Y-m-d')==$ab && $data['user_data']['user_paid']==1)
 		{
 
       

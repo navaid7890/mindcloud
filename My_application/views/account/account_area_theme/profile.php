@@ -52,6 +52,15 @@
     display: block;
     width: 100%;
   }
+
+  .popAling {
+    text-align: center;
+    padding: 30px;
+  }
+
+  .popAling button {
+    margin-bottom: 0px !important;
+  }
 </style>
 <div class="index-page">
   <section class="dashboard">
@@ -156,18 +165,16 @@
               </div>
 
             </form>
+
             <?
             $upaid = array();
             $upaid['where']['user_id'] = $this->userid;
             $datapaid = $this->model_user->find_all_active($upaid);
             ?>
             <? if ($datapaid[0]['user_paid'] == 1) : ?>
-              <form id="canclesubscribeform">
+              <!-- <form id="canclesubscribeform">
                 <div class="row">
                   <div class="col-md-3">Subscription</div>
-                  <!-- <div class="col-md-4">
-                  <button id='subscription' class="btn btn-primary" type="submit">subscribe now</button>
-                </div> -->
                   <input type="hidden" name="user[user_id]" value="<?= $this->userid ?>">
                   <input type="hidden" name="user[user_paid]" value="0">
                   <input type="hidden" name="user[user_email]" value=<?= $datapaid[0]['user_email'] ?>>
@@ -175,7 +182,13 @@
                     <button id='cancle-subscription' class="btn btn-danger" type="submit">Cancel Subscription</button>
                   </div>
                 </div>
-              </form>
+              </form> -->
+              <div class="row">
+                <div class="col-md-3">Subscription</div>
+                <div class="col-md-4">
+                  <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#cancelModal">Cancel Subscription</a>
+                </div>
+              </div>
 
             <? else : ?>
               <div class="row">
@@ -191,4 +204,24 @@
       </li>
     </ul>
   </section>
+</div>
+
+
+
+<div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="canclesubscribeform">
+        <div class="row">
+          <div class="col-md-12 popAling">
+            <p>Are you sure you want to cancel Subscription</p></br>
+            <input type="hidden" name="user[user_id]" value="<?= $this->userid ?>">
+            <input type="hidden" name="user[user_paid]" value="0">
+            <input type="hidden" name="user[user_email]" value=<?= $datapaid[0]['user_email'] ?>>
+            <button id='cancle-subscription' class="btn btn-danger" type="submit">Yes</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

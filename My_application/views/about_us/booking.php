@@ -244,11 +244,11 @@ input#forms-booking_us-btn {
                         <input type="hidden" name="booking[booking_time]" id="two"> 
 
 
-                        <input type="text"  value="<?=$us['user_firstname']?>" readonly placeholder="Name">
+                        <input type="text"  value="<?=$us['user_firstname']?>" readonly placeholder="Name" style="display: none;">
                         </div>
 
                         <div class="col-md-6">
-                        <input type="email" name="booking[booking_email]" value="<?=$us['user_email']?>" readonly placeholder="Email">
+                        <input type="email" name="booking[booking_email]" value="<?=$us['user_email']?>" readonly placeholder="Email" style="display: none;">
                         </div>
 
                         
@@ -258,7 +258,7 @@ input#forms-booking_us-btn {
 
                         <div class="row">
                         <div class="col-md-12">
-                        <input type="text" name="booking[booking_phone]"  placeholder="Phone" required> 
+                        <input type="text" name="booking[booking_phone]"  placeholder="Phone" > 
                         </div>
 
                         <div class="col-md-12">
