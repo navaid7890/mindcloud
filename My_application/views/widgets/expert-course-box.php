@@ -5,6 +5,11 @@
         font-weight: 600;
         line-height: normal;
     }
+
+    .course-list ul li.active>a .percent svg tspan {
+        fill: #000 !important;
+        color: #000;
+    }
 </style>
 <div class="course-box hding-3 CBoxExp">
     <div class="course-box-content">
@@ -26,9 +31,9 @@
             <div class="course-user-info">
                 <ul class="login-btn">
                     <li><a href="#"><span>
-                        <!-- <img src="<?= get_image($this->layout_data['user_data']['ui_profile_image'], $this->layout_data['user_data']['ui_profile_image_path']) ?>"> -->
-                
-                </span> <?= $this->session->userdata['logged_in_front']['first_name'] ?>
+                                <!-- <img src="<?= get_image($this->layout_data['user_data']['ui_profile_image'], $this->layout_data['user_data']['ui_profile_image_path']) ?>"> -->
+
+                            </span> <?= $this->session->userdata['logged_in_front']['first_name'] ?>
                         </a></li>
                 </ul>
             </div>
