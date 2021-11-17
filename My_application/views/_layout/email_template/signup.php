@@ -32,13 +32,6 @@ $logo = $this->model_logo->find_one(
                             }
                             ?>
              	        </p>
-
-
-                     
-
-
-
-             	       
                         Genny Ghanimeh<br><br>
                         Mind Cloud Tribe Founder.
                         

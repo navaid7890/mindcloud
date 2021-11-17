@@ -61,6 +61,9 @@
   .popAling button {
     margin-bottom: 0px !important;
   }
+  .modal {
+    top: 30% !important;
+}
 </style>
 <div class="index-page">
   <section class="dashboard">
