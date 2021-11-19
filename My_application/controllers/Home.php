@@ -22,10 +22,16 @@ class Home extends MY_Controller
   public function index()
   {
     global $config;
+
+
     $this->cms_page_id = 2;
 
-    $this->layout_data['title'] = g('db.admin.site_title');
+    $this->plugin_seo();
 
+    $m = $this->model_metadata->find_by_pk(6);        
+    $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+    $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+    $this->layout_data['meta_data']['description']=$m['metadata_desc'];
 
     //BANNER
     $data['banner'] = $this->model_banner->get_banners();
@@ -95,11 +101,6 @@ class Home extends MY_Controller
   
     $categories = $this->model_category->get_category_tutorials();
     $data['main_categories'] = $categories;
-
-
-
-  
-
 
 
     $this->load_view("home", $data);

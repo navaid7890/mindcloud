@@ -20,8 +20,14 @@ class Contact_us extends MY_Controller
         $data = array();
 
         //TAB TITLE
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(7);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
 
         //INNER BANNER
         $b = $this->get_ibanner(2);

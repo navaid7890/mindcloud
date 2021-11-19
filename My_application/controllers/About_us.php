@@ -21,11 +21,19 @@ class About_us extends MY_Controller
     public function index()
     {
         global $config;
+
+
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(8);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
+
         $data = array();
-
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
-
 
         //INNER BANNER
         $b = $this->get_ibanner(1);
@@ -33,16 +41,7 @@ class About_us extends MY_Controller
         $data['ibanner_img'] = $b['ibanner_img'];
 
 
-        //BANNER
-        // $b = $this->get_banner(1);
-        // $data['bcontent'] = $b['bcontent'];
-        // $data['bimage'] = $b['bimage'];
-
-        // $data_cont = $this->model_cms_page->get_page(36);
-        // $data1['cont1'] = $cont['child'][0];
-        // $data1['cont2'] = $cont['child'][1];
-
-        // debug($data);
+   
         $cont = array();
         $cont = $this->model_cms_page->get_page(35);
         $data['con1'] = $cont['child'][0];
@@ -76,12 +75,21 @@ class About_us extends MY_Controller
 
     public function terms()
     {
-        $data = array();
+        
         global $config;
 
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+        
+        $this->plugin_seo();
 
+        $m = $this->model_metadata->find_by_pk(9);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
+
+        $data = array();
         //INNER BANNER
         $b = $this->get_ibanner(6);
         $data['ititle'] = $b['ititle'];
@@ -105,7 +113,19 @@ class About_us extends MY_Controller
 
     public function become_expert()
     {
+
+
+            
+        $this->plugin_seo();
+        $m = $this->model_metadata->find_by_pk(10);
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
+
         $cont = array();
+
+
         $cont = $this->model_cms_page->get_page(44);
         $data['con1'] = $cont['child'][0];
         $data['con2'] = $cont['child'][1];
@@ -118,6 +138,17 @@ class About_us extends MY_Controller
     }
     public function enterprise_partners()
     {
+
+            
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(11);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
         $cont = array();
         $cont = $this->model_cms_page->get_page(50);
         $data['con1'] = $cont['child'][0];
@@ -156,6 +187,18 @@ class About_us extends MY_Controller
     }
     public function consult_advisors()
     {
+
+             
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(12);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
+
         $cont = array();
         $cont = $this->model_cms_page->get_page(80);
         $data['con1'] = $cont['child'][0];
@@ -170,6 +213,18 @@ class About_us extends MY_Controller
     }
     public function innovate()
     {
+
+             
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(13);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
+
         $cont = array();
         $cont = $this->model_cms_page->get_page(88);
         $data['con1'] = $cont['child'][0];
@@ -201,105 +256,25 @@ class About_us extends MY_Controller
 
 
 
-    // public function policy()
-    // {
-    //     $data = array();
-    //     global $config;
-
-    //     $method_title = ucwords($this->uri->segment(1));
-    //     $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
-
-    //     //INNER BANNER
-    //     $b = $this->get_ibanner(7);
-    //     $data['ititle'] = $b['ititle'];
-    //     $data['ibanner_img'] = $b['ibanner_img'];
-    //     //BANNER
-    //     // $b = $this->get_banner(10);
-    //     // $data['bcontent'] = $b['bcontent'];
-    //     // $data['bimage'] = $b['bimage'];
-
-    //     $cont = $this->model_cms_page->get_page(34);
-
-    //     $data['content'] = $cont;
-
-    //     $this->load_view("terms", $data);
-    // }
-
-    // public function faq()
-    // {
-    //     global $config;
-    //     $data = array();
-
-    //      //TAB TITLE
-    //     $method_title = ucwords($this->uri->segment(1));
-    //     $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
-
-    //     //INNER BANNER
-    //      $b = $this->get_ibanner(2);
-    //      $data['ititle'] = $b['ititle'];
-    //      $data['ibanner_img'] = $b['ibanner_img'];
-
-    //     $data['faq'] = $this->model_faq->find_all_active();
-
-    //     $this->load_view("faq",$data);
-    // }
-
-    // public function testimonials()
-    // {
-    //     global $config;
-    //     $data = array();
-
-    //     //TAB TITLE
-    //     $method_title = ucwords($this->uri->segment(1));
-    //     $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
-
-    //     //INNER BANNER
-    //      $b = $this->get_ibanner(3);
-    //      $data['ititle'] = $b['ititle'];
-    //      $data['ibanner_img'] = $b['ibanner_img'];
-
-    //      $test['where']['testimonials_top'] = 1;
-    //      $test['order'] = "testimonials_id DESC";
-    //     $data['test'] = $this->model_testimonials->find_one_active($test);
-
-    //     $data['testimonials'] = $this->model_testimonials->find_all_active();
-
-    //     $this->load_view("testimonials",$data);
-    // }
-
-
-    // public function showcase()
-    // {
-    //     global $config;
-    //     $data = array();
-
-    //       //TAB TITLE
-    //     $method_title = ucwords($this->uri->segment(1));
-    //     $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
-
-    //     //INNER BANNER
-    //      $b = $this->get_ibanner(4);
-    //      $data['ititle'] = $b['ititle'];
-    //      $data['ibanner_img'] = $b['ibanner_img'];
-
-    //      $data['cont9'] = $this->model_cms_page->find_by_pk_active(9);
-    //      $data['cont10'] = $this->model_cms_page->find_by_pk_active(10);
-
-    //      $data['category'] = $this->model_gallery_category->find_all_active();
-    //     // debug($data['category']);
-    //     $this->load_view("showcase",$data);
-    // }
 
 
     public function learning()
     {
-        $data = array();
+       
         global $config;
 
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+    
+             
+        $this->plugin_seo();
 
+        $m = $this->model_metadata->find_by_pk(14);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
 
+        $data = array();
         $data['professions'] = $this->model_profession->find_all_active();
         $data['states'] = $this->model_states->find_all_active();
 
@@ -360,11 +335,21 @@ class About_us extends MY_Controller
 
     public function expert()
     {
-        $data = array();
+        
         global $config;
 
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+   
+
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(15);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
+        $data = array();
 
         $cont = $this->model_cms_page->get_page(2);
 
@@ -456,6 +441,16 @@ class About_us extends MY_Controller
     public function course_detail($slug = '')
     {
         global $config;
+
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(16);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
         $data = array();
 
         $contss = $this->model_cms_page->get_page(30);
@@ -529,8 +524,19 @@ class About_us extends MY_Controller
 
     public function faq()
     {
-        $data = array();
+       
         global $config;
+
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(17);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
+        $data = array();
 
         $par1 = array();
         $par1['where']['faq_category'] = 1;
@@ -585,6 +591,16 @@ class About_us extends MY_Controller
     public function newsfeed()
     {
         global $config;
+
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(18);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
         if ($this->userid > 0) {
             $data = array();
             $data['account_user'] = $this->layout_data['user_data'];
@@ -884,6 +900,16 @@ class About_us extends MY_Controller
     public function becomeexpert()
     {
         global $config;
+
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(10);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
         $data = array();
 
 
@@ -940,11 +966,20 @@ class About_us extends MY_Controller
 	{
         global $config;
 
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(19);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
+
         if($this->userid > 0){
         $data = array();
         //TAB TITLE
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title')." | ".$method_title;
+
 
       
         $data['testimonial'] = $this->model_testimonials->find_all_active();
@@ -1035,11 +1070,18 @@ class About_us extends MY_Controller
     {
         global $config;
 
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(20);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
         if($this->userid > 0){
         $data = array();
 
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
 
 
         $data['exp'] = $this->model_user->find_all();
@@ -1156,11 +1198,21 @@ class About_us extends MY_Controller
     public function member()
     {
         global $config;
+
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(21);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+
+
         $data = array();
 
         //TAB TITLE
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+    
 
         //INNER BANNER
 
@@ -1202,13 +1254,19 @@ class About_us extends MY_Controller
     public function userprofile($id = '')
     {
         global $config;
-        $data = array();
-
+    
         //TAB TITLE
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(22);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
 
         //INNER BANNER
+        $data = array();
 
         $par = array();
         $par['where']['user_id'] = $id;
@@ -1219,12 +1277,18 @@ class About_us extends MY_Controller
     public function expertprofile($id = '')
     {
         global $config;
-        $data = array();
+    
 
         //TAB TITLE
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+        $this->plugin_seo();
 
+        $m = $this->model_metadata->find_by_pk(23);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+        $data = array();
         //INNER BANNER
 
         $par = array();
@@ -1236,12 +1300,18 @@ class About_us extends MY_Controller
     public function privacy()
     {
         global $config;
-        $data = array();
+    
 
         //TAB TITLE
-        $method_title = ucwords($this->uri->segment(1));
-        $this->layout_data['title'] = g('db.admin.site_title') . " | " . $method_title;
+        $this->plugin_seo();
 
+        $m = $this->model_metadata->find_by_pk(24);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
+        $data = array();
         //INNER BANNER
 
         $data['exp'] = $this->model_user->find_all();
@@ -1330,6 +1400,14 @@ class About_us extends MY_Controller
     public function thankyou()
 	{
         global $config;
+        $this->plugin_seo();
+
+        $m = $this->model_metadata->find_by_pk(25);
+     
+            
+        $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
+        $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
+        $this->layout_data['meta_data']['description']=$m['metadata_desc'];
         if($this->userid > 0){
 
         $data = array();
