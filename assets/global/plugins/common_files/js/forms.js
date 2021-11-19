@@ -129,7 +129,7 @@ var Form = function () {
         Toastr.success(response.msg.desc, 'Success');
         $("#forms-book_us").find('input[type=text],input[type=email],textarea').val('');
        
-    
+        window.location="booking";
         return false;
       }
       else {
