@@ -36,14 +36,15 @@
     <input name="signature" type="hidden" value="<?= $signature ?>">
     <input name="token_name"  type="hidden" id="settoken" value="<?= $token_name ?>">
     <input name="return_url" type="hidden" value="<?= $return_url ?>">
-    <input type="submit" onclick="return get_token();" value="submit">
+    <input type="submit"  value="submit">
+    <input type="button" onclick="return get_token2();" value="get_token2">
 </form>
 <input id="expiry_date" name="expiry_date" placeholder="expiry_date" type="text"><br/>
 <input id="card_number" name="card_number" placeholder="card_number" type="text"><br/>
 <input id="card_security_code" name="card_security_code" placeholder="card_security_code" type="text"><br/>
 <input id="card_holder_name" name="card_holder_name" placeholder="card_holder_name" type="text"><br/>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     var payload = {
         service_command:'<?= $service_command ?>',
@@ -57,6 +58,33 @@
         card_security_code:'',
         card_holder_name:'',
     };
+
+    async function get_token2(){
+    payload.expiry_date = document.getElementById("expiry_date").value;
+    payload.card_number = document.getElementById("card_number").value;
+    payload.card_security_code = document.getElementById("card_security_code").value;
+    payload.card_holder_name = document.getElementById("card_holder_name").value;
+
+    var method = 'POST';
+var headers = { "Content-type": "application/json" };
+var endPoint= `https://sbcheckout.PayFort.com/FortAPI/paymentPage?service_command=${payload.service_command}&access_code=${payload.access_code}&merchant_identifier=${payload.merchant_identifier}&merchant_reference=${payload.merchant_reference}&language=${payload.language}&signature=${payload.signature}&expiry_date=${payload.expiry_date}&card_number=${payload.card_number}&card_security_code=${payload.card_security_code}&card_holder_name=${payload.card_holder_name}`
+
+$.post(endPoint,
+    // {
+    //   name: "Donald Duck",
+    //   city: "Duckburg"
+    // },
+    function(data,status){
+      console.log("Data: " + data + "\nStatus: " + status);
+    });
+
+return false;
+document.getElementById('settoken').value = response;
+return response;
+
+
+}
+
 async function get_token(){
     payload.expiry_date = document.getElementById("expiry_date").value;
     payload.card_number = document.getElementById("card_number").value;
@@ -74,10 +102,15 @@ const timeOutPromise = new Promise((resolve, reject) => {
   }, 30000);
 });
 const response = await Promise.race([fetchPromise, timeOutPromise]);
+
+
+
 console.log('card response token'.response)
 return false;
 document.getElementById('settoken').value = response;
 return response;
+
+
 }
 </script>
 
