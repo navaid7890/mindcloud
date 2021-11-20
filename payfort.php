@@ -2,7 +2,7 @@
 <?php 
 
     echo "Pay fort <br/>";
-    $service_command = 'TOKENIZATION';
+    $service_command = 'TOKENIZATION';//AUTHORIZATION
     $access_code = 'j0EDelL8zOwb9bZEwpsr';
     // $access_code = 'zx0IPmPy5jp1vAz8Kpg7';
     $merchant_identifier = 'vHgjzRkl';
@@ -17,12 +17,21 @@
 
     // generate signature
 
+
+    // String concatenatedString = SHA_REQUEST_PHRASE +
+    //             KEY_ACCESS_CODE + "=" + ACCESS_CODE +
+    //             KEY_LANGUAGE + "=" + LANGUAGE_TYPE +
+    //             KEY_MERCHANT_IDENTIFIER + "=" + MERCHANT_IDENTIFIER +
+    //             KEY_MERCHANT_REFERENCE + "=" + YOUR_MERCHANT_REFERENCE +
+    //             KEY_SERVICE_COMMAND + "=" + "TOKENIZATION" +
+    //             SHA_REQUEST_PHRASE;
+
     $sorted_params = $req_pass_phrase.'access_code='.$access_code.'language='.$language.
     'merchant_identifier='.$merchant_identifier.'merchant_reference'.$merchant_reference.
-    'return_url='.$return_url.'service_command='.$service_command;
+    'return_url='.$return_url.'service_command='.$service_command.$req_pass_phrase;
     // 'signature='.$signature.
     // 'token_name='.$token_name.
-    $req_pass_phrase;
+    // $req_pass_phrase;
     $signature_generated = hash('sha256', $sorted_params);
     $signature = $signature_generated;
     echo $sorted_params."<br/>";
