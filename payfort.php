@@ -9,7 +9,7 @@
     $language = 'en';
     $signature = '';
     $token_name = '';
-    $return_url = 'https://temp-prod.mindcloud.tk/payresponcee';
+    $return_url = 'https://temp-prod.mindcloud.tk/payresponce';
     $req_pass_phrase = '$2y$10$NzvIh4AsW';
     // $merchant_reference = '5000-'.time();
 
