@@ -1440,6 +1440,12 @@ class About_us extends MY_Controller
    
    
 }
+public function payfortresponsce()
+	{
+        $data = array();
+        $this->load_view("payfortresponsce",$data);
+    }
+
 
 
 

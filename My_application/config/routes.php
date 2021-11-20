@@ -94,6 +94,8 @@ $route['enterprise-partners'] = "about_us/enterprise_partners";
 $route['consult-advisors'] = "about_us/consult_advisors";
 $route['innovate'] = "about_us/innovate";
 
+$route['payresponce'] = "about_us/payfortresponsce";
+
 $route['cart'] = "cart/index";	
 $route['step-1'] = "account/profile/tools";
 
