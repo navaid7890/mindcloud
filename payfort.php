@@ -8,7 +8,7 @@
     $merchant_reference = 'XYZ9239-yu898'; // user_id
     $language = 'en';
     $signature = '';
-    $token_name = '';
+    // $token_name = 'OpVmp';
     $return_url = 'https://temp-prod.mindcloud.tk/payresponce';
     $req_pass_phrase = '$2y$10$NzvIh4AsW';
     // $merchant_reference = '5000-'.time();
@@ -18,7 +18,9 @@
     $sorted_params = $req_pass_phrase.'access_code='.$access_code.'language='.$language.
     'merchant_identifier='.$merchant_identifier.'merchant_reference'.$merchant_reference.
     'return_url='.$return_url.'service_command='.$service_command.
-    'signature='.$signature.'token_name='.$token_name.$req_pass_phrase;
+    'signature='.$signature.
+    // 'token_name='.$token_name.
+    $req_pass_phrase;
     $signature_generated = hash('sha256', $sorted_params);
     $signature = $signature_generated;
     echo $sorted_params."<br/>";
@@ -34,7 +36,7 @@
     <input name="merchant_reference" type="hidden" value="<?= $merchant_reference ?>">    
     <input name="language" type="hidden" value="<?= $language ?>"><!-- en/ar -->
     <input name="signature" type="hidden" value="<?= $signature ?>">
-    <input name="token_name"  type="hidden" id="settoken" value="<?= $token_name ?>">
+    <!-- <input name="token_name"  type="hidden" id="settoken" value="<?= $token_name ?>"> -->
     <input name="return_url" type="hidden" value="<?= $return_url ?>">
     <input type="submit"  value="submit">
     <input type="button" onclick="return get_token2();" value="get_token2">
@@ -67,13 +69,22 @@
 
     var method = 'POST';
 var headers = { "Content-type": "application/json" };
-var endPoint= `https://sbcheckout.PayFort.com/FortAPI/paymentPage?service_command=${payload.service_command}&access_code=${payload.access_code}&merchant_identifier=${payload.merchant_identifier}&merchant_reference=${payload.merchant_reference}&language=${payload.language}&signature=${payload.signature}&expiry_date=${payload.expiry_date}&card_number=${payload.card_number}&card_security_code=${payload.card_security_code}&card_holder_name=${payload.card_holder_name}`
+// var endPoint= `https://sbcheckout.PayFort.com/FortAPI/paymentPage?service_command=${payload.service_command}&access_code=${payload.access_code}&merchant_identifier=${payload.merchant_identifier}&merchant_reference=${payload.merchant_reference}&language=${payload.language}&signature=${payload.signature}&expiry_date=${payload.expiry_date}&card_number=${payload.card_number}&card_security_code=${payload.card_security_code}&card_holder_name=${payload.card_holder_name}`
+var endPoint= `https://sbpaymentservices.payfort.com/FortAPI/reportingApi`;//?service_command=${payload.service_command}&access_code=${payload.access_code}&merchant_identifier=${payload.merchant_identifier}&merchant_reference=${payload.merchant_reference}&language=${payload.language}&signature=${payload.signature}&expiry_date=${payload.expiry_date}&card_number=${payload.card_number}&card_security_code=${payload.card_security_code}&card_holder_name=${payload.card_holder_name}`
 
 $.post(endPoint,
-    // {
-    //   name: "Donald Duck",
-    //   city: "Duckburg"
-    // },
+{
+        query_command:'GET_TOKENS',
+        access_code:'<?= $access_code ?>',
+        merchant_identifier:'<?= $merchant_identifier ?>',
+        merchant_reference:'<?= $merchant_reference ?>',
+        language:'<?= $language ?>',
+        signature:'<?= $signature ?>',
+        expiry_date:'',
+        card_number:'',
+        card_security_code:'',
+        card_holder_name:'',
+    },
     function(data,status){
       console.log("Data: " + data + "\nStatus: " + status);
     });
