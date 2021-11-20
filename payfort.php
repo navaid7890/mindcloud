@@ -3,22 +3,24 @@
 
     echo "Pay fort <br/>";
     $service_command = 'TOKENIZATION';
-    $access_code = 'zx0IPmPy5jp1vAz8Kpg7';
-    $merchant_identifier = 'CycHZxVj';
+    $access_code = 'j0EDelL8zOwb9bZEwpsr';
+    // $access_code = 'zx0IPmPy5jp1vAz8Kpg7';
+    $merchant_identifier = 'vHgjzRkl';
     $merchant_reference = 'XYZ9239-yu898'; // user_id
     $language = 'en';
     $signature = '';
     // $token_name = 'OpVmp';
     $return_url = 'https://temp-prod.mindcloud.tk/payresponce';
     $req_pass_phrase = '$2y$10$NzvIh4AsW';
+    // $res_pass_phrase = '$2y$10$j/0PAZAtk';
     // $merchant_reference = '5000-'.time();
 
     // generate signature
 
     $sorted_params = $req_pass_phrase.'access_code='.$access_code.'language='.$language.
     'merchant_identifier='.$merchant_identifier.'merchant_reference'.$merchant_reference.
-    'return_url='.$return_url.'service_command='.$service_command.
-    'signature='.$signature.
+    'return_url='.$return_url.'service_command='.$service_command;
+    // 'signature='.$signature.
     // 'token_name='.$token_name.
     $req_pass_phrase;
     $signature_generated = hash('sha256', $sorted_params);
