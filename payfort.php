@@ -26,8 +26,11 @@
     //             KEY_SERVICE_COMMAND + "=" + "TOKENIZATION" +
     //             SHA_REQUEST_PHRASE;
 
+    // $sorted_params = $req_pass_phrase.'access_code='.$access_code.'language='.$language.
+    // 'merchant_identifier='.$merchant_identifier.'merchant_reference'.$merchant_reference.
+    // 'return_url='.$return_url.'service_command='.$service_command.$req_pass_phrase;
     $sorted_params = $req_pass_phrase.'access_code='.$access_code.'language='.$language.
-    'merchant_identifier='.$merchant_identifier.'merchant_reference'.$merchant_reference.
+    'merchant_identifier='.$merchant_identifier.'merchant_reference='.$merchant_reference.
     'return_url='.$return_url.'service_command='.$service_command.$req_pass_phrase;
     // 'signature='.$signature.
     // 'token_name='.$token_name.
