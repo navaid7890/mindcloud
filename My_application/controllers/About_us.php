@@ -1440,12 +1440,12 @@ class About_us extends MY_Controller
    
    
 }
-public function payfortresponsce()
+  public function payfortresponsce()
 	{
         $data = array();
         // $data['response'] = $_POST;
-        print_r($_POST);
-        die;
+        // print_r($_POST);
+        // die;
         $this->load_view("payfortresponsce",$data);
     }
 

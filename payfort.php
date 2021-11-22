@@ -131,7 +131,7 @@ const response = await Promise.race([fetchPromise, timeOutPromise]);
 
 
 console.log('card response token'.response)
-return false;
+
 document.getElementById('settoken').value = response;
 return response;
 
