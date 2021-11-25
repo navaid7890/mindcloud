@@ -51,12 +51,12 @@ $this->load->view('_widget-inner_banner',array('is_title'=>$title)); */?>
 
 
                              <div style="width: 100%; padding: 100px 0px;">
-                                <h1 style="font-weight: bold; text-align: center;color:rgb(29 144 217)">THANK YOU <span style="color: #323232">FOR YOUR SUBSCRIPTION</span></h1>
+                                <h1 style="font-weight: bold; text-align: center;color:rgb(29 144 217)">THANK YOU <span style="color: #323232">FOR YOUR SUBSCRIPTION.</span></h1>
                                 <h2 style="font-family: &quot;Droid Serif&quot;,Georgia,serif; font-style: italic; text-transform: none; letter-spacing: 0px; text-align: center;">
                                     <br> 
                                     We have successfully processed your subscription 
 
-                                    Meanwhile, if you have any questions or concerns, <br> <br>please feel free to Email us at (<?=g('db.admin.email_contact_us')?>).
+                                    Meanwhile, if you have any questions or concerns, <br> <br>please feel free to email us at (<?=g('db.admin.email_contact_us')?>).
                                     
                                 </h2>
                             </div>
