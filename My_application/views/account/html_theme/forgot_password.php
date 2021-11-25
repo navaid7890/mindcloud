@@ -14,7 +14,7 @@
 
                         <div class="login-form">
                             <div>
-                                <form id="forms-signin">
+                                <form id="forms-forgot_password">
                                     <?php 
                                         $redirect_url = isset($_GET['url']) ? $_GET['url'] :  $this->agent->referrer(); 
                                     ?> 

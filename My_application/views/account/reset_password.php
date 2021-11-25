@@ -1,26 +1,63 @@
 
 
-<div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-6">
-        <form role="form" id='forms-reset_password' class="signinform">
+<style>
 
-            <div class="container">
-                <div style="color:#2790E3;font-size:24px;">Reset Password?</div>
-                <div class="pb-5" style="color: #858585; font-size:14px;"></div>
-                <label for="uname"><b class="texts">Type your new Password</b></label><br>
-                <input type="hidden" name="user[user_id]" value="<?=$data['user_id']?>"></input>
-                <input class="signinfield" type="password" name="user[user_password]" id="ilny-password" placeholder="Your password...(Required)" required><br>
+#ilny-password {
+    width: 100%;
+    height: 60px;
+    background: #F3F6FA;
+    border-radius: 8px;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
 
-                <button class="formbutton" href="javascript:void(0);" id='reset_password-btn' style="color:white;">Reset</button>
- 
+button#reset_password-btn {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+}
+</style>
+
+<div class="login-banner">
+        <div class="container-fluid pad-zero para w-100">
+            <div class="row ">
+                <div class="col-lg-6 col-md-12">
+                    <div class="login-wrap">
+                        <div  class="w-100">
+                        <div class="login-content">
+                            <h4>Reset Password</h4>
+                            <div class="space"><br></div>
+                            <p>Enter Your Password</p>
+                        </div>
+                        <div class="space"><br><br></div>
+
+                        <div class="login-form">
+                            <div>
+                            <form role="form" id='forms-reset_password' class="signinform">
+                                  
+                              <input type="hidden" name="user[user_id]" value="<?=$data['user_id']?>"></input>
+                              <input class="signinfield" type="password" name="user[user_password]" id="ilny-password" placeholder="Your password...(Required)" required><br>
+
+
+                                    <div class="fld-btn">
+                                    <button class="formbutton" href="javascript:void(0);" id='reset_password-btn' style="color:white;">Reset</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="login-mdl">
+                        <span><img src="<?=i('')?>login.png" alt=""></span>
+                        <a href="./" class="white-logo"><img src="<?=i('')?>footer-logo.png" alt=""></a>
+                    </div>
+                </div>
             </div>
-
-        </form>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6">
-        <div class="behind" >
-            <a href=""> <img class="newmind" style="width: 200px;" src="<?i('')?>footerlogo.png"></a>
         </div>
-    </div>
-</div>
-       
+     </div>   
+     </div>

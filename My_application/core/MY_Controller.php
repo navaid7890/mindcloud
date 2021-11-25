@@ -631,7 +631,57 @@ class MY_Controller extends MY_Controller_Admin
 
 
 }
+public function reset_password($data)
+{
+    $this->load->library('phpmailer_lib');
+    $mail = $this->phpmailer_lib->load();
+  
+    $mail->isSMTP();
+    $mail->Host     = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'AKIA37YJHEJR2MKI7YMI';
+    $mail->Password = 'BHv8/PiNbgnCwezgJms9aFK6gXjfNYZP5VscHozBLRDv';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port     = 465;
 
+
+    $mail->setFrom('no-reply@mindcloudtribe.com', 'Mind Cloud Tribe');
+    $mail->addReplyTo($data['user_email'],$data['user_lastname']);
+
+    $mail->addAddress($data['user_email']);
+
+    $param = array();
+ 
+
+   
+
+
+    $name = $data['user_firstname'] . " " . $data['user_lastname'];
+    $this->to = $data['user_email'];
+    $token = "HYQ357".$data['user_id']."-354T";
+
+    $encrypt_code = md5($token);
+    $url = g('base_url') . "account/reset_password/index/{$encrypt_code}/?token={$token}";
+
+    $content = "$name, <br />";
+    $content .= 'We received a password reset request from '.$this->to.'. <br />';
+    $content .= 'To reset your account password please <a href="'.$url.'">click here</a> <br />';
+    // $content .= 'If this activity occurred without your knowledge or permission, we would appreciate your notifying us at '.$this->customerSupportEmail.'<br />';
+    $content .= 'Thank you <br />' ;
+    // $content .= g('site_title') . ' Team';
+
+    $param['msg'] = $content;
+
+    $mail->Subject = 'Reset Password Request';
+    $mail->Message=$content;
+    $mail->isHTML(true);
+
+    $mailContent = $this->load->view('_layout/email_template/forgot', $param , true);
+    $mail->Body = $mailContent;
+
+    $mail->send();
+
+}
 
     public function cancle_sub_email($data){
 

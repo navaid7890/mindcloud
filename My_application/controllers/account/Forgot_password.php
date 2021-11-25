@@ -55,8 +55,8 @@ class Forgot_password extends MY_Controller {
 				
 				// Factory Data
 				if(isset($data) && array_filled($data)) {
-					$this->model_email->reset_password($data);
-
+					// $this->model_email->reset_password($data);
+					parent::reset_password($data);
 					$this->json_param['status'] = true;
 					$this->json_param['msg']['title'] = '';
 					$this->json_param['msg']['desc'] = "Email sent in your account please open your inbox.";
