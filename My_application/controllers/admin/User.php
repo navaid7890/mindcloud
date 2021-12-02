@@ -56,8 +56,8 @@ class User extends MY_Controller {
 		
 		$_POST = $this->input->post(NULL, true);
 
-		if(isset($_GET['type']))
-			$config['js_config']['paginate']['uri'] .= '?type=' . $_GET['type'];
+		// if(isset($_GET['type']))
+		// 	$config['js_config']['paginate']['uri'] .= '?type=' . $_GET['type'];
 	}
 
 	public function add($id='',$data=array())

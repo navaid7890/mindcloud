@@ -24,7 +24,7 @@ class Admins extends MY_Controller {
 		parent::__construct();
 		$this->this_class_name = $this->router->fetch_class('');
 		
-        $this->dt_params['dt_headings'] = "user_id,user_firstname,user_lastname,user_email,user_status";
+        $this->dt_params['dt_headings'] = "user_id,user_firstname,user_lastname,user_type,user_email,user_status";
         $this->dt_params['searchable'] = explode(",", $this->dt_params['dt_headings']);
         
         $this->dt_params['action'] = array(
