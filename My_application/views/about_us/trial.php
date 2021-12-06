@@ -84,7 +84,12 @@
 session_start();
 include 'config.php';
 
-$_COOKIE['user_name'];
+// debug($_COOKIE);
+$abs=180-$_COOKIE['u'];
+
+echo $abs;
+
+
 ?>
 <?php
 
@@ -93,7 +98,7 @@ $access_code = 'z9c9eXaLZqJ6aa5h9PRV';
 $merchant_identifier = 'WZQlGZWY';
 $merchant_reference = uniqid(); // user_id
 $language = 'en';
-$amount = "120";
+$amount = $abs;
 $currency = 'AED';
 $signature = '';
 $return_url = l('about_us/payfortresponsce');
@@ -141,9 +146,9 @@ $signature = $signature_generated;
                                         <input name="language" type="hidden" value="<?= $language ?>"><!-- en/ar -->
                                         <input name="signature" type="hidden" value="<?= $signature ?>">
                                         <input name="return_url" type="hidden" value="<?= $return_url ?>">
-                                        <input name="amount" type="hidden" value="<?= $amount ?>">
+                                        <input name="amount" type="hidden" value="<?= $amount ?>" id="am">
                                         <input name="currency" type="hidden" value="<?= $currency ?>">
-                                        <input class="btn btn-primary" type="submit" data-toggle="modal" data-target="#promoModal" value="submit">
+                                        <input class="btn btn-primary" id="payFortId" type="submit" data-toggle="modal" data-target="#promoModal" value="Pay Now !">
                                     </form>
                                     <!-- <div class="text-center" id="AmazonPayButton"></div> -->
                                     <label style="margin-top: 15px;margin-bottom: 10px;color: #196aa5 !important;">Affiliate Promo Code : </label>
@@ -297,6 +302,7 @@ $signature = $signature_generated;
                     $('#udt').val('');
                     if (result == "180") {
                         $("#con").show();
+                        $("#payFortId").hide();
                         $("img#OffAmazonPaymentsWidgets0").hide();
 
                     } else {

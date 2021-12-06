@@ -1443,10 +1443,37 @@ class About_us extends MY_Controller
   public function payfortresponsce()
 	{
         $data = array();
-        $data['response'] = $_POST;
+        // $data['response'] = $_POST;
         // print_r($_POST);
         // die;
+
+        // debug($_GET['response_code']);
+
+        $newstring = substr($_GET['response_code'], -3);
+
+        debug($newstring);
+
+        // $data = array();
+
+        // $id = $this->userid;
+
+        // $pars=array(); 
+        // $pars['fields'] = "user_id,user_paid";
+        // $pars['where']['user_id']=$this->userid;
+
+        // $u=$this->model_user->find_one_active($pars);
+
+
+        // $u['user_paid']=1;
+        // $test=$this->model_user->update_by_pk($id, $u);
+
+        // parent::newsletter();
+
         $this->load_view("payfortresponsce",$data);
+
+        
+
+        
     }
 
     
