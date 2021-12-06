@@ -72,11 +72,6 @@
     .trial-page .home-banner {
         height: 920px !important;
     }
-
-
-    .AllBtnArea input.btn.btn-primary {
-        background: #0275d8;
-    }
 </style>
 <script source="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 <?php
@@ -86,30 +81,7 @@ include 'config.php';
 
 $_COOKIE['user_name'];
 ?>
-<?php
 
-$service_command = 'TOKENIZATION'; //AUTHORIZATION
-$access_code = 'z9c9eXaLZqJ6aa5h9PRV';
-$merchant_identifier = 'WZQlGZWY';
-$merchant_reference = uniqid(); // user_id
-$language = 'en';
-$amount = "120";
-$currency = 'AED';
-$signature = '';
-$return_url = l('about_us/payfortresponsce');
-$req_pass_phrase = '$2y$10$zrHXx7sET';
-$res_pass_phrase = '$2y$10$ajGktfU4F';
-
-$sorted_params = $req_pass_phrase . 'access_code=' . $access_code .'amount=' . $amount .'currency=' . $currency . 'language=' . $language .
-    'merchant_identifier=' . $merchant_identifier . 'merchant_reference=' . $merchant_reference .
-    'return_url=' . $return_url . 'service_command=' . $service_command . $req_pass_phrase;
-$signature_generated = hash('sha256', $sorted_params);
-$signature = $signature_generated;
-// echo $sorted_params."<br/>";
-
-?>
-
-<!-- <iframe  id="payfortsss" name="payfortsss" ></iframe> -->
 
 <div class="trial-page">
 
@@ -123,7 +95,9 @@ $signature = $signature_generated;
 
                         <div class="t-bannerBox text-center">
                             <div class="AllBtnArea">
-
+                                <!-- <div class="promoBtnArea">
+                                    <a href="#" class="btn-promo btn-hover" data-toggle="modal" data-target="#promoModal">Do you have a Promo Code?</a>
+                                </div> -->
                                 <div class="bannerHead">
                                     <h2>Annually</h2><br>
 
@@ -132,22 +106,11 @@ $signature = $signature_generated;
                                     <span id="abt"></span>
                                     <button type="button" class="btn btn-primary" id="con">Confirm Subscription</button>
 
-                                    <!-- <a href="#" class="btn btn-primary">Do you have a Promo Code?</a> -->
-                                    <form action="https://sbcheckout.payfort.com/FortAPI/paymentPage" method="post" target="payfortsss">
-                                        <input name="service_command" type="hidden" value="<?= $service_command ?>">
-                                        <input name="access_code" type="hidden" value="<?= $access_code ?>">
-                                        <input name="merchant_identifier" type="hidden" value="<?= $merchant_identifier ?>">
-                                        <input name="merchant_reference" type="hidden" value="<?= $merchant_reference ?>">
-                                        <input name="language" type="hidden" value="<?= $language ?>"><!-- en/ar -->
-                                        <input name="signature" type="hidden" value="<?= $signature ?>">
-                                        <input name="return_url" type="hidden" value="<?= $return_url ?>">
-                                        <input name="amount" type="hidden" value="<?= $amount ?>">
-                                        <input name="currency" type="hidden" value="<?= $currency ?>">
-                                        <input class="btn btn-primary" type="submit" data-toggle="modal" data-target="#promoModal" value="submit">
-                                    </form>
-                                    <!-- <div class="text-center" id="AmazonPayButton"></div> -->
-                                    <label style="margin-top: 15px;margin-bottom: 10px;color: #196aa5 !important;">Affiliate Promo Code : </label>
-                                    <form id="form-expert_us" class="form-inline mt-10">
+                                    <div class="text-center" id="AmazonPayButton"></div>
+                                    
+                                    <label style="margin-top: 15px;margin-bottom: 10px;color: #196aa5 !important;">Affiliate Promo Code  : </label>
+                                    <form id="form-expert_us" class="form-inline mt-10" >
+                                    
                                         <div class="form-group">
                                             <input type="text" id="udt" class="form-control" placeholder="Enter Promo Code">
                                         </div>
@@ -157,7 +120,7 @@ $signature = $signature_generated;
                             </div>
                             <div class="banner-down">
                                 <ul class="t-banner-list">
-                                    <li class="first" style="text-shadow: 0 0 3px #186aa5;">Click on Amazon pay, to complete order.</li>
+                                <li class="first" style="text-shadow: 0 0 3px #186aa5;">Click on Amazon pay, to complete order.</li>
                                     <li>Learn on your mobile or computer.</li>
                                     <li>Access to Mind Cloud Experts tutorials.</li>
                                     <li>Personalized Course Recommendations. </li>
@@ -175,6 +138,8 @@ $signature = $signature_generated;
             </div>
         </div>
     </div>
+
+
     <section class="faqSec trial-faq-sec hding-2 para">
         <div class="container">
             <h2>FAQs</h2>
@@ -213,7 +178,23 @@ $signature = $signature_generated;
     <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <iframe width="100%" height="600" id="payfortsss" name="payfortsss"></iframe>
+                <div class="modal-header">
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="form-expert_us">
+                    <div class="modal-body">
+
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Enter PromoCode :</label>
+                            <input type="text" class="form-control" id="udt">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                        <button type="button" class="btn btn-primary" id="stdt">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

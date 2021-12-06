@@ -1444,10 +1444,20 @@ class About_us extends MY_Controller
 	{
         $data = array();
         $data['response'] = $_POST;
-        print_r($_POST);
+        // print_r($_POST);
         // die;
         $this->load_view("payfortresponsce",$data);
     }
+
+    
+//   public function payfortresponsce()
+//   {
+//       $data = array();
+//       $data['response'] = $_POST;
+//       // print_r($_POST);
+//       // die;
+//       $this->load_view("payfortresponsce",$data);
+//   }
 
 
 
