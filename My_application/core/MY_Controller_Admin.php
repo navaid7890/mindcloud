@@ -286,7 +286,7 @@ class MY_Controller_Admin extends CI_Controller {
 				// EDIT Button
 				if((isset($dt_params['action']['show_edit'])) && ($dt_params['action']['show_edit']))
 					$edit_button = '<a title="Edit" href="'.$config['admin_base_url'].$class.'/add/'.$itemId.'/"'.
-										' target="_blank"><button class="btn btn-icon-only yellow" '.
+										' ><button class="btn btn-icon-only yellow" '.
 										'data-model="model_'.$class.'" data-pk="'.$itemId.'" '.
 									'>'.
 									'<i class="fa fa-edit"></i></button></a>';

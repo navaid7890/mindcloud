@@ -1451,7 +1451,7 @@ class About_us extends MY_Controller
 
         $newstring = substr($_GET['response_code'], -3);
 
-        debug($newstring);
+        // debug($newstring);
 
         // $data = array();
 
