@@ -13,13 +13,13 @@ echo create_modal_html("view_product", "Detail");
 					<i class="fa fa-list"></i><?= humanize($page_title) ?> Listing
 				</div>
 				<div class="actions">
-					<? if (!$dt_params['action']['hide_add_button']) { ?>
+					
 						<a href="<?= $config['base_url'] ?>admin/<?= $this_class_name ?>user/add" class="btn default yellow-stripe">
 							<i class="fa fa-plus"></i>
 							<span class="hidden-480">
 								Add New <?= humanize($page_title) ?> </span>
 						</a>
-					<? } ?>
+					
 
 
 				</div>
