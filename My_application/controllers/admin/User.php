@@ -1,4 +1,4 @@
-p<?php
+<?php
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
@@ -56,8 +56,8 @@ class User extends MY_Controller {
 		
 		$_POST = $this->input->post(NULL, true);
 
-		// if(isset($_GET['type']))
-		// 	$config['js_config']['paginate']['uri'] .= '?type=' . $_GET['type'];
+		if(isset($_GET['type']))
+			$config['js_config']['paginate']['uri'] .= '?type=' . $_GET['type'];
 	}
 
 	public function add($id='',$data=array())
@@ -76,6 +76,20 @@ class User extends MY_Controller {
 		if(array_filled($_POST))
 		
 		{
+			// function randomPassword() {
+			// 	$alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+			// 	$pass = array(); //remember to declare $pass as an array
+			// 	$alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+			// 	for ($i = 0; $i < 8; $i++) {
+			// 		$n = rand(0, $alphaLength);
+			// 		$pass[] = $alphabet[$n];
+			// 	}
+		
+			// 	return implode($pass); //turn the array into a string
+		
+			// }
+
+			$password = $this->randomPassword();
 
 	
 			$_POST['user']['user_is_admin'] = 0;
@@ -89,11 +103,15 @@ class User extends MY_Controller {
 				}
 				else{
 					$_POST['user']['user_password'] = $this->model_user->_encrypt_password(($_POST['user']['user_password']));
+					
 				}
 			}
 			else
 			{
-				$_POST['user']['user_password'] = $this->model_user->_encrypt_password(($_POST['user']['user_password']));
+				// debug($password);
+				$_POST['user']['user_password'] = $this->model_user->_encrypt_password(($password));
+				// debug($password);
+				// debug($_POST['user'] ,1);
 			}
 			
 			
@@ -117,19 +135,12 @@ class User extends MY_Controller {
             );
 
 
-		//$c = $this->model_tutorial->user_enrollcourses($id);
-		// debug($this->db->last_query());
-		// $data['enrolled_courses'] = $c;
-
-
 		
-	    	if(isset($_POST) AND array_filled($_POST)) {
+		 if(isset($_POST) AND array_filled($_POST)) {
 			if($_POST['user']['user_paid'] == 1  && !empty($_POST['user']['user_corporate_id']))
 			{
-
-				parent::corporate_create($_POST['user']);
-				// echo "ok";
-				// die();
+				parent::signup($_POST['user'],$password);
+				
             
 			}
 
@@ -209,11 +220,26 @@ class User extends MY_Controller {
 		}
 	}
 
+	public function randomPassword() {
+		$alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+		$pass = array(); //remember to declare $pass as an array
+		$alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+		for ($i = 0; $i < 8; $i++) {
+			$n = rand(0, $alphaLength);
+			$pass[] = $alphabet[$n];
+		}
 
+		return implode($pass); //turn the array into a string
+
+	}
+	
 
 	public function bulk_uploading()
 	{
-
+		// Toastr.error(response.msg.desc, 'Error');
+		// $this->session->set_flashdata('error', ['err 1','err2']);
+		
+		// redirect(la("user"));
          // debug($_POST['user[user_season_id]'],1);
 		// Load Library
         $this->load->library('simplexlsx');
@@ -222,6 +248,7 @@ class User extends MY_Controller {
             if(empty($_FILES['file']['name'])){
                 $json_param['status'] = false;
                 $json_param['msg'] = 'Please select file';
+				
             }
             else{
                 if($_FILES['file']['type'] == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
@@ -257,44 +284,145 @@ class User extends MY_Controller {
 
                     unset($bulk_leads[0]);
                     $post_values=$_POST['user'];
+					$valid_useres_to_save = [];
+					$dublicate_useres = [];
+
+					$user_count = array();
+					$user_count['where']['user_corporate_id'] = $this->session->userdata['logged_in']['corp_id'];
+					$data['corp_count'] = $this->model_user->find_all_active($user_count);
+
+					// debug(count($data['corp_count']) ,1);
+
+					$quta_count = array();
+					$quta_count['where']['corporate_id'] = $this->session->userdata['logged_in']['corp_id'];
+					$data['quta_count'] = $this->model_corporate->find_one_active($quta_count);
+					$total_allowed = $data['quta_count']['corporate_limit'];
+					$consumed = count($data['corp_count']);
+					$left_over = $total_allowed - $consumed;
+					// limit of user added
+					// debug($data['quta_count']['corporate_limit'] ,1);
+					$quota_exceed = false;
+					$user_added = false;
+					$dublicate_record = false;
+
                     if(isset($bulk_leads) AND array_filled($bulk_leads)) {
                         foreach($bulk_leads as $value) {
+
+							$all_user = array();
+							$all_user['where']['user_email'] = $value[2];
+							$all = $this->model_user->find_one_active($all_user);
+
+
+							
+
+							$password = $this->randomPassword();
+
+							// debug($password ,1);
+
+							
+
+							// $abv=$this->model_user->_encrypt_password($value[3]);
+							// debug($abv);
                             $save_param = array();
-                            $save_param['user_type'] =  isset($value[0]) ? $value[0] : 0;
-                            $save_param['user_corporate_id'] = isset($value[1]) ? $value[1] : 0;
-							$save_param['user_firstname'] =isset($value[2]) ? $value[2] : '';
-							$save_param['user_lastname'] =isset($value[3]) ? $value[3] : '';
-                            $save_param['user_email'] = isset($value[4]) ? $value[4] : '';
-                            $save_param['user_password'] = isset($value[5]) ? $value[5] : '';
+                            $save_param['user_type'] =  0;
+                            $save_param['user_corporate_id'] = $this->session->userdata['logged_in']['corp_id'];
+							$save_param['user_firstname'] =isset($value[0]) ? $value[0] : '';
+							$save_param['user_lastname'] =isset($value[1]) ? $value[1] : '';
+                            $save_param['user_email'] = isset($value[2]) ? $value[2] : '';
+                            $save_param['user_password'] = $this->model_user->_encrypt_password($password);
+                            $save_param['user_passwordshow'] = $password;
+
+
+							// $user_param['user_password'] = $this->model_user->_encrypt_password($user_data['user_password']);
+
                             $save_param['user_status'] = 1;
 							$save_param['user_paid'] = 1;
                             
-                            
-                              
-                            $this->model_user->set_attributes($save_param);                 
-                            $this->model_user->save();
-							// if ($inserted_id > 0) {
-							// 	// Send email to Admin for product Inquiry
-							// 	// $this->model_email->product_inquiry_mail($inserted_id);
-							// 	$json_param['status'] = true;
-							// 	$json_param['msg'] = ' successfully Uploaded';
-							// } else {
-							// 	$json_param['status'] = false;
-							// 	$json_param['msg'] = 'Fields are not correct or Duplicate Entry';
-							// }
+                            // debug(var_dump(empty($all)),1);
+							if(empty($all)){
+								$valid_useres_to_save[] = $save_param;
+								
+							}
+							else{
+								$dublicate_useres[] = $save_param;
+							}
                         }
                     }
+					$err = [];
+					foreach($valid_useres_to_save as $rec_num=> $save_param){
+						if($left_over > $rec_num){
+							$user_added = true;
 
-                    $json_param['status'] = TRUE;
-                	$json_param['msg'] = 'user Uploaded';
+							$this->model_user->set_attributes($save_param);                 
+							$this->model_user->save();
+							parent::signup($save_param,$password);
+						}
+						else{
+							$quota_exceed = true;
+					
+							// $err[] = ' limit reached after uploading'.$rec_num.' users successfully';
+							// $err = $err.' limit reached after uploading'.$rec_num.' users successfully,';
+							// die('some error limit reached');
+							break ;
+						}						
+					}
+					if(count($dublicate_useres)){
+						// debug($dublicate_useres);
+						// if($err != ''){
+						// 	$err = $err.' and'; 
+						// }
+						$dublicate_record = true;
+
+						// $err[] =' total dublicate recods removed : '.count($dublicate_useres);
+						// die('total dublicate recods removed : '.count($dublicate_useres));
+						
+			// $this->session->set_flashdata('error', $err);
+					}
+					if(count($err)){
+						// die($err );
+
+						$this->json_param['status'] = false;
+						$this->json_param['msg']['title'] =  'Error Uploading';
+						$this->json_param['msg']['desc'] = $err;
+
+						$this->session->set_flashdata('error', $err);
+
+
+						// $json_param['status'] = false;
+						// $json_param['msg'] = $err;
+						// echo json_encode($json_param);
+					}
+					else{
+						// $this->$json_param['status'] = TRUE;
+						// $this->json_param['msg'] = 'user Uploaded';
+						// redirect(la("user"));
+					}
+
                 }
                 else {
-                	$json_param['status'] = false;
-                	$json_param['msg'] = 'Invalid Format';
+					$err[] = 'Invalid Format';
+                	$this->json_param['status'] = false;
+					
+					$this->json_param['msg']['title'] =  'Error Uploading';
+					$this->json_param['msg']['desc'] = $err;
+					
+			
+                	// $json_param['msg'] = 'Invalid Format';
                 }
             }
 
-            echo json_encode($json_param);
+			if($quota_exceed){
+				$this->session->set_flashdata('error', ['Quota limit exceeded, contact support ']);
+			}
+			else if($user_added){
+				$this->session->set_flashdata('success', ['Users successfully added']);
+			}
+			else if($dublicate_record){
+				$this->session->set_flashdata('error', ['Duplicate users found']);
+			}
+			// debug(json_encode($this->json_param));
+            // echo json_encode($this->json_param);
+			redirect(la("user"));
         }
 	}
 

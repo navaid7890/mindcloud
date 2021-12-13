@@ -4,6 +4,7 @@ $dt_params['dt_headings'] = $dt_params['dt_headings'] ? $dt_params['dt_headings'
 $model_heads = explode("," , $dt_params['dt_headings'] );
 echo create_modal_html("view_product" , "Detail");
 ?>
+
 <div class="row">
 	<div class="col-md-12">
 		<!-- Begin: life time stats -->
@@ -41,6 +42,7 @@ echo create_modal_html("view_product" , "Detail");
 						<th width="2%">
 							<input type="checkbox" class="group-checkable">
 						</th>
+						
 						<?foreach ($model_heads as $field) {
 							$field = trim($field);
 							if( !$model_fields[$field] )
