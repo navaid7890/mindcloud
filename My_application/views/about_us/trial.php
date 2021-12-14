@@ -162,7 +162,7 @@ $signature = $signature_generated;
                             </div>
                             <div class="banner-down">
                                 <ul class="t-banner-list">
-                                    <li class="first" style="text-shadow: 0 0 3px #186aa5;">Click on Amazon pay, to complete order.</li>
+                                    <li class="first" style="text-shadow: 0 0 3px #186aa5;">Click on Pay Now, to complete order.</li>
                                     <li>Learn on your mobile or computer.</li>
                                     <li>Access to Mind Cloud Experts tutorials.</li>
                                     <li>Personalized Course Recommendations. </li>
