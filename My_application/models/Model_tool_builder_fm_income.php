@@ -1277,6 +1277,15 @@ class Model_tool_builder_fm_income extends MY_Model
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'
             ),
+            'total_tax_percentage' => array(
+                'table' => $this->_table,
+                'name' => 'total_tax_percentage',
+                'label' => 'total_tax_percentage',
+                'type' => 'text',
+                'attributes' => array(),
+                'js_rules' => '',
+                'rules' => 'trim|htmlentities'
+            ),
 
 
             'tool_builder_other_tax_expense_3' => array(

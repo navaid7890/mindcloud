@@ -608,6 +608,9 @@ class Quiz extends MY_Controller {
        $objPHPExcelReader->getActiveSheet()->setCellValue('C31', $employee_data['tool_builder_other_e_2']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('D31', $employee_data['tool_builder_other_e_3']);
        $objPHPExcelReader->getActiveSheet()->setCellValue('E31', $employee_data['tool_builder_other_e_4']);
+       $objPHPExcelReader->getActiveSheet()->setCellValue('H34', $employee_data['total_tax_percentage']/100);
+
+
       //  $objPHPExcelReader->getActiveSheet()->setCellValue('C32', $employee_data['total_expenses_year_1']);
       //  $objPHPExcelReader->getActiveSheet()->setCellValue('D32', $employee_data['total_expenses_year_2']);
       //  $objPHPExcelReader->getActiveSheet()->setCellValue('E32', $employee_data['total_expenses_year_3']);

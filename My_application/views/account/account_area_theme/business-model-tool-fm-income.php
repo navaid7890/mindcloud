@@ -699,24 +699,14 @@
                                                                 </td>
                                                             </tr> -->
 
-                                                            <!-- <tr class="align-items-center">
-                                                                <th>Other Tax Expenses</th>
+                                                            <tr class="align-items-center">
+                                                                <th>Enter Tax Percentage</th>
                                                                 <td>
                                                                     <div class="fld-text mb-0">
-                                                                        <input type="number" class="tax_total_year_1" onkeyup="calc_tool_income_values('tax_total_year_1')" name="tool_builder_fm_income[tool_builder_other_tax_expense_1]" value="<?= $tool['tool_builder_other_tax_expense_1'] ?>" placeholder="0">
+                                                                        <input type="number"  name="tool_builder_fm_income[total_tax_percentage]" value="<?= $tool['total_tax_percentage'] ?>" placeholder="0%">
                                                                     </div>
                                                                 </td>
-                                                                <td>
-                                                                    <div class="fld-text mb-0">
-                                                                        <input type="number" class="tax_total_year_2" onkeyup="calc_tool_income_values('tax_total_year_2')" name="tool_builder_fm_income[tool_builder_other_tax_expense_2]" value="<?= $tool['tool_builder_other_tax_expense_2'] ?>" placeholder="0">
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="fld-text mb-0">
-                                                                        <input type="number" class="tax_total_year_3" onkeyup="calc_tool_income_values('tax_total_year_3')" name="tool_builder_fm_income[tool_builder_other_tax_expense_3]" value="<?= $tool['tool_builder_other_tax_expense_3'] ?>" placeholder="0">
-                                                                    </div>
-                                                                </td>
-                                                            </tr> -->
+                                                            </tr>
 
                                                             <input type="hidden" id="tax_total_year_1" name="tool_builder_fm_income[total_tax_year_1]" value="<?= $tool['total_tax_year_1'] ?>" placeholder="0">
                                                             <input type="hidden" id="tax_total_year_2" name="tool_builder_fm_income[total_tax_year_2]" value="<?= $tool['total_tax_year_2'] ?>" placeholder="0">
