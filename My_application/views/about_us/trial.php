@@ -94,25 +94,31 @@ $abs=180-$_COOKIE['u'];
 <?php
 
 $service_command = 'TOKENIZATION'; //AUTHORIZATION
-$access_code = 'j0EDelL8zOwb9bZEwpsr';
-$merchant_identifier = 'vHgjzRkl';
+$access_code = 'z9c9eXaLZqJ6aa5h9PRV';
+$merchant_identifier = 'WZQlGZWY';
 $merchant_reference = uniqid(); // user_id
 $language = 'en';
-$amount = $abs;
+$amount = 180;
 $currency = 'AED';
 $signature = '';
 $return_url = l('about_us/payfortresponsce');
-$req_pass_phrase = '$2y$10$NzvIh4AsW';
-$res_pass_phrase = '$2y$10$j/0PAZAtk';
+$req_pass_phrase = '$2y$10$zrHXx7sET';
+$res_pass_phrase = '$2y$10$ajGktfU4F';
 
 $sorted_params = $req_pass_phrase . 'access_code=' . $access_code .'amount=' . $amount .'currency=' . $currency . 'language=' . $language .
     'merchant_identifier=' . $merchant_identifier . 'merchant_reference=' . $merchant_reference .
     'return_url=' . $return_url . 'service_command=' . $service_command . $req_pass_phrase;
+
+    // $sorted_params = "PASSaccess_code=".$access_code."language=enmerchant_identifier=$merchant_identifier
+    // merchant_reference=$merchant_reference=TOKENIZATIONPASS";
+
 $signature_generated = hash('sha256', $sorted_params);
 $signature = $signature_generated;
+
 // echo $sorted_params."<br/>";
 
 ?>
+
 
 <!-- <iframe  id="payfortsss" name="payfortsss" ></iframe> -->
 
@@ -138,7 +144,7 @@ $signature = $signature_generated;
                                     <button type="button" class="btn btn-primary" id="con">Confirm Subscription</button>
 
                                     <!-- <a href="#" class="btn btn-primary">Do you have a Promo Code?</a> -->
-                                    <form action="https://checkout.payfort.com/FortAPI/paymentPage" method="post" target="payfortsss">
+                                    <form action="https://sbcheckout.payfort.com/FortAPI/paymentPage" method="post" target="payfortsss">
                                         <input name="service_command" type="hidden" value="<?= $service_command ?>">
                                         <input name="access_code" type="hidden" value="<?= $access_code ?>">
                                         <input name="merchant_identifier" type="hidden" value="<?= $merchant_identifier ?>">
