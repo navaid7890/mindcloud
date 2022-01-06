@@ -1408,7 +1408,7 @@ class About_us extends MY_Controller
         $this->layout_data['title'] = g('db.admin.site_title') .' | '. $m['metadata_title'];
         $this->layout_data['meta_data']['keywords']=$m['metadata_keyword'];
         $this->layout_data['meta_data']['description']=$m['metadata_desc'];
-        // if($this->userid > 0){
+        if($this->userid > 0){
 
         $data = array();
 
@@ -1429,14 +1429,14 @@ class About_us extends MY_Controller
         
         $this->load_view("thankyou",$data);
         
-    // }
+    }
 
-    // else
-    // { 
-    //  redirect(l('login?msgtype=error&msg='.urlencode('Please login first')) , true);
+    else
+    { 
+     redirect(l('login?msgtype=error&msg='.urlencode('Please login first')) , true);
 
 
-    // }
+    }
    
    
 }
