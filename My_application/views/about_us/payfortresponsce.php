@@ -40,7 +40,7 @@
 
 // var_dump($_GET['response_code']) ;
 // var_dump($_POST);
- print_r($_GET);
+//  print_r($_GET);
 // $newstring = substr($_GET['response_code'], -3);
 
 // https://paymentservices-reference.payfort.com/docs/api/build/index.html#standard-merchant-page-integration-operations
@@ -66,7 +66,7 @@ $merchant_reference , $currency , $card_bin , $status , $amount , $user_email , 
 
 $third_url = $payment_repsone['3ds_url'];
 
-echo $third_url;
+// echo $third_url;
 
 // debug($newstring);
 ?>
@@ -123,7 +123,7 @@ $signature = $signature_generated;
         'merchant_identifier' => $merchant_identifier
     );
 
-    print_r($data);
+    // print_r($data);
 
 
     $ch = curl_init();
