@@ -11,7 +11,7 @@ ERROR - 2021-08-02 11:31:06 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 11:31:06 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 11:31:06 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 11:31:06 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 11:31:18 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/imagesTIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 11:31:18 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/imagesTIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 11:31:19 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 11:31:19 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -24,7 +24,7 @@ ERROR - 2021-08-02 11:31:19 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 11:31:19 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 11:31:19 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 11:31:19 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 11:31:24 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/imagesTIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 11:31:24 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/imagesTIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 11:31:24 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 11:31:25 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -37,7 +37,7 @@ ERROR - 2021-08-02 11:31:25 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 11:31:25 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 11:31:25 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 11:31:25 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 11:31:43 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/imagesTIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 11:31:43 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/imagesTIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 11:31:44 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 11:31:44 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -61,7 +61,7 @@ ERROR - 2021-08-02 11:34:37 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 11:34:37 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 11:34:37 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 11:34:37 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 11:34:45 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 11:34:45 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 11:34:45 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 11:34:45 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -74,7 +74,7 @@ ERROR - 2021-08-02 11:34:45 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 11:34:45 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 11:34:45 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 11:34:45 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 11:34:54 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 11:34:54 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 11:34:55 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 11:34:55 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -87,7 +87,7 @@ ERROR - 2021-08-02 11:34:55 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 11:34:55 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 11:34:55 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 11:34:55 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 11:36:02 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 11:36:02 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 11:36:02 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 11:36:02 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -100,7 +100,7 @@ ERROR - 2021-08-02 11:36:03 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 11:36:03 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 11:36:03 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 11:36:03 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 11:40:49 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 11:40:49 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 11:40:49 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 11:40:49 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -147,7 +147,7 @@ ERROR - 2021-08-02 11:44:01 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 11:44:01 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 11:44:01 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 11:44:01 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 11:44:12 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 11:44:12 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 11:44:13 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 11:44:13 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -160,7 +160,7 @@ ERROR - 2021-08-02 11:44:13 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 11:44:13 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 11:44:13 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 11:44:13 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 11:46:57 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 11:46:57 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 11:46:58 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 11:46:58 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -173,7 +173,7 @@ ERROR - 2021-08-02 11:46:58 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 11:46:58 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 11:46:58 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 11:46:58 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 11:47:06 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 11:47:06 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 08:47:07 --> 404 Page Not Found: admin/Videos/profile
 ERROR - 2021-08-02 11:47:18 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
@@ -198,7 +198,7 @@ ERROR - 2021-08-02 12:29:33 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 12:29:33 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 12:29:33 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 12:29:33 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 12:29:45 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_Expert Vid 24_Hussein Abdallah_26Feb20_Basics of Brands and Branding.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 12:29:45 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_Expert Vid 24_Hussein Abdallah_26Feb20_Basics of Brands and Branding.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 12:29:46 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 12:29:46 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -257,7 +257,7 @@ ERROR - 2021-08-02 12:31:17 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 12:31:18 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 12:31:18 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 12:31:18 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 12:31:28 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_Expert Vid 24_Hussein Abdallah_26Feb20_Basics of Brands and Branding.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 12:31:28 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_Expert Vid 24_Hussein Abdallah_26Feb20_Basics of Brands and Branding.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 12:31:28 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 12:31:29 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -270,7 +270,7 @@ ERROR - 2021-08-02 12:31:29 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 12:31:29 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 12:31:29 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 12:31:29 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 12:31:35 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_Expert Vid 24_Hussein Abdallah_26Feb20_Basics of Brands and Branding.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 12:31:35 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_Expert Vid 24_Hussein Abdallah_26Feb20_Basics of Brands and Branding.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 12:31:36 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 12:31:36 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -283,7 +283,7 @@ ERROR - 2021-08-02 12:31:36 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 12:31:37 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 12:31:37 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 12:31:37 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 12:31:40 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_Expert Vid 24_Hussein Abdallah_26Feb20_Basics of Brands and Branding.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 12:31:40 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_Expert Vid 24_Hussein Abdallah_26Feb20_Basics of Brands and Branding.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 12:31:41 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 12:31:41 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -308,7 +308,7 @@ ERROR - 2021-08-02 12:49:26 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 12:49:26 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 12:49:27 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 12:49:27 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 12:49:38 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
+ERROR - 2021-08-02 12:49:38 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_MCT_Expert 27_Ayman Itani_15 July_Facebook Shops for Online Retailers.pptx): failed to open stream: HTTP request failed! HTTP/1.1 505 HTTP Version not supported
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 12:49:39 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 12:49:39 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -554,7 +554,7 @@ ERROR - 2021-08-02 15:13:38 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 15:13:38 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 15:13:38 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 15:13:38 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 15:14:03 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptxTIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptx): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ERROR - 2021-08-02 15:14:03 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptxTIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptx): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 15:14:04 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 15:14:04 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -567,7 +567,7 @@ ERROR - 2021-08-02 15:14:04 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 15:14:04 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 15:14:04 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 15:14:04 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 15:14:15 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptxTIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptx): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ERROR - 2021-08-02 15:14:15 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptxTIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptx): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 15:14:15 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 15:14:15 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -591,7 +591,7 @@ ERROR - 2021-08-02 15:15:04 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 15:15:04 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 15:15:04 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 15:15:04 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 15:15:26 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptxTIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptx): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ERROR - 2021-08-02 15:15:26 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptxTIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptx): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 15:15:27 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 15:15:27 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399
@@ -604,7 +604,7 @@ ERROR - 2021-08-02 15:15:27 --> Severity: 4096 --> Object of class Model_videos 
 ERROR - 2021-08-02 15:15:27 --> Severity: Warning --> Illegal string offset 'form_fields' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
 ERROR - 2021-08-02 15:15:27 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cloud\My_system\core\Exceptions.php:271) C:\xampp\htdocs\cloud\My_system\core\Common.php 570
 ERROR - 2021-08-02 15:15:27 --> Severity: Error --> Cannot use string offset as an array C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 451
-ERROR - 2021-08-02 15:18:14 --> Severity: Warning --> file_get_contents(https://mindcloud-bucket.s3.amazonaws.com/assets/TIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptxTIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptx): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ERROR - 2021-08-02 15:18:14 --> Severity: Warning --> file_get_contents(https://mindcloud-assets.s3.amazonaws.com/assets/TIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptxTIMING_MCT_Expert%204%20Christian_Expert%204_13%20June_Customer%20Acquisition%20For%20Startups.pptx): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
  C:\xampp\htdocs\cloud\My_application\controllers\admin\Videos.php 80
 ERROR - 2021-08-02 15:18:15 --> Severity: Warning --> Illegal string offset 'form_data' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 397
 ERROR - 2021-08-02 15:18:15 --> Severity: Warning --> Illegal string offset 'user_input' C:\xampp\htdocs\cloud\My_application\core\MY_Controller_Admin.php 399

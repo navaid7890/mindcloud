@@ -643,7 +643,7 @@ $my_tools = array(
 
 
   <div id="overlay">
-    <img src="https://mindcloud-bucket.s3.amazonaws.com/assets/images/loader.gif" alt="Loading" />
+    <img src="https://mindcloud-assets.s3.amazonaws.com/assets/images/loader.gif" alt="Loading" />
     Loading...
   </div>
 

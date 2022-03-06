@@ -235,7 +235,7 @@
                           <tbody>
                             <tr class="align-items-center">
                               <td>
-                                <img src="https://mindcloud-bucket.s3.amazonaws.com/assets/images/fomula.webp">
+                                <img src="https://mindcloud-assets.s3.amazonaws.com/assets/images/fomula.webp">
                               </td>
                             </tr>
                           </tbody>

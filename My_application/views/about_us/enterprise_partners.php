@@ -106,7 +106,7 @@
 
               <div class="col-md-4 d-none-mob">
                 <div class="intern-steps">
-                  <span><img src="https://mindcloud-bucket.s3.amazonaws.com/assets/images/cms_image/steps-mdl.jpg"></span>
+                  <span><img src="https://mindcloud-assets.s3.amazonaws.com/assets/images/cms_image/steps-mdl.jpg"></span>
                 </div>
               </div>
 
@@ -189,7 +189,7 @@
                 </div>
               </div>
               <div class="col-lg-4 col-md-12 d-none-mob">
-                <span><img src="https://mindcloud-bucket.s3.amazonaws.com/assets/images/cms_image/arrow.jpg"></span>
+                <span><img src="https://mindcloud-assets.s3.amazonaws.com/assets/images/cms_image/arrow.jpg"></span>
               </div>
               <div class="col-lg-4 col-md-12">
                 <div class="arrowmdl-box mt-60  ">

@@ -611,7 +611,7 @@ class Profile extends MY_Controller_Account
 
 	// 	set_time_limit(0);
 	// 	$all_slides ="";
-	// 	$file = file_get_contents("https://mindcloud-bucket.s3.amazonaws.com/assets/legal_term_sheet.pptx");
+	// 	$file = file_get_contents("https://mindcloud-assets.s3.amazonaws.com/assets/legal_term_sheet.pptx");
 	// 	file_put_contents('ppt_temp.pptx', $file);
 	// 	$file = "ppt_temp.pptx";
 	// 	if (!file_exists('assets/slides/')) {

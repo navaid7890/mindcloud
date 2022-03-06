@@ -3,7 +3,7 @@
 	if(!empty($form_data['videos']['videos_image']))
  
 	
-		$video_url = 'https://mindcloud-bucket.s3.amazonaws.com/assets/'.$form_data['videos']['videos_image'];
+		$video_url = 'https://mindcloud-assets.s3.amazonaws.com/assets/'.$form_data['videos']['videos_image'];
 ?>
 <div class="form-body">
 

@@ -121,7 +121,7 @@
                                 <a href="<?= l('expert-detail') . '/' . $value['expert_id'] ?> ">
                                     <div class="single-item">
                                         <div class="product-img-home">
-                                            <img src="https://mindcloud-bucket.s3.amazonaws.com/assets/images/<?= $value['expert_image'] ?>" class="img-responsive">
+                                            <img src="https://mindcloud-assets.s3.amazonaws.com/assets/images/<?= $value['expert_image'] ?>" class="img-responsive">
                                         </div>
 
                                         <p class="pro-name"><b><?= $value['expert_name'] ?></b></p>

@@ -150,7 +150,7 @@ global $config;
             <div class="col-md-offset-3 col-md-9">
                 <button type="button" class="btn sub-btn green" id="savepptCms">Save</button>
                 <div id="loading-image" style="display: none;">
-                    <img src="https://mindcloud-bucket.s3.amazonaws.com/assets/images/loader.gif">
+                    <img src="https://mindcloud-assets.s3.amazonaws.com/assets/images/loader.gif">
                 </div>
             </div>
         </div>

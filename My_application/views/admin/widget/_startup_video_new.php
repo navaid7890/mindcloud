@@ -18,7 +18,7 @@
 	if(!empty($form_data['startup']['startup_video_new']))
 
 	
-		$video_url = 'https://mindcloud-bucket.s3.amazonaws.com/assets/videos/'.$form_data['startup']['startup_video_new'];
+		$video_url = 'https://mindcloud-assets.s3.amazonaws.com/assets/videos/'.$form_data['startup']['startup_video_new'];
 ?>
 <div class="form-body">
 

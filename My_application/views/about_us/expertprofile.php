@@ -39,7 +39,7 @@
                         <div class="row">
                             <div class="col-lg-2 col-md-3 col-12">
                                 <div class="ExpertImg">
-                                    <img src="https://mindcloud-bucket.s3.amazonaws.com/assets/images/<?=$profile['expert_image']?>" class="img-fluid">
+                                    <img src="https://mindcloud-assets.s3.amazonaws.com/assets/images/<?=$profile['expert_image']?>" class="img-fluid">
                                 </div>
                             </div>
                             <div class="col-lg-10 col-md-9 col-12">
